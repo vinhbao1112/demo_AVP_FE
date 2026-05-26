@@ -1,0 +1,234 @@
+<MessageNames>
+  <!--Kep Server-->
+  <Property Name="Loader.ArmUpDownStatus" Code="ChangeArmUpDownStatusInSLProcessScreenTo" />
+  <Property Name="Loader.ArmExtendRetractStatus" Code="LoaderSetArmExtendRetractStatusInProcessScreenTo" />
+  <Property Name="Loader.IsolationValveStatus" Code="LoaderSetIsolationValveStatusInProcessScreenTo" />
+  <Property Name="Loader.DoorSensorStatus" Code="LoaderSetDoorStatusInProcessScreenTo" />
+  <Property Name="Loader.HighVacuumSwitch" Code="LoaderSetVacuumStatusInProcessScreenTo" />
+  <Property Name="Loader.MidVacuumSwitch" Code="LoaderSetVacuumStatusInProcessScreenTo" />
+  <Property Name="Loader.MechanicalPump" Code="LoaderSetMechanicalPumpStatusInProcessScreenTo" />
+  <Property Name="Loader.VentValveStatus" Code="LoaderSetVentValveStatusInProcessScreenTo" />
+  <Property Name="Loader.RoughValveStatus" Code="LoaderSetRoughValveStatusInProcessScreenTo" />
+  <Property Name="Loader.AutoPumpDownStatus" Code="SetLoaderAutoPumpDownStatusTo"/>
+  <Property Name="Loader.AutoVentStatus" Code="SetLoaderAutoVentStatusTo"/>
+  <Property Name="Loader.AutoLoadStatus" Code="SetLoaderAutoLoadStatusTo,ChangeAutoLoadStatusInSLProcessScreenTo"/>
+  <Property Name="Loader.AutoUnloadStatus" Code="SetLoaderAutoUnloadStatusTo,ChangeAutoUnloadStatusInSLProcessScreenTo"/>
+  <Property Name="Loader.LoadStatus" Code="SetLoaderLoadStatusTo"/>
+  <Property Name="Loader.ArmPressureStatus" Code="SetLoaderArmPressureStatusTo"/>
+  <Property Name="Loader.StatusMessage" Code="ShowStatusMessage,ShowStatusMessageInSLProcessScreen" />  
+  <Property Name="Loader.DataOutputStatus" Code="SetDataOutputStatusTo"/>  
+  <Property Name="Loader.WaferInsideLoader" Code="SetAnimateRobotInSLProcessScreen"/>
+  
+   <Property Name="Loader.RunStatus" Code="SetRunStatusInProcessScreen"/>
+   <Property Name="Loader.StopStatus" Code="SetStopStatusInProcessScreen"/>
+   <Property Name="Loader.AbortStatus" Code="SetAbortStatusInProcessScreen"/>
+   <Property Name="Loader.PauseStatus" Code="SetPauseStatusInProcessScreen"/>
+   
+   <Property Name="Loader.WaferCount" Code="TotalWaferCountOfLoader"/>
+  <!--End Kep Server-->
+  <!--Single loader -->
+  	<!--IBE Server-->
+ 	<Property Name="IBE.WaferStatus" Code="SetIBE_WaferStatusInSLProcessScreenTo"/>
+  <Property Name="IBE.WaferInside" Code="SetWaferInsideChamberInSLProcessScreenTo"/>
+  	<!--Alarm status-->
+  <Property Name="IBE.ConnectionStatus" Code="SetIBE_ConnectionStatusTo,SetIBE_ConnectionStatusInProcessModuleTo"/>
+  <!--Power Panel-->
+  <Property Name="IBE.ACPower_readback" Code="SetACPowerIBETo"/>
+  <Property Name="IBE.GridPower_readback" Code="SetGridPowerIBETo"/>
+  <Property Name="IBE.RFPower_readback" Code="SetRFPowerIBETo"/>
+  <Property Name="IBE.PBNPower_readback" Code="SetPBNPowerIBETo"/>
+  <Property Name="IBE.SourceManual_Auto_readback" Code="SetSourceManualIBETo"/>
+    <!--Status panel-->
+  <Property Name="IBE.Initialize_Motion_readback" Code="SetInitializeMotionIBEInProcessPanelTo,SetInitializeMotionIBEInProcessModuleTo,SetIBEFixture_InitializeMotionStatusTo"/>
+  <Property Name="IBE.Flowcool_Gas_readback" Code="SetFlowcoolGasIBEInProcessPanelTo,SetFlowcoolGasIBEInProcessModuleTo"/>
+  <Property Name="IBE.Process_Gas_Readback" Code="SetProcessGasIBEInProcessPanelTo,SetProcessGasIBEInProcessModuleTo"/>
+  <Property Name="IBE.Ion_Beam_Readback" Code="SetIonBeamIBEInProcessPanelTo,SetIonBeamIBEInProcessModuleTo,SetPlasmaInProcessModuleTo"/>
+  <Property Name="IBE.PBN_OK_Readback" Code="SetPBNOKIBEInProcessPanelTo,SetPBNOKIBEInProcessModuleTo"/>
+  <!-- RFPowerSupply-->
+  <Property Name="IBE.RFPowerSupply_ForwardPower_Readback" Code="SetIBERFPowerSupply_SetForwardPowerInProcessPanelTo,SetIBERFPowerSupply_SetForwardPowerInProcessModuleTo"/>
+  <Property Name="IBE.RFPowerSupply_ReflectedPower" Code="SetIBERFPowerSupply_SetReflectedPowerInProcessModuleTo"/>
+  <Property Name="IBE.RFPowerSupply_ReflectedPower_Program" Code="SetIBERFPowerSupply_SetReflectedPowerRightTo"/>
+  <Property Name="IBE.RFPowerSupply_ForwardPower_Program" Code="SetIBERFPowerSupply_ForwardPowerRight"/>
+  <!-- BeamPowerSupply-->
+  <Property Name="IBE.BeamPowerSupply_Current_Readback" Code="SetIBEBeamPowerSupply_SetCurrentInProcessPanelTo,SetIBEBeamPowerSupply_SetCurrentInProcessModuleTo"/>
+  <Property Name="IBE.BeamPowerSupply_Current_Program" Code="SetIBEBeamPowerSupply_SetCurrentRightTo"/>
+  <Property Name="IBE.BeamPowerSupply_Voltage_Readback" Code="SetIBEBeamPowerSupply_SetVoltageInProcessPanelTo,SetIBEBeamPowerSupply_SetVoltageInProcessModuleTo"/>
+  <Property Name="IBE.BeamPowerSupply_Voltage_Program" Code="SetIBEBeamPowerSupply_VoltageRight"/>
+  <Property Name="IBE.BeamPowerSupply_AutoBeam" Code="SetIBEBeamPowerSupply_AutoBeam"/>
+  <!-- SuppressorPowerSupply-->
+  <Property Name="IBE.SuppressorPowerSupply_Voltage_Readback" Code="SetIBESuppressorPowerSupply_SetVoltageInProcessPanelTo,SetIBESuppressorPowerSupply_SetVoltageInProcessModuleTo"/>
+  <Property Name="IBE.SuppressorPowerSupply_Voltage_Program" Code="SetIBESuppressorPowerSupply_VoltageRight"/>
+  <Property Name="IBE.SuppressorPowerSupply_Current_Readback" Code="SetIBESuppressorPowerSupply_SetCurrentInProcessModuleTo"/>
+  <Property Name="IBE.SuppressorPowerSupply_Current_Program" Code="SetIBESuppressorPowerSupply_SetCurrentRightTo"/>
+  <!-- BodyPowerSupply-->
+  <Property Name="IBE.BodyPowerSupply_Current_Readback" Code="SetIBEBodyPowerSupply_SetCurrentInProcessPanelTo,SetIBEBodyPowerSupply_SetCurrentInProcessModuleTo"/>
+  <Property Name="IBE.BodyPowerSupply_Current_Program" Code="SetIBEBodyPowerSupply_CurrentRight"/>
+  <Property Name="IBE.DischargePowerSupply_Current_Readback" Code="SetIBEDischargePowerSupply_SetCurrentInProcessPanelTo,SetIBEDischargePowerSupply_SetCurrentInProcessModuleTo"/>
+  <Property Name="IBE.BodyPowerSupply_KFactor_Readback" Code="SetIBEBodyPowerSupply_SetKFactorTo"/>
+  <Property Name="IBE.BodyPowerSupply_KFactor_Program" Code="SetIBEBodyPowerSupply_SetKFactorRightTo"/>
+  <!-- Temperture-->
+  <!--Property Name="IBE.Cryo_Pump_Temperture" Code="SetIBETempertureInProcessPanelTo"/-->
+  <Property Name="IBE.Cryo_Pump_Temperture_T2" Code="SetIBETempertureT2To,SetIBETempertureT2WPTo,SetIBETempertureInProcessPanelTo,SetIBETempCryoInPopUpPanelTo,SetIBETempWPInPopUpPanelTo"/>
+   <!-- CGCFLCG-->
+  <Property Name="IBE.CGCFLCG_Information" Code="SetIBECGCFLCG_SetInformationTo"/>
+  <!-- CGCRLCG-->
+  <Property Name="IBE.CGCRLCG_Information" Code="SetIBECGCRLCG_SetInformationTo"/>
+  <!-- CGCMG-->
+  <Property Name="IBE.CGCMG_Information" Code="SetIBECGCMG_SetInformationTo"/>
+  <!-- FixtureControl-->
+  <Property Name="IBE.Fixture_TiltAngle_Program" Code="SetIBEFixtureControl_SetTiltAngleTo,SetProcessPanel_FixtureControl_SetTiltAngleTo,SetIBEFixtureControl_TiltAngleRight"/>
+  <!--Property Name="IBE.Fixture_TiltAngle_Readback" Code="SetIBEFixtureControl_SetTiltAngleTo,SetProcessPanel_FixtureControl_SetTiltAngleTo,SetIBEFixtureControl_TiltAngleRight"/-->
+  <Property Name="IBE.SweepFixture_Rotation_Start_Readback" Code="SetIBEFixtureControlSweep_SetRotationStartTo"/>
+  <Property Name="IBE.SweepFixture_Rotation_Start_Program" Code="SetIBEFixtureControlSweep_RotationRight"/>
+  <Property Name="IBE.SweepFixture_Rotation_End_Program" Code="SetIBEFixtureControlSweep_RotationEndRight"/>  
+  <!-- FixtureControlStatic-->
+  <!--Property Name="IBE.StaticFixture_Rotation_Readback" Code="SetIBEFixtureControlStatic_SetRotationTo"/-->  
+  <Property Name="IBE.StaticFixture_Rotation_Program" Code="SetIBEFixtureControlStatic_RotationRight,SetIBEFixtureControlStatic_SetRotationTo"/>
+  <!-- FixtureControlContinuous-->
+  <!--Property Name="IBE.ContinuousFixture_Rotation_Readback" Code="SetIBEFixtureControlContinuous_SetRotationTo"/-->
+  <Property Name="IBE.ContinuousFixture_Rotation_Program" Code="SetIBEFixtureControlContinuous_RotationRight,SetIBEFixtureControlContinuous_SetRotationTo"/>
+  <!--Fixture Status-->
+  <!--Property Name="IBE.Fixture_Home_Tilt_Readback" Code="SetIBEFixture_HomeTiltStatusTo"/-->
+  <Property Name="IBE.Fixture_Start_Rotation_Readback" Code="SetIBE_FixtureStartRotationForMenuTo"/>
+   <Property Name="IBE.FixtureTiltHomeStatus" Code="SetIBEFixture_HomeTiltStatusTo"/>
+   <Property Name="IBE.FixtureRotationMovingStatus" Code="SetIBEFixture_RotationMovingStatus,SetIBEFixture_RotationMovingToButtonRotateStatus,SetIBEFixture_RotationMovingToProcessPanel"/>
+   <Property Name="IBE.Fixture_Rotation_Mode_Readback" Code="SetIBEFixture_RotationModeTo"/>
+     <!-- GasController-->
+  <Property Name="IBE.GasController_Argon_Readback" Code="SetIBEGasController_SetArgonTo,SetIBEGasController_SetArgonTo_SourceTab"/>
+  <Property Name="IBE.GasController_FlowCoolHe_Readback" Code="SetIBEGasController_SetFlowCoolHeTo"/>
+  <Property Name="IBE.GasController_PBN_Readback" Code="SetIBEGasController_SetPBNTo,SetIBEGasController_SetPBNTo_SourceTab,SetProcessScreen_SetPBNTo"/>
+  <Property Name="IBE.GasController_PBN_Program" Code="SetIBEGasController_PBNRight,SetIBEGasController_PBNRight_SourceTab"/>
+  <Property Name="IBE.GasController_Argon_Program" Code="SetIBEGasController_ArgonRight,SetIBEGasController_ArgonRight_SourceTab"/>
+  <Property Name="IBE.GasController_FlowCoolHe_Program" Code="SetIBEGasController_FlowCoolHeRight"/>
+  <!-- Valve-->
+  <Property Name="IBE.Gas1ShutOffValveStatus" Code="SetIBEGas1ShutOffValveStatus"/>
+  <Property Name="IBE.Gas1SupplyValveStatus"  Code="SetIBEGas1SupplyValveStatus"/>
+  <Property Name="IBE.Gas2ShutOffValveStatus" Code="SetIBEGas2ShutOffValveStatus"/>
+  <Property Name="IBE.Gas2SupplyValveStatus"  Code="SetIBEGas2SupplyValveStatus"/>
+  <Property Name="IBE.Gas3ShutOffValveStatus" Code="SetIBEGas3ShutOffValveStatus"/>
+  <Property Name="IBE.Gas3SupplyValveStatus"  Code="SetIBEGas3SupplyValveStatus"/>
+  <Property Name="IBE.Gas4ShutOffValveStatus" Code="SetIBEGas4ShutOffValveStatus"/>
+  <Property Name="IBE.Gas4SupplyValveStatus" Code="SetIBEGas4SupplyValveStatus"/>
+  <Property Name="IBE.Gas5ShutOffValveStatus" Code="SetIBEGas5ShutOffValveStatus"/>
+  <Property Name="IBE.Gas5SupplyValveStatus"  Code="SetIBEGas5SupplyValveStatus"/>
+
+  <Property Name="IBE.FlowCoolHeValveStatus" Code="SetIBEFlowCoolHeValveStatus"/>
+  <Property Name="IBE.ValveSupplyFlowCoolHeStatus" Code="SetIBEValveSupplyFlowCoolHe"/>
+  <Property Name="IBE.PBNValveStatus" Code="SetIBEPBNValveStatus"/>
+  <Property Name="IBE.ValveSupplyPBNStatus" Code="SetIBEValveSupplyPBN"/>
+  
+  <Property Name="IBE.BaratronValveStatus" Code="SetIBEBaratronValveStatus"/>
+  <Property Name="IBE.ForelineValveStatus" Code="SetIBEForelineValveStatus"/>
+  <Property Name="IBE.RoughValveStatus" Code="SetIBERoughValveStatus,SetIBERoughValveGeneralStatus"/>
+  <Property Name="IBE.VentValveStatus" Code="SetIBEVentValveStatus"/>
+  <Property Name="IBE.HiVacValveStatus" Code="SetIBEHiVacValveStatus"/>
+  <!--Gas-->
+  <Property Name="IBE.Gas1FlowRateReadback" Code="SetIBEGas1ReadbackTo,SetIBEGas1ReadbackSourceTabTo,SetProcessPanel_Gas1ReadbackSourceTabTo"/>
+  <Property Name="IBE.Gas2FlowRateReadback" Code="SetIBEGas2ReadbackTo,SetIBEGas2ReadbackSourceTabTo,SetProcessPanel_Gas2ReadbackSourceTabTo"/>
+  <Property Name="IBE.Gas3FlowRateReadback" Code="SetIBEGas3ReadbackTo,SetIBEGas3ReadbackSourceTabTo"/>
+  <Property Name="IBE.Gas1FlowRateProgram" Code="SetIBEGas1ProgramTo,SetIBEGas1ProgramSourceTabTo"/>
+  <Property Name="IBE.Gas2FlowRateProgram" Code="SetIBEGas2ProgramTo,SetIBEGas2ProgramSourceTabTo"/>
+  <Property Name="IBE.Gas3FlowRateProgram" Code="SetIBEGas3ProgramTo,SetIBEGas3ProgramSourceTabTo"/>
+  
+  <Property Name="IBE.ShutterPositionStatus" Code="SetIBEShutterPositionInProcessPanel,SetIBEShutterPositionInProcessModule,SetIBEShutterInFixture"/>
+  <Property Name="IBE.TurboPowerStatus" Code="SetIBEValveWaterPump"/>
+  <Property Name="IBE.ValveCryoPumpGateStatus" Code="SetIBEValveCryoPump,SetIBEMenuValveCryoPump"/>
+  <Property Name="IBE.TurboPumpRegen" Code="SetIBEWaterPumpRegen"/>
+  
+  <!-- ChamberInterlocks-->
+  <Property Name="IBE.ChamberInterlocks_PanelInterlock_Status" Code="SetIBEChangeInterlocksPanelInProcessPanelTo,SetIBEChangeInterlocksPanelInProcessModuleTo"/>
+  <Property Name="IBE.ChamberInterlocks_ChamberPress_Status" Code="SetIBEChangeInterlocksChamberPressInProcessPanelTo,SetIBEChangeInterlocksChamberPressInProcessModuleTo"/>
+  <Property Name="IBE.ChamberInterlocks_FixtureWater_Status" Code="SetIBEChangeInterlocksFixureWaterInProcessPanelTo,SetIBEChangeInterlocksFixureWaterInProcessModuleTo"/>
+  <Property Name="IBE.ChamberInterlocks_Foreline_Status" Code="SetIBEChangeInterlocksForelineInProcessPanelTo,SetIBEChangeInterlocksForelineInProcessModuleTo"/>
+  <Property Name="IBE.ChamberInterlocks_SourceWater_Status" Code="SetIBEChangeInterlocksSourceWaterInProcessPanelTo,SetIBEChangeInterlocksSourceWaterInProcessModuleTo"/>
+  <Property Name="IBE.ChamberInterlocks_TurboWater_Status" Code="SetIBEChangeInterlocksTurboWaterInProcessPanelTo,SetIBEChangeInterlocksTurboWaterInProcessModuleTo"/>
+  <Property Name="IBE.ChamberInterlocks_AirPressure_Status" Code="SetIBEChangeInterlocksAirPressureInProcessPanelTo,SetIBEChangeInterlocksAirPressureInProcessModuleTo"/>
+  <Property Name="IBE.ChamberInterlocks_FixtureRotation_Status" Code="SetIBEChangeInterlocksFixtureRotationInProcessPanelTo,SetIBEChangeInterlocksFixtureRotationInProcessModuleTo"/>
+  <!--Process Status-->
+  <Property Name="IBE.WaferID" Code="SetIBEProcessMonitor_WaferID"/>
+  <Property Name="IBE.Recipe" Code="SetIBEProcessMonitorInProcessPanel_RecipeTo,SetIBEProcessMonitorInProcessModule_RecipeTo"/>
+  <Property Name="IBE.RunProcessStatus" Code="SetStatusOfIBEInProcessScreenTo,SetIBEProcessMonitor_StatusTo"/>
+  <Property Name="IBE.RemainingTime" Code="SetIBERemainingTimeTo,SetProcessScreen_RemainingTimeTo"/>
+  <Property Name="IBE.ProcessMonitor_ProcessStep" Code="SetIBEProcessMonitor_ProcessStepInProcessPanelTo,SetIBEProcessMonitor_ProcessStepInProcessModuleTo"/>
+  <Property Name="IBE.ElapsedTime" Code="SetIBEProcessMonitor_ElapsedTimeTo,SetProcessScreen_ElapsedTimeTo"/>
+  <Property Name="IBE.ProcessMonitor_TotalStep" Code="SetIBEProcessMonitor_TotalStepTo"/>
+  <Property Name="IBE.IG" Code="SetIGOfIBETo,SetIGInProcessModuleTo,SetIGInProcessPanelTo"/>
+  <Property Name="IBE.CG" Code="SetCGOfIBETo,SetCGInProcessModuleTo"/>
+  <!--Run Recipe-->
+  <Property Name="IBE.ProcessMonitor_DeviceStart_Readback" Code="SetIBEChamber_ProcessMonitor_SetDeviceStartTo"/>
+  <Property Name="IBE.ProcessMonitor_DeviceStop_Readback" Code="SetIBEChamber_ProcessMonitor_SetDeviceStopTo,SetStatusOfIBEInProcessScreenTo"/>
+  <Property Name="IBE.ProcessMonitor_DevicePause_Readback" Code="SetIBEChamber_ProcessMonitor_SetDevicePauseTo"/>
+  <Property Name="IBE.ProcessMonitor_DeviceContinue_Readback" Code="SetIBEChamber_ProcessMonitor_SetDeviceContinueTo"/>
+  <!--Menu-->
+  <Property Name="IBE.PumpDownStatus" Code="SetMnuPumpDownIBETo"/>
+  <Property Name="IBE.VentStatus" Code="SetMnuVentIBETo"/>
+  <Property Name="IBE.CryoPumpStatus" Code="SetButtonCryoIBETo,SetMnuCryoIBETo,SetMnuWaterPumpTo"/>
+  <Property Name="IBE.RoughPumpStatus" Code="SetMnuRoughPumpIBEInProcessModuleTo"/>
+  <Property Name="IBE.CryoPumpRegenStatus" Code="SetMnuCryoPumpRegenIBETo"/>
+  <Property Name="IBE.CryoAutoRegenStatus" Code="SetMnuCryoAutoRegenIBETo"/>
+  <Property Name="IBE.CryoAutoPowerDownStatus" Code="SetMnuCryoAutoPowerDownIBETo"/>
+  <Property Name="IBE.CryoPumpPurgeStatus" Code="SetMnuCryoPumpPurgeIBETo"/>
+  <Property Name="IBE.RaiseOfRiseStatus" Code="SetMnuCryoRateOfRiseIBETo"/>
+  <!--Property Name="IBE.WaterPump" Code="SetMnuWaterPumpTo"/>
+  <Property Name="IBE.WaterPumpRegen" Code="SetMnuWaterPumpRegenTo"/-->
+ 
+ 	<Property Name="IBE.FixtureWaterValveStatus" Code="SetIBEMenuFixtureOpenWaterValve,SetIBEFixtureOpenWaterValve"/>
+  <Property Name="IBE.FixtureFlowCoolPumpStatus" Code="SetIBEFixtureOpenFlowCool,SetMnuRoughPumpIBEInProcessPanelTo"/>
+ 	<Property Name="IBE.Fixture_Unprotected_Readback" Code="SetIBEFixtureUnProtected"/>
+ 
+  <Property Name="IBE.ControlStatus" Code="ChangeMachineOnlineInIBETo,ChangeMachineOnlineIBEInProcessModuleTo" /> 
+   <!--System Setup-->
+  <Property Name="IBE.SetSourceUsageTime" Code="SetSourceUsageTimeIBETo,SetSourceUsageTimeIBEInProcessPanelTo,SetSourceUsageTimeIBEInProcessModuleTo"/>
+  <!--End Single loader -->
+  
+  <!--IBE Server-->
+  <Property Name="IBE.OnlineStatus" Code="SetIBE_OnlineStatusTo"/>
+  <Property Name="IBE.AutoPumpDownStatus" Code="SetIBE_AutoPumpDownStatusTo"/>
+  <Property Name="IBE.AutoVentStatus" Code="SetIBE_AutoVentStatusTo"/>
+  <!--Alarm status from chamber 5-->
+  <Property Name="Alarm.AlarmStatus" Code="StartAlarm"/>
+  <Property Name="Alarm.RedStatus" Code="FlashRedLight"/>
+  <Property Name="Alarm.GreenStatus" Code="FlashGreenLight"/>
+  <Property Name="Alarm.OrangeStatus" Code="FlashOrangeLight"/>
+  <!--Power Panel-->
+  <Property Name="IBE.PowerStatusPanel.ACPower" Code="ChangeButtonACPowerIBETo"/>
+  <Property Name="IBE.PowerStatusPanel.RFPower" Code="ChangeButtonRFPowerIBETo"/>
+  <Property Name="IBE.PowerStatusPanel.GridPower" Code="ChangeButtonGridPowerIBETo"/>
+  <Property Name="IBE.PowerStatusPanel.PBNPower" Code="ChangeButtonPBNPowerIBETo"/>
+  <!--Fixture-->
+  <Property Name="IBE.FixtureRotationHomeStatus" Code="SetIBEFixture_HomeRotationStatusTo"/>
+  <Property Name="IBE.FixtureTiltMovingStatus" Code="SetIBEFixture_TiltMovingStatusTo"/>
+  <Property Name="IBE.FixtureErrorStatus" Code="SetIBEFixtureControlSweep_ChangeSmallCricleControlErrorTo,SetIBEFixtureControlStatic_ChangeSmallCricleControlErrorTo,SetIBEFixtureControlContinuous_ChangeSmallCricleControlErrorTo"/>
+  <Property Name="IBE.Wafer_InFixture_Readback" Code="SetIBEWaferInFixtureTo"/>
+	 <!-- FixtureControlStatic-->
+  <Property Name="IBE.StaticFixture_RotationLast_Program" Code="SetIBEFixtureControlStatic_RotationLastRight"/>
+  <!-- FixtureControlContinuous-->
+  <Property Name="IBE.ContinuousFixture_RotationLast_Program" Code="SetIBEFixtureControlContinuous_RotationLastRight"/>
+  <!-- Process Recipe -->
+  <Property Name="IBE.RecipeProcessingFinished" Code="SetIBEProcessRecipe_FinishProcessing"/>
+	<!--Remove-->
+  <Property Name="IBE.ArgonValveStatus" Code="SetIBEArgonValveStatus"/>
+  <Property Name="IBE.ValveSupplyArgonStatus" Code="SetIBEValveSupplyArgon"/>
+  <Property Name="IBE.PBNShutOffValveStatus"  Code="SetIBEPBNShutOffValveStatus"/>
+  <Property Name="IBE.PBNSupplyValveStatus"   Code="SetIBEPBNSupplyValveStatus"/>
+  <Property Name="IBE.FlowCoolShutOffValveStatus" Code="SetIBEFlowCoolShutOffValveStatus"/>
+  <Property Name="IBE.FlowCoolSupplyValveStatus" Code="SetIBEFlowCoolSupplyValveStatus"/>
+	<!--End Remove-->
+  <!-- Fixture tool-->
+  <Property Name="IBE.FixtureClampStatus" Code="SetIBEFixtureOnClamp"/>
+  <Property Name="IBE.FixtureHomeAllAxis" Code="SetIBEFixtureHomeAllAxis"/>
+  <Property Name="IBE.FixtureHomeRotationAxis" Code="SetIBEFixtureHomeRotationAxis"/>
+  <Property Name="IBE.FixtureHomeTiltAxis" Code="SetIBEFixtureHomeTiltAxis"/>
+  <Property Name="IBE.FixtureStopAllAxis" Code="SetIBEFixtureStopAllAxis"/>
+  <Property Name="IBE.FixtureUnClamp" Code="SetIBEFixtureUnClamp"/>
+  <Property Name="IBE.CryoPumpRegen" Code="SetIBECryoPumpRegen"/>
+  <Property Name="IBE.CryoAutoRegen" Code="SetIBECryoAutoRegen"/>
+  <!-- Machine tool,  old system have not 3 items such as: Cryo On, Cryo Regen, Cryo Hivac-->
+  <Property Name="IBE.MachinePumbDown" Code="SetIBEMachinePumbDown"/>
+  <Property Name="IBE.MachineVent" Code="SetIBEMachineVent"/>
+  
+  <!-- ChamberProcess Chamber 5-->
+  <Property Name="IBE.StepTime" Code="SetStepTimeOfIBEInProcessScreenTo,SetIBEProcessMonitor_StepTimeTo"/>
+  <Property Name="IBE.PressureMode" Code="SetEtchPressureOfIBEInProcessScreenTo"/>
+  <!-- ChamberProcess Chamber 5 IG, CG, Button IG-->
+</MessageNames>                                                              

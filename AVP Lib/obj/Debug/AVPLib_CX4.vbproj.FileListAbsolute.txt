@@ -1,0 +1,44 @@
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\AVPLib.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\AVPLib.pdb
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\AVPSecsGemLib.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\HRecipeLibrary.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\Interop.EMSERVICELib.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\Interop.OPCAutomation.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\Interop.VALUELib.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\log4net.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\NetLib.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\RSTiApdater.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\AVPSecsGemLib.pdb
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\HRecipeLibrary.pdb
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\HRecipeLibrary.xml
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\NetLib.pdb
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\Interop.ADOX.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\obj\Debug\AVPLib_CX4.vbproj.AssemblyReference.cache
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\obj\Debug\Interop.ADOX.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\obj\Debug\AVPLib_CX4.vbproj.ResolveComReference.cache
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\obj\Debug\AVPLib_CX4.vbproj.CoreCompileInputs.cache
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\obj\Debug\AVPLib_CX4.vbproj.CopyComplete
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\obj\Debug\AVPLib.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\obj\Debug\AVPLib.pdb
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\AVPLib.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\AVPLib.pdb
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\AVPSecsGemLib.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\HRecipeLibrary.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\Interop.EMSERVICELib.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\Interop.OPCAutomation.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\Interop.VALUELib.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\log4net.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\NetLib.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\RSTiApdater.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\AVPSecsGemLib.pdb
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\HRecipeLibrary.pdb
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\HRecipeLibrary.xml
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\NetLib.pdb
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\bin\Debug\Interop.ADOX.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\obj\Debug\AVPLib_CX4.vbproj.AssemblyReference.cache
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\obj\Debug\Interop.ADOX.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\obj\Debug\AVPLib_CX4.vbproj.ResolveComReference.cache
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\obj\Debug\AVPLib_CX4.vbproj.CoreCompileInputs.cache
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\obj\Debug\AVPLib_CX4.vbproj.CopyComplete
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\obj\Debug\AVPLib.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\obj\Debug\AVPLib.pdb

@@ -1,0 +1,7 @@
+<ComboItems>
+	<SerialCommand>
+		<Item>ROBOT</Item>
+		<Item>LLA</Item>
+		<Item>ALIGNER</Item>
+	</SerialCommand>
+</ComboItems>

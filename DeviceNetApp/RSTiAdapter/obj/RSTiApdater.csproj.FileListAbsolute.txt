@@ -1,0 +1,5 @@
+E:\AVP Local\AVP_Phase VIII\Source Code\DeviceNetApp\RSTiAdapter\bin\Debug\RSTiApdater.dll
+E:\AVP Local\AVP_Phase VIII\Source Code\DeviceNetApp\RSTiAdapter\bin\Debug\RSTiApdater.pdb
+E:\AVP Local\AVP_Phase VIII\Source Code\DeviceNetApp\RSTiAdapter\obj\Debug\ResolveAssemblyReference.cache
+E:\AVP Local\AVP_Phase VIII\Source Code\DeviceNetApp\RSTiAdapter\obj\Debug\RSTiApdater.dll
+E:\AVP Local\AVP_Phase VIII\Source Code\DeviceNetApp\RSTiAdapter\obj\Debug\RSTiApdater.pdb

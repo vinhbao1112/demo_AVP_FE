@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+ <xs:simpleType name="gasType">
+		<xs:restriction base="xs:float">
+		  <xs:minInclusive value="0"/>
+		  <xs:maxInclusive value="1000"/>
+	  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name = "booleanType">
+	  <xs:restriction base="xs:string">
+	    <xs:pattern value="true|false"/>
+	  </xs:restriction>
+ </xs:simpleType> 
+ <xs:simpleType name = "powerDownType">
+	  <xs:restriction base="xs:string">
+	    <xs:pattern value="true|false|falseShutterOpen"/>
+	  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name = "vatControlModeType">
+	  <xs:restriction base="xs:string">
+	    <xs:pattern value="Pressure|Percent|Open"/>
+	  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name = "controlModeType">
+	  <xs:restriction base="xs:string">
+	    <xs:pattern value="Time|Revolution|Static|Thickness"/>
+	  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name = "targetSelectionType">
+	  <xs:restriction base="xs:string">
+	    <xs:pattern value="T1|T2|T3|T4"/>
+	  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name = "rfPowerSPType">
+	  <xs:restriction base="xs:float">
+		  <xs:minInclusive value="0"/>
+		  <xs:maxInclusive value="50000"/>
+	  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name = "processTimeMinsSecsType">
+	  <xs:restriction base="xs:float">
+		  <xs:minInclusive value="0"/>
+		  <xs:maxInclusive value="50000"/>
+	  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name = "revolutionType">
+	  <xs:restriction base="xs:float">
+		  <xs:minInclusive value="0"/>
+		  <xs:maxInclusive value="10000"/>
+	  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name = "vatType">
+	  <xs:restriction base="xs:float">
+		  <xs:minInclusive value="0"/>
+		  <xs:maxInclusive value="100"/>
+	  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name = "targetRampTimeType">
+	  <xs:restriction base="xs:float">
+		  <xs:minInclusive value="0"/>
+		  <xs:maxInclusive value="300"/>
+	  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name = "tableRotationSpeedType">
+	  <xs:restriction base="xs:float">
+		  <xs:minInclusive value="0"/>
+		  <xs:maxInclusive value="100"/>
+	  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name = "tableHeightType">
+	  <xs:restriction base="xs:float">
+		  <xs:minInclusive value="0"/>
+		  <xs:maxInclusive value="500"/>
+	  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name = "staticPostionType">
+	  <xs:restriction base="xs:float">
+		  <xs:minInclusive value="1"/>
+		  <xs:maxInclusive value="8"/>
+	  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name = "logIntervalSecondType">
+	  <xs:restriction base="xs:float">
+		  <xs:minInclusive value="0"/>
+		  <xs:maxInclusive value="1000"/>
+	  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name = "biasModeType">
+	  <xs:restriction base="xs:string">
+	    <xs:pattern value="Power|Voltage"/>
+	  </xs:restriction>
+ </xs:simpleType>
+  <xs:simpleType name = "waferThicknessType">
+	  <xs:restriction base="xs:float">
+		  <xs:minInclusive value="0"/>
+		  <xs:maxInclusive value="50000"/>
+	  </xs:restriction>
+ </xs:simpleType>
+  <xs:simpleType name = "recipeNameType">
+	  <xs:restriction base="xs:string">
+	  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name = "loopModeType">
+	  <xs:restriction base="xs:string">
+	    <xs:pattern value="0|1|2|3"/>
+	  </xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name = "loopCountType">
+	  <xs:restriction base="xs:float">
+		  <xs:minInclusive value="0"/>
+		  <xs:maxInclusive value="1000"/>
+	  </xs:restriction>
+    </xs:simpleType>
+  <xs:element name="Recipe">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Version" type="xs:string" minOccurs="0" />
+        <xs:element name="StepList" minOccurs="1" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Step" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="SeqNo" type="xs:string" minOccurs="1" />
+					 <xs:element name="StepDescription" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="StepDescription" type="xs:string" minOccurs="0" />                        
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+					<xs:element name="LoopInfomation" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="LoopMode" type="loopModeType" minOccurs="0" />
+                          <xs:element name="LoopCount" type="loopCountType" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Gasses" minOccurs="1" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Gas1" type="gasType" minOccurs="1" />
+                          <xs:element name="Gas2" type="gasType" minOccurs="1" />
+                          <xs:element name="Gas3" type="gasType" minOccurs="1" />
+                          <xs:element name="Gas4" type="gasType" minOccurs="1" />
+                          <xs:element name="Gas5" type="gasType" minOccurs="1" />
+                          <xs:element name="UseGasDistribution" type="booleanType" minOccurs="1" />
+                          <xs:element name="UseSecondaryGasOnly" type="booleanType" minOccurs="0" />
+                          <xs:element name="UseMainDist" type="booleanType" minOccurs="0" />
+                          <xs:element name="UseSeconDist" type="booleanType" minOccurs="0" />						  
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ProcessControl" minOccurs="1" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>                      
+                          <xs:element name="ControlMode" type="controlModeType" minOccurs="1" />
+                          <xs:element name="Revolution" type="revolutionType" minOccurs="1" />
+                          <xs:element name="ProcessTimeSeconds" type="processTimeMinsSecsType" minOccurs="1" />
+						  <xs:element name="StaticPostion" type="staticPostionType" minOccurs="1" />
+                          <xs:element name="ProcessStartPressure" type="vatType" minOccurs="1" />
+                          <xs:element name="ProcessVATMode" type="vatControlModeType" minOccurs="1" />
+                          <xs:element name="ProcessVATPosition" type="vatType" minOccurs="1" />
+                          <xs:element name="ProcessPressure" type="vatType" minOccurs="1" />
+                          <xs:element name="PowerDown" type="powerDownType" minOccurs="1" />
+                          <xs:element name="LogIntervalSecond" type="logIntervalSecondType" minOccurs="1" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="RFTargetPower" minOccurs="1" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="TargetSelection" type="targetSelectionType" minOccurs="1" />
+                          <xs:element name="TargetPower" type="rfPowerSPType" minOccurs="1" />
+                          <xs:element name="TargetRampTime" type="targetRampTimeType" minOccurs="1" />
+						  <xs:element name="TargetVoltageMin" type="xs:float" minOccurs="0" />
+						  <xs:element name="TargetVoltageMax" type="xs:float" minOccurs="0" />
+						  <xs:element name="TargetC1" type="xs:float" minOccurs="1" />
+						  <xs:element name="TargetC2" type="xs:float" minOccurs="1" />
+						  <xs:element name="TargetMatchingMode" type="booleanType" minOccurs="1" />
+                          <xs:element name="TargetShutterOpen" type="booleanType" minOccurs="1" />                        
+                         </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="DCTargetPower" minOccurs="1" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="TargetSelection" type="targetSelectionType" minOccurs="1" />
+                          <xs:element name="TargetPower" type="rfPowerSPType" minOccurs="1" />
+                          <xs:element name="TargetRampTime" type="targetRampTimeType" minOccurs="1" />
+                          <xs:element name="TargetPulseFrequency" type="xs:float" minOccurs="1" />
+                          <xs:element name="TargetPulseWidth" type="xs:float" minOccurs="1" />
+                          <xs:element name="TargetShutterOpen" type="booleanType" minOccurs="1" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="SubstratePower" minOccurs="1" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+						  <xs:element name="ControlMode" type="biasModeType" minOccurs="1" />
+                          <xs:element name="BiasPower" type="rfPowerSPType" minOccurs="1" />
+						  <xs:element name="BiasVoltage" type="xs:float" minOccurs="1" />
+						  <xs:element name="BiasVoltageMin" type="xs:float" minOccurs="0" />
+						  <xs:element name="BiasVoltageMax" type="xs:float" minOccurs="0" />						  
+                          <xs:element name="SubGrounded" type="booleanType" minOccurs="1" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="MotionControl" minOccurs="1" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="TableRotationSpeed" type="tableRotationSpeedType" minOccurs="1" />
+                          <xs:element name="TableHeight" type="tableHeightType" minOccurs="1" />                       
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+					<xs:element name="FilMetricControl" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="RecipeName" type="recipeNameType" minOccurs="0" />
+                          <xs:element name="WaferThickness" type="waferThicknessType" minOccurs="0" />
+                          <xs:element name="DelayTimes" type="xs:float" minOccurs="0" />						  
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+		<xs:element name="Description" type="xs:string" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="Recipe" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

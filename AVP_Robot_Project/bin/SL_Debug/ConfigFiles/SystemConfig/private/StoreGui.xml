@@ -1,0 +1,12 @@
+<StoreGui>
+  <HaveInsideWaferChamber1 WaferID="" WaferStatus="">False</HaveInsideWaferChamber1>
+  <HaveInsideWaferLoader WaferID="" WaferStatus="">False</HaveInsideWaferLoader>
+  <WaferTotalOfLoader>0</WaferTotalOfLoader>
+  <UseLotSystemIDInfo>
+    <OperatorID>False</OperatorID>
+    <TIP>False</TIP>
+    <PalletID>False</PalletID>
+    <LotID>False</LotID>
+    <ProductName>False</ProductName>
+  </UseLotSystemIDInfo>
+</StoreGui>

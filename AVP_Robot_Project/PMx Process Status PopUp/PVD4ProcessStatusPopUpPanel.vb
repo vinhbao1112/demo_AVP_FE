@@ -1,0 +1,152 @@
+Imports AVP_Robot_Project.ConstantAndEnum
+Imports AVPLib.ConstEnum
+Imports AVPLib
+Imports AVPControls
+
+Public Class PVD4ProcessStatusPopUpPanel
+    Private m_iClosingTime As Integer = 30
+    Private m_StartTimeOpen As Long
+    Private m_timer As System.Timers.Timer
+    Private m_TimerClosingForm As System.Timers.Timer
+    Private m_ChamberType As AVPLib.SystemModule.ModuleType = AVPLib.SystemModule.ModuleType.PVD4
+    Private m_IsTarget_DC As Boolean = False
+
+#Region "Properties"
+
+    Public Property PopUpTitle() As String
+        Get
+            Return Me.Text
+        End Get
+        Set(ByVal value As String)
+            Me.Text = AVPLib.Utils.chamberID2ChamberName(value) & " Process Status"
+        End Set
+    End Property
+
+    ''' <author>
+    '''    	<name> Hoai Ly </name>
+    '''    	<date> 2015-07-14</date>
+    ''' </author>
+    ''' <summary>
+    ''' Set is Target_DC install property
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public WriteOnly Property IsTarget_DC() As Boolean
+        Set(ByVal value As Boolean)
+            m_IsTarget_DC = value
+        End Set
+    End Property
+
+#End Region
+
+#Region "Private methods"
+    Protected Overrides Function CheckPermission() As Boolean
+        Try
+            Return AVPLib.ContainerData.Permission(AVPLib.ConstEnum.PERMISSION_001)
+        Catch ex As Exception
+            AVPLib.Log.avpLogger.Error(ex.ToString())
+        End Try
+    End Function
+
+    Protected Overrides Sub CreateStatusTree()
+        Try
+            m_stoStatusObject.Name = Me.Name
+            For Each ctrl As Control In tbPVD4.Controls
+                If ctrl.GetType().Name = "SL_Textbox" Then
+                    Dim sTextbox As New StatusPopUpProcessTextBox(CType(ctrl, SL_Textbox))
+                    m_stoStatusObject.AddChild(sTextbox)
+                End If
+            Next
+        Catch ex As Exception
+            AVPLib.Log.avpLogger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    Public Sub TargetInstall(ByVal Target1Insall As Boolean, ByVal Target2Insall As Boolean, ByVal Target3Insall As Boolean, ByVal Target4Install As Boolean)
+        Try
+            tbPVD4.ColumnStyles(0).Width = 146
+            tbPVD4.ColumnStyles(1).Width = 65
+            tbPVD4.ColumnStyles(2).Width = 65
+
+            If Target1Insall = False Then
+                Me.lblT1Usage.Enabled = False
+                Me.txtT1UsageRB.Enabled = False
+            End If
+
+            If Target2Insall = False Then
+                Me.lblT2Usage.Enabled = False
+                Me.txtT2UsageRB.Enabled = False
+            End If
+
+            If Target3Insall = False Then
+
+                Me.lblT3Usage.Enabled = False
+                Me.txtT3UsageRB.Enabled = False
+            End If
+
+            If Target4Install = False Then
+
+                Me.lblT4Usage.Enabled = False
+                Me.txtT4UsageRB.Enabled = False
+            End If
+            Me.Size = New Size(298, 456)
+            If m_IsTarget_DC Then
+                Me.Label5.Text = "Target Current (A)"
+            End If
+        Catch ex As Exception
+            AVPLib.Log.avpLogger.Error(ex.ToString())
+        End Try
+    End Sub
+#End Region
+
+    Public Sub New()
+
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+        m_timer = New System.Timers.Timer
+        m_timer.Interval = 1000 '1second
+        m_timer.Enabled = False
+        m_timer.SynchronizingObject = Me
+        AddHandler m_timer.Elapsed, AddressOf TimerClosingForm
+        ' Add any initialization after the InitializeComponent() call.
+    End Sub
+
+#Region "Events"
+    Private Sub TimerClosingForm(ByVal source As Object, ByVal e As Timers.ElapsedEventArgs)
+        m_iClosingTime -= 1
+        If m_iClosingTime <= 0 Then
+            m_timer.Interval = 100
+            Me.Opacity -= 0.1
+            If Me.Opacity <= 0 Then
+                Me.DoClose()
+            End If
+        End If
+    End Sub
+
+    Private Sub PVD4ProcessStatusPopUpPanel_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+        m_timer.Enabled = False
+        Me.Close()
+    End Sub
+
+    Private Sub PVD4ProcessStatusPopUpPanel_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        m_timer.Enabled = True
+        Me.Opacity = 1
+        m_iClosingTime = 30
+        m_timer.Interval = 1000
+    End Sub
+
+    Private Sub PVD4ProcessStatusPopUpPanel_HeaderDoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.HeaderDoubleClick
+        Me.DoClose()
+    End Sub
+
+    Protected Overrides Sub DoClose()
+        m_timer.Enabled = False
+        Me.Close()
+    End Sub
+    Private Sub PVD4ProcessStatusPopUpPanel_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.LostFocus, Me.Leave
+        Me.DoClose()
+    End Sub
+#End Region
+
+End Class

@@ -1,0 +1,304 @@
+<MessageNames>
+  <!--Purpose: Mapping GUI element events to actions of Business Controllers -->
+  <!--=+=============================================Single Loader - Loader ==============================================-->
+  
+  <!--==============================Process Screen====================================-->
+	<!--Process control-->
+	<Property Name="SL_ProcessPanel.SLProcessControl.btnRun" 							Code="Loader.Run" />
+	<Property Name="SL_ProcessPanel.SLProcessControl.btnStop" 						Code="Loader.Stop" />
+	<Property Name="SL_ProcessPanel.SLProcessControl.btnAbort" 						Code="Chamber1.ProcessRecipe.Stop" />
+	<Property Name="SL_ProcessPanel.SLProcessControl.btnContinue" 				Code="Chamber1.ProcessRecipe.Resume" />
+	<Property Name="SL_ProcessPanel.SLProcessControl.btnEndCurrentStep" 	Code="Chamber1.ProcessRecipe.EndCurrentStep" />
+	<!--Robot-->
+	<Property Name="SL_ProcessPanel.btnArmUp" 									Code="Loader.ArmUp" />
+	<Property Name="SL_ProcessPanel.btnArmDown" 								Code="Loader.ArmDown" />
+	<Property Name="SL_ProcessPanel.btnExtendArm" 							Code="Loader.ArmExtend" />
+	<Property Name="SL_ProcessPanel.btnRetractArm" 							Code="Loader.ArmRetract" />
+	<Property Name="SL_ProcessPanel.btnAutoLoad" 								Code="Loader.AutoLoad" />
+	<Property Name="SL_ProcessPanel.btnAutoUnload" 							Code="Loader.AutoUnload" />
+	<!--Vacuum-->
+	<Property Name="SL_ProcessPanel.btnOpenRoughValve" 					Code="Loader.RoughValve" />
+	<Property Name="SL_ProcessPanel.btnCloseRoughValve" 				Code="Loader.RoughValve" />
+	<Property Name="SL_ProcessPanel.btnOpenVentValve" 					Code="Loader.VentValve" />
+	<Property Name="SL_ProcessPanel.btnCloseVentValve" 					Code="Loader.VentValve" />
+	<Property Name="SL_ProcessPanel.btnOpenIsolationValve" 			Code="Loader.IsolationValve" />
+	<Property Name="SL_ProcessPanel.btnCloseIsolationValve" 		Code="Loader.IsolationValve" />
+	<Property Name="SL_ProcessPanel.btnAutoPumpDown" 						Code="Loader.AutoPumpDown" />
+	<Property Name="SL_ProcessPanel.btnAutoVent" 								Code="Loader.AutoVent" />
+	<!--All valve-->
+	<Property Name="SL_ProcessPanel.VentValve" 									Code="Loader.VentValve" />
+	<Property Name="SL_ProcessPanel.RoughValve" 								Code="Loader.RoughValve" />
+	<Property Name="SL_ProcessPanel.FlowCoolValve" 							Code="Loader.FlowCoolValve" />
+	<Property Name="SL_ProcessPanel.MesaValve" 									Code="Loader.IsolationValve" />
+	<Property Name="SL_ProcessPanel.RoughPumpControl" 					Code="Chamber1.FixturePumpPower" />
+	<!--System control-->
+	<Property Name="SL_ProcessPanel.SLSystemControl.btnOnline" 			Code="Chamber1.Online" />
+        <Property Name="SL_ProcessPanel.SLSystemControl.btnOffline" 			Code="Chamber1.Offline" />
+        <Property Name="Chamber1.SL_PopUpPanel.btnOnline" 												Code="Chamber1.Online" />
+        <Property Name="Chamber1.SL_PopUpPanel.btnOffline" 												Code="Chamber1.Offline" />
+  <!--Others-->
+	<Property Name="SL_ProcessPanel.SLProcessControl.btnCycle" 				Code="Loader.Cycle" />
+	
+	<Property Name="GUI13" 																						Code="Loader.MechanicalPumpOn" />
+  <Property Name="GUI14" 																						Code="Loader.MechanicalPumpOff" />
+
+  <Property Name="SL_ProcessPanel.btnLoad" 													Code="Loader.Load" />
+  <Property Name="GUI.ProcessView.btnGeneralAbort" 									Code="System.GeneralAbort" />
+  <Property Name="SL_ProcessPanel.btnReConnect" 										Code="Chamber1.btnReConnect" />
+  <Property Name="SL_ProcessPanel.wccWaferCount.txtTotal reset" 		Code="Loader.ResetWaferCount" />
+ 
+		
+		<!-- ====================================PM Screen==============================================-->
+  <!--Shutter or Screen Machine-->
+  <Property Name="Chamber1.SLContainerBox.Shutter" 						Code="Chamber1.ScreenMachine"/>
+  <Property Name="Chamber1.SLContainerBox.ValveTurboHivac" 		Code="Chamber1.HiVacValve"/>
+  <Property Name="Chamber1.SLContainerBox.ValveCryoHivac" 		Code="Chamber1.ValveCryoPump"/>
+  <Property Name="Chamber1.SLContainerBox.btnWaterPumpOn" 		Code="Chamber1.OpenTurboPumpPower"/>
+  <Property Name="Chamber1.SLContainerBox.btnCryoOn" 					Code="Chamber1.CryoPower"/>
+  <Property Name="Chamber1.btnUnProtected" 									Code="Chamber1.FixtureUnProtected" />
+  <!--Status Panel-->
+  <Property Name="Chamber1.SLFixture.btnMotionInitialized" 		Code="Chamber1.MotionInitialize"/>
+  <!--Source tab-->
+  	<!-- BeamPowerSupply-->
+  <Property Name="Chamber1.txtBeamVoltageRight" 					Code="Chamber1.BeamPowerSupply.VoltageRight" />
+  <Property Name="Chamber1.txtBeamCurrentRight" 					Code="Chamber1.BeamPowerSupply.CurrentRight" />
+  <Property Name="Chamber1.btnAutoBeam" 									Code="Chamber1.BeamPowerSupply.AutoBeam" />
+  <Property Name="Chamber1.btnSourceManual" 							Code="Chamber1.PowerStatusPanel.SourceManualPower"/>
+  <Property Name="Chamber1.btnSourceAuto" 								Code="Chamber1.PowerStatusPanel.SourceAutoPower"/>
+  	<!--SuppressorPowerSupply-->
+  <Property Name="Chamber1.txtSuppressorVoltageRight" 		Code="Chamber1.SuppressorPowerSupply.VoltageRight" />
+  <Property Name="Chamber1.txtSuppressorCurrentRight" 		Code="Chamber1.SuppressorPowerSupply.CurrentRight" />
+  	<!--RFPowerSupply-->
+  <Property Name="Chamber1.txtRFPowerRight" 							Code="Chamber1.PowerSupply.ForwardPowerRight" />
+  <Property Name="Chamber1.txtRFReflectedRight" 					Code="Chamber1.PowerSupply.ReflectedPowerRight" />
+  	<!--BodyPowerSupply-->
+  <Property Name="Chamber1.txtKFactorRight" 							Code="Chamber1.BodyPowerSupply.KFactorRight" />
+  <Property Name="Chamber1.txtPBNBodyRight" 							Code="" />
+  <Property Name="Chamber1.txtPBNDischRight" 							Code="" />
+  	<!--Gas-->
+  <Property Name="Chamber1.txtPBNGasRight" 								Code="Chamber1.GasController.PBNGasRight" />
+  <Property Name="Chamber1.txtPBNGasRight_SourceTab" 			Code="Chamber1.GasController.PBNGasRight_Source" />  
+  <Property Name="Chamber1.txtGas1Right" 									Code="Chamber1.GasController.Gas1Right" />
+	<Property Name="Chamber1.txtGas1Right_SourceTab" 				Code="Chamber1.GasController.Gas1Right_Source" />
+  <Property Name="Chamber1.txtGas2Right" 									Code="Chamber1.GasController.Gas2Right" />
+  <Property Name="Chamber1.txtGas2Right_SourceTab" 				Code="Chamber1.GasController.Gas2Right_Source" />
+  <Property Name="Chamber1.txtGas3Right" 									Code="Chamber1.GasController.Gas3Right" />
+  <Property Name="Chamber1.txtGas4Right" 									Code="Chamber1.GasController.Gas4Right" />
+  <Property Name="Chamber1.txtGas5Right" 									Code="Chamber1.GasController.Gas5Right" />
+  	<!--GasValve-->
+  <Property Name="Chamber1.ValveSupplyPBNGas" 							Code="Chamber1.ValveSupplyPBN"/>
+  <Property Name="Chamber1.ValveShutoffPBNGas"							Code="Chamber1.ValvePBN" />
+  
+  <Property Name="Chamber1.ValveSupplyGas1" 							Code="Chamber1.Gas1SupplyValve"/>
+  <Property Name="Chamber1.ValveShutoffGas1"							Code="Chamber1.Gas1ShutOffValve" />
+  <Property Name="Chamber1.ValveSupplyGas2" 							Code="Chamber1.Gas2SupplyValve"/>
+  <Property Name="Chamber1.ValveShutoffGas2"							Code="Chamber1.Gas2ShutOffValve" />
+  <Property Name="Chamber1.ValveSupplyGas3" 							Code="Chamber1.Gas3SupplyValve" />
+  <Property Name="Chamber1.ValveShutoffGas3"							Code="Chamber1.Gas3ShutOffValve" />
+  <Property Name="Chamber1.ValveSupplyGas4" 							Code="Chamber1.Gas4SupplyValve" />
+  <Property Name="Chamber1.ValveShutoffGas4"							Code="Chamber1.Gas4ShutOffValve" /> 											
+  <!--Fixture tab -->
+  <Property Name="Chamber1.SLFixture.txtFlowCoolGasRight" 				Code="Chamber1.GasController.FlowCoolHeRight" />
+  <Property Name="Chamber1.SLFixture.ValveShutoffFlowCoolGas" 		Code="Chamber1.ValveFlowCoolHe" />
+  <Property Name="Chamber1.SLFixture.ValveSupplyFlowCoolGas" 			Code="Chamber1.ValveSupplyFlowCool" />
+  <Property Name="Chamber1.SLFixture.btnClampUp" 									Code="Chamber1.FixtureClampStatus ClampUp"/>
+  <Property Name="Chamber1.SLFixture.btnClampDown" 								Code="Chamber1.FixtureClampStatus ClampDown"/>
+  <Property Name="Chamber1.mnuShutterOpen" 							Code="Chamber1.FixtureOpenShutter"/>
+  <Property Name="Chamber1.mnuShutterClose" 						Code="Chamber1.FixtureOpenShutter"/>
+  <Property Name="Chamber1.SLFixture.btnRotate" 				Code="Chamber1.FixtureStartRotationAxis"/>
+  <Property Name="Chamber1.SLFixture.btnFlowCoolPump" 	Code="Chamber1.FixturePumpPower"/>
+  <Property Name="Chamber1.mnuCoolingWater" 						Code="Chamber1.FixtureCoolingWater"/>
+  <Property Name="Chamber1.mnuUnProtected" 						Code="Chamber1.FixtureUnProtected"/>
+  <Property Name="Chamber1.SLFixture.btnShutterOpen" 	Code="Chamber1.FixtureOpenShutter"/>
+  <Property Name="Chamber1.SLFixture.btnShutterClose" Code="Chamber1.FixtureOpenShutter"/>
+   	<!--TiltAngleRightFixture-->
+  <Property Name="Chamber1.SLFixture.txtTiltAngleRight" 	Code="Chamber1.Fixture.TiltAngle"/>
+  	<!--RotationFixture-->
+  <Property Name="Chamber1.SLFixture.txtRotationStaticRight" 	Code="Chamber1.Fixture.Rotation Static"/>
+  <Property Name="Chamber1.SLFixture.txtRotationSweepRight" 	Code="Chamber1.Fixture.Rotation Sweep"/>
+  <Property Name="Chamber1.SLFixture.txtRotationContinuousRight" 	Code="Chamber1.Fixture.Rotation Continuous"/>
+  <Property Name="Chamber1.SLFixture.txtRotationEnd" 	Code="Chamber1.Fixture.RotationEnd"/>
+  <Property Name="Chamber1.SLFixture.btnMode" Code="Chamber1.Fixture.RotationMode"/>
+  <!--Valves-->
+  <Property Name="Chamber1.ValveForeline" 										Code="Chamber1.ValveForeline"/>
+  <Property Name="Chamber1.ValveVent" 												Code="Chamber1.ValveVent"/>
+  <Property Name="Chamber1.ValveRough" 												Code="Chamber1.ValveRough"/>
+  <Property Name="Chamber1.SLContainerBox.btnMesaValve" 			Code="Loader.IsolationValve"/>
+  <Property Name="Chamber1.RoughPump" 												Code="Chamber1.OpenRoughPumpPower"/>
+  <Property Name="Chamber1.ValveFixtureWater" 								Code="Chamber1.ValveFixtureWater"/>
+  <!--Power Panel-->
+   <Property Name="Chamber1.SLPowerPanel.btnACPower" 					Code="Chamber1.PowerStatusPanel.ACPower"/>
+   <Property Name="Chamber1.SLPowerPanel.btnGrid" 						Code="Chamber1.PowerStatusPanel.GridPower"/>
+   <Property Name="Chamber1.SLPowerPanel.btnRFPower" 					Code="Chamber1.PowerStatusPanel.RFPower"/>
+   <Property Name="Chamber1.SLPowerPanel.btnPBN" 							Code="Chamber1.PowerStatusPanel.PBNPower"/>
+   <Property Name="Chamber1.SLPowerPanel.btnNeur" 						Code="Chamber1.PowerStatusPanel.NeurPower"/>
+   
+   <!--Menu Cryo-->
+   <Property Name="Chamber1.SL_PopUpPanel.btnCryoOnOff" Code="Chamber1.CryoPower"/>
+   <Property Name="Chamber1.SL_PopUpPanel.btnCryoOff" Code="Chamber1.CryoPower"/>
+   <Property Name="Chamber1.SL_PopUpPanel.btnCryoRegenValve" Code="Chamber1.CryoRegenValve"/>
+   <Property Name="Chamber1.SL_PopUpPanel.btnCryoPurge" Code="Chamber1.CryoPurgeValve"/>
+   <Property Name="Chamber1.SL_PopUpPanel.btnCryoPurgeOff" Code="Chamber1.CryoPurgeValve"/>
+   <Property Name="Chamber1.SL_PopUpPanel.btnAutoRegen" Code="Chamber1.CryoAutoRegen"/>
+   <Property Name="Chamber1.SL_PopUpPanel.btnAutoRegenOff" Code="Chamber1.CryoAutoRegen"/>
+   <Property Name="Chamber1.SL_PopUpPanel.btnAutoPowerDown" Code="Chamber1.CryoAutoPowerDown"/>
+   <Property Name="Chamber1.SL_PopUpPanel.btnRoughValveOpen" Code="Chamber1.ValveRough"/>
+   <Property Name="Chamber1.SL_PopUpPanel.btnRoughValveClose" Code="Chamber1.ValveRough"/>
+   <!--Menu Turbo-->
+   <Property Name="Chamber1.SL_PopUpPanel.btnWaterPumpOnOff" Code="Chamber1.WaterPump"/>
+   <Property Name="Chamber1.SL_PopUpPanel.btnWaterPumpOff" Code="Chamber1.WaterPump"/>
+   <Property Name="Chamber1.SL_PopUpPanel.btnWaterPumpRegen" Code="Chamber1.WaterPumpRegen"/>
+   
+   <!--Menu Others-->
+   <Property Name="Chamber1.SL_PopUpPanel.btnAutoVentGeneral" 		Code="Chamber1.AutoVent"/>
+   <Property Name="Chamber1.SL_PopUpPanel.btnAutoPumpDownGeneral" 	Code="Chamber1.AutoPumpDown"/>
+   <Property Name="Chamber1.SL_PopUpPanel.btnRateOfRise" Code="Chamber1.RateOfRise"/>
+   <Property Name="Chamber1.SL_PopUpPanel.btnPumpPurge" Code="Chamber1.PumpPurge"/>
+   <Property Name="Chamber1.SL_PopUpPanel.btnIGDegas" Code="Chamber1.IGDegas"/>
+   
+   <!--ProcessRecipe -->
+  <Property Name="Chamber1.RunRecipe.btnPause" Code="Chamber1.ProcessRecipe.Start"/>
+  <Property Name="Chamber1.RunRecipe.btnPause Stop" Code="Chamber1.ProcessRecipe.Stop"/>
+  <Property Name="Chamber1.RunRecipe.btnPause Pause" Code="Chamber1.ProcessRecipe.Pause"/>
+  <Property Name="Chamber1.RunRecipe.btnPause Resume" Code="Chamber1.ProcessRecipe.Resume"/>
+  <Property Name="Chamber1.RunRecipe.btnAbort Abort" Code="Chamber1.ProcessRecipe.Abort"/>
+  <Property Name="Chamber1.RunRecipe.btnAbort EndCurrentStep" Code="Chamber1.ProcessRecipe.EndCurrentStep"/>
+  <!--end PM Screen -->
+  <!--System Setup Screen-->
+  <Property Name="SL_SystemSetup.btnResetSourceUsage" Code="Chamber1.ResetSourceUsage"/>
+  <!--end hoa nguyen add-->
+ 
+ 
+  <!--===================================================Chamber1=============================================================-->
+  <!--PowerSupply-->
+  <Property Name="Chamber1.rfpwRFPowerSupply.txtForwardPowerRight" Code="Chamber1.PowerSupply.ForwardPowerRight"/>     <!--r-->
+  <Property Name="Chamber1.rfpwRFPowerSupply.txtReflectedPowerRight" Code="Chamber1.PowerSupply.ReflectedPowerRight"/> <!--r-->
+  <!--BeamPowerSupply-->
+  <Property Name="Chamber1.spsBeamPowerSupply.txtVoltageRight" Code="Chamber1.BeamPowerSupply.VoltageRight"/> <!--r-->
+  <Property Name="Chamber1.spsBeamPowerSupply.txtCurrentRight" Code="Chamber1.BeamPowerSupply.CurrentRight"/>  <!--r-->
+   <Property Name="Chamber1.spsBeamPowerSupply.btnAutoBeam" Code="Chamber1.BeamPowerSupply.AutoBeam"/>         <!--r-->
+  <Property Name="Chamber1.spsBeamPowerSupply.btnAutoBeam On" Code="Chamber1.BeamPowerSupply.AutoBeam On"/>    <!--r-->
+  <!--SuppressorPowerSupply-->
+  <Property Name="Chamber1.spsSuppressorPowerSupply.txtVoltageRight" Code="Chamber1.SuppressorPowerSupply.VoltageRight"/> <!--r-->
+  <Property Name="Chamber1.spsSuppressorPowerSupply.txtCurrentRight" Code="Chamber1.SuppressorPowerSupply.CurrentRight"/> <!--r-->
+    <!--BodyPowerSupply-->
+    <Property Name="Chamber1.dpsBodyPowerSupply.txtKFactorRight" Code="Chamber1.BodyPowerSupply.KFactorRight"/> <!--r-->
+
+   <!--Wafer In Fixture x-->
+  <Property Name="Chamber1.FixtureControl On" Code="Chamber1.FixtureControl On"/>        <!--r-->
+  <Property Name="Chamber1.FixtureControl Off" Code="Chamber1.FixtureControl Off"/>      <!--r-->
+  <!--ValveWaterPump x-->
+  <Property Name="Chamber1.ValveWaterPump On" Code="Chamber1.ValveWaterPump On"/>				<!--r-->
+  <Property Name="Chamber1.ValveWaterPump Off" Code="Chamber1.ValveWaterPump Off"/>			<!--r-->
+  <!--ValveSupplyArgon-->
+  <Property Name="Chamber1.ValveSupplyArgon On" Code="Chamber1.ValveSupplyArgon On"/>       <!--r-->
+  <Property Name="Chamber1.ValveSupplyArgon Off" Code="Chamber1.ValveSupplyArgon Off"/>    <!--r-->
+  <!--ValveSupplyPBN-->
+  <Property Name="Chamber1.ValveSupplyPBN On" Code="Chamber1.ValveSupplyPBN On"/>        <!--r-->
+  <Property Name="Chamber1.ValveSupplyPBN Off" Code="Chamber1.ValveSupplyPBN Off"/>      <!--r-->
+  <!--ValveSupplyFlowCoolHe-->
+  <Property Name="Chamber1.ValveSupplyFlowCoolHe On" Code="Chamber1.ValveSupplyFlowCool On"/>          <!--r-->
+  <Property Name="Chamber1.ValveSupplyFlowCoolHe Off" Code="Chamber1.ValveSupplyFlowCool Off"/>        <!--r-->
+  <!--ValveCryoPump-->
+  <Property Name="Chamber1.ValveControlCryoPump On" Code="Chamber1.ValveCryoPump On"/>
+  <Property Name="Chamber1.ValveControlCryoPump Off" Code="Chamber1.ValveCryoPump Off"/>
+    <!--Shutter or Screen Machine-->
+  <Property Name="Chamber1.ScreenMachine On" Code="Chamber1.ScreenMachine On"/>					<!--r-->
+  <Property Name="Chamber1.ScreenMachine Off" Code="Chamber1.ScreenMachine Off"/>				<!--r-->
+  <Property Name="Chamber1.ScreenMachine Others" Code="Chamber1.ScreenMachine Others"/>	<!--r-->
+  <!--ForelineValve-->
+  <Property Name="Chamber1.ValveControlForeline On" Code="Chamber1.ValveForeline On"/>		<!--r-->
+  <Property Name="Chamber1.ValveControlForeline Off" Code="Chamber1.ValveForeline Off"/>		<!--r-->
+  <!--HivacValve-->
+  <Property Name="Chamber1.ValveRingControl On" Code="Chamber1.HiVacValve On"/>						<!--r-->
+  <Property Name="Chamber1.ValveRingControl Off" Code="Chamber1.HiVacValve Off"/>					<!--r-->
+  <!--RoughValve-->
+  <Property Name="Chamber1.ValveControlRough On" Code="Chamber1.ValveRough On"/>					<!--r-->
+  <Property Name="Chamber1.ValveControlRough Off" Code="Chamber1.ValveRough Off"/>				<!--r-->
+   <!--RoughPumpValve-->
+  <Property Name="Chamber1.ticGasPump On" Code="Chamber1.OpenRoughPumpPower On"/>         <!--r-->
+  <Property Name="Chamber1.ticGasPump Off" Code="Chamber1.OpenRoughPumpPower Off"/>       <!--r-->
+  <!-- Baratron -->
+  <Property Name="Chamber1.BaCenterControl.txtCG2" Code="Chamber1.BACenterControl.CG2"/>
+  <Property Name="Chamber1.BaCenterControl.bigcgIG On" Code="Chamber1.BACenterControl.OpenIG"/>
+  <Property Name="Chamber1.BaCenterControl.bigcgIG Off" Code="Chamber1.BACenterControl.CloseIG"/>
+  <!--TiltAngleRightFixture-->
+  <Property Name="Chamber1.ftcFixtureControlContinuous.txtTiltAngleRight" Code="Chamber1.Fixture.ContinuousTiltAngle"/> <!--r-->
+  <Property Name="Chamber1.ftcFixtureControlStatic.txtTiltAngleRight" Code="Chamber1.Fixture.StaticTiltAngle"/>         <!--r-->
+  <Property Name="Chamber1.ftcFixtureControlSweep.txtTiltAngleRight" Code="Chamber1.Fixture.SweepTiltAngle"/>				<!--r-->
+  <!--RotationFixture-->
+  <Property Name="Chamber1.ftcFixtureControlContinuous.txtRotationRight" Code="Chamber1.Fixture.ContinuousRotation"/> <!--r-->
+  <Property Name="Chamber1.ftcFixtureControlStatic.txtRotationRight" Code="Chamber1.Fixture.StaticRotation"/>						<!--r-->
+  <Property Name="Chamber1.ftcFixtureControlSweep.txtRotationRight" Code="Chamber1.Fixture.SweepRotation"/>							<!--r-->
+  <!--RotationLastRightFixture-->
+  <Property Name="Chamber1.ftcFixtureControlContinuous.txtRotationLastRight" Code="Chamber1.Fixture.ContinuousRotationLast"/> <!--r-->
+  <Property Name="Chamber1.ftcFixtureControlStatic.txtRotationLastRight" Code="Chamber1.Fixture.StaticRotationLast"/>         <!--r-->
+  <Property Name="Chamber1.ftcFixtureControlSweep.txtRotationLastRight" Code="Chamber1.Fixture.SweepRotationLast"/>           <!--r-->
+  
+  <!--FixtureMenu-->
+  <Property Name="Chamber1.mnuFixtureOnClamp ClampUp" Code="Chamber1.FixtureClampStatus ClampUp"/>      <!--r-->
+  <Property Name="Chamber1.mnuFixtureOnClamp ClampDown" Code="Chamber1.FixtureClampStatus ClampDown"/>  <!--r-->
+  <Property Name="Chamber1.mnuFixtureHomeTiltAxis" Code="Chamber1.FixtureHomeTiltAxis"/>
+  <Property Name="Chamber1.mnuFixtureHomeRotationAxis" Code="Chamber1.FixtureHomeRotationAxis"/>
+  <Property Name="Chamber1.mnuFixtureStartRotationAxis" Code="Chamber1.Fixture.RotationMode"/>
+  <Property Name="Chamber1.mnuFixtureHomeAllAxis On" Code="Chamber1.FixtureHomeAllAxis"/>
+  <Property Name="Chamber1.mnuFixtureStopAllAxis On" Code="Chamber1.FixtureStopAllAxis"/>
+  <Property Name="Chamber1.mnuFixtureOpenShutter On" Code="Chamber1.FixtureOpenShutter On"/>        <!--r-->
+  <Property Name="Chamber1.mnuFixtureOpenShutter Off" Code="Chamber1.FixtureOpenShutter Off"/>      <!--r-->
+  
+  <Property Name="Chamber1.mnuFixtureOpenWaterValve On" Code="Chamber1.FixtureWaterValveStatus On"/>
+  <Property Name="Chamber1.mnuFixtureOpenWaterValve Off" Code="Chamber1.FixtureWaterValveStatus Off"/>
+  <Property Name="Chamber1.mnuFixtureOpenFlowCool On" Code="Chamber1.FixtureFlowCoolPumpStatus On"/>
+  <Property Name="Chamber1.mnuFixtureOpenFlowCool Off" Code="Chamber1.FixtureFlowCoolPumpStatus Off"/>
+  
+  <Property Name="Chamber1.btnReConnect On" Code="Chamber1.btnReConnect On"/><!--r-->
+  <Property Name="Chamber1.btnReConnect Off" Code="Chamber1.btnReConnect Off"/><!--r-->
+  <!--MesaValve-->
+  <Property Name="Chamber1.ValveControlMesa On" Code="Chamber1.ValveControlMesa On"/>    <!--r-->
+  <Property Name="Chamber1.ValveControlMesa Off" Code="Chamber1.ValveControlMesa Off"/>	 <!--r-->
+  <!--VentValve-->
+  <Property Name="Chamber1.ValveControlVent On" Code="Chamber1.ValveVent On"/>			<!--r-->
+  <Property Name="Chamber1.ValveControlVent Off" Code="Chamber1.ValveVent Off"/>		<!--r-->
+  <!--BaratronValve-->
+  <Property Name="Chamber1.ValveControlBaratron On" Code="Chamber1.ValveBaratron On"/>
+  <Property Name="Chamber1.ValveControlBaratron Off" Code="Chamber1.ValveBaratron Off"/>
+  <!--FlowCoolHeValve-->
+  <Property Name="Chamber1.ValveControlFlowCoolHe On" Code="Chamber1.ValveFlowCoolHe On"/>		<!--r-->
+  <Property Name="Chamber1.ValveControlFlowCoolHe Off" Code="Chamber1.ValveFlowCoolHe Off"/><!--r-->
+  <!--PBNValve-->
+  <Property Name="Chamber1.ValveControlPBN On" Code="Chamber1.ValvePBN On"/><!--r-->
+  <Property Name="Chamber1.ValveControlPBN Off" Code="Chamber1.ValvePBN Off"/><!--r-->
+  <!--ArgonValve-->
+  <Property Name="Chamber1.ValveControlArgon On" Code="Chamber1.ValveArgon On"/><!--r-->
+  <Property Name="Chamber1.ValveControlArgon Off" Code="Chamber1.ValveArgon Off"/><!--r-->
+  <!--GasController -->
+  <Property Name="Chamber1.gccGasController.txtArgonRight" Code="Chamber1.GasController.ArgonRight"/>         <!--r-->
+  <Property Name="Chamber1.gccGasController.txtPBNRight" Code="Chamber1.GasController.PBNRight"/>               <!--r-->
+  <Property Name="Chamber1.gccGasController.txtFlowCoolHeRight" Code="Chamber1.GasController.FlowCoolHeRight"/> <!--r-->
+  
+  
+  
+  <!--MachineMenu-->
+  <Property Name="Chamber1.mnuMachineOnline On" Code="Chamber1.Online"/><!--r-->
+  <Property Name="Chamber1.mnuMachineOnline Off" Code="Chamber1.Offline"/><!--r-->
+  <Property Name="Chamber1.mnuMachinePumpDown On" Code="Chamber1.PumpDown"/><!--r-->
+  <Property Name="Chamber1.mnuMachinePumpDown Off" Code="Chamber1.StopPumpDown"/><!--r-->
+  <Property Name="Chamber1.mnuMachineVent On" Code="Chamber1.Vent"/><!--r-->
+  <Property Name="Chamber1.mnuMachineVent Off" Code="Chamber1.StopVent"/><!--r-->
+  <Property Name="Chamber1.mnuMachineCryoOn On" Code="Chamber1.TurnCryo On"/>
+  <Property Name="Chamber1.mnuMachineCryoOn Off" Code="Chamber1.TurnCryo Off"/>
+  <Property Name="Chamber1.mnuMachineCryoPumpRegen On" Code="Chamber1.CryoPumpRegen"/>
+  <Property Name="Chamber1.mnuMachineCryoPumpRegen Off" Code="Chamber1.CryoPumpRegen"/>
+  <Property Name="Chamber1.mnuMachineCryoAutoRegen On" Code="Chamber1.CryoAutoRegen"/>
+  <Property Name="Chamber1.mnuMachineCryoAutoRegen Off" Code="Chamber1.CryoAutoRegen"/>
+  
+  <!--Power Status Panel-->
+  <Property Name="Chamber1.PowerStatusPanel.btnACPower Off" Code="Chamber1.PowerStatusPanel.ACPower Off"/><!--r-->
+  <Property Name="Chamber1.PowerStatusPanel.btnACPower On" Code="Chamber1.PowerStatusPanel.ACPower On"/><!--r-->
+  <Property Name="Chamber1.PowerStatusPanel.btnGrid Off" Code="Chamber1.PowerStatusPanel.GridPower Off"/><!--r-->
+  <Property Name="Chamber1.PowerStatusPanel.btnGrid On" Code="Chamber1.PowerStatusPanel.GridPower On"/><!--r-->
+  <Property Name="Chamber1.PowerStatusPanel.btnRFPower Off" Code="Chamber1.PowerStatusPanel.RFPower Off"/><!--r-->
+  <Property Name="Chamber1.PowerStatusPanel.btnRFPower On" Code="Chamber1.PowerStatusPanel.RFPower On"/><!--r-->
+  <Property Name="Chamber1.PowerStatusPanel.btnPBNPower Off" Code="Chamber1.PowerStatusPanel.PBNPower Off"/><!--r-->
+  <Property Name="Chamber1.PowerStatusPanel.btnPBNPower On" Code="Chamber1.PowerStatusPanel.PBNPower On"/><!--r-->
+</MessageNames>

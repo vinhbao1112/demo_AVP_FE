@@ -1,0 +1,23 @@
+<WaferFlow>
+  <Name>PVD5T</Name>
+  <Description>
+  </Description>
+  <StepList>
+    <Step>
+      <Number>0</Number>
+      <StationList>
+        <StationId>Aligner</StationId>
+      </StationList>
+      <RecipeName>ALIGN_0</RecipeName>
+    </Step>
+    <Step>
+      <Number>1</Number>
+      <StationList>
+        <StationId>Chamber3</StationId>
+      </StationList>
+      <RecipeName>PVD5T_RF</RecipeName>
+    </Step>
+  </StepList>
+  <LoopList>
+  </LoopList>
+</WaferFlow>

@@ -1,0 +1,445 @@
+<Configuration>
+  <SystemConfig>
+    <PM_Name>PM2</PM_Name>
+    <Cryo_Installed IP="127.0.0.1" Port="7110">True</Cryo_Installed>
+    <!-- Fill Turbo WhichModel: "RSTi" = Model RSTi, "Shimadzu" = Model Shimadzu, "Lebold_Integra" = Model Lebold Integra -->
+    <Turbo_Installed IP="127.0.0.1" Port="4008" WhichModel="Lebold_Integra">True</Turbo_Installed>
+    <Galil_Motion_Installed IP="127.0.0.1" Port="7111" SingleQRPollingSupport="False" SerialMode="False">True</Galil_Motion_Installed>
+    <Fast_Tilt_Installed IP="127.0.0.1" Port="7006">False</Fast_Tilt_Installed>
+    <Fast_Rotation_Installed IP="127.0.0.1" Port="7009">False</Fast_Rotation_Installed>
+    <!-- Fill WhichModel = TCP_IP/RS232-->
+    <Endpoint_Unit_Installed WhichModel="TCP_IP" IP="127.0.0.1" Port="7112" RealTimeData="True">False</Endpoint_Unit_Installed>
+    <EndPoint_Data_Folder>D:\Document\HidenData</EndPoint_Data_Folder>
+    <EndPoint_Data_Folder_CXX>D:\EndPointData</EndPoint_Data_Folder_CXX>
+    <HidenGauge_Installed IP="128.57.7.70" Port="4006">False</HidenGauge_Installed>
+    <!-- Fill Chiller WhichModel: "Prodeus4000" = Model Prodeus 4000, "Julabo" = Model Julabo, "PolyScience" = Model Poly Science -->
+    <Chiller_Installed IP="127.0.0.1" Port="7119" WhichModel="PolyScience">True</Chiller_Installed>
+    <Water_Pump_Installed IP="127.0.0.1" Port="6003">False</Water_Pump_Installed>
+    <Shaper_Installed>False</Shaper_Installed>
+    <Shaper2_Installed>False</Shaper2_Installed>
+    <Shutter_Installed>True</Shutter_Installed>
+    <ShutterOnFixture UsedByGalil="False">False</ShutterOnFixture>
+    <Internal_Shutter_Sensor_Installed>False</Internal_Shutter_Sensor_Installed>
+    <Clamp_Installed>True</Clamp_Installed>
+    <ANC_Installed>False</ANC_Installed>
+    <BackTilt_Installed>False</BackTilt_Installed>
+    <Interlock_SourceWater_Installed>True</Interlock_SourceWater_Installed>
+    <Interlock_TurboWater_Installed>True</Interlock_TurboWater_Installed>
+    <Interlock_FixtureWater_Installed>True</Interlock_FixtureWater_Installed>
+    <Interlock_FixtureWaterBug_Installed>False</Interlock_FixtureWaterBug_Installed>
+    <Interlock_PanelInterlock_Installed>True</Interlock_PanelInterlock_Installed>
+    <Interlock_AirPressure_Installed>True</Interlock_AirPressure_Installed>
+    <Interlock_ForelinePressure_Installed>True</Interlock_ForelinePressure_Installed>
+    <Interlock_ChamberPressure_Installed>True</Interlock_ChamberPressure_Installed>
+    <!-- Power Supply -->
+    <PasswordExitDeviceNetApp>123456</PasswordExitDeviceNetApp>
+    <!-- Fill ExciterMode = Default/Master/Slave-->
+    <RF_Power_Supply_Installed WhichModel="RSTi_RF_PowerSupply" IP="127.0.0.1" Port="7114" MaxSP="1000" ExciterMode="Default">True</RF_Power_Supply_Installed>
+    <RF_Matchbox_Unit_RF_Installed IP="127.0.0.1" Port="7115" InitMatchModeAuto="True">False</RF_Matchbox_Unit_RF_Installed>
+    <Source_Magnet_Power_Supply_Installed WhichModel="Sorensen_DLM600" IP="127.0.0.1" Port="4007">True</Source_Magnet_Power_Supply_Installed>
+    <Source_Magnet_Power_Supply_Installed_2 WhichModel="Sorensen_DLM600" IP="127.0.0.1" Port="4008">False</Source_Magnet_Power_Supply_Installed_2>
+    <Source_Magnet_Power_Supply_Installed_3 WhichModel="Sorensen_DLM600" IP="127.0.0.1" Port="4009">False</Source_Magnet_Power_Supply_Installed_3>
+    <!-- End Power Supply -->
+    <SocketPort>8009</SocketPort>
+    <RecipeFolder>.\Recipe</RecipeFolder>
+    <RunDataFolder>\\192.168.1.180\DataRun</RunDataFolder>
+    <!-- Run Data File Format In CSV or XML -->
+    <RunDataFileFormat>CSV</RunDataFileFormat>
+    <GalilMacroFilePath>Config\AVP-IBE.dmc</GalilMacroFilePath>
+    <!-- DeviceNet Scanner BaudRate (125, 250, 500) -->
+    <ScannnerCardName BaudRate="125">DN3-PCI-0000</ScannnerCardName>
+    <KEPServer_Used Name="KEPware.KEPServerEx.V4" Location="" Key="">False</KEPServer_Used>
+    <!-- "Legacy" or  -->
+    <!-- "G_Series" -->
+    <MKSGasModel>G_Series</MKSGasModel>
+    <Gas1MFCEnable HasSupplyValve="True" HasShutOffValve="True" Name="Argon" CalibrationFactorId="Ar" RangeValue="100">True</Gas1MFCEnable>
+    <Gas2MFCEnable HasSupplyValve="True" HasShutOffValve="True" Name="Oxygen" CalibrationFactorId="O2" RangeValue="100">True</Gas2MFCEnable>
+    <Gas3MFCEnable HasSupplyValve="False" HasShutOffValve="False" Name="Oxygen" CalibrationFactorId="O2" RangeValue="100">False</Gas3MFCEnable>
+    <Gas4MFCEnable HasSupplyValve="False" HasShutOffValve="False" Name="Oxygen" CalibrationFactorId="O2" RangeValue="100">False</Gas4MFCEnable>
+    <Gas5MFCEnable HasSupplyValve="False" HasShutOffValve="False" Name="Oxygen" CalibrationFactorId="O2" RangeValue="100">False</Gas5MFCEnable>
+    <FlowCool_Installed HasSupplyValve="True" HasShutOffValve="True" Name="He" CalibrationFactorId="He" RangeValue="100">True</FlowCool_Installed>
+    <PBNGas_Installed HasSupplyValve="True" HasShutOffValve="True" Name="Argon" CalibrationFactorId="Ar" RangeValue="10">True</PBNGas_Installed>
+    <ROR_Litter>200</ROR_Litter>
+    <Plasma_Igniter_Installed>False</Plasma_Igniter_Installed>
+    <ControlShutterViaSolenoidBlock>False</ControlShutterViaSolenoidBlock>
+    <IsDeviceNetSystem>True</IsDeviceNetSystem>
+    <DeviceNet_App IP="127.0.0.1" Port="10001">False</DeviceNet_App>
+    <!-- Flowcool Pressure Control Type -->
+    <!-- Type1 = [old DMA]; Type2 = [DMA] -->
+    <FlowcoolPressureType>Type2</FlowcoolPressureType>
+    <!-- Filament Type -->
+    <!-- 1 = Filamentless; 2 = FilamentPBN -->
+    <FilamentType>1</FilamentType>
+    <DiverterGasValveInstalled>False</DiverterGasValveInstalled>
+    <!-- Support IG Valve -->
+    <IGIsoValveInstalled>False</IGIsoValveInstalled>
+    <Auto_Vent_PBN_Cool_Option>False</Auto_Vent_PBN_Cool_Option>
+    <TiltAngleReferenceAsLegacy>False</TiltAngleReferenceAsLegacy>
+    <VerifyTiltSensorAtPosition VerifiedAngle="90">False</VerifyTiltSensorAtPosition>
+    <RSTiAdapterInstalled ConfigurationFile=".\Config\IBERSTiAdapterConfig.xml">True</RSTiAdapterInstalled>
+    <TurnOffFlowCoolDuringProcess>False</TurnOffFlowCoolDuringProcess>
+    <KeepFlowCoolStayOnWhenAlarm>False</KeepFlowCoolStayOnWhenAlarm>
+    <!-- IG Type -->
+    <!-- 1 = GP354; 2 = ITR100D; 3 = GP355 -->
+    <IGType>3</IGType>
+    <MLIGType>3</MLIGType>
+    <InvertRecipeTiltAngle>False</InvertRecipeTiltAngle>
+    <TurnOffFastTiltMotorAfterMove>False</TurnOffFastTiltMotorAfterMove>
+    <HasPBNBodyDischargeVoltage>False</HasPBNBodyDischargeVoltage>
+    <SupportTiltSweepMode>False</SupportTiltSweepMode>
+    <SupportMultiLoader>False</SupportMultiLoader>
+    <SupportSingleLoader>False</SupportSingleLoader>
+    <SupportOldRecipe>False</SupportOldRecipe>
+    <SupportFastTiltHalfSpeed>False</SupportFastTiltHalfSpeed>
+  </SystemConfig>
+  <Parameters>
+    <!--Data Collector-->
+    <DataCollectorInterval desc="Data Collector Interval(milisecs)" visible="True">200</DataCollectorInterval>
+    <!--Gas Flow Tolerance-->
+    <ToleranceForGas1Flow desc="Tolerance For Gas 1 Flow(%)" visible="True">20</ToleranceForGas1Flow>
+    <ToleranceForGas2Flow desc="Tolerance For Gas 2 Flow(%)" visible="True">20</ToleranceForGas2Flow>
+    <ToleranceForGas3Flow desc="Tolerance For Gas 3 Flow(%)" visible="True">20</ToleranceForGas3Flow>
+    <ToleranceForGas4Flow desc="Tolerance For Gas 4 Flow(%)" visible="True">20</ToleranceForGas4Flow>
+    <ToleranceForGas5Flow desc="Tolerance For Gas 5 Flow(%)" visible="True">10</ToleranceForGas5Flow>
+    <ToleranceForFlowcoolGasFlow desc="Tolerance For Flowcool Gas Flow(%)" visible="True">20</ToleranceForFlowcoolGasFlow>
+    <ToleranceForPBNGasFlow desc="Tolerance For PBN Gas Flow(%)" visible="True">10</ToleranceForPBNGasFlow>
+    <!--Reflected RF Tolerance-->
+    <RFTargetReflectedPowerLimit desc="RF Target Reflected Power Limit(W)" visible="True">10</RFTargetReflectedPowerLimit>
+    <ToleranceForRFVoltage desc="Tolerance For RF Voltage(%)" visible="True">10</ToleranceForRFVoltage>
+    <CryoT1Min desc="Cryo T1 Min(K)" visible="True">30</CryoT1Min>
+    <CryoT1Max desc="Cryo T1 Max(K)" visible="True">100</CryoT1Max>
+    <CryoT2Min desc="Cryo T2 Min(K)" visible="True">5</CryoT2Min>
+    <CryoT2Max desc="Cryo T2 Max(K)" visible="True">30</CryoT2Max>
+    <ManoPressureMin desc="Mano Pressure Min(Torr)" visible="True">0</ManoPressureMin>
+    <ManoPressureMax desc="Mano Pressure Max(Torr)" visible="True">50</ManoPressureMax>
+    <WaterpumpTMin desc="Waterpump Cold T(K)" visible="True">20</WaterpumpTMin>
+    <ToleranceForRFForwardPower desc="Tolerance For Bias Forward Power(%)" visible="True">5</ToleranceForRFForwardPower>
+    <MaxFlowcoolleakpercentage desc="Max Flowcool leak percentage(%)" visible="True">5E-06</MaxFlowcoolleakpercentage>
+    <!--Chiller-->
+    <ChillerVentTemperatureMin desc="Min Temperature of Chiller when Vent (C)" visible="True">35</ChillerVentTemperatureMin>
+    <ChillerProcessTemperatureMin desc="Min Temperature of Chiller when running Process (C)" visible="True">-2</ChillerProcessTemperatureMin>
+    <ChillerProcessTemperatureMax desc="Max Temperature of Chiller when running Process (C)" visible="True">5</ChillerProcessTemperatureMax>
+    <!--Chiller Flow Rate-->
+    <ChillerFlowRateMin desc="Min Flow Rate of Chiller (GPM)" visible="True">0</ChillerFlowRateMin>
+    <ChillerFlowRateMax desc="Max Flow Rate of Chiller (GPM)" visible="True">10</ChillerFlowRateMax>
+    <!--For RF PID Control-->
+    <RFPIDMasterLoopWaitTime desc="RF PID Master Loop Wait Time(milisecs)" visible="True">500</RFPIDMasterLoopWaitTime>
+    <RFPIDPowerWaitLevel1 desc="RF PID Power Wait Level 1(milisecs)" visible="True">5000</RFPIDPowerWaitLevel1>
+    <RFPIDPowerWaitLevel2 desc="RF PID Power Wait Level 2(milisecs)" visible="True">5000</RFPIDPowerWaitLevel2>
+    <RFPIDPowerWaitLevel3 desc="RF PID Power Wait Level 3(milisecs)" visible="True">5000</RFPIDPowerWaitLevel3>
+    <RFPIDPowerWaitLevel4 desc="RF PID Power Wait Level 4(milisecs)" visible="True">5000</RFPIDPowerWaitLevel4>
+    <RFPIDPowerWaitLevel5 desc="RF PID Power Wait Level 5(milisecs)" visible="True">5000</RFPIDPowerWaitLevel5>
+    <RFPIDPowerWaitLevel6 desc="RF PID Power Wait Level 6(milisecs)" visible="True">5000</RFPIDPowerWaitLevel6>
+    <RFPIDBeamCurrentLevel1 desc="RF PID BeamCurrent Level1(%)" visible="True">1</RFPIDBeamCurrentLevel1>
+    <RFPIDPowerLevel1Inc desc="RF PID Power Level1 Inc(W)" visible="True">1</RFPIDPowerLevel1Inc>
+    <RFPIDBeamCurrentLevel2 desc="RF PID BeamCurrent Level2(%)" visible="True">5</RFPIDBeamCurrentLevel2>
+    <RFPIDPowerLevel2Inc desc="RF PID Power Level2 Inc(W)" visible="True">5</RFPIDPowerLevel2Inc>
+    <RFPIDBeamCurrentLevel3 desc="RF PID BeamCurrent Level3(%)" visible="True">8</RFPIDBeamCurrentLevel3>
+    <RFPIDPowerLevel3Inc desc="RF PID Power Level3 Inc(W)" visible="True">10</RFPIDPowerLevel3Inc>
+    <RFPIDBeamCurrentLevel4 desc="RF PID BeamCurrent Level4(%)" visible="True">10</RFPIDBeamCurrentLevel4>
+    <RFPIDPowerLevel4Inc desc="RF PID Power Level4 Inc(W)" visible="True">15</RFPIDPowerLevel4Inc>
+    <RFPIDBeamCurrentLevel5 desc="RF PID BeamCurrent Level5(%)" visible="True">25</RFPIDBeamCurrentLevel5>
+    <RFPIDPowerLevel5Inc desc="RF PID Power Level5 Inc(W)" visible="True">30</RFPIDPowerLevel5Inc>
+    <RFPIDBeamCurrentLevel6 desc="RF PID BeamCurrent Level6(%)" visible="True">50</RFPIDBeamCurrentLevel6>
+    <RFPIDPowerLevel6Inc desc="RF PID Power Level6 Inc(W)" visible="True">50</RFPIDPowerLevel6Inc>
+    <!--For Low Power RF PID Control-->
+    <LowPower_Current desc="Low Power Current Level(mA)" visible="True">200</LowPower_Current>
+    <LowPower_RFPIDMasterLoopWaitTime desc="Low Power RF PID Master Loop Wait Time(milisecs)" visible="True">2000</LowPower_RFPIDMasterLoopWaitTime>
+    <LowPower_RFPIDPowerWaitLevel1 desc="Low Power RF PID Power Wait Level 1(milisecs)" visible="True">2000</LowPower_RFPIDPowerWaitLevel1>
+    <LowPower_RFPIDPowerWaitLevel2 desc="Low Power RF PID Power Wait Level 2(milisecs)" visible="True">2000</LowPower_RFPIDPowerWaitLevel2>
+    <LowPower_RFPIDPowerWaitLevel3 desc="Low Power RF PID Power Wait Level 3(milisecs)" visible="True">2000</LowPower_RFPIDPowerWaitLevel3>
+    <LowPower_RFPIDPowerWaitLevel4 desc="Low Power RF PID Power Wait Level 4(milisecs)" visible="True">2000</LowPower_RFPIDPowerWaitLevel4>
+    <LowPower_RFPIDPowerWaitLevel5 desc="Low Power RF PID Power Wait Level 5(milisecs)" visible="True">2000</LowPower_RFPIDPowerWaitLevel5>
+    <LowPower_RFPIDPowerWaitLevel6 desc="Low Power RF PID Power Wait Level 6(milisecs)" visible="True">2000</LowPower_RFPIDPowerWaitLevel6>
+    <LowPower_RFPIDBeamCurrentLevel1 desc="Low Power RF PID BeamCurrent Level1(%)" visible="True">1</LowPower_RFPIDBeamCurrentLevel1>
+    <LowPower_RFPIDPowerLevel1Inc desc="Low Power RF PID Power Level1 Inc(W)" visible="True">1</LowPower_RFPIDPowerLevel1Inc>
+    <LowPower_RFPIDBeamCurrentLevel2 desc="Low Power RF PID BeamCurrent Level2(%)" visible="True">5</LowPower_RFPIDBeamCurrentLevel2>
+    <LowPower_RFPIDPowerLevel2Inc desc="Low Power RF PID Power Level2 Inc(W)" visible="True">3</LowPower_RFPIDPowerLevel2Inc>
+    <LowPower_RFPIDBeamCurrentLevel3 desc="Low Power RF PID BeamCurrent Level3(%)" visible="True">8</LowPower_RFPIDBeamCurrentLevel3>
+    <LowPower_RFPIDPowerLevel3Inc desc="Low Power RF PID Power Level3 Inc(W)" visible="True">5</LowPower_RFPIDPowerLevel3Inc>
+    <LowPower_RFPIDBeamCurrentLevel4 desc="Low Power RF PID BeamCurrent Level4(%)" visible="True">10</LowPower_RFPIDBeamCurrentLevel4>
+    <LowPower_RFPIDPowerLevel4Inc desc="Low Power RF PID Power Level4 Inc(W)" visible="True">7</LowPower_RFPIDPowerLevel4Inc>
+    <LowPower_RFPIDBeamCurrentLevel5 desc="Low Power RF PID BeamCurrent Level5(%)" visible="True">25</LowPower_RFPIDBeamCurrentLevel5>
+    <LowPower_RFPIDPowerLevel5Inc desc="Low Power RF PID Power Level5 Inc(W)" visible="True">9</LowPower_RFPIDPowerLevel5Inc>
+    <LowPower_RFPIDBeamCurrentLevel6 desc="Low Power RF PID BeamCurrent Level6(%)" visible="True">50</LowPower_RFPIDBeamCurrentLevel6>
+    <LowPower_RFPIDPowerLevel6Inc desc="Low Power RF PID Power Level6 Inc(W)" visible="True">10</LowPower_RFPIDPowerLevel6Inc>
+    <!--For Min Max RF Power-->
+    <MinRFPIDPower desc="Min RF PID Power(W)" visible="True">10</MinRFPIDPower>
+    <MaxRFPIDPower desc="Max RF PID Power(W)" visible="True">1000</MaxRFPIDPower>
+    <!--Atmosphere Pressure-->
+    <ATMValue desc="ATM Pressure Value(Torr)" visible="True">760</ATMValue>
+    <CGCrossOverPressure desc="CG Cross Over Pressure(Torr)" visible="True">0.08</CGCrossOverPressure>
+    <MechanicalPumpOnPressure desc="Mechanical Pump On Pressure(Torr)" visible="True">0.09</MechanicalPumpOnPressure>
+    <!--Set Trip Point -->
+    <CGChamberTripPoint desc="CG Chamber Pressure(Torr)" visible="True">0.5</CGChamberTripPoint>
+    <CGForelineTripPoint desc="CG Foreline Pressure(Torr)" visible="True">0.5</CGForelineTripPoint>
+    <CGMechanicalPumpTripPoint desc="CG Mechanical Pump Pressure(Torr)" visible="True">0.5</CGMechanicalPumpTripPoint>
+    <!--Loader Trip Point -->
+    <LoaderCGTripPoint desc="Loader CG Trip Point" visible="True">0.5</LoaderCGTripPoint>
+    <ShutterOpenCloseTimeoutSecs desc="Shutter Open Close Timeout(secs)" visible="True">30</ShutterOpenCloseTimeoutSecs>
+    <ClampUpDownTimeoutSecs desc="Clamp Up Down Timeout(secs)" visible="True">30</ClampUpDownTimeoutSecs>
+    <Auto_Vent_PBN_Cool_Time desc="Auto Vent PBN Cool Time(secs)" visible="True">120</Auto_Vent_PBN_Cool_Time>
+    <!--For Pump Purge-->
+    <PP_RoughPressure desc="Pump Purge Rough Pressure(Torr)" visible="True">0.1</PP_RoughPressure>
+    <PP_VentPressure desc="Pump Purge Vent Pressure(Torr)" visible="True">300</PP_VentPressure>
+    <PP_CycleNumber desc="Pump Purge Cycle Number" visible="True">5</PP_CycleNumber>
+    <PP_PumpDownAfterCycleComplete desc="Pump Purge Pumpdown at complete(0-1)" visible="True">1</PP_PumpDownAfterCycleComplete>
+    <VentATMTimeoutMinutes desc="Vent ATM Timeout(mins)" visible="True">15</VentATMTimeoutMinutes>
+    <VentTimeAfterCGReachATM desc="Wenting Time After CG Reach ATM(secs)" visible="True">10</VentTimeAfterCGReachATM>
+    <RoughTimeAfterCGReachCrossOverPressure desc="Roughing Time After CG Reach CrossOverPressure(secs)" visible="True">10</RoughTimeAfterCGReachCrossOverPressure>
+    <IGDegasTimeSecs desc="IG Degas Time(secs)" visible="True">30</IGDegasTimeSecs>
+    <TurboUpToSpeedTimeout desc="Turbo Up To Speed Timeout(mins)" visible="True">20</TurboUpToSpeedTimeout>
+    <RoughVacuumTimeoutMinutes desc="Rough Vacuum Timeout(mins)" visible="True">15</RoughVacuumTimeoutMinutes>
+    <PeriodToStoreConfig desc="Period to store IBE Config(mins)" visible="False">5</PeriodToStoreConfig>
+    <ProcessMonitorInterval desc="Process Monitor Interval(secs)" visible="True">500</ProcessMonitorInterval>
+    <GUILogLevel desc="GUI Log Level(0-1)" visible="False">0</GUILogLevel>
+    <GUILogMaxLines desc="GUI Log Max Lines" visible="False">200</GUILogMaxLines>
+    <OverrideMode desc="Override Mode(0-1)" visible="False">0</OverrideMode>
+    <OverrideModeOnAllowTime desc="Time to allow Override Mode ON(milisecs)" visible="True">10000</OverrideModeOnAllowTime>
+    <UserName desc="User Name" visible="False">a</UserName>
+    <Password desc="Password" visible="False">a</Password>
+    <AutoLogOutTimeOut desc="AutoLogOutTimeOut (mins)" visible="True">300</AutoLogOutTimeOut>
+    <IGOnOffTimeoutSecs desc="IG On/Off Timeout(secs)" visible="True">30</IGOnOffTimeoutSecs>
+    <RFMinimumPowerOnValue desc="RF Min Power On Value(W)" visible="True">50</RFMinimumPowerOnValue>
+    <FixtureRotationHomeOffset desc="Fixture Rotation Home Offset(Counts)" visible="True">140</FixtureRotationHomeOffset>
+    <FixtureRotationStaticOffset desc="Fixture Rotation Static Offset(Counts)" visible="True">50</FixtureRotationStaticOffset>
+    <FixtureTiltHomeOffset desc="Fixture Tilt Home Offset(angle)" visible="True">1</FixtureTiltHomeOffset>
+    <FixtureWaitTimeForMotionStop desc="Wait Time For Motion Stopped(secs)" visible="True">120</FixtureWaitTimeForMotionStop>
+    <Fixture_Tilt_Low_Limit desc="Fixture Tilt Low Limit(angle)" visible="True">-15</Fixture_Tilt_Low_Limit>
+    <Fixture_Tilt_High_Limit desc="Fixture Tilt High Limit(angle)" visible="True">160</Fixture_Tilt_High_Limit>
+    <Tilt_Invert_Angle_Low_Limit desc="Fixture Tilt Low Limit Run Recipe When Invert(angle)" visible="True">-80</Tilt_Invert_Angle_Low_Limit>
+    <Tilt_Invert_Angle_High_Limit desc="Fixture Tilt High Limit Run Recipe When Invert(angle)" visible="True">0</Tilt_Invert_Angle_High_Limit>
+    <BackTiltAngle desc="Back Tilt Angle (angle)" visible="True">-15</BackTiltAngle>
+    <CloseShutterOffset desc="Close shutter offset (Counts)" visible="True">0</CloseShutterOffset>
+    <Close_Shutter_Angle_With_Offset_Low_Limit desc="Fixture close shutter Low Limit(angle)" visible="True">70</Close_Shutter_Angle_With_Offset_Low_Limit>
+    <Close_Shutter_Angle_With_Offset_High_Limit desc="Fixture close shutter High Limit(angle)" visible="True">110</Close_Shutter_Angle_With_Offset_High_Limit>
+    <Open_Shutter_At_Home_Offset desc="Offset that use for open shutter at Home control by Galil (count)" visible="True">10</Open_Shutter_At_Home_Offset>
+    <Open_Shutter_Offset_Max_Degree desc="Max degree that to accept shutter is Home" visible="True">5</Open_Shutter_Offset_Max_Degree>
+    <DoBeamAndMotionParallel desc="Do Beam and Motion in Parallel(0-1)" visible="True">1</DoBeamAndMotionParallel>
+    <OKConditionWaitTime desc="Time to wait for OK Condition(secs)" visible="True">300</OKConditionWaitTime>
+    <ToleranceForBeamVoltage desc="Tolerance for Beam Voltage(%)" visible="True">10</ToleranceForBeamVoltage>
+    <ToleranceForBeamCurrent desc="Tolerance for Beam Current(%)" visible="True">20</ToleranceForBeamCurrent>
+    <ToleranceByDegreeForTiltAngle desc="Tolerance for Tilt Angle(degree)" visible="True">3</ToleranceByDegreeForTiltAngle>
+    <ToleranceByDegreeForRotationAngle desc="Tolerance for Rotation Angle(degree)" visible="True">3</ToleranceByDegreeForRotationAngle>
+    <ToleranceForPBNBodyCurrent desc="Tolerance for PBN Body Current(%)" visible="True">10</ToleranceForPBNBodyCurrent>
+    <ToleranceForPBNDischargeCurrent desc="Tolerance for PBN Discharge Current(%)" visible="True">10</ToleranceForPBNDischargeCurrent>
+    <ToleranceForSuppressorVoltage desc="Tolerance for Suppressor Voltage(%)" visible="True">15</ToleranceForSuppressorVoltage>
+    <ANCVoltageProbeUpper desc="ANC Voltage Probe Upper(V)" visible="True">10</ANCVoltageProbeUpper>
+    <ANCVoltageProbeLower desc="ANC Voltage Probe Lower (V)" visible="True">-10</ANCVoltageProbeLower>
+    <ANCVoltageProbeLevel_0 desc="ANC Voltage Probe Level 0 (V)" visible="True">1</ANCVoltageProbeLevel_0>
+    <ANCVoltageProbeLevel_1 desc="ANC Voltage Probe Level 1 (V)" visible="True">2</ANCVoltageProbeLevel_1>
+    <ANCVoltageProbeLevel_2 desc="ANC Voltage Probe Level 2 (V)" visible="True">3</ANCVoltageProbeLevel_2>
+    <ANCVoltageProbeLevel_3 desc="ANC Voltage Probe Level 3 (V)" visible="True">4</ANCVoltageProbeLevel_3>
+    <ANCVoltageProbeLevel_4 desc="ANC Voltage Probe Level 4 (V)" visible="True">5</ANCVoltageProbeLevel_4>
+    <ANC_FilammentPBN_Delta_Level_0 desc="ANC Filamment PBN Delta Level 0 (A)" visible="True">0.15</ANC_FilammentPBN_Delta_Level_0>
+    <ANC_FilammentPBN_Delta_Level_1 desc="ANC Filamment PBN Delta Level 1 (A)" visible="True">0.3</ANC_FilammentPBN_Delta_Level_1>
+    <ANC_FilammentPBN_Delta_Level_2 desc="ANC Filamment PBN Delta Level 2 (A)" visible="True">0.6</ANC_FilammentPBN_Delta_Level_2>
+    <ANC_FilammentPBN_Delta_Level_3 desc="ANC Filamment PBN Delta Level 3 (A)" visible="True">0.9</ANC_FilammentPBN_Delta_Level_3>
+    <ANC_FilammentPBN_Delta_Level_4 desc="ANC Filamment PBN Delta Level 4 (A)" visible="True">1.5</ANC_FilammentPBN_Delta_Level_4>
+    <ANCOptimizedVoltage desc="ANC Optimized Voltage (V)" visible="True">0</ANCOptimizedVoltage>
+    <ANCMinimumPeakVoltage desc="ANC Minimum Peak Voltage (V)" visible="True">5</ANCMinimumPeakVoltage>
+    <DoANCWaitTime desc="Do ANC Wait Time (s)" visible="True">5</DoANCWaitTime>
+    <MinPbnBodyVoltage desc="Min PBN Body Voltage(V)" visible="True">300</MinPbnBodyVoltage>
+    <MaxPbnBodyVoltage desc="Max PBN Body Voltage(V)" visible="True">2000</MaxPbnBodyVoltage>
+    <MinPbnDischargeVoltage desc="Min PBN Discharge Voltage(V)" visible="True">10</MinPbnDischargeVoltage>
+    <MaxPbnDischargeVoltage desc="Max PBN Discharge Voltage(V)" visible="True">250</MaxPbnDischargeVoltage>
+    <VatOpenCloseTimeoutSecs desc="VAT Open Close Timeout(secs)" visible="True">30</VatOpenCloseTimeoutSecs>
+    <FixtureWaitTimeForTiltReachAngle desc="Wait Time For Tilt Reach Correct Angle(secs)" visible="True">30</FixtureWaitTimeForTiltReachAngle>
+    <FixtureWaitTimeForRotationReachAngle desc="Wait Time For Rotation Reach Correct Angle(secs)" visible="True">60</FixtureWaitTimeForRotationReachAngle>
+    <Etch_Pbnless_Gas_Bump_Flow desc="PBN Gas Bump Flow(sccm)" visible="True">4</Etch_Pbnless_Gas_Bump_Flow>
+    <PBNBodyCurrentIgnitionSP desc="PBN Body Current Ignition SP(A)" visible="True">1</PBNBodyCurrentIgnitionSP>
+    <PBNDischargeCurrentIgnitionSP desc="PBN Discharge Current Ignition SP(A)" visible="True">1.2</PBNDischargeCurrentIgnitionSP>
+    <PBNBodyCurrentIgnitionTimeout desc="PBN Body Current Ignition Time Out(secs)" visible="True">10</PBNBodyCurrentIgnitionTimeout>
+    <PBNOnTimeOut desc="PBN On Time Out (secs)" visible="True">10</PBNOnTimeOut>
+    <PBNBodyRampAMP desc="PBN Body Ramp(A)" visible="True">1.3</PBNBodyRampAMP>
+    <BodyCurrentForPBNOn desc="PBN Body Current For PBN On(A)" visible="True">0.2</BodyCurrentForPBNOn>
+    <BodyCurrentForPBNIgnition desc="PBN Body Current For PBN Ignition(A)" visible="True">0.15</BodyCurrentForPBNIgnition>
+    <PBNBodyCurrentLimit desc="PBN Body Current Limit(A)" visible="True">2</PBNBodyCurrentLimit>
+    <discharge_C_Adjust desc="Discharge C Adjust(A)" visible="True">0.15</discharge_C_Adjust>
+    <body_C_Adjust desc="Body C Adjust(A)" visible="True">0.35</body_C_Adjust>
+    <RamBeamPBNOnWaitTime desc="DoRamBeam - PBN On Wait Time (secs)" visible="True">120</RamBeamPBNOnWaitTime>
+    <RamBeamRFPowerReachMinWaitTime desc="DoRamBeam - RF Power Reach Min Wait Time (secs)" visible="True">5</RamBeamRFPowerReachMinWaitTime>
+    <Gas1DuringRamping desc="Gas 1 During Ramping(sccm)" visible="True">15</Gas1DuringRamping>
+    <Gas2DuringRamping desc="Gas 2 During Ramping(sccm)" visible="True">15</Gas2DuringRamping>
+    <Gas3DuringRamping desc="Gas 3 During Ramping(sccm)" visible="True">0</Gas3DuringRamping>
+    <Gas4DuringRamping desc="Gas 4 During Ramping(sccm)" visible="True">0</Gas4DuringRamping>
+    <Gas5DuringRamping desc="Gas 5 During Ramping(sccm)" visible="True">0</Gas5DuringRamping>
+    <SuppressorPulseTime desc="Suppressor Pulse Time(secs)" visible="True">3</SuppressorPulseTime>
+    <BeamCurrentForBeamOn desc="Beam Current For Beam On(A)" visible="True">0.2</BeamCurrentForBeamOn>
+    <BeamOnWaitTime desc="Beam On Wait Time(secs)" visible="True">5</BeamOnWaitTime>
+    <PBNGasFlowReachWaitTime desc="PBN Gas Flow Reach Wait Time(secs)" visible="True">15</PBNGasFlowReachWaitTime>
+    <AllGasFlowReachWaitTime desc="All Gas Flow Reach Wait Time(secs)" visible="True">10</AllGasFlowReachWaitTime>
+    <SuppressorCurrentMax desc="Suppressor Current Max(A)" visible="True">0.02</SuppressorCurrentMax>
+    <SuppressorCurrentMin desc="Suppressor Current Min(A)" visible="True">0</SuppressorCurrentMin>
+    <BeamPBNRecoveryWaitTime desc="Beam PBN Recovery Wait Time(secs)" visible="True">120</BeamPBNRecoveryWaitTime>
+    <SourceUsageWarningLimit desc="Source Usage Warning Limit(mins)" visible="False">5000</SourceUsageWarningLimit>
+    <SourceUsageAlarmLimit desc="Source Usage Alarm Limit(mins)" visible="False">6000</SourceUsageAlarmLimit>
+    <SourceUsageCurrentValue desc="Source Usage Current Value(mins)" visible="False">178.7172</SourceUsageCurrentValue>
+    <SourceUsageMaxValue desc="Source Usage Max Value(mins)" visible="False">25000</SourceUsageMaxValue>
+    <SourceShieldQuartUsageCurrentValue desc="Source Shield/Quart Usage Current Value(mins)" visible="False">487.1601</SourceShieldQuartUsageCurrentValue>
+    <CoverFixtureShieldMinutes desc="Cover Fixture Shield Minutes" visible="True">587.1598</CoverFixtureShieldMinutes>
+    <GridSource desc="Grid Source Minutes" visible="True">23641.86</GridSource>
+    <WaferClampMinutes desc="Wafer Clamp Minutes" visible="True">687.1595</WaferClampMinutes>
+    <SourceUsageAfterPM desc="Source Usage After Un-schedule PM Minutes" visible="True">887.1593</SourceUsageAfterPM>
+    <FixtureRotationMotorMinutes desc="Fixture Rotation Motor Minutes" visible="True">1186.582</FixtureRotationMotorMinutes>
+    <LinerSource desc="Liner Source Minutes" visible="True">987.1593</LinerSource>
+    <CryoUsage desc="Cryo Usage Minutes" visible="True">1086.936</CryoUsage>
+    <WaterJournal desc="Water Journal Minutes" visible="True">1286.497</WaterJournal>
+    <PBN desc="PBN Minutes" visible="True">387.1602</PBN>
+    <Other1 desc="Other1" visible="True">13776.28</Other1>
+    <Other2 desc="Other2" visible="True">13776.28</Other2>
+    <Other3 desc="Other3" visible="True">13776.28</Other3>
+    <SystemInterlockGas1Minimum desc="System Interlock Gas1 Minimum(sccm)" visible="True">5</SystemInterlockGas1Minimum>
+    <SystemInterlockGas2Minimum desc="System Interlock Gas2 Minimum(sccm)" visible="True">5</SystemInterlockGas2Minimum>
+    <SystemInterlockGas3Minimum desc="System Interlock Gas3 Minimum(sccm)" visible="True">5</SystemInterlockGas3Minimum>
+    <SystemInterlockGas4Minimum desc="System Interlock Gas4 Minimum(sccm)" visible="True">5</SystemInterlockGas4Minimum>
+    <SystemInterlockGas5Minimum desc="System Interlock Gas5 Minimum(sccm)" visible="True">5</SystemInterlockGas5Minimum>
+    <PowerMonitorTime desc="Delay Time To Monitor Power And Gases(secs)" visible="True">10</PowerMonitorTime>
+    <ShutterOpenClosedSafeAngleUpper desc="Max Tilt Angle To Safety Open/Close Shutter(angle)" visible="True">180</ShutterOpenClosedSafeAngleUpper>
+    <ShutterOpenClosedSafeAngleLower desc="Min Tilt Angle To Safety Open/Close Shutter(angle)" visible="True">-20</ShutterOpenClosedSafeAngleLower>
+    <ShutterOpenClockWiseCounts desc="Shutter Open Left Position In Counts Used by Galil" visible="True">1000</ShutterOpenClockWiseCounts>
+    <ShutterOpenCounterClockWiseCounts desc="Shutter Open Right Position In Counts Used by Galil" visible="True">-1000</ShutterOpenCounterClockWiseCounts>
+    <ShutterCountsPerDegree desc="Shutter Counts Per Degree" visible="True">100</ShutterCountsPerDegree>
+    <ShutterHomeOffsetCounts desc="Shutter Home Offset (Counts)" visible="True">2000</ShutterHomeOffsetCounts>
+    <MinShutterInterlockTiltAngle0to90 desc="Min Tilt Angle To Open Shutter To Left (Degree)" visible="True">0</MinShutterInterlockTiltAngle0to90>
+    <MaxShutterInterlockTiltAngle0to90 desc="Max Tilt Angle To Open Shutter To Left (Degree)" visible="True">90</MaxShutterInterlockTiltAngle0to90>
+    <MinShutterInterlockTiltAngle90to180 desc="Min Tilt Angle To Open Shutter To Right (Degree)" visible="True">91</MinShutterInterlockTiltAngle90to180>
+    <MaxShutterInterlockTiltAngle90to180 desc="Max Tilt Angle To Open Shutter To Right (Degree)" visible="True">180</MaxShutterInterlockTiltAngle90to180>
+    <ShutterPositionTolerance desc="Shutter Position Tolerance (Counts)" visible="True">20</ShutterPositionTolerance>
+    <StartProcPressureReachWaitTime desc="Start Process Pressure Reach Wait Time(miliSecs)" visible="False">60000</StartProcPressureReachWaitTime>
+    <ProcessStartPressure desc="Process Start Pressure (Torr)" visible="True">8E-05</ProcessStartPressure>
+    <OutOfToleranceTimeLimit desc="Out Of Tolerance Time Limit(secs)" visible="True">5</OutOfToleranceTimeLimit>
+    <CryoOutOfToleranceTimeLimit desc="Cryo Out Of Tolerance Time Limit(secs)" visible="True">10</CryoOutOfToleranceTimeLimit>
+    <RotationCountPerDegree desc="Rotation Count Per Degree" visible="True">100</RotationCountPerDegree>
+    <TiltCountPerDegree desc="Tilt Count Per Degree" visible="True">10000</TiltCountPerDegree>
+    <EnoughWaterForTurboWaitTime desc="Waittime for enough water for Turbo(secs)" visible="True">5</EnoughWaterForTurboWaitTime>
+    <CloseWaterValveWaitTime desc="Waittime to close water valve after off turbo(secs)" visible="True">120</CloseWaterValveWaitTime>
+    <SweepDwellTime desc="Sweep Dwell Time(secs)" visible="True">0.4</SweepDwellTime>
+    <SweepDwellSpeed desc="Sweep Dwell Speed(RPM)" visible="True">60</SweepDwellSpeed>
+    <RotationStaticSpeed desc="Rotation Static Speed(RPM)" visible="True">60</RotationStaticSpeed>
+    <RotationHomeSpeed desc="Rotation Home Speed(RPM)" visible="True">60</RotationHomeSpeed>
+    <FastRotationVelocityGain desc="Fast Rotation Velocity Gain" visible="True">0.9</FastRotationVelocityGain>
+    <FastRotationPositionGain desc="Fast Rotation Position Gain" visible="True">0.1</FastRotationPositionGain>
+    <FastRotationVelocityGainContinuous desc="Fast Rotation Velocity Gain Continuous" visible="True">0.8</FastRotationVelocityGainContinuous>
+    <FastRotationPositionGainContinuous desc="Fast Rotation Position Gain Continuous" visible="True">0.1</FastRotationPositionGainContinuous>
+    <TiltSweepDwellTime desc="Tilt Sweep Dwell Time(secs)" visible="True">0.1</TiltSweepDwellTime>
+    <!--Max Min Of Power Supply-->
+    <MaxBeamVoltageSP desc="Max Beam Voltage SP(V)" visible="True">1000</MaxBeamVoltageSP>
+    <MaxBeamVoltageRB desc="Max Beam Voltage RB(V)" visible="True">1000</MaxBeamVoltageRB>
+    <!--Max Beam Current-->
+    <MaxBeamCurrentRB desc="Max Beam Current RB(A)" visible="True">4</MaxBeamCurrentRB>
+    <!--Max Suppressor Voltage-->
+    <MaxSuppressorVoltageSP desc="Max Suppressor Voltage SP(V)" visible="True">1000</MaxSuppressorVoltageSP>
+    <MaxSuppressorVoltageRB desc="Max Suppressor Voltage RB(V)" visible="True">1000</MaxSuppressorVoltageRB>
+    <!--Max Suppressor Current-->
+    <MaxSuppressorCurrentRB desc="Max Suppressor Current RB(A)" visible="True">4</MaxSuppressorCurrentRB>
+    <!--Max PBN Body Current-->
+    <MaxPbnBodyCurrentSP desc="Max PBN Body Current SP(A)" visible="True">2</MaxPbnBodyCurrentSP>
+    <MaxPbnBodyCurrentRB desc="Max PBN Body Current RB(A)" visible="True">2</MaxPbnBodyCurrentRB>
+    <!--Max PBN Discharge Current-->
+    <MaxPbnDischargeCurrentSP desc="Max PBN Discharge Current SP(A)" visible="True">16</MaxPbnDischargeCurrentSP>
+    <MaxPbnDischargeCurrentRB desc="Max PBN Discharge Current RB(A)" visible="True">16</MaxPbnDischargeCurrentRB>
+    <MinPBNDischargeCurrentSP desc="Min PBN Discharge Current SP(A)" visible="True">20</MinPBNDischargeCurrentSP>
+    <!--Max PBN Discharge Voltage-->
+    <MaxPbnDischargeVoltageRB desc="Max PBN Discharge Voltage RB(V)" visible="True">1000</MaxPbnDischargeVoltageRB>
+    <!--Max PBN Body Voltage-->
+    <MaxPbnBodyVoltageRB desc="Max PBN Body Voltage RB(V)" visible="True">1000</MaxPbnBodyVoltageRB>
+    <!--Max Fixture Water Flow Rate RB-->
+    <MaxFixtureWaterFlowRateRB desc="Max Fixture Water Flow Rate RB (GPM)" visible="True">4</MaxFixtureWaterFlowRateRB>
+    <!--Max Fixture Water Temp RB-->
+    <MaxFixtureWaterTempRB desc="Max Fixture Water Temp RB (C)" visible="True">100</MaxFixtureWaterTempRB>
+    <!--Number of Timeout Messages To Alarm-->
+    <NumberCommTimeoutMsgToAlarm desc="Number Of Communication Timeout Messsages To Alarm(count)" visible="True">5</NumberCommTimeoutMsgToAlarm>
+    <!--Idle Time For Fixture Warm Up Before Running-->
+    <IdleTimeToWarmUpFixture desc="Idle Time To Run Warm Up Fixture(secs)" visible="True">3600</IdleTimeToWarmUpFixture>
+    <!--Wait Time After Run Warm-->
+    <WaitTimeAfterRunWarmMacro desc="Wait Time After Run Warm Macro(secs)" visible="True">30</WaitTimeAfterRunWarmMacro>
+    <!--Time When System Is Idle -->
+    <TimeWhenSystemIdle desc="Time When System Is Idle" visible="False">2022-05-01 19:12:09</TimeWhenSystemIdle>
+    <!--Max day system storage log files -->
+    <SystemCleanUpTimeInDays desc="SystemCleanUpTimeInDays" visible="False">90</SystemCleanUpTimeInDays>
+    <SystemCleanUpRunDataTimeInDays desc="System Clean Up Run Data Time In Days" visible="False">60</SystemCleanUpRunDataTimeInDays>
+    <!--Init Current Emission For Ion Gauge-->
+    <IonGaugeEmissionCurrent desc="Init Current Emission (1=20uA, 2=1mA, 3=4mA, 4=Automatic switching)" visible="True">4</IonGaugeEmissionCurrent>
+    <!--Wait Time For Flowcool shutoff valve closed-->
+    <BacksideShutOffValveDelaySecs desc="Flowcool ShutoffValve Close Delay Time(secs)" visible="True">30</BacksideShutOffValveDelaySecs>
+    <!--Pressure Safe To Open Cryo Vat-->
+    <PressureSafeToOpenCryo desc="Pressure Safe To Open Cryo Vat(Torr)" visible="True">9E-06</PressureSafeToOpenCryo>
+    <!--WaitTime For PM Pressure Safe To Open Cryo Vat-->
+    <PressureSafeToOpenCryoTimeout desc="WaitTime For PM Pressure Safe To Open Cryo(mins)" visible="True">2</PressureSafeToOpenCryoTimeout>
+    <!--Beam or PBN Recovery Retry Count Limit-->
+    <BeamPBNRecoveryRetryCountLimit desc="Beam or PBN Recovery Retry Count Limit(count)" visible="True">3</BeamPBNRecoveryRetryCountLimit>
+    <!--Ion Gauge Firmware Model-->
+    <IonGaugeFirmwareModel desc="Ion Gauge Firmware Model(0=Old Firmware, 1=New Firmware)" visible="False">1</IonGaugeFirmwareModel>
+    <!--Pbn Discharge CurrentRB Offset-->
+    <PbnDischargeCurrentRBOffset desc="Pbn Discharge CurrentRB Offset(A)" visible="False">0</PbnDischargeCurrentRBOffset>
+    <!--Pbn Body CurrentRB Offset-->
+    <PbnBodyCurrentRBOffset desc="Pbn Body CurrentRB Offset(A)" visible="False">0</PbnBodyCurrentRBOffset>
+    <!--Pbn Discharge VoltageRB Offset-->
+    <PbnDischargeVoltageRBOffset desc="Pbn Discharge VoltageRB Offset(V)" visible="False">0.095</PbnDischargeVoltageRBOffset>
+    <!--Pbn Body Voltage RB Offset-->
+    <PbnBodyVoltageRBOffset desc="Pbn Body VoltageRB Offset(A)" visible="False">0.095</PbnBodyVoltageRBOffset>
+    <!--Fixture Water Flow Rate RB Offset-->
+    <FixtureWaterFlowRateRBOffset desc="PFixture Water Flow Rate RB Offset (GPM)" visible="False">0.095</FixtureWaterFlowRateRBOffset>
+    <!--Fixture Water Temp RB Offset-->
+    <FixtureWaterTempRBOffset desc="Fixture Water Temp RB Offset (C)" visible="False">0.095</FixtureWaterTempRBOffset>
+    <!--Time Server IP Address-->
+    <TimeServerAddress desc="IP Address of Time Server" visible="True">209.36.30.59</TimeServerAddress>
+    <!--Allow Front End Control-->
+    <AllowedFrontEndControl desc="Allowed Front End Control (0=Not Allow, 1=Allow)" visible="True">1</AllowedFrontEndControl>
+    <!--Ion Gauge Filament-->
+    <WhichFilament desc="Which Filament (1=Filament1, 2=Filament2, 3=Both Filament, 4=Manual)" visible="True">4</WhichFilament>
+    <!--ML Ion Gauge Filament-->
+    <MLWhichFilament desc="Which Filament (1=Filament1, 2=Filament2, 3=Both Filament, 4=Manual)" visible="True">1</MLWhichFilament>
+    <!--For Filament PBN-->
+    <FilamentPBN_nFilamentMin desc="Filament PBN Min(A)" visible="True">75</FilamentPBN_nFilamentMin>
+    <FilamentPBN_WaitTimeForPBNPowerOn desc="Filament PBN Wait Time For PBN Power ON(secs)" visible="True">3</FilamentPBN_WaitTimeForPBNPowerOn>
+    <FilamentPBN_MaxRetry desc="Filament PBN Max Retry(count)" visible="True">3</FilamentPBN_MaxRetry>
+    <FilamentPBN_PBNOnMinValue desc="Filament PBN On Current Min(A)" visible="True">10</FilamentPBN_PBNOnMinValue>
+    <FilamentPBN_BodyCurrentToleranceLevel_0 desc="Filament PBN Body Tolerance Level 0(%)" visible="True">10</FilamentPBN_BodyCurrentToleranceLevel_0>
+    <FilamentPBN_DeltaLevel_0 desc="Filament PBN Delta Level 0(A)" visible="True">0.15</FilamentPBN_DeltaLevel_0>
+    <FilamentPBN_BodyCurrentToleranceLevel_1 desc="Filament PBN Body Tolerance Level 1(%)" visible="True">20</FilamentPBN_BodyCurrentToleranceLevel_1>
+    <FilamentPBN_DeltaLevel_1 desc="Filament PBN Delta Level 1(A)" visible="True">0.15</FilamentPBN_DeltaLevel_1>
+    <FilamentPBN_BodyCurrentToleranceLevel_2 desc="Filament PBN Body Tolerance Level 2(%)" visible="True">25</FilamentPBN_BodyCurrentToleranceLevel_2>
+    <FilamentPBN_DeltaLevel_2 desc="Filament PBN Delta Level 2(A)" visible="True">0.3</FilamentPBN_DeltaLevel_2>
+    <FilamentPBN_BodyCurrentToleranceLevel_3 desc="Filament PBN Body Tolerance Level 3(%)" visible="True">35</FilamentPBN_BodyCurrentToleranceLevel_3>
+    <FilamentPBN_DeltaLevel_3 desc="Filament PBN Delta Level 3(A)" visible="True">0.6</FilamentPBN_DeltaLevel_3>
+    <FilamentPBN_BodyCurrentToleranceLevel_4 desc="Filament PBN Body Tolerance Level 4(%)" visible="True">50</FilamentPBN_BodyCurrentToleranceLevel_4>
+    <FilamentPBN_DeltaLevel_4 desc="Filament PBN Delta Level 4(A)" visible="True">1.2</FilamentPBN_DeltaLevel_4>
+    <FilamentPBN_TimeoutForPBNOK desc="Filament PBN Timeout for PBN OK(secs)" visible="True">120</FilamentPBN_TimeoutForPBNOK>
+    <FilamentPBN_ToleranceForPBNOK desc="Filament PBN OK Tolerance(%)" visible="True">35</FilamentPBN_ToleranceForPBNOK>
+    <!--For Max RF Power-->
+    <MaxRFPowerSupplyPowerSP desc="Max RF Power Supply Power SP(W)" visible="True">4000</MaxRFPowerSupplyPowerSP>
+    <MaxRFPowerSupplyPowerRB desc="Max RF Power Supply Power RB(W)" visible="True">4000</MaxRFPowerSupplyPowerRB>
+    <MaxRFPowerSupplyReflectedRB desc="Max RF Power Supply Reflected RB(W)" visible="True">4000</MaxRFPowerSupplyReflectedRB>
+    <WaitTimeAfterFilamentPBNRegulate desc="Wait Time After Regulating Filament PBN(Secs)" visible="True">2</WaitTimeAfterFilamentPBNRegulate>
+    <FastTiltStartLimitArea desc="Fast Tilt Start Limit Area (angle)" visible="True">0</FastTiltStartLimitArea>
+    <FastTiltEndLimitArea desc="Fast Tilt End Limit Area (angle)" visible="True">80</FastTiltEndLimitArea>
+    <FastTiltPositionGain desc="Fast Tilt Position Gain running" visible="True">0.1</FastTiltPositionGain>
+    <FastTiltVelocityGain desc="Fast Tilt Velocity Gain running" visible="True">0.9</FastTiltVelocityGain>
+    <TiltMaintPosition desc="Tilt Maint Position (angle)" visible="True">60</TiltMaintPosition>
+    <FastTiltWaitTimeBeforeBrake desc="Fast Tilt Wait Time Before Brake (s)" visible="True">3</FastTiltWaitTimeBeforeBrake>
+    <FastTiltSweepSpeedAtVacuum desc="Fast Tilt Sweep Speed At Vacuum" visible="True">0.2</FastTiltSweepSpeedAtVacuum>
+    <ToleranceForFastTiltSpeed desc="ToleranceForFastTiltSpeed" visible="True">0.015</ToleranceForFastTiltSpeed>
+    <ToleranceForFastRotationSpeed desc="ToleranceForFastRotationSpeed" visible="True">0.015</ToleranceForFastRotationSpeed>
+    <!--SHAPER-->
+    <ShaperWaitTimeX1 desc="Shaper wait time X1 (secs)" visible="True">2</ShaperWaitTimeX1>
+    <ShaperWaitTimeX2 desc="Shaper wait time X2 (secs)" visible="True">1</ShaperWaitTimeX2>
+    <Shaper2_Home_Offset desc="Shaper2 Home Offset (Inches)" visible="True">10</Shaper2_Home_Offset>
+    <Shaper2_Count_Per_Inch desc="Shaper2_Count_Per_Inch" visible="True">1000</Shaper2_Count_Per_Inch>
+    <Shaper2_DistanceX desc="Shaper 2 Distance X (Inches)" visible="True">2</Shaper2_DistanceX>
+    <Shaper2_Move_Acceleration desc="Shaper2 Move Acceleration (s)" visible="True">1000</Shaper2_Move_Acceleration>
+    <Shaper2_Move_Deceleration desc="Shaper2 Move Deceleration (s)" visible="True">1000</Shaper2_Move_Deceleration>
+    <Shaper2_Move_Speed desc="Shaper2 Move Speed (count)" visible="True">1000</Shaper2_Move_Speed>
+    <!-- HidenGauge -->
+    <SendHidenGaugeCommandEverySecs desc="Send Hiden Gauge Command Every X Secs" visible="True">30</SendHidenGaugeCommandEverySecs>
+    <ToleranceForRFReflectedPower desc="ToleranceForRFReflectedPower" visible="True">10</ToleranceForRFReflectedPower>
+    <SweepOffsetLeft desc="Sweep Offset Left (degree)" visible="True">0</SweepOffsetLeft>
+    <SweepOffsetRight desc="Sweep Offset Right (degree)" visible="True">0</SweepOffsetRight>
+    <ElectroMagnetReachSPTimeout desc="Electro Magnet Reach SP Timeout (s)" visible="True">30</ElectroMagnetReachSPTimeout>
+    <ToleranceForSourceEMCurrent desc="Tolerance For Source EM Current (%)" visible="True">10</ToleranceForSourceEMCurrent>
+    <SourceEMVoltageSP desc="SourceEMVoltageSP (V)" visible="True">10</SourceEMVoltageSP>
+    <!-- New missing parameters -->
+    <ShutterOpenDelay desc="ShutterOpenDelay" visible="True">10</ShutterOpenDelay>
+  </Parameters>
+</Configuration>

@@ -1,0 +1,2018 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3EB4FDE6-DD1C-4BFA-B497-F7B4403DBBCD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>AVP_Robot_Project.My.MyApplication</StartupObject>
+    <RootNamespace>AVP_Robot_Project</RootNamespace>
+    <AssemblyName>AVP</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>611EFD0C53B74B7C53F20F1B2963F116886E02B3</ManifestCertificateThumbprint>
+    <ManifestKeyFile>AVP_Robot_Project_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <SignManifests>false</SignManifests>
+    <PublishUrl>http://localhost/AVP_Robot_Project/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationVersion>0.2.3.%2a</ApplicationVersion>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ApplicationIcon>Resources\Common\Others\CompanyIcon.ico</ApplicationIcon>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DefineConstants>AVP_PLATFORM="CX",AVP_CX_STYLE="CX5"</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DefineConstants>AVP_PLATFORM="CX",AVP_CX_STYLE="CX5"</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'CreateBuild|AnyCPU' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\CreateBuild\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'CX5_Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\CX5_Debug\</OutputPath>
+    <DefineConstants>AVP_PLATFORM="CX",AVP_INSTALL="CX5"</DefineConstants>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>D:\Program Files\Microsoft Visual Studio 8\Team Tools\Static Analysis Tools\FxCop\\rules</CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'CX5_Release|AnyCPU' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\CX5_Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>D:\Program Files\Microsoft Visual Studio 8\Team Tools\Static Analysis Tools\FxCop\\rules</CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <DefineConstants>AVP_PLATFORM="CX",AVP_INSTALL="CX5"</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.OPCAutomation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ThirdParty\Interop.OPCAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>bin\ThirdParty\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <HintPath>bin\ThirdParty\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataLog\AlarmAndEvent.designer.vb">
+      <DependentUpon>AlarmAndEvent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DataLog\AlarmAndEvent.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AlarmPanel.Designer.vb">
+      <DependentUpon>AlarmPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AlarmPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AlignerWaferControl.Designer.vb">
+      <DependentUpon>AlignerWaferControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AlignerWaferControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="AVPRobotMain.designer.vb">
+      <DependentUpon>AVPRobotMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AVPRobotMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoTransferWaferControl.Designer.vb">
+      <DependentUpon>AutoTransferWaferControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AutoTransferWaferControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BinaryStatusControl.Designer.vb">
+      <DependentUpon>BinaryStatusControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BinaryStatusControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ButtonInterclockControl.Designer.vb">
+      <DependentUpon>ButtonInterclockControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ButtonInterclockControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ButtonIGCGControl.Designer.vb">
+      <DependentUpon>ButtonIGCGControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ButtonIGCGControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CGControl.Designer.vb">
+      <DependentUpon>CGControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CGControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CycleTransferWaferControl.Designer.vb">
+      <DependentUpon>CycleTransferWaferControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CycleTransferWaferControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomizeControl\AVPTextBox.Designer.vb">
+      <DependentUpon>AVPTextBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeControl\AVPTextBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomizeControl\RobotArmStatusPanel.Designer.vb">
+      <DependentUpon>RobotArmStatusPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeControl\RobotArmStatusPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomizeControl\RobotBody.Designer.vb">
+      <DependentUpon>RobotBody.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeControl\RobotBody.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomizeControl\RegionControl.Designer.vb">
+      <DependentUpon>RegionControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeControl\RegionControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomizeControl\LoadLockLeg.Designer.vb">
+      <DependentUpon>LoadLockLeg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeControl\LoadLockLeg.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomizeControl\PMControl.Designer.vb">
+      <DependentUpon>PMControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeControl\PMControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomizeControl\RotateControl.designer.vb">
+      <DependentUpon>RotateControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeControl\RotateControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editor\CreateSequence.Designer.vb">
+      <DependentUpon>CreateSequence.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\CreateSequence.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Generic Chamber\ChamberPanel.Designer.vb">
+      <DependentUpon>ChamberPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Generic Chamber\ChamberPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Generic IBE Panel\IBEPanel.Designer.vb">
+      <DependentUpon>IBEPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Generic IBE Panel\IBEPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Keypad_Numpad\KeyPad.Designer.vb">
+      <DependentUpon>KeyPad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Keypad_Numpad\KeyPad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Keypad_Numpad\NumPad.Designer.vb">
+      <DependentUpon>NumPad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Keypad_Numpad\NumPad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lib\StatusPickPlaceRobotHand.vb" />
+    <Compile Include="Lib\StatusPVD_IGCGTextBox.vb" />
+    <Compile Include="Lib\StatusTextRobotPosition.vb" />
+    <Compile Include="LogIn_LogOut\Login.designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn_LogOut\Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn_LogOut\Logout.Designer.vb">
+      <DependentUpon>Logout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn_LogOut\Logout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LotDatalog\LotDatalog.Designer.vb">
+      <DependentUpon>LotDatalog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LotDatalog\LotDatalog.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\PVDPopUp\StatusPopUpButton.vb" />
+    <Compile Include="LockCassetteControl.designer.vb">
+      <DependentUpon>LockCassetteControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LockCassetteControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LockProcessControl.designer.vb">
+      <DependentUpon>LockProcessControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LockProcessControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="My Project\CXX_Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CXX_Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\ConnectPMPanel.designer.vb">
+      <DependentUpon>ConnectPMPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\ConnectPMPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\PVDPopUp\PVDPopUpPanel.Designer.vb">
+      <DependentUpon>PVDPopUpPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\PVDPopUp\PVDPopUpPanel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\PVDPopUp\StatusPopUpTextBox.vb" />
+    <Compile Include="PVD GUI\PVDTextbox.Designer.vb">
+      <DependentUpon>PVDTextbox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\PVDTextbox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QuestionMarkControl.Designer.vb">
+      <DependentUpon>QuestionMarkControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QuestionMarkControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editor\usrWaferFlow.designer.vb">
+      <DependentUpon>usrWaferFlow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\usrWaferFlow.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editor\WaferFlow.Designer.vb">
+      <DependentUpon>WaferFlow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\WaferFlow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lib\StatusAlignerControl.vb" />
+    <Compile Include="Lib\StatusCheckbox.vb" />
+    <Compile Include="Lib\TriStateTreeView.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Messagebox\AVPAbortBox.Designer.vb">
+      <DependentUpon>AVPAbortBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Messagebox\AVPAbortBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messagebox\AVPMessageBox.Designer.vb">
+      <DependentUpon>AVPMessageBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Messagebox\AVPMessageBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messagebox\AVPLogoutBox.Designer.vb">
+      <DependentUpon>AVPLogoutBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Messagebox\AVPLogoutBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messagebox\AVPUseAlignerDialogBox.Designer.vb">
+      <DependentUpon>AVPUseAlignerDialogBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Messagebox\AVPUseAlignerDialogBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\AVPTabControl.Designer.vb">
+      <DependentUpon>AVPTabControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\AVPTabControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\TMControl.Designer.vb">
+      <DependentUpon>TMControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\TMControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\PVDTarControl.Designer.vb">
+      <DependentUpon>PVDTarControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\PVDTarControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\RectButton.designer.vb">
+      <DependentUpon>RectButton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\RectButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\DiagnosticDialog.Designer.vb">
+      <DependentUpon>DiagnosticDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\DiagnosticDialog.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\DiagnosticScreen.Designer.vb">
+      <DependentUpon>DiagnosticScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\DiagnosticScreen.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomizeControl\Wafer.Designer.vb">
+      <DependentUpon>Wafer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeControl\Wafer.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SecsGemGUI\Lib\SecsGem_EventHandler.vb" />
+    <Compile Include="SecsGemGUI\SecsGem.Designer.vb">
+      <DependentUpon>SecsGem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SecsGemGUI\SecsGem.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SemiautoTranferWaferControl.designer.vb">
+      <DependentUpon>SemiautoTranferWaferControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SemiautoTranferWaferControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SerialCommandControl.designer.vb">
+      <DependentUpon>SerialCommandControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SerialCommandControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\IBE_WaferInside.Designer.vb">
+      <DependentUpon>IBE_WaferInside.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\IBE_WaferInside.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\Lib\SL_StatusIBEWafer.vb" />
+    <Compile Include="SingleLoader\Lib\StatusIBE_IGCGTextBox.vb" />
+    <Compile Include="SingleLoader\Lib\SL_FourStatusControl.vb" />
+    <Compile Include="SingleLoader\Lib\SL_StatusBinaryControl.vb" />
+    <Compile Include="SingleLoader\Lib\SL_StatusButton.vb" />
+    <Compile Include="SingleLoader\Lib\SL_StatusRobot.vb" />
+    <Compile Include="SingleLoader\Lib\SL_StatusTextBox.vb" />
+    <Compile Include="SingleLoader\Lib\SL_StatusToolStripMenuItemTextChanged.vb" />
+    <Compile Include="SingleLoader\Lib\SL_StatusValve.vb" />
+    <Compile Include="SingleLoader\Lib\SL_StatusWaferInside.vb" />
+    <Compile Include="SingleLoader\Lib\SL_Support.vb" />
+    <Compile Include="SingleLoader\SL_DataRunInfo.Designer.vb">
+      <DependentUpon>SL_DataRunInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_DataRunInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_GeneralPanel.Designer.vb">
+      <DependentUpon>SL_GeneralPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_GeneralPanel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_IGCGControl.Designer.vb">
+      <DependentUpon>SL_IGCGControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_IGCGControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_PowerPanel.Designer.vb">
+      <DependentUpon>SL_PowerPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_PowerPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_Recipe.designer.vb">
+      <DependentUpon>SL_Recipe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_Recipe.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_CustomizeButton.designer.vb">
+      <DependentUpon>SL_CustomizeButton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_CustomizeButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_Info.Designer.vb">
+      <DependentUpon>SL_Info.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_Info.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_SampleData.Designer.vb">
+      <DependentUpon>SL_SampleData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_SampleData.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_SystemSetup.Designer.vb">
+      <DependentUpon>SL_SystemSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_SystemSetup.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_Textbox.Designer.vb">
+      <DependentUpon>SL_Textbox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_Textbox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_TurboPump.Designer.vb">
+      <DependentUpon>SL_TurboPump.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_TurboPump.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_CryoControl.Designer.vb">
+      <DependentUpon>SL_CryoControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_CryoControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SLBox.Designer.vb">
+      <DependentUpon>SLBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SLBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_Fixture.Designer.vb">
+      <DependentUpon>SL_Fixture.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_Fixture.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_FixturePro.Designer.vb">
+      <DependentUpon>SL_FixturePro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_FixturePro.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_InterlockControl.Designer.vb">
+      <DependentUpon>SL_InterlockControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_InterlockControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_Load.Designer.vb">
+      <DependentUpon>SL_Load.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_Load.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_ProcessControl.Designer.vb">
+      <DependentUpon>SL_ProcessControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_ProcessControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_ProcessControlM.Designer.vb">
+      <DependentUpon>SL_ProcessControlM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_ProcessControlM.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_ProcessPanel.designer.vb">
+      <DependentUpon>SL_ProcessPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_ProcessPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_ReadbackPanel.Designer.vb">
+      <DependentUpon>SL_ReadbackPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_ReadbackPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_SystemControll.Designer.vb">
+      <DependentUpon>SL_SystemControll.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_SystemControll.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_StatusPanel.designer.vb">
+      <DependentUpon>SL_StatusPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_StatusPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_UserSetup.designer.vb">
+      <DependentUpon>SL_UserSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_UserSetup.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_ValveControl.designer.vb">
+      <DependentUpon>SL_ValveControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_ValveControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\SL_WaferRun.Designer.vb">
+      <DependentUpon>SL_WaferRun.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_WaferRun.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TM Pop Up Panel\StatusTM_PopUpButton.vb" />
+    <Compile Include="TM Pop Up Panel\StatusTM_PopUpTextbox.vb" />
+    <Compile Include="TM Pop Up Panel\TMPopUpPanel.Designer.vb">
+      <DependentUpon>TMPopUpPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TM Pop Up Panel\TMPopUpPanel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TroubleShoot Page\TroubleShoot.Designer.vb">
+      <DependentUpon>TroubleShoot.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TroubleShoot Page\TroubleShoot.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editor\Recipe.designer.vb">
+      <DependentUpon>Recipe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Recipe.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chamber1DetailsControl.designer.vb">
+      <DependentUpon>Chamber1DetailsControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Chamber1DetailsControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chamber3DetailsControl.designer.vb">
+      <DependentUpon>Chamber3DetailsControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Chamber3DetailsControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChamberControl.designer.vb">
+      <DependentUpon>ChamberControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChamberControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CirclePlasmaControl.Designer.vb">
+      <DependentUpon>CirclePlasmaControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CirclePlasmaControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CircleStatusControl.Designer.vb">
+      <DependentUpon>CircleStatusControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CircleStatusControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Container\ContainerDAO.vb" />
+    <Compile Include="Container\ContainerData.vb" />
+    <Compile Include="Container\ContainerForm.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\Chamber1DCPVDPanel.Designer.vb">
+      <DependentUpon>Chamber1DCPVDPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\Chamber1DCPVDPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\PVDPanel.Designer.vb">
+      <DependentUpon>PVDPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\PVDPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\PVDStatusPanel.Designer.vb">
+      <DependentUpon>PVDStatusPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\PVDStatusPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\BiasPowerSupply.designer.vb">
+      <DependentUpon>BiasPowerSupply.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\BiasPowerSupply.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\ChuckControl.Designer.vb">
+      <DependentUpon>ChuckControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\ChuckControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lib\PVDSupport.vb" />
+    <Compile Include="PVD GUI\PVDTurboPump.Designer.vb">
+      <DependentUpon>PVDTurboPump.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\PVDTurboPump.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\Chamber1RFPVDPanel.Designer.vb">
+      <DependentUpon>Chamber1RFPVDPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\Chamber1RFPVDPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\PVDRunRecipe.Designer.vb">
+      <DependentUpon>PVDRunRecipe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\PVDRunRecipe.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\PVDCryoControl.Designer.vb">
+      <DependentUpon>PVDCryoControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\PVDCryoControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\PVDCGControl.Designer.vb">
+      <DependentUpon>PVDCGControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\PVDCGControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\PVDMagnatron.designer.vb">
+      <DependentUpon>PVDMagnatron.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\PVDMagnatron.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\PVDBACenterControl.Designer.vb">
+      <DependentUpon>PVDBACenterControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\PVDBACenterControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\PVDProcessMonitor.designer.vb">
+      <DependentUpon>PVDProcessMonitor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\PVDProcessMonitor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\VatValveController.designer.vb">
+      <DependentUpon>VatValveController.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\VatValveController.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\PVDGasController.designer.vb">
+      <DependentUpon>PVDGasController.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\PVDGasController.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\PVDChamberInterlock.designer.vb">
+      <DependentUpon>PVDChamberInterlock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\PVDChamberInterlock.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\ParallelMagnet.designer.vb">
+      <DependentUpon>ParallelMagnet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\ParallelMagnet.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\PVDStatusBoard.Designer.vb">
+      <DependentUpon>PVDStatusBoard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\PVDStatusBoard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD GUI\TargetPowerSupply.designer.vb">
+      <DependentUpon>TargetPowerSupply.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD GUI\TargetPowerSupply.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FourStatusControl.designer.vb">
+      <DependentUpon>FourStatusControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FourStatusControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lib\StatusFourStatusControl.vb" />
+    <Compile Include="RobotHand.Designer.vb">
+      <DependentUpon>RobotHand.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RobotHand.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TroubleShoot Page\WriteItemDlg.Designer.vb">
+      <DependentUpon>WriteItemDlg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TroubleShoot Page\WriteItemDlg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomizeControl\ToolID.Designer.vb">
+      <DependentUpon>ToolID.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeControl\ToolID.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usrOperationsAligner.Designer.vb">
+      <DependentUpon>usrOperationsAligner.vb</DependentUpon>
+    </Compile>
+    <Compile Include="usrOperationsAligner.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usrAlignmentInfo.Designer.vb">
+      <DependentUpon>usrAlignmentInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="usrAlignmentInfo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usrStatusPanel.designer.vb">
+      <DependentUpon>usrStatusPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="usrStatusPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usrWaferInfo.Designer.vb">
+      <DependentUpon>usrWaferInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="usrWaferInfo.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HivacValveStatusControl.Designer.vb">
+      <DependentUpon>HivacValveStatusControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HivacValveStatusControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lib\ConstantAndEnum.vb" />
+    <Compile Include="Lib\ErrorMessageBox.vb" />
+    <Compile Include="Lib\StatusLoadLockControl.vb" />
+    <Compile Include="Lib\DelegateMarshaller.vb" />
+    <Compile Include="Lib\IGCGStatusTextBox.vb" />
+    <Compile Include="Lib\StatusButton.vb" />
+    <Compile Include="Lib\StatusButtonProcessStart.vb" />
+    <Compile Include="Lib\StatusButtonRecipeStart.vb" />
+    <Compile Include="Lib\StatusContextMenuStrip.vb" />
+    <Compile Include="Lib\StatusImageButton.vb" />
+    <Compile Include="Lib\StatusPressureLabel.vb" />
+    <Compile Include="Lib\StatusPressureTextBox.vb" />
+    <Compile Include="Lib\StatusThirdStatusControl.vb" />
+    <Compile Include="SplashScreen.Designer.vb">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSetup.Designer.vb">
+      <DependentUpon>SystemSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSetup.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThirdStatusControl.Designer.vb">
+      <DependentUpon>ThirdStatusControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ThirdStatusControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usrAligner.Designer.vb">
+      <DependentUpon>usrAligner.vb</DependentUpon>
+    </Compile>
+    <Compile Include="usrAligner.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editor\usrEquipmentNamevb.Designer.vb">
+      <DependentUpon>usrEquipmentNamevb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\usrEquipmentNamevb.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Utils\EncryptionHelper.vb" />
+    <Compile Include="Utils\Utils.vb" />
+    <Compile Include="WaferInfoDlg.Designer.vb">
+      <DependentUpon>WaferInfoDlg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WaferInfoDlg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaferRun\SampleData.Designer.vb">
+      <DependentUpon>SampleData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WaferRun\SampleData.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WaferRun\WaferRun.Designer.vb">
+      <DependentUpon>WaferRun.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WaferRun\WaferRun.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WaferTransparent.Designer.vb">
+      <DependentUpon>WaferTransparent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WaferTransparent.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WaterPump.Designer.vb">
+      <DependentUpon>WaterPump.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WaterPump.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="YellowLightPanel.Designer.vb">
+      <DependentUpon>YellowLightPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YellowLightPanel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ImageHivacTMTransferModule.Designer.vb">
+      <DependentUpon>ImageHivacTMTransferModule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImageHivacTMTransferModule.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CryoControl.Designer.vb">
+      <DependentUpon>CryoControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CryoControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FixtureControl.Designer.vb">
+      <DependentUpon>FixtureControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FixtureControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FootStatusControl.Designer.vb">
+      <DependentUpon>FootStatusControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FootStatusControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IGCGControl.designer.vb">
+      <DependentUpon>IGCGControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IGCGControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImageBinaryStatusControl.Designer.vb">
+      <DependentUpon>ImageBinaryStatusControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImageBinaryStatusControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lib\HMergedCell.vb">
+    </Compile>
+    <Compile Include="Lib\MessageGuiBusinessLib.vb" />
+    <Compile Include="Lib\MessageManager.vb" />
+    <Compile Include="Lib\MessageMapper .vb" />
+    <Compile Include="Lib\Robot.vb" />
+    <Compile Include="Lib\RobotConfiguration.vb" />
+    <Compile Include="Lib\StatusAlarm.vb" />
+    <Compile Include="Lib\StatusBinaryStatusControl.vb" />
+    <Compile Include="Lib\StatusColorButton.vb" />
+    <Compile Include="Lib\StatusColorLabel.vb" />
+    <Compile Include="Lib\StatusRobot.vb" />
+    <Compile Include="Lib\StatusToolStripMenuItem.vb" />
+    <Compile Include="Lib\StatusToolStripMenuItemChamber3.vb" />
+    <Compile Include="Lib\StatusToolStripMenuItemChamber3TextChanged.vb" />
+    <Compile Include="Lib\StatusVisibleChamber3.vb" />
+    <Compile Include="Lib\StatusVisibleObject.vb" />
+    <Compile Include="Lib\StatusGraph.vb" />
+    <Compile Include="Lib\StatusIGCGButton.vb" />
+    <Compile Include="Lib\StatusLabel.vb" />
+    <Compile Include="Lib\StatusManager.vb" />
+    <Compile Include="Lib\StatusObject.vb" />
+    <Compile Include="Lib\StatusRoundRectangleControl.vb" />
+    <Compile Include="Lib\StatusTextBox.vb" />
+    <Compile Include="Lib\StatusWaferInside.vb" />
+    <Compile Include="My Project\CXX_AssemblyInfo.vb" />
+    <Compile Include="NumberCircleStatusControl.Designer.vb">
+      <DependentUpon>NumberCircleStatusControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NumberCircleStatusControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editor\OpenChamber.Designer.vb">
+      <DependentUpon>OpenChamber.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\OpenChamber.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\OpenSequence.designer.vb">
+      <DependentUpon>OpenSequence.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\OpenSequence.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PressureGraph.designer.vb">
+      <DependentUpon>PressureGraph.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PressureGraph.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProcessMonitor.Designer.vb">
+      <DependentUpon>ProcessMonitor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessMonitor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProcessPanel.designer.vb">
+      <DependentUpon>ProcessPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RoundRectangleStatusControl.designer.vb">
+      <DependentUpon>RoundRectangleStatusControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RoundRectangleStatusControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScreenMachine.designer.vb">
+      <DependentUpon>ScreenMachine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ScreenMachine.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editor\SelectRecipe.Designer.vb">
+      <DependentUpon>SelectRecipe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\SelectRecipe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\SelectWaferForm.Designer.vb">
+      <DependentUpon>SelectWaferForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\SelectWaferForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Sequence.Designer.vb">
+      <DependentUpon>Sequence.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\Sequence.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SmallCricleControl.Designer.vb">
+      <DependentUpon>SmallCricleControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SmallCricleControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StatusBoard.Designer.vb">
+      <DependentUpon>StatusBoard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBoard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StatusPanel.Designer.vb">
+      <DependentUpon>StatusPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StatusPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SuppressorPowerSupplyControl.Designer.vb">
+      <DependentUpon>SuppressorPowerSupplyControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SuppressorPowerSupplyControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransparentControl.Designer.vb">
+      <DependentUpon>TransparentControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TransparentControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransparentImageControl.Designer.vb">
+      <DependentUpon>TransparentImageControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TransparentImageControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserSetup.designer.vb">
+      <DependentUpon>UserSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserSetup.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ValveControl.Designer.vb">
+      <DependentUpon>ValveControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ValveControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ValveRingControl.Designer.vb">
+      <DependentUpon>ValveRingControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ValveRingControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WaferCheckBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WaferCountControl.designer.vb">
+      <DependentUpon>WaferCountControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WaferCountControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WaferLabelBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CassettesPanel_CX5.resx">
+      <DependentUpon>CassettesPanel_CX5.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cryo PopUp Panel\CryoPopUpPanel.resx">
+      <DependentUpon>CryoPopUpPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomizeControl\AVPPopUpFrm.resx">
+      <DependentUpon>AVPPopUpFrm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataLog\AlarmAndEvent.resx">
+      <DependentUpon>AlarmAndEvent.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlarmPanel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AlarmPanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlarmStatisticControl.resx">
+      <DependentUpon>AlarmStatisticControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlignerWaferControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AlignerWaferControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AVPRobotMain.resx">
+      <DependentUpon>AVPRobotMain.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AutoTransferWaferControl.resx">
+      <DependentUpon>AutoTransferWaferControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BinaryStatusControl.resx">
+      <DependentUpon>BinaryStatusControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ButtonInterclockControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ButtonInterclockControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ButtonIGCGControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ButtonIGCGControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CGControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CGControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CycleTransferWaferControl.resx">
+      <DependentUpon>CycleTransferWaferControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomizeControl\RobotArmStatusPanel.resx">
+      <DependentUpon>RobotArmStatusPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomizeControl\RobotBody.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RobotBody.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomizeControl\RegionControl.resx">
+      <DependentUpon>RegionControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomizeControl\LoadLockLeg.resx">
+      <DependentUpon>LoadLockLeg.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomizeControl\PMControl.resx">
+      <DependentUpon>PMControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomizeControl\RotateControl.resx">
+      <DependentUpon>RotateControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\CreateSequence.resx">
+      <DependentUpon>CreateSequence.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExitFrm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ExitFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generic Chamber\ChamberPanel.resx">
+      <DependentUpon>ChamberPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generic IBE Panel\IBEPanel.resx">
+      <DependentUpon>IBEPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keypad_Numpad\KeyPad.resx">
+      <DependentUpon>KeyPad.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keypad_Numpad\NumPad.resx">
+      <DependentUpon>NumPad.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LockCassetteControl.resx">
+      <DependentUpon>LockCassetteControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LockProcessControl.resx">
+      <DependentUpon>LockProcessControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn_LogOut\Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn_LogOut\Logout.resx">
+      <DependentUpon>Logout.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LotDatalog\LotDatalog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LotDatalog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messagebox\AVPProcessChimeBox.resx">
+      <DependentUpon>AVPProcessChimeBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\CX5_Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>CX5_Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PMx Process Status PopUp\PMProcessStatusPopUpPanel.resx">
+      <DependentUpon>PMProcessStatusPopUpPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\ConnectPMPanel.resx">
+      <DependentUpon>ConnectPMPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\PVDPopUp\PVDPopUpPanel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PVDPopUpPanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuestionMarkControl.resx">
+      <DependentUpon>QuestionMarkControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\usrWaferFlow.resx">
+      <DependentUpon>usrWaferFlow.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\WaferFlow.resx">
+      <DependentUpon>WaferFlow.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messagebox\AVPAbortBox.resx">
+      <DependentUpon>AVPAbortBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messagebox\AVPMessageBox.resx">
+      <DependentUpon>AVPMessageBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messagebox\AVPLogoutBox.resx">
+      <DependentUpon>AVPLogoutBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messagebox\AVPUseAlignerDialogBox.resx">
+      <DependentUpon>AVPUseAlignerDialogBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\TMControl.resx">
+      <DependentUpon>TMControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\PVDTarControl.resx">
+      <DependentUpon>PVDTarControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\DiagnosticDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DiagnosticDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\DiagnosticScreen.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DiagnosticScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Recipe.resx">
+      <DependentUpon>Recipe.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chamber1DetailsControl.resx">
+      <DependentUpon>Chamber1DetailsControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chamber3DetailsControl.resx">
+      <DependentUpon>Chamber3DetailsControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChamberControl.resx">
+      <DependentUpon>ChamberControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CirclePlasmaControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CirclePlasmaControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\Chamber1DCPVDPanel.resx">
+      <DependentUpon>Chamber1DCPVDPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\PVDPanel.resx">
+      <DependentUpon>PVDPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\PVDStatusPanel.resx">
+      <DependentUpon>PVDStatusPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\BiasPowerSupply.resx">
+      <DependentUpon>BiasPowerSupply.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\ChuckControl.resx">
+      <DependentUpon>ChuckControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\PVDTurboPump.resx">
+      <DependentUpon>PVDTurboPump.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\Chamber1RFPVDPanel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Chamber1RFPVDPanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\PVDRunRecipe.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PVDRunRecipe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\PVDCryoControl.resx">
+      <DependentUpon>PVDCryoControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\PVDCGControl.resx">
+      <DependentUpon>PVDCGControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\PVDMagnatron.resx">
+      <DependentUpon>PVDMagnatron.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\PVDBACenterControl.resx">
+      <DependentUpon>PVDBACenterControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\PVDProcessMonitor.resx">
+      <DependentUpon>PVDProcessMonitor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\VatValveController.resx">
+      <DependentUpon>VatValveController.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\PVDGasController.resx">
+      <DependentUpon>PVDGasController.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\PVDChamberInterlock.resx">
+      <DependentUpon>PVDChamberInterlock.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\ParallelMagnet.resx">
+      <DependentUpon>ParallelMagnet.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\PVDStatusBoard.resx">
+      <DependentUpon>PVDStatusBoard.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD GUI\TargetPowerSupply.resx">
+      <DependentUpon>TargetPowerSupply.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FourStatusControl.resx">
+      <DependentUpon>FourStatusControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RobotHand.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RobotHand.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecsGemGUI\PopUp_TerminalMessage.resx">
+      <DependentUpon>PopUp_TerminalMessage.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecsGemGUI\SecsGem.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SecsGem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SemiautoTranferWaferControl.resx">
+      <DependentUpon>SemiautoTranferWaferControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SerialCommandControl.resx">
+      <DependentUpon>SerialCommandControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\IBE_WaferInside.resx">
+      <DependentUpon>IBE_WaferInside.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_DataRunInfo.resx">
+      <DependentUpon>SL_DataRunInfo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_GeneralPanel.resx">
+      <DependentUpon>SL_GeneralPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_IGCGControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SL_IGCGControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_PowerPanel.resx">
+      <DependentUpon>SL_PowerPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_Recipe.resx">
+      <DependentUpon>SL_Recipe.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_CustomizeButton.resx">
+      <DependentUpon>SL_CustomizeButton.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_ROR_PDC_Info.resx">
+      <DependentUpon>SL_ROR_PDC_Info.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_SystemSetup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SL_SystemSetup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_TurboPump.resx">
+      <DependentUpon>SL_TurboPump.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_CryoControl.resx">
+      <DependentUpon>SL_CryoControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SLBox.resx">
+      <DependentUpon>SLBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_Fixture.resx">
+      <DependentUpon>SL_Fixture.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_FixturePro.resx">
+      <DependentUpon>SL_FixturePro.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_InterlockControl.resx">
+      <DependentUpon>SL_InterlockControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_Load.resx">
+      <DependentUpon>SL_Load.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_ProcessControl.resx">
+      <DependentUpon>SL_ProcessControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_ProcessControlM.resx">
+      <DependentUpon>SL_ProcessControlM.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_ProcessPanel.resx">
+      <DependentUpon>SL_ProcessPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_ReadbackPanel.resx">
+      <DependentUpon>SL_ReadbackPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_SystemControll.resx">
+      <DependentUpon>SL_SystemControll.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_StatusPanel.resx">
+      <DependentUpon>SL_StatusPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_UserSetup.resx">
+      <DependentUpon>SL_UserSetup.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_ValveControl.resx">
+      <DependentUpon>SL_ValveControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleLoader\SL_WaferRun.resx">
+      <DependentUpon>SL_WaferRun.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TM Pop Up Panel\TurboPopUpControlPanel.resx">
+      <DependentUpon>TurboPopUpControlPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TM Pop Up Panel\TMPopUpPanel.resx">
+      <DependentUpon>TMPopUpPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TroubleShoot Page\TroubleShoot.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TroubleShoot.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TroubleShoot Page\WriteItemDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WriteItemDlg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomizeControl\ToolID.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ToolID.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usrAlignmentInfo.resx">
+      <DependentUpon>usrAlignmentInfo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usrOperationsAligner.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>usrOperationsAligner.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usrStatusPanel.resx">
+      <DependentUpon>usrStatusPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usrWaferInfo.resx">
+      <DependentUpon>usrWaferInfo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HivacValveStatusControl.resx">
+      <DependentUpon>HivacValveStatusControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSetup.resx">
+      <DependentUpon>SystemSetup.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThirdStatusControl.resx">
+      <DependentUpon>ThirdStatusControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usrAligner.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>usrAligner.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\usrEquipmentNamevb.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>usrEquipmentNamevb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaferInfoDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WaferInfoDlg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaferRun\PopUpHidenColumns.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PopUpHidenColumns.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaferRun\PopUpWaferRun.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PopUpWaferRun.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaferRun\SampleData.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SampleData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaferRun\WaferRun.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WaferRun.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaferTransparent.resx">
+      <DependentUpon>WaferTransparent.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaterPump.resx">
+      <DependentUpon>WaterPump.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YellowLightPanel.resx">
+      <DependentUpon>YellowLightPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CryoControl.resx">
+      <DependentUpon>CryoControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FixtureControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FixtureControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FootStatusControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FootStatusControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IGCGControl.resx">
+      <DependentUpon>IGCGControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\OpenChamber.resx">
+      <DependentUpon>OpenChamber.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\OpenSequence.resx">
+      <DependentUpon>OpenSequence.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PressureGraph.resx">
+      <DependentUpon>PressureGraph.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessMonitor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ProcessMonitor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessPanel.resx">
+      <DependentUpon>ProcessPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoundRectangleStatusControl.resx">
+      <DependentUpon>RoundRectangleStatusControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScreenMachine.resx">
+      <DependentUpon>ScreenMachine.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\SelectRecipe.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectRecipe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\SelectWaferForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectWaferForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Sequence.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Sequence.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmallCricleControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SmallCricleControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusBoard.resx">
+      <DependentUpon>StatusBoard.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusPanel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StatusPanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuppressorPowerSupplyControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SuppressorPowerSupplyControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransparentControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TransparentControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSetup.resx">
+      <DependentUpon>UserSetup.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValveControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ValveControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValveRingControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ValveRingControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaferCountControl.resx">
+      <DependentUpon>WaferCountControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\CXX_Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>CXX_Application.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BaseApplicationManifest Include="My Project\app.manifest" />
+    <None Include="Utils\.svn\all-wcprops" />
+    <None Include="Utils\.svn\entries" />
+    <None Include="Utils\.svn\format" />
+    <None Include="Utils\.svn\text-base\Utils.vb.svn-base" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AVP Lib\AVPLib_CX.vbproj">
+      <Project>{1C4FE93D-3956-40BF-9361-BC707555847F}</Project>
+      <Name>AVPLib_CX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AVPSecsGemLib\AVPSecsGemLib.csproj">
+      <Project>{7B7E60AC-4D4F-4B40-8C67-07D17CB6E8BD}</Project>
+      <Name>AVPSecsGemLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CustomTabControl\CustomTabControl.csproj">
+      <Project>{4DBFE2CF-45E4-4594-8E6A-5EBC2EEF85AE}</Project>
+      <Name>CustomTabControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlarmStatisticControl.Designer.vb">
+      <DependentUpon>AlarmStatisticControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AlarmStatisticControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomizeControl\AVPPopUpFrm.Designer.vb">
+      <DependentUpon>AVPPopUpFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeControl\AVPPopUpFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomizeControl\FlashingLabel.Designer.vb">
+      <DependentUpon>FlashingLabel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeControl\FlashingLabel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CassettesPanel_CX5.Designer.vb">
+      <DependentUpon>CassettesPanel_CX5.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CassettesPanel_CX5.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cryo PopUp Panel\CryoPopUpPanel.Designer.vb">
+      <DependentUpon>CryoPopUpPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cryo PopUp Panel\CryoPopUpPanel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cryo PopUp Panel\StatusCryoRegenHour_PopUpTextbox.vb" />
+    <Compile Include="Cryo PopUp Panel\StatusCryo_PopUpButton.vb" />
+    <Compile Include="Cryo PopUp Panel\StatusCryo_PopUpTextbox.vb" />
+    <Compile Include="ExitFrm.Designer.vb">
+      <DependentUpon>ExitFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ExitFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lib\StatusPopUpProcessTextBox.vb" />
+    <Compile Include="Lib\StatusProcessCompleteChime.vb" />
+    <Compile Include="Lib\StatusTurboRelayIndicator.vb" />
+    <Compile Include="Lib\TurboStatusButton.vb" />
+    <Compile Include="Lib\StatusClearAllWaferControl.vb" />
+    <Compile Include="Lib\StatusFlashingLabel.vb" />
+    <Compile Include="Messagebox\AVPProcessChimeBox.Designer.vb">
+      <DependentUpon>AVPProcessChimeBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Messagebox\AVPProcessChimeBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\CX5_Resources.Designer.vb">
+      <DependentUpon>CX5_Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="PMx Process Status PopUp\PMProcessStatusPopUpPanel.Designer.vb">
+      <DependentUpon>PMProcessStatusPopUpPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PMx Process Status PopUp\PMProcessStatusPopUpPanel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecsGemGUI\PopUp_TerminalMessage.Designer.vb">
+      <DependentUpon>PopUp_TerminalMessage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SecsGemGUI\PopUp_TerminalMessage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SingleLoader\Lib\SL_LotDatalogStatus.vb" />
+    <Compile Include="SingleLoader\Lib\SL_StatusLabel.vb" />
+    <Compile Include="SingleLoader\SL_ROR_PDC_Info.Designer.vb">
+      <DependentUpon>SL_ROR_PDC_Info.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SingleLoader\SL_ROR_PDC_Info.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TM Pop Up Panel\TurboPopUpControlPanel.Designer.vb">
+      <DependentUpon>TurboPopUpControlPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TM Pop Up Panel\TurboPopUpControlPanel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaferRun\PopUpHidenColumns.Designer.vb">
+      <DependentUpon>PopUpHidenColumns.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WaferRun\PopUpHidenColumns.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaferRun\PopUpWaferRun.Designer.vb">
+      <DependentUpon>PopUpWaferRun.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WaferRun\PopUpWaferRun.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="EMSERVICELib">
+      <Guid>{28A5CF74-12A6-11D3-A2BF-006097839E22}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="VALUELib">
+      <Guid>{94FE25D6-5FB0-11D3-AF43-00609783A43E}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Common\RobotArm\Arm_At_Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Common\RobotArm\Arm_At_Chamber1_Extract1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Common\RobotArm\Arm_At_Chamber2_Extract1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Common\RobotArm\Arm_At_Chamber3_Extract1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Common\RobotArm\Arm_At_Chamber4_Extract1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_Nitro_GasLine_TM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_GasLine_TurboValveLLB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_GasLine_TurboValveLLA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_GasLine_TurboValveTM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_TurboPump_LLA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_TurboPump_LLB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_TurboPump_TA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_TurboPump_TM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_LoadLockA_TM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_LoadLockB_TM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_Robot_body_TM_LeftAligner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_Robot_body_TM_RightAligner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_Robot_body_Left_Aligner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_Robot_body_Right_Aligner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_LoadLockB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_LoadLockA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_Robot_body_TM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_Robot_body.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Cryo PopUp Panel\.svn\all-wcprops" />
+    <None Include="Cryo PopUp Panel\.svn\entries" />
+    <None Include="Cryo PopUp Panel\.svn\text-base\CryoPopUpPanel.Designer.vb.svn-base" />
+    <None Include="Cryo PopUp Panel\.svn\text-base\CryoPopUpPanel.resx.svn-base" />
+    <None Include="Cryo PopUp Panel\.svn\text-base\CryoPopUpPanel.vb.svn-base" />
+    <None Include="Cryo PopUp Panel\.svn\text-base\StatusCryoRegenHour_PopUpTextbox.vb.svn-base" />
+    <None Include="Cryo PopUp Panel\.svn\text-base\StatusCryo_PopUpButton.vb.svn-base" />
+    <None Include="Cryo PopUp Panel\.svn\text-base\StatusCryo_PopUpTextbox.vb.svn-base" />
+    <None Include="Resources\CX5\CX5_GasLine_RoughValveTM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\Turbo_Pump_Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_GasLine_VentValveLLA_without_Turbo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_GasLine_VentValveLLB_without_Turbo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_HivacValve_TM_Closed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_HivacValve_TM_Opened.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_HivacValve_TM_Unknown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_GasLine_VentValveLLB_without_Turbo_NoSlowVent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_GasLine_RoughValveLLA_NoSlowRough.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_GasLine_RoughValveLLB_NoSlowRough.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CX5\CX5_GasLine_VentValveLLA_without_Turbo_NoSlowVent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Common\Button\ChatPopUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Cryo PopUp Panel\.svn\prop-base\" />
+    <Folder Include="Cryo PopUp Panel\.svn\props\" />
+    <Folder Include="Cryo PopUp Panel\.svn\tmp\prop-base\" />
+    <Folder Include="Cryo PopUp Panel\.svn\tmp\props\" />
+    <Folder Include="Cryo PopUp Panel\.svn\tmp\text-base\" />
+    <Folder Include="Utils\.svn\prop-base\" />
+    <Folder Include="Utils\.svn\props\" />
+    <Folder Include="Utils\.svn\tmp\prop-base\" />
+    <Folder Include="Utils\.svn\tmp\props\" />
+    <Folder Include="Utils\.svn\tmp\text-base\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>rd /S /Q bin_release
+mkdir bin_release
+copy AVP.exe bin_release\
+copy AVPLib.dll bin_release\
+copy NetLib.dll bin_release\
+copy CustomTabControl.dll bin_release\
+copy Interop.OPCAutomation.dll bin_release\
+copy Interop.EMSERVICELib.dll bin_release\
+copy Interop.VALUELib.dll bin_release\
+copy AVPSecsGemLib.dll bin_release\
+XCOPY /E /I /Y ..\Debug\ConfigFiles bin_release\ConfigFiles
+XCOPY /E /I /Y ..\Debug\DataFiles bin_release\DataFiles
+copy log4net.dll bin_release\
+copy ..\Debug\Tail.exe bin_release\
+copy ..\Debug\AVP.exe.config bin_release\
+copy ..\..\..\..\ConfigurationManager\ConfigurationManager\bin\Debug\ConfigurationManager.exe.config bin_release\
+copy ..\..\..\..\ConfigurationManager\ConfigurationManager\bin\Release\ConfigurationManager.exe bin_release\
+copy ..\..\..\..\ConfigurationManager\ConfigurationManager\bin\Debug\ConfigurationManager.log4net bin_release\
+copy ZedGraph.dll bin_release\</PostBuildEvent>
+    <PreBuildEvent>del ..\Debug\ConfigFiles\SystemConfig\private\MessageName.xml
+TYPE ..\Debug\ConfigFiles\SystemConfig\private\Generic_MessageName.txt &gt;&gt;..\Debug\ConfigFiles\SystemConfig\private\MessageName.xml
+TYPE ..\Debug\ConfigFiles\SystemConfig\private\IBE_MessageName.txt &gt;&gt; ..\Debug\ConfigFiles\SystemConfig\private\MessageName.xml
+del ..\Debug\ConfigFiles\SystemConfig\private\ParseMessageName.xml
+TYPE ..\Debug\ConfigFiles\SystemConfig\private\Generic_ParseMessageName.txt&gt;&gt;..\Debug\ConfigFiles\SystemConfig\private\ParseMessageName.xml
+TYPE ..\Debug\ConfigFiles\SystemConfig\private\IBE_ParseMessageName.txt &gt;&gt; ..\Debug\ConfigFiles\SystemConfig\private\ParseMessageName.xml
+..\Debug\ConvertXML2VB.exe ..\Debug\ConfigFiles\UserConfig\ ..\Debug\ConfigFiles\UserConfig\
+..\Debug\ConvertXML2VB.exe ..\Debug\ConfigFiles\SystemConfig\private\ ..\Debug\ConfigFiles\SystemConfig\private\
+..\Debug\ConvertXML2VB.exe ..\Debug\ConfigFiles\SystemConfig\public\ ..\Debug\ConfigFiles\SystemConfig\public\
+XCOPY /E /I /Y ..\Debug\ConfigFiles\UserConfig\*.vb "..\..\..\AVP Lib\XMLResource\"
+XCOPY /E /I /Y ..\Debug\ConfigFiles\SystemConfig\public\*.vb "..\..\..\AVP Lib\XMLResource\"
+XCOPY /E /I /Y ..\Debug\ConfigFiles\SystemConfig\private\*.vb "..\..\..\AVP Lib\XMLResource\"
+XCOPY /E /I /Y ..\Debug\ZedGraph.dll "..\Release\"
+del ..\Debug\ConfigFiles\UserConfig\*.vb
+del ..\Debug\ConfigFiles\SystemConfig\public\*.vb
+del ..\Debug\ConfigFiles\SystemConfig\private\*.vb
+cd .</PreBuildEvent>
+  </PropertyGroup>
+</Project>

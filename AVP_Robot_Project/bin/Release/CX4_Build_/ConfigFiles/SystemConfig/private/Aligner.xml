@@ -1,0 +1,30 @@
+<RecipeDef>
+  <ParameterList Id="1" isGroup="1" Group="Parameters" GroupName="Parameters">
+	<Parameter>
+      <SeqNo>1</SeqNo>
+      <Name>StepName</Name>
+      <Description>StepName</Description>
+      <Default>  </Default>
+      <Unit>String</Unit>
+      <ShowInUI>False</ShowInUI>
+    </Parameter>
+	<Parameter>
+      <SeqNo>2</SeqNo>
+      <Name>Description</Name>
+      <Description>Description</Description>
+      <Default>  </Default>
+      <Unit>String</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>3</SeqNo>
+      <Name>Angle</Name>
+      <Description>Angle</Description>
+      <Min>0</Min>
+      <Max>360</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+  </ParameterList>
+ </RecipeDef>

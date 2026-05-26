@@ -1,0 +1,7 @@
+WaferID,A03
+RecipeName,ALIGN_0
+
+Step No,Sample,Time,RSLTEccentricityAngleDeg,RSLTMaxEccentricityMils,Delta_R,Delta_T,RSLTAngularLocationDeg,RSLTReScanNeed
+1,1,2026/05/25 00:00:000,150,30,660.0197,32.5824,1,False
+TotalSeconds,0.0
+

@@ -1,0 +1,187 @@
+Imports System.ComponentModel
+Imports AVPControls.AVPDataLib
+
+''' <author>Hai Tran</author>
+''' <date>2018-04-12</date>
+''' <summary>
+''' Valve control
+''' </summary>
+''' <remarks></remarks>
+Public Class MFCValveControl
+    Public ParentStatusObj As StatusObject = Nothing
+
+#Region "Contructors"
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-04-12</date>
+    ''' <summary>
+    ''' Contructs valve control.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Sub New()
+
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        RotationMode = AVPControlStyleModes.ControlOwner
+        RequireInitializeForUpdateView = False
+        ResumeUpdateView()
+
+    End Sub
+#End Region
+
+#Region "Properties"
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-04-12</date>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether the valve is opened.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(False)> _
+    Public Property IsOpened() As Boolean
+        Get
+            Return MyBase.Status = AVPControls.AVPDataLib.DisplayStatus.On
+        End Get
+        Set(ByVal value As Boolean)
+            If value Then
+                MyBase.Status = AVPControls.AVPDataLib.DisplayStatus.On
+            Else
+                MyBase.Status = AVPControls.AVPDataLib.DisplayStatus.Off
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-04-12</date>
+    ''' <summary>
+    ''' Gets or sets a value indicates the valve status.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(AVPControls.AVPDataLib.DisplayStatus), "Off")> _
+    Public Overrides Property Status() As AVPControls.AVPDataLib.DisplayStatus
+        Get
+            Return MyBase.Status
+        End Get
+        Set(ByVal value As AVPControls.AVPDataLib.DisplayStatus)
+            If value = AVPControls.AVPDataLib.DisplayStatus.On Then
+                MyBase.Status = AVPControls.AVPDataLib.DisplayStatus.On
+            ElseIf value = DisplayStatus.Off Then
+                MyBase.Status = AVPControls.AVPDataLib.DisplayStatus.Off
+            Else
+                MyBase.Status = AVPControls.AVPDataLib.DisplayStatus.Unknow
+            End If
+        End Set
+    End Property
+
+#End Region
+
+#Region "Methods"
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-04-12</date>
+    ''' <summary>
+    ''' Returns image of control.
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Protected Overrides Function GenerateControlImage() As System.Drawing.Bitmap
+        Dim img As Bitmap = Nothing
+        Try
+            Dim valveImage As Bitmap
+            If ChamberType = AVPChamberTypes.PodSystem Then
+                Select Case MyBase.Status
+                    Case DisplayStatus.Off
+                        valveImage = My.Resources.Resources.ValveClosed_Pop
+                    Case DisplayStatus.On
+                        valveImage = My.Resources.Resources.ValveOpened_Pop
+                    Case Else
+                        valveImage = My.Resources.Resources.Valve_Unknown
+                End Select
+            Else
+                If IsOpened Then
+                    valveImage = My.Resources.Resources.Valve_Opened
+                Else
+                    valveImage = My.Resources.Resources.Valve_Closed
+                End If
+            End If
+
+            img = New Bitmap(valveImage.Width, valveImage.Height)
+            img.SetResolution(valveImage.HorizontalResolution, valveImage.VerticalResolution)
+
+            Using g As Graphics = Graphics.FromImage(img)
+                Dim br As SolidBrush
+                If Me.BackColor = Color.Transparent Then
+                    br = New SolidBrush(GetParentBackColor(Me.Parent))
+                Else
+                    br = New SolidBrush(Me.BackColor)
+                End If
+
+                g.FillRectangle(br, 0, 0, img.Width, img.Height)
+
+                g.DrawImageUnscaled(valveImage, 0, 0)
+
+                br.Dispose()
+            End Using
+
+            valveImage.Dispose()
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return img
+    End Function
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-04-16</date>
+    ''' <summary>
+    ''' Return parent back color.
+    ''' </summary>
+    ''' <param name="parent"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Private Function GetParentBackColor(ByVal parent As Control) As Color
+        Try
+            If parent IsNot Nothing Then
+                If parent.BackColor = Color.Transparent Then
+                    Return GetParentBackColor(parent.Parent)
+                Else
+                    Return parent.BackColor
+                End If
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return Color.Black
+    End Function
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-04-16</date>
+    ''' <summary>
+    ''' Handles back color changed.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub MFCValveControl_BackColorChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.BackColorChanged
+        UpdateView()
+    End Sub
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-04-16</date>
+    ''' <summary>
+    ''' Handles parent changed.
+    ''' </summary>
+    Private Sub MFCValveControl_ParentChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.ParentChanged
+        If Me.BackColor = Color.Transparent Then
+            UpdateView()
+        End If
+    End Sub
+
+#End Region
+
+End Class

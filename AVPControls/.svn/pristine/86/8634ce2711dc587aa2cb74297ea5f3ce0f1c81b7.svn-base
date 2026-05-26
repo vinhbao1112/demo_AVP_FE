@@ -1,0 +1,406 @@
+Imports System.ComponentModel
+
+Public Class ImageStatusControl
+
+#Region "Fields"
+    Private Const Category As String = "Status Options"
+
+    Private _offText As String
+    Private _onText As String
+    Private _unkText As String
+    Private _errorText As String
+
+    Private _offImage As Bitmap
+    Private _onImage As Bitmap
+    Private _unkImage As Bitmap
+    Private _errorImage As Bitmap
+
+    Private _offTextColor As Color = Color.White
+    Private _onTextColor As Color = Color.White
+    Private _unkTextColor As Color = Color.Black
+    Private _errorTextColor As Color = Color.White
+
+    Private _textLocation As Point
+    Private _autoTextLocation As Boolean = True
+
+#End Region
+
+#Region "Properties"
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2016-06-24</date>
+    ''' <summary>
+    ''' Gets or sets text off status.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(""), Category(Category)> _
+    Public Property OffText() As String
+        Get
+            Return _offText
+        End Get
+        Set(ByVal value As String)
+            If _offText <> value Then
+                _offText = value
+                If Status = AVPDataLib.DisplayStatus.Off Then
+                    UpdateView()
+                End If
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2016-06-24</date>
+    ''' <summary>
+    ''' Gets or sets text on status.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(""), Category(Category)> _
+    Public Property OnText() As String
+        Get
+            Return _onText
+        End Get
+        Set(ByVal value As String)
+            If _onText <> value Then
+                _onText = value
+                If Status = AVPDataLib.DisplayStatus.On Then
+                    UpdateView()
+                End If
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2016-06-24</date>
+    ''' <summary>
+    ''' Gets or sets text unknown status.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(""), Category(Category)> _
+    Public Property UnknownText() As String
+        Get
+            Return _unkText
+        End Get
+        Set(ByVal value As String)
+            If _unkText <> value Then
+                _unkText = value
+                If Status = AVPDataLib.DisplayStatus.Unknow Then
+                    UpdateView()
+                End If
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2016-06-24</date>
+    ''' <summary>
+    ''' Gets or sets text error status.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(""), Category(Category)> _
+    Public Property ErrorText() As String
+        Get
+            Return _errorText
+        End Get
+        Set(ByVal value As String)
+            If _errorText <> value Then
+                _errorText = value
+                If Status = AVPDataLib.DisplayStatus.Error Then
+                    UpdateView()
+                End If
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2016-06-24</date>
+    ''' <summary>
+    ''' Gets or sets image off status.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Bitmap), "Nothing"), Category(Category)> _
+    Public Property OffImage() As Bitmap
+        Get
+            Return _offImage
+        End Get
+        Set(ByVal value As Bitmap)
+            _offImage = value
+            If Status = AVPDataLib.DisplayStatus.Off Then
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2016-06-24</date>
+    ''' <summary>
+    ''' Gets or sets image on status.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Bitmap), "Nothing"), Category(Category)> _
+    Public Property OnImage() As Bitmap
+        Get
+            Return _onImage
+        End Get
+        Set(ByVal value As Bitmap)
+            _onImage = value
+            If Status = AVPDataLib.DisplayStatus.On Then
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2016-06-24</date>
+    ''' <summary>
+    ''' Gets or sets image unknown status.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Bitmap), "Nothing"), Category(Category)> _
+    Public Property UnknownImage() As Bitmap
+        Get
+            Return _unkImage
+        End Get
+        Set(ByVal value As Bitmap)
+            _unkImage = value
+            If Status = AVPDataLib.DisplayStatus.Unknow Then
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2016-06-24</date>
+    ''' <summary>
+    ''' Gets or sets image unknown status.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Bitmap), "Nothing"), Category(Category)> _
+    Public Property ErrorImage() As Bitmap
+        Get
+            Return _errorImage
+        End Get
+        Set(ByVal value As Bitmap)
+            _errorImage = value
+            If Status = AVPDataLib.DisplayStatus.Error Then
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2016-06-24</date>
+    ''' <summary>
+    ''' Gets or sets off statis text color.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Color), "White"), Category(Category)> _
+    Public Property OffTextColor() As Color
+        Get
+            Return _offTextColor
+        End Get
+        Set(ByVal value As Color)
+            If _offTextColor <> value Then
+                _offTextColor = value
+                If Status = AVPDataLib.DisplayStatus.Off Then
+                    UpdateView()
+                End If
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2016-06-24</date>
+    ''' <summary>
+    ''' Gets or sets on statis text color.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Color), "White"), Category(Category)> _
+    Public Property OnTextColor() As Color
+        Get
+            Return _onTextColor
+        End Get
+        Set(ByVal value As Color)
+            If _onTextColor <> value Then
+                _onTextColor = value
+                If Status = AVPDataLib.DisplayStatus.On Then
+                    UpdateView()
+                End If
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2016-06-24</date>
+    ''' <summary>
+    ''' Gets or sets unknown statis text color.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Color), "Black"), Category(Category)> _
+    Public Property UnknownTextColor() As Color
+        Get
+            Return _unkTextColor
+        End Get
+        Set(ByVal value As Color)
+            If _unkTextColor <> value Then
+                _unkTextColor = value
+                If Status = AVPDataLib.DisplayStatus.Unknow Then
+                    UpdateView()
+                End If
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2016-06-24</date>
+    ''' <summary>
+    ''' Gets or sets error statis text color.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Color), "White"), Category(Category)> _
+    Public Property ErrorTextColor() As Color
+        Get
+            Return _errorTextColor
+        End Get
+        Set(ByVal value As Color)
+            If _errorTextColor <> value Then
+                _errorTextColor = value
+                If Status = AVPDataLib.DisplayStatus.Error Then
+                    UpdateView()
+                End If
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2016-06-24</date>
+    ''' <summary>
+    ''' Gets or sets location for drawing text if location is not auto.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Point), "0, 0"), Category(Category)> _
+    Public Property TextLocation() As Point
+        Get
+            Return _textLocation
+        End Get
+        Set(ByVal value As Point)
+            If _textLocation <> value Then
+                _textLocation = value
+                If Not _autoTextLocation Then
+                    UpdateView()
+                End If
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2016-06-24</date>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether the text is drawn in center of image.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(True), Category(Category)> _
+    Public Property AutoTextLocation() As Boolean
+        Get
+            Return _autoTextLocation
+        End Get
+        Set(ByVal value As Boolean)
+            If _autoTextLocation <> value Then
+                _autoTextLocation = value
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+#End Region
+
+#Region "Methods"
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2016-06-24</date>
+    ''' <summary>
+    ''' Generate image.
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Protected Overrides Function GenerateControlImage() As System.Drawing.Bitmap
+        Try
+            Dim img As Bitmap = Nothing
+            Dim t As String = Text
+            Dim c As Color = ForeColor
+            Select Case Status
+                Case AVPDataLib.DisplayStatus.Off
+                    img = OffImage
+                    t = OffText
+                    c = OffTextColor
+                Case AVPDataLib.DisplayStatus.On
+                    img = OnImage
+                    t = OnText
+                    c = OnTextColor
+                Case AVPDataLib.DisplayStatus.Unknow
+                    img = UnknownImage
+                    t = UnknownText
+                    c = UnknownTextColor
+                Case AVPDataLib.DisplayStatus.Error
+                    img = ErrorImage
+                    t = ErrorText
+                    c = ErrorTextColor
+            End Select
+
+            If img IsNot Nothing Then
+                ' Copy of current bitmap.
+                img = New Bitmap(img)
+
+                ' Draw text.
+                If Not String.IsNullOrEmpty(t) Then
+                    Using g As Graphics = Graphics.FromImage(img), brush As New SolidBrush(c)
+                        If AutoTextLocation Then
+                            Dim sizet As SizeF = g.MeasureString(t, Font)
+                            Dim x As Integer = CInt((img.Width - sizet.Width) / 2.0F)
+                            Dim y As Integer = CInt((img.Height - sizet.Height) / 2.0F)
+
+                            g.DrawString(t, Font, brush, x, y)
+                        Else
+                            g.DrawString(t, Font, brush, _textLocation)
+                        End If
+                    End Using
+                End If
+            End If
+
+            Return img
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return Nothing
+    End Function
+#End Region
+
+
+End Class

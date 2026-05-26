@@ -1,0 +1,3 @@
+2026-05-26 10:04:13,428 [1   ] ERROR   - Sent: Aligner.SVCCDPOS Received: Timeout and IsCommunicating error
+2026-05-26 10:14:20,281 [1   ] ERROR   - Sent: Aligner.SVCCDPOS Received: Timeout and IsCommunicating error
+2026-05-26 10:15:57,146 [1   ] ERROR   - Sent: Aligner.SVCCDPOS Received: Timeout and IsCommunicating error

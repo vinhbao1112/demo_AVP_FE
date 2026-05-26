@@ -1,0 +1,6 @@
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\obj\Debug\AVPLib_CX5.vbproj.AssemblyReference.cache
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\obj\Debug\Interop.ADOX.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\obj\Debug\AVPLib_CX5.vbproj.ResolveComReference.cache
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\obj\Debug\AVPLib_CX5.vbproj.CoreCompileInputs.cache
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\obj\Debug\AVPLib.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVP Lib\obj\Debug\AVPLib.pdb

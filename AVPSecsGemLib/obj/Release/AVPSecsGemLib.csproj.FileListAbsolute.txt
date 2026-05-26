@@ -1,0 +1,13 @@
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\bin\Release\AVPSecsGemLib.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\bin\Release\AVPSecsGemLib.pdb
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\bin\Release\log4net.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\bin\Release\Interop.EMSERVICELib.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\bin\Release\Interop.VALUELib.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Release\AVPSecsGemLib.csproj.AssemblyReference.cache
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Release\Interop.EMSERVICELib.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Release\Interop.VALUELib.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Release\AVPSecsGemLib.csproj.ResolveComReference.cache
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Release\AVPSecsGemLib.csproj.CoreCompileInputs.cache
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Release\AVPSecsGemLib.csproj.CopyComplete
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Release\AVPSecsGemLib.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Release\AVPSecsGemLib.pdb

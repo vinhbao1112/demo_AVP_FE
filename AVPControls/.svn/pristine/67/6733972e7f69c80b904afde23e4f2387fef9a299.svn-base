@@ -1,0 +1,278 @@
+Imports System.ComponentModel
+Imports AVPControls.AVPDataLib
+
+Public Class CassetteControl
+
+#Region "Fields"
+    Private m_isWaferPresent As Boolean
+    Private m_numslots As Integer
+    Private m_waferStatuses As WaferStatuses()
+    Private m_waferIDs As String()
+    Private m_showWaferPresentStatus As Boolean = True
+    Private m_currentSlot As Integer
+
+#End Region
+
+#Region "Properties"
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-02-27</date>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether the wafers is present in the cassette.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(False)> _
+    Public Property IsWaferPresent() As Boolean
+        Get
+            Return m_isWaferPresent
+        End Get
+        Set(ByVal value As Boolean)
+            If m_isWaferPresent <> value Then
+                m_isWaferPresent = value
+
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2017-02-27</date>
+    ''' <summary>
+    ''' Gets or sets a value indicates number of slots in the cassette.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(0)> _
+    Public Property Numslots() As Integer
+        Get
+            Return m_numslots
+        End Get
+        Set(ByVal value As Integer)
+            If m_numslots <> value AndAlso value > 0 Then
+                m_numslots = value
+
+                ReDim Preserve m_waferStatuses(m_numslots - 1)
+                ReDim Preserve m_waferIDs(m_numslots - 1)
+
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-02-27</date>
+    ''' <summary>
+    ''' Gets or sets wafer status at the specified slot.
+    ''' </summary>
+    ''' <param name="slot"></param>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Property WaferStatuses(ByVal slot As Integer) As WaferStatuses
+        Get
+            If slot >= 1 AndAlso slot <= m_waferStatuses.Length Then
+                Return m_waferStatuses(slot - 1)
+            End If
+            Return AVPControls.AVPDataLib.WaferStatuses.NONE
+        End Get
+        Set(ByVal value As WaferStatuses)
+            If slot >= 1 AndAlso slot <= m_waferStatuses.Length Then
+                If m_waferStatuses(slot - 1) <> value Then
+                    m_waferStatuses(slot - 1) = value
+
+                    UpdateWaferPresent()
+                    UpdateView()
+                End If
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-03-20</date>
+    ''' <summary>
+    ''' Gets or sets wafer ID at the specified slot.
+    ''' </summary>
+    ''' <param name="slot"></param>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Property WaferIDs(ByVal slot As Integer) As String
+        Get
+            If slot >= 1 AndAlso slot <= m_waferIDs.Length Then
+                Return m_waferIDs(slot - 1)
+            End If
+            Return Nothing
+        End Get
+        Set(ByVal value As String)
+            If slot >= 1 AndAlso slot <= m_waferStatuses.Length Then
+                If m_waferIDs(slot - 1) <> value Then
+                    m_waferIDs(slot - 1) = value
+
+                    UpdateView()
+                End If
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-02-27</date>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether the wafer status is shown on cassette.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(True)> _
+    Public Property ShowWaferPresentStatus() As Boolean
+        Get
+            Return m_showWaferPresentStatus
+        End Get
+        Set(ByVal value As Boolean)
+            If m_showWaferPresentStatus <> value Then
+                m_showWaferPresentStatus = value
+
+                If value Then
+                    UpdateWaferPresent()
+                End If
+
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-03-20</date>
+    ''' <summary>
+    ''' Gets or sets current slot.
+    ''' </summary>
+    <DefaultValue(0)> _
+    Public Property CurrentSlot() As Integer
+        Get
+            Return m_currentSlot
+        End Get
+        Set(ByVal value As Integer)
+            If m_currentSlot <> value Then
+                m_currentSlot = value
+
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+#End Region
+
+#Region "Public Methods"
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-02-27</date>
+    ''' <summary>
+    ''' Clears a slots.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Sub ClearSlots()
+        Try
+            Dim hasChanges As Boolean = False
+
+            For i As Integer = 0 To m_waferStatuses.Length - 1
+                If m_waferStatuses(i) <> AVPControls.AVPDataLib.WaferStatuses.NONE Then
+                    m_waferStatuses(i) = AVPControls.AVPDataLib.WaferStatuses.NONE
+                    hasChanges = True
+                End If
+            Next
+
+            If hasChanges Then
+                If ShowWaferPresentStatus Then
+                    m_isWaferPresent = False
+                End If
+                UpdateView()
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+#End Region
+
+#Region "Private Methods"
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-02-27</date>
+    ''' <summary>
+    ''' Generate image of control.
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Protected Overrides Function GenerateControlImage() As System.Drawing.Bitmap
+        Try
+            Const WaferLocationX As Integer = 6
+            Const WaferLocationY As Integer = 8
+            Const WaferRadius As Integer = 48
+
+            Dim cassetteImage As Bitmap = My.Resources.Resources.ML_Cassette
+
+            If Not m_showWaferPresentStatus Then
+                If m_isWaferPresent Then
+                    Dim waferImage As Bitmap = AVPWaferControl.GenerateWaferImage(AVPControls.AVPDataLib.WaferStatuses.COMPLETE, String.Empty, False, 0, WaferRadius)
+
+                    Using g As Graphics = Graphics.FromImage(cassetteImage)
+                        g.DrawImage(waferImage, WaferLocationX, WaferLocationY, WaferRadius, WaferRadius)
+                    End Using
+
+                    waferImage.Dispose()
+                End If
+
+                Return cassetteImage
+            End If
+
+            If CurrentSlot >= 1 AndAlso CurrentSlot <= Numslots Then
+                Dim waferStatus As WaferStatuses = WaferStatuses(CurrentSlot)
+                Dim waferID As String = WaferIDs(CurrentSlot)
+
+                If waferStatus <> AVPControls.AVPDataLib.WaferStatuses.NONE Then
+                    Dim waferImage As Bitmap = AVPWaferControl.GenerateWaferImage(waferStatus, waferID, False, 0, WaferRadius)
+                    If VerticalFlip Then
+                        waferImage.RotateFlip(RotateFlipType.RotateNoneFlipY)
+                    End If
+
+                    Using g As Graphics = Graphics.FromImage(cassetteImage)
+                        g.DrawImage(waferImage, WaferLocationX, WaferLocationY, WaferRadius, WaferRadius)
+                    End Using
+
+                    waferImage.Dispose()
+                End If
+            End If
+
+            Return cassetteImage
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return Nothing
+    End Function
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-02-27</date>
+    ''' <summary>
+    ''' Update wafer present status.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub UpdateWaferPresent()
+        Try
+            Dim present As Boolean = False
+            For i As Integer = 0 To m_waferStatuses.Length - 1
+                If m_waferStatuses(i) <> AVPControls.AVPDataLib.WaferStatuses.NONE Then
+                    present = True
+                    Exit For
+                End If
+            Next
+            m_isWaferPresent = present
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+#End Region
+
+End Class

@@ -1,0 +1,118 @@
+Imports System.ComponentModel
+Imports AVPControls.AVPDataLib
+
+Public Class HivacValveControl
+
+#Region "Fields"
+
+#End Region
+
+#Region "Properties"
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2016-01-14</date>
+    ''' <summary>
+    ''' Gets or sets a value indicates the text which drawing in hivac control.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(""), Browsable(True), DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)> _
+    Public Overrides Property Text() As String
+        Get
+            Return MyBase.Text
+        End Get
+        Set(ByVal value As String)
+            If MyBase.Text = value Then
+                Return
+            End If
+
+            MyBase.Text = value
+            UpdateView()
+        End Set
+    End Property
+
+#End Region
+
+#Region "Methods"
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-07</date>
+    ''' <summary>
+    ''' Generate control image.
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Protected Overrides Function GenerateControlImage() As System.Drawing.Bitmap
+        Try
+            Dim img As Bitmap = Nothing
+
+            If Me.ChamberType = AVPControls.AVPDataLib.AVPChamberTypes.PVDA_SA Then
+                Select Case Me.Status
+                    Case AVPControls.AVPDataLib.DisplayStatus.Off
+                        img = My.Resources.PVDA_Hivac_Closed
+                    Case AVPControls.AVPDataLib.DisplayStatus.On
+                        img = My.Resources.PVDA_Hivac_Open
+                    Case Else
+                        img = My.Resources.PVDA_Hivac_Unknown
+                End Select
+
+                If Not String.IsNullOrEmpty(Me.Text) Then
+                    Dim textBrush As SolidBrush
+
+                    ' Get drawing values.
+                    Select Case Me.Status
+                        Case DisplayStatus.Off
+                            textBrush = New SolidBrush(Color.White)
+                        Case DisplayStatus.On
+                            textBrush = New SolidBrush(Color.Black)
+                        Case Else
+                            textBrush = New SolidBrush(Color.Black)
+                    End Select
+
+                    ' Drawing text.
+                    Using g As Graphics = Graphics.FromImage(img)
+                        Dim strFormat As New StringFormat()
+                        strFormat.Alignment = StringAlignment.Center
+                        strFormat.LineAlignment = StringAlignment.Center
+                        strFormat.Trimming = StringTrimming.EllipsisCharacter
+                        strFormat.FormatFlags = StringFormatFlags.NoWrap
+
+                        g.DrawString(Me.Text, Me.Font, textBrush, New RectangleF(113, 24, 138, 21), strFormat)
+
+                        strFormat.Dispose()
+                    End Using
+
+                    textBrush.Dispose()
+                End If
+
+            End If
+
+            Return img
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return Nothing
+    End Function
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-27</date>
+    ''' <summary>
+    ''' Handles font changed.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub HivacValveControl_FontChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.FontChanged
+        Try
+            If Not String.IsNullOrEmpty(Me.Text) Then
+                UpdateView()
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+#End Region
+
+End Class

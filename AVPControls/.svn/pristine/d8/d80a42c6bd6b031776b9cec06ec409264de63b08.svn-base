@@ -1,0 +1,515 @@
+Imports System.ComponentModel
+Imports AVPControls.AVPDataLib
+
+Public Class RobotBodyControl
+
+#Region "Fields"
+    Private m_alignerAtStation As RobotArmStations = RobotArmStations.LLA
+    Private m_sensorsInstalled As Boolean = True
+    Private m_AlignerAt2Station As Boolean = False
+    Private m_LLAInstalled As Boolean = True
+    Private m_LLBInstalled As Boolean = True
+    Private m_PM1Installed As Boolean = True
+    Private m_PM2Installed As Boolean = True
+    Private m_PM3Installed As Boolean = True
+#End Region
+
+#Region "Properties"
+
+    <DefaultValue(GetType(Boolean), "False")> _
+    Public Property AlignerAt2Station() As Boolean
+        Get
+            Return m_AlignerAt2Station
+        End Get
+        Set(ByVal value As Boolean)
+            If m_AlignerAt2Station <> value Then
+                m_AlignerAt2Station = value
+                UpdateLLSensor()
+                Me.UpdateView()
+            End If
+        End Set
+    End Property
+
+    <DefaultValue(GetType(RobotArmStations), "LLA")> _
+    Public Property AlignerAtStation() As RobotArmStations
+        Get
+            Return m_alignerAtStation
+        End Get
+        Set(ByVal value As RobotArmStations)
+            If m_alignerAtStation <> value Then
+                m_alignerAtStation = value
+                UpdateLLSensor()
+                Me.UpdateView()
+            End If
+        End Set
+    End Property
+
+    <Browsable(False), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)> _
+    Public Property SensorPM1() As SensorControl
+        Get
+            Return Me.Sensor1
+        End Get
+        Set(ByVal value As SensorControl)
+            Me.Sensor1 = value
+        End Set
+    End Property
+
+    <Browsable(False), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)> _
+    Public Property SensorPM2() As SensorControl
+        Get
+            Return Me.Sensor2
+        End Get
+        Set(ByVal value As SensorControl)
+            Me.Sensor2 = value
+        End Set
+    End Property
+
+    <Browsable(False), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)> _
+    Public Property SensorPM3() As SensorControl
+        Get
+            Return Me.Sensor3
+        End Get
+        Set(ByVal value As SensorControl)
+            Me.Sensor3 = value
+        End Set
+    End Property
+
+    <Browsable(False), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)> _
+    Public Property SensorPM4() As SensorControl
+        Get
+            Return Me.Sensor4
+        End Get
+        Set(ByVal value As SensorControl)
+            Me.Sensor4 = value
+        End Set
+    End Property
+
+    <Browsable(False), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)> _
+    Public Property SensorPM5() As SensorControl
+        Get
+            Return Me.Sensor5
+        End Get
+        Set(ByVal value As SensorControl)
+            Me.Sensor5 = value
+        End Set
+    End Property
+
+    <Browsable(False), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)> _
+    Public Property SensorPM6() As SensorControl
+        Get
+            Return Me.Sensor6
+        End Get
+        Set(ByVal value As SensorControl)
+            Me.Sensor6 = value
+        End Set
+    End Property
+
+    <Browsable(False), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)> _
+    Public Property SensorLLA() As SensorControl
+        Get
+            Return Me.Sensor7
+        End Get
+        Set(ByVal value As SensorControl)
+            Me.Sensor7 = value
+        End Set
+    End Property
+
+    <Browsable(False), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)> _
+    Public Property SensorLLB() As SensorControl
+        Get
+            Return Me.Sensor8
+        End Get
+        Set(ByVal value As SensorControl)
+            Me.Sensor8 = value
+        End Set
+    End Property
+
+    <DefaultValue(GetType(Boolean), "True")> _
+    Public Property SensorsInstalled() As Boolean
+        Get
+            Return m_sensorsInstalled
+        End Get
+        Set(ByVal value As Boolean)
+            If m_sensorsInstalled <> value Then
+                m_sensorsInstalled = value
+                Me.SetSensorVisible()
+            End If
+        End Set
+    End Property
+
+    <DefaultValue(GetType(Boolean), "True")> _
+    Public Property PM1Installed() As Boolean
+        Get
+            Return Me.m_PM1Installed
+        End Get
+        Set(ByVal value As Boolean)
+            Me.m_PM1Installed = value
+            UpdatePMSensor(RobotArmStations.PM1)
+        End Set
+    End Property
+
+    <DefaultValue(GetType(Boolean), "True")> _
+    Public Property PM2Installed() As Boolean
+        Get
+            Return Me.m_PM2Installed
+        End Get
+        Set(ByVal value As Boolean)
+            Me.m_PM2Installed = value
+            UpdatePMSensor(RobotArmStations.PM2)
+        End Set
+    End Property
+
+    <DefaultValue(GetType(Boolean), "True")> _
+    Public Property PM3Installed() As Boolean
+        Get
+            Return Me.m_PM3Installed
+        End Get
+        Set(ByVal value As Boolean)
+            Me.m_PM3Installed = value
+            UpdatePMSensor(RobotArmStations.PM3)
+        End Set
+    End Property
+
+    <DefaultValue(GetType(Boolean), "True")> _
+    Public Property PM4Installed() As Boolean
+        Get
+            Return Me.SensorPM4.PMVisible
+        End Get
+        Set(ByVal value As Boolean)
+            Me.SensorPM4.PMVisible = value
+        End Set
+    End Property
+
+    <DefaultValue(GetType(Boolean), "True")> _
+    Public Property PM5Installed() As Boolean
+        Get
+            Return Me.SensorPM5.PMVisible
+        End Get
+        Set(ByVal value As Boolean)
+            Me.SensorPM5.PMVisible = value
+        End Set
+    End Property
+
+    <DefaultValue(GetType(Boolean), "True")> _
+    Public Property PM6Installed() As Boolean
+        Get
+            Return Me.SensorPM6.PMVisible
+        End Get
+        Set(ByVal value As Boolean)
+            Me.SensorPM6.PMVisible = value
+        End Set
+    End Property
+
+    <DefaultValue(GetType(Boolean), "True")> _
+    Public Property LLAInstalled() As Boolean
+        Get
+            Return m_LLAInstalled
+        End Get
+        Set(ByVal value As Boolean)
+            m_LLAInstalled = value
+            UpdateLLSensor()
+        End Set
+    End Property
+
+    <DefaultValue(GetType(Boolean), "True")> _
+    Public Property LLBInstalled() As Boolean
+        Get
+            Return m_LLBInstalled
+        End Get
+        Set(ByVal value As Boolean)
+            m_LLBInstalled = value
+            UpdateLLSensor()
+        End Set
+    End Property
+
+#End Region
+
+#Region "Methods"
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-11-17</date>
+    ''' </author>
+    ''' <summary>
+    ''' Create image control.
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Protected Overrides Function GenerateControlImage() As System.Drawing.Bitmap
+        Dim img As Bitmap = Nothing
+        Try
+            Select Case Me.AVPStyle
+                Case AVPStyles.CX4
+                    If Me.m_alignerAtStation = RobotArmStations.LLA Then
+                        img = My.Resources.Resources.CX4
+                    Else
+                        img = My.Resources.Resources.CX4_WithoutAligner
+                    End If
+
+                Case AVPStyles.CX5
+                    img = My.Resources.Resources.CX5_RobotBody_WithoutAligner
+                    If m_AlignerAt2Station = True Then
+                        Using g As Graphics = Graphics.FromImage(img)
+                            Dim imgAligner As Bitmap = My.Resources.Resources.CX5_RobotBody_LeftAligner
+                            g.DrawImage(imgAligner, 0, 0, imgAligner.Width, imgAligner.Height)
+                            imgAligner.RotateFlip(RotateFlipType.RotateNoneFlipX)
+                            g.DrawImage(imgAligner, 0, 0, imgAligner.Width, imgAligner.Height)
+                            imgAligner.Dispose()
+                            g.Dispose()
+                        End Using
+
+                    ElseIf Me.m_alignerAtStation = RobotArmStations.LLA OrElse Me.m_alignerAtStation = RobotArmStations.LLB Then
+                        Using g As Graphics = Graphics.FromImage(img)
+                            Dim imgAligner As Bitmap = My.Resources.Resources.CX5_RobotBody_LeftAligner
+                            If Me.m_alignerAtStation = RobotArmStations.LLB Then
+                                imgAligner.RotateFlip(RotateFlipType.RotateNoneFlipX)
+                            End If
+                            g.DrawImage(imgAligner, 0, 0, imgAligner.Width, imgAligner.Height)
+
+                            imgAligner.Dispose()
+                            g.Dispose()
+                        End Using
+                    End If
+
+                Case AVPStyles.CX6
+                    img = My.Resources.Resources.CX6
+
+                    If Me.m_alignerAtStation = RobotArmStations.LLB Then
+                        img.RotateFlip(RotateFlipType.RotateNoneFlipX)
+                    End If
+
+                Case AVPStyles.CX7
+                    img = My.Resources.Resources.CX7
+
+                    If Me.m_alignerAtStation = RobotArmStations.LLB Then
+                        img.RotateFlip(RotateFlipType.RotateNoneFlipX)
+                    End If
+
+                Case AVPStyles.CX8
+                    img = My.Resources.Resources.CX8
+
+                    If Me.m_alignerAtStation = RobotArmStations.LLB Then
+                        img.RotateFlip(RotateFlipType.RotateNoneFlipX)
+                    End If
+            End Select
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return img
+    End Function
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-11-17</date>
+    ''' </author>
+    ''' <summary>
+    ''' Set sensors for CX4
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub SetSensors()
+        SetSensorLocation()
+        SetSensorVisible()
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-11-17</date>
+    ''' </author>
+    ''' <summary>
+    ''' Visible all sensors.
+    ''' </summary>
+    ''' <param name="visible"></param>
+    ''' <remarks></remarks>
+    Private Sub SetVisibleAllSensors(ByVal visible As Boolean)
+        For Each ctrl As Control In Me.Controls
+            If TypeOf ctrl Is SensorControl Then
+                ctrl.Visible = visible
+            End If
+        Next
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-11-17</date>
+    ''' </author>
+    ''' <summary>
+    ''' Set location of sensors by specified AVPStyle.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub SetSensorLocation()
+        Select Case Me.AVPStyle
+            Case AVPDataLib.AVPStyles.CX4
+                Sensor1.Location = New Point(10, 79)
+                Sensor2.Location = New Point(79, 12)
+                Sensor3.Location = New Point(148, 79)
+                Sensor7.Location = New Point(79, 148)
+
+            Case AVPDataLib.AVPStyles.CX5
+                Sensor1.Location = New Point(26, 81)
+                Sensor2.Location = New Point(93, 12)
+                Sensor3.Location = New Point(162, 81)
+                Sensor7.Location = New Point(60, 138)
+                Sensor8.Location = New Point(127, 138)
+
+            Case AVPDataLib.AVPStyles.CX6
+                Sensor1.Location = New Point(26, 99)
+                Sensor2.Location = New Point(64, 36)
+                Sensor3.Location = New Point(132, 36)
+                Sensor4.Location = New Point(168, 99)
+                Sensor7.Location = New Point(64, 161)
+                Sensor8.Location = New Point(132, 161)
+
+            Case AVPDataLib.AVPStyles.CX7
+                Sensor1.Location = New Point(19, 91)
+                Sensor2.Location = New Point(40, 40)
+                Sensor3.Location = New Point(91, 19)
+                Sensor4.Location = New Point(143, 40)
+                Sensor5.Location = New Point(164, 91)
+                Sensor7.Location = New Point(58, 156)
+                Sensor8.Location = New Point(126, 156)
+
+            Case AVPDataLib.AVPStyles.CX8
+                Sensor1.Location = New Point(30, 117)
+                Sensor2.Location = New Point(34, 67)
+                Sensor3.Location = New Point(73, 32)
+                Sensor4.Location = New Point(124, 32)
+                Sensor5.Location = New Point(161, 67)
+                Sensor6.Location = New Point(167, 117)
+                Sensor7.Location = New Point(64, 161)
+                Sensor8.Location = New Point(133, 161)
+
+        End Select
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-11-17</date>
+    ''' </author>
+    ''' <summary>
+    ''' Set visible sensors by specified AVPStyle.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub SetSensorVisible()
+        SetVisibleAllSensors(False)
+
+        If Me.AVPStyle = AVPStyles.SL OrElse Not Me.m_sensorsInstalled Then
+            Return
+        End If
+
+        Sensor1.Visible = True
+        Sensor2.Visible = True
+        Sensor3.Visible = True
+        Sensor7.Visible = True
+
+        Select Case Me.AVPStyle
+            Case AVPDataLib.AVPStyles.CX5
+                Sensor8.Visible = True
+
+            Case AVPDataLib.AVPStyles.CX6
+                Sensor4.Visible = True
+                Sensor8.Visible = True
+
+            Case AVPDataLib.AVPStyles.CX7
+                Sensor4.Visible = True
+                Sensor5.Visible = True
+                Sensor8.Visible = True
+
+            Case AVPDataLib.AVPStyles.CX8
+                Sensor4.Visible = True
+                Sensor5.Visible = True
+                Sensor6.Visible = True
+                Sensor8.Visible = True
+        End Select
+    End Sub
+
+    ''' <author>
+    '''     <name>Hoai Ly</name>
+    '''     <date>2020-05-25</date>
+    ''' </author>
+    ''' <summary>
+    ''' Update LL sensor
+    ''' </summary>
+    Private Sub UpdateLLSensor()
+        If m_LLAInstalled OrElse m_alignerAtStation = RobotArmStations.LLA OrElse m_AlignerAt2Station Then
+            Me.SensorLLA.PMVisible = True
+        Else
+            Me.SensorLLA.PMVisible = False
+        End If
+
+        If m_LLBInstalled OrElse m_alignerAtStation = RobotArmStations.LLB OrElse m_AlignerAt2Station Then
+            Me.SensorLLB.PMVisible = True
+        Else
+            Me.SensorLLB.PMVisible = False
+        End If
+    End Sub
+
+    ''' <author>
+    '''     <name>Hoai Ly</name>
+    '''     <date>2020-05-25</date>
+    ''' </author>
+    ''' <summary>
+    ''' Update LL sensor
+    ''' </summary>
+    Private Sub UpdatePMSensor(ByVal station As RobotArmStations)
+        Select Case station
+            Case RobotArmStations.PM1
+                Me.SensorPM1.PMVisible = m_PM1Installed OrElse m_alignerAtStation = RobotArmStations.PM1
+            Case RobotArmStations.PM2
+                Me.SensorPM2.PMVisible = m_PM2Installed OrElse m_alignerAtStation = RobotArmStations.PM2
+            Case RobotArmStations.PM3
+                Me.SensorPM3.PMVisible = m_PM3Installed OrElse m_alignerAtStation = RobotArmStations.PM3
+        End Select
+    End Sub
+
+#End Region
+
+#Region "Events"
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-11-17</date>
+    ''' </author>
+    ''' <summary>
+    ''' Set avp style.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub RobotBodyControl_AVPStyleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.AVPStyleChanged
+        SetSensors()
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-11-18</date>
+    ''' </author>
+    ''' <summary>
+    ''' Handles sensors click event
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub Sensors_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Sensor8.Click, Sensor7.Click, Sensor6.Click, Sensor5.Click, Sensor4.Click, Sensor3.Click, Sensor2.Click, Sensor1.Click
+        Me.OnClick(e)
+    End Sub
+#End Region
+
+    Public Sub New()
+
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+        ' Hai Tran (11/18/2015): Rename of sensors to create status tree.
+        Sensor1.Name = "SensorPM1"
+        Sensor2.Name = "SensorPM2"
+        Sensor3.Name = "SensorPM3"
+        Sensor4.Name = "SensorPM4"
+        Sensor5.Name = "SensorPM5"
+        Sensor6.Name = "SensorPM6"
+        Sensor7.Name = "SensorLLA"
+        Sensor8.Name = "SensorLLB"
+
+        UpdateLLSensor()
+    End Sub
+
+End Class

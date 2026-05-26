@@ -1,0 +1,9 @@
+2026-05-25 14:05:49,801 [1   ] ERROR   - Sent: Aligner.SVCCDPOS Received: Timeout and IsCommunicating error
+2026-05-25 14:14:12,988 [46  ] ERROR   - RobotTransaction.Run- Sent: Robot.HLLO Received: Timeout and IsCommunicating error
+2026-05-25 14:20:09,326 [1   ] ERROR   - Sent: Aligner.SVCCDPOS Received: Timeout and IsCommunicating error
+2026-05-25 14:22:12,119 [34  ] ERROR   - RobotTransaction.Run- Sent: Robot.SET COMM ALL PKT SEQ AUT Received: Timeout and IsCommunicating error
+2026-05-25 14:45:59,156 [99  ] ERROR   - ElevatorTransaction.Run- Sent: LLAElevator.00,R,W2 Received: Timeout and IsCommunicating error
+2026-05-25 15:01:24,969 [1   ] ERROR   - Sent: Aligner.SVCCDPOS Received: Timeout and IsCommunicating error
+2026-05-25 15:06:48,785 [21  ] ERROR   - RobotTransaction.Run- Sent: Robot.SET COMM ALL PKT SEQ AUT Received: Timeout and IsCommunicating error
+2026-05-25 15:10:06,986 [1   ] ERROR   - Sent: Aligner.SVCCDPOS Received: Timeout and IsCommunicating error
+2026-05-25 15:37:21,260 [1   ] ERROR   - Sent: Aligner.SVCCDPOS Received: Timeout and IsCommunicating error

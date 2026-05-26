@@ -1,0 +1,12 @@
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\CustomTabControl\bin\Debug\CustomTabControl.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\CustomTabControl\bin\Debug\CustomTabControl.pdb
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\CustomTabControl\obj\x86\Debug\CustomTabControl.csproj.AssemblyReference.cache
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\CustomTabControl\obj\x86\Debug\CustomTabControl.csproj.CoreCompileInputs.cache
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\CustomTabControl\obj\x86\Debug\CustomTabControl.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\CustomTabControl\obj\x86\Debug\CustomTabControl.pdb
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\CustomTabControl\bin\Debug\CustomTabControl.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\CustomTabControl\bin\Debug\CustomTabControl.pdb
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\CustomTabControl\obj\x86\Debug\CustomTabControl.csproj.AssemblyReference.cache
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\CustomTabControl\obj\x86\Debug\CustomTabControl.csproj.CoreCompileInputs.cache
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\CustomTabControl\obj\x86\Debug\CustomTabControl.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\CustomTabControl\obj\x86\Debug\CustomTabControl.pdb

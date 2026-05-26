@@ -1,0 +1,45 @@
+Imports System.ComponentModel
+
+Public Class SensorControl
+    Private m_blnPMVisible As Boolean = True
+
+    <DefaultValue(GetType(Boolean), "True")> _
+    Public Property PMVisible() As Boolean
+        Get
+            Return m_blnPMVisible
+        End Get
+        Set(ByVal value As Boolean)
+            If m_blnPMVisible = value Then
+                Return
+            End If
+
+            m_blnPMVisible = value
+            Me.UpdateView()
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Generate image for control
+    ''' </summary>
+    Protected Overrides Function GenerateControlImage() As System.Drawing.Bitmap
+        If m_status = AVPControls.AVPDataLib.DisplayStatus.On AndAlso m_blnPMVisible Then
+            Return My.Resources.Resources.Sensor_On
+        Else
+            Return My.Resources.Resources.Sensor_Off
+        End If
+    End Function
+
+    Public Sub New()
+
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        Me.IsInitialized = True
+        Me.ResumeUpdateView()
+    End Sub
+End Class

@@ -1,0 +1,12 @@
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\bin\Release\HRecipeLibrary.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\bin\Release\HRecipeLibrary.pdb
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\bin\Release\HRecipeLibrary.xml
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\bin\Release\log4net.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Release\HRecipeLibrary.vbproj.AssemblyReference.cache
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Release\HRecipeLibrary.Resources.resources
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Release\HRecipeLibrary.vbproj.GenerateResource.cache
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Release\HRecipeLibrary.vbproj.CoreCompileInputs.cache
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Release\HRecipeLibrary.vbproj.CopyComplete
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Release\HRecipeLibrary.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Release\HRecipeLibrary.xml
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Release\HRecipeLibrary.pdb

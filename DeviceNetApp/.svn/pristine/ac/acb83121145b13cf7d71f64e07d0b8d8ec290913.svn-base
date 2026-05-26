@@ -1,0 +1,186 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8C834F77-DC93-48D2-BA7F-2D3745927D11}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DeviceNetApp</RootNamespace>
+    <AssemblyName>DeviceNetApp</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ApplicationIcon>CompanyIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ApplicationIcon>CompanyIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CTC Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <ApplicationIcon>CTC.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CTC Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <ApplicationIcon>CTC.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>3rdParty\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bussiness\AVPDeviceNetConnection.cs" />
+    <Compile Include="Bussiness\CommandProcessor.cs" />
+    <Compile Include="Bussiness\DataCollector.cs" />
+    <Compile Include="Bussiness\DeviceNetCore.cs" />
+    <Compile Include="DeviceNetApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceNetApp.Designer.cs">
+      <DependentUpon>DeviceNetApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceNet\DeviceNetController.cs" />
+    <Compile Include="DeviceNet\DeviceNetDriver.cs" />
+    <Compile Include="DeviceNet\DnetConstants.cs" />
+    <Compile Include="DeviceNet\DnetPollingGroup.cs" />
+    <Compile Include="DeviceNet\DNSEquipment.cs" />
+    <Compile Include="DeviceNet\DNSGenericIonGauge.cs" />
+    <Compile Include="DeviceNet\DNSIonGaugeGP354.cs" />
+    <Compile Include="DeviceNet\DNSIonGaugeGP355.cs" />
+    <Compile Include="DeviceNet\DNSIonGaugeITR100D.cs" />
+    <Compile Include="DeviceNet\DNSIonGaugeMPT200.cs" />
+    <Compile Include="DeviceNet\DNSMKSConvectionGauge.cs" />
+    <Compile Include="DeviceNet\DNSMKSFlowcool.cs" />
+    <Compile Include="DeviceNet\DNSMKSGasFlow.cs" />
+    <Compile Include="DeviceNet\DNSRSTiAdapter.cs" />
+    <Compile Include="DeviceNet\DNSScanner.cs" />
+    <Compile Include="DeviceNet\DNSSolenoidBlock.cs" />
+    <Compile Include="DeviceNet\DNSSolenoidEX260.cs" />
+    <Compile Include="DeviceNet\VatValveDevice.cs" />
+    <Compile Include="IconHelper.cs" />
+    <Compile Include="Lib\AsyncResultEventArgs.cs" />
+    <Compile Include="Lib\AVPProtocol.cs" />
+    <Compile Include="Lib\BaseThread.cs" />
+    <Compile Include="Lib\ConfigurationData.cs" />
+    <Compile Include="Lib\Constants.cs" />
+    <Compile Include="Lib\Delegates.cs" />
+    <Compile Include="Lib\Logger.cs" />
+    <Compile Include="Lib\PropertyObject.cs" />
+    <Compile Include="Lib\Serializeable.cs" />
+    <Compile Include="Lib\SimpleSocket.cs" />
+    <Compile Include="Lib\SocketClient.cs" />
+    <Compile Include="Lib\SocketPacketProtocol.cs" />
+    <Compile Include="Lib\SocketServer.cs" />
+    <Compile Include="Lib\SuspendableThread.cs" />
+    <Compile Include="Lib\Sync.cs" />
+    <Compile Include="Lib\SynchronizationContextRegister.cs" />
+    <Compile Include="Lib\TCPSocket.cs" />
+    <Compile Include="Lib\Utils.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DeviceNetApp.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DeviceNetApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SendMessage.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SendMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TypePassConfirmFrm.resx">
+      <DependentUpon>TypePassConfirmFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SendMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SendMessage.Designer.cs">
+      <DependentUpon>SendMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TypePassConfirmFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TypePassConfirmFrm.Designer.cs">
+      <DependentUpon>TypePassConfirmFrm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RSTiAdapter\RSTiApdater.csproj">
+      <Project>{30C21BB7-38ED-4780-B55A-7D4FFDF4871D}</Project>
+      <Name>RSTiApdater</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CompanyIcon.ico" />
+    <Content Include="CTC.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

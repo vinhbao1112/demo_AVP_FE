@@ -1,0 +1,886 @@
+AVP version 3.10.0.58566
+2026-05-25 14:05:11,720 [1   ] ERROR AVP_Robot_Project.AVPRobotMain.LoadPVD5TItem - Missing Load PVD5T Items For CX4
+2026-05-25 14:05:13,838 [1   ] ERROR AVPLib.Business.PVD5TController.AddAllCmdNeedToPollingAllTime - Missing Add command want to polling
+2026-05-25 14:05:49,801 [1   ] ERROR AVPLib.Communication.TerminalDriver.AlignerTransaction.Run - Sent: Aligner.SVCCDPOS Received: Timeout and IsCommunicating error
+2026-05-25 14:05:53,568 [1   ] ERROR AVPLib.Driver.DriverManager.RegisterRSTiForTabIO - System.NullReferenceException: Object reference not set to an instance of an object.
+   at AVPLib.Driver.DriverManager.RegisterRSTiForTabIO(RSTiObject objRSTi) in D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\Drivers\DriverManager.vb:line 1047
+2026-05-25 14:05:54,576 [1   ] ERROR AVPLib.Driver.DriverManager.RegisterRSTiForTabIO - System.NullReferenceException: Object reference not set to an instance of an object.
+   at AVPLib.Driver.DriverManager.RegisterRSTiForTabIO(RSTiObject objRSTi) in D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\Drivers\DriverManager.vb:line 1047
+2026-05-25 14:05:54,789 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - OpenCard: 1 = DNS_OpenCard(DN3-PCI-0000) CardHandle=0
+2026-05-25 14:05:54,798 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - Online: 1 = DNS_Online() CardHandle=0
+2026-05-25 14:05:54,801 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - StartScan: 1 = DNS_StartScan() CardHandle=0
+2026-05-25 14:05:54,936 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(6) CardHandle=0
+2026-05-25 14:05:54,942 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(10) CardHandle=0
+2026-05-25 14:05:54,945 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(7) CardHandle=0
+2026-05-25 14:05:54,947 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(30) CardHandle=0
+2026-05-25 14:05:54,953 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(1) CardHandle=0
+2026-05-25 14:05:54,956 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(2) CardHandle=0
+2026-05-25 14:05:54,958 [1   ] ERROR AVPLib.DeviceNet.DNSScanner.Initialize - Init Valve device.
+2026-05-25 14:05:54,968 [8   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferOfChamber1 found
+2026-05-25 14:05:55,027 [8   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferOfChamber2 found
+2026-05-25 14:05:55,042 [8   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node RunNo found
+2026-05-25 14:05:55,043 [8   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferCountOfChamber1 found
+2026-05-25 14:05:55,044 [8   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferCountOfChamber2 found
+2026-05-25 14:05:55,045 [8   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM1 found
+2026-05-25 14:05:55,045 [8   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM2 found
+2026-05-25 14:05:55,047 [8   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM3 found
+2026-05-25 14:05:55,101 [34  ] ERROR AVPLib.DeviceNet.DNSScanner.LogBusStatus - Bus Status = 1
+2026-05-25 14:05:55,109 [34  ] ERROR AVPLib.Driver.DNSGP354IonGauge.PollFirmwareVersion - CassettesModule Get Firmware Version
+2026-05-25 14:05:57,638 [34  ] ERROR AVPLib.Driver.DNSGP354IonGauge.PollSoftwareVersion - CassettesModule Get software revision level
+2026-05-25 14:05:57,730 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferOfChamber1 found
+2026-05-25 14:05:57,748 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferOfChamber2 found
+2026-05-25 14:05:57,752 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node RunNo found
+2026-05-25 14:05:57,759 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferCountOfChamber1 found
+2026-05-25 14:05:57,771 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferCountOfChamber2 found
+2026-05-25 14:05:57,778 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM1 found
+2026-05-25 14:05:57,780 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM2 found
+2026-05-25 14:05:57,781 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM3 found
+2026-05-25 14:06:01,607 [34  ] ERROR AVPLib.Driver.DNSGP355IonGauge.ReadValue - CassettesModule Get filament
+2026-05-25 14:06:02,130 [34  ] ERROR AVPLib.Driver.DNSGP355IonGauge.ReadValue - CassettesModule Active filament: 1
+2026-05-25 14:06:08,285 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:06:08,297 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:07:53,170 [1   ] ERROR AVP_Robot_Project.CassettesPanel.Initialize_CX4 - Missing Load Component for CX4 Cassettes 
+2026-05-25 14:07:53,260 [1   ] ERROR AVP_Robot_Project.CassettesPanel.Initialize_Chamber - Missing Load CX4 PM 1 2 3
+2026-05-25 14:07:53,434 [1   ] ERROR AVP_Robot_Project.CassettesPanel.Initialize_Robot - Missing Load CX4 ROBOT
+2026-05-25 14:07:54,486 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:14:01,276 [38  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - PJ-A06 successfully accquired the chamber Chamber3
+2026-05-25 14:14:01,284 [38  ] ERROR AVPLib.Business.AVPControlJob.GetNextProcJob - Starting Job A06
+2026-05-25 14:14:12,988 [46  ] ERROR AVPLib.Utils.LogMessageCheckPullingRobot - RobotTransaction.Run- Sent: Robot.HLLO Received: Timeout and IsCommunicating error
+2026-05-25 14:14:13,185 [12  ] ERROR AVPLib.Business.AVPProcessJob.PickFromPVD5TChamber - A06 Start Pick from Source:Chamber3To Destination:LoadLockA,Slot06
+2026-05-25 14:14:13,201 [12  ] ERROR AVPLib.Business.AVPProcessJob.PickFromPVD5TChamber - DEBUG-------: CHECK_ROTATION_TABLE_POSITION
+2026-05-25 14:14:13,208 [12  ] ERROR AVPLib.Business.AVPProcessJob.PickFromPVD5TChamber - DEBUG-------: Substrate_Current_Station = 1
+2026-05-25 14:14:13,210 [12  ] ERROR AVPLib.Business.AVPProcessJob.PickFromPVD5TChamber - DEBUG-------: SlotID = 6
+2026-05-25 14:14:13,212 [12  ] ERROR AVPLib.Business.AVPProcessJob.PickFromPVD5TChamber - DEBUG-------: Set intStep = MOVE_TABLE_TO_STATION_X - 1
+2026-05-25 14:14:13,230 [12  ] ERROR AVPLib.Business.AVPProcessJob.PVD5TContinueWaitMotor - DEBUG-------: ContinueWaitMotor. Wait 4s 
+2026-05-25 14:14:23,254 [12  ] ERROR AVPLib.Business.AVPProcessJob.PickFromPVD5TChamber - DEBUG-------: goto MOVE_TABLE_TO_STATION_X
+2026-05-25 14:14:23,257 [12  ] ERROR AVPLib.Business.AVPProcessJob.PickFromPVD5TChamber - DEBUG-------: goto StepMovePVD5TTableGoToSlot
+2026-05-25 14:14:23,258 [12  ] ERROR AVPLib.Business.AVPProcessJob.StepMovePVD5TTableGoToSlot - DEBUG-------: StepMovePVD5TTableGoToSlot. Current Slot = 1 SlotID = 6
+2026-05-25 14:14:23,259 [12  ] ERROR AVPLib.Business.AVPProcessJob.StepMovePVD5TTableGoToSlot - DEBUG-------: StepMovePVD5TTableGoToSlot. Sent goto slot. Wait for stop moving
+2026-05-25 14:14:33,292 [12  ] ERROR AVPLib.Business.AVPProcessJob.PickFromPVD5TChamber - DEBUG-------: goto StepMovePVD5TTableGoToSlot failed
+2026-05-25 14:14:33,295 [12  ] ERROR AVPLib.Business.AVPProcessJob.OnProcessingError - A06 Failed To Rotate Substrate To Station: 6
+AVP version 3.10.0.58566
+2026-05-25 14:19:35,259 [1   ] ERROR AVP_Robot_Project.AVPRobotMain.LoadPVD5TItem - Missing Load PVD5T Items For CX4
+2026-05-25 14:19:38,828 [1   ] ERROR AVPLib.Business.PVD5TController.AddAllCmdNeedToPollingAllTime - Missing Add command want to polling
+2026-05-25 14:20:09,326 [1   ] ERROR AVPLib.Communication.TerminalDriver.AlignerTransaction.Run - Sent: Aligner.SVCCDPOS Received: Timeout and IsCommunicating error
+2026-05-25 14:22:12,119 [34  ] ERROR AVPLib.Utils.LogMessageCheckPullingRobot - RobotTransaction.Run- Sent: Robot.SET COMM ALL PKT SEQ AUT Received: Timeout and IsCommunicating error
+2026-05-25 14:22:12,130 [1   ] ERROR AVPLib.Driver.DriverManager.RegisterRSTiForTabIO - System.NullReferenceException: Object reference not set to an instance of an object.
+   at AVPLib.Driver.DriverManager.RegisterRSTiForTabIO(RSTiObject objRSTi) in D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\Drivers\DriverManager.vb:line 1047
+2026-05-25 14:22:15,953 [1   ] ERROR AVPLib.Driver.DriverManager.RegisterRSTiForTabIO - System.NullReferenceException: Object reference not set to an instance of an object.
+   at AVPLib.Driver.DriverManager.RegisterRSTiForTabIO(RSTiObject objRSTi) in D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\Drivers\DriverManager.vb:line 1047
+2026-05-25 14:22:15,982 [34  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferOfChamber1 found
+2026-05-25 14:22:15,991 [34  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferOfChamber2 found
+2026-05-25 14:22:16,003 [34  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node RunNo found
+2026-05-25 14:22:16,004 [34  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferCountOfChamber1 found
+2026-05-25 14:22:16,006 [34  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferCountOfChamber2 found
+2026-05-25 14:22:16,013 [34  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM1 found
+2026-05-25 14:22:16,016 [34  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM2 found
+2026-05-25 14:22:16,017 [34  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM3 found
+2026-05-25 14:22:16,119 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - OpenCard: 1 = DNS_OpenCard(DN3-PCI-0000) CardHandle=0
+2026-05-25 14:22:16,124 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - Online: 1 = DNS_Online() CardHandle=0
+2026-05-25 14:22:16,126 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - StartScan: 1 = DNS_StartScan() CardHandle=0
+2026-05-25 14:22:16,248 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(6) CardHandle=0
+2026-05-25 14:22:16,251 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(10) CardHandle=0
+2026-05-25 14:22:16,252 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(7) CardHandle=0
+2026-05-25 14:22:16,253 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(30) CardHandle=0
+2026-05-25 14:22:16,256 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(1) CardHandle=0
+2026-05-25 14:22:16,259 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(2) CardHandle=0
+2026-05-25 14:22:16,260 [1   ] ERROR AVPLib.DeviceNet.DNSScanner.Initialize - Init Valve device.
+2026-05-25 14:22:16,343 [37  ] ERROR AVPLib.DeviceNet.DNSScanner.LogBusStatus - Bus Status = 1
+2026-05-25 14:22:16,351 [37  ] ERROR AVPLib.Driver.DNSGP354IonGauge.PollFirmwareVersion - CassettesModule Get Firmware Version
+2026-05-25 14:22:16,933 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferOfChamber1 found
+2026-05-25 14:22:16,936 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferOfChamber2 found
+2026-05-25 14:22:16,944 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node RunNo found
+2026-05-25 14:22:16,946 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferCountOfChamber1 found
+2026-05-25 14:22:16,947 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferCountOfChamber2 found
+2026-05-25 14:22:16,948 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM1 found
+2026-05-25 14:22:16,949 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM2 found
+2026-05-25 14:22:16,949 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM3 found
+2026-05-25 14:22:16,984 [37  ] ERROR AVPLib.Driver.DNSGP354IonGauge.PollSoftwareVersion - CassettesModule Get software revision level
+2026-05-25 14:22:20,953 [37  ] ERROR AVPLib.Driver.DNSGP355IonGauge.ReadValue - CassettesModule Get filament
+2026-05-25 14:22:21,471 [37  ] ERROR AVPLib.Driver.DNSGP355IonGauge.ReadValue - CassettesModule Active filament: 1
+2026-05-25 14:22:25,767 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:22:25,774 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:24:29,947 [1   ] ERROR AVP_Robot_Project.CassettesPanel.Initialize_CX4 - Missing Load Component for CX4 Cassettes 
+2026-05-25 14:24:30,118 [1   ] ERROR AVP_Robot_Project.CassettesPanel.Initialize_Chamber - Missing Load CX4 PM 1 2 3
+2026-05-25 14:24:30,267 [1   ] ERROR AVP_Robot_Project.CassettesPanel.Initialize_Robot - Missing Load CX4 ROBOT
+2026-05-25 14:24:30,921 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:24:49,444 [14  ] ERROR AVP_Robot_Project.Utils.ConvertValue - Identifer: Off
+2026-05-25 14:24:51,532 [14  ] ERROR AVP_Robot_Project.Utils.ConvertValue - Identifer: Off
+2026-05-25 14:24:53,371 [14  ] ERROR AVP_Robot_Project.Utils.ConvertValue - Identifer: Off
+2026-05-25 14:24:55,563 [14  ] ERROR AVP_Robot_Project.Utils.ConvertValue - Identifer: Off
+2026-05-25 14:24:57,168 [14  ] ERROR AVP_Robot_Project.Utils.ConvertValue - Identifer: Off
+2026-05-25 14:24:59,291 [14  ] ERROR AVP_Robot_Project.Utils.ConvertValue - Identifer: Off
+2026-05-25 14:25:01,194 [14  ] ERROR AVP_Robot_Project.Utils.ConvertValue - Identifer: Off
+2026-05-25 14:25:03,305 [14  ] ERROR AVP_Robot_Project.Utils.ConvertValue - Identifer: Off
+2026-05-25 14:30:43,282 [1   ] ERROR AVP_Robot_Project.LockProcessControl.IsEnoughWaferInCycleUntilMode - Max Cycle Count = 0
+2026-05-25 14:31:33,902 [1   ] ERROR AVP_Robot_Project.LockProcessControl.IsEnoughWaferInCycleUntilMode - Max Cycle Count = 0
+2026-05-25 14:38:05,234 [1   ] ERROR AVP_Robot_Project.LockProcessControl.IsEnoughWaferInCycleUntilMode - Max Cycle Count = 0
+2026-05-25 14:38:11,369 [1   ] ERROR AVP_Robot_Project.LockProcessControl.Start_Click - Start Scheduler:------------> 1 times
+2026-05-25 14:38:12,026 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - PJ-A01 successfully accquired the chamber Chamber3
+2026-05-25 14:38:12,036 [40  ] ERROR AVPLib.Business.AVPControlJob.GetNextProcJob - Starting Job A01
+2026-05-25 14:38:12,069 [124 ] ERROR AVPLib.Business.AVPProcessJob.PickFromLoadLock - A01 Start Pick from Source:LoadLockA,Slot1To Destination:Aligner
+2026-05-25 14:38:16,301 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_LLA_Extract
+2026-05-25 14:38:16,303 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_LLA_Extract
+2026-05-25 14:38:18,362 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:38:18,366 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:38:19,461 [124 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToAlginer - A01 Start Place from Source:LoadLockA,Slot1To Destination:Aligner
+2026-05-25 14:38:19,645 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:38:19,647 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:38:20,914 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract
+2026-05-25 14:38:21,002 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract
+2026-05-25 14:38:22,865 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:38:22,869 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:38:24,159 [124 ] ERROR AVPLib.Business.AVPProcessJob.PickFromAligner - A01 Start Pick from Source:AlignerTo Destination:Chamber3
+2026-05-25 14:38:25,089 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:38:25,092 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:38:26,250 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract_DeltaPick
+2026-05-25 14:38:26,254 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract_DeltaPick
+2026-05-25 14:38:28,143 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:38:28,146 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:41:16,591 [124 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToChamberMultiSlots - JobID=A01 ,Acquire Slot ID=1
+2026-05-25 14:41:16,624 [124 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToPVD5TChamber - A01 Start Place from Source:To Destination:Chamber3
+2026-05-25 14:41:16,634 [124 ] ERROR AVPLib.Business.AVPProcessJob.PVD5TContinueWaitMotor - DEBUG-------: ContinueWaitMotor. Wait 4s 
+2026-05-25 14:41:29,586 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:41:29,587 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:41:31,628 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Chamber3_Extract
+2026-05-25 14:41:31,630 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Chamber3_Extract
+2026-05-25 14:41:35,637 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:41:35,641 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:41:38,408 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:41:38,412 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:41:41,001 [124 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToPVD5TChamber - A01 Start Recipe With Recipe Path Is D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP_Robot_Project\bin\Debug\RunningRecipes\LoadLockA\Recipes\Chamber3\PVD5T_RF.xml
+2026-05-25 14:41:41,771 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - PJ-A02 successfully accquired the chamber Chamber3
+2026-05-25 14:41:41,772 [40  ] ERROR AVPLib.Business.AVPControlJob.GetNextProcJob - Starting Job A02
+2026-05-25 14:41:41,779 [105 ] ERROR AVPLib.Business.AVPProcessJob.PickFromLoadLock - A02 Start Pick from Source:LoadLockA,Slot2To Destination:Aligner
+2026-05-25 14:41:46,304 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_LLA_Extract
+2026-05-25 14:41:46,306 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_LLA_Extract
+2026-05-25 14:41:48,397 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:41:48,400 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:41:49,342 [105 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToAlginer - A02 Start Place from Source:LoadLockA,Slot2To Destination:Aligner
+2026-05-25 14:41:49,653 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:41:49,690 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:41:50,795 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract
+2026-05-25 14:41:50,798 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract
+2026-05-25 14:41:52,771 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:41:52,777 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:41:53,785 [105 ] ERROR AVPLib.Business.AVPProcessJob.PickFromAligner - A02 Start Pick from Source:AlignerTo Destination:Chamber3
+2026-05-25 14:41:54,642 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:41:54,643 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:41:55,650 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract_DeltaPick
+2026-05-25 14:41:55,762 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract_DeltaPick
+2026-05-25 14:41:57,842 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:41:57,844 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:42:48,524 [105 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToChamberMultiSlots - JobID=A02 ,Acquire Slot ID=2
+2026-05-25 14:42:48,525 [105 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToPVD5TChamber - A02 Start Place from Source:To Destination:Chamber3
+2026-05-25 14:42:48,527 [105 ] ERROR AVPLib.Business.AVPProcessJob.PVD5TContinueWaitMotor - DEBUG-------: ContinueWaitMotor. Wait 4s 
+2026-05-25 14:43:01,194 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:43:01,486 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:43:03,379 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Chamber3_Extract
+2026-05-25 14:43:03,386 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Chamber3_Extract
+2026-05-25 14:43:07,289 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:43:07,293 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:43:10,546 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:43:10,579 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:43:13,509 [105 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToPVD5TChamber - A02 Start Recipe With Recipe Path Is D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP_Robot_Project\bin\Debug\RunningRecipes\LoadLockA\Recipes\Chamber3\PVD5T_RF.xml
+2026-05-25 14:43:14,870 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - PJ-A03 successfully accquired the chamber Chamber3
+2026-05-25 14:43:14,874 [40  ] ERROR AVPLib.Business.AVPControlJob.GetNextProcJob - Starting Job A03
+2026-05-25 14:43:14,907 [95  ] ERROR AVPLib.Business.AVPProcessJob.PickFromLoadLock - A03 Start Pick from Source:LoadLockA,Slot3To Destination:Aligner
+2026-05-25 14:43:19,938 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_LLA_Extract
+2026-05-25 14:43:19,945 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_LLA_Extract
+2026-05-25 14:43:21,814 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:43:21,817 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:43:22,576 [95  ] ERROR AVPLib.Business.AVPProcessJob.PlaceToAlginer - A03 Start Place from Source:LoadLockA,Slot3To Destination:Aligner
+2026-05-25 14:43:22,945 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:43:23,020 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:43:23,920 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract
+2026-05-25 14:43:23,927 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract
+2026-05-25 14:43:26,476 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:43:26,481 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:43:27,148 [95  ] ERROR AVPLib.Business.AVPProcessJob.PickFromAligner - A03 Start Pick from Source:AlignerTo Destination:Chamber3
+2026-05-25 14:43:28,881 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:43:28,886 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:43:29,162 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract_DeltaPick
+2026-05-25 14:43:29,174 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract_DeltaPick
+2026-05-25 14:43:31,894 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:43:31,901 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:45:59,156 [99  ] ERROR AVPLib.Utils.LogMessageCheckPullingLLElevator - ElevatorTransaction.Run- Sent: LLAElevator.00,R,W2 Received: Timeout and IsCommunicating error
+2026-05-25 14:46:09,128 [95  ] ERROR AVPLib.Business.AVPProcessJob.PlaceToChamberMultiSlots - JobID=A03 ,Acquire Slot ID=3
+2026-05-25 14:46:09,145 [95  ] ERROR AVPLib.Business.AVPProcessJob.PlaceToPVD5TChamber - A03 Start Place from Source:To Destination:Chamber3
+2026-05-25 14:46:09,147 [95  ] ERROR AVPLib.Business.AVPProcessJob.PVD5TContinueWaitMotor - DEBUG-------: ContinueWaitMotor. Wait 4s 
+2026-05-25 14:47:01,328 [95  ] ERROR AVPLib.Business.AVPProcessJob.OnProcessingError - A03 Failed to move  Wafer Lift to Down Position:
+2026-05-25 14:47:01,527 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:02,542 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:03,548 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:04,569 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:05,573 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:06,590 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:07,595 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:08,602 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:09,615 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:10,632 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:11,649 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:12,668 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:13,674 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:14,699 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:15,719 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:16,733 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:17,739 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:18,786 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:19,902 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:20,915 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:21,935 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:22,965 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:23,971 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:24,987 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:26,003 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:27,012 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:28,018 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:29,028 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:30,033 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:31,047 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:32,064 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:33,082 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:34,100 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:35,115 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:36,118 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:37,133 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:38,143 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:39,172 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:40,187 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:41,192 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:42,203 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:42,420 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:47:42,421 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:47:43,217 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:44,224 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:45,243 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:46,249 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:47,254 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:48,271 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:49,277 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:50,281 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:51,298 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:52,312 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:53,329 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:54,343 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:55,361 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:56,365 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:57,368 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:58,371 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:47:59,388 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:00,405 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:01,411 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:02,414 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:03,428 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:04,444 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:05,448 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:06,450 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:07,464 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:08,467 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:09,471 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:10,486 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:11,488 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:12,497 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:13,499 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:14,501 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:15,516 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:16,523 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:17,535 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:18,538 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:19,551 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:20,562 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:21,579 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:22,595 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:23,601 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:24,619 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:25,634 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:26,641 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:27,648 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:28,677 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:29,697 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:30,715 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:31,733 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:32,747 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:33,759 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:34,781 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:35,801 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:36,818 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:37,838 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:38,843 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:39,849 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:40,866 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:41,885 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:42,903 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:43,910 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:44,926 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:45,943 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:46,951 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:47,955 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:48,976 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:49,992 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:51,003 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:52,016 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:53,033 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:54,049 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:55,053 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:56,088 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:57,106 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:58,129 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:48:59,146 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:00,167 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:01,176 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:02,187 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:03,211 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:04,221 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:05,227 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:06,248 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:07,269 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:08,293 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:09,311 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:10,327 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:11,341 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:12,351 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:13,367 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:14,385 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:15,403 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:16,423 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:17,441 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:18,458 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:19,467 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:20,486 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:21,499 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:22,567 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:23,592 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:24,627 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:25,641 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:26,657 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:27,687 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:28,720 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:29,759 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:30,803 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:31,828 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:32,834 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:33,868 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:34,879 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:35,895 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:36,910 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:37,925 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:38,943 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:39,964 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:40,982 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:42,012 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:43,059 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:44,085 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:45,103 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:46,128 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:47,135 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:48,149 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:49,160 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:50,317 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:51,331 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:52,349 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:53,364 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:54,378 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:55,397 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:56,436 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:57,469 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:58,489 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:49:59,507 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:00,513 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:01,528 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:02,548 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:03,564 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:04,569 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:05,591 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:06,611 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:07,633 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:08,645 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:09,657 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:10,662 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:11,679 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:12,706 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:13,735 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:14,760 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:15,791 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:16,811 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:17,829 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:18,835 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:19,856 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:20,860 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:21,870 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:22,887 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:23,897 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:24,915 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:25,931 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:26,949 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:27,958 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:28,976 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:29,991 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:31,139 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:32,148 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:33,155 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:34,169 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:35,184 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:36,191 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:37,207 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:38,219 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:39,228 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:40,235 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:41,251 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:42,272 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:43,291 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:44,311 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:45,330 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:46,363 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:47,380 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:48,390 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:49,426 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:50,437 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:51,456 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:52,473 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:53,482 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:54,508 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:55,525 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:56,547 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:57,568 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:58,590 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:50:59,624 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:00,647 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:01,659 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:02,678 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:03,682 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:04,687 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:05,693 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:06,702 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:07,707 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:08,714 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:09,729 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:10,735 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:11,757 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:12,770 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:13,781 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:14,799 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:15,807 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:16,827 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:17,846 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:18,863 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:19,886 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:20,925 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:21,938 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:22,956 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:23,960 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:24,980 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:25,988 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:26,995 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:28,003 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:29,022 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:30,037 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:31,050 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:32,069 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:33,078 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:34,098 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:35,102 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:36,121 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:37,137 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:38,153 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:39,159 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:40,165 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:41,183 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:42,205 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:43,211 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:44,216 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:45,233 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:46,249 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:47,266 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:48,269 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:49,281 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:50,285 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:51,301 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:52,315 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:53,330 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:54,338 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:55,340 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:56,348 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:57,354 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:58,361 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:51:59,364 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:00,369 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:01,372 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:02,376 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:03,393 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:04,408 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:05,422 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:06,437 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:07,441 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:08,458 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:09,462 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:10,479 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:11,484 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:12,499 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:13,506 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:14,510 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:15,523 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:16,530 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:17,534 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:18,537 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:19,553 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:20,558 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:21,571 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:22,577 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:23,592 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:24,599 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:25,603 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:26,605 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:27,620 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:28,636 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:29,652 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:30,657 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:31,673 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:32,690 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:33,698 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:34,719 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:35,728 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:36,742 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:37,749 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:38,766 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:39,777 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:40,797 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:41,811 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:42,823 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:43,827 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:44,833 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:45,874 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:46,919 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:47,936 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:48,952 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:49,968 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:50,981 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:51,991 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:52,998 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:54,014 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:55,027 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:56,029 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:57,037 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:58,051 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:52:59,057 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:00,074 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:01,077 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:02,081 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:03,087 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:04,104 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:05,119 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:06,122 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:07,145 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:08,156 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:09,171 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:10,177 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:11,180 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:12,196 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:13,208 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:14,214 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:15,231 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:16,236 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:17,252 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:18,268 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:19,283 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:20,295 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:21,304 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:22,308 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:23,327 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:24,331 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:25,334 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - A04 Acquire Chamber Resource failed Chamber3 ERROR
+2026-05-25 14:53:26,016 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:53:26,018 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:53:26,348 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - PJ-A04 successfully accquired the chamber Chamber3
+2026-05-25 14:53:26,349 [40  ] ERROR AVPLib.Business.AVPControlJob.GetNextProcJob - Starting Job A04
+2026-05-25 14:53:26,360 [114 ] ERROR AVPLib.Business.AVPProcessJob.PickFromLoadLock - A04 Start Pick from Source:LoadLockA,Slot4To Destination:Aligner
+2026-05-25 14:53:28,989 [95  ] ERROR AVPLib.Business.AVPProcessJob.PlaceToPVD5TChamber - A03 Start Recipe With Recipe Path Is D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP_Robot_Project\bin\Debug\RunningRecipes\LoadLockA\Recipes\Chamber3\PVD5T_RF.xml
+2026-05-25 14:53:30,951 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_LLA_Extract
+2026-05-25 14:53:30,958 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_LLA_Extract
+2026-05-25 14:53:32,847 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:53:32,851 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:53:34,021 [114 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToAlginer - A04 Start Place from Source:LoadLockA,Slot4To Destination:Aligner
+2026-05-25 14:53:34,258 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:53:34,322 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:53:35,210 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract
+2026-05-25 14:53:35,218 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract
+2026-05-25 14:53:37,438 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:53:37,450 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:53:38,524 [114 ] ERROR AVPLib.Business.AVPProcessJob.PickFromAligner - A04 Start Pick from Source:AlignerTo Destination:Chamber3
+2026-05-25 14:53:39,402 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:53:39,405 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:53:40,512 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract_DeltaPick
+2026-05-25 14:53:40,522 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract_DeltaPick
+2026-05-25 14:53:42,360 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:53:42,361 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:53:43,303 [114 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToChamberMultiSlots - JobID=A04 ,Acquire Slot ID=4
+2026-05-25 14:53:43,304 [114 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToPVD5TChamber - A04 Start Place from Source:To Destination:Chamber3
+2026-05-25 14:53:43,305 [114 ] ERROR AVPLib.Business.AVPProcessJob.PVD5TContinueWaitMotor - DEBUG-------: ContinueWaitMotor. Wait 4s 
+2026-05-25 14:53:57,150 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:53:57,156 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:53:58,489 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Chamber3_Extract
+2026-05-25 14:53:58,687 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Chamber3_Extract
+2026-05-25 14:54:02,640 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:54:02,643 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:54:05,718 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:54:05,770 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:54:08,317 [114 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToPVD5TChamber - A04 Start Recipe With Recipe Path Is D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP_Robot_Project\bin\Debug\RunningRecipes\LoadLockA\Recipes\Chamber3\PVD5T_RF.xml
+2026-05-25 14:54:09,090 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - PJ-A05 successfully accquired the chamber Chamber3
+2026-05-25 14:54:09,093 [40  ] ERROR AVPLib.Business.AVPControlJob.GetNextProcJob - Starting Job A05
+2026-05-25 14:54:09,135 [110 ] ERROR AVPLib.Business.AVPProcessJob.PickFromLoadLock - A05 Start Pick from Source:LoadLockA,Slot5To Destination:Aligner
+2026-05-25 14:54:13,986 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_LLA_Extract
+2026-05-25 14:54:13,991 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_LLA_Extract
+2026-05-25 14:54:15,948 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:54:15,954 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:54:17,224 [110 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToAlginer - A05 Start Place from Source:LoadLockA,Slot5To Destination:Aligner
+2026-05-25 14:54:18,678 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract
+2026-05-25 14:54:18,703 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract
+2026-05-25 14:54:20,759 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:54:20,869 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:54:21,650 [110 ] ERROR AVPLib.Business.AVPProcessJob.PickFromAligner - A05 Start Pick from Source:AlignerTo Destination:Chamber3
+2026-05-25 14:54:23,741 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:54:23,744 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:54:23,845 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract_DeltaPick
+2026-05-25 14:54:23,854 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract_DeltaPick
+2026-05-25 14:54:26,012 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:54:26,102 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:54:26,815 [110 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToChamberMultiSlots - JobID=A05 ,Acquire Slot ID=5
+2026-05-25 14:54:26,820 [110 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToPVD5TChamber - A05 Start Place from Source:To Destination:Chamber3
+2026-05-25 14:54:26,822 [110 ] ERROR AVPLib.Business.AVPProcessJob.PVD5TContinueWaitMotor - DEBUG-------: ContinueWaitMotor. Wait 4s 
+2026-05-25 14:54:40,346 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:54:40,349 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:54:42,093 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Chamber3_Extract
+2026-05-25 14:54:42,095 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Chamber3_Extract
+2026-05-25 14:54:46,310 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:54:46,342 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:54:48,976 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:54:49,036 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:54:51,764 [110 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToPVD5TChamber - A05 Start Recipe With Recipe Path Is D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP_Robot_Project\bin\Debug\RunningRecipes\LoadLockA\Recipes\Chamber3\PVD5T_RF.xml
+2026-05-25 14:54:52,641 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - PJ-A06 successfully accquired the chamber Chamber3
+2026-05-25 14:54:52,642 [40  ] ERROR AVPLib.Business.AVPControlJob.GetNextProcJob - Starting Job A06
+2026-05-25 14:54:52,688 [107 ] ERROR AVPLib.Business.AVPProcessJob.PickFromLoadLock - A06 Start Pick from Source:LoadLockA,Slot6To Destination:Aligner
+2026-05-25 14:54:57,431 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_LLA_Extract
+2026-05-25 14:54:57,436 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_LLA_Extract
+2026-05-25 14:54:59,196 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:54:59,203 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:55:00,534 [107 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToAlginer - A06 Start Place from Source:LoadLockA,Slot6To Destination:Aligner
+2026-05-25 14:55:00,834 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:55:00,858 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:55:01,954 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract
+2026-05-25 14:55:01,961 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract
+2026-05-25 14:55:03,916 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:55:03,919 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:55:05,095 [107 ] ERROR AVPLib.Business.AVPProcessJob.PickFromAligner - A06 Start Pick from Source:AlignerTo Destination:Chamber3
+2026-05-25 14:55:06,327 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:55:06,336 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:55:07,072 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract_DeltaPick
+2026-05-25 14:55:07,075 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract_DeltaPick
+2026-05-25 14:55:09,316 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:55:09,324 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:55:09,931 [107 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToChamberMultiSlots - JobID=A06 ,Acquire Slot ID=6
+2026-05-25 14:55:09,932 [107 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToPVD5TChamber - A06 Start Place from Source:To Destination:Chamber3
+2026-05-25 14:55:09,933 [107 ] ERROR AVPLib.Business.AVPProcessJob.PVD5TContinueWaitMotor - DEBUG-------: ContinueWaitMotor. Wait 4s 
+2026-05-25 14:55:22,809 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:55:22,816 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:55:24,736 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Chamber3_Extract
+2026-05-25 14:55:24,739 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Chamber3_Extract
+2026-05-25 14:55:28,735 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:55:28,738 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:55:31,602 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:55:31,608 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:55:34,224 [107 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToPVD5TChamber - A06 Start Recipe With Recipe Path Is D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP_Robot_Project\bin\Debug\RunningRecipes\LoadLockA\Recipes\Chamber3\PVD5T_RF.xml
+2026-05-25 14:55:35,387 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - PJ-A07 successfully accquired the chamber Chamber3
+2026-05-25 14:55:35,388 [40  ] ERROR AVPLib.Business.AVPControlJob.GetNextProcJob - Starting Job A07
+2026-05-25 14:55:35,459 [73  ] ERROR AVPLib.Business.AVPProcessJob.PickFromLoadLock - A07 Start Pick from Source:LoadLockA,Slot7To Destination:Aligner
+2026-05-25 14:55:39,336 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_LLA_Extract
+2026-05-25 14:55:39,341 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_LLA_Extract
+2026-05-25 14:55:41,288 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:55:41,291 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:55:42,459 [73  ] ERROR AVPLib.Business.AVPProcessJob.PlaceToAlginer - A07 Start Place from Source:LoadLockA,Slot7To Destination:Aligner
+2026-05-25 14:55:42,812 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:55:42,860 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:55:43,952 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract
+2026-05-25 14:55:43,956 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract
+2026-05-25 14:55:45,954 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:55:45,960 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:55:47,286 [73  ] ERROR AVPLib.Business.AVPProcessJob.PickFromAligner - A07 Start Pick from Source:AlignerTo Destination:Chamber3
+2026-05-25 14:55:49,156 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract_DeltaPick
+2026-05-25 14:55:49,207 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract_DeltaPick
+2026-05-25 14:55:51,101 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:55:51,107 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:55:52,033 [73  ] ERROR AVPLib.Business.AVPProcessJob.PlaceToChamberMultiSlots - JobID=A07 ,Acquire Slot ID=7
+2026-05-25 14:55:52,034 [73  ] ERROR AVPLib.Business.AVPProcessJob.PlaceToPVD5TChamber - A07 Start Place from Source:To Destination:Chamber3
+2026-05-25 14:55:52,036 [73  ] ERROR AVPLib.Business.AVPProcessJob.PVD5TContinueWaitMotor - DEBUG-------: ContinueWaitMotor. Wait 4s 
+2026-05-25 14:56:06,673 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:56:06,675 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:56:07,266 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Chamber3_Extract
+2026-05-25 14:56:07,270 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Chamber3_Extract
+2026-05-25 14:56:11,275 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:56:11,280 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:56:14,737 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:56:15,026 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:56:17,059 [73  ] ERROR AVPLib.Business.AVPProcessJob.PlaceToPVD5TChamber - A07 Start Recipe With Recipe Path Is D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP_Robot_Project\bin\Debug\RunningRecipes\LoadLockA\Recipes\Chamber3\PVD5T_RF.xml
+2026-05-25 14:56:17,943 [40  ] ERROR AVPLib.Business.AVPProcessJob.InnerAcquireChamberResource - PJ-A08 successfully accquired the chamber Chamber3
+2026-05-25 14:56:17,946 [40  ] ERROR AVPLib.Business.AVPControlJob.GetNextProcJob - Starting Job A08
+2026-05-25 14:56:17,961 [119 ] ERROR AVPLib.Business.AVPProcessJob.PickFromLoadLock - A08 Start Pick from Source:LoadLockA,Slot8To Destination:Aligner
+2026-05-25 14:56:21,807 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_LLA_Extract
+2026-05-25 14:56:21,815 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_LLA_Extract
+2026-05-25 14:56:24,083 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:56:24,096 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:56:25,437 [119 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToAlginer - A08 Start Place from Source:LoadLockA,Slot8To Destination:Aligner
+2026-05-25 14:56:30,152 [119 ] ERROR AVPLib.Business.AVPProcessJob.PickFromAligner - A08 Start Pick from Source:AlignerTo Destination:Chamber3
+2026-05-25 14:56:30,931 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:56:30,937 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract
+2026-05-25 14:56:31,514 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:56:31,516 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:56:32,917 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract_DeltaPick
+2026-05-25 14:56:33,312 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Aligner_Extract_DeltaPick
+2026-05-25 14:56:34,352 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:56:34,360 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Aligner_Retract_DeltaPick
+2026-05-25 14:56:35,399 [119 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToChamberMultiSlots - JobID=A08 ,Acquire Slot ID=8
+2026-05-25 14:56:35,401 [119 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToPVD5TChamber - A08 Start Place from Source:To Destination:Chamber3
+2026-05-25 14:56:35,403 [119 ] ERROR AVPLib.Business.AVPProcessJob.PVD5TContinueWaitMotor - DEBUG-------: ContinueWaitMotor. Wait 4s 
+2026-05-25 14:56:49,949 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:56:49,952 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:56:50,400 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Chamber3_Extract
+2026-05-25 14:56:50,890 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Arm_At_Chamber3_Extract
+2026-05-25 14:56:54,431 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:56:54,435 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - Chamber3
+2026-05-25 14:56:59,049 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:56:59,051 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 14:56:59,999 [119 ] ERROR AVPLib.Business.AVPProcessJob.PlaceToPVD5TChamber - A08 Start Recipe With Recipe Path Is D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP_Robot_Project\bin\Debug\RunningRecipes\LoadLockA\Recipes\Chamber3\PVD5T_RF.xml
+AVP version 3.10.0.58566
+2026-05-25 15:00:51,169 [1   ] ERROR AVP_Robot_Project.AVPRobotMain.LoadPVD5TItem - Missing Load PVD5T Items For CX4
+2026-05-25 15:00:54,388 [1   ] ERROR AVPLib.Business.PVD5TController.AddAllCmdNeedToPollingAllTime - Missing Add command want to polling
+2026-05-25 15:01:24,969 [1   ] ERROR AVPLib.Communication.TerminalDriver.AlignerTransaction.Run - Sent: Aligner.SVCCDPOS Received: Timeout and IsCommunicating error
+2026-05-25 15:06:48,785 [21  ] ERROR AVPLib.Utils.LogMessageCheckPullingRobot - RobotTransaction.Run- Sent: Robot.SET COMM ALL PKT SEQ AUT Received: Timeout and IsCommunicating error
+2026-05-25 15:06:48,822 [1   ] ERROR AVPLib.Driver.DriverManager.RegisterRSTiForTabIO - System.NullReferenceException: Object reference not set to an instance of an object.
+   at AVPLib.Driver.DriverManager.RegisterRSTiForTabIO(RSTiObject objRSTi) in D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\Drivers\DriverManager.vb:line 1047
+2026-05-25 15:06:49,668 [1   ] ERROR AVPLib.Driver.DriverManager.RegisterRSTiForTabIO - System.NullReferenceException: Object reference not set to an instance of an object.
+   at AVPLib.Driver.DriverManager.RegisterRSTiForTabIO(RSTiObject objRSTi) in D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\Drivers\DriverManager.vb:line 1047
+2026-05-25 15:06:49,674 [21  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferOfChamber1 found
+2026-05-25 15:06:49,679 [21  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferOfChamber2 found
+2026-05-25 15:06:49,689 [21  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node RunNo found
+2026-05-25 15:06:49,690 [21  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferCountOfChamber1 found
+2026-05-25 15:06:49,695 [21  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferCountOfChamber2 found
+2026-05-25 15:06:49,702 [21  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM1 found
+2026-05-25 15:06:49,710 [21  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM2 found
+2026-05-25 15:06:49,712 [21  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM3 found
+2026-05-25 15:06:49,806 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - OpenCard: 1 = DNS_OpenCard(DN3-PCI-0000) CardHandle=0
+2026-05-25 15:06:49,811 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - Online: 1 = DNS_Online() CardHandle=0
+2026-05-25 15:06:49,814 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - StartScan: 1 = DNS_StartScan() CardHandle=0
+2026-05-25 15:06:49,936 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(6) CardHandle=0
+2026-05-25 15:06:49,938 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(10) CardHandle=0
+2026-05-25 15:06:49,941 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(7) CardHandle=0
+2026-05-25 15:06:49,942 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(30) CardHandle=0
+2026-05-25 15:06:49,946 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(1) CardHandle=0
+2026-05-25 15:06:49,947 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(2) CardHandle=0
+2026-05-25 15:06:49,948 [1   ] ERROR AVPLib.DeviceNet.DNSScanner.Initialize - Init Valve device.
+2026-05-25 15:06:50,079 [38  ] ERROR AVPLib.DeviceNet.DNSScanner.LogBusStatus - Bus Status = 1
+2026-05-25 15:06:50,089 [38  ] ERROR AVPLib.Driver.DNSGP354IonGauge.PollFirmwareVersion - CassettesModule Get Firmware Version
+2026-05-25 15:06:50,741 [38  ] ERROR AVPLib.Driver.DNSGP354IonGauge.PollSoftwareVersion - CassettesModule Get software revision level
+2026-05-25 15:06:51,008 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferOfChamber1 found
+2026-05-25 15:06:51,010 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferOfChamber2 found
+2026-05-25 15:06:51,011 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node RunNo found
+2026-05-25 15:06:51,012 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferCountOfChamber1 found
+2026-05-25 15:06:51,020 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferCountOfChamber2 found
+2026-05-25 15:06:51,021 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM1 found
+2026-05-25 15:06:51,022 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM2 found
+2026-05-25 15:06:51,023 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM3 found
+2026-05-25 15:06:54,748 [38  ] ERROR AVPLib.Driver.DNSGP355IonGauge.ReadValue - CassettesModule Get filament
+2026-05-25 15:06:55,269 [38  ] ERROR AVPLib.Driver.DNSGP355IonGauge.ReadValue - CassettesModule Active filament: 1
+2026-05-25 15:07:03,386 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 15:07:03,394 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+AVP version 3.10.0.58566
+2026-05-25 15:09:28,604 [1   ] ERROR AVP_Robot_Project.AVPRobotMain.LoadPVD5TItem - Missing Load PVD5T Items For CX4
+2026-05-25 15:09:36,321 [1   ] ERROR AVPLib.Business.PVD5TController.AddAllCmdNeedToPollingAllTime - Missing Add command want to polling
+2026-05-25 15:10:06,986 [1   ] ERROR AVPLib.Communication.TerminalDriver.AlignerTransaction.Run - Sent: Aligner.SVCCDPOS Received: Timeout and IsCommunicating error
+2026-05-25 15:10:10,703 [1   ] ERROR AVPLib.Driver.DriverManager.RegisterRSTiForTabIO - System.NullReferenceException: Object reference not set to an instance of an object.
+   at AVPLib.Driver.DriverManager.RegisterRSTiForTabIO(RSTiObject objRSTi) in D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\Drivers\DriverManager.vb:line 1047
+2026-05-25 15:10:11,472 [1   ] ERROR AVPLib.Driver.DriverManager.RegisterRSTiForTabIO - System.NullReferenceException: Object reference not set to an instance of an object.
+   at AVPLib.Driver.DriverManager.RegisterRSTiForTabIO(RSTiObject objRSTi) in D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\Drivers\DriverManager.vb:line 1047
+2026-05-25 15:10:11,572 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - OpenCard: 1 = DNS_OpenCard(DN3-PCI-0000) CardHandle=0
+2026-05-25 15:10:11,575 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - Online: 1 = DNS_Online() CardHandle=0
+2026-05-25 15:10:11,578 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - StartScan: 1 = DNS_StartScan() CardHandle=0
+2026-05-25 15:10:11,695 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(6) CardHandle=0
+2026-05-25 15:10:11,699 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(10) CardHandle=0
+2026-05-25 15:10:11,701 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(7) CardHandle=0
+2026-05-25 15:10:11,704 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(30) CardHandle=0
+2026-05-25 15:10:11,705 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(1) CardHandle=0
+2026-05-25 15:10:11,706 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(2) CardHandle=0
+2026-05-25 15:10:11,707 [1   ] ERROR AVPLib.DeviceNet.DNSScanner.Initialize - Init Valve device.
+2026-05-25 15:10:11,770 [36  ] ERROR AVPLib.DeviceNet.DNSScanner.LogBusStatus - Bus Status = 1
+2026-05-25 15:10:11,785 [36  ] ERROR AVPLib.Driver.DNSGP354IonGauge.PollFirmwareVersion - CassettesModule Get Firmware Version
+2026-05-25 15:10:11,802 [33  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferOfChamber1 found
+2026-05-25 15:10:11,812 [33  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferOfChamber2 found
+2026-05-25 15:10:11,820 [33  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node RunNo found
+2026-05-25 15:10:11,823 [33  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferCountOfChamber1 found
+2026-05-25 15:10:11,824 [33  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferCountOfChamber2 found
+2026-05-25 15:10:11,826 [33  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM1 found
+2026-05-25 15:10:11,827 [33  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM2 found
+2026-05-25 15:10:11,828 [33  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM3 found
+2026-05-25 15:10:12,408 [36  ] ERROR AVPLib.Driver.DNSGP354IonGauge.PollSoftwareVersion - CassettesModule Get software revision level
+2026-05-25 15:10:13,816 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 15:10:13,820 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 15:10:14,049 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferOfChamber1 found
+2026-05-25 15:10:14,051 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferOfChamber2 found
+2026-05-25 15:10:14,052 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node RunNo found
+2026-05-25 15:10:14,053 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferCountOfChamber1 found
+2026-05-25 15:10:14,054 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferCountOfChamber2 found
+2026-05-25 15:10:14,054 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM1 found
+2026-05-25 15:10:14,056 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM2 found
+2026-05-25 15:10:14,057 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM3 found
+2026-05-25 15:10:16,366 [36  ] ERROR AVPLib.Driver.DNSGP355IonGauge.ReadValue - CassettesModule Get filament
+2026-05-25 15:10:16,887 [36  ] ERROR AVPLib.Driver.DNSGP355IonGauge.ReadValue - CassettesModule Active filament: 1
+2026-05-25 15:10:29,441 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+AVP version 3.10.0.58566
+2026-05-25 15:35:55,642 [1   ] ERROR AVPLib.Business.AVPSecsGemLib.Initialize - System.InvalidOperationException: Cannot open EMService service on computer '.'. ---> System.ComponentModel.Win32Exception: Access is denied
+   --- End of inner exception stack trace ---
+   at System.ServiceProcess.ServiceController.GetServiceHandle(Int32 desiredAccess)
+   at System.ServiceProcess.ServiceController.Stop()
+   at AVPLib.Business.AVPSecsGemLib.StopEMService() in D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\business\AVPSecsGemLib.vb:line 14
+   at AVPLib.Business.AVPSecsGemLib.Initialize() in D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\business\AVPSecsGemLib.vb:line 20
+2026-05-25 15:35:55,690 [1   ] ERROR AVPSecsGemLib.AVPSecsGem.SetCIMConnectProjectPath - Requested registry access is not allowed.
+2026-05-25 15:36:04,442 [1   ] ERROR AVP_Robot_Project.AVPRobotMain.LoadPVD5TItem - Missing Load PVD5T Items For CX4
+2026-05-25 15:36:07,755 [1   ] ERROR AVPLib.Business.PVD5TController.AddAllCmdNeedToPollingAllTime - Missing Add command want to polling
+AVP version 3.10.0.58566
+2026-05-25 15:36:45,777 [1   ] ERROR AVP_Robot_Project.AVPRobotMain.LoadPVD5TItem - Missing Load PVD5T Items For CX4
+2026-05-25 15:36:50,686 [1   ] ERROR AVPLib.Business.PVD5TController.AddAllCmdNeedToPollingAllTime - Missing Add command want to polling
+2026-05-25 15:37:21,260 [1   ] ERROR AVPLib.Communication.TerminalDriver.AlignerTransaction.Run - Sent: Aligner.SVCCDPOS Received: Timeout and IsCommunicating error
+2026-05-25 15:37:29,842 [1   ] ERROR AVPLib.Driver.DriverManager.RegisterRSTiForTabIO - System.NullReferenceException: Object reference not set to an instance of an object.
+   at AVPLib.Driver.DriverManager.RegisterRSTiForTabIO(RSTiObject objRSTi) in D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\Drivers\DriverManager.vb:line 1047
+2026-05-25 15:37:30,204 [1   ] ERROR AVPLib.Driver.DriverManager.RegisterRSTiForTabIO - System.NullReferenceException: Object reference not set to an instance of an object.
+   at AVPLib.Driver.DriverManager.RegisterRSTiForTabIO(RSTiObject objRSTi) in D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVP Lib\Drivers\DriverManager.vb:line 1047
+2026-05-25 15:37:30,345 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - OpenCard: 1 = DNS_OpenCard(DN3-PCI-0000) CardHandle=0
+2026-05-25 15:37:30,348 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - Online: 1 = DNS_Online() CardHandle=0
+2026-05-25 15:37:30,350 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - StartScan: 1 = DNS_StartScan() CardHandle=0
+2026-05-25 15:37:30,467 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(6) CardHandle=0
+2026-05-25 15:37:30,471 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(10) CardHandle=0
+2026-05-25 15:37:30,473 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(7) CardHandle=0
+2026-05-25 15:37:30,475 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(30) CardHandle=0
+2026-05-25 15:37:30,477 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(1) CardHandle=0
+2026-05-25 15:37:30,481 [1   ] ERROR AVPLib.DeviceNet.DeviceNetController.log - AddDevice: 1 = DNS_AddDevice(2) CardHandle=0
+2026-05-25 15:37:30,484 [1   ] ERROR AVPLib.DeviceNet.DNSScanner.Initialize - Init Valve device.
+2026-05-25 15:37:30,595 [37  ] ERROR AVPLib.DeviceNet.DNSScanner.LogBusStatus - Bus Status = 1
+2026-05-25 15:37:30,600 [37  ] ERROR AVPLib.Driver.DNSGP354IonGauge.PollFirmwareVersion - CassettesModule Get Firmware Version
+2026-05-25 15:37:30,634 [33  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferOfChamber1 found
+2026-05-25 15:37:30,647 [33  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferOfChamber2 found
+2026-05-25 15:37:30,665 [33  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node RunNo found
+2026-05-25 15:37:30,665 [33  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferCountOfChamber1 found
+2026-05-25 15:37:30,666 [33  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferCountOfChamber2 found
+2026-05-25 15:37:30,667 [33  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM1 found
+2026-05-25 15:37:30,668 [33  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM2 found
+2026-05-25 15:37:30,669 [33  ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM3 found
+2026-05-25 15:37:31,240 [37  ] ERROR AVPLib.Driver.DNSGP354IonGauge.PollSoftwareVersion - CassettesModule Get software revision level
+2026-05-25 15:37:31,533 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferOfChamber1 found
+2026-05-25 15:37:31,536 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferOfChamber2 found
+2026-05-25 15:37:31,537 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node RunNo found
+2026-05-25 15:37:31,538 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferCountOfChamber1 found
+2026-05-25 15:37:31,539 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node WaferCountOfChamber2 found
+2026-05-25 15:37:31,540 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM1 found
+2026-05-25 15:37:31,540 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM2 found
+2026-05-25 15:37:31,541 [1   ] ERROR AVPLib.StoreGuiLib.GetStoreGui - Unknown node PM3 found
+2026-05-25 15:37:35,218 [37  ] ERROR AVPLib.Driver.DNSGP355IonGauge.ReadValue - CassettesModule Get filament
+2026-05-25 15:37:35,736 [37  ] ERROR AVPLib.Driver.DNSGP355IonGauge.ReadValue - CassettesModule Active filament: 1
+2026-05-25 15:37:42,055 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA
+2026-05-25 15:37:42,062 [1   ] ERROR AVP_Robot_Project.Robot.RotateTo - LoadLockA

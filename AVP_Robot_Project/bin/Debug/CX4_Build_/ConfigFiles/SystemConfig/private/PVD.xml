@@ -1,0 +1,376 @@
+<RecipeDef>
+  <ParameterList Id="1" isGroup="1" Group="Version_Control" GroupName="Version_Control" ShowInUI="False">
+    <Parameter>
+      <SeqNo>1</SeqNo>
+      <Name>(c)2010 AVP Technology, LLC</Name>
+      <Description>(c)2010 AVP Technology, LLC</Description>
+      <Default></Default>
+      <Unit>String</Unit>
+      <ShowInUI>False</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>2</SeqNo>
+      <Name>PVD Process File Version 1.00</Name>
+      <Description>PVD Process File Version 1.00</Description>
+      <Default></Default>
+      <Unit>String</Unit>
+      <ShowInUI>False</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>3</SeqNo>
+      <Name>StepName</Name>
+      <Description></Description>
+      <Default></Default>
+      <Unit>String</Unit>
+      <ShowInUI>False</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>4</SeqNo>
+      <Name>StepDescription</Name>
+      <Description></Description>
+      <Default></Default>
+      <Unit>String</Unit>
+      <ShowInUI>False</ShowInUI>
+    </Parameter>
+  </ParameterList>
+  <ParameterList Id="2" isGroup="1" Group="Gases" GroupName="Gases_Control" ShowInUI="True">
+    <Parameter>
+      <SeqNo>1</SeqNo>
+      <Name>Gas1</Name>
+      <Description>Gas 1 (sccm)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>2</SeqNo>
+      <Name>Gas2</Name>
+      <Description>Gas 2 (sccm)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>3</SeqNo>
+      <Name>Gas3</Name>
+      <Description>Gas 3 (sccm)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>4</SeqNo>
+      <Name>Gas4</Name>
+      <Description>Gas 4 (sccm)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>5</SeqNo>
+      <Name>Gas5</Name>
+      <Description>Back Side Cooling (sccm)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+  </ParameterList>
+  <ParameterList Id="3" isGroup="1" Group="ProcessControl" GroupName="ProcessControl" ShowInUI="True">
+    <Parameter>
+      <SeqNo>1</SeqNo>
+      <Name>ProcessTime</Name>
+      <Description>Process Time (sec)</Description>
+      <Min>0</Min>
+      <Max>36000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>2</SeqNo>
+      <Name>RampTime</Name>
+      <Description>Ramp Up Time (sec)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+      <Parameter>
+      <SeqNo>3</SeqNo>
+      <Name>ProcessPressure</Name>
+      <Description>Process Pressure (mtorr)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>4</SeqNo>
+      <Name>ProcessStartPressure</Name>
+      <Description>Process Start Pressure (torr)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>5.00E-07</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+     <Parameter>
+      <SeqNo>5</SeqNo>
+      <Name>TargetPower</Name>
+      <Description>Target Power (watts)</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>6</SeqNo>
+      <Name>TargetC1</Name>
+      <Description>Target C1 (%)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>7</SeqNo>
+      <Name>TargetC2</Name>
+      <Description>Target C2 (%)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>8</SeqNo>
+      <Name>TargetMatchingMode</Name>
+      <Description>Target Match Mode</Description>
+      <Default>Auto</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="True">Auto</Item>
+        <Item Value="False">Manual</Item>
+      </DisplayItems>
+    </Parameter>   
+    <Parameter>
+      <SeqNo>9</SeqNo>
+      <Name>OpenShutter</Name>
+      <Description>Shutter Position</Description>
+      <Default>Close</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="True">Open</Item>
+        <Item Value="False">Close</Item>
+      </DisplayItems>
+    </Parameter>
+     <Parameter>
+      <SeqNo>10</SeqNo>
+      <Name>Pulse</Name>
+      <Description>Pulse Mode</Description>
+      <Default>Off</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="True">On</Item>
+        <Item Value="False">Off</Item>
+      </DisplayItems>
+    </Parameter>           
+    <Parameter>
+      <SeqNo>11</SeqNo>
+      <Name>PulseFrequency</Name>
+      <Description>Pulse Frequency (kHz)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>False</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>12</SeqNo>
+      <Name>PulseWidth</Name>
+      <Description>Pulse Width (ns)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>False</ShowInUI>
+    </Parameter>           
+    <Parameter>
+      <SeqNo>13</SeqNo>
+      <Name>ChuckHeight</Name>
+      <Description>Chuck Height (inches)</Description>
+      <Min>0</Min>
+      <Max>4</Max>
+      <Default>1.4</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+     <Parameter>
+      <SeqNo>14</SeqNo>
+      <Name>BiasPower</Name>
+      <Description>Bias Power (watts)</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+     <Parameter>
+      <SeqNo>15</SeqNo>
+      <Name>BiasVoltage</Name>
+     <Description>Bias Voltage (volts)</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+     <Parameter>
+      <SeqNo>16</SeqNo>
+      <Name>BiasC1</Name>
+      <Description>Bias C1 (%)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>17</SeqNo>
+      <Name>BiasC2</Name>
+      <Description>Bias C2 (%)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+     <Parameter>
+      <SeqNo>18</SeqNo>
+      <Name>BiasMatchingMode</Name>
+      <Description>Bias Match Mode</Description>
+      <Default>Auto</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="True">Auto</Item>
+        <Item Value="False">Manual</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>19</SeqNo>
+      <Name>BiasC1C2FromRecipe</Name>
+      <Description>BiasC1C2FromRecipe</Description>
+      <Default>Yes</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="True">Yes</Item>
+        <Item Value="False">No</Item>
+      </DisplayItems>
+    </Parameter>
+     <Parameter>
+      <SeqNo>20</SeqNo>
+      <Name>BiasControl</Name>
+      <Description>Bias Control</Description>
+      <Default>Power</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="Power">Power</Item>
+        <Item Value="Voltage">Voltage</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>21</SeqNo>
+      <Name>PowerDown</Name>
+      <Description>Power Down</Description>
+      <Default>Yes</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="True">Yes</Item>
+        <Item Value="False">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>22</SeqNo>
+      <Name>MagnetState</Name>
+      <Description>Parallel Magnet State</Description>
+      <Default>Off</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="True">On</Item>
+        <Item Value="False">Off</Item>
+      </DisplayItems>
+    </Parameter>
+      <Parameter>
+      <SeqNo>23</SeqNo>
+      <Name>MagCurrent</Name>
+      <Description>Parallel Magnet Current (amps)</Description>
+      <Min>0</Min>
+      <Max>20</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>24</SeqNo>
+      <Name>MagnetDutyCycle</Name>
+      <Description>Parallel Magnet Duty Cycle (%)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>  
+    <Parameter>
+      <SeqNo>25</SeqNo>
+      <Name>MagFrequency</Name>
+      <Description>Parallel Magnet Frequency (hz)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter> 
+    <Parameter>
+      <SeqNo>26</SeqNo>
+      <Name>IsStabilize</Name>
+      <Description>IsStabilize</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="True">Yes</Item>
+        <Item Value="False">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>27</SeqNo>
+      <Name>RecipeComments</Name>
+      <Description>Recipe Comments</Description>
+      <Default>Comment</Default>
+      <Unit>String</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter> 
+    </ParameterList>
+</RecipeDef>

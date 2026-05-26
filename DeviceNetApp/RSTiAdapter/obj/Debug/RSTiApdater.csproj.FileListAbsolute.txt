@@ -1,0 +1,5 @@
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\DeviceNetApp\RSTiAdapter\bin\Debug\RSTiApdater.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\DeviceNetApp\RSTiAdapter\bin\Debug\RSTiApdater.pdb
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\DeviceNetApp\RSTiAdapter\obj\Debug\RSTiApdater.csproj.CoreCompileInputs.cache
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\DeviceNetApp\RSTiAdapter\obj\Debug\RSTiApdater.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\DeviceNetApp\RSTiAdapter\obj\Debug\RSTiApdater.pdb

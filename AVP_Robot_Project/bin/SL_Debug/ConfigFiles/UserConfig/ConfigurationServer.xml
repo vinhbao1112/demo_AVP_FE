@@ -1,0 +1,8 @@
+<Servers>
+  <KepServer Name="KEPware.KEPServerEx.V4" />
+  <TerminalServer>
+    <Server Name="Loader" IsInstall="True" Type="Loader" EthernetIP="192.168.1.222" Port="4007" />
+  </TerminalServer>
+  <Install_CX>SL</Install_CX>
+  <Chamber1 Name="Chamber1" IsInstall="True" Type="VEECO_IBE" EthernetIP="127.0.0.1" Port="8008" ConfigFolder="D:\SingleLoaderData" RecipeFolder="D:\SingleLoaderData" RateOfRiseFolder="D:\SingleLoaderData" RateOfRiseFilename="ror.txt" DataRunFolder="D:\SingleLoaderData" DataRunFilename="datarun.txt" DataRunOutputFolder="C:\" />
+</Servers>

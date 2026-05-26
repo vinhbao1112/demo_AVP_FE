@@ -1,0 +1,24 @@
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\bin\Debug\AVPSecsGemLib.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\bin\Debug\AVPSecsGemLib.pdb
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\bin\Debug\Interop.EMSERVICELib.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\bin\Debug\Interop.VALUELib.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Debug\AVPSecsGemLib.csproj.AssemblyReference.cache
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Debug\Interop.EMSERVICELib.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Debug\Interop.VALUELib.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Debug\AVPSecsGemLib.csproj.ResolveComReference.cache
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Debug\AVPSecsGemLib.csproj.CoreCompileInputs.cache
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Debug\AVPSecsGemLib.csproj.CopyComplete
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Debug\AVPSecsGemLib.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Debug\AVPSecsGemLib.pdb
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Debug\AVPSecsGemLib.csproj.ResolveComReference.cache
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Debug\AVPSecsGemLib.csproj.CoreCompileInputs.cache
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Debug\AVPSecsGemLib.csproj.AssemblyReference.cache
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\bin\Debug\AVPSecsGemLib.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\bin\Debug\AVPSecsGemLib.pdb
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\bin\Debug\Interop.EMSERVICELib.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\bin\Debug\Interop.VALUELib.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Debug\Interop.EMSERVICELib.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Debug\Interop.VALUELib.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Debug\AVPSecsGemLib.csproj.CopyComplete
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Debug\AVPSecsGemLib.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\AVPSecsGemLib\obj\Debug\AVPSecsGemLib.pdb

@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E5AC5EDF-EE61-4497-A620-DF78BD0783BB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HRecipeLibrary</RootNamespace>
+    <AssemblyName>HRecipeLibrary</AssemblyName>
+    <MyType>Windows</MyType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>HRecipeLibrary.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>HRecipeLibrary.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CTC Release|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\CTC Release\</OutputPath>
+    <DocumentationFile>HRecipeLibrary.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CTC Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\CTC Debug\</OutputPath>
+    <DocumentationFile>HRecipeLibrary.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>3rdParty\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractFactory\AbstractFactory.vb" />
+    <Compile Include="AbstractFactory\GeneralFactory.vb" />
+    <Compile Include="AbstractFactory\HRPVDFactory.vb" />
+    <Compile Include="AbstractFactory\IBDFactory.vb" />
+    <Compile Include="AbstractFactory\IBEFactory.vb" />
+    <Compile Include="AbstractFactory\PVD2R4Factory.vb" />
+    <Compile Include="AbstractFactory\PVD2TFactory.vb" />
+    <Compile Include="AbstractFactory\PVD5TFactory.vb" />
+    <Compile Include="AbstractFactory\PVD4Factory.vb" />
+    <Compile Include="AbstractFactory\PVD6PFactory.vb" />
+    <Compile Include="AbstractFactory\PVD6SFactory.vb" />
+    <Compile Include="AbstractFactory\PVDAFactory.vb" />
+    <Compile Include="AbstractFactory\PVDFactory.vb" />
+    <Compile Include="AbstractFactory\PVDSFactory.vb" />
+    <Compile Include="AbstractFactory\RIEFactory.vb" />
+    <Compile Include="ConfigurationData\PVD2TConfigurationData.vb" />
+    <Compile Include="ConfigurationData\PVD5TConfigurationData.vb" />
+    <Compile Include="ConfigurationData\PVDAConfigurationData.vb" />
+    <Compile Include="ConfigurationData\PVDSConfigurationData.vb" />
+    <Compile Include="ConfigurationData\RIEConfigurationData.vb" />
+    <Compile Include="Form\RecipeDataGridView.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HRecipe.vb" />
+    <Compile Include="ConfigurationData\GeneralConfigurationData.vb" />
+    <Compile Include="ConfigurationData\HRPVDConfigurationData.vb" />
+    <Compile Include="ConfigurationData\IBDConfigurationData.vb" />
+    <Compile Include="ConfigurationData\IBEConfigurationData.vb" />
+    <Compile Include="ConfigurationData\PVD2R4ConfigurationData.vb" />
+    <Compile Include="ConfigurationData\PVD4ConfigurationData.vb" />
+    <Compile Include="ConfigurationData\PVD6PConfigurationData.vb" />
+    <Compile Include="ConfigurationData\PVD6SConfigurationData.vb" />
+    <Compile Include="ConfigurationData\PVDConfigurationData.vb" />
+    <Compile Include="HConstants.vb" />
+    <Compile Include="Lib\ChamberLib.vb" />
+    <Compile Include="Lib\Logger.vb" />
+    <Compile Include="ConfigurationData\BaseConfigurationData.vb" />
+    <Compile Include="Model\DBRecipe.vb" />
+    <Compile Include="Model\DBRecipeStep.vb" />
+    <Compile Include="Model\DBRecipeGroupParameters.vb" />
+    <Compile Include="Model\DBRecipeTemplateParameter.vb" />
+    <Compile Include="Model\DBRecipeTemplateGroupParameters.vb" />
+    <Compile Include="Model\DBRecipeParameter.vb" />
+    <Compile Include="Recipe\GeneralRecipe.vb" />
+    <Compile Include="Recipe\HRPVDRecipe.vb" />
+    <Compile Include="Recipe\IBDRecipe.vb" />
+    <Compile Include="Recipe\IBERecipe.vb" />
+    <Compile Include="Recipe\PVD2R4Recipe.vb" />
+    <Compile Include="Recipe\PVD2TRecipe.vb" />
+    <Compile Include="Recipe\PVD5TRecipe.vb" />
+    <Compile Include="Recipe\PVD4Recipe.vb" />
+    <Compile Include="Recipe\PVD6PRecipe.vb" />
+    <Compile Include="Recipe\PVD6SRecipe.vb" />
+    <Compile Include="Recipe\PVDARecipe.vb" />
+    <Compile Include="Recipe\PVDRecipe.vb" />
+    <Compile Include="Recipe\BaseRecipe.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Recipe\PVDSRecipe.vb" />
+    <Compile Include="Recipe\RIERecipe.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

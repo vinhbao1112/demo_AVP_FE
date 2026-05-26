@@ -1,0 +1,285 @@
+Imports System.ComponentModel
+Imports AVPControls.AVPDataLib
+
+Public Class AVPAlignerControl
+    Private m_waferID As String = String.Empty
+    Private m_waferStatus As WaferStatuses = WaferStatuses.NONE
+    Private m_showQuestionMarkOnWafer As Boolean
+
+    ' Animated variables
+    Private Const ANGLE_DISTANCE As Integer = 20
+    Private m_maxAngle As Single = 450
+    Private m_alignAngle As Single = 90
+    Private m_angle As Single
+    Private m_angleSpan As Integer = ANGLE_DISTANCE
+
+#Region "Properties"
+    <DefaultValue(GetType(String), ""), Category("Wafer Info")> _
+    Public Property WaferID() As String
+        Get
+            Return m_waferID
+        End Get
+        Set(ByVal value As String)
+            If m_waferID <> value Then
+                m_waferID = value
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    <DefaultValue(GetType(WaferStatuses), "NONE"), Category("Wafer Info")> _
+    Public Property WaferStatus() As WaferStatuses
+        Get
+            Return m_waferStatus
+        End Get
+        Set(ByVal value As WaferStatuses)
+            If m_waferStatus <> value Then
+                m_waferStatus = value
+                UpdateView()
+                If Not Me.HasSuspendUpdate AndAlso Me.m_waferStatus = WaferStatuses.NONE Then
+                    Me.Refresh()
+                End If
+            End If
+        End Set
+    End Property
+
+    <DefaultValue(GetType(Boolean), "False"), Category("Wafer Info")> _
+    Public Property ShowQuestionMarkOnWafer() As Boolean
+        Get
+            Return m_showQuestionMarkOnWafer
+        End Get
+        Set(ByVal value As Boolean)
+            If m_showQuestionMarkOnWafer <> value Then
+                m_showQuestionMarkOnWafer = value
+                If m_waferStatus <> WaferStatuses.NONE Then
+                    UpdateView()
+                End If
+            End If
+        End Set
+    End Property
+
+    <DefaultValue(GetType(Single), "90")> _
+    Public Property AlignAngle() As Single
+        Get
+            Return m_alignAngle
+        End Get
+        Set(ByVal value As Single)
+            If m_alignAngle <> value AndAlso value >= 0 Then
+                m_alignAngle = value
+                m_maxAngle = 360 + m_alignAngle
+            End If
+        End Set
+    End Property
+
+    <DefaultValue(GetType(Single), "0")> _
+    Public Property Angle() As Single
+        Get
+            Return m_angle
+        End Get
+        Set(ByVal value As Single)
+            If m_angle <> value Then
+                m_angle = value
+                UpdateView()
+            End If
+        End Set
+    End Property
+#End Region
+
+#Region "Methods"
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Set wafer info
+    ''' </summary>
+    Public Overloads Sub SetWaferInfo(ByVal waferID As String, ByVal waferStatus As WaferStatuses, Optional ByVal isShowQuestionMark As Boolean = False)
+        Try
+            Dim isChanged As Boolean = False
+
+            If m_waferID <> waferID Then
+                m_waferID = waferID
+                isChanged = True
+            End If
+
+            If m_waferStatus <> waferStatus Then
+                m_waferStatus = waferStatus
+                isChanged = True
+            End If
+
+            If m_showQuestionMarkOnWafer <> isShowQuestionMark Then
+                m_showQuestionMarkOnWafer = isShowQuestionMark
+                isChanged = True
+            End If
+
+            If isChanged Then
+                UpdateView()
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Set wafer info
+    ''' </summary>
+    Public Overloads Sub SetWaferInfo(ByVal waferInfo As WaferInfo, Optional ByVal isShowQuestionMark As Boolean = False)
+        Try
+            Dim waferID As String = String.Empty
+            Dim waferStatus As WaferStatuses = WaferStatuses.NONE
+
+            If Not AVPDataLib.WaferInfo.IsEmpty(waferInfo) Then
+                waferID = waferInfo.WaferID
+                waferStatus = waferInfo.WaferStatus
+            End If
+
+            SetWaferInfo(waferID, waferStatus, isShowQuestionMark)
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+#End Region
+
+#Region "Private Methods"
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Generate image for drawing control
+    ''' </summary>
+    Protected Overrides Function GenerateControlImage() As System.Drawing.Bitmap
+        Dim img As Bitmap = Nothing
+        Try
+            If m_waferStatus <> WaferStatuses.NONE AndAlso m_status = DisplayStatus.On Then
+                ' Generate wafer image
+                img = AVPWaferControl.GenerateWaferImage(m_waferStatus, m_waferID, m_showQuestionMarkOnWafer, m_angle, AVPStyle)
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return img
+    End Function
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Stop animate wafer
+    ''' </summary>
+    Private Sub DoAnimationStoped(ByVal sender As Object, ByVal e As EventArgs) Handles Me.AnimationStoped
+        m_angleSpan = ANGLE_DISTANCE
+        m_angle = 0
+        Me.RefreshView()
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Check condition for stop animation
+    ''' </summary>
+    Protected Overrides Function IsStopAnimation() As Boolean
+        Return m_angleSpan < 0 AndAlso m_angle = 360 OrElse m_status <> DisplayStatus.On
+    End Function
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Update angle for animation
+    ''' </summary>
+    Protected Overrides Sub UpdateAnimatingView()
+        m_angle += m_angleSpan
+        If m_angle >= m_maxAngle Then
+            m_angleSpan = -1 * ANGLE_DISTANCE
+        End If
+        UpdateView()
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Check condition for start animation
+    ''' </summary>
+    Protected Overrides Function IsStartAnimation() As Boolean
+        Return m_status = DisplayStatus.On AndAlso _
+                m_waferStatus <> WaferStatuses.NONE AndAlso _
+                Not String.IsNullOrEmpty(m_waferID)
+    End Function
+#End Region
+
+#Region "Events"
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-14 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Handles Paint event for draw circle when wafer status is NONE or the control status is OFF.
+    ''' </summary>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Protected Overrides Sub OnPaint(ByVal e As System.Windows.Forms.PaintEventArgs)
+        If (Me.m_status = DisplayStatus.On AndAlso m_waferStatus = WaferStatuses.NONE) _
+        OrElse m_status <> DisplayStatus.On Then
+            e.Graphics.DrawEllipse(Pens.Black, 1, 1, WAFER_DIAMETER(AVPStyle) - 3, WAFER_DIAMETER(AVPStyle) - 3)
+        Else
+            If m_waferStatus <> WaferStatuses.NONE Then
+                MyBase.OnPaint(e)
+            End If
+        End If
+    End Sub
+
+    Public Sub New()
+
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        Me.AnimationInterval = 100
+        Me.DoubleBuffered = False
+        Me.IsTransparent = True
+        Me.IsFitSize = True
+        Me.Size = New Size(AVPDataLib.WAFER_DIAMETER(AVPStyle), AVPDataLib.WAFER_DIAMETER(AVPStyle))
+        m_allowEmptyRegion = False
+
+        ' Use caching region
+        Me.UseCachingRegion = False
+
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-24 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Change region and clear preview caching region when AVPStyle change.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub AVPAlignerControl_AVPStyleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.AVPStyleChanged
+        Me.ClearCachingRegion()
+        If Me.Status <> DisplayStatus.On OrElse Me.WaferStatus = WaferStatuses.NONE Then
+            Me.Size = New Size(AVPDataLib.WAFER_DIAMETER(AVPStyle), AVPDataLib.WAFER_DIAMETER(AVPStyle))
+        End If
+    End Sub
+
+#End Region
+
+    
+    Private Sub AVPAlignerControl_StatusChanged(ByVal sender As Object, ByVal e As StatusChangedEventArgs) Handles Me.StatusChanged
+        If Not Me.HasSuspendUpdate AndAlso (Me.m_waferStatus = WaferStatuses.NONE OrElse Me.Status <> DisplayStatus.On) Then
+            Me.RefreshView()
+        End If
+    End Sub
+End Class

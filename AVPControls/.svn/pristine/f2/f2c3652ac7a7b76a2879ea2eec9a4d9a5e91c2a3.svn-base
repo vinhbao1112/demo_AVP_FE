@@ -1,0 +1,823 @@
+Imports System.ComponentModel
+Imports AVPControls.AVPDataLib
+
+Public Class PVDAStandaloneChamberControl
+
+#Region "Fields"
+
+    Const SHUTTER_OFF_LEFT_POSITION As Integer = 278
+    Const SHUTTER_ON_LEFT_POSITION As Integer = 455
+    Const CHUCK_LEFT_POSITION As Integer = 288
+    Const CHUCK_UP_POSITION As Integer = 161
+    Const CHUCK_DOWN_POSITION As Integer = 185
+    Const WAFER_POSITION_ON_OPEN_X As Integer = 39
+    Const WAFER_POSITION_ON_OPEN_Y As Integer = 115
+    Const WAFER_POSITION_ON_OPEN_CHUCK_DOWN_Y As Integer = 135
+    Const SHUTTER_OFF_TOP_POSITION As Integer = 250
+    Const SHUTTER_ON_TOP_POSITION As Integer = 249
+    Const SHUTTER_UNK_TOP_POSITION As Integer = 250
+
+    Private _targetText As String = "Target"
+    Private _currentTargetKwh As String = ""
+    Private _targetMaterialText As String = ""
+    Private _lidClosed As Boolean = True
+    Private _waferEnabled As Boolean = True
+    Private _shutterEnabled As Boolean = True
+    Private m_chuckText As String = ""
+    Private m_chuckPositionText As String = String.Empty
+    Private m_chuckHeightPosition As Integer = CHUCK_UP_POSITION
+    Private m_chuckHeightPositionWaferOnOpen As Integer = WAFER_POSITION_ON_OPEN_CHUCK_DOWN_Y
+    Private m_chuckUpStatus As DisplayStatus = DisplayStatus.On
+    Private m_lidStatus As DisplayStatus = DisplayStatus.Off
+    Private m_waferMaskLocation As Point
+    Private _groundEnabled As Boolean = True
+    Private _numberOfSlots As Integer = 5
+    Private _movingVisible As Boolean = True
+    Private _movingStatus As DisplayStatus = DisplayStatus.Off
+#End Region
+
+#Region "Events"
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-07</date>
+    ''' <summary>
+    ''' Event wafer click
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Event WaferControlClick As EventHandler
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-07</date>
+    ''' <summary>
+    ''' Event shutter click
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Event ShutterControlClick As EventHandler
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-20</date>
+    ''' <summary>
+    ''' Occurs when door open/closed status changed.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Event DoorStatusChanged As EventHandler
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-21</date>
+    ''' <summary>
+    ''' Occurs when chuck up/down status changed.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Event ChuckStatusChanged As EventHandler
+
+    ''' <author>Tinh Le</author>
+    ''' <date>2020-30-06</date>
+    ''' <summary>
+    ''' Event Ground click.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Event GroundControlClick As EventHandler
+
+    ''' <author>Tinh Le</author>
+    ''' <date>2020-26-8</date>
+    ''' <summary>
+    ''' Occurs when moving shutter status changed.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Event ShutterMovingChanged As EventHandler
+#End Region
+
+#Region "Properties"
+
+    ''' <author>Kiet Tran</author>
+    ''' <date>2020-06-29</date>
+    ''' <summary>
+    ''' Gets or sets the text on target material.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue("TargetMaterial")> _
+    Public Property TargetMaterialText() As String
+        Get
+            Return _targetMaterialText
+        End Get
+        Set(ByVal value As String)
+            If _targetMaterialText <> value Then
+                _targetMaterialText = value
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    ''' <author>Kiet Tran</author>
+    ''' <date>2020-07-16</date>
+    ''' <summary>
+    ''' Gets or sets the text on current target kwh.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue("CurrentTargetKwh")> _
+    Public Property CurrentTargetKwh() As String
+        Get
+            Return _currentTargetKwh
+        End Get
+        Set(ByVal value As String)
+            If _currentTargetKwh <> value Then
+                _currentTargetKwh = value
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-07</date>
+    ''' <summary>
+    ''' Gets or sets the text on target.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue("Target")> _
+    Public Property TargetText() As String
+        Get
+            Return _targetText
+        End Get
+        Set(ByVal value As String)
+            If _targetText <> value Then
+                _targetText = value
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-07</date>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether the Lid is closed.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(True)> _
+    Public Property LidClosed() As Boolean
+        Get
+            Return _lidClosed
+        End Get
+        Set(ByVal value As Boolean)
+            If _lidClosed <> value Then
+                _lidClosed = value
+
+                If value Then
+                    LidStatus = DisplayStatus.Off
+                Else
+                    LidStatus = DisplayStatus.On
+                End If
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2020-07-01</date>
+    ''' <summary>
+    ''' Gets or sets lid status.
+    ''' Off: Lid Closed,
+    ''' On: Lid Opened,
+    ''' Other: Lid Unknown
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(DisplayStatus), "Off")> _
+    Public Property LidStatus() As DisplayStatus
+        Get
+            Return m_lidStatus
+        End Get
+        Set(ByVal value As DisplayStatus)
+            If m_lidStatus <> value Then
+                m_lidStatus = value
+                _lidClosed = (m_lidStatus = DisplayStatus.Off)
+
+                If m_lidStatus = DisplayStatus.Off OrElse m_lidStatus = DisplayStatus.On Then
+                    WaferMask.Cursor = Cursors.Hand
+                End If
+
+                UpdateWaferMaskImage()
+                UpdateView()
+                UpdateWaferPostion()
+
+                RaiseDoorStatusChangedEvent()
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-08</date>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether Wafer is closed.
+    ''' </summary>
+    ''' <value></value>
+    <DefaultValue(True)> _
+    Public Property WaferEnabled() As Boolean
+        Get
+            Return _waferEnabled
+        End Get
+        Set(ByVal value As Boolean)
+            _waferEnabled = value
+            WaferMask.Enabled = value
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-08</date>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether Shutter is closed.
+    ''' </summary>
+    ''' <value></value>
+    <DefaultValue(True)> _
+    Public Property ShutterEnabled() As Boolean
+        Get
+            Return _shutterEnabled
+        End Get
+        Set(ByVal value As Boolean)
+            _shutterEnabled = value
+            ShutterControl.Enabled = value
+        End Set
+    End Property
+
+    ''' <author>Tinh Le</author>
+    ''' <date>2020-07-02</date>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether ground is closed.
+    ''' </summary>
+    ''' <value></value>
+    <DefaultValue(True)> _
+    Public Property GroundEnabled() As Boolean
+        Get
+            Return _groundEnabled
+        End Get
+        Set(ByVal value As Boolean)
+            _groundEnabled = value
+            GroundControl.Enabled = value
+        End Set
+    End Property
+
+    ''' <author>Tinh Le</author>
+    ''' <date>2020-26-08</date>
+    ''' <summary>
+    ''' Gets or sets a value shutter moving visible.
+    ''' </summary>
+    ''' <value></value>
+    <DefaultValue(True)> _
+    Public Property MovingVisible() As Boolean
+        Get
+            Return _movingVisible
+        End Get
+        Set(ByVal value As Boolean)
+            _movingVisible = value
+            MovingControl.Visible = value
+        End Set
+    End Property
+
+    ''' <author>Tinh Le</author>
+    ''' <date>2020-26-08</date>
+    ''' <summary>
+    ''' Gets or sets a value shutter moving status.
+    ''' </summary>
+    ''' <value></value>
+    <DefaultValue(True)> _
+    Public Property MovingStatus() As DisplayStatus
+        Get
+            Return _movingStatus
+        End Get
+        Set(ByVal value As DisplayStatus)
+            _movingStatus = value
+            MovingControl.Status = value
+            UpdateView()
+        End Set
+    End Property
+
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-20</date>
+    ''' <summary>
+    ''' Gets or sets chuck text.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue("")> _
+    Public Property ChuckText() As String
+        Get
+            Return m_chuckText
+        End Get
+        Set(ByVal value As String)
+            If m_chuckText <> value Then
+                m_chuckText = value
+
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-20</date>
+    ''' <summary>
+    ''' Gets or sets chuck position text.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue("")> _
+    Public Property ChuckPositionText() As String
+        Get
+            Return m_chuckPositionText
+        End Get
+        Set(ByVal value As String)
+            If m_chuckPositionText <> value Then
+                m_chuckPositionText = value
+
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-21</date>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether the chuck is up.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(DisplayStatus), "On")> _
+    Public Property ChuckUpStatus() As DisplayStatus
+        Get
+            Return m_chuckUpStatus
+        End Get
+        Set(ByVal value As DisplayStatus)
+            If m_chuckUpStatus <> value Then
+                m_chuckUpStatus = value
+
+                If m_chuckUpStatus = DisplayStatus.On OrElse m_chuckUpStatus = DisplayStatus.Off Then
+                    If m_chuckUpStatus = DisplayStatus.On Then
+                        m_chuckHeightPosition = CHUCK_UP_POSITION
+                        m_chuckHeightPositionWaferOnOpen = WAFER_POSITION_ON_OPEN_CHUCK_DOWN_Y
+                    ElseIf m_chuckUpStatus = DisplayStatus.Off Then
+                        m_chuckHeightPosition = CHUCK_DOWN_POSITION
+                        m_chuckHeightPositionWaferOnOpen = WAFER_POSITION_ON_OPEN_Y
+                    End If
+
+                    UpdateView()
+                    UpdateWaferPostion()
+                End If
+
+                RaiseChuckStatusChangedEvent()
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-21</date>
+    ''' <summary>
+    ''' Gets chuck height position.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)> _
+    Public ReadOnly Property ChuckHeightPosition() As Integer
+        Get
+            Return m_chuckHeightPosition
+        End Get
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2020-08-05</date>
+    ''' <summary>
+    ''' Gets or sets number of slots.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(5)> _
+    Public Property NumberOfSlots() As Integer
+        Get
+            Return _numberOfSlots
+        End Get
+        Set(ByVal value As Integer)
+            If _numberOfSlots <> value AndAlso value > 0 Then
+                _numberOfSlots = value
+
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+#End Region
+
+#Region "Constructors"
+
+    Public Sub New()
+
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        AddHandler Me.ShutterStatusChanged, AddressOf Shutter_StatusChanged
+        AddHandler Me.ShutterInstalledChanged, AddressOf Shutter_InstalledChanged
+        AddHandler Me.GroundStatusChanged, AddressOf Ground_StatuseChanged
+        UpdateWaferPostion()
+        Me.EnableFormLevelDoubleBuffering = True
+
+    End Sub
+
+#End Region
+
+#Region "Methods"
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-07</date>
+    ''' <summary>
+    ''' Generate PVDA Standalone image.
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Protected Overrides Function GenerateControlImage() As System.Drawing.Bitmap
+        Dim chamberImage As Bitmap = Nothing
+        If TargetPlasmaOn Then
+            chamberImage = My.Resources.PVDA_SA_Chamber_TargetPlasma
+        Else
+            chamberImage = My.Resources.PVDA_SA_Chamber
+        End If
+        Try
+            Using g As Graphics = Graphics.FromImage(chamberImage)
+                Dim waferImage As Bitmap
+                If Me.NumberOfSlots = 4 Then
+                    Select Case Me.WaferStatus
+                        Case AVPDataLib.WaferStatuses.UNPROCESS
+                            waferImage = My.Resources.Resources.PVDA_SA_WaferUnprocess_4Wafer
+                        Case AVPDataLib.WaferStatuses.PARTIAL
+                            waferImage = My.Resources.Resources.PVDA_SA_WaferPartial_4Wafer
+                        Case AVPDataLib.WaferStatuses.ERROR
+                            waferImage = My.Resources.Resources.PVDA_SA_WaferError_4Wafer
+                        Case AVPDataLib.WaferStatuses.COMPLETE
+                            waferImage = My.Resources.Resources.PVDA_SA_WaferCompleted_4Wafer
+                        Case Else
+                            waferImage = My.Resources.Resources.PVDA_SA_WaferNone
+                    End Select
+                Else
+                    Select Case Me.WaferStatus
+                        Case AVPDataLib.WaferStatuses.UNPROCESS
+                            waferImage = My.Resources.Resources.PVDA_SA_WaferUnprocess
+                        Case AVPDataLib.WaferStatuses.PARTIAL
+                            waferImage = My.Resources.Resources.PVDA_SA_WaferPartial
+                        Case AVPDataLib.WaferStatuses.ERROR
+                            waferImage = My.Resources.Resources.PVDA_SA_WaferError
+                        Case AVPDataLib.WaferStatuses.COMPLETE
+                            waferImage = My.Resources.Resources.PVDA_SA_WaferCompleted
+                        Case Else
+                            waferImage = My.Resources.Resources.PVDA_SA_WaferNone
+                    End Select
+                End If
+
+                'Draw chuck on door closed
+                If LidStatus = DisplayStatus.Off Then
+                    g.DrawImage(waferImage, CHUCK_LEFT_POSITION, m_chuckHeightPosition)
+                    waferImage.Dispose()
+
+                    Dim chuckImage As Bitmap
+                    If BiasPlasmaOn Then
+                        chuckImage = My.Resources.Resources.PVD24XX_ChuckPlasma
+                    Else
+                        chuckImage = My.Resources.Resources.PVD24XX_Chuck
+                    End If
+
+                    g.DrawImageUnscaled(chuckImage, CHUCK_LEFT_POSITION, m_chuckHeightPosition)
+                    chuckImage.Dispose()
+                ElseIf LidStatus = DisplayStatus.On Then
+                    ' When lid is opened, draw lid (bias) first.
+                Else
+                    Dim chuckImage As Bitmap = My.Resources.Resources.PVDA_SA_LidUnknown_Chuck
+
+                    If ChuckUpStatus = DisplayStatus.Off Then
+                        g.DrawImageUnscaled(chuckImage, 291, 103)
+                    Else
+                        g.DrawImageUnscaled(chuckImage, 287, 95)
+                    End If
+
+                    chuckImage.Dispose()
+                End If
+
+                ' Draw bias.
+                Dim biasImage As Bitmap = GenerateBiasImage()
+
+                g.DrawImageUnscaled(biasImage, 0, 0)
+                biasImage.Dispose()
+
+                ' Draw chuck on door open
+                If LidStatus = DisplayStatus.On Then
+                    If ChuckUpStatus = DisplayStatus.Off Then
+                        Dim chuckImage As Bitmap = My.Resources.Resources.PVDA_SA_LidOpen_ChuckDown
+
+                        g.DrawImageUnscaled(chuckImage, 0, 0)
+                        chuckImage.Dispose()
+                    End If
+
+                    g.DrawImage(waferImage, WAFER_POSITION_ON_OPEN_X, m_chuckHeightPositionWaferOnOpen)
+                    waferImage.Dispose()
+                End If
+
+                ' Draw target text.
+                If Not String.IsNullOrEmpty(TargetText) Then
+                    Dim f As New Font("Times New Roman", 11, FontStyle.Bold, GraphicsUnit.Point)
+                    Dim strFormat As New StringFormat()
+                    strFormat.Alignment = StringAlignment.Center
+                    strFormat.LineAlignment = StringAlignment.Center
+
+                    g.DrawString(TargetText, f, Brushes.Black, New RectangleF(306, 337, 128, 25), strFormat)
+                    g.DrawString(TargetMaterialText, f, Brushes.Black, New RectangleF(306, 317, 128, 25), strFormat)
+                    g.DrawString(CurrentTargetKwh, f, Brushes.Black, New RectangleF(306, 297, 128, 25), strFormat)
+
+                    f.Dispose()
+                End If
+
+            End Using
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return chamberImage
+    End Function
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-20</date>
+    ''' <summary>
+    ''' Generate control image.
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Protected Overridable Function GenerateBiasImage() As System.Drawing.Bitmap
+        Dim img As Bitmap
+        If LidStatus = DisplayStatus.Off Then
+            img = My.Resources.Resources.PVDA_SA_LidClosed
+        ElseIf LidStatus = DisplayStatus.On Then
+            img = My.Resources.Resources.PVDA_SA_LidOpen
+        Else
+            img = My.Resources.Resources.PVDA_SA_LidUnknown
+        End If
+
+        Try
+            Using g As Graphics = Graphics.FromImage(img)
+
+                ' Draw chuck text.
+                If Not String.IsNullOrEmpty(ChuckText) Then
+                    Dim f As New Font("Times New Roman", 11, FontStyle.Bold, GraphicsUnit.Point)
+                    Dim strFormat As New StringFormat()
+                    strFormat.Alignment = StringAlignment.Center
+                    strFormat.LineAlignment = StringAlignment.Center
+
+                    Dim drawRect As RectangleF
+                    If LidStatus = DisplayStatus.Off Then
+                        drawRect = New RectangleF(316, 126, 136, 23)
+                        g.DrawString(ChuckText, f, Brushes.Black, drawRect, strFormat)
+                    ElseIf LidStatus = DisplayStatus.On Then
+                        drawRect = New RectangleF(62, 250, 136, 23)
+                        g.DrawString(ChuckText, f, Brushes.Black, drawRect, strFormat)
+                    Else
+                        drawRect = New RectangleF(319, 83, 136, 23)
+
+                        Dim gstate As Drawing2D.GraphicsState = g.Save()
+
+                        'g.SetClip(drawRect, Drawing2D.CombineMode.Replace)
+                        g.TranslateTransform(309, 83)
+                        g.RotateTransform(-31)
+                        g.DrawString(ChuckText, f, Brushes.Black, 0, 0)
+
+                        g.Restore(gstate)
+                    End If
+
+                    f.Dispose()
+                End If
+
+                ' Draw chuck position text.
+                If Not String.IsNullOrEmpty(ChuckPositionText) Then
+                    Dim f As New Font("Times New Roman", 11, FontStyle.Bold, GraphicsUnit.Point)
+                    Dim strFormat As New StringFormat()
+                    strFormat.Alignment = StringAlignment.Center
+                    strFormat.LineAlignment = StringAlignment.Center
+
+                    Dim drawRect As RectangleF
+                    If LidStatus = DisplayStatus.Off Then
+                        drawRect = New RectangleF(316, 91, 145, 26)
+                    ElseIf LidStatus = DisplayStatus.On Then
+                        drawRect = New RectangleF(54, 295, 145, 26)
+                    Else
+                        drawRect = New RectangleF(54, 295, 145, 26)
+                    End If
+
+                    g.DrawString(ChuckPositionText, f, Brushes.Black, drawRect, strFormat)
+
+                    f.Dispose()
+                End If
+
+            End Using
+
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+
+        Return img
+    End Function
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-07</date>
+    ''' <summary>
+    ''' Handles and forward status change to child control.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub Shutter_StatusChanged(ByVal sender As Object, ByVal e As EventArgs)
+        Me.ShutterControl.Status = Me.ShutterStatus
+        Try
+            If Me.ShutterStatus = AVPDataLib.DisplayStatus.On Then
+                Me.ShutterControl.Left = SHUTTER_ON_LEFT_POSITION
+                Me.ShutterControl.Top = SHUTTER_ON_TOP_POSITION
+            ElseIf Me.ShutterStatus = AVPDataLib.DisplayStatus.Off Then
+                Me.ShutterControl.Left = SHUTTER_OFF_LEFT_POSITION
+                Me.ShutterControl.Top = SHUTTER_OFF_TOP_POSITION
+            Else
+                Me.ShutterControl.Left = CInt((SHUTTER_ON_LEFT_POSITION + SHUTTER_OFF_LEFT_POSITION) / 2)
+                Me.ShutterControl.Top = SHUTTER_UNK_TOP_POSITION
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>Tinh Le</author>
+    ''' <date>2020-07-02</date>
+    ''' <summary>
+    ''' Ground_StatuseChanged
+    ''' </summary>
+    Private Sub Ground_StatuseChanged(ByVal sender As Object, ByVal e As EventArgs)
+        Me.GroundControl.Status = Me.GroundStatus
+    End Sub
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-07</date>
+    ''' <summary>
+    ''' Handles and forward status change to child control.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub Shutter_InstalledChanged(ByVal sender As Object, ByVal e As EventArgs)
+        Me.ShutterControl.Visible = Me.ShutterInstalled
+    End Sub
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-07</date>
+    ''' <summary>
+    ''' Forward event.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub ShutterControl_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ShutterControl.Click
+        RaiseEvent ShutterControlClick(sender, e)
+    End Sub
+
+    ''' <author>Tinh Le</author>
+    ''' <date>2020-07-02</date>
+    ''' <summary>
+    ''' GroundControl_Click
+    ''' </summary>
+    Private Sub GroundControl_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroundControl.Click
+        RaiseEvent GroundControlClick(sender, e)
+    End Sub
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-07</date>
+    ''' <summary>
+    ''' Forward event.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub WaferControl_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles WaferMask.Click
+        RaiseEvent WaferControlClick(Me, e)
+    End Sub
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-20</date>
+    ''' <summary>
+    ''' Raise DoorStatusChanged event.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Protected Overridable Sub RaiseDoorStatusChangedEvent()
+        RaiseEvent DoorStatusChanged(Me, EventArgs.Empty)
+    End Sub
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-21</date>
+    ''' <summary>
+    ''' Raise ChuckStatusChanged event.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Protected Overridable Sub RaiseChuckStatusChangedEvent()
+        RaiseEvent ChuckStatusChanged(Me, EventArgs.Empty)
+    End Sub
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-21</date>
+    ''' <summary>
+    ''' Update wafer position.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub UpdateWaferPostion()
+        Try
+            Dim location As Point = GetWaferMaskLocation()
+            If location <> WaferMask.Location Then
+                WaferMask.Location = location
+
+                WaferMask.Invalidate()
+                Me.Invalidate()
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2020-07-01</date>
+    ''' <summary>
+    ''' Get wafer position.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Function GetWaferMaskLocation() As Point
+        Try
+            If LidStatus = DisplayStatus.Off Then
+                m_waferMaskLocation = New Point(CHUCK_LEFT_POSITION, m_chuckHeightPosition)
+            ElseIf LidStatus = DisplayStatus.On Then
+                'If ChuckUpStatus = DisplayStatus.On Then
+                '    m_waferMaskLocation = New Point(WAFER_POSITION_ON_OPEN_X, WAFER_POSITION_ON_OPEN_Y)
+                'Else
+                '    m_waferMaskLocation = New Point(39, 127)
+                'End If
+                m_waferMaskLocation = New Point(WAFER_POSITION_ON_OPEN_X, m_chuckHeightPositionWaferOnOpen)
+            Else
+                If ChuckUpStatus = DisplayStatus.On Then
+                    m_waferMaskLocation = New Point(287, 95)
+                Else
+                    m_waferMaskLocation = New Point(291, 103)
+                End If
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return m_waferMaskLocation
+    End Function
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2020-07-01</date>
+    ''' <summary>
+    ''' Update wafer mask image.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub UpdateWaferMaskImage()
+        Try
+            Dim oldImage As Bitmap = WaferMask.MaskImage
+
+            If LidStatus = DisplayStatus.Off Then
+                WaferMask.MaskImage = My.Resources.Resources.PVDA_SA_Wafer_Pattern
+            ElseIf LidStatus = DisplayStatus.On Then
+                WaferMask.MaskImage = My.Resources.Resources.PVDA_SA_Wafer_Pattern
+            Else
+                WaferMask.MaskImage = My.Resources.Resources.PVDA_SA_LidUnknown_Wafer_Pattern
+            End If
+
+            If oldImage IsNot Nothing Then
+                oldImage.Dispose()
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2019-11-22</date>
+    ''' <summary>
+    ''' Update wafer location
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub PVDAStandaloneChamberControl_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        UpdateWaferPostion()
+    End Sub
+
+#End Region
+
+End Class

@@ -1,0 +1,462 @@
+Imports System.ComponentModel
+
+Public Class LoaderControl
+    Private Const DOOR_OPEN_ANGLE As Single = 90
+    Private Const DOOR_SLIDE_DISTANCE As Integer = 13
+    Private Const DOOR_POSISION As Integer = 30
+    Private Const DOOR_POSISION_ML As Integer = 19
+    Private Const DOOR_SLIDE_DISTANCE_ML As Integer = 14
+
+    Private m_doorStatus As LoaderDoorStatus = LoaderDoorStatus.Closed
+
+    ' Rotate door variables
+    Private m_doorAngle As Single
+    Private m_newDoorAngle As Single
+    Private m_doorOpenDistance As Single = DOOR_OPEN_ANGLE / 9
+    Private m_isDoorRotating As Boolean
+    'Private m_readDoorRotatingLocker As New Object
+    'Private m_updateAngleLocker As New Object
+    Private m_timerOpenDoor As System.Timers.Timer
+    ' Slide door variables
+    Private m_doorSlidePosition As Single = DOOR_SLIDE_DISTANCE
+    Private m_newDoorSlidePosition As Single
+    Private m_doorSlideDistance As Single = DOOR_SLIDE_DISTANCE / -3
+    Private m_isDoorSliding As Boolean
+    'Private m_readDoorSlideLocker As New Object
+    Private m_timerSlideDoor As System.Timers.Timer
+    Private m_isMultiLoader As Boolean
+    Private m_waferSensorText As String
+    Private m_waferSensorTextLocation As Point
+
+    Private Delegate Sub EventUpdateDoorMotion()
+
+    Public Enum LoaderDoorStatus
+        Closed = 0
+        Open = 1
+    End Enum
+
+#Region "Properties"
+    <DefaultValue(GetType(LoaderDoorStatus), "Closed")> _
+    Public Property DoorStatus() As LoaderDoorStatus
+        Get
+            Return m_doorStatus
+        End Get
+        Set(ByVal value As LoaderDoorStatus)
+            If m_doorStatus <> value Then
+                m_doorStatus = value
+
+                If m_doorStatus = LoaderDoorStatus.Open Then
+                    m_newDoorAngle = DOOR_OPEN_ANGLE
+                    m_doorOpenDistance = Math.Abs(m_doorOpenDistance)
+                    m_newDoorSlidePosition = 0
+                    m_doorSlideDistance = -1 * Math.Abs(m_doorSlideDistance)
+                ElseIf m_doorStatus = LoaderDoorStatus.Closed Then
+                    m_newDoorAngle = 0
+                    m_doorOpenDistance = -1 * Math.Abs(m_doorOpenDistance)
+                    m_newDoorSlidePosition = CSng(IIf(m_isMultiLoader, DOOR_SLIDE_DISTANCE_ML, DOOR_SLIDE_DISTANCE))
+                    m_doorSlideDistance = Math.Abs(m_doorSlideDistance)
+                End If
+
+                If Not IsDoorRotating AndAlso Not IsDoorSliding Then
+                    If m_doorStatus = LoaderDoorStatus.Open Then
+                        StartDoorSlideTimer()
+                    Else
+                        StartDoorRotateTimer()
+                    End If
+                End If
+            End If
+        End Set
+    End Property
+
+    Private Property IsDoorRotating() As Boolean
+        Get
+            'SyncLock m_readDoorRotatingLocker
+            Return m_isDoorRotating
+            'End SyncLock
+        End Get
+        Set(ByVal value As Boolean)
+            'SyncLock m_readDoorRotatingLocker
+            m_isDoorRotating = value
+            'End SyncLock
+        End Set
+    End Property
+
+    Private Property IsDoorSliding() As Boolean
+        Get
+            'SyncLock m_readDoorSlideLocker
+            Return m_isDoorSliding
+            'End SyncLock
+        End Get
+        Set(ByVal value As Boolean)
+            'SyncLock m_readDoorSlideLocker
+            m_isDoorSliding = value
+            'End SyncLock
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2017-02-26</date>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether the loader is multi loader.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(False)> _
+    Private Property IsMultiLoader() As Boolean
+        Get
+            Return m_isMultiLoader
+        End Get
+        Set(ByVal value As Boolean)
+            If m_isMultiLoader <> value Then
+                m_isMultiLoader = value
+
+                If m_newDoorSlidePosition <> 0 Then
+                    m_newDoorSlidePosition = CSng(IIf(m_isMultiLoader, DOOR_SLIDE_DISTANCE_ML, DOOR_SLIDE_DISTANCE))
+                    If Not IsDoorSliding Then
+                        m_doorSlidePosition = m_newDoorSlidePosition
+                    End If
+                End If
+
+                If m_doorSlideDistance > 0 Then
+                    m_doorSlideDistance = CSng(IIf(m_isMultiLoader, DOOR_SLIDE_DISTANCE_ML, DOOR_SLIDE_DISTANCE)) / 3.0F
+                Else
+                    m_doorSlideDistance = CSng(IIf(m_isMultiLoader, DOOR_SLIDE_DISTANCE_ML, DOOR_SLIDE_DISTANCE)) / -3.0F
+                End If
+            End If
+        End Set
+    End Property
+
+    <DefaultValue("")> _
+    Public Property WaferSensorText() As String
+        Get
+            Return m_waferSensorText
+        End Get
+        Set(ByVal value As String)
+            If m_waferSensorText <> value Then
+                m_waferSensorText = value
+
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    <DefaultValue(GetType(Point), "0, 0")> _
+    Public Property WaferSensorTextLocation() As Point
+        Get
+            Return m_waferSensorTextLocation
+        End Get
+        Set(ByVal value As Point)
+            If m_waferSensorTextLocation <> value Then
+                m_waferSensorTextLocation = value
+
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+#End Region
+
+#Region "Methods"
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-10-05 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Draw loader image
+    ''' </summary>
+    Protected Overrides Function GenerateControlImage() As Bitmap
+        Dim img As Bitmap = Nothing
+        Try
+            Dim loaderImage As Bitmap = My.Resources.Resources.Loader
+            Dim loaderDoorImage As Bitmap = My.Resources.Resources.Loader_Door
+            Dim doorPosition As Integer
+
+            If m_isMultiLoader Then
+                loaderImage = My.Resources.Resources.MultiLoader_Body
+                loaderDoorImage = My.Resources.Resources.MultiLoader_Door
+                doorPosition = DOOR_POSISION_ML
+            Else
+                loaderImage = My.Resources.Resources.Loader
+                loaderDoorImage = My.Resources.Resources.Loader_Door
+                doorPosition = DOOR_POSISION
+            End If
+
+            Dim loaderWidth As Integer = loaderImage.Width
+            Dim loaderHeight As Integer = loaderImage.Height
+            Dim doorWidth As Integer = loaderDoorImage.Width
+            Dim doorHeight As Integer = loaderDoorImage.Height
+
+            img = New Bitmap(loaderWidth + doorHeight, loaderHeight)
+            img.SetResolution(loaderImage.HorizontalResolution, loaderImage.VerticalResolution)
+
+            Using g As Graphics = Graphics.FromImage(img)
+                ' Draw loader
+                g.DrawImageUnscaled(loaderImage, doorHeight, 0)
+
+                ' Draw door
+                Dim rotateImageSize As Integer = doorHeight * 2
+                Dim doorRotateImage As Bitmap = New Bitmap(rotateImageSize, rotateImageSize)
+                doorRotateImage.SetResolution(loaderDoorImage.HorizontalResolution, loaderDoorImage.VerticalResolution)
+
+                '> Rotate door image
+                Using g2 As Graphics = Graphics.FromImage(doorRotateImage)
+                    Dim centerPoint As PointF = New PointF(rotateImageSize / 2.0F, rotateImageSize / 2.0F)
+                    Dim rotateMatrix As New System.Drawing.Drawing2D.Matrix()
+                    rotateMatrix.RotateAt(-1 * m_doorAngle, centerPoint)
+
+                    g2.Transform = rotateMatrix
+                    g2.DrawImageUnscaled(loaderDoorImage, Convert.ToInt32(centerPoint.X - doorWidth), Convert.ToInt32(centerPoint.X - doorHeight))
+
+                    centerPoint = Nothing
+                    rotateMatrix.Dispose()
+                End Using
+
+                '> Draw rotated door to loader
+                g.DrawImageUnscaled(doorRotateImage, CInt(m_doorSlidePosition), doorPosition)
+
+                If Not String.IsNullOrEmpty(m_waferSensorText) Then
+                    Using brush As SolidBrush = New SolidBrush(Me.ForeColor)
+                        g.DrawString(m_waferSensorText, Me.Font, brush, m_waferSensorTextLocation)
+                    End Using
+                End If
+
+                doorRotateImage.Dispose()
+            End Using
+
+            loaderImage.Dispose()
+            loaderDoorImage.Dispose()
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return img
+    End Function
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-10-05 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Update door angle for motion
+    ''' </summary>
+    Private Sub UpdateDoorOpenAngle()
+        ' SyncLock m_updateAngleLocker
+        If m_doorAngle = m_newDoorAngle Then
+            StopDoorRotateTimer()
+            Return
+        End If
+
+        m_doorAngle += m_doorOpenDistance
+        If Math.Abs(m_doorAngle - m_newDoorAngle) < 0.01 Then
+            m_doorAngle = m_newDoorAngle
+        End If
+        UpdateView()
+
+        If m_doorAngle = m_newDoorAngle Then
+            StopDoorRotateTimer()
+        Else
+            m_timerOpenDoor.Enabled = True
+        End If
+        'End SyncLock
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-10-05 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Stop door open timer
+    ''' </summary>
+    Private Sub StopDoorRotateTimer()
+        m_timerOpenDoor.Enabled = False
+        m_doorAngle = m_newDoorAngle
+        IsDoorRotating = False
+        UpdateView()
+        If m_doorStatus = LoaderDoorStatus.Closed Then
+            m_timerSlideDoor.Enabled = True
+        End If
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-10-05 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Start door open timer
+    ''' </summary>
+    Private Sub StartDoorRotateTimer()
+        IsDoorRotating = True
+        m_timerOpenDoor.Enabled = True
+        m_timerSlideDoor.Enabled = False
+        IsDoorSliding = False
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-10-05 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Update door slide distance for motion
+    ''' </summary>
+    Private Sub UpdateDoorSlideDistance()
+        ' SyncLock m_updateAngleLocker
+        If Math.Abs(m_doorSlidePosition - m_newDoorSlidePosition) < 0.01 Then
+            StopDoorSlideTimer()
+            Return
+        End If
+
+        If Math.Abs(m_newDoorSlidePosition - m_doorSlidePosition) < Math.Abs(m_doorSlideDistance) Then
+            m_doorSlidePosition = m_newDoorSlidePosition
+        Else
+            m_doorSlidePosition += m_doorSlideDistance
+        End If
+
+        UpdateView()
+
+        m_timerSlideDoor.Enabled = True
+        ' End SyncLock
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-10-05 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Stop door slide timer
+    ''' </summary>
+    Private Sub StopDoorSlideTimer()
+        m_timerSlideDoor.Enabled = False
+        m_doorSlidePosition = m_newDoorSlidePosition
+        IsDoorSliding = False
+        UpdateView()
+        If m_doorStatus = LoaderDoorStatus.Open Then
+            m_timerOpenDoor.Enabled = True
+        End If
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-10-05 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Start door slide timer
+    ''' </summary>
+    Private Sub StartDoorSlideTimer()
+        IsDoorSliding = True
+        m_timerSlideDoor.Enabled = True
+        m_timerOpenDoor.Enabled = False
+        IsDoorRotating = False
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-11-27</date>
+    ''' </author>
+    ''' <summary>
+    ''' Clean up memory.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Protected Overrides Sub MemoryCleanup()
+        MyBase.MemoryCleanup()
+
+        Try
+            If m_timerOpenDoor IsNot Nothing Then
+                m_timerOpenDoor.Enabled = False
+                m_timerOpenDoor.Dispose()
+                m_timerOpenDoor = Nothing
+            End If
+
+            If m_timerSlideDoor IsNot Nothing Then
+                m_timerSlideDoor.Enabled = False
+                m_timerSlideDoor.Dispose()
+                m_timerSlideDoor = Nothing
+            End If
+        Catch ex As Exception
+            ' Ignore any errors.
+        End Try
+    End Sub
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-02-26</date>
+    ''' <summary>
+    ''' Overrides to update IsMultiLoader property.
+    ''' </summary>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Protected Overrides Sub OnAVPStyleChanged(ByVal e As System.EventArgs)
+        IsMultiLoader = (AVPStyle = AVPDataLib.AVPStyles.ML)
+        MyBase.OnAVPStyleChanged(e)
+    End Sub
+
+#End Region
+
+#Region "Events"
+    Public Sub New()
+
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        Me.DoubleBuffered = True
+
+        m_timerOpenDoor = New System.Timers.Timer(100)
+        m_timerOpenDoor.Enabled = False
+        AddHandler m_timerOpenDoor.Elapsed, AddressOf TimerRotateDoor_Tick
+
+        m_timerSlideDoor = New System.Timers.Timer(100)
+        m_timerSlideDoor.Enabled = False
+        AddHandler m_timerSlideDoor.Elapsed, AddressOf TimerSlideDoor_Tick
+
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-10-05 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Timer to update door angle
+    ''' </summary>
+    Private Sub TimerRotateDoor_Tick(ByVal source As Object, ByVal e As Timers.ElapsedEventArgs)
+        m_isDoorRotating = True
+        m_timerOpenDoor.Enabled = False
+        If Me.InvokeRequired Then
+            Dim deleUpdate As EventUpdateDoorMotion = New EventUpdateDoorMotion(AddressOf UpdateDoorOpenAngle)
+            Me.BeginInvoke(deleUpdate)
+        Else
+            UpdateDoorOpenAngle()
+        End If
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-10-05 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Timer to update door position
+    ''' </summary>
+    Private Sub TimerSlideDoor_Tick(ByVal source As Object, ByVal e As Timers.ElapsedEventArgs)
+        m_isDoorSliding = True
+        m_timerOpenDoor.Enabled = False
+        If Me.InvokeRequired Then
+            Dim deleUpdate As EventUpdateDoorMotion = New EventUpdateDoorMotion(AddressOf UpdateDoorSlideDistance)
+            Me.BeginInvoke(deleUpdate)
+        Else
+            UpdateDoorSlideDistance()
+        End If
+    End Sub
+
+    Private Sub LoaderControl_FontChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.FontChanged
+        If Not String.IsNullOrEmpty(m_waferSensorText) Then
+            UpdateView()
+        End If
+    End Sub
+
+    Private Sub LoaderControl_ForeColorChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.ForeColorChanged
+        If Not String.IsNullOrEmpty(m_waferSensorText) Then
+            UpdateView()
+        End If
+    End Sub
+
+#End Region
+
+End Class

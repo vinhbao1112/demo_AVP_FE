@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+ <xs:simpleType name="gasType">
+		<xs:restriction base="xs:float">
+		  <xs:minInclusive value="0"/>
+		  <xs:maxInclusive value="1000"/>
+	  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name = "booleanType">
+	  <xs:restriction base="xs:string">
+	    <xs:pattern value="True|False|true|false"/>
+	  </xs:restriction>
+ </xs:simpleType> 
+ <xs:simpleType name = "processEndByType">
+	  <xs:restriction base="xs:string">
+	    <xs:pattern value="Time|Time-%PSR|Endpoint"/>
+	  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name = "rfPowerSPType">
+	  <xs:restriction base="xs:float">
+		  <xs:minInclusive value="0"/>
+		  <xs:maxInclusive value="50000"/>
+	  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name = "angleType">
+	  <xs:restriction base="xs:float">
+		  <xs:minInclusive value="-360"/>
+		  <xs:maxInclusive value="360"/>
+	  </xs:restriction>
+ </xs:simpleType>
+ <xs:simpleType name = "rotationModeType">
+	  <xs:restriction base="xs:string">
+	    <xs:pattern value="Continuous|Static|Sweep|Home"/>
+	  </xs:restriction>
+ </xs:simpleType>
+ <xs:element name="Recipe">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Version" type="xs:string" minOccurs="0" />
+        <xs:element name="StepList" minOccurs="1" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Step" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="SeqNo" type="xs:integer" minOccurs="1" />
+                    <xs:element name="EtchBeamParameters" minOccurs="1" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Beam_On" type="booleanType" minOccurs="1" />
+                          <xs:element name="Neutralizer_On" type="booleanType" minOccurs="1" />
+                          <xs:element name="Beam_Voltage" type="xs:float" minOccurs="1" />
+                          <xs:element name="Beam_Current" type="xs:float" minOccurs="1" />
+                          <xs:element name="Incident_RF_Power" type="rfPowerSPType" minOccurs="1" />
+                          <xs:element name="Suppresser_Voltage" type="xs:float" minOccurs="1" />
+                          <xs:element name="PBN_FLOWRATE" type="gasType" minOccurs="1" />
+                          <xs:element name="K_Factor" type="xs:float" minOccurs="1" />
+                          <xs:element name="Continuous_Beam" type="booleanType" minOccurs="1" />
+                          <xs:element name="UseStepRF" type="booleanType" minOccurs="1" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="EtchGasParameters" minOccurs="1" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Gas1" type="gasType" minOccurs="1" />
+                          <xs:element name="Gas2" type="gasType" minOccurs="1" />
+                          <xs:element name="Gas3" type="gasType" minOccurs="1" />
+                          <xs:element name="Gas4" type="gasType" minOccurs="1" />
+                          <xs:element name="Gas5" type="gasType" minOccurs="1" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Control" minOccurs="1" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Process_Ends_By" type="processEndByType" minOccurs="1" />
+                          <xs:element name="Endpoint_Script_Name" type="xs:string" minOccurs="1" />
+                          <xs:element name="UseElectroStaticShutter" type="booleanType" minOccurs="1" />
+                          <xs:element name="UseEtchRateCorrection" type="booleanType" minOccurs="1" />
+                          <xs:element name="Etch_Rate_Correction_Power_Group" type="xs:string" minOccurs="1" />
+                          <xs:element name="Etch_Time_Sec" type="xs:float" minOccurs="1" />
+						  <xs:element name="Etch_Percentage_PSR" type="xs:float" minOccurs="0" />
+                          <xs:element name="Process_Pressure_High" type="xs:float" minOccurs="1" />
+                          <xs:element name="Process_Pressure_Low" type="xs:float" minOccurs="1" />
+                          <xs:element name="Fixture_Angle" type="angleType" minOccurs="1" />
+                          <xs:element name="FlowCool_Flowrate" type="gasType" minOccurs="1" />
+                          <xs:element name="Open_Etch_Shutter_At_Start" type="booleanType" minOccurs="1" />
+                          <xs:element name="Open_Etch_Shutter_At_Beam" type="booleanType" minOccurs="1" />
+                          <xs:element name="Close_Etch_Shutter_At_End" type="booleanType" minOccurs="1" />
+                          <xs:element name="OpenCryoGate" type="booleanType" minOccurs="1" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FixtureServo" minOccurs="1" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Fixture_Rotate" type="rotationModeType" minOccurs="1" />
+                          <xs:element name="Sweep_Start_Angle" type="angleType" minOccurs="1" />
+                          <xs:element name="Sweep_End_Angle" type="angleType" minOccurs="1" />
+                          <xs:element name="Static_Angle" type="angleType" minOccurs="1" />
+                          <xs:element name="Fixture_Rotation_Speed" type="xs:float" minOccurs="1" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="DataTracing" minOccurs="1" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="TracingEnabled" type="booleanType" minOccurs="1" />
+                          <xs:element name="Interval" type="xs:float" minOccurs="1" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+		<xs:element name="Description" type="xs:string" minOccurs="1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="Recipe" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

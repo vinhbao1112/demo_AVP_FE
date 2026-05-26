@@ -1,0 +1,87 @@
+<StoreGui>
+  <WaferOfChamber1>
+    <Slot1 WaferID="A01" WaferStatus="1">True</Slot1>
+    <Slot2 WaferID="A02" WaferStatus="1">True</Slot2>
+    <Slot3 WaferID="A03" WaferStatus="1">True</Slot3>
+    <Slot4 WaferID="A04" WaferStatus="1">True</Slot4>
+    <Slot5 WaferID="A05" WaferStatus="1">True</Slot5>
+    <Slot6 WaferID="A06" WaferStatus="1">True</Slot6>
+    <Slot7 WaferID="A07" WaferStatus="1">True</Slot7>
+    <Slot8 WaferID="A08" WaferStatus="1">True</Slot8>
+  </WaferOfChamber1>
+  <WaferOfChamber2>
+    <Slot1 WaferID="" WaferStatus="">False</Slot1>
+    <Slot2 WaferID="" WaferStatus="">False</Slot2>
+    <Slot3 WaferID="" WaferStatus="">False</Slot3>
+    <Slot4 WaferID="" WaferStatus="">False</Slot4>
+    <Slot5 WaferID="" WaferStatus="">False</Slot5>
+    <Slot6 WaferID="" WaferStatus="">False</Slot6>
+    <Slot7 WaferID="" WaferStatus="">False</Slot7>
+    <Slot8 WaferID="" WaferStatus="">False</Slot8>
+  </WaferOfChamber2>
+  <WaferOfChamber3>
+    <Slot1 WaferID="A01" WaferStatus="4">True</Slot1>
+    <Slot2 WaferID="A02" WaferStatus="4">True</Slot2>
+    <Slot3 WaferID="A03" WaferStatus="4">True</Slot3>
+    <Slot4 WaferID="A04" WaferStatus="4">True</Slot4>
+    <Slot5 WaferID="A05" WaferStatus="4">True</Slot5>
+    <Slot6 WaferID="A06" WaferStatus="4">True</Slot6>
+    <Slot7 WaferID="A07" WaferStatus="4">True</Slot7>
+    <Slot8 WaferID="A08" WaferStatus="4">True</Slot8>
+  </WaferOfChamber3>
+  <HaveInsideWaferChamber1 WaferID="" WaferStatus="">False</HaveInsideWaferChamber1>
+  <HaveInsideWaferChamber2 WaferID="" WaferStatus="">False</HaveInsideWaferChamber2>
+  <HaveInsideWaferChamber3 WaferID="A01" WaferStatus="2">True</HaveInsideWaferChamber3>
+  <HaveInsideWaferRobot WaferID="" WaferStatus="">False</HaveInsideWaferRobot>
+  <HaveInsideWaferAligner WaferID="" WaferStatus="">False</HaveInsideWaferAligner>
+  <HaveConfigHACC R_HACC="" T_HACC="" Z_HACC="">False</HaveConfigHACC>
+  <HaveConfigPACC R_PACC="" T_PACC="" Z_PACC="">False</HaveConfigPACC>
+  <HaveConfigWACC R_WACC="" T_WACC="" Z_WACC="">False</HaveConfigWACC>
+  <HaveConfigHVEL R_HVEL="" T_HVEL="" Z_HVEL="">False</HaveConfigHVEL>
+  <HaveConfigPVEL R_PVEL="" T_PVEL="" Z_PVEL="">False</HaveConfigPVEL>
+  <HaveConfigWVEL R_WVEL="" T_WVEL="" Z_WVEL="">False</HaveConfigWVEL>
+  <LastUsedAlignerRecipe>ALIGN_0</LastUsedAlignerRecipe>
+  <WaferTotalOfLoadLockA>8</WaferTotalOfLoadLockA>
+  <LotIDOfLoadLockA>2</LotIDOfLoadLockA>
+  <SequenceIDOfLoadLockA>PM3_PVD5T</SequenceIDOfLoadLockA>
+  <LifeTimeWafer>867</LifeTimeWafer>
+  <TotalWaferCount>8</TotalWaferCount>
+  <RunNo>1152</RunNo>
+  <WaferCountOfChamber1>1688</WaferCountOfChamber1>
+  <WaferCountOfChamber2>40</WaferCountOfChamber2>
+  <WaferCountOfChamber3>1608</WaferCountOfChamber3>
+  <WaferOfLoadLockA>
+    <Slot1 WaferID="" WaferStatus="">False</Slot1>
+    <Slot2 WaferID="" WaferStatus="">False</Slot2>
+    <Slot3 WaferID="" WaferStatus="">False</Slot3>
+    <Slot4 WaferID="" WaferStatus="">False</Slot4>
+    <Slot5 WaferID="" WaferStatus="">False</Slot5>
+    <Slot6 WaferID="" WaferStatus="">False</Slot6>
+    <Slot7 WaferID="" WaferStatus="">False</Slot7>
+    <Slot8 WaferID="" WaferStatus="">False</Slot8>
+    <Slot9 WaferID="" WaferStatus="">False</Slot9>
+    <Slot10 WaferID="" WaferStatus="">False</Slot10>
+    <Slot11 WaferID="" WaferStatus="">False</Slot11>
+    <Slot12 WaferID="" WaferStatus="">False</Slot12>
+    <Slot13 WaferID="" WaferStatus="">False</Slot13>
+    <Slot14 WaferID="" WaferStatus="">False</Slot14>
+    <Slot15 WaferID="" WaferStatus="">False</Slot15>
+    <Slot16 WaferID="A16" WaferStatus="3">True</Slot16>
+    <Slot17 WaferID="" WaferStatus="">False</Slot17>
+    <Slot18 WaferID="" WaferStatus="">False</Slot18>
+    <Slot19 WaferID="" WaferStatus="">False</Slot19>
+    <Slot20 WaferID="" WaferStatus="">False</Slot20>
+    <Slot21 WaferID="" WaferStatus="">False</Slot21>
+    <Slot22 WaferID="" WaferStatus="">False</Slot22>
+    <Slot23 WaferID="" WaferStatus="">False</Slot23>
+    <Slot24 WaferID="" WaferStatus="">False</Slot24>
+    <Slot25 WaferID="" WaferStatus="">False</Slot25>
+  </WaferOfLoadLockA>
+  <PM1>
+  </PM1>
+  <PM2>
+  </PM2>
+  <PM3 Col1="Beam_Current_RB" Col2="Suppressor_Voltage_SP" Col3="Suppressor_Voltage_RB" Col4="Fixture_Rotation_Is_Moving" Col5="Beam_Current_SP" Col6="Initialize_Motion_Status">
+  </PM3>
+  <UseAbsoluteKWH>False</UseAbsoluteKWH>
+</StoreGui>

@@ -1,0 +1,109 @@
+Alarm,Default,05-26-2026 10:04:13 SA,Aligner,Encounter Error In Initialization
+User,Default,05-26-2026 10:04:21 SA,DeviceNet,[Main Screen] Alarm Light On
+Alarm,Default,05-26-2026 10:04:21 SA,PM3,Please Run [Home All] To Make Motion Controller Working Properly.  #109 
+Alarm,Default,05-26-2026 10:04:26 SA,PM3,Cryo Is Not Communicating.  #153 
+User,Default,05-26-2026 10:04:41 SA,GUI,[Main Screen] Sequence file error
+User,Default,05-26-2026 10:04:44 SA,DeviceNet,[Main Screen] Alarm Light Off
+User,Default,05-26-2026 10:04:44 SA,GUI,[Main Screen] Turn Off TM IG.
+User,ADMIN,05-26-2026 10:06:40 SA,GUI,[Main Screen] Login Successed with Username ADMIN
+User,ADMIN,05-26-2026 10:06:46 SA,GUI,Check out AVP Privilege
+User,ADMIN,05-26-2026 10:09:41 SA,GUI,[PM3] Open/Close HivacValve
+Alarm,Default,05-26-2026 10:14:20 SA,Aligner,Encounter Error In Initialization
+User,Default,05-26-2026 10:14:32 SA,GUI,[Main Screen] Sequence file error
+User,Default,05-26-2026 10:14:33 SA,GUI,[Main Screen] Turn Off TM IG.
+Alarm,Default,05-26-2026 10:15:57 SA,Aligner,Encounter Error In Initialization
+Alarm,Default,05-26-2026 10:16:18 SA,TM,CG Relay Switch is not On
+User,Default,05-26-2026 10:16:20 SA,GUI,[Main Screen] Sequence file error
+User,Default,05-26-2026 10:16:20 SA,GUI,[Main Screen] Turn Off TM IG.
+User,ADMIN,05-26-2026 10:16:57 SA,GUI,[Main Screen] Login Successed with Username ADMIN
+User,ADMIN,05-26-2026 10:17:00 SA,GUI,Check out AVP Privilege
+User,ADMIN,05-26-2026 10:17:05 SA,GUI,[PM3] Online button Clicked
+User,ADMIN,05-26-2026 10:17:05 SA,DeviceNet,[Main Screen] Alarm Light On
+Alarm,ADMIN,05-26-2026 10:17:05 SA,PM3,Bias Power Supply is disconnected. Go Online failed 
+User,ADMIN,05-26-2026 10:17:15 SA,GUI,[TM Screen] - Close Slit valve of PM3
+User,ADMIN,05-26-2026 10:17:31 SA,GUI,[PM3] Auto Vent button Clicked
+Message,ADMIN,05-26-2026 10:17:31 SA,PM3,[VENT] Executing step: IsChamberIsolationValveClosed
+Message,ADMIN,05-26-2026 10:17:31 SA,PM3,[VENT] Executing step: CloseAllGasValves
+Alarm,ADMIN,05-26-2026 10:17:38 SA,PM3,Failed To Close Vat Valve.  #15 
+Message,ADMIN,05-26-2026 10:17:38 SA,PM3,[VENT] Executing step: OpenCloseRoughValve(False)
+Message,ADMIN,05-26-2026 10:17:38 SA,PM3,[VENT] Executing step: OpenCloseBaratronValve(False)
+Message,ADMIN,05-26-2026 10:17:38 SA,PM3,[VENT] Executing step: TurnIGOnOff(False)
+Message,ADMIN,05-26-2026 10:17:38 SA,PM3,[VENT] Executing step: TurnIGOnOff(False) - Wait for IG Off. Timeout = 30s
+Message,ADMIN,05-26-2026 10:17:38 SA,PM3,[VENT] Executing step: OpenCloseTurboVATValve(False)
+Message,ADMIN,05-26-2026 10:17:38 SA,PM3,Vent sequence failed
+User,ADMIN,05-26-2026 10:18:17 SA,GUI,[PM3] Auto Vent button Clicked
+Message,ADMIN,05-26-2026 10:18:17 SA,PM3,[VENT] Executing step: IsChamberIsolationValveClosed
+Message,ADMIN,05-26-2026 10:18:17 SA,PM3,[VENT] Executing step: CloseAllGasValves
+Message,ADMIN,05-26-2026 10:18:24 SA,PM3,[VENT] Executing step: OpenCloseRoughValve(False)
+Message,ADMIN,05-26-2026 10:18:24 SA,PM3,[VENT] Executing step: OpenCloseBaratronValve(False)
+Message,ADMIN,05-26-2026 10:18:24 SA,PM3,[VENT] Executing step: TurnIGOnOff(False)
+Message,ADMIN,05-26-2026 10:18:24 SA,PM3,[VENT] Executing step: TurnIGOnOff(False) - Wait for IG Off. Timeout = 30s
+Message,ADMIN,05-26-2026 10:18:24 SA,PM3,[VENT] Executing step: OpenCloseTurboVATValve(False)
+Message,ADMIN,05-26-2026 10:18:24 SA,PM3,Vent sequence failed
+User,ADMIN,05-26-2026 10:18:25 SA,DeviceNet,[Main Screen] Alarm Light Off
+User,ADMIN,05-26-2026 10:18:25 SA,GUI,[Maintenance] Clear All Alarm Message
+User,ADMIN,05-26-2026 10:20:30 SA,GUI,[PM3] Auto Vent button Clicked
+Message,ADMIN,05-26-2026 10:20:30 SA,PM3,[VENT] Executing step: IsChamberIsolationValveClosed
+Message,ADMIN,05-26-2026 10:20:30 SA,PM3,[VENT] Executing step: CloseAllGasValves
+Message,ADMIN,05-26-2026 10:20:37 SA,PM3,[VENT] Executing step: OpenCloseRoughValve(False)
+Message,ADMIN,05-26-2026 10:20:37 SA,PM3,[VENT] Executing step: OpenCloseBaratronValve(False)
+Message,ADMIN,05-26-2026 10:20:37 SA,PM3,[VENT] Executing step: TurnIGOnOff(False)
+Message,ADMIN,05-26-2026 10:20:37 SA,PM3,[VENT] Executing step: TurnIGOnOff(False) - Wait for IG Off. Timeout = 30s
+Message,ADMIN,05-26-2026 10:20:37 SA,PM3,[VENT] Executing step: OpenCloseTurboVATValve(False)
+Message,ADMIN,05-26-2026 10:20:37 SA,PM3,[VENT] Executing step: OpenCloseTurboVATValve(False) - Wait for VAT valve Close. Timeout = 10s
+Message,ADMIN,05-26-2026 10:20:37 SA,PM3,[VENT] Executing step: Wait(5)
+Message,ADMIN,05-26-2026 10:20:42 SA,PM3,[VENT] Executing step: OpenCloseSlowVentValve(true)
+Message,ADMIN,05-26-2026 10:20:42 SA,PM3,[VENT] Executing step: Wait(5)
+Message,ADMIN,05-26-2026 10:20:47 SA,PM3,[VENT] Executing step: OpenCloseVentValve(True)
+Message,ADMIN,05-26-2026 10:20:52 SA,PM3,[VENT] Executing step: WaitCGReach
+Message,ADMIN,05-26-2026 10:20:52 SA,PM3,[VENT] Executing step: WaitCGReach - Timeout 15mins
+Message,ADMIN,05-26-2026 10:21:05 SA,PM3,[VENT] Executing step: WaitAfterCGReachATM
+Message,ADMIN,05-26-2026 10:21:05 SA,PM3,[VENT] Executing step: WaitAfterCGReachATM - Wait 10s
+Message,ADMIN,05-26-2026 10:21:15 SA,PM3,[VENT] Executing step: OpenCloseVentValve(False)
+Message,ADMIN,05-26-2026 10:21:20 SA,PM3,[VENT] Executing step: OpenCloseSlowVentValve(False)
+Message,ADMIN,05-26-2026 10:21:20 SA,PM3,Vent sequence completed
+User,ADMIN,05-26-2026 10:21:57 SA,GUI,[PM3] Auto Pump Down button Clicked
+Message,ADMIN,05-26-2026 10:21:58 SA,PM3,[PUMPDOWN] Executing step: CloseAllGasValves
+Message,ADMIN,05-26-2026 10:22:04 SA,PM3,[PUMPDOWN] Executing step: OpenCloseVentValve(False)
+Message,ADMIN,05-26-2026 10:22:09 SA,PM3,[PUMPDOWN] Executing step: OpenCloseRoughValve(False)
+Message,ADMIN,05-26-2026 10:22:09 SA,PM3,[PUMPDOWN] Executing step: TurnMechanicalPumpOnOff(True)
+Message,ADMIN,05-26-2026 10:22:09 SA,PM3,[PUMPDOWN] Executing step: IsChamberIsolationValveClosed
+Message,ADMIN,05-26-2026 10:22:09 SA,PM3,[PUMPDOWN] Executing step: OpenCloseIGIsoValve(False)
+Message,ADMIN,05-26-2026 10:22:09 SA,PM3,[PUMPDOWN] Executing step: TurnIGOnOff(False)
+Message,ADMIN,05-26-2026 10:22:09 SA,PM3,[PUMPDOWN] Executing step: TurnIGOnOff(False) - Wait for IG Off. Timeout = 30s
+Message,ADMIN,05-26-2026 10:22:09 SA,PM3,[PUMPDOWN] Executing step: OpenCloseBaratronValve(False)
+Message,ADMIN,05-26-2026 10:22:09 SA,PM3,[PUMPDOWN] Executing step: OpenCloseTurboVATValve(False)
+Message,ADMIN,05-26-2026 10:22:09 SA,PM3,[PUMPDOWN] Executing step: OpenCloseTurboVATValve(False) - Wait for VAT valve Close. Timeout = 10s
+User,ADMIN,05-26-2026 10:22:19 SA,DeviceNet,[Main Screen] Alarm Light On
+Alarm,ADMIN,05-26-2026 10:22:19 SA,PM3,Failed To Close Vat Valve.  #15 
+Message,ADMIN,05-26-2026 10:22:19 SA,PM3,Pump down sequence failed
+User,ADMIN,05-26-2026 10:22:32 SA,GUI,[PM3] Open/Close HivacValve
+Alarm,ADMIN,05-26-2026 10:22:33 SA,PM3,Unable To Open Hivac Due To CG Pressure.  #29 
+User,ADMIN,05-26-2026 10:22:34 SA,GUI,[PM3] Open/Close HivacValve
+User,ADMIN,05-26-2026 10:23:46 SA,GUI,[PM3] Auto Pump Down button Clicked
+Message,ADMIN,05-26-2026 10:23:46 SA,PM3,[PUMPDOWN] Executing step: CloseAllGasValves
+Message,ADMIN,05-26-2026 10:23:53 SA,PM3,[PUMPDOWN] Executing step: OpenCloseVentValve(False)
+Message,ADMIN,05-26-2026 10:23:58 SA,PM3,[PUMPDOWN] Executing step: OpenCloseRoughValve(False)
+Message,ADMIN,05-26-2026 10:23:58 SA,PM3,[PUMPDOWN] Executing step: TurnMechanicalPumpOnOff(True)
+Message,ADMIN,05-26-2026 10:23:58 SA,PM3,[PUMPDOWN] Executing step: IsChamberIsolationValveClosed
+Message,ADMIN,05-26-2026 10:23:58 SA,PM3,[PUMPDOWN] Executing step: IsCryoColdEnough
+Message,ADMIN,05-26-2026 10:23:58 SA,PM3,[PUMPDOWN] Executing step: OpenCloseBaratronValve(True)
+Message,ADMIN,05-26-2026 10:23:58 SA,PM3,[PUMPDOWN] Executing step: OpenCloseTurboVATValve(True)
+Message,ADMIN,05-26-2026 10:23:58 SA,PM3,[PUMPDOWN] Executing step: OpenCloseTurboVATValve(True) - Wait for VAT valve Open. Timeout = 10s
+Message,ADMIN,05-26-2026 10:23:58 SA,PM3,[PUMPDOWN] Executing step: Wait(10)
+Message,ADMIN,05-26-2026 10:24:08 SA,PM3,[PUMPDOWN] Executing step: TurnIGOnSkipError
+Message,ADMIN,05-26-2026 10:24:08 SA,PM3,[PUMPDOWN] Executing step: TurnOnWaterPump
+Message,ADMIN,05-26-2026 10:24:08 SA,PM3,Pump down sequence completed
+User,ADMIN,05-26-2026 10:25:18 SA,GUI,[Main Screen] Clear Alarm
+User,ADMIN,05-26-2026 10:25:33 SA,DeviceNet,[Main Screen] Alarm Light Off
+User,ADMIN,05-26-2026 10:25:33 SA,GUI,[Main Screen] Clear Alarm
+User,ADMIN,05-26-2026 10:25:35 SA,GUI,[Main Screen] Clear Alarm
+User,ADMIN,05-26-2026 10:25:35 SA,GUI,[Main Screen] Clear Alarm
+User,ADMIN,05-26-2026 10:25:36 SA,GUI,[Main Screen] Clear Alarm
+User,ADMIN,05-26-2026 10:25:37 SA,GUI,[Main Screen] Clear Alarm
+User,ADMIN,05-26-2026 10:25:47 SA,GUI,[Main Screen] Enter Log viewer screen
+User,ADMIN,05-26-2026 10:25:51 SA,GUI,[Main Screen] Enter Process screen
+User,ADMIN,05-26-2026 10:27:28 SA,GUI,[PM3] Close HivacValve
+User,ADMIN,05-26-2026 10:27:36 SA,GUI,[PM3] Close HivacValve
+User,ADMIN,05-26-2026 10:27:39 SA,GUI,[PM3] Close HivacValve
+User,ADMIN,05-26-2026 10:27:44 SA,GUI,[PM3] Close HivacValve

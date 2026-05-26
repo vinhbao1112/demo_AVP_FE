@@ -1,0 +1,272 @@
+<!--  System # 1 -->
+<Property Name="PVD4.ControlStatus" Code="ChangeMachineOnlineInCORONAChamberTo,SetOnlineCORONAInProcessScreenTo" />
+<Property Name="PVD4.ConnectionStatus" Code="SetCORONA_ConnectionStatusInProcessModuleTo"/>
+<Property Name="PVD4.Override_Mode" Code="SetOverride_Mode"/>
+<Property Name="PVD4.Alarm_Status_Readback" Code="SetAlarm_Status_Readback"/>
+<Property Name="PVD4.Event_Status_Readback" Code="SetEvent_Status_Readback"/>
+<Property Name="PVD4.Maintenaince_Mode" Code="SetMaintenaince_Mode"/>
+<Property Name="PVD4.Target1_Kwh_Usage" Code="SetTarget1_Kwh_Usage,SetCORONAT1RBInProcessPopUpTo"/>
+<Property Name="PVD4.Target2_Kwh_Usage" Code="SetTarget2_Kwh_Usage,SetCORONAT2RBInProcessPopUpTo"/>
+<Property Name="PVD4.Target3_Kwh_Usage" Code="SetTarget3_Kwh_Usage,SetCORONAT3RBInProcessPopUpTo"/>
+<Property Name="PVD4.Target4_Kwh_Usage" Code="SetTarget4_Kwh_Usage,SetCORONAT4RBInProcessPopUpTo"/>
+<Property Name="PVD4.Target1_Shield_Quart" Code="SetTarget1_Shield_Quart"/>
+<Property Name="PVD4.Target2_Shield_Quart" Code="SetTarget2_Shield_Quart"/>
+<Property Name="PVD4.Target3_Shield_Quart" Code="SetTarget3_Shield_Quart"/>
+<Property Name="PVD4.Target4_Shield_Quart" Code="SetTarget4_Shield_Quart"/>
+<!--  Recipe_Processing #2 -->
+<Property Name="PVD4.Process_Wafer_ID" Code="SetProcess_Wafer_ID"/>
+<Property Name="PVD4.Process_Recipe_Name" Code="SetProcess_Recipe_Name,SetProcess_Control_SetRecipeNameTo,SetRecipeOfChamberDetailsInProcessScreenTo,SetRecipeOfChamberInProcessScreenTo"/>
+<Property Name="PVD4.Process_Remaining_Time" Code="SetProcess_Remaining_Time"/>
+<Property Name="PVD4.Process_Elapsed_Time" Code="SetProcess_Elapsed_Time,SetStepTimeOfChamberInProcessScreenTo"/>
+<Property Name="PVD4.Process_Current_Step" Code="SetProcess_Current_Step,SetStepNumberOfChamberInProcessScreenTo,SetStepNumberOfChamberDetailsInProcessScreenTo"/>
+<Property Name="PVD4.Wafer_Processing_Status_Readback" Code="SetWafer_Processing_Status_Readback,SetStatusOfChamberDetailsInProcessScreenTo"/>
+<Property Name="PVD4.Process_Pressure" Code="SetProcessPressureOfChamberInProcessScreenTo"/>
+
+<Property Name="PVD4.ProcessMonitor_Status_Readback" Code="SetProcessStatusInProcessPanel,SetProcessStatusInProcessModule,SetStatusOfChamberInProcessScreenTo"/>
+<Property Name="PVD4.Process_Mode" Code="SetProcess_ModeTo,SetCORONARotatingModeSPInProcessPopUpTo"/>
+<Property Name="PVD4.Process_Revolution_Count" Code="SetProcess_Revolution_CountTo"/>
+
+<Property Name="PVD4.Process_Total_Steps" Code="SetProcess_Total_Steps"/>
+<Property Name="PVD4.Process_Total_Time" Code="SetProcess_Total_Time"/>
+<Property Name="PVD4.Process_Control_Device_Start" Code="SetProcess_Control_Device_Start"/>
+<Property Name="PVD4.Process_Control_Device_Stop" Code="SetProcess_Control_Device_Stop"/>
+<Property Name="PVD4.Process_Control_Device_Pause" Code="SetProcess_Control_Device_Pause"/>
+<Property Name="PVD4.Process_Control_Device_Continue" Code="SetProcess_Control_Device_Continue"/>
+<Property Name="PVD4.Process_Control_Device_End_Step" Code="SetProcess_Control_Device_End_Step"/>
+<Property Name="PVD4.Process_Control_Device_Error" Code="SetProcess_Control_Device_Error"/>
+<Property Name="PVD4.Process_Control_Device_Reset_Error" Code="SetProcess_Control_Device_Reset_Error"/>
+<Property Name="PVD4.Process_Control_Get_Run_Data_File_Name" Code="SetProcess_Control_Get_Run_Data_File_Name"/>
+<Property Name="PVD4.Copyrecipe_To_Pmfolder" Code="SetCopyrecipe_To_Pmfolder"/>
+
+<!--  Sequences # 3 -->
+<Property Name="PVD4.Auto_Pumpdown_Seq_Status" Code="SetAuto_Pumpdown_Seq"/>
+<Property Name="PVD4.Auto_Vent_Seq_Status" Code="SetAuto_Vent_Seq"/>
+<Property Name="PVD4.Pump_Purge_Seq_Status" Code="SetPump_Purge_Seq"/>
+<Property Name="PVD4.IG_Degas_Seq_Status" Code="SetIG_Degas_Seq"/>
+<Property Name="PVD4.Shutdown_Power_Seq_Status" Code="SetShutdown_Power_Seq"/>
+
+<Property Name="PVD4.RateOfRise_Status" Code="SetRate_Of_Rise_Seq"/>
+<Property Name="PVD4.RateOfRise_Interval" Code="SetRate_Of_Rise_Interval_Recording"/>
+<Property Name="PVD4.RateOfRise_Sample" Code="SetRate_Of_Rise_Sample"/>
+<Property Name="PVD4.RateOfRise_FileName" Code="SetRate_Of_Rise_Filename"/>
+
+<Property Name="PVD4.PumpDown_Curve_Status" Code="SetPumpdown_Curve_Seq"/>
+<Property Name="PVD4.PumpDown_Curve_Interval" Code="SetPumpdown_Curve_Interval_Recording"/>
+<Property Name="PVD4.PumpDown_Curve_Sample" Code="SetPumpdown_Curve_Sample"/>
+<Property Name="PVD4.PumpDown_Curve_FileName" Code="SetPumpdown_Curve_Filename"/>
+
+<Property Name="PVD4.Initialized_Motion" Code="SetInitialized_Motion,SetInitialized_Motion_OfChamber_In_ProcessScreen,SetInitialized_Motion_OfChamber_In_MaintenanceScreen"/>
+<Property Name="PVD4.Auto_Power_Seq" Code="SetAuto_Power_Seq"/>
+<Property Name="PVD4.AutoSequenceRunningStatusText" Code="SetNameOfAutoSequenceRunning"/>
+
+<!--  Gasses # 4 -->
+<Property Name="PVD4.Gas1_Shutoff_Valve" Code="SetGas1_Shutoff_Valve"/>
+<Property Name="PVD4.Gas2_Shutoff_Valve" Code="SetGas2_Shutoff_Valve"/>
+<Property Name="PVD4.Gas3_Shutoff_Valve" Code="SetGas3_Shutoff_Valve"/>
+<Property Name="PVD4.Gas4_Shutoff_Valve" Code="SetGas4_Shutoff_Valve"/>
+<Property Name="PVD4.Gas5_Shutoff_Valve" Code="SetGas5_Shutoff_Valve"/>
+
+<Property Name="PVD4.Gas1_Flowrate_Readback" Code="SetGas1_Flowrate_Readback,SetPVD4Gas1RBInProcessPopUpTo"/>
+<Property Name="PVD4.Gas2_Flowrate_Readback" Code="SetGas2_Flowrate_Readback,SetPVD4Gas2RBInProcessPopUpTo"/>
+<Property Name="PVD4.Gas3_Flowrate_Readback" Code="SetGas3_Flowrate_Readback,SetPVD4Gas3RBInProcessPopUpTo"/>
+<Property Name="PVD4.Gas4_Flowrate_Readback" Code="SetGas4_Flowrate_Readback,SetPVD4Gas4RBInProcessPopUpTo"/>
+<Property Name="PVD4.Gas5_Flowrate_Readback" Code="SetGas5_Flowrate_Readback,SetPVD4Gas5RBInProcessPopUpTo"/>
+
+<Property Name="PVD4.Gas1_Flowrate_Program" Code="SetGas1_Flowrate_Program,SetPVD4Gas1SPInProcessPopUpTo"/>
+<Property Name="PVD4.Gas2_Flowrate_Program" Code="SetGas2_Flowrate_Program,SetPVD4Gas2SPInProcessPopUpTo"/>
+<Property Name="PVD4.Gas3_Flowrate_Program" Code="SetGas3_Flowrate_Program,SetPVD4Gas3SPInProcessPopUpTo"/>
+<Property Name="PVD4.Gas4_Flowrate_Program" Code="SetGas4_Flowrate_Program,SetPVD4Gas4SPInProcessPopUpTo"/>
+<Property Name="PVD4.Gas5_Flowrate_Program" Code="SetGas5_Flowrate_Program,SetPVD4Gas5SPInProcessPopUpTo"/>
+
+<Property Name="PVD4.Gas1MFCDevinetStatus" Code="SetPVD4Gas1StatusTo" />
+<Property Name="PVD4.Gas2MFCDevinetStatus" Code="SetPVD4Gas2StatusTo" />
+<Property Name="PVD4.Gas3MFCDevinetStatus" Code="SetPVD4Gas3StatusTo" />
+<Property Name="PVD4.Gas4MFCDevinetStatus" Code="SetPVD4Gas4StatusTo" />
+<Property Name="PVD4.Gas5MFCDevinetStatus" Code="SetPVD4Gas5StatusTo" />
+
+<Property Name="PVD4.Main_Dist_Valve" Code="SetMain_Dist_Valve"/>
+<Property Name="PVD4.Sec_Dist_Valve" Code="SetSec_Dist_Valve"/>
+<Property Name="PVD4.IG_Isolation_ValveStatus" Code="SetIG_Isolation_Valve"/>
+
+<!--  Valves  # 5 -->
+<Property Name="PVD4.RoughValveStatus" Code="SetRough_Valve_Status"/>
+<Property Name="PVD4.VentValveStatus" Code="SetVent_Valve_Status"/>
+<Property Name="PVD4.Isolation_Valve_Status" Code="SetIsolation_Valve_Status"/>
+<Property Name="PVD4.Hivac_Valve_Status" Code="SetHivac_Valve_Status"/>
+<Property Name="PVD4.ForelineValveStatus" Code="SetForeline_Valve_Status"/>
+<Property Name="PVD4.Baratron_Valve_Status" Code="SetBaratron_Valve_Status"/>
+
+<!--  Pressure # 6 -->
+<Property Name="PVD4.IG" Code="SetIG_Pressure"/>
+<Property Name="PVD4.IGStatus" Code="SetIG_Status"/>
+<Property Name="PVD4.CG" Code="SetCG_Pressure,UpdatePVD4CGPressureInCGPopUp"/>
+<Property Name="PVD4.CG_Relay_Status" Code="SetChamberinterlock_Chamber_Pressure_Status"/>
+<Property Name="PVD4.SwitchIGFilament" Code="SetSwicthIGFilamentTo" />
+<Property Name="PVD4.EnableIGFilament" Code="SetEnableIGFilamentTo" />
+
+<Property Name="PVD4.Foreline_CG_Pressure" Code="SetForeline_CG_Pressure,UpdatePVD4ForelineCGPressureInCGPopUp"/>
+<Property Name="PVD4.Foreline_CG_Relay_Status" Code="SetForeline_CG_Relay_Status,SetChamberinterlock_Turbo_Foreline_Status"/>
+
+<Property Name="PVD4.Baratron_Pressure" Code="SetBaratron_Pressure,SetBaratronPressureOfPopUpScreenTo,SetProcessPressureOfChamberInProcessScreenTo"/>
+
+<Property Name="PVD4.Mechanical_Pump_CG_Pressure" Code="SetMechanical_Pump_CG_Pressure,UpdatePVD4RoughlineCGPressureInCGPopUp"/>
+<Property Name="PVD4.Mechanical_Pump_CG_Relay_Status" Code="SetMechanical_Pump_CG_Relay_Status"/>
+<Property Name="PVD4.Mechanical_Pump_Status" Code="SetMechanical_Pump_Status"/>
+<Property Name="PVD4.MPump_Serial_Communication_Status" Code="SetMechanical_Pump_Com_Status"/>
+<Property Name="PVD4.WaitingMPON" Code="SetMechanical_Pump_Waiting_ON"/>
+
+<!--  Interlocks # 7 -->
+<Property Name="PVD4.Chamberinterlock_Substrate_Table_Water_Status" Code="SetChamberinterlock_Substrate_Table_Water_Status"/>
+<Property Name="PVD4.Chamberinterlock_Air_Pressure_Status" Code="SetChamberinterlock_Air_Pressure_Status"/>
+
+<Property Name="PVD4.Chamberinterlock_Door_Closed_Status" Code="SetChamberinterlock_Door_Closed_Status"/>
+<Property Name="PVD4.Chamberinterlock_Lid_Closed_Status" Code="SetChamberinterlock_Lid_Closed_Status"/>
+
+<Property Name="PVD4.Chamberinterlock_Target1_3_Water_Status" Code="SetChamberinterlock_Target1_Water_Status"/>
+<Property Name="PVD4.Chamberinterlock_Target2_4_Water_Status" Code="SetChamberinterlock_Target2_Water_Status"/>
+
+<Property Name="PVD4.Chamberinterlock_Target_MB_Water_Status" Code="SetChamberinterlock_Target_MB_Water_Status"/>
+<Property Name="PVD4.Chamberinterlock_Bias_MB_Water_Status" Code="SetChamberinterlock_Bias_MB_Water_Status"/>
+<Property Name="PVD4.Chamberinterlock_Turbo_Water_Status" Code="SetChamberinterlock_Turbo_Water_Status"/>
+<Property Name="PVD4.Chamberinterlock_PS_Interlock_Status" Code="SetChamberinterlock_Ps_Interlock_Status"/>
+<Property Name="PVD4.Chamberinterlock_Devicenet_Comm" Code="SetChamberinterlock_Devicenet_Comm"/>
+<Property Name="PVD4.Chamberinterlock_Target_Panels" Code="SetChamberinterlock_Target_Panels"/>
+
+<!--  Motion # 8 -->
+<Property Name="PVD4.Motion_Communication_Status" Code="Set_Motion_Communication_InTableControl"/>
+<Property Name="PVD4.Substrate_Goto_Slot" Code="SetSubstrate_Goto_Slot"/>
+<Property Name="PVD4.Substrate_Table_Rotate_Home" Code="SetSubstrate_Goto_Home"/>
+<Property Name="PVD4.Substrate_Table_Lift_Home" Code="SetSubstrate_Table_Lift_Home"/>
+<Property Name="PVD4.Substrate_Current_Station" Code="SetSubstrate_Current_Station,SetSubstrate_Current_Station_InTableControl,SetCurrentWaferPosChamberInProcessScreenTo,SetCurrentWaferPosChamberInCassettesPanelTo,SetCORONAChamber_ProcessMonitor_WaferID"/>
+
+<Property Name="PVD4.Substrate_Table_Up_Down_Status" Code="SetSubstrate_Table_Up_Down_Status"/>
+<Property Name="PVD4.Substrate_Lift_Up_Down_Status" Code="SetSubstrate_Lift_Up_Down_Status"/>
+<Property Name="PVD4.Substrate_Table_Rotate_Status" Code="SetSubstrate_Table_Rotate_Status"/>
+<Property Name="PVD4.Substrate_Table_Rotate_Speed" Code="SetSubstrate_Table_Rotate_Speed,SetSubstrate_Table_Rotate_Status,SetSubstrate_Table_Rotate_SpeedInProcessPopUpTo"/>
+<Property Name="PVD4.Substrate_Table_Rotate_Speed_Readback" Code="SetSubstrate_Table_Rotate_Speed_Readback,SetSubstrate_Table_Rotate_Speed_ReadbackInProcessPopUpTo"/>
+<Property Name="PVD4.Substrate_Table_Rotate_Pos_In_Unit_Readback" Code="SetSubstrate_Table_Rotate_Pos_In_Unit_Readback"/>
+<Property Name="PVD4.Number_Of_Unit_Per_Revolution_Readback" Code="SetNumber_Of_Unit_Per_Revolution_Readback"/>
+<Property Name="PVD4.Substrate_Table_Current_Position_Readback" Code="SetSubstrate_Table_Current_Position_Readback,SetCORONATableCurrentPosotionRBInProcessPopUpTo"/>
+<Property Name="PVD4.Substrate_Table_Current_Position_Program" Code="SetSubstrate_Table_Current_Position_Program,SetCORONATableCurrentPosotionSPInProcessPopUpTo"/>
+<Property Name="PVD4.Target1_Shutter_Status" Code="SetTarget1_Shutter_Status"/>
+<Property Name="PVD4.Target2_Shutter_Status" Code="SetTarget2_Shutter_Status"/>
+<Property Name="PVD4.Target3_Shutter_Status" Code="SetTarget3_Shutter_Status"/>
+<Property Name="PVD4.Target4_Shutter_Status" Code="SetTarget4_Shutter_Status"/>
+<Property Name="PVD4.Substrate_Table_Up_Down_Moving" Code="SetSubstrate_Table_Up_Down_Moving"/>
+
+<!--  Turbo_Waterpump # 9 -->
+<Property Name="PVD4.Water_Pump_T_Readback" Code="SetWater_Pump_T_Readback"/>
+<Property Name="PVD4.Water_Pump_Status" Code="SetWater_Pump_Status"/>
+<Property Name="PVD4.Water_Pump_Regen_Status" Code="SetWater_Pump_Regen_Status"/>
+<Property Name="PVD4.Water_Pump_State_Status" Code="SetWater_Pump_State_Status"/>
+<Property Name="PVD4.Water_Pump_Regen_Hour_Readback" Code="SetWater_Pump_Regen_Hour_Readback"/>
+<Property Name="PVD4.Water_Pump_Regen_Lifetime_Readback" Code="SetWater_Pump_Regen_Lifetime_Readback"/>
+<Property Name="PVD4.Water_Pump_P_Commands" Code="SetWater_Pump_P_Commands"/>
+<Property Name="PVD4.Water_Pump_P_Command_Readback" Code="SetWater_Pump_P_Command_Readback"/>
+<Property Name="PVD4.Water_Pump_Is_Communicating" Code="SetWater_Pump_Is_Communicating"/>
+<Property Name="PVD4.Turbo_Pump_On_Off" Code="SetTurbo_Pump_On_Off"/>
+<Property Name="PVD4.Turbo_Pump_On_Off_Rb" Code="SetTurbo_Pump_On_Off_Rb"/>
+<Property Name="PVD4.Turbo_Pump_Ramping_Percent_Rb" Code="SetTurbo_Ramping_Percent_RBTo" />
+<Property Name="PVD4.Turbo_Pump_Uptospeed_Rb" Code="SetTurbo_Pump_Uptospeed_Rb"/>
+
+<!-- Vat_Valve #10 -->
+<Property Name="PVD4.Vat_Valve_Communication_Status" Code="SetVat_Valve_Communication_Status"/>
+<Property Name="PVD4.Vat_Valve_Percentage_Program" Code="SetVat_Valve_Percentage_Program"/>
+<Property Name="PVD4.Vat_Valve_Percentage_Readback" Code="SetHivac_Valve_Status"/>
+<Property Name="PVD4.Vat_Valve_Controller_Pressure_Program" Code="SetVat_Valve_Controller_Pressure_Program"/>
+<Property Name="PVD4.Vat_Valve_Controller_Auto_Zero" Code="SetVat_Valve_Controller_Auto_Zero"/>
+<Property Name="PVD4.Vat_Valve_Controller_Teach" Code="SetVat_Valve_Controller_Teach"/>
+<Property Name="PVD4.Vat_Valve_Controller_Sizeadjust" Code="SetVat_Valve_Controller_Sizeadjust"/>
+
+<!--  Magnatron # 11 -->
+<Property Name="PVD4.Target1_Magnatron_Rotate_Status" Code="SetTarget1_Magnatron_Rotate_Status"/>
+<Property Name="PVD4.Target2_Magnatron_Rotate_Status" Code="SetTarget2_Magnatron_Rotate_Status"/>
+<Property Name="PVD4.Target3_Magnatron_Rotate_Status" Code="SetTarget3_Magnatron_Rotate_Status"/>
+<Property Name="PVD4.Target4_Magnatron_Rotate_Status" Code="SetTarget4_Magnatron_Rotate_Status"/>
+
+<!--  RF_Target_Ps # 12 -->
+<Property Name="PVD4.RF_Target_Communication_Status" Code="SetRF_Target_Communication_Status"/>
+<Property Name="PVD4.RF_Target_Power_Readback" Code="SetRF_Target_Power_Readback,SetRF_Target_Power_Readback_Seren,SetCORONAPSForwardPowerRBInProcessPopUpTo"/>
+<Property Name="PVD4.RF_Target_Reflected_Power_Readback" Code="SetRF_Target_Reflected_Power_Readback,SetRF_Target_Reflected_Power_Readback_Seren,SetCORONAPSReflectPowerRBInProcessPopUpTo"/>
+<Property Name="PVD4.RF_Target_MB_Voltage_Readback" Code="SetRF_Target_MB_Voltage_Readback,SetRF_Target_MB_Voltage_Readback_Seren"/>
+<Property Name="PVD4.RF_Target_MB_C1_Readback" Code="SetRF_Target_MB_C1_Readback,SetRF_Target_MB_C1_Readback_Seren"/>
+<Property Name="PVD4.RF_Target_MB_C2_Readback" Code="SetRF_Target_MB_C2_Readback,SetRF_Target_MB_C2_Readback_Seren"/>
+<Property Name="PVD4.RF_Target_Power_Program" Code="SetRF_Target_Power_Program,SetRF_Target_Power_Program_Seren,SetCORONAPSForwardPowerSPInProcessPopUpTo"/>
+<Property Name="PVD4.RF_Target_Reflected_Power_Program" Code="SetRF_Target_Reflected_Power_Program,SetRF_Target_Reflected_Power_Program_Seren"/>
+<Property Name="PVD4.RF_Target_MB_Voltage_Program" Code="SetRF_Target_MB_Voltage_Program,SetRF_Target_MB_Voltage_Program_Seren"/>
+<Property Name="PVD4.RF_Target_MB_C1_Program" Code="SetRF_Target_MB_C1_Program,SetRF_Target_MB_C1_Program_Seren"/>
+<Property Name="PVD4.RF_Target_MB_C2_Program" Code="SetRF_Target_MB_C2_Program,SetRF_Target_MB_C2_Program_Seren"/>
+<Property Name="PVD4.RF_Target_MB_Match_Mode_Readback" Code="SetRF_Target_MB_Match_Mode_Readback,SetRF_Target_MB_Match_Mode_Readback_Seren,SetRF_Target_MB_Match_Mode_Program,SetRF_Target_MB_Match_Mode_Program_Seren"/>
+<Property Name="PVD4.RF_Target_MB_Match_Mode_Program" Code="SetRF_Target_MB_Match_Mode_Program,SetRF_Target_MB_Match_Mode_Program_Seren"/>
+<Property Name="PVD4.RF_Target_MB_Preset_Program" Code="SetRF_Target_MB_Preset_Program,SetRF_Target_MB_Preset_Program_Seren"/>
+<Property Name="PVD4.RF_Target_MB_Preset_Readback" Code="SetRF_Target_MB_Preset_Readback,SetRF_Target_MB_Preset_Readback_Seren"/>
+<Property Name="PVD4.RF_Target_Error_Readback" Code="SetRF_Target_Error_Readback"/>
+<Property Name="PVD4.RF_Target_MB_Mag_Error_Readback" Code="SetRF_Target_MB_Mag_Error_Readback"/>
+<Property Name="PVD4.RF_Target_MB_Phase_Error_Readback" Code="SetRF_Target_MB_Phase_Error_Readback"/>
+<Property Name="PVD4.RF_Target_Voltage_SP" Code="SetRF_Target_Voltage_SP"/>
+
+
+<!--  Bias_Ps # 13 -->
+<Property Name="PVD4.Bias_Communication_Status" Code="SetBias_Communication_Status"/>
+<Property Name="PVD4.Bias_Power_Readback" Code="SetBias_Power_Readback,SetBias_Power_Readback_Seren,SetCORONABiasForwardPowerRBInProcessPopUpTo"/>
+<Property Name="PVD4.Bias_Reflected_Power_Readback" Code="SetBias_Reflected_Power_Readback,SetBias_Reflected_Power_Readback_Seren,SetCORONABiasReflectPowerRBInProcessPopUpTo"/>
+<Property Name="PVD4.Bias_MB_Voltage_Readback" Code="SetBias_MB_Voltage_Readback,SetBias_MB_Voltage_Readback_Seren"/>
+<Property Name="PVD4.Bias_MB_C1_Readback" Code="SetBias_MB_C1_Readback,SetBias_MB_C1_Readback_Seren"/>
+<Property Name="PVD4.Bias_MB_C2_Readback" Code="SetBias_MB_C2_Readback,SetBias_MB_C2_Readback_Seren"/>
+<Property Name="PVD4.Bias_Power_Program" Code="SetBias_Power_Program,SetBias_Power_Program_Seren,SetCORONABiasForwardPowerSPInProcessPopUpTo"/>
+<Property Name="PVD4.Bias_Reflected_Power_Program" Code="SetBias_Reflected_Power_Program,SetBias_Reflected_Power_Program_Seren"/>
+<Property Name="PVD4.Bias_MB_Voltage_Program" Code="SetBias_MB_Voltage_Program,SetBias_MB_Voltage_Program_Seren"/>
+<Property Name="PVD4.Bias_MB_C1_Program" Code="SetBias_MB_C1_Program,SetBias_MB_C1_Program_Seren"/>
+<Property Name="PVD4.Bias_MB_C2_Program" Code="SetBias_MB_C2_Program,SetBias_MB_C2_Program_Seren"/>
+<Property Name="PVD4.Bias_MB_Match_Mode_Readback" Code="SetBias_MB_Match_Mode_Readback,SetBias_MB_Match_Mode_Readback_Seren,SetBias_MB_Match_Mode_Program,SetBias_MB_Match_Mode_Program_Seren"/>
+<Property Name="PVD4.Bias_MB_Match_Mode_Program" Code="SetBias_MB_Match_Mode_Program,SetBias_MB_Match_Mode_Program_Seren"/>
+<Property Name="PVD4.Bias_MB_Preset_Program" Code="SetBias_MB_Preset_Program,SetBias_MB_Preset_Program_Seren"/>
+<Property Name="PVD4.Bias_MB_Preset_Readback" Code="SetBias_MB_Preset_Readback,SetBias_MB_Preset_Readback_Seren"/>
+
+<Property Name="PVD4.Bias_Error_Readback" Code="SetBias_Error_Readback"/>
+<Property Name="PVD4.Bias_MB_Mag_Error_Readback" Code="SetBias_MB_Mag_Error_Readback"/>
+<Property Name="PVD4.Bias_MB_Phase_Error_Readback" Code="SetBias_MB_Phase_Error_Readback"/>
+<Property Name="PVD4.Bias_Power_Contact_On_Off" Code="SetBias_Power_Contact_On_Off"/>
+<Property Name="PVD4.Bias_Plasma_Status" Code="SetBias_Plasma_Status"/>
+<!--  DC_Target_Ps # 14 -->
+<Property Name="PVD4.DC_Target_Communication_Status" Code="SetDC_Target_Communication_Status"/>
+<Property Name="PVD4.DC_Target_Power_Readback" Code="SetDC_Target_Power_Readback,SetCORONAPSForwardPowerRBInProcessPopUpTo"/>
+<Property Name="PVD4.DC_Target_Power_Program" Code="SetDC_Target_Power_Program,SetCORONAPSForwardPowerSPInProcessPopUpTo"/>
+<Property Name="PVD4.DC_Target_Voltage_Readback" Code="SetDC_Target_Voltage_Readback"/>
+<Property Name="PVD4.DC_Target_Current_Readback" Code="SetDC_Target_Current_Readback,SetCORONAPSReflectPowerRBInProcessPopUpTo"/>
+<Property Name="PVD4.DC_Target_Pluse_Mode_Status" Code="SetDC_Target_Pluse_Mode_Status"/>
+<Property Name="PVD4.DC_Target_Pulse_Frequency_Program" Code="SetDC_Target_Pulse_Frequency_Program"/>
+<Property Name="PVD4.DC_Target_Pulse_Frequency_Readback" Code="SetDC_Target_Pulse_Frequency_Readback"/>
+<Property Name="PVD4.DC_Target_Pulse_Width_Program" Code="SetDC_Target_Pulse_Width_Program"/>
+<Property Name="PVD4.DC_Target_Pulse_Width_Readback" Code="SetDC_Target_Pulse_Width_Readback"/>
+<Property Name="PVD4.DC_Target_Ramp_Time_Program" Code="SetDC_Target_Ramp_Time_Program"/>
+<Property Name="PVD4.DC_Target_Ramp_Time_Readback" Code="SetDC_Target_Ramp_Time_Readback"/>
+<Property Name="PVD4.DC_Target_Arc_Counter_Readback" Code="SetDC_Target_Arc_Counter_Readback"/>
+<Property Name="PVD4.DC_Target_Voltage_SP" Code="SetDC_Target_Voltage_SP"/>
+
+<!--  Heater # 15 -->
+<Property Name="PVD4.HeaterZone1_Communication_Status" Code="SetHeaterZone1_Communication_Status"/>
+<Property Name="PVD4.HeaterZone2_Communication_Status" Code="SetHeaterZone2_Communication_Status"/>
+<Property Name="PVD4.Heater1_OnOff_RB" Code="Set_HeaterZone1_Status"/>
+<Property Name="PVD4.Heater2_OnOff_RB" Code="Set_HeaterZone2_Status"/>
+<Property Name="PVD4.Heater_Zone1_RB" Code="Set_HeaterZone1_RB"/>
+<Property Name="PVD4.Heater_Zone2_RB" Code="Set_HeaterZone2_RB"/>
+
+<!--  WaferInside -->
+<Property Name="PVD4.WaferInside" Code="SetWaferInsideChamberInProcessScreenTo,SetCORONAChamber_ProcessMonitor_WaferID"/>
+
+<Property Name="PVD4.Target_Select_Readback" Code="SetTarget_Select_Readback"/>
+<Property Name="PVD4.Plasma_Status" Code="SetPlasma_Status"/>
+<Property Name="PVD4.MachinePumpPurge_Current_Cycle" Code="SetCORONAChamber_SetPumpPurgeCurentCycleTo"/>
+<Property Name="PVD4.Target1_Injection_ValveStatus" Code="SetCORONAChamber_SetInjectionValve1"/>
+<Property Name="PVD4.Target2_Injection_ValveStatus" Code="SetCORONAChamber_SetInjectionValve2"/>
+<Property Name="PVD4.Target3_Injection_ValveStatus" Code="SetCORONAChamber_SetInjectionValve3"/>
+<Property Name="PVD4.Target4_Injection_ValveStatus" Code="SetCORONAChamber_SetInjectionValve4"/>
+
+<!--Filmetric-->
+<Property Name="PVD4.Filmetric_ListRecipe_RB" Code="Update_ListRecipe_Readback"/>
+<Property Name="PVD4.Filmetric_Thickness" Code="Set_Filmetric_Thickness"/>
+<Property Name="PVD4.Filmetric_Recipe_SP" Code="Set_Recipe_Thickness"/>
+<Property Name="PVD4.Goodness_Of_Fit" Code="Set_Goodness_Of_Fit"/>
+
+<Property Name="PVD4.PM_WaferCount" Code="SetPVD4Chamber_SetIncreaseWaferCount"/>

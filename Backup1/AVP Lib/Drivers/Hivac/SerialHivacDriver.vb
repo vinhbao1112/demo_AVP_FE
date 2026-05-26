@@ -1,0 +1,19 @@
+Namespace Driver
+    Public Class SerialHivacDriver
+        Inherits DriverObject
+        Implements IValveDriver
+        Public Sub New(ByVal sDriverName As String)
+            MyBase.new(sDriverName)
+        End Sub
+        Public Function OpenHivacValve() As Boolean Implements IValveDriver.Open
+            Return False
+        End Function
+        Public Function CloseHivacValve() As Boolean Implements IValveDriver.Close
+            Return False
+        End Function
+        Public Function UnknownHivacValve() As Boolean Implements IValveDriver.Unknown
+            Return False
+        End Function
+    End Class
+End Namespace
+

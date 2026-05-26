@@ -1,0 +1,11 @@
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\NetLib\bin\Debug\NetLib.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\NetLib\bin\Debug\NetLib.pdb
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\NetLib\obj\Debug\AVPNetLib.csproj.CoreCompileInputs.cache
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\NetLib\obj\Debug\NetLib.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\NetLib\obj\Debug\NetLib.pdb
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\NetLib\obj\Debug\AVPNetLib.csproj.AssemblyReference.cache
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\NetLib\bin\Debug\NetLib.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\NetLib\bin\Debug\NetLib.pdb
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\NetLib\obj\Debug\AVPNetLib.csproj.CoreCompileInputs.cache
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\NetLib\obj\Debug\NetLib.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\NetLib\obj\Debug\NetLib.pdb

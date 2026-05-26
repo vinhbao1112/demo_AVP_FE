@@ -1,0 +1,4 @@
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\CustomTabControl\bin\Release\CustomTabControl.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\CustomTabControl\obj\x86\Release\CustomTabControl.csproj.AssemblyReference.cache
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\CustomTabControl\obj\x86\Release\CustomTabControl.csproj.CoreCompileInputs.cache
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\CustomTabControl\obj\x86\Release\CustomTabControl.dll

@@ -1,0 +1,49 @@
+<StateMachine initstate="NoState">
+    <State name="NO STATE" id="NoState"/>
+    <State name="POOLED" id="Pooled"/>
+    <State name="SETTING UP" id="SettingUp"/>
+    <State name="WAITING FOR START" id="WaitingForStart"/>
+    <State name="PROCESSING" id="Processing"/>
+    <State name="PROCESS COMPLETE" id="ProcessComplete"/>
+    <State name="STOPPING" id="Stopping"/>
+    <State name="PAUSING" id="Pausing"/>
+    <State name="PAUSED" id="Paused"/>
+    <State name="ABORTING" id="Aborting"/>
+	
+    <Transition txNo="1" src="NoState" dst="Pooled" triggerid="PJ_CREATED"/>
+    <Transition txNo="2" src="Pooled" dst="SettingUp" triggerid="PJ_SETTINGUP"/>
+    <Transition txNo="3" src="SettingUp" dst="WaitingForStart" triggerid="PJ_WAITINGFORSTART"/>
+    <Transition txNo="4" src="SettingUp" dst="Processing" triggerid="PJ_PROCESSING#4"/>
+    <Transition txNo="5" src="WaitingForStart" dst="Processing" triggerid="PJ_PROCESSING#5"/>
+    <Transition txNo="6" src="Processing" dst="ProcessComplete" triggerid="PJ_PRCOMPLETED"/>
+    <Transition txNo="7" src="ProcessComplete" dst="NoState" triggerid="PJ_COMPLETED"/>
+    <Transition txNo="8" src="SettingUp" dst="Pausing" triggerid="PJ_PAUSING"/>
+    <Transition txNo="21" src="WaitingForStart" dst="Pausing" triggerid="PJ_PAUSING"/>
+    <Transition txNo="23" src="Processing" dst="Pausing" triggerid="PJ_PAUSING"/>
+    <Transition txNo="24" src="ProcessComplete" dst="Pausing" triggerid="PJ_PAUSING"/>
+    <Transition txNo="9" src="Pausing" dst="Paused" triggerid="PJ_PAUSED"/>
+    <Transition txNo="10" src="Pausing" dst="SettingUp" triggerid="PJ_RESUMED"/>
+    <Transition txNo="25" src="Pausing" dst="WaitingForStart" triggerid="PJ_RESUMED"/>
+    <Transition txNo="27" src="Pausing" dst="Processing" triggerid="PJ_RESUMED"/>
+    <Transition txNo="28" src="Pausing" dst="ProcessComplete" triggerid="PJ_RESUMED"/>
+    <Transition txNo="29" src="Paused" dst="SettingUp" triggerid="PJ_RESUMED"/>
+    <Transition txNo="30" src="Paused" dst="WaitingForStart" triggerid="PJ_RESUMED"/>
+    <Transition txNo="32" src="Paused" dst="Processing" triggerid="PJ_RESUMED"/>
+    <Transition txNo="33" src="Paused" dst="ProcessComplete" triggerid="PJ_RESUMED"/>
+    <Transition txNo="11" src="SettingUp" dst="Stopping" triggerid="PJ_STOPPING#11"/>
+    <Transition txNo="34" src="WaitingForStart" dst="Stopping" triggerid="PJ_STOPPING#11"/>
+    <Transition txNo="36" src="Processing" dst="Stopping" triggerid="PJ_STOPPING#11"/>
+    <Transition txNo="37" src="ProcessComplete" dst="Stopping" triggerid="PJ_STOPPING#11"/>
+    <Transition txNo="12" src="Pausing" dst="Stopping" triggerid="PJ_STOPPING#12"/>
+    <Transition txNo="38" src="Paused" dst="Stopping" triggerid="PJ_STOPPING#12"/>
+    <Transition txNo="13" src="SettingUp" dst="Aborting" triggerid="PJ_ABORTING#13"/>
+    <Transition txNo="39" src="WaitingForStart" dst="Aborting" triggerid="PJ_ABORTING#13"/>
+    <Transition txNo="41" src="Processing" dst="Aborting" triggerid="PJ_ABORTING#13"/>
+    <Transition txNo="42" src="ProcessComplete" dst="Aborting" triggerid="PJ_ABORTING#13"/>
+    <Transition txNo="14" src="Stopping" dst="Aborting" triggerid="PJ_ABORTING#14"/>
+    <Transition txNo="15" src="Pausing" dst="Aborting" triggerid="PJ_ABORTING#15"/>
+    <Transition txNo="43" src="Paused" dst="Aborting" triggerid="PJ_ABORTING#15"/>
+    <Transition txNo="16" src="Aborting" dst="NoState" triggerid="PJ_ABORTED"/>
+    <Transition txNo="17" src="Stopping" dst="NoState" triggerid="PJ_STOPPED"/>
+    <Transition txNo="18" src="Pooled" dst="NoState" triggerid="PJ_CANCELED"/>
+</StateMachine>

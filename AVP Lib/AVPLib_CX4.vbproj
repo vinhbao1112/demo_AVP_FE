@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1C4FE93D-3956-40BF-9361-BC707555847F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AVPLib</RootNamespace>
+    <AssemblyName>AVPLib</AssemblyName>
+    <MyType>Windows</MyType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DefineConstants>AVP_PLATFORM="CX",AVP_CX_STYLE="CX4"</DefineConstants>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DefineConstants>AVP_PLATFORM="CX",AVP_CX_STYLE="CX4"</DefineConstants>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'CX_Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\CX_Debug\</OutputPath>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <DefineConstants>AVP_PLATFORM="CX"</DefineConstants>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'CX_Release|AnyCPU' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\CX_Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>D:\Program Files\Microsoft Visual Studio 8\Team Tools\Static Analysis Tools\FxCop\\rules</CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <DefineConstants>AVP_PLATFORM="CX"</DefineConstants>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'SL_Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\SL_Debug\</OutputPath>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>D:\Program Files\Microsoft Visual Studio 8\Team Tools\Static Analysis Tools\FxCop\\rules</CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <DefineConstants>AVP_PLATFORM="SL"</DefineConstants>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'SL_Release|AnyCPU' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\SL_Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleAssemblies>D:\Program Files\Microsoft Visual Studio 8\Team Tools\Static Analysis Tools\FxCop\\rules</CodeAnalysisRuleAssemblies>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <DefineConstants>AVP_PLATFORM="SL"</DefineConstants>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.EMSERVICELib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AVPSecsGemLib\bin\Debug\Interop.EMSERVICELib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.OPCAutomation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AVP_Robot_Project\bin\ThirdParty\Interop.OPCAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.VALUELib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AVPSecsGemLib\bin\Debug\Interop.VALUELib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AVP_Robot_Project\bin\ThirdParty\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="RSTiApdater, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AVP_Robot_Project\bin\ThirdParty\RSTiApdater.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="business\AVPControlJob.vb" />
+    <Compile Include="business\AVPCore.vb" />
+    <Compile Include="business\AVPJob.vb" />
+    <Compile Include="business\AVPJobManager.vb" />
+    <Compile Include="business\AVPObject.vb" />
+    <Compile Include="business\AVPPauseEventManager.vb" />
+    <Compile Include="business\AVPSafety.vb" />
+    <Compile Include="business\AVPSecsGemLib.vb" />
+    <Compile Include="business\AVPWafer.vb" />
+    <Compile Include="business\ChamberRoutineExecutor.vb" />
+    <Compile Include="business\CoronaController.vb" />
+    <Compile Include="business\CoronaUtility.vb" />
+    <Compile Include="business\CryoController.vb" />
+    <Compile Include="business\DeviceNetAppController.vb" />
+    <Compile Include="business\MechanicalPumpUtility.vb" />
+    <Compile Include="business\PumpPackageController.vb" />
+    <Compile Include="business\PVD5TController.vb" />
+    <Compile Include="business\PVD5TUtility.vb" />
+    <Compile Include="business\TMController.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="business\TMIsolationValveThread.vb" />
+    <Compile Include="business\TurboController.vb" />
+    <Compile Include="Communication\BinConnection.vb" />
+    <Compile Include="Communication\Terminal Driver\CryoPCommandsDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\TSElevatorVersionDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\TSElevatorWaferSlideOutDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\TSRobotRqAccDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\TSRobotRqRobotApplicDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\TSRobotRqRvsnDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\TSRobotRqVelDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\WaferPresentDecoder.vb" />
+    <Compile Include="DataManagerment\CoronaChamber.vb" />
+    <Compile Include="DataManagerment\Cryo.vb" />
+    <Compile Include="DataManagerment\DeviceNetApp.vb" />
+    <Compile Include="DataManagerment\PVD5TChamber.vb" />
+    <Compile Include="DeviceNet\DNSScanner.vb" />
+    <Compile Include="Drivers\CG\DeviceNetAppCGDriver.vb" />
+    <Compile Include="Drivers\CG\DeviceNetCGDriver.vb" />
+    <Compile Include="Drivers\CG\CGDriver.vb" />
+    <Compile Include="Drivers\CG\DNSGP275ConvertionGauge.vb" />
+    <Compile Include="Drivers\CG\KepwareCGDriver.vb" />
+    <Compile Include="Drivers\CG\SerialCGDriver.vb" />
+    <Compile Include="Drivers\DeviceNetAppDriver.vb" />
+    <Compile Include="Drivers\DeviceNetDriver.vb" />
+    <Compile Include="Drivers\DeviceNetValveDriver.vb" />
+    <Compile Include="Drivers\DriverManager.vb" />
+    <Compile Include="Drivers\DriverObject.vb" />
+    <Compile Include="Drivers\Hivac\DeviceNetAppHivacDriver.vb" />
+    <Compile Include="Drivers\Hivac\DeviceNetHivacDriver.vb" />
+    <Compile Include="Drivers\Hivac\HivacValveDriver.vb" />
+    <Compile Include="Drivers\IG\DeviceNetAppIGDriver.vb" />
+    <Compile Include="Drivers\IG\DeviceNetIGDriver.vb" />
+    <Compile Include="Drivers\IG\DNSGP354IonGauge.vb" />
+    <Compile Include="Drivers\IG\DNSGP355IonGauge.vb" />
+    <Compile Include="Drivers\IG\IGDriver.vb" />
+    <Compile Include="Drivers\IG\KepwareIGDriver.vb" />
+    <Compile Include="Drivers\IG\SerialIGDriver.vb" />
+    <Compile Include="Drivers\Interface\ICGDriver.vb" />
+    <Compile Include="Drivers\Interface\IDeviceAdapter.vb" />
+    <Compile Include="Drivers\Interface\IDeviceStatus.vb" />
+    <Compile Include="Drivers\Interface\IIGDriver.vb" />
+    <Compile Include="Drivers\Interface\IPumpPackageDriver.vb" />
+    <Compile Include="Drivers\Interface\ISensorDriver.vb" />
+    <Compile Include="Drivers\Interface\IValveDriver.vb" />
+    <Compile Include="Drivers\Hivac\KepwareHivacDriver.vb" />
+    <Compile Include="Drivers\Hivac\SerialHivacDriver.vb" />
+    <Compile Include="business\TMWaterPumpController.vb" />
+    <Compile Include="business\TMWaterPumpUtility.vb" />
+    <Compile Include="business\PVDUtility.vb" />
+    <Compile Include="business\PVDController.vb" />
+    <Compile Include="business\LLRoutineExecutor.vb" />
+    <Compile Include="business\SingleLoaderPJ.vb" />
+    <Compile Include="business\TMRoutineExecutor.vb" />
+    <Compile Include="business\TopologicalSorter.vb" />
+    <Compile Include="Communication\Terminal Driver\AlignerTransaction.vb" />
+    <Compile Include="Communication\Terminal Driver\CassettePresentDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\CheckSum.vb" />
+    <Compile Include="Communication\Terminal Driver\CryoLifeTimeHourDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\CryoRegenHourDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\WaterPumpNumberDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\WaterPumpPollingDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\WaterPumpPumpStatusDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\WaterPumpRegenStatusDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\WaterPumpTransaction.vb" />
+    <Compile Include="Communication\Terminal Driver\TSRobotUpDownExtractRetractedDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\CryoNumberDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\CryoPollingDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\CryoPumpStatusDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\CryoRegenStatusDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\CryoTransaction.vb" />
+    <Compile Include="Communication\Terminal Driver\ElevatorOperationalDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\ElevatorTransaction.vb" />
+    <Compile Include="Communication\Terminal Driver\MappedInforDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\RobotTransaction.vb" />
+    <Compile Include="Communication\Terminal Driver\Transaction.vb" />
+    <Compile Include="Communication\Terminal Driver\TransactionManager.vb" />
+    <Compile Include="Communication\Terminal Driver\TSAlignerAliveDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\TSAlignerReadyDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\TSAlignerResultDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\TSClampStatusDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\TSCommand.vb" />
+    <Compile Include="Communication\Terminal Driver\TSCommandManager.vb" />
+    <Compile Include="Communication\Terminal Driver\TSDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\TSElevatorErrorDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\TSGroupCommand.vb" />
+    <Compile Include="Communication\Terminal Driver\TSNoReplyCommand.vb" />
+    <Compile Include="Communication\Terminal Driver\TSReadyErrorDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\TSRobotAliveDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\TSRobotRetractedDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\TSRobotRqPosStnDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\TSRobotRqStnDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\TSSerialCommandDecoder.vb" />
+    <Compile Include="Communication\Terminal Driver\TSSingleReplyCheckSumCommand.vb" />
+    <Compile Include="Communication\Terminal Driver\TSSingleReplyCommand.vb" />
+    <Compile Include="DataManagerment\AlarmStatistic.vb" />
+    <Compile Include="DataManagerment\TMWaterPump.vb" />
+    <Compile Include="DataManagerment\PVDChamber.vb" />
+    <Compile Include="DataManagerment\Turbo.vb" />
+    <Compile Include="Drivers\DriverConst.vb" />
+    <Compile Include="DeviceNet\DeviceNetController.vb" />
+    <Compile Include="DeviceNet\DeviceNetThread.vb" />
+    <Compile Include="Drivers\IsolationValve\DeviceNetAppIsolationValveDriver.vb" />
+    <Compile Include="Drivers\IsolationValve\DeviceNetIsolationValveDriver.vb" />
+    <Compile Include="Drivers\IsolationValve\IsolationValveDriver.vb" />
+    <Compile Include="Drivers\IsolationValve\KepwareIsolationValveDriver.vb" />
+    <Compile Include="Drivers\IsolationValve\SerialIsolationValveDriver.vb" />
+    <Compile Include="Drivers\KepwareUtility.vb" />
+    <Compile Include="Drivers\MPPumpCG\DeviceNetAppMPumpCGDriver.vb" />
+    <Compile Include="Drivers\MPPumpCG\DeviceNetMPumpCGDriver.vb" />
+    <Compile Include="Drivers\MPPumpCG\KepwareMPumpCGDriver.vb" />
+    <Compile Include="Drivers\MPPumpCG\MPumpCGDriver.vb" />
+    <Compile Include="Drivers\MPPumpCG\SerialMPumpCGDriver.vb" />
+    <Compile Include="Drivers\ProxyDriverObject.vb" />
+    <Compile Include="Drivers\PumpPackage\SerialLeboldMAGTurboDriver.vb" />
+    <Compile Include="Drivers\PumpPackage\RSTiSerialLebold350ixTurboDriver.vb" />
+    <Compile Include="Drivers\PumpPackage\DeviceNetTurboDriver.vb" />
+    <Compile Include="Drivers\PumpPackage\KepwareTurboDriver.vb" />
+    <Compile Include="Drivers\PumpPackage\PumpPackageDriver.vb" />
+    <Compile Include="Drivers\PumpPackage\SerialCryoDriver.vb" />
+    <Compile Include="Drivers\PumpPackage\SerialTurboDriver.vb" />
+    <Compile Include="Drivers\RoughValve\DeviceNetAppRoughDriver.vb" />
+    <Compile Include="Drivers\RoughValve\DeviceNetRoughDriver.vb" />
+    <Compile Include="Drivers\RoughValve\KepwareRoughDriver.vb" />
+    <Compile Include="Drivers\RoughValve\RoughValveDriver.vb" />
+    <Compile Include="Drivers\RoughValve\SerialRoughDriver.vb" />
+    <Compile Include="Drivers\RSTi\AdapterDriver.vb" />
+    <Compile Include="Drivers\RSTi\DeviceNetAppRSTiDriver.vb" />
+    <Compile Include="Drivers\RSTi\DeviceRSTiDriver.vb" />
+    <Compile Include="Drivers\RSTi\Kepware4RSTiDriver.vb" />
+    <Compile Include="Drivers\RSTi\PropertyObject.vb" />
+    <Compile Include="Drivers\RSTi\RSTiObject.vb" />
+    <Compile Include="Drivers\Sensor\DeviceNetSensorDriver.vb" />
+    <Compile Include="Drivers\Sensor\KepwareSensorDriver.vb" />
+    <Compile Include="Drivers\Sensor\SensorDriver.vb" />
+    <Compile Include="Drivers\Sensor\SerialSensorDriver.vb" />
+    <Compile Include="Drivers\SolenoidDriver.vb" />
+    <Compile Include="Drivers\TurboForeLine\DeviceNetAppTurboForeLineDriver.vb" />
+    <Compile Include="Drivers\TurboForeLine\DeviceNetTurboForeLineDriver.vb" />
+    <Compile Include="Drivers\TurboForeLine\KepwareTurboForeLineDriver.vb" />
+    <Compile Include="Drivers\TurboForeLine\SerialTurboForeLineDriver.vb" />
+    <Compile Include="Drivers\TurboForeLine\TurboForeLineDriver.vb" />
+    <Compile Include="Drivers\VentValve\DeviceNetAppVentDriver.vb" />
+    <Compile Include="Drivers\VentValve\DeviceNetVentDriver.vb" />
+    <Compile Include="Drivers\VentValve\KepwareVentDriver.vb" />
+    <Compile Include="Drivers\VentValve\SerialVentDriver.vb" />
+    <Compile Include="Drivers\VentValve\VentValveDriver.vb" />
+    <Compile Include="Lib\AVPDataLib.vb" />
+    <Compile Include="Lib\AVPLotDatalog.vb" />
+    <Compile Include="Lib\BinarySerialize.vb" />
+    <Compile Include="model\SystemModule.vb" />
+    <Compile Include="StateMachine\AVPStateMachine.vb" />
+    <Compile Include="StateMachine\AVPStateMachineData.vb" />
+    <Compile Include="StateMachine\AVPStateMachineManager.vb" />
+    <Compile Include="business\AlignerController.vb" />
+    <Compile Include="business\AlignerUtility.vb" />
+    <Compile Include="business\ChamberController.vb" />
+    <Compile Include="business\ChamberUtility.vb" />
+    <Compile Include="business\ControllerManager.vb" />
+    <Compile Include="business\ControllerObject.vb" />
+    <Compile Include="business\IBEController.vb" />
+    <Compile Include="business\IBEUtility.vb" />
+    <Compile Include="business\LoadLockUtility.vb" />
+    <Compile Include="business\LinkTestThread.vb" />
+    <Compile Include="business\LLCryoUtility.vb" />
+    <Compile Include="business\LLElevatorController.vb" />
+    <Compile Include="business\LLElevatorUtility.vb" />
+    <Compile Include="business\LoadLockController.vb" />
+    <Compile Include="business\ProcessedEventArgs.vb" />
+    <Compile Include="business\ProcessingErrorEventArgs.vb" />
+    <Compile Include="business\ProcessingEventArgs.vb" />
+    <Compile Include="business\RobotController.vb" />
+    <Compile Include="business\RobotUtility.vb" />
+    <Compile Include="business\SequenceInfor.vb" />
+    <Compile Include="business\SuspendableThread.vb" />
+    <Compile Include="business\TMCryoUtility.vb" />
+    <Compile Include="business\AVPProcessJob.vb" />
+    <Compile Include="Communication\Connection.vb" />
+    <Compile Include="Communication\ConnectionManager.vb" />
+    <Compile Include="Communication\PMServerConnection.vb" />
+    <Compile Include="Communication\KEPServerConnection.vb" />
+    <Compile Include="Communication\KSCommandManager.vb" />
+    <Compile Include="Communication\Message.vb" />
+    <Compile Include="Communication\TerminalServerConnection.vb" />
+    <Compile Include="Container\Connection.vb" />
+    <Compile Include="Container\ContainerDAO.vb" />
+    <Compile Include="Container\ContainerData.vb" />
+    <Compile Include="Container\ContainerObjects.vb" />
+    <Compile Include="DataManagerment\Alarm.vb" />
+    <Compile Include="DataManagerment\Aligner.vb" />
+    <Compile Include="DataManagerment\Chamber.vb" />
+    <Compile Include="DataManagerment\ConfigItem.vb" />
+    <Compile Include="DataManagerment\ConfigurationManager.vb" />
+    <Compile Include="DataManagerment\Equipment.vb" />
+    <Compile Include="DataManagerment\EquipmentManager.vb" />
+    <Compile Include="DataManagerment\IBEMaintenance.vb" />
+    <Compile Include="DataManagerment\LLElevator.vb" />
+    <Compile Include="DataManagerment\LoadLock.vb" />
+    <Compile Include="DataManagerment\MessageGenerator.vb" />
+    <Compile Include="DataManagerment\Robot.vb" />
+    <Compile Include="DataManagerment\RoughPumpMachine.vb" />
+    <Compile Include="DataManagerment\StatusChangedEventArgs.vb" />
+    <Compile Include="DataManagerment\TransferModule.vb" />
+    <Compile Include="DataManagerment\WaferCountEventArgs.vb" />
+    <Compile Include="DataManagerment\WaferFlow.vb" />
+    <Compile Include="Lib\ConfigurationLib.vb" />
+    <Compile Include="Lib\ChamberLib.vb" />
+    <Compile Include="Lib\ConstEnum.vb" />
+    <Compile Include="Lib\ExpressionStuff.vb" />
+    <Compile Include="Lib\MaintenanceLib.vb" />
+    <Compile Include="Lib\InitLib.vb" />
+    <Compile Include="Lib\Log.vb" />
+    <Compile Include="Lib\PressureConfigurationLib.vb" />
+    <Compile Include="Lib\LoadLockLib.vb" />
+    <Compile Include="Lib\MessageErrorLib.vb" />
+    <Compile Include="Lib\PollingLib.vb" />
+    <Compile Include="Lib\RobotConfiguration.vb" />
+    <Compile Include="Lib\SequenceLib.vb" />
+    <Compile Include="Lib\StoreGuiLib.vb" />
+    <Compile Include="Lib\TimeoutLib.vb" />
+    <Compile Include="Lib\UserSetupLib.vb" />
+    <Compile Include="Lib\ValueMessageEquipmentLib.vb" />
+    <Compile Include="Lib\VentPumdownLib.vb" />
+    <Compile Include="model\AlignerRecipe.vb" />
+    <Compile Include="model\DBChamber.vb" />
+    <Compile Include="model\DBChamberStep.vb" />
+    <Compile Include="model\DBGroup.vb" />
+    <Compile Include="model\DBGroupParameterValue.vb" />
+    <Compile Include="model\DBCommand.vb" />
+    <Compile Include="model\DBMessageReceiver.vb" />
+    <Compile Include="model\DBParameter.vb" />
+    <Compile Include="model\DBParameterGroup.vb" />
+    <Compile Include="model\DBParameterValue.vb" />
+    <Compile Include="model\DBRecipe.vb" />
+    <Compile Include="model\DBSequenceParameter.vb" />
+    <Compile Include="model\DBStoreGui.vb" />
+    <Compile Include="model\DBUser.vb" />
+    <Compile Include="model\DBUserPermission.vb" />
+    <Compile Include="model\DBWaferSlot.vb" />
+    <Compile Include="model\KepServerGroup.vb" />
+    <Compile Include="model\KepServerItem.vb" />
+    <Compile Include="Lib\KepServerLib.vb" />
+    <Compile Include="Lib\MessageEquipmentLib.vb" />
+    <Compile Include="model\PropertyMessage.vb" />
+    <Compile Include="model\Server.vb" />
+    <Compile Include="model\Polling.vb" />
+    <Compile Include="model\ValueMessage.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Utils\EncryptionHelper.vb" />
+    <Compile Include="Utils\SendEmail.vb" />
+    <Compile Include="Utils\TriggerEmail.vb" />
+    <Compile Include="Utils\Utils.vb" />
+    <Compile Include="XMLResource\Aligner.vb" />
+    <Compile Include="XMLResource\Chamber1.vb" />
+    <Compile Include="XMLResource\Chamber2.vb" />
+    <Compile Include="XMLResource\Chamber3.vb" />
+    <Compile Include="XMLResource\Chamber4.vb" />
+    <Compile Include="XMLResource\Chamber5.vb" />
+    <Compile Include="XMLResource\ConfigurationServer.vb" />
+    <Compile Include="XMLResource\ControlJob.vb" />
+    <Compile Include="XMLResource\CORONA.vb" />
+    <Compile Include="XMLResource\DriverConfig.vb" />
+    <Compile Include="XMLResource\PVD5T.vb" />
+    <Compile Include="XMLResource\RFPVD.vb" />
+    <Compile Include="XMLResource\DCPVD.vb" />
+    <Compile Include="XMLResource\IBE.vb" />
+    <Compile Include="XMLResource\PVDServer.vb" />
+    <Compile Include="XMLResource\EquipmentTracking.vb" />
+    <Compile Include="XMLResource\Group.vb" />
+    <Compile Include="XMLResource\IBEServer.vb" />
+    <Compile Include="XMLResource\MessageName.vb" />
+    <Compile Include="XMLResource\MessageValue.vb" />
+    <Compile Include="XMLResource\ParseMessageGuiBusiness.vb" />
+    <Compile Include="XMLResource\ParseMessageName.vb" />
+    <Compile Include="XMLResource\ParseMessageValue.vb" />
+    <Compile Include="XMLResource\ProcessCommand.vb" />
+    <Compile Include="XMLResource\ProcessJob.vb" />
+    <Compile Include="XMLResource\Recipe.vb" />
+    <Compile Include="XMLResource\RecipePath.vb" />
+    <Compile Include="XMLResource\Sequence.vb" />
+    <Compile Include="XMLResource\SerialCommandEquipments.vb" />
+    <Compile Include="XMLResource\SingleLoader\SL_ConfigurationServer.vb" />
+    <Compile Include="XMLResource\SingleLoader\SL_Group.vb" />
+    <Compile Include="XMLResource\SingleLoader\SL_IBE.vb" />
+    <Compile Include="XMLResource\SingleLoader\SL_IBEServer.vb" />
+    <Compile Include="XMLResource\SingleLoader\SL_MessageName.vb" />
+    <Compile Include="XMLResource\SingleLoader\SL_MessageValue.vb" />
+    <Compile Include="XMLResource\SingleLoader\SL_ParseMessageGuiBusiness.vb" />
+    <Compile Include="XMLResource\SingleLoader\SL_ParseMessageName.vb" />
+    <Compile Include="XMLResource\SingleLoader\SL_ParseMessageValue.vb" />
+    <Compile Include="XMLResource\SingleLoader\SL_ProcessCommand.vb" />
+    <Compile Include="XMLResource\SingleLoader\SL_Recipe.vb" />
+    <Compile Include="XMLResource\SingleLoader\SL_SerialCommandEquipments.vb" />
+    <Compile Include="XMLResource\SingleLoader\SL_StoreGui.vb" />
+    <Compile Include="XMLResource\SingleLoader\SL_SystemConfig.vb" />
+    <Compile Include="XMLResource\SingleLoader\SL_User.vb" />
+    <Compile Include="XMLResource\StoreGui.vb" />
+    <Compile Include="XMLResource\SystemConfig.vb" />
+    <Compile Include="XMLResource\SystemWaferFlow.vb" />
+    <Compile Include="XMLResource\User.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Class Diagrams\Chamber Controllers.cd" />
+    <None Include="Class Diagrams\Chamber Entities.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AVPSecsGemLib\AVPSecsGemLib.csproj">
+      <Project>{7B7E60AC-4D4F-4B40-8C67-07D17CB6E8BD}</Project>
+      <Name>AVPSecsGemLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HRecipeLibrary\HRecipeLibrary\HRecipeLibrary.vbproj">
+      <Project>{E5AC5EDF-EE61-4497-A620-DF78BD0783BB}</Project>
+      <Name>HRecipeLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetLib\AVPNetLib.csproj">
+      <Project>{E4D3D231-13AC-4EC8-AB88-E47DE62ECF37}</Project>
+      <Name>AVPNetLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADOX">
+      <Guid>{00000600-0000-0010-8000-00AA006D2EA4}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

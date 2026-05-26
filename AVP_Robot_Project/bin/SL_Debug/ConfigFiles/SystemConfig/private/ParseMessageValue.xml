@@ -1,0 +1,86 @@
+<MessageNames>
+	<Property Name="ChangeArmUpDownStatusInProcessScreenTo On" Code="ChangeArmUpDownStatusInProcessScreenTo GreenOpened" />
+	<Property Name="ChangeArmUpDownStatusInProcessScreenTo Off" Code="ChangeArmUpDownStatusInProcessScreenTo RedClosed" />
+
+	<Property Name="ChangeSlitValeOfChamber1InProcessScreenTo On" Code="ChangeSlitValeOfChamber1InProcessScreenTo GreenOpened" />
+	<Property Name="ChangeSlitValeOfChamber1InProcessScreenTo Off" Code="ChangeSlitValeOfChamber1InProcessScreenTo RedClosed" />
+	<Property Name="ChangeSlitValeOfChamber2InProcessScreenTo On" Code="ChangeSlitValeOfChamber2InProcessScreenTo GreenOpened" />
+	<Property Name="ChangeSlitValeOfChamber2InProcessScreenTo Off" Code="ChangeSlitValeOfChamber2InProcessScreenTo RedClosed" />
+	<Property Name="ChangeSlitValeOfChamber3InProcessScreenTo On" Code="ChangeSlitValeOfChamber3InProcessScreenTo GreenOpened" />
+	<Property Name="ChangeSlitValeOfChamber3InProcessScreenTo Off" Code="ChangeSlitValeOfChamber3InProcessScreenTo RedClosed" />
+	<Property Name="ChangeSlitValeOfChamber4InProcessScreenTo On" Code="ChangeSlitValeOfChamber4InProcessScreenTo GreenOpened" />
+	<Property Name="ChangeSlitValeOfChamber4InProcessScreenTo Off" Code="ChangeSlitValeOfChamber4InProcessScreenTo RedClosed" />
+	<Property Name="ChangeSlitValeOfChamber5InProcessScreenTo On" Code="ChangeSlitValeOfChamber5InProcessScreenTo GreenOpened" />
+	<Property Name="ChangeSlitValeOfChamber5InProcessScreenTo Off" Code="ChangeSlitValeOfChamber5InProcessScreenTo RedClosed" />
+	<Property Name="ChangeSlitValeOfChamber6InProcessScreenTo On" Code="ChangeSlitValeOfChamber6InProcessScreenTo GreenOpened" />
+	<Property Name="ChangeSlitValeOfChamber6InProcessScreenTo Off" Code="ChangeSlitValeOfChamber6InProcessScreenTo RedClosed" />
+	<Property Name="ChangeSlitValeOfChamber7InProcessScreenTo On" Code="ChangeSlitValeOfChamber7InProcessScreenTo GreenOpened" />
+	<Property Name="ChangeSlitValeOfChamber7InProcessScreenTo Off" Code="ChangeSlitValeOfChamber7InProcessScreenTo RedClosed" />
+	<Property Name="ChangeHiVacOfLLAInProcessScreenTo On" Code="ChangeHiVacOfLLAInProcessScreenTo GreenOpened" />
+	<Property Name="ChangeHiVacOfLLAInProcessScreenTo Off" Code="ChangeHiVacOfLLAInProcessScreenTo RedClosed" />
+	<Property Name="ChangeHiVacOfLLBInProcessScreenTo On" Code="ChangeHiVacOfLLBInProcessScreenTo GreenOpened" />
+	<Property Name="ChangeHiVacOfLLBInProcessScreenTo Off" Code="ChangeHiVacOfLLBInProcessScreenTo RedClosed" />
+	
+	<Property Name="ChangeSlitValeOfChamber1InCassettesScreenTo On" Code="ChangeSlitValeOfChamber1InCassettesScreenTo GreenOpened" />
+	<Property Name="ChangeSlitValeOfChamber1InCassettesScreenTo Off" Code="ChangeSlitValeOfChamber1InCassettesScreenTo RedClosed" />
+	<Property Name="ChangeSlitValeOfChamber2InCassettesScreenTo On" Code="ChangeSlitValeOfChamber2InCassettesScreenTo GreenOpened" />
+	<Property Name="ChangeSlitValeOfChamber2InCassettesScreenTo Off" Code="ChangeSlitValeOfChamber2InCassettesScreenTo RedClosed" />
+	<Property Name="ChangeSlitValeOfChamber3InCassettesScreenTo On" Code="ChangeSlitValeOfChamber3InCassettesScreenTo GreenOpened" />
+	<Property Name="ChangeSlitValeOfChamber3InCassettesScreenTo Off" Code="ChangeSlitValeOfChamber3InCassettesScreenTo RedClosed" />
+	<Property Name="ChangeSlitValeOfChamber4InCassettesScreenTo On" Code="ChangeSlitValeOfChamber4InCassettesScreenTo GreenOpened" />
+	<Property Name="ChangeSlitValeOfChamber4InCassettesScreenTo Off" Code="ChangeSlitValeOfChamber4InCassettesScreenTo RedClosed" />
+	<Property Name="ChangeSlitValeOfChamber5InCassettesScreenTo On" Code="ChangeSlitValeOfChamber5InCassettesScreenTo GreenOpened" />
+	<Property Name="ChangeSlitValeOfChamber5InCassettesScreenTo Off" Code="ChangeSlitValeOfChamber5InCassettesScreenTo RedClosed" />
+	<Property Name="ChangeSlitValeOfChamber6InCassettesScreenTo On" Code="ChangeSlitValeOfChamber6InCassettesScreenTo GreenOpened" />
+	<Property Name="ChangeSlitValeOfChamber6InCassettesScreenTo Off" Code="ChangeSlitValeOfChamber6InCassettesScreenTo RedClosed" />
+	<Property Name="ChangeSlitValeOfChamber7InCassettesScreenTo On" Code="ChangeSlitValeOfChamber7InCassettesScreenTo GreenOpened" />
+	<Property Name="ChangeSlitValeOfChamber7InCassettesScreenTo Off" Code="ChangeSlitValeOfChamber7InCassettesScreenTo RedClosed" />
+	
+	<Property Name="ChangeSlitValeOfChamber1To On" Code="ChangeSlitValeOfChamber1To GreenOpened" />
+	<Property Name="ChangeSlitValeOfChamber1To Off" Code="ChangeSlitValeOfChamber1To RedClosed" />
+	<Property Name="ChangeSlitValeOfChamber2To On" Code="ChangeSlitValeOfChamber2To GreenOpened" />
+	<Property Name="ChangeSlitValeOfChamber2To Off" Code="ChangeSlitValeOfChamber2To RedClosed" />
+	<Property Name="ChangeSlitValeOfChamber3To On" Code="ChangeSlitValeOfChamber3To GreenOpened" />
+	<Property Name="ChangeSlitValeOfChamber3To Off" Code="ChangeSlitValeOfChamber3To RedClosed" />
+	<Property Name="ChangeSlitValeOfChamber4To On" Code="ChangeSlitValeOfChamber4To GreenOpened" />
+	<Property Name="ChangeSlitValeOfChamber4To Off" Code="ChangeSlitValeOfChamber4To RedClosed" />
+	<Property Name="ChangeSlitValeOfChamber5To On" Code="ChangeSlitValeOfChamber5To GreenOpened" />
+	<Property Name="ChangeSlitValeOfChamber5To Off" Code="ChangeSlitValeOfChamber5To RedClosed" />
+	
+	<Property Name="ChangeMechineOnlineInCassettesScreenTo ONLINE" Code="ChangeMechineOnlineInCassettesScreenTo Off" />
+	<Property Name="ChangeMechineOnlineInCassettesScreenTo OFFLINE" Code="ChangeMechineOnlineInCassettesScreenTo On" />
+		
+	<Property Name="ChangeLeftOnlineInCassettesScreenTo ONLINE" Code="ChangeLeftOnlineInCassettesScreenTo Off" />
+	<Property Name="ChangeLeftOnlineInCassettesScreenTo OFFLINE" Code="ChangeLeftOnlineInCassettesScreenTo On" />
+	
+	<Property Name="ChangeRightOnlineInCassettesScreenTo ONLINE" Code="ChangeRightOnlineInCassettesScreenTo Off" />
+	<Property Name="ChangeRightOnlineInCassettesScreenTo OFFLINE" Code="ChangeRightOnlineInCassettesScreenTo On" />
+	
+	<Property Name="ChangeHiVacOfLLAInCassettesScreenTo On" Code="ChangeHiVacOfLLAInCassettesScreenTo GreenOpened" />
+	<Property Name="ChangeHiVacOfLLAInCassettesScreenTo Off" Code="ChangeHiVacOfLLAInCassettesScreenTo RedClosed" />
+	<Property Name="ChangeHiVacOfLLBInCassettesScreenTo On" Code="ChangeHiVacOfLLBInCassettesScreenTo GreenOpened" />
+	<Property Name="ChangeHiVacOfLLBInCassettesScreenTo Off" Code="ChangeHiVacOfLLBInCassettesScreenTo RedClosed" />
+	
+	<Property Name="SetRobotLEDInCassettesScreenTo False" Code="SetRobotLEDInCassettesScreenTo Off" />
+	<Property Name="SetRobotLEDInCassettesScreenTo True" Code="SetRobotLEDInCassettesScreenTo On" />
+	
+	<Property Name="SetComunicationLEDOfLoadLockAInCassettesScreenTo False" Code="SetComunicationLEDOfLoadLockAInCassettesScreenTo Off" />
+	<Property Name="SetComunicationLEDOfLoadLockAInCassettesScreenTo True" Code="SetComunicationLEDOfLoadLockAInCassettesScreenTo On" />
+	
+	<Property Name="SetComunicationLEDOfLoadLockBInCassettesScreenTo False" Code="SetComunicationLEDOfLoadLockBInCassettesScreenTo Off" />
+	<Property Name="SetComunicationLEDOfLoadLockBInCassettesScreenTo True" Code="SetComunicationLEDOfLoadLockBInCassettesScreenTo On" />
+	
+	<Property Name="SetToolLEDInCassettesScreenTo False" Code="SetToolLEDInCassettesScreenTo Off" />
+	<Property Name="SetToolLEDInCassettesScreenTo True" Code="SetToolLEDInCassettesScreenTo On" />
+	
+	<Property Name="SetComunicationCryoOfLLAInCassettesPanelTo False" Code="SetComunicationCryoOfLLAInCassettesPanelTo Off" />
+	<Property Name="SetComunicationCryoOfLLAInCassettesPanelTo True" Code="SetComunicationCryoOfLLAInCassettesPanelTo On" />
+	
+	<Property Name="SetComunicationCryoOfLLBInCassettesPanelTo False" Code="SetComunicationCryoOfLLBInCassettesPanelTo Off" />
+	<Property Name="SetComunicationCryoOfLLBInCassettesPanelTo True" Code="SetComunicationCryoOfLLBInCassettesPanelTo On" />
+	
+	<Property Name="SetComunicationCryoOfTMInCassettesPanelTo False" Code="SetComunicationCryoOfTMInCassettesPanelTo Off" />
+	<Property Name="SetComunicationCryoOfTMInCassettesPanelTo True" Code="SetComunicationCryoOfTMInCassettesPanelTo On" />
+	
+	<Property Name="StartAlarm On" Code="StartAlarm KepServer Alarm" />
+</MessageNames>

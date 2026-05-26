@@ -1,0 +1,2011 @@
+Imports System.ComponentModel
+Imports AVPControls.AVPDataLib
+
+Public Class AVPControlBase
+    Implements ISupportInitialize
+
+#Region "Constants"
+    Private Const WM_DESTROY As Integer = &H2
+    Public Shared DEFAULT_ALPHA_VALUE As Byte = 85
+    Public Const EMPTY_REGION_NAME As String = "_EmptyRegionName"
+#End Region
+
+#Region "Fields"
+    Protected IsDestroyed As Boolean
+    ' AVP variables
+    Protected m_avpStyle As AVPStyles = AVPStyles.CX8
+    Private m_imgCtrl As Bitmap
+    'Private m_accessControlImageLocker As New Object
+    Private m_controlImageWidth As Integer
+    Private m_controlImageHeight As Integer
+    ' Create control region variables
+    ''' <summary>
+    ''' The field defines whether the control region is created from generated image.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Protected m_isCreateRegionControl As Boolean = True
+
+    ''' <summary>
+    ''' The field defines whether the control allow empty region.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Protected m_allowEmptyRegion As Boolean
+
+    ''' <summary>
+    ''' The alpha component of color that is transparent in the bitmap.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private m_alphaValueForRegion As Byte = DEFAULT_ALPHA_VALUE
+
+    ''' <summary>
+    ''' The bitmap defining the control shape when region is empty.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private m_patternBitmap As Bitmap
+
+    ''' <summary>
+    ''' The collection supporting the regions caching while controls are repeatedly created. 
+    ''' Allows the performance to be raised when creating a control. 
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private m_regions As Dictionary(Of String, Region) = New Dictionary(Of String, Region)
+
+    ''' <summary>
+    ''' The field defines whether to use the regions caching or to calculate them
+    ''' again every time when creating a control.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private m_useCachingRegion As Boolean
+
+    ''' <summary>
+    ''' This fields defines name of current region is used for control.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private m_currentRegionName As String
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-06-20</date>
+    ''' <summary>
+    ''' The field defines whether to use the cached image or to calculate it
+    ''' again every time when creating a control.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private m_keepControlImage As Boolean
+
+    Private m_isExternalImageCache As Boolean
+
+    ' Update view variables
+    Private m_isSuspendUpdateView As Boolean
+    Private m_suspendCount As Integer = 1
+    Protected IsInitialized As Boolean
+    Protected RequireInitializeForUpdateView As Boolean = True
+    ' Behavior variables
+    Private m_enableFormLevelDoubleBuffering As Boolean
+    Protected m_enableDoubleBuffered As Boolean = True
+    ' Tranparent variables
+    Private m_isTransparent As Boolean
+    Private m_opacity As Double
+    ' Appearance variables
+    Private m_isFitSize As Boolean = True
+    Private m_preFactor As Single = 1
+    Private m_scalingFactor As Single = 1
+    Private m_allowScaling As Boolean = True
+    Private m_scaleMode As AVPControlStyleModes = AVPControlStyleModes.Inherit
+    ' Rotating variables
+    Protected m_rotationAngle As Single
+    Private m_rotationMode As AVPControlStyleModes = AVPControlStyleModes.None
+    ' Image cache
+    Private m_images As Dictionary(Of String, Bitmap) = Nothing
+    ' Manual double buffer
+    Protected GraphicManager As BufferedGraphicsContext
+    Protected ManagedBackBuffer As BufferedGraphics
+    ' Flipping
+    Private m_horizontalFlip As Boolean
+    Private m_verticalFlip As Boolean
+
+    Private m_inScreen As AVPScreens
+    Protected m_chamberType As AVPChamberTypes
+
+    Private Delegate Sub UpdateControlView(ByVal rc As Rectangle)
+
+#End Region
+
+#Region "Event Declares"
+    ' Events declare
+    ''' <summary>
+    ''' Occurs when the control is finished updating view.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Event ViewUpdated As EventHandler
+    ''' <summary>
+    ''' Occurs when the control is updating view.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Event ViewUpdating As EventHandler
+    ''' <summary>
+    ''' Occurs when the AVPStyle property of this control changed.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Event AVPStyleChanged As EventHandler
+    ''' <summary>
+    ''' Occurs when the RotationMode property of this control changed
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Event RotationModeChanged As EventHandler
+    ''' <summary>
+    ''' Occurs when the ScaleMode property of this control changed.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Event ScaleModeChanged As EventHandler
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2016-01-20</date>
+    ''' </author>
+    ''' <summary>
+    ''' Occurs when chamber type property changed.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Event ChamberTypeChanged As EventHandler
+
+#End Region
+
+#Region "Properties"
+
+#Region "Viewing"
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-14</date>
+    ''' </author>
+    ''' <summary>
+    ''' Get or set a value indicates the generated image of this control.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Protected Property ControlImage() As Bitmap
+        Get
+            Return m_imgCtrl
+        End Get
+        Set(ByVal value As Bitmap)
+            m_imgCtrl = value
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-14</date>
+    ''' </author>
+    ''' <summary>
+    ''' Get or set a value indicates this control is in which style of AVP
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Property AVPStyle() As AVPStyles
+        Get
+            Return m_avpStyle
+        End Get
+        Set(ByVal value As AVPStyles)
+            If m_avpStyle <> value Then
+                m_avpStyle = value
+                Me.OnAVPStyleChanged(EventArgs.Empty)
+                Me.UpdateView()
+            End If
+        End Set
+    End Property
+
+    <DefaultValue(GetType(AVPScreens), "MaintenanceScreen")> _
+    Public Overridable Property InScreen() As AVPScreens
+        Get
+            Return m_inScreen
+        End Get
+        Set(ByVal value As AVPScreens)
+            If m_inScreen <> value Then
+                m_inScreen = value
+            End If
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2016-01-20</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicates chamber type of control.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(AVPChamberTypes), "Undefined")> _
+    Public Overridable Property ChamberType() As AVPChamberTypes
+        Get
+            Return m_chamberType
+        End Get
+        Set(ByVal value As AVPChamberTypes)
+            If m_chamberType = value Then
+                Return
+            End If
+
+            m_chamberType = value
+            OnChamberTypeChanged(EventArgs.Empty)
+            UpdateView()
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-17</date>
+    ''' </author>
+    ''' <summary>
+    ''' Get a value indicating whether this control is suspend update view.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Protected ReadOnly Property HasSuspendUpdate() As Boolean
+        Get
+            Return m_isSuspendUpdateView
+        End Get
+    End Property
+#End Region
+
+#Region "Regions"
+    Public ReadOnly Property CachingRegionCount() As Integer
+        Get
+            Return m_regions.Count
+        End Get
+    End Property
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-01 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Get or set a value indicating whether this control should create its region for match with background image
+    ''' </summary>
+    <DefaultValue(GetType(Boolean), "True"), Category("AVP Layout"), Description("Get or set a value indicating whether this control should create its region for match with background image.")> _
+    Public Property IsCreateRegionControl() As Boolean
+        Get
+            Return m_isCreateRegionControl
+        End Get
+        Set(ByVal value As Boolean)
+            If m_isCreateRegionControl <> value Then
+                m_isCreateRegionControl = value
+                If Not m_isCreateRegionControl Then
+                    Me.Region = Nothing
+                End If
+                Me.UpdateView()
+            End If
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-24 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a bitmap defining the control shape when region is empty.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Bitmap), "Nothing"), Category("AVP Layout"), Description("Gets or sets a bitmap defining the control shape when region is empty.")> _
+    Protected Property PatternBitmap() As Bitmap
+        Get
+            Return m_patternBitmap
+        End Get
+        Set(ByVal value As Bitmap)
+            m_patternBitmap = value
+            Try
+                If m_patternBitmap IsNot Nothing Then
+                    If m_regions.ContainsKey(EMPTY_REGION_NAME) Then
+                        Dim tmpRegion As Region = m_regions(EMPTY_REGION_NAME)
+
+                        If tmpRegion IsNot Nothing Then
+                            tmpRegion.Dispose()
+                        End If
+
+                        m_regions.Remove(EMPTY_REGION_NAME)
+                    End If
+
+                    Dim emptyRegion As Region = AVPGraphicsLib.GetRegion(m_patternBitmap, DEFAULT_ALPHA_VALUE)
+
+                    If emptyRegion IsNot Nothing Then
+                        m_regions(EMPTY_REGION_NAME) = emptyRegion
+                    End If
+                Else
+                    m_regions.Remove(EMPTY_REGION_NAME)
+                End If
+            Catch ex As Exception
+                Logger.Error(ex.ToString())
+            End Try
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-24 </date>
+    ''' </author>
+    ''' <summary>
+    ''' The property defining whether to use the regions caching or to calculate them again
+    ''' every time when creating a control.
+    ''' </summary>
+    <DefaultValue(GetType(Boolean), "False"), Category("AVP Layout"), Description("The property defining whether to use the regions caching or to calculate them again every time when creating a control.")> _
+    Protected Property UseCachingRegion() As Boolean
+        Get
+            Return m_useCachingRegion
+        End Get
+        Set(ByVal value As Boolean)
+            If m_useCachingRegion <> value Then
+                m_useCachingRegion = value
+            End If
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Get or set a value indicating whether this control region is allow empty.
+    ''' </summary>
+    <DefaultValue(GetType(Boolean), "False"), Category("AVP Layout"), Description("Get or set a value indicating whether this control region is allow empty.")> _
+    Protected Property IsAllowEmptyRegion() As Boolean
+        Get
+            Return m_allowEmptyRegion
+        End Get
+        Set(ByVal value As Boolean)
+            If m_allowEmptyRegion <> value Then
+                m_allowEmptyRegion = value
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-11 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Get or set a value indicates the alpha components value of pixels which be remove from region.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <Category("AVP Layout"), Description("Get or set a value indicates the alpha components value of pixels which be remove from region.")> _
+    Protected Property AlphaValueForRegion() As Byte
+        Get
+            Return m_alphaValueForRegion
+        End Get
+        Set(ByVal value As Byte)
+            If m_alphaValueForRegion <> value Then
+                m_alphaValueForRegion = value
+            End If
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-24 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicates name of cached region will be used for the region of control.
+    ''' </summary>
+    ''' <value>Empty if not use caching region.</value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Protected Property CurrentRegionName() As String
+        Get
+            Return m_currentRegionName
+        End Get
+        Set(ByVal value As String)
+            m_currentRegionName = value
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-06-20</date>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether the cached images are used.
+    ''' This property should be set at initialize method.
+    ''' When this property is True, it must be set CurrentImageName when generate control image.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Protected Property KeepControlImage() As Boolean
+        Get
+            Return m_keepControlImage
+        End Get
+        Set(ByVal value As Boolean)
+            m_keepControlImage = value
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-06-20</date>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether the cached images is external used.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Protected Property IsExternalImageCache() As Boolean
+        Get
+            Return m_isExternalImageCache
+        End Get
+        Private Set(ByVal value As Boolean)
+            m_isExternalImageCache = value
+        End Set
+    End Property
+
+#End Region
+
+#Region "Transparent"
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-27 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Set the opacity percentage of the control.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <System.ComponentModel.Browsable(True)> _
+    <System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Always)> _
+    <System.ComponentModel.DefaultValue(1.0R)> _
+    <System.ComponentModel.TypeConverter(GetType(OpacityConverter))> _
+    <System.ComponentModel.Description("Set the opacity percentage of the control.")> _
+    <System.ComponentModel.Category("AVP Control Style")> _
+    Public Overridable Property Opacity() As Double
+        Get
+            Return m_opacity
+        End Get
+        Set(ByVal value As Double)
+            If value = m_opacity Then
+                Return
+            End If
+            m_opacity = value
+            UpdateStyles()
+            Refresh()
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-01 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Get or set a value indicating whether the control should be tranparent to parent.
+    ''' </summary>
+    <System.ComponentModel.Browsable(True)> _
+    <System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Always)> _
+    <System.ComponentModel.DefaultValue(GetType(Boolean), "False")> _
+    <System.ComponentModel.Description("Enable control transparency.")> _
+    <System.ComponentModel.Category("AVP Control Style")> _
+    Protected Overridable Property IsTransparent() As Boolean
+        Get
+            Return m_isTransparent
+        End Get
+        Set(ByVal value As Boolean)
+            If value = m_isTransparent Then
+                Return
+            End If
+            m_isTransparent = value
+            Me.UpdateStyles()
+        End Set
+    End Property
+
+#End Region
+
+#Region "DoubleBuffering"
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-01 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Override for support modified params
+    ''' </summary>
+    Protected Overrides ReadOnly Property CreateParams() As System.Windows.Forms.CreateParams
+        Get
+            Dim cp As CreateParams = MyBase.CreateParams
+
+            ' For double buffering
+            If EnableFormLevelDoubleBuffering Then
+                Dim OSVer As Version = System.Environment.OSVersion.Version()
+                If OSVer.Major > 5 Then
+                    cp.ExStyle = cp.ExStyle Or &H2000000
+                End If
+                OSVer = Nothing
+            End If
+
+            ' For transparent
+            If m_isTransparent Then
+                cp.ExStyle = cp.ExStyle Or 32
+            End If
+
+            Return cp
+        End Get
+    End Property
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-04 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Get or set a value indicating whether this control and its childs enable double buffering.
+    ''' </summary>
+    <DefaultValue(GetType(Boolean), "False"), Category("AVP Behavior"), Description("Get or set a value indicating whether this control and its childs enable double buffering.")> _
+    Public Property EnableFormLevelDoubleBuffering() As Boolean
+        Get
+            Return m_enableFormLevelDoubleBuffering
+        End Get
+        Set(ByVal value As Boolean)
+            If m_enableFormLevelDoubleBuffering <> value Then
+                m_enableFormLevelDoubleBuffering = value
+            End If
+        End Set
+    End Property
+#End Region
+
+#Region "Scaling"
+    ''' <author>
+    '''    <name>Hai Tran</name>
+    '''    <date>2015-09-11</date>
+    ''' </author>
+    ''' <summary>
+    ''' Get or set a value indicates scaling factor of image which used for this control.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns>The scaling factor of image which used for control.</returns>
+    ''' <remarks>This property is take affected only when the IsAllowScaling property is set to True.</remarks>
+    <DefaultValue(GetType(Single), "1"), Category("AVP Appearance"), Description("Get or set a value indicates scaling factor of image which used for this control.")> _
+    Public Property ScalingFactor() As Single
+        Get
+            Return m_scalingFactor
+        End Get
+        Set(ByVal value As Single)
+            If m_scalingFactor <> value AndAlso value > 0 AndAlso m_scaleMode <> AVPControlStyleModes.None Then
+                m_preFactor = m_scalingFactor
+                m_scalingFactor = value
+                If Not Me.HasSuspendUpdate Then
+                    Me.PerformScale()
+                End If
+            End If
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-11</date>
+    ''' </author>
+    ''' <summary>
+    ''' Get or set a value indicates scale mode of this control.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(AVPControlStyleModes), "Inherit"), Category("AVP Appearance"), Description("Get or set a value indicates scale mode of this control.")> _
+    Public Property ScaleMode() As AVPControlStyleModes
+        Get
+            Return m_scaleMode
+        End Get
+        Set(ByVal value As AVPControlStyleModes)
+            If m_scaleMode <> value Then
+                m_scaleMode = value
+                OnScaleModeChanged(EventArgs.Empty)
+                Me.SetScaleFactor(1)
+                If m_scaleMode = AVPControlStyleModes.None Then
+                    m_allowScaling = False
+                Else
+                    m_allowScaling = True
+                End If
+            End If
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-11</date>
+    ''' </author>
+    ''' <summary>
+    ''' Get or set a value indicating whether the control size fits the generated image size.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Boolean), "True"), Category("AVP Appearance"), Description("Get or set a value indicating whether the control size fits the generated image size.")> _
+    Public Property IsFitSize() As Boolean
+        Get
+            Return m_isFitSize
+        End Get
+        Set(ByVal value As Boolean)
+            If m_isFitSize <> value Then
+                m_isFitSize = value
+                If Not Me.HasSuspendUpdate Then
+                    Me.SetSizeControl()
+                End If
+            End If
+        End Set
+    End Property
+#End Region
+
+#Region "Rotating"
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-17</date>
+    ''' </author>
+    ''' <summary>
+    ''' Get or set a value indicates the rotation angle of this control.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Single), "0"), Description("Get or set a value indicates the rotation angle of this control.")> _
+    Public Overridable Property RotationAngle() As Single
+        Get
+            Return m_rotationAngle
+        End Get
+        Set(ByVal value As Single)
+            If m_rotationAngle <> value Then
+                m_rotationAngle = value
+                If Not Me.HasSuspendUpdate Then
+                    PerformRotate()
+                End If
+            End If
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-17</date>
+    ''' </author>
+    ''' <summary>
+    ''' Get or set a value indicates the rotation mode of this control.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(AVPControlStyleModes), "None"), Description("Get or set a value indicates the rotation mode of this control.")> _
+    Public Property RotationMode() As AVPControlStyleModes
+        Get
+            Return m_rotationMode
+        End Get
+        Set(ByVal value As AVPControlStyleModes)
+            If m_rotationMode <> value Then
+                m_rotationMode = value
+                OnRotationModeChanged(EventArgs.Empty)
+                If Not Me.HasSuspendUpdate Then
+                    PerformRotate()
+                End If
+            End If
+        End Set
+    End Property
+#End Region
+
+#Region "Image Cache"
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-29</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicates the cache of image.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <Browsable(False), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)> _
+    Public Property ImageCache() As Dictionary(Of String, Bitmap)
+        Get
+            Return m_images
+        End Get
+        Set(ByVal value As Dictionary(Of String, Bitmap))
+            If IsExternalImageCache Then
+                If value IsNot Nothing Then
+                    m_images = value
+                Else
+                    m_images = New Dictionary(Of String, Bitmap)
+                    IsExternalImageCache = False
+                End If
+            Else
+                If value IsNot Nothing Then
+                    ' Clear pre-cache.
+                    Me.ClearCachingImage()
+
+                    ' Assign new cache.
+                    m_images = value
+
+                    IsExternalImageCache = True
+                End If
+            End If
+        End Set
+    End Property
+
+    Public ReadOnly Property CachingImageCount() As Integer
+        Get
+            If m_images IsNot Nothing Then
+                Return m_images.Count
+            End If
+            Return 0
+        End Get
+    End Property
+
+#End Region
+
+#Region "Flipping"
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2016-01-20</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether the control image should be flip on horizontal.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Boolean), "False")> _
+    Public Property HorizontalFlip() As Boolean
+        Get
+            Return m_horizontalFlip
+        End Get
+        Set(ByVal value As Boolean)
+            If m_horizontalFlip = value Then
+                Return
+            End If
+
+            m_horizontalFlip = value
+            UpdateView()
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2016-01-20</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether the control image should be flip on vertical.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Boolean), "False")> _
+    Public Property VerticalFlip() As Boolean
+        Get
+            Return m_verticalFlip
+        End Get
+        Set(ByVal value As Boolean)
+            If m_verticalFlip = value Then
+                Return
+            End If
+
+            m_verticalFlip = value
+            UpdateView()
+        End Set
+    End Property
+
+#End Region
+
+#End Region
+
+#Region "Methods"
+
+#Region "Overrides"
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-11-25 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Processes Windows messages.
+    ''' </summary>
+    ''' <param name="m"></param>
+    ''' <remarks></remarks>
+    Protected Overrides Sub WndProc(ByRef m As System.Windows.Forms.Message)
+        MyBase.WndProc(m)
+
+        Select Case m.Msg
+            Case WM_DESTROY
+                Me.IsDestroyed = True
+                Me.MemoryCleanup()
+
+        End Select
+
+    End Sub
+#End Region
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-01 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Generate image that is used for background image of control
+    ''' </summary>
+    Protected Overridable Function GenerateControlImage() As Bitmap
+        Return Nothing
+    End Function
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-01 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Set background image of control
+    ''' </summary>
+    Private Sub SetImageControl()
+        Try
+            ' Scale image
+            If m_allowScaling AndAlso m_scalingFactor <> 1 AndAlso m_imgCtrl IsNot Nothing Then
+                Dim scalingWidth As Integer = CInt(m_scalingFactor * Me.m_controlImageWidth)
+                Dim scalingHeight As Integer = CInt(m_scalingFactor * Me.m_controlImageHeight)
+                Dim scalingImage As New Bitmap(m_imgCtrl, scalingWidth, scalingHeight)
+                ChangeControlImage(scalingImage)
+            End If
+
+            ' Rotate image
+            If m_rotationMode <> AVPControlStyleModes.None AndAlso m_imgCtrl IsNot Nothing Then
+                Dim rotatedImage As Bitmap = AVPGraphicsLib.RotateImage(m_imgCtrl, m_rotationAngle, False)
+                ChangeControlImage(rotatedImage)
+            End If
+
+            ' Flip image
+            If m_imgCtrl IsNot Nothing Then
+                ' Copy to reserse original image if keep control image.
+                If KeepControlImage AndAlso (HorizontalFlip OrElse VerticalFlip) Then
+                    m_imgCtrl = New Bitmap(m_imgCtrl)
+                End If
+
+                If HorizontalFlip Then
+                    m_imgCtrl.RotateFlip(RotateFlipType.RotateNoneFlipX)
+                End If
+
+                If VerticalFlip Then
+                    m_imgCtrl.RotateFlip(RotateFlipType.RotateNoneFlipY)
+                End If
+            End If
+
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-47</date>
+    ''' </author>
+    ''' <summary>
+    ''' Change the image of control by release preview reference image and set new image.
+    ''' </summary>
+    ''' <param name="img"></param>
+    ''' <remarks></remarks>
+    Private Sub ChangeControlImage(ByVal img As Bitmap)
+        ' Hold preview image.
+        Dim tmpImg As Bitmap = m_imgCtrl
+
+        ' Set new image.
+        m_imgCtrl = img
+
+        ' Set width/height to variables for quick access.
+        If m_imgCtrl IsNot Nothing Then
+            Me.m_controlImageWidth = m_imgCtrl.Width
+            Me.m_controlImageHeight = m_imgCtrl.Height
+        Else
+            Me.m_controlImageWidth = 0
+            Me.m_controlImageHeight = 0
+        End If
+
+        ' Release preview image.
+        If Not KeepControlImage Then
+            If tmpImg IsNot Nothing Then
+                tmpImg.Dispose()
+                tmpImg = Nothing
+            End If
+        Else
+            tmpImg = Nothing
+        End If
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-12</date>
+    ''' </author>
+    ''' <summary>
+    ''' Set size of control when the IsFitSize is set to True. The size is calculated base on ScalingFactor property.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub SetSizeControl()
+        Try
+            ' Set size of control
+            If m_isFitSize Then
+                If Me.ControlImage IsNot Nothing Then
+                    Me.Size = New Size(Me.m_controlImageWidth, Me.m_controlImageHeight)
+                Else
+                    If m_preFactor <> m_scalingFactor Then
+                        Dim w As Single = Me.Width / m_preFactor * m_scalingFactor
+                        Dim h As Single = Me.Height / m_preFactor * m_scalingFactor
+                        Me.Size = New Size(CInt(w), CInt(h))
+                    End If
+                End If
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-13</date>
+    ''' </author>
+    ''' <summary>
+    ''' Set location of control when scaling. The location is calculated base on ScalingFactor property.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub SetLocationControl()
+        Try
+            ' Set location of control base on ScaleMode
+            If m_allowScaling AndAlso m_preFactor <> m_scalingFactor Then
+                Dim x As Single = Me.Location.X / m_preFactor * m_scalingFactor
+                Dim y As Single = Me.Location.Y / m_preFactor * m_scalingFactor
+                Me.Location = New Point(CInt(x), CInt(y))
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-12</date>
+    ''' </author>
+    ''' <summary>
+    ''' Set region of control
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub SetRegionControl()
+        Try
+            ' Set new region for control
+            If m_isCreateRegionControl AndAlso Me.ControlImage IsNot Nothing Then
+                Dim ctrlRegion As Region
+                Dim g As Graphics = Me.CreateGraphics
+                ' Use caching region or get new from control image.
+                If Not Me.DesignMode AndAlso UseCachingRegion AndAlso Not String.IsNullOrEmpty(CurrentRegionName) Then
+                    If Me.IsRegionCached(CurrentRegionName) Then
+                        ctrlRegion = GetCachingRegion(CurrentRegionName)
+                    Else
+                        ctrlRegion = AVPGraphicsLib.GetRegion(Me.ControlImage, m_alphaValueForRegion)
+                        If Not AVPGraphicsLib.IsRegionNullOrEmpty(ctrlRegion, g) Then
+                            Me.AddCachingRegion(CurrentRegionName, ctrlRegion)
+                        End If
+                    End If
+                Else
+                    ctrlRegion = AVPGraphicsLib.GetRegion(Me.ControlImage, m_alphaValueForRegion)
+                End If
+
+                ' If region is empty then get region from pattern bitmap
+                If Not IsAllowEmptyRegion AndAlso AVPGraphicsLib.IsRegionNullOrEmpty(ctrlRegion, g) Then
+                    If Me.IsRegionCached(EMPTY_REGION_NAME) Then
+                        ctrlRegion = GetCachingEmptyRegion()
+                    Else
+                        ctrlRegion = Nothing
+                    End If
+                End If
+
+                ' Set region of control.
+                ' NOTE: Control.Region stores the Region reference and disposes the old one automatically.
+                ' Do NOT dispose ctrlRegion here - the framework owns it after assignment.
+                Me.Region = ctrlRegion
+                ctrlRegion = Nothing
+
+                ' Clean up the Graphics object.
+                g.Dispose()
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Check region of control is empty or not
+    ''' </summary>
+    Protected Function IsRegionEmpty() As Boolean
+        Using gfxCheck As Graphics = Me.CreateGraphics()
+            Return AVPGraphicsLib.IsRegionNullOrEmpty(Me.Region, gfxCheck)
+        End Using
+    End Function
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-08-13 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Update background image of control by bitmap which is getted from function GenerateControlImage.
+    ''' </summary>
+    Public Overloads Sub UpdateView()
+        UpdateView(Me.ClientRectangle)
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2016-06-27 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Update background image of control by bitmap which is getted from function GenerateControlImage.
+    ''' </summary>
+    Public Overloads Sub UpdateView(ByVal rc As Rectangle)
+        If Me.IsDestroyed OrElse Me.IsDisposed Then
+            Return
+        End If
+
+        If Not m_isSuspendUpdateView AndAlso (Not Me.RequireInitializeForUpdateView OrElse (Me.RequireInitializeForUpdateView AndAlso Me.IsInitialized)) Then
+            ' Update control view.
+            If Me.InvokeRequired Then
+                Dim performUpdate As New UpdateControlView(AddressOf PerformView)
+                Me.BeginInvoke(performUpdate, rc)
+            Else
+                PerformView(rc)
+            End If
+
+            ' Reset value indicate no suspend update view.
+            m_suspendCount = 0
+        Else
+            ' Increase number of suspend view had taken.
+            m_suspendCount = 1
+        End If
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-10-02 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Use for internal.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub PerformView(ByVal rc As Rectangle)
+        Try
+            Dim img As Bitmap = Me.GenerateControlImage()
+
+            Me.ChangeControlImage(img)
+
+            If Me.ControlImage Is Nothing Then
+                Return
+            End If
+
+            ' Raise event before updating view.
+            OnViewUpdating(EventArgs.Empty)
+
+            ' Set image of control.
+            SetImageControl()
+
+            ' Suspent layout control.
+            Me.SuspendLayout()
+
+            ' Set size of control for Scale.
+            SetSizeControl()
+
+            ' Set region of control.
+            SetRegionControl()
+
+            ' Resume layout control.
+            Me.ResumeLayout(True)
+
+            ' Repaint control.
+            Dim paintGfx As Graphics = Graphics.FromHwnd(Me.Handle)
+            Try
+                Me.InvokePaint(Me, New PaintEventArgs(paintGfx, rc))
+            Finally
+                paintGfx.Dispose()
+            End Try
+
+            ' Raise event after updated view.
+            OnViewUpdated(EventArgs.Empty)
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-01 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Set the value indicating the control suspend update view all its child controls and itself.
+    ''' </summary>
+    Public Sub SuspendUpdateView()
+        Me.m_isSuspendUpdateView = True
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-04 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Set the value indicating the control not suspend and update view all its child controls, and do update view itself.
+    ''' </summary>
+    Public Sub ResumeUpdateView()
+        m_isSuspendUpdateView = False
+
+        ' Only update view when control has suspend update view
+        If Me.m_suspendCount > 0 Then
+            UpdateView()
+        End If
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-08-13 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Force the control to update view all its child controls and itself.
+    ''' </summary>
+    Public Overloads Sub PerformUpdateView()
+        If Me.HasChildren Then
+            For index As Integer = 0 To Me.Controls.Count - 1
+                If TypeOf Me.Controls(index) Is AVPControlBase Then
+                    CType(Me.Controls(index), AVPControlBase).ResumeUpdateView()
+                End If
+            Next
+        End If
+        Me.ResumeUpdateView()
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-09 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Force the control to update view all its child control and itself.
+    ''' </summary>
+    Public Overloads Sub PerformUpdateView(ByVal affectedControl As AVPControlBase)
+        If affectedControl IsNot Nothing Then
+            affectedControl.PerformUpdateView()
+        End If
+        Me.ResumeUpdateView()
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-04 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Refresh control display
+    ''' </summary>
+    Public Sub RefreshView()
+        If Me.IsDestroyed Then
+            Return
+        End If
+
+        Try
+            Dim isRegionEmpty As Boolean
+            Using gfxCheck As Graphics = Me.CreateGraphics()
+                isRegionEmpty = AVPGraphicsLib.IsRegionNullOrEmpty(Me.Region, gfxCheck)
+            End Using
+
+            ' Refresh control's parent at this control region
+            If Me.IsTransparent Then
+                If Me.Parent IsNot Nothing Then
+                    If Not isRegionEmpty Then
+                        Dim childToParentRegion As New Region(Me.Region.GetRegionData)
+                        childToParentRegion.Translate(Me.Left, Me.Top)
+                        Me.Parent.Invalidate(childToParentRegion)
+                        childToParentRegion.Dispose()
+                    Else
+                        Dim rect As Rectangle = Me.ClientRectangle
+                        rect.Offset(Me.Left, Me.Top)
+                        Me.Parent.Invalidate(rect)
+                        rect = Nothing
+                    End If
+                End If
+            End If
+
+            ' Refresh this control
+            If Not isRegionEmpty Then
+                Me.Invalidate(Me.Region)
+            Else
+                Me.Invalidate()
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''      <name>Hai Tran</name>
+    '''      <date>2015-09-12</date>
+    ''' </author>
+    ''' <summary>
+    ''' Force the control to update scaling factor all its child controls and itself.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Sub PerformScale()
+        Try
+            Me.UpdateView()
+
+            ' Apply scale for all child controls
+            PerformScaleChilds()
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''      <name>Hai Tran</name>
+    '''      <date>2015-09-23</date>
+    ''' </author>
+    ''' <summary>
+    ''' Force the control to update scaling factor all its child controls.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub PerformScaleChilds()
+        If Me.HasChildren AndAlso m_scaleMode <> AVPControlStyleModes.ControlOnly Then
+            For index As Integer = 0 To Me.Controls.Count - 1
+                If TypeOf Me.Controls(index) Is AVPControlBase Then
+                    Dim ctrl As AVPControlBase = CType(Me.Controls(index), AVPControlBase)
+                    If ctrl.m_scaleMode = AVPControlStyleModes.Inherit Then
+                        ctrl.ScalingFactor = Me.ScalingFactor
+                        ctrl.SetLocationControl()
+                    End If
+                    ctrl = Nothing
+                End If
+            Next
+        End If
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-13</date>
+    ''' </author>
+    ''' <summary>
+    ''' Set scaling factor of this control
+    ''' </summary>
+    ''' <param name="value"></param>
+    ''' <remarks></remarks>
+    Private Sub SetScaleFactor(ByVal value As Single)
+        If value > 0 Then
+            m_preFactor = m_scalingFactor
+            m_scalingFactor = value
+            Me.PerformScale()
+        End If
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-17</date>
+    ''' </author>
+    ''' <summary>
+    ''' Force the control to update rotation angle all its child controls and itself.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Sub PerformRotate()
+        Try
+            Me.UpdateView()
+
+            ' Apply rotation for all its child controls.
+            PerformRotateChilds()
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-23</date>
+    ''' </author>
+    ''' <summary>
+    ''' Force the control to update rotation angle all its child controls.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub PerformRotateChilds()
+        If Me.HasChildren AndAlso m_rotationMode <> AVPControlStyleModes.ControlOnly Then
+            For index As Integer = 0 To Me.Controls.Count - 1
+                If TypeOf Me.Controls(index) Is AVPControlBase Then
+                    Dim ctrl As AVPControlBase = CType(Me.Controls(index), AVPControlBase)
+                    If ctrl.RotationMode = AVPControlStyleModes.Inherit Then
+                        ctrl.RotationAngle = Me.m_rotationAngle
+                    End If
+                    ctrl = Nothing
+                End If
+            Next
+        End If
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-23</date>
+    ''' </author>
+    ''' <summary>
+    ''' Draw image of control.
+    ''' </summary>
+    ''' <param name="g"></param>
+    ''' <remarks></remarks>
+    Protected Overridable Sub DrawControlImage(ByVal g As Graphics)
+        Try
+            If m_imgCtrl IsNot Nothing AndAlso Me.m_controlImageWidth > 0 AndAlso Me.m_controlImageHeight > 0 Then
+                g.DrawImage(m_imgCtrl, 0, 0, Me.m_controlImageWidth, Me.m_controlImageHeight)
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2016-01-20</date>
+    ''' </author>
+    ''' <summary>
+    ''' Draw image of control to specified graphics at specified location.
+    ''' </summary>
+    ''' <param name="g"></param>
+    ''' <param name="x"></param>
+    ''' <param name="y"></param>
+    ''' <remarks></remarks>
+    Public Sub DrawControlImage(ByRef g As Graphics, ByVal x As Single, ByVal y As Single)
+        Try
+            If m_imgCtrl IsNot Nothing AndAlso Me.m_controlImageWidth > 0 AndAlso Me.m_controlImageHeight > 0 Then
+                g.DrawImage(m_imgCtrl, x, y, Me.m_controlImageWidth, Me.m_controlImageHeight)
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-29</date>
+    ''' </author>
+    ''' <summary>
+    ''' Draw control.
+    ''' </summary>
+    ''' <param name="g"></param>
+    ''' <remarks></remarks>
+    Protected Overridable Sub DrawControl(ByVal g As Graphics)
+        Try
+            ' Draw background.
+            DrawBackground(g)
+
+            ' Draw image of control.
+            DrawControlImage(g)
+
+            ' Draw control disable.
+            'If Not Me.Enabled AndAlso Not g.IsVisibleClipEmpty Then
+            '    AVPGraphicsLib.DrawDisable(g)
+            'End If
+
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-10-01</date>
+    ''' </author>
+    ''' <summary>
+    ''' Do paint control with specified optional.
+    ''' </summary>
+    ''' <param name="g"></param>
+    ''' <remarks></remarks>
+    Private Sub DoPaint(ByVal g As Graphics)
+        Try
+            ' Check for sure control is initialized. 
+            If (Me.RequireInitializeForUpdateView AndAlso Not Me.IsInitialized) OrElse Me.IsDestroyed OrElse Me.IsDisposed OrElse Me.ControlImage Is Nothing Then
+                Exit Sub
+            End If
+
+            ' If Transparent, draw directly to control graphics. 
+            ' Else draw to buffered graphics. 
+            If Me.IsTransparent Then
+                DrawControl(g)
+
+            Else
+                ' Clear buffered graphics.
+                ManagedBackBuffer.Graphics.Clear(Me.BackColor)
+
+                ' Draw to buffered graphics.
+                DrawControl(ManagedBackBuffer.Graphics)
+
+                ' Render to control graphics.
+                ManagedBackBuffer.Render(g)
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-23</date>
+    ''' </author>
+    ''' <summary>
+    ''' Draw background of control.
+    ''' </summary>
+    ''' <param name="g"></param>
+    ''' <remarks></remarks>
+    Public Overridable Sub DrawBackground(ByVal g As Graphics)
+        If Me.IsTransparent OrElse Me.BackColor = Color.Transparent OrElse Me.Region Is Nothing Then
+            Return
+        End If
+
+        Using sb As New SolidBrush(Me.BackColor)
+            g.FillRegion(sb, g.Clip)
+            sb.Dispose()
+        End Using
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-28</date>
+    ''' </author>
+    ''' <summary>
+    ''' Clean up memory on Application exit or control is disposed.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Protected Overridable Sub MemoryCleanup()
+        Try
+            If Not Me.DesignMode OrElse Not Me.KeepControlImage Then
+                Me.ReleaseBitmap(m_imgCtrl)
+                Me.ReleaseBitmap(m_patternBitmap)
+
+                If m_regions IsNot Nothing AndAlso m_regions.Count > 0 Then
+                    For Each key As String In m_regions.Keys
+                        m_regions(key).Dispose()
+                    Next
+                    m_regions.Clear()
+                End If
+
+                If m_images IsNot Nothing AndAlso m_images.Count > 0 Then
+                    If Not IsExternalImageCache Then
+                        For Each key As String In m_images.Keys
+                            m_images(key).Dispose()
+                        Next
+                    End If
+                    m_images.Clear()
+                End If
+
+                If (ManagedBackBuffer IsNot Nothing) Then
+                    ManagedBackBuffer.Dispose()
+                    ManagedBackBuffer = Nothing
+                End If
+            End If
+        Catch ex As Exception
+            ' Ignore any errors (Do not log because Logger maybe disposed)
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-11-27</date>
+    ''' </author>
+    ''' <summary>
+    ''' Clean up bitmap object.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Protected Sub ReleaseBitmap(ByRef bmp As Bitmap)
+        If bmp IsNot Nothing Then
+            bmp.Dispose()
+            bmp = Nothing
+        End If
+    End Sub
+#End Region
+
+#Region "Caching Region Methods"
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-24</date>
+    ''' </author>
+    ''' <summary>
+    ''' Add specified region to cache.
+    ''' </summary>
+    ''' <param name="name"></param>
+    ''' <param name="value"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Protected Function AddCachingRegion(ByVal name As String, ByVal value As Region) As Boolean
+        Dim isAdded As Boolean
+        Try
+            If Not m_regions.ContainsKey(name) AndAlso value IsNot Nothing Then
+                m_regions.Add(name, New Region(value.GetRegionData))
+                isAdded = True
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return isAdded
+    End Function
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-24</date>
+    ''' </author>
+    ''' <summary>
+    ''' Get cached region by specified name.
+    ''' </summary>
+    ''' <param name="name"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Protected Function GetCachingRegion(ByVal name As String) As Region
+        Try
+            If m_regions.ContainsKey(name) Then
+                Return New Region(m_regions.Item(name).GetRegionData)
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return Nothing
+    End Function
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-24</date>
+    ''' </author>
+    ''' <summary>
+    ''' Get region which getting from pattern bitmap when the region of control is empty.
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Protected Function GetCachingEmptyRegion() As Region
+        Return GetCachingRegion(EMPTY_REGION_NAME)
+    End Function
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-24</date>
+    ''' </author>
+    ''' <summary>
+    ''' Clear caching regions.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Protected Sub ClearCachingRegion()
+        Try
+            m_regions.Clear()
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-24</date>
+    ''' </author>
+    ''' <summary>
+    ''' Indicates whether the specified named region is cached.
+    ''' </summary>
+    ''' <param name="name"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Protected Function IsRegionCached(ByVal name As String) As Boolean
+        Try
+            If m_regions Is Nothing Then
+                Return False
+            End If
+            Return m_regions.ContainsKey(name)
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return False
+    End Function
+#End Region
+
+#Region "Image Cache Methods"
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-29</date>
+    ''' </author>
+    ''' <summary>
+    ''' Add specified image to cache.
+    ''' </summary>
+    ''' <param name="name"></param>
+    ''' <param name="value"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Protected Function AddCachingImage(ByVal name As String, ByVal value As Bitmap, Optional ByVal shouldCopy As Boolean = True) As Boolean
+        If (Me.DesignMode AndAlso Not KeepControlImage) OrElse String.IsNullOrEmpty(name) OrElse value Is Nothing Then
+            Return False
+        End If
+
+        Dim isAdded As Boolean
+        Try
+            If m_images Is Nothing Then
+                If Not IsExternalImageCache Then
+                    m_images = New Dictionary(Of String, Bitmap)
+                End If
+            End If
+
+            If m_images IsNot Nothing Then
+                If m_images.ContainsKey(name) Then
+                    Dim oldImage As Bitmap = m_images(name)
+
+                    If shouldCopy Then
+                        m_images(name) = New Bitmap(value)
+                    Else
+                        m_images(name) = value
+                    End If
+
+                    If oldImage IsNot Nothing AndAlso shouldCopy Then
+                        oldImage.Dispose()
+                    End If
+                Else
+                    If shouldCopy Then
+                        m_images.Add(name, New Bitmap(value))
+                    Else
+                        m_images.Add(name, value)
+                    End If
+                End If
+
+                isAdded = True
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return isAdded
+    End Function
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-06-22</date>
+    ''' <summary>
+    ''' Remove cached image.
+    ''' </summary>
+    Protected Sub RemoveCachingImage(ByVal name As String, Optional ByVal releaseOldImage As Boolean = True)
+        Try
+            If m_images IsNot Nothing AndAlso m_images.ContainsKey(name) Then
+                Dim img As Bitmap = m_images(name)
+
+                m_images.Remove(name)
+
+                If releaseOldImage AndAlso img IsNot Nothing Then
+                    img.Dispose()
+                End If
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-29</date>
+    ''' </author>
+    ''' <summary>
+    ''' Get cached image by specified name.
+    ''' </summary>
+    ''' <param name="name"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Protected Function GetCachingImage(ByVal name As String) As Bitmap
+        If String.IsNullOrEmpty(name) Then
+            Return Nothing
+        End If
+
+        Try
+            If m_images IsNot Nothing Then
+                If m_images.ContainsKey(name) Then
+                    Return m_images.Item(name)
+                End If
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return Nothing
+    End Function
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-29</date>
+    ''' </author>
+    ''' <summary>
+    ''' Clear image cache.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Protected Sub ClearCachingImage()
+        Try
+            If m_images IsNot Nothing Then
+                For Each imgItem As Bitmap In m_images.Values
+                    imgItem.Dispose()
+                Next
+                m_images.Clear()
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-29</date>
+    ''' </author>
+    ''' <summary>
+    ''' Indicates whether the specified named image is cached.
+    ''' </summary>
+    ''' <param name="name"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Protected Function IsImageCached(ByVal name As String) As Boolean
+        If String.IsNullOrEmpty(name) Then
+            Return False
+        End If
+
+        Try
+            If m_images Is Nothing Then
+                Return False
+            End If
+            Return m_images.ContainsKey(name)
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return False
+    End Function
+#End Region
+
+#Region "Events"
+    Public Sub New()
+
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        Try
+            ' Transparent initialization
+            SetStyle(ControlStyles.SupportsTransparentBackColor, True)
+            SetStyle(ControlStyles.Opaque, False)
+            SetStyle(ControlStyles.AllPaintingInWmPaint, True)
+            SetStyle(ControlStyles.UserPaint, True)
+            Me.DoubleBuffered = True
+            UpdateStyles()
+            m_opacity = 1.0R
+
+            ' Suppend update view on create control
+            Me.SuspendUpdateView()
+
+            ' Manual double buffered
+            GraphicManager = BufferedGraphicsManager.Current
+            GraphicManager.MaximumBuffer = New Size(Me.Width + 1, Me.Height + 1)
+            Dim initGfx As Graphics = Me.CreateGraphics()
+            Try
+                ManagedBackBuffer = GraphicManager.Allocate(initGfx, ClientRectangle)
+            Finally
+                initGfx.Dispose()
+            End Try
+
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-25</date>
+    ''' </author>
+    ''' <summary>
+    ''' Suspend update view when control invisible for improve performance.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub AVPControlBase_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.VisibleChanged
+        Try
+            If Me.DesignMode Then
+                Return
+            End If
+
+            If Me.Visible Then
+                If Me.HasSuspendUpdate Then
+                    Me.ResumeUpdateView()
+                End If
+            Else
+                Me.SuspendUpdateView()
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''    	<name> Hai Tran </name>
+    '''    	<date> 2015-09-01 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Don't paint background, only draw background image. For support tranparent
+    ''' </summary>
+    Protected Overrides Sub OnPaintBackground(ByVal e As System.Windows.Forms.PaintEventArgs)
+        Try
+            If m_isTransparent AndAlso (Not m_isCreateRegionControl OrElse (m_isCreateRegionControl AndAlso Me.ControlImage Is Nothing)) Then
+                If (Me.BackgroundImage IsNot Nothing) Then
+                    e.Graphics.DrawImage(Me.BackgroundImage, 0, 0, Me.BackgroundImage.Width, Me.BackgroundImage.Height)
+                End If
+            Else
+                MyBase.OnPaintBackground(e)
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''    	<name> Hai Tran </name>
+    '''    	<date> 2015-09-04 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Don't paint background, only draw background image. For support tranparent
+    ''' </summary>
+    Protected Overrides Sub OnPaint(ByVal e As System.Windows.Forms.PaintEventArgs)
+        Try
+            MyBase.OnPaint(e)
+
+            Me.DoPaint(e.Graphics)
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''    	<name> Hai Tran </name>
+    '''    	<date> 2015-09-04 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Raises the UpdatedView event.
+    ''' </summary>
+    Protected Overridable Sub OnViewUpdated(ByVal e As EventArgs)
+        RaiseEvent ViewUpdated(Me, e)
+    End Sub
+
+    ''' <author>
+    '''    	<name> Hai Tran </name>
+    '''    	<date> 2015-09-11 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Raises the UpdatingView event.
+    ''' </summary>
+    Protected Overridable Sub OnViewUpdating(ByVal e As EventArgs)
+        RaiseEvent ViewUpdating(Me, e)
+    End Sub
+
+    ''' <author>
+    '''    	<name> Hai Tran </name>
+    '''    	<date> 2015-09-14 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Raises the AVPStyleChanged event.
+    ''' </summary>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Protected Overridable Sub OnAVPStyleChanged(ByVal e As EventArgs)
+        RaiseEvent AVPStyleChanged(Me, e)
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-18</date>
+    ''' </author>
+    ''' <summary>
+    ''' Raises the RotationModeChanged event.
+    ''' </summary>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Protected Overridable Sub OnRotationModeChanged(ByVal e As EventArgs)
+        RaiseEvent RotationModeChanged(Me, e)
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-18</date>
+    ''' </author>
+    ''' <summary>
+    ''' Raises the ScaleModeChanged event.
+    ''' </summary>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Protected Overridable Sub OnScaleModeChanged(ByVal e As EventArgs)
+        RaiseEvent ScaleModeChanged(Me, e)
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-09-27</date>
+    ''' </author>
+    ''' <summary>
+    ''' Invalidate control when resize.
+    ''' </summary>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Protected Overrides Sub OnResize(ByVal e As System.EventArgs)
+        MyBase.OnResize(e)
+
+        Try
+            ' Update buffer when resize
+            GraphicManager.MaximumBuffer = New Size(Me.Width + 1, Me.Height + 1)
+            Dim tempBuffered As BufferedGraphics = ManagedBackBuffer
+            Dim resizeGfx As Graphics = Me.CreateGraphics()
+            Try
+                ManagedBackBuffer = GraphicManager.Allocate(resizeGfx, ClientRectangle)
+            Finally
+                resizeGfx.Dispose()
+            End Try
+
+            ' Release preview buffer
+            If tempBuffered IsNot Nothing Then
+                tempBuffered.Dispose()
+            End If
+
+            ' Invalidate
+            Invalidate()
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2016-01-20</date>
+    ''' </author>
+    ''' <summary>
+    ''' Raise the ChamberTypeChanged event.
+    ''' </summary>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Protected Overridable Sub OnChamberTypeChanged(ByVal e As EventArgs)
+        RaiseEvent ChamberTypeChanged(Me, e)
+    End Sub
+
+#End Region
+
+#Region "Support Initialize"
+    Public Sub BeginInit() Implements System.ComponentModel.ISupportInitialize.BeginInit
+        Try
+            ' Suspend update view.
+            Me.SuspendUpdateView()
+
+            ' Suspend update layout.
+            Me.SuspendLayout()
+
+            ' Indicates control is not initialized.
+            Me.IsInitialized = False
+
+            ' Do something before initialize.
+            OnBeginInit()
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    Public Sub EndInit() Implements System.ComponentModel.ISupportInitialize.EndInit
+        Try
+            ' Do something after initialize.
+            OnEndInit()
+
+            ' Affect styles.
+            Me.UpdateStyles()
+
+            ' Scale childs.
+            Me.PerformScaleChilds()
+
+            ' Rotate childs.
+            Me.PerformRotateChilds()
+
+            ' Indicates control is initialized.
+            Me.IsInitialized = True
+
+            ' Resume update layout.
+            Me.ResumeLayout(True)
+
+            ' Resume update view.
+            Me.ResumeUpdateView()
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    Protected Overridable Sub OnBeginInit()
+        ' Do on begin initialize in child
+    End Sub
+
+    Protected Overridable Sub OnEndInit()
+        ' Do end begin initialize in child
+    End Sub
+#End Region
+
+End Class

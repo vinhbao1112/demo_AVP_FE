@@ -1,0 +1,1182 @@
+﻿<!--  System # 1 -->
+<MessageName>
+    <Name>ChangeMachineOnlineInCORONAChamberTo</Name>
+    <Code>PVD4.PopUpPanel.btnOnline</Code>
+</MessageName>
+<MessageName>
+    <Name>SetOnlineCORONAInProcessScreenTo</Name>
+    <Code>ProcessPanel.cbcPVD4.Header</Code>
+</MessageName>
+<MessageName>
+    <Name>SetCORONA_ConnectionStatusInProcessModuleTo</Name>
+    <Code>PVD4.btnReConnect</Code>
+</MessageName>
+<MessageName>
+	<Name>SetOverride_Mode</Name>
+	<Code>PVD4.btnOverrideMode</Code>
+</MessageName>
+<MessageName>
+	<Name>SetTarget1_Kwh_Usage</Name>
+	<Code>PVD4.txtKwhUsageTarget1</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetTarget2_Kwh_Usage</Name>
+	<Code>PVD4.txtKwhUsageTarget2</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetTarget3_Kwh_Usage</Name>
+	<Code>PVD4.txtKwhUsageTarget3</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetTarget4_Kwh_Usage</Name>
+	<Code>PVD4.txtKwhUsageTarget4</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetTarget1_Shield_Quart</Name>
+	<Code>PVD4.txtShieldQuartTarget1</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetTarget2_Shield_Quart</Name>
+	<Code>PVD4.txtShieldQuartTarget2</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetTarget3_Shield_Quart</Name>
+	<Code>PVD4.txtShieldQuartTarget3</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetTarget4_Shield_Quart</Name>
+	<Code>PVD4.txtShieldQuartTarget4</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+  <MessageName>
+    <Name>SetPVD4Chamber_SetIncreaseWaferCount</Name>
+    <Code>PVD4.txtPMWaferCount</Code>
+  </MessageName> 
+<!--  Recipe_Processing #2 -->
+<MessageName>
+	<Name>SetProcess_Wafer_ID</Name>
+	<Code>PVD4.ProcessMonitor.txtWaferID</Code>
+</MessageName>
+<MessageName>
+	<Name>SetProcess_Recipe_Name</Name>
+	<Code>PVD4.ProcessMonitor.txtRecipe</Code>
+</MessageName>
+<MessageName>
+	<Name>SetProcess_Total_Time</Name>
+	<Code>PVD4.ProcessMonitor.txtTotalTime</Code>
+</MessageName>
+  <MessageName>
+    <Name>SetProcessStatusInProcessModule</Name>
+    <Code>PVD4.ProcessMonitor.txtStatus</Code>
+  </MessageName>
+<MessageName>
+	<Name>SetProcess_Control_Device_Start</Name>
+	<Code>PVD4.RunRecipe.btnStart</Code>
+</MessageName>
+<MessageName>
+	<Name>SetProcess_Control_Device_Stop</Name>
+	<Code>PVD4.RunRecipe.btnStart</Code>
+</MessageName>
+<MessageName>
+	<Name>SetProcess_Control_Device_Pause</Name>
+	<Code>PVD4.RunRecipe.btnPause</Code>
+</MessageName>
+<MessageName>
+	<Name>SetProcess_Control_Device_Continue</Name>
+	<Code>PVD4.RunRecipe.btnPause</Code>
+</MessageName>
+<MessageName>
+	<Name>SetProcess_Control_SetRecipeNameTo</Name>
+	<Code>PVD4.RunRecipe.txtProcessRecipe</Code>
+</MessageName>
+<MessageName>
+	<Name>SetProcess_Remaining_Time</Name>
+	<Code>PVD4.ProcessMonitor.txtProcessTime</Code>
+</MessageName>
+<MessageName>
+	<Name>SetProcess_Elapsed_Time</Name>
+	<Code>PVD4.ProcessMonitor.txtStepTime</Code>
+</MessageName>
+<MessageName>
+	<Name>SetProcess_Current_Step</Name>
+	<Code>PVD4.ProcessMonitor.txtProcessStep</Code>
+</MessageName>
+<MessageName>
+	<Name>SetWafer_Processing_Status_Readback</Name>
+	<Code>PVD4.CoronaChamber.Wafer1</Code>
+</MessageName>
+<MessageName>
+	<Name>SetProcess_ModeTo</Name>
+	<Code>PVD4.ProcessMonitor.txtProcessMode</Code>
+</MessageName>
+<MessageName>
+	<Name>SetProcess_Revolution_CountTo</Name>
+	<Code>PVD4.ProcessMonitor.txtRevolutionCount</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+    <Name>SetProcess_Control_Get_Run_Data_File_Name</Name>
+    <Code>WaferRun.btnRefresh</Code>
+</MessageName>
+
+<!--  Sequences # 3 -->
+<MessageName>
+	<Name>SetAuto_Pumpdown_Seq</Name>
+	<Code>PVD4.PopUpPanel.btnAutoPumpDown</Code>
+</MessageName>
+<MessageName>
+	<Name>SetAuto_Vent_Seq</Name>
+	<Code>PVD4.PopUpPanel.btnAutoVent</Code>
+</MessageName>
+<MessageName>
+	<Name>SetPump_Purge_Seq</Name>
+	<Code>PVD4.PopUpPanel.btnPumpPurge</Code>
+</MessageName>
+<MessageName>
+	<Name>SetIG_Degas_Seq</Name>
+	<Code>PVD4.PopUpPanel.btnIGDegas</Code>
+</MessageName>
+<MessageName>
+	<Name>SetShutdown_Power_Seq</Name>
+	<Code>PVD4.PopUpPanel.btnShutDownPower</Code>
+</MessageName>
+<MessageName>
+	<Name>SetInitialized_Motion</Name>
+	<Code>PVD4.TableControl.btnHOME</Code>
+</MessageName>
+<MessageName>
+	<Name>SetAuto_Power_Seq</Name>
+	<Code>PVD4.btnACPower</Code>
+</MessageName>
+<MessageName>
+    <Name>SetNameOfAutoSequenceRunning</Name>
+    <Code>PVD4.lblNameOfSequenceRunning</Code>
+</MessageName>
+
+<!--  Gasses # 4 -->
+<MessageName>
+	<Name>SetGas1_Shutoff_Valve</Name>
+	<Code>PVD4.Gas1ShutOffValve</Code>
+</MessageName>
+<MessageName>
+	<Name>SetGas2_Shutoff_Valve</Name>
+	<Code>PVD4.Gas2ShutOffValve</Code>
+</MessageName>
+<MessageName>
+	<Name>SetGas3_Shutoff_Valve</Name>
+	<Code>PVD4.Gas3ShutOffValve</Code>
+</MessageName>
+<MessageName>
+	<Name>SetGas4_Shutoff_Valve</Name>
+	<Code>PVD4.Gas4ShutOffValve</Code>
+</MessageName>
+<MessageName>
+	<Name>SetGas5_Shutoff_Valve</Name>
+	<Code>PVD4.Gas5ShutOffValve</Code>
+</MessageName>
+
+<MessageName>
+	<Name>SetGas1_Flowrate_Readback</Name>
+	<Code>PVD4.GasController.txtGas1</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetGas2_Flowrate_Readback</Name>
+	<Code>PVD4.GasController.txtGas2</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetGas3_Flowrate_Readback</Name>
+	<Code>PVD4.GasController.txtGas3</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetGas4_Flowrate_Readback</Name>
+	<Code>PVD4.GasController.txtGas4</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetGas5_Flowrate_Readback</Name>
+	<Code>PVD4.GasController.txtGas5</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+
+<MessageName>
+	<Name>SetGas1_Flowrate_Program</Name>
+	<Code>PVD4.GasController.txtGas1Right</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetGas2_Flowrate_Program</Name>
+	<Code>PVD4.GasController.txtGas2Right</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetGas3_Flowrate_Program</Name>
+	<Code>PVD4.GasController.txtGas3Right</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetGas4_Flowrate_Program</Name>
+	<Code>PVD4.GasController.txtGas4Right</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetGas5_Flowrate_Program</Name>
+	<Code>PVD4.GasController.txtGas5Right</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+
+<MessageName>
+	<Name>SetMain_Dist_Valve</Name>
+	<Code>PVD4.MainDistValve</Code>
+</MessageName>
+<MessageName>
+	<Name>SetIG_Isolation_Valve</Name>
+	<Code>PVD4.IGIsolationValve</Code>
+</MessageName>
+<MessageName>
+	<Name>SetSec_Dist_Valve</Name>
+	<Code>PVD4.SecDistValve</Code>
+</MessageName>
+
+<!--  Valves  # 5 -->
+<MessageName>
+	<Name>SetRough_Valve_Status</Name>
+	<Code>PVD4.ValveRough</Code>
+</MessageName>
+<MessageName>
+	<Name>SetVent_Valve_Status</Name>
+	<Code>PVD4.ValveVent</Code>
+</MessageName>
+<MessageName>
+	<Name>SetIsolation_Valve_Status</Name>
+	<Code>PVD4.CoronaChamber.btnMesaValve</Code>
+</MessageName>
+<MessageName>
+	<Name>SetHivac_Valve_Status</Name>
+	<Code>PVD4.btnHivacValve</Code>
+</MessageName>
+<MessageName>
+	<Name>SetForeline_Valve_Status</Name>
+	<Code>PVD4.ValveForeline</Code>
+</MessageName>
+<MessageName>
+	<Name>SetBaratron_Valve_Status</Name>
+	<Code>PVD4.ValveBaratron</Code>
+</MessageName>
+
+<!--  Pressure # 6 -->
+<MessageName>
+	<Name>SetIG_Pressure</Name>
+	<Code>PVD4.CoronaPressure.txtIGPressure</Code>
+	<OutputType>Scientific</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetIG_Status</Name>
+	<Code>PVD4.CoronaPressure.btnIGStatus</Code>
+</MessageName>
+<MessageName>
+	<Name>SetCG_Pressure</Name>
+	<Code>PVD4.CoronaPressure.txtCGPressure</Code>
+	<OutputType>Scientific</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBaratron_Pressure</Name>
+	<Code>PVD4.BAControl.txtInformation</Code>
+	<OutputType>Demical</OutputType>
+</MessageName>
+
+<MessageName>
+	<Name>SetForeline_CG_Pressure</Name>
+	<Code>PVD4.txtForelineCG</Code>
+	<OutputType>Scientific</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetForeline_CG_Relay_Status</Name>
+	<Code>PVD4.btnForeLineCGRelay</Code>
+</MessageName>
+
+
+<MessageName>
+	<Name>SetMechanical_Pump_CG_Pressure</Name>
+	<Code>PVD4.MechanicalPump</Code>
+	<OutputType>Scientific</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetMechanical_Pump_CG_Relay_Status</Name>
+	<Code>PVD4.btnRelayIndicatorPump</Code>
+</MessageName>
+<MessageName>
+	<Name>SetMechanical_Pump_Status</Name>
+	<Code>PVD4.MechanicalPump</Code>
+</MessageName>
+<MessageName>
+	<Name>SetMechanical_Pump_Com_Status</Name>
+	<Code>PVD4.lblComunicationLED_MP</Code>
+</MessageName>
+<MessageName>
+	<Name>SetMechanical_Pump_Waiting_ON</Name>
+	<Code>PVD4.lblWaitingMPOn</Code>
+</MessageName>
+<MessageName>
+	<Name>SetSwicthIGFilamentTo</Name>
+	<Code>PVD4.txtSwitchIGFilament</Code>
+</MessageName>
+<MessageName>
+	<Name>SetEnableIGFilamentTo</Name>
+	<Code>PVD4.txtEnableIGFilament</Code>
+</MessageName>
+
+<!--  Interlocks # 7 -->
+<MessageName>
+	<Name>SetChamberinterlock_Substrate_Table_Water_Status</Name>
+	<Code>PVD4.PVD4Interlock.bicSubTableWater</Code>
+</MessageName>
+<MessageName>
+	<Name>SetChamberinterlock_Air_Pressure_Status</Name>
+	<Code>PVD4.PVD4Interlock.bicAirPressure</Code>
+</MessageName>
+
+<MessageName>
+	<Name>SetChamberinterlock_Chamber_Pressure_Status</Name>
+	<Code>PVD4.PVD4Interlock.bicChamberPress</Code>
+</MessageName>
+<MessageName>
+	<Name>SetChamberinterlock_Turbo_Foreline_Status</Name>
+	<Code>PVD4.PVD4Interlock.bicTurboForeline</Code>
+</MessageName>
+
+<MessageName>
+	<Name>SetChamberinterlock_Door_Closed_Status</Name>
+	<Code>PVD4.PVD4Interlock.bicDoorClosed</Code>
+</MessageName>
+<MessageName>
+	<Name>SetChamberinterlock_Lid_Closed_Status</Name>
+	<Code>PVD4.PVD4Interlock.bicLidClosed</Code>
+</MessageName>
+
+<MessageName>
+	<Name>SetChamberinterlock_Target1_Water_Status</Name>
+	<Code>PVD4.PVD4Interlock.bicTarget1_3Water</Code>
+</MessageName>
+<MessageName>
+	<Name>SetChamberinterlock_Target2_Water_Status</Name>
+	<Code>PVD4.PVD4Interlock.bicTarget2_4Water</Code>
+</MessageName>
+
+<MessageName>
+	<Name>SetChamberinterlock_Target_MB_Water_Status</Name>
+	<Code>PVD4.PVD4Interlock.bicTargetMBWater</Code>
+</MessageName>
+<MessageName>
+	<Name>SetChamberinterlock_Bias_MB_Water_Status</Name>
+	<Code>PVD4.PVD4Interlock.bicBiasMBWater</Code>
+</MessageName>
+<MessageName>
+	<Name>SetChamberinterlock_Turbo_Water_Status</Name>
+	<Code>PVD4.PVD4Interlock.bicTurboWater</Code>
+</MessageName>
+<MessageName>
+	<Name>SetChamberinterlock_Ps_Interlock_Status</Name>
+	<Code>PVD4.PVD4Interlock.btnPSRelay</Code>
+</MessageName>
+<MessageName>
+	<Name>SetChamberinterlock_Devicenet_Comm</Name>
+	<Code>PVD4.PVD4Interlock.bicDeviceNetCom</Code>
+</MessageName>
+<MessageName>
+	<Name>SetChamberinterlock_Target_Panels</Name>
+	<Code>PVD4.PVD4Interlock.bicTargetPanels</Code>
+</MessageName>
+
+<!--  Motion # 8 -->
+<MessageName>
+	<Name>Set_Motion_Communication_InTableControl</Name>
+	<Code>PVD4.TableControl.Header</Code>
+</MessageName>
+<MessageName>
+	<Name>SetSubstrate_Current_Station_InTableControl</Name>
+	<Code>PVD4.TableControl.txtGotoSlot</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetSubstrate_Current_Station</Name>
+	<Code>PVD4.txtCoronaChamberCurrentSlot</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetSubstrate_Table_Lift_Home</Name>
+	<Code>PVD4.TableControl.btnHomeTable</Code>
+</MessageName>
+
+<MessageName>
+	<Name>SetSubstrate_Table_Up_Down_Status</Name>
+	<Code>PVD4.TableControl.btnUP</Code>
+</MessageName>
+<MessageName>
+	<Name>SetSubstrate_Lift_Up_Down_Status</Name>
+	<Code>PVD4.TableControl.btnLiftUp</Code>
+</MessageName>
+<MessageName>
+	<Name>SetSubstrate_Table_Rotate_Status</Name>
+	<Code>PVD4.TableControl.btnRotate</Code>
+</MessageName>
+<MessageName>
+	<Name>SetSubstrate_Table_Rotate_Speed</Name>
+	<Code>PVD4.TableControl.txtRotateRight</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetSubstrate_Table_Rotate_SpeedInProcessPopUpTo</Name>
+	<Code>ProcessPanel.PVD4PopUpStatusPanel.txtRotationSpeedSP</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetSubstrate_Table_Rotate_Speed_Readback</Name>
+	<Code>PVD4.TableControl.txtRotate</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetSubstrate_Table_Rotate_Speed_ReadbackInProcessPopUpTo</Name>
+	<Code>ProcessPanel.PVD4PopUpStatusPanel.txtRotationSpeedRB</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetSubstrate_Table_Rotate_Pos_In_Unit_Readback</Name>
+	<Code>PVD4.TableControl.txtSubstrateTableRotatePosition</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetNumber_Of_Unit_Per_Revolution_Readback</Name>
+	<Code>PVD4.TableControl.txtNumberOfUnitPerRevolution</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetSubstrate_Table_Current_Position_Readback</Name>
+	<Code>PVD4.TableControl.txtTablePos</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetSubstrate_Table_Current_Position_Program</Name>
+	<Code>PVD4.TableControl.txtTablePosRight</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetTarget1_Shutter_Status</Name>
+	<Code>PVD4.CoronaChamber.Shutter1</Code>
+</MessageName>
+<MessageName>
+	<Name>SetTarget2_Shutter_Status</Name>
+	<Code>PVD4.CoronaChamber.Shutter2</Code>
+</MessageName>
+<MessageName>
+	<Name>SetTarget3_Shutter_Status</Name>
+	<Code>PVD4.CoronaChamber.Shutter3</Code>
+</MessageName>
+<MessageName>
+	<Name>SetTarget4_Shutter_Status</Name>
+	<Code>PVD4.CoronaChamber.Shutter4</Code>
+</MessageName>
+<MessageName>
+	<Name>SetSubstrate_Table_Up_Down_Moving</Name>
+	<Code>PVD4.TableControl.txtTablePos</Code>
+</MessageName>
+
+<!--  Turbo_Waterpump # 9 -->
+<MessageName>
+	<Name>SetWater_Pump_Regen_Status</Name>
+	<Code>PVD4.CryoPopUpPanel.btnCryoRegen</Code>
+</MessageName>
+<MessageName>
+	<Name>SetWater_Pump_State_Status</Name>
+	<Code>PVD4.CryoPopUpPanel.btnCryoOn</Code>
+</MessageName>
+<MessageName>
+	<Name>SetWater_Pump_Regen_Hour_Readback</Name>
+	<Code>PVD4.CryoPopUpPanel.txtCryo_RegenHours</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetWater_Pump_P_Command_Readback</Name>
+	<Code>PVD4.CryoPopUpPanel.txtExtendedPurgeTimeRB</Code>
+</MessageName>
+<MessageName>
+	<Name>SetWater_Pump_T_Readback</Name>
+	<Code>PVD4.txtWaterPump</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetWater_Pump_Regen_Lifetime_Readback</Name>
+	<Code>PVD4.CryoPopUpPanel.txtCryo_LifeTimeHours</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetWater_Pump_Is_Communicating</Name>
+	<Code>PVD4.WPHeader</Code>
+</MessageName>
+<MessageName>
+	<Name>SetTurbo_Pump_On_Off</Name>
+	<Code>PVD4.btnWaterPumpOn</Code>
+</MessageName>
+<MessageName>
+	<Name>SetTurbo_Pump_On_Off_Rb</Name>
+	<Code>PVD4.btnWaterPumpOn</Code>
+</MessageName>
+<MessageName>
+    <Name>SetTurbo_Ramping_Percent_RBTo</Name>
+    <Code>PVD4.txtRampingPercent</Code>
+</MessageName>
+<MessageName>
+	<Name>SetWP_On_Off</Name>
+	<Code>PVD4.btnWP</Code>
+</MessageName>
+
+<!-- Vat_Valve #10 -->
+<MessageName>
+	<Name>SetVat_Valve_Communication_Status</Name>
+	<Code>PVD4.VatValveController.Header</Code>
+</MessageName>
+<MessageName>
+	<Name>SetVat_Valve_Percentage_Program</Name>
+	<Code>PVD4.VatValveController.txtPressure_Percent</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetVat_Valve_Controller_Pressure_Program</Name>
+	<Code>PVD4.VatValveController.txtPressure</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetVat_Valve_Controller_Auto_Zero</Name>
+	<Code>PVD4.VatValveController.btnAutoZero</Code>
+</MessageName>
+<MessageName>
+	<Name>SetVat_Valve_Controller_Teach</Name>
+	<Code>PVD4.VatValveController.btnTeach</Code>
+</MessageName>
+<MessageName>
+	<Name>SetVat_Valve_Controller_Sizeadjust</Name>
+	<Code>PVD4.VatValveController.btnSizeAdjust</Code>
+</MessageName>
+
+<!--  Magnatron # 11 -->
+<MessageName>
+	<Name>SetTarget1_Magnatron_Rotate_Status</Name>
+	<Code>PVD4.RFTargetPowerSupply.btnMag1RotationStart</Code>
+</MessageName>
+<MessageName>
+	<Name>SetTarget2_Magnatron_Rotate_Status</Name>
+	<Code>PVD4.RFTargetPowerSupply.btnMag2RotationStart</Code>
+</MessageName>
+<MessageName>
+	<Name>SetTarget3_Magnatron_Rotate_Status</Name>
+	<Code>PVD4.RFTargetPowerSupply.btnMag3RotationStart</Code>
+</MessageName>
+<MessageName>
+	<Name>SetTarget4_Magnatron_Rotate_Status</Name>
+	<Code>PVD4.RFTargetPowerSupply.btnMag4RotationStart</Code>
+</MessageName>
+
+<!--  RF_Target_Ps # 12 -->
+<MessageName>
+	<Name>SetRF_Target_Communication_Status</Name>
+	<Code>PVD4.RFTargetPowerSupply.Header</Code>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_Power_Readback</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtForwardPower</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_Power_Readback_Seren</Name>
+	<Code>PVD4.RFTargetPowerSupply.SerenPopUp.txtForwardPower</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_Reflected_Power_Readback</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtReflectedPower</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_Reflected_Power_Readback_Seren</Name>
+	<Code>PVD4.RFTargetPowerSupply.SerenPopUp.txtReflectedPower</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_MB_Voltage_Readback</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtVoltage</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_Voltage_SP</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtVoltageRight</Code>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_MB_Voltage_Readback_Seren</Name>
+	<Code>PVD4.RFTargetPowerSupply.SerenPopUp.txtVoltage</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_MB_C1_Readback</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtC1</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_MB_C1_Readback_Seren</Name>
+	<Code>PVD4.RFTargetPowerSupply.SerenPopUp.txtC1</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_MB_C2_Readback</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtC2</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_MB_C2_Readback_Seren</Name>
+	<Code>PVD4.RFTargetPowerSupply.SerenPopUp.txtC2</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_MB_Match_Mode_Readback</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtMatch</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_MB_Match_Mode_Readback_Seren</Name>
+	<Code>PVD4.RFTargetPowerSupply.SerenPopUp.txtMatch</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_MB_Match_Mode_Program</Name>
+	<Code>PVD4.RFTargetPowerSupply.btnAuto</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_MB_Match_Mode_Program_Seren</Name>
+	<Code>PVD4.RFTargetPowerSupply.SerenPopUp.btnAuto</Code>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_MB_Preset_Program</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtPresetsRight</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_MB_Preset_Readback</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtPresets</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_MB_Preset_Program_Seren</Name>
+	<Code>PVD4.RFTargetPowerSupply.SerenPopUp.txtPresetsRight</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_MB_Preset_Readback_Seren</Name>
+	<Code>PVD4.RFTargetPowerSupply.SerenPopUp.txtPresets</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_Power_Program</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtForwardPowerRight</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_Power_Program_Seren</Name>
+	<Code>PVD4.RFTargetPowerSupply.SerenPopUp.txtForwardPowerRight</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_Reflected_Power_Program</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtReflectedPowerRight</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_MB_Voltage_Program</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtVoltageRight</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_MB_C1_Program</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtC1Right</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_MB_C1_Program_Seren</Name>
+	<Code>PVD4.RFTargetPowerSupply.SerenPopUp.txtC1Right</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_MB_C2_Program</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtC2Right</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_MB_C2_Program_Seren</Name>
+	<Code>PVD4.RFTargetPowerSupply.SerenPopUp.txtC2Right</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_Error_Readback</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtErrorMessage</Code>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_MB_Mag_Error_Readback</Name>
+	<Code>PVD4.RFTargetPowerSupply.SerenPopUp.txtMag</Code>
+</MessageName>
+<MessageName>
+	<Name>SetRF_Target_MB_Phase_Error_Readback</Name>
+	<Code>PVD4.RFTargetPowerSupply.SerenPopUp.txtPhase</Code>
+</MessageName>
+
+<!--  Bias_Ps # 13 -->
+<MessageName>
+	<Name>SetBias_Communication_Status</Name>
+	<Code>PVD4.BiasPowerSupply.Header</Code>
+</MessageName>
+<MessageName>
+	<Name>SetBias_Power_Readback</Name>
+	<Code>PVD4.BiasPowerSupply.txtForwardPower</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_Reflected_Power_Readback</Name>
+	<Code>PVD4.BiasPowerSupply.txtReflectedPower</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_MB_Voltage_Readback</Name>
+	<Code>PVD4.BiasPowerSupply.txtVoltage</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_MB_C1_Readback</Name>
+	<Code>PVD4.BiasPowerSupply.txtC1</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_MB_C2_Readback</Name>
+	<Code>PVD4.BiasPowerSupply.txtC2</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+
+<MessageName>
+	<Name>SetBias_Power_Program</Name>
+	<Code>PVD4.BiasPowerSupply.txtForwardPowerRight</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_Reflected_Power_Program</Name>
+	<Code>PVD4.BiasPowerSupply.txtReflectedPowerRight</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_MB_Voltage_Program</Name>
+	<Code>PVD4.BiasPowerSupply.txtVoltageRight</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_MB_C1_Program</Name>
+	<Code>PVD4.BiasPowerSupply.txtC1Right</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_MB_C2_Program</Name>
+	<Code>PVD4.BiasPowerSupply.txtC2Right</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+
+<MessageName>
+	<Name>SetBias_MB_Match_Mode_Readback</Name>
+	<Code>PVD4.BiasPowerSupply.txtMatch</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_MB_Match_Mode_Program</Name>
+	<Code>PVD4.BiasPowerSupply.btnAuto</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_MB_Preset_Program</Name>
+	<Code>PVD4.BiasPowerSupply.txtPresetsRight</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_MB_Preset_Readback</Name>
+	<Code>PVD4.BiasPowerSupply.txtPresets</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_MB_Preset_Program_Seren</Name>
+	<Code>PVD4.BiasPowerSupply.SerenPopUp.txtPresetsRight</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_MB_Preset_Readback_Seren</Name>
+	<Code>PVD4.BiasPowerSupply.SerenPopUp.txtPresets</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_Reflected_Power_Readback_Seren</Name>
+	<Code>PVD4.BiasPowerSupply.SerenPopUp.txtReflectedPower</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_Power_Readback_Seren</Name>
+	<Code>PVD4.BiasPowerSupply.SerenPopUp.txtForwardPower</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_MB_Voltage_Readback_Seren</Name>
+	<Code>PVD4.BiasPowerSupply.SerenPopUp.txtVoltage</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_MB_C1_Readback_Seren</Name>
+	<Code>PVD4.BiasPowerSupply.SerenPopUp.txtC1</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_MB_C2_Readback_Seren</Name>
+	<Code>PVD4.BiasPowerSupply.SerenPopUp.txtC2</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_MB_Match_Mode_Readback_Seren</Name>
+	<Code>PVD4.BiasPowerSupply.SerenPopUp.txtMatch</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_MB_Match_Mode_Program_Seren</Name>
+	<Code>PVD4.BiasPowerSupply.SerenPopUp.btnAuto</Code>
+</MessageName>
+<MessageName>
+	<Name>SetBias_Power_Program_Seren</Name>
+	<Code>PVD4.BiasPowerSupply.SerenPopUp.txtForwardPowerRight</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_MB_C1_Program_Seren</Name>
+	<Code>PVD4.BiasPowerSupply.SerenPopUp.txtC1Right</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_MB_C2_Program_Seren</Name>
+	<Code>PVD4.BiasPowerSupply.SerenPopUp.txtC2Right</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetBias_Error_Readback</Name>
+	<Code>PVD4.BiasPowerSupply.txtErrorMessage</Code>
+</MessageName>
+<MessageName>
+	<Name>SetBias_MB_Mag_Error_Readback</Name>
+	<Code>PVD4.BiasPowerSupply.SerenPopUp.txtMag</Code>
+</MessageName>
+<MessageName>
+	<Name>SetBias_MB_Phase_Error_Readback</Name>
+	<Code>PVD4.BiasPowerSupply.SerenPopUp.txtPhase</Code>
+</MessageName>
+<MessageName>
+	<Name>SetBias_Power_Contact_On_Off</Name>
+	<Code>PVD4.BiasPowerSupply.btnContact</Code>
+</MessageName>
+<MessageName>
+	<Name>SetBias_Plasma_Status</Name>
+	<Code>PVD4.CoronaChamber.btnBiasPlasmaStatus</Code>
+</MessageName>
+<!--  DC_Target_Ps # 14 -->
+<MessageName>
+	<Name>SetDC_Target_Communication_Status</Name>
+	<Code>PVD4.RFTargetPowerSupply.Header</Code>
+</MessageName>
+<MessageName>
+	<Name>SetDC_Target_Power_Readback</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtDCForwardPower</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetDC_Target_Power_Program</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtDCForwardPowerRight</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetDC_Target_Voltage_Readback</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtDCVoltage</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetDC_Target_Current_Readback</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtTargetCurrent</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetDC_Target_Pluse_Mode_Status</Name>
+	<Code>PVD4.RFTargetPowerSupply.btnPulse</Code>
+</MessageName>
+
+<MessageName>
+	<Name>SetDC_Target_Pulse_Frequency_Program</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtPulseFrequencyRight</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetDC_Target_Pulse_Frequency_Readback</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtPulseFrequency</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetDC_Target_Pulse_Width_Program</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtPulseWidthRight</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetDC_Target_Pulse_Width_Readback</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtPulseWidth</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetDC_Target_Ramp_Time_Program</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtRampTimeRight</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetDC_Target_Ramp_Time_Readback</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtRampTime</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetDC_Target_Arc_Counter_Readback</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtArcCounter</Code>
+	<OutputType>Decimal</OutputType>
+</MessageName>
+<MessageName>
+	<Name>SetDC_Target_Voltage_SP</Name>
+	<Code>PVD4.RFTargetPowerSupply.txtVoltageRight</Code>
+</MessageName>
+<MessageName>
+	<Name>SetTarget_Select_Readback</Name>
+	<Code>PVD4.RFTargetPowerSupply.btnTarget1Switch</Code>
+</MessageName>
+<MessageName>
+	<Name>SetPlasma_Status</Name>
+	<Code>PVD4.CoronaTarget</Code>
+</MessageName>
+
+<!--  Heater # 15 -->
+<MessageName>
+	<Name>SetHeaterZone1_Communication_Status</Name>
+	<Code>PVD4.HeaterControl.btnZone1ComStatus</Code>
+</MessageName>
+<MessageName>
+	<Name>SetHeaterZone2_Communication_Status</Name>
+	<Code>PVD4.HeaterControl.btnZone2ComStatus</Code>
+</MessageName>
+<MessageName>
+	<Name>Set_HeaterZone1_Status</Name>
+	<Code>PVD4.HeaterControl.btnHeaterZone1Status</Code>
+</MessageName>
+<MessageName>
+	<Name>Set_HeaterZone2_Status</Name>
+	<Code>PVD4.HeaterControl.btnHeaterZone2Status</Code>
+</MessageName>
+<MessageName>
+	<Name>Set_HeaterZone1_RB</Name>
+	<Code>PVD4.HeaterControl.txtHeaterZone1RB</Code>
+</MessageName>
+<MessageName>
+	<Name>Set_HeaterZone2_RB</Name>
+	<Code>PVD4.HeaterControl.txtHeaterZone2RB</Code>
+</MessageName>
+
+<!-- Process Panel Pop up -->
+  <MessageName>
+    <Name>SetCORONAPSForwardPowerRBInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtPSForwarePowerRB</Code>
+    <OutputType>Decimal</OutputType>
+  </MessageName>
+  <MessageName>
+    <Name>SetCORONAPSForwardPowerSPInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtPSForwarePowerSP</Code>
+    <OutputType>Decimal</OutputType>
+  </MessageName>
+  <MessageName>
+    <Name>SetCORONAPSReflectPowerRBInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtPSReflectPower</Code>
+    <OutputType>Decimal</OutputType>
+  </MessageName>
+  <MessageName>
+    <Name>SetCORONABiasForwardPowerRBInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtBiasForwarePowerRB</Code>
+    <OutputType>Decimal</OutputType>
+  </MessageName>
+  <MessageName>
+    <Name>SetCORONABiasForwardPowerSPInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtBiasForwarePowerSP</Code>
+    <OutputType>Decimal</OutputType>
+  </MessageName>
+  <MessageName>
+    <Name>SetCORONABiasReflectPowerRBInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtBiasReflectPower</Code>
+    <OutputType>Decimal</OutputType>
+  </MessageName>
+  <MessageName>
+    <Name>SetPVD4Gas1RBInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtPVD4Gas1RB</Code>
+    <OutputType>Decimal</OutputType>
+  </MessageName>
+  <MessageName>
+    <Name>SetPVD4Gas1SPInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtPVD4Gas1SP</Code>
+    <OutputType>Decimal</OutputType>
+  </MessageName>
+  <MessageName>
+    <Name>SetPVD4Gas2RBInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtPVD4Gas2RB</Code>
+    <OutputType>Decimal</OutputType>
+  </MessageName>
+  <MessageName>
+    <Name>SetPVD4Gas2SPInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtPVD4Gas2SP</Code>
+    <OutputType>Decimal</OutputType>
+  </MessageName>
+  <MessageName>
+    <Name>SetPVD4Gas3RBInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtPVD4Gas3RB</Code>
+    <OutputType>Decimal</OutputType>
+  </MessageName>
+  <MessageName>
+    <Name>SetPVD4Gas3SPInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtPVD4Gas3SP</Code>
+    <OutputType>Decimal</OutputType>
+  </MessageName>
+  <MessageName>
+    <Name>SetPVD4Gas4RBInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtPVD4Gas4RB</Code>
+    <OutputType>Decimal</OutputType>
+  </MessageName>
+  <MessageName>
+    <Name>SetPVD4Gas4SPInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtPVD4Gas4SP</Code>
+    <OutputType>Decimal</OutputType>
+  </MessageName>
+  <MessageName>
+    <Name>SetPVD4Gas5RBInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtPVD4Gas5RB</Code>
+    <OutputType>Decimal</OutputType>
+  </MessageName>
+  <MessageName>
+    <Name>SetPVD4Gas5SPInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtPVD4Gas5SP</Code>
+    <OutputType>Decimal</OutputType>
+  </MessageName>
+  <MessageName>
+    <Name>SetCORONATableCurrentPosotionRBInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtTablePositionRB</Code>  
+	<OutputType>Decimal</OutputType>	
+  </MessageName>
+  <MessageName>
+    <Name>SetCORONATableCurrentPosotionSPInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtTablePositionSP</Code>    
+	<OutputType>Decimal</OutputType>
+  </MessageName>
+  <MessageName>
+    <Name>SetCORONARotatingModeSPInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtRotatingModeRB</Code>    
+  </MessageName>
+  <MessageName>
+    <Name>SetCORONAT1RBInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtT1UsageRB</Code>    
+  </MessageName>
+  <MessageName>
+    <Name>SetCORONAT2RBInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtT2UsageRB</Code>    
+  </MessageName>
+  <MessageName>
+    <Name>SetCORONAT3RBInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtT3UsageRB</Code>    
+  </MessageName>
+  <MessageName>
+    <Name>SetCORONAT4RBInProcessPopUpTo</Name>
+    <Code>ProcessPanel.PVD4PopUpStatusPanel.txtT4UsageRB</Code>    
+  </MessageName>
+  <MessageName>
+	<Name>SetBaratronPressureOfPopUpScreenTo</Name>
+	<Code>ProcessPanel.PVD4PopUpStatusPanel.txtBaratron</Code>
+	<OutputType>Demical</OutputType>
+  </MessageName>
+  <MessageName>
+    <Name>SetCORONAChamber_SetPumpPurgeCurentCycleTo</Name>
+    <Code>PVD4.lblCurrentPurgeCycle</Code>
+  </MessageName>
+  <MessageName>
+    <Name>SetCORONAChamber_SetInjectionValve1</Name>
+    <Code>PVD4.InjectionValve1</Code>
+  </MessageName>
+  <MessageName>
+    <Name>SetCORONAChamber_SetInjectionValve2</Name>
+    <Code>PVD4.InjectionValve2</Code>
+  </MessageName>
+  <MessageName>
+    <Name>SetCORONAChamber_SetInjectionValve3</Name>
+    <Code>PVD4.InjectionValve3</Code>
+  </MessageName>
+  <MessageName>
+    <Name>SetCORONAChamber_SetInjectionValve4</Name>
+    <Code>PVD4.InjectionValve4</Code>
+  </MessageName>
+    <MessageName>
+    <Name>UpdatePVD4CGPressureInCGPopUp</Name>
+    <Code>PVD4.PressureCGGaugesFrm.txtCGPress</Code>
+  </MessageName>
+   <MessageName>
+    <Name>UpdatePVD4ForelineCGPressureInCGPopUp</Name>
+    <Code>PVD4.ForelineCGGaugesFrm.txtCGPress</Code>
+  </MessageName>
+  <MessageName>
+    <Name>UpdatePVD4RoughlineCGPressureInCGPopUp</Name>
+    <Code>PVD4.RoughlineCGGaugesFrm.txtCGPress</Code>
+  </MessageName>
+  <MessageName>
+    <Name>Update_ListRecipe_Readback</Name>
+    <Code>PVD4.FilMetricControl.txtProcessListRecipe</Code>
+  </MessageName>
+  <MessageName>
+    <Name>Set_Filmetric_Thickness</Name>
+    <Code>PVD4.FilMetricControl.txtMeasure</Code>
+  </MessageName>
+  <MessageName>
+    <Name>Set_Recipe_Thickness</Name>
+    <Code>PVD4.FilMetricControl.txtProcessRecipe</Code>
+  </MessageName>
+  <MessageName>
+    <Name>Set_Goodness_Of_Fit</Name>
+    <Code>PVD4.FilMetricControl.txtGoodnessOfFit</Code>
+  </MessageName>
+  <MessageName>
+    <Name>SetPVD4Gas1StatusTo</Name>
+    <Code>PVD4.GasController.txtGas1Status</Code>
+  </MessageName>
+  <MessageName>
+    <Name>SetPVD4Gas2StatusTo</Name>
+    <Code>PVD4.GasController.txtGas2Status</Code>
+  </MessageName>
+  <MessageName>
+    <Name>SetPVD4Gas3StatusTo</Name>
+    <Code>PVD4.GasController.txtGas3Status</Code>
+  </MessageName>
+  <MessageName>
+    <Name>SetPVD4Gas4StatusTo</Name>
+    <Code>PVD4.GasController.txtGas4Status</Code>
+  </MessageName>
+     <MessageName>
+    <Name>SetPVD4Gas5StatusTo</Name>
+    <Code>PVD4.GasController.txtGas5Status</Code>
+  </MessageName>

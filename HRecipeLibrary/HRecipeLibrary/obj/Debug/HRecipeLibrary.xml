@@ -1,0 +1,3234 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+HRecipeLibrary
+</name>
+</assembly>
+<members>
+<member name="T:HRecipeLibrary.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:HRecipeLibrary.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:HRecipeLibrary.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:HRecipeLibrary.GeneralFactory.CreateConfigurationData">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object configuration data
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.GeneralFactory.CreateRecipe">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object general recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.HRPVDFactory.CreateConfigurationData">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object configuration data of HRPVD
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.HRPVDFactory.CreateRecipe">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object recipe of HRPVD
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.IBDFactory.CreateConfigurationData">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object configuration data of IBD
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.IBDFactory.CreateRecipe">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object recipe of IBD
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.IBEFactory.CreateConfigurationData">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object configuration data of IBE
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.IBEFactory.CreateRecipe">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object recipe of IBE
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD2R4Factory.CreateConfigurationData">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object configuration data of PVD2R4
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD2R4Factory.CreateRecipe">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object recipe of PVD2R4
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD2TFactory.CreateConfigurationData">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-31 </date>
+ </author>
+ <summary>
+ Create object configuration data of PVD
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD2TFactory.CreateRecipe">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-31 </date>
+ </author>
+ <summary>
+ Create object recipe of PVD
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD5TFactory.CreateConfigurationData">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object configuration data of PVD4
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD5TFactory.CreateRecipe">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object recipe of PVD4
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD4Factory.CreateConfigurationData">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object configuration data of PVD4
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD4Factory.CreateRecipe">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object recipe of PVD4
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD6PFactory.CreateConfigurationData">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object configuration data of PVD6P
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD6PFactory.CreateRecipe">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object recipe of PVD6P
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD6SFactory.CreateConfigurationData">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object configuration data of PVD6S
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD6SFactory.CreateRecipe">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object recipe of PVD6S
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVDAFactory.CreateConfigurationData">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-31 </date>
+ </author>
+ <summary>
+ Create object configuration data of PVD
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVDAFactory.CreateRecipe">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-31 </date>
+ </author>
+ <summary>
+ Create object recipe of PVD
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVDFactory.CreateConfigurationData">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object configuration data of PVD
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVDFactory.CreateRecipe">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object recipe of PVD
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVDSFactory.CreateConfigurationData">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object configuration data of IBE
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVDSFactory.CreateRecipe">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Create object recipe of IBE
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._depGas1MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas1 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._depGas1MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas1 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._depGas1MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas1 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._depGas2MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas2 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._depGas2MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas2 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._depGas2MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas2 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._depGas3MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas3 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._depGas3MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas3 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._depGas3MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas3 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._depGas4MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas4 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._depGas4MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas4 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._depGas4MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas4 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._depGas5MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas5 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._depGas5MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas5 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._depGas5MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas5 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._depPBNGasInstalledName">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Pbn Gas Name
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._depPBNGasInstalledCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Pbn Gas Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._depRFPowerSupplyInstalled">
+ <author>
+    	<name> Dy Do </name>
+    	<date> 2017-05-04 </date>
+ </author>
+ <summary>
+ Get or Set Dep RF Power Supply
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._etchGas1MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas1 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._etchGas1MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas1 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._etchGas1MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas1 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._etchGas2MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas2 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._etchGas2MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas2 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._etchGas2MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas2 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._etchGas3MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas3 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._etchGas3MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas3 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._etchGas3MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas3 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._etchGas4MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas4 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._etchGas4MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas4 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._etchGas4MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas4 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._etchGas5MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas5 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._etchGas5MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas5 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._etchGas5MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas5 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._etchPBNGasInstalledName">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Pbn Gas Name
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._etchPBNGasInstalledCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Pbn Gas Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._etchRFPowerSupplyInstalled">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch RF Power Supply
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._fixtureShutterInstalled">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-06 </date>
+ </author>
+ <summary>
+ Get or Set shutter of fixture
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._depoShutterInstalled">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-06 </date>
+ </author>
+ <summary>
+ Get or Set shutter of Depo
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._targetPowerSupplyRFInstalled">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-06 </date>
+ </author>
+ <summary>
+ Get or Set shutter of Depo
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._targetShutterInstalled">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set shutter of target
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._cryo1Installed">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Cryo1 Installed
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._cryo2Installed">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Cryo2 Installed
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._flowCoolInstalledName">
+ <author>
+    	<name> Dua Tran </name>
+    	<date> 2019-05-27 </date>
+ </author>
+ <summary>
+ Get or Set Flowcool Gas Name
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._flowCoolInstalledCalibrationFactorId">
+ <author>
+    	<name> Dua Tran </name>
+    	<date> 2019-05-27 </date>
+ </author>
+ <summary>
+ Get or Set Flowcool Gas Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._blnRGAInstalled">
+ <author>
+    	<name> Dua Tran </name>
+    	<date> 2019-05-27 </date>
+ </author>
+ <summary>
+ Get or Set Flowcool Gas Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._blnSupportTiltSweepMode">
+ <author>
+    	<name> Dua Tran </name>
+    	<date> 2019-06-26 </date>
+ </author>
+ <summary>
+ Support Tilt Sweep Mode
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD2TConfigurationData._blnFast_Tilt_Installed">
+ <author>
+    	<name> Dua Tran </name>
+    	<date> 2019-06-26 </date>
+ </author>
+ <summary>
+ Fast Tilt Installed
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVDAConfigurationData._parallelMagnetInstalled">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-31 </date>
+ </author>
+ <summary>
+ Get or Set Parallel Visible
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVDAConfigurationData.IsPVDDCTargetPowerSupplyInstalled">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-31 </date>
+ </author>
+ <summary>
+ check if PVD Target Power Supply is installed
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVDAConfigurationData.m_bPhase_Shifter_Angle_Installed">
+ <author>
+    	<name> Tran Cao Dua </name>
+    	<date> 2019-12-16 </date>
+ </author>
+ <summary>
+ PhaseAngleVisible
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVDAConfigurationData.m_bPhase_Shifter_Angle_Installed_WhichModel">
+ <author>
+    	<name> Hoai Ly </name>
+    	<date> 2023-03-03 </date>
+ </author>
+ <summary>
+ PhaseAngleOnly
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVDSConfigurationData._pbnGasInstalledName">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Pbn Gas Name
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVDSConfigurationData._pbnGasInstalledCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Pbn Gas Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVDSConfigurationData._ancInstalled">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2017-01-23 </date>
+ </author>
+ <summary>
+ Get or Set ANC Installed
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVDSConfigurationData._bSupportTiltSweepMode">
+ <author>
+    	<name> Dua Tran </name>
+    	<date> 2017-04-04 </date>
+ </author>
+ <summary>
+ Support Filt Sweep Mode
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVDSConfigurationData._blBackTilt_Installed">
+ <author>
+    	<name> Dua Tran </name>
+    	<date> 2017-05-24 </date>
+ </author>
+ <summary>
+ Support Filt Sweep Mode
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVDSConfigurationData._diverterGasValveInstalled">
+ <author>
+    	<name> Dy Do</name>
+    	<date> 2019-03-11 </date>
+ </author>
+ <summary>
+ Support Diverter Gas Valve Installed
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.RIEConfigurationData._IsBacksideHEViaMFC">
+ <author>
+    	<name> Tinh Le </name>
+    	<date> 2023-05-01 </date>
+ </author>
+ <summary>
+ Get or Set Visible
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.RecipeDataGridView.CurrentRecipe">
+ <author>Hai Tran</author>
+ <date>2017-01-23</date>
+ <summary>
+ Gets current view recipe.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:HRecipeLibrary.RecipeDataGridView.ClearGrid">
+ <author>
+    	<name> Hai Tran </name>
+    	<date> 2016-02-02 </date>
+ </author>
+ <summary>
+ Clear data on grid.
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.RecipeDataGridView.RecipeSteps">
+ <author>
+    	<name> Dua Tran </name>
+    	<date> 2017-01-23 </date>
+ </author>
+ <summary>
+ Set Title
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.RecipeDataGridView.LoadDataGrid(System.String,System.String,HRecipeLibrary.HRecipe,System.Data.DataTable)">
+ <author>
+    	<name> Hai Tran </name>
+    	<date> 2016-02-02 </date>
+ </author>
+ <summary>
+ Load data grid view.
+ </summary>>
+</member>
+<member name="M:HRecipeLibrary.RecipeDataGridView.InitializeComponent">
+ <author>
+    	<name> Hai Tran </name>
+    	<date> 2016-02-02 </date>
+ </author>
+ <summary>
+ Initialize data grid view
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:HRecipeLibrary.RecipeDataGridView.RecipeDataGridView_CellPainting(System.Object,System.Windows.Forms.DataGridViewCellPaintingEventArgs)">
+ <author>
+     <name>Hai Tran</name>
+     <date>2016-02-02</date>
+ </author>
+ <summary>
+ Paint data grid view cell
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:HRecipeLibrary.RecipeDataGridView.OnDataSourceChanged(System.EventArgs)">
+ <author>Hai Tran</author>
+ <date>2019-07-31</date>
+ <summary>
+ Handles for resuming binding when data source changed.
+ </summary>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:HRecipeLibrary.RecipeDataGridView.OnDataBindingComplete(System.Windows.Forms.DataGridViewBindingCompleteEventArgs)">
+ <author>Hai Tran</author>
+ <date>2019-07-31</date>
+ <summary>
+ Suspend binding after data binding completed.
+ </summary>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="T:HRecipeLibrary.HRecipe">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-15 </date>
+ </author>
+ <summary>
+ This class is used for action recipe.
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.HRecipe.#ctor(System.String,System.Collections.Hashtable)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-15 </date>
+ </author>
+ <summary>
+ Contructor
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.HRecipe.UpdateConfigurationData(System.Collections.Hashtable)">
+ <author>
+    	<name> Dung Pham </name>
+    	<date> 2020-06-26 </date>
+ </author>
+ <summary>
+ Initialize for object recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.HRecipe.LoadRecipe(System.String,HRecipeLibrary.AbstractFactory,System.Collections.Hashtable)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-15 </date>
+ </author>
+ <summary>
+ Initialize for object recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.HRecipe.CreateDBRecipe(System.String,System.String)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-15 </date>
+ </author>
+ <summary>
+ create DB recipe
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas1MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas1 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas1MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas1 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas1MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas1 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas2MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas2 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas2MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas2 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas2MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas2 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas3MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas3 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas3MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas3 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas3MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas3 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas4MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas4 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas4MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas4 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas4MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas4 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas5MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas5 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas5MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas5 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas5MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas5 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas6MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas6 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas6MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas6 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas6MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas6 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas7MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas7 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas7MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas7 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas7MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas7 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas8MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas8 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas8MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas8 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas8MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas8 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas9MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas9 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas9MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas9 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas9MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas9 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas10MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas10 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas10MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas10 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas10MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Gas10 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas11MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tinh Le </name>
+    	<date> 2023-02-08 </date>
+ </author>
+ <summary>
+ Get or Set Gas11 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas11MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tinh Le </name>
+    	<date> 2023-02-08 </date>
+ </author>
+ <summary>
+ Get or Set Gas11 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas11MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tinh Le </name>
+    	<date> 2023-02-08 </date>
+ </author>
+ <summary>
+ Get or Set Gas11 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas12MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tinh Le </name>
+    	<date> 2023-02-08 </date>
+ </author>
+ <summary>
+ Get or Set Gas12 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas12MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tinh Le </name>
+    	<date> 2023-02-08 </date>
+ </author>
+ <summary>
+ Get or Set Gas12 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas12MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tinh Le </name>
+    	<date> 2023-02-08 </date>
+ </author>
+ <summary>
+ Get or Set Gas12 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas13MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tinh Le </name>
+    	<date> 2023-02-08 </date>
+ </author>
+ <summary>
+ Get or Set Gas13 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas13MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tinh Le </name>
+    	<date> 2023-02-08 </date>
+ </author>
+ <summary>
+ Get or Set Gas13 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas13MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tinh Le </name>
+    	<date> 2023-02-08 </date>
+ </author>
+ <summary>
+ Get or Set Gas13 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas14MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tinh Le </name>
+    	<date> 2023-02-08 </date>
+ </author>
+ <summary>
+ Get or Set Gas14 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas14MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tinh Le </name>
+    	<date> 2023-02-08 </date>
+ </author>
+ <summary>
+ Get or Set Gas14 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas14MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tinh Le </name>
+    	<date> 2023-02-08 </date>
+ </author>
+ <summary>
+ Get or Set Gas14 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas15MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tinh Le </name>
+    	<date> 2023-02-08 </date>
+ </author>
+ <summary>
+ Get or Set Gas15 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas15MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tinh Le </name>
+    	<date> 2023-02-08 </date>
+ </author>
+ <summary>
+ Get or Set Gas15 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._gas15MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tinh Le </name>
+    	<date> 2023-02-08 </date>
+ </author>
+ <summary>
+ Get or Set Gas15 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._RGA_Gas_Installed">
+ <author>
+    	<name> Hoai Ly </name>
+    	<date> 2023-03-03 </date>
+ </author>
+ <summary>
+ Get or Set RGA Gas Install
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._flowCoolInstalledName">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Flowcool Gas Name
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._flowCoolInstalledCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Flowcool Gas Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._flowCoolInstalledHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Flowcool Gas Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._flowCoolInstalledHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Flowcool Gas Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._targetPowerSupplyDCInstalled">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set DC Target Power Supply
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._targetPowerSupplyDCInstalledWhichModel">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set DC Target Power Model
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._targetPowerSupplyRFInstalled">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set RF Target Power Supply
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._biasPowerSupplyInstalled">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Bias Power Supply
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._CCR_Source_Matchbox_Unit_RF_Installed">
+ <author>
+    	<name> Tinh Le </name>
+    	<date> 2021-11-09 </date>
+ </author>
+ <summary>
+ Get or Set CCR Source
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._shutterInstalled">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Shutter Installed
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._heaterInstalled">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Heater Installed
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._cryoInstalled">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Cryo Installed
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._target_Shutter_Installed">
+ <author>
+    	<name> Kiet Tran </name>
+    	<date> 2025-09-03 </date>
+ </author>
+ <summary>
+ Get or Set Target Shutter Installed
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.GeneralConfigurationData._fixture_Shutter">
+ <author>
+    	<name> Kiet Tran </name>
+    	<date> 2025-09-03 </date>
+ </author>
+ <summary>
+ Get or Set Fixture Shutter Installed
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.HRPVDConfigurationData._vatValveInstalled">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Vat Valve Installed
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._depGas1MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas1 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._depGas1MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas1 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._depGas1MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas1 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._depGas2MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas2 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._depGas2MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas2 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._depGas2MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas2 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._depGas3MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas3 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._depGas3MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas3 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._depGas3MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas3 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._depGas4MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas4 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._depGas4MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas4 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._depGas4MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas4 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._depGas5MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas5 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._depGas5MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas5 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._depGas5MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Gas5 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._depPBNGasInstalledName">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Pbn Gas Name
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._depPBNGasInstalledCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Dep Pbn Gas Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._depRFPowerSupplyInstalled">
+ <author>
+    	<name> Dy Do </name>
+    	<date> 2017-05-04 </date>
+ </author>
+ <summary>
+ Get or Set Dep RF Power Supply
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._etchGas1MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas1 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._etchGas1MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas1 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._etchGas1MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas1 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._etchGas2MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas2 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._etchGas2MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas2 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._etchGas2MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas2 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._etchGas3MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas3 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._etchGas3MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas3 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._etchGas3MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas3 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._etchGas4MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas4 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._etchGas4MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas4 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._etchGas4MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas4 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._etchGas5MFCEnableCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas5 Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._etchGas5MFCEnableHasShutOffValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas5 Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._etchGas5MFCEnableHasSupplyValve">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Gas5 Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._etchPBNGasInstalledName">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Pbn Gas Name
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._etchPBNGasInstalledCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch Pbn Gas Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._etchRFPowerSupplyInstalled">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Etch RF Power Supply
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._fixtureShutterInstalled">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-06 </date>
+ </author>
+ <summary>
+ Get or Set shutter of fixture
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._depoShutterInstalled">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-06 </date>
+ </author>
+ <summary>
+ Get or Set shutter of Depo
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._targetShutterInstalled">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set shutter of target
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._cryo1Installed">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Cryo1 Installed
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._cryo2Installed">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Cryo2 Installed
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._flowCoolInstalledName">
+ <author>
+    	<name> Dua Tran </name>
+    	<date> 2019-05-27 </date>
+ </author>
+ <summary>
+ Get or Set Flowcool Gas Name
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._flowCoolInstalledCalibrationFactorId">
+ <author>
+    	<name> Dua Tran </name>
+    	<date> 2019-05-27 </date>
+ </author>
+ <summary>
+ Get or Set Flowcool Gas Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._blnRGAInstalled">
+ <author>
+    	<name> Dua Tran </name>
+    	<date> 2019-05-27 </date>
+ </author>
+ <summary>
+ Get or Set Flowcool Gas Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._blnSupportTiltSweepMode">
+ <author>
+    	<name> Dua Tran </name>
+    	<date> 2019-06-26 </date>
+ </author>
+ <summary>
+ Support Tilt Sweep Mode
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBDConfigurationData._blnFast_Tilt_Installed">
+ <author>
+    	<name> Dua Tran </name>
+    	<date> 2019-06-26 </date>
+ </author>
+ <summary>
+ Fast Tilt Installed
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBEConfigurationData._pbnGasInstalledName">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Pbn Gas Name
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBEConfigurationData._pbnGasInstalledCalibrationFactorId">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Pbn Gas Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBEConfigurationData._ancInstalled">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2017-01-23 </date>
+ </author>
+ <summary>
+ Get or Set ANC Installed
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBEConfigurationData._bSupportTiltSweepMode">
+ <author>
+    	<name> Dua Tran </name>
+    	<date> 2017-04-04 </date>
+ </author>
+ <summary>
+ Support Filt Sweep Mode
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBEConfigurationData._blBackTilt_Installed">
+ <author>
+    	<name> Dua Tran </name>
+    	<date> 2017-05-24 </date>
+ </author>
+ <summary>
+ Support Filt Sweep Mode
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.IBEConfigurationData._diverterGasValveInstalled">
+ <author>
+    	<name> Dy Do</name>
+    	<date> 2019-03-11 </date>
+ </author>
+ <summary>
+ Support Diverter Gas Valve Installed
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD4ConfigurationData._gas1CCREnableCalibrationFactorId">
+ <author>
+    	<name>Tinh Le</name>
+    	<date> 2023-10-27 </date>
+ </author>
+ <summary>
+ Get or Set Gas1CCR Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD4ConfigurationData._gas1CCREnableHasShutOffValve">
+ <author>
+    	<name>Tinh Le</name>
+    	<date> 2023-10-27 </date>
+ </author>
+ <summary>
+ Get or Set Gas1CCR Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD4ConfigurationData._gas1CCREnableHasSupplyValve">
+ <author>
+    	<name>Tinh Le</name>
+    	<date> 2023-10-27 </date>
+ </author>
+ <summary>
+ Get or Set Gas1CCR Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD4ConfigurationData._gas2CCREnableCalibrationFactorId">
+ <author>
+    	<name>Tinh Le</name>
+    	<date> 2023-10-27 </date>
+ </author>
+ <summary>
+ Get or Set Gas2CCR Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD4ConfigurationData._gas2CCREnableHasShutOffValve">
+ <author>
+    	<name>Tinh Le</name>
+    	<date> 2023-10-27 </date>
+ </author>
+ <summary>
+ Get or Set Gas2CCR Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD4ConfigurationData._gas2CCREnableHasSupplyValve">
+ <author>
+    	<name>Tinh Le</name>
+    	<date> 2023-10-27 </date>
+ </author>
+ <summary>
+ Get or Set Gas2CCR Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD4ConfigurationData._gas3CCREnableCalibrationFactorId">
+ <author>
+    	<name>Tinh Le</name>
+    	<date> 2023-10-27 </date>
+ </author>
+ <summary>
+ Get or Set Gas3CCR Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD4ConfigurationData._gas3CCREnableHasShutOffValve">
+ <author>
+    	<name>Tinh Le</name>
+    	<date> 2023-10-27 </date>
+ </author>
+ <summary>
+ Get or Set Gas3CCR Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD4ConfigurationData._gas3CCREnableHasSupplyValve">
+ <author>
+    	<name>Tinh Le</name>
+    	<date> 2023-10-27 </date>
+ </author>
+ <summary>
+ Get or Set Gas3CCR Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD4ConfigurationData._gas4CCREnableCalibrationFactorId">
+ <author>
+    	<name>Tinh Le</name>
+    	<date> 2023-10-27 </date>
+ </author>
+ <summary>
+ Get or Set Gas4CCR Type
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD4ConfigurationData._gas4CCREnableHasShutOffValve">
+ <author>
+    	<name>Tinh Le</name>
+    	<date> 2023-10-27 </date>
+ </author>
+ <summary>
+ Get or Set Gas4CCR Shutoff Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD4ConfigurationData._gas4CCREnableHasSupplyValve">
+ <author>
+    	<name>Tinh Le</name>
+    	<date> 2023-10-27 </date>
+ </author>
+ <summary>
+ Get or Set Gas4CCR Supply Present
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD4ConfigurationData._injectionValveInstalled">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Injection Valve Installed
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD4ConfigurationData._numberOfSlot">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Number Of Slot
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD4ConfigurationData._filMetricDeviceInstalled">
+ <author>
+    	<name> Dua Tran </name>
+    	<date> 2017-03-24 </date>
+ </author>
+ <summary>
+ Get or Set Filmetric device Installed
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD4ConfigurationData._target_Power_Supply_DC_Installed_WhichModel">
+ <author>
+    	<name> Dua Tran </name>
+    	<date> 2017-07-04 </date>
+ </author>
+ <summary>
+ Get or Set Filmetric device Installed
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD4ConfigurationData._chuck_Position_TSD_Ref">
+ <author>
+    	<name> Kiet Tran </name>
+    	<date> 2019-01-15 </date>
+ </author>
+ <summary>
+ Chuck Position TSD Ref
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD6PConfigurationData._targetPowerSupply1DCInstalled">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set DC Target Power Supply 1
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD6PConfigurationData._targetPowerSupply2DCInstalled">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set DC Target Power Supply 2
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD6PConfigurationData._targetPowerSupply3DCInstalled">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set DC Target Power Supply 3
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD6PConfigurationData._targetPowerSupply1DCInstalledWhichModel">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set DC Target Power Model 1
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD6PConfigurationData._targetPowerSupply2DCInstalledWhichModel">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set DC Target Power Model 2
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD6PConfigurationData._targetPowerSupply3DCInstalledWhichModel">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set DC Target Power Model 3
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVD6SConfigurationData._numberOfTarget">
+ <author>
+    	<name> Dy Do </name>
+    	<date> 2021-01-13 </date>
+ </author>
+ <summary>
+ Number Of Target
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVDConfigurationData._chuckPositionTSDRef">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Chuck Position TSD Ref
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVDConfigurationData._parallelMagnetInstalled">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Parallel Visible
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVDConfigurationData._flowCoolInstalled">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Flowcool Visible
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVDConfigurationData._flowCoolInstalledBackSideFlowCoolHe">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set BackSideFlowCoolHe Visible
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.PVDConfigurationData._chillerInstalled">
+ <author>
+    	<name> Dua Tran </name>
+    	<date> 2017-08-31 </date>
+ </author>
+ <summary>
+ Get or Set Chiller_Installed Visible
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVDConfigurationData.IsPVDDCTargetPowerSupplyInstalled">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ check if PVD Target Power Supply is installed
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.ChamberLib.ReverserDBRecipeTemplateParameter.Compare(System.Object,System.Object)">
+ <author>
+    	<name> Cao Anh Kiet </name>
+    	<date> 2008-08-25</date>
+ </author>
+ <summary>
+ Compare
+ </summary>
+ <param name="x"></param>
+ <param name="y"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:HRecipeLibrary.ChamberLib.ReverserDBRecipeStep.Compare(System.Object,System.Object)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Compare
+ </summary>
+ <param name="x"></param>
+ <param name="y"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:HRecipeLibrary.ChamberLib.AddDataColumns(System.Data.DataTable,System.String,System.Type,System.String)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ AddDataColumns
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.ChamberLib.IsHiddenColumn(System.String)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ IsHiddenColumn
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.ChamberLib.CreateDataTableRecipe(HRecipeLibrary.DBRecipe)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Get DataTable of recipe
+ </summary>>
+</member>
+<member name="M:HRecipeLibrary.ChamberLib.GetValueOfRecipeStep(HRecipeLibrary.DBRecipeStep,System.String,System.String)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Get Value that support Get step value exactly 
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.ChamberLib.GetListOfRecipeTemplateDisplayItems(HRecipeLibrary.DBRecipe)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-15 </date>
+ </author>
+ <summary>
+ Get List of Param to Show on GUI (all display value)
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.ChamberLib.ConvertToRealValue(HRecipeLibrary.DBRecipe,System.Boolean)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-15 </date>
+ </author>
+ <summary>
+ Convert Value from GUI to Real value (eg: On/Off to True/False) before saving to file/ showing to GUI
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.ChamberLib.CheckParameterRecipeVisible(HRecipeLibrary.DBRecipe,System.String,System.String)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-15 </date>
+ </author>
+ <summary>
+ check Param for Recipe : show or hide in DataGrid and in TreeView
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.BaseConfigurationData._chamberType">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Get or Set Chamber Type (PVD, IBE, IBD...)
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.BaseConfigurationData._target1Installed">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-26 </date>
+ </author>
+ <summary>
+ Get or Set Target 1 Visible 
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.BaseConfigurationData._target2Installed">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-26 </date>
+ </author>
+ <summary>
+ Get or Set Target 2 Visible 
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.BaseConfigurationData._target3Installed">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-26 </date>
+ </author>
+ <summary>
+ Get or Set Target 3 Visible 
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.BaseConfigurationData._target4Installed">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-26 </date>
+ </author>
+ <summary>
+ Get or Set Target 4 Visible 
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.BaseConfigurationData._target5Installed">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-26 </date>
+ </author>
+ <summary>
+ Get or Set Target 5 Visible 
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.BaseConfigurationData._target6Installed">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-26 </date>
+ </author>
+ <summary>
+ Get or Set Target 6 Visible 
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.BaseConfigurationData._target7Installed">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-26 </date>
+ </author>
+ <summary>
+ Get or Set Target 7 Visible 
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.BaseConfigurationData._target8Installed">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-26 </date>
+ </author>
+ <summary>
+ Get or Set Target 8 Visible 
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.BaseConfigurationData._targetMaterial">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-26 </date>
+ </author>
+ <summary>
+ Get or Set Target Material 
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.BaseConfigurationData._targetMaterial1">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-26 </date>
+ </author>
+ <summary>
+ Get or Set Target Material 1
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.BaseConfigurationData._targetMaterial2">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-26 </date>
+ </author>
+ <summary>
+ Get or Set Target Material 2
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.BaseConfigurationData._targetMaterial3">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-26 </date>
+ </author>
+ <summary>
+ Get or Set Target Material 3
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.BaseConfigurationData._targetMaterial4">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-26 </date>
+ </author>
+ <summary>
+ Get or Set Target Material 4
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.BaseConfigurationData._targetMaterial5">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-26 </date>
+ </author>
+ <summary>
+ Get or Set Target Material 5
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.BaseConfigurationData._targetMaterial6">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-26 </date>
+ </author>
+ <summary>
+ Get or Set Target Material 6
+ </summary>
+</member>
+<member name="F:HRecipeLibrary.BaseConfigurationData._targetMaterial7">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-26 </date>
+ </author>
+ <summary>
+ Get or Set Target Material 7
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.BaseConfigurationData.IsPVDDCTargetPowerSupplyInstalled">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ check if PVD Target Power Supply is installed
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.BaseConfigurationData.IsPulseDCTargetPowerSupply(System.String)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ check if DC target power supply is Pulse DC
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.BaseConfigurationData.LoadConfigurationData(System.Collections.Hashtable)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Load Configuration Data
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipe.ChamberType">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ ChamberType
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipe.RecipeDCPVD">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Recipe DC PVD
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipe.Description">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Description
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipe.ListOfRecipeTemplateGroupParameters">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ List of DBRecipeTemplateGroupParameters
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipe.ListOfRecipeSteps">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ List of DBRecipeStep
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.DBRecipe.#ctor">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Construtor
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.DBRecipe.#ctor(System.String,System.Collections.ArrayList)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Construtor
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.DBRecipe.#ctor(System.String,System.Boolean,System.String,System.Collections.ArrayList,System.Collections.ArrayList)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Construtor
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.DBRecipe.GetParameterOfRecipeTemplate(System.String,System.String)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Get parameter of recipe template
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeStep.SeqNo">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ SeqNo
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeStep.ListOfGroupParameters">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ List of DBRecipeGroupParameters
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.DBRecipeStep.#ctor">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Construtor
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.DBRecipeStep.#ctor(System.Int32,System.Collections.ArrayList)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Construtor
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeGroupParameters.GroupCode">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ GroupCode
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeGroupParameters.ListOfParameters">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ List of DBRecipeParameter
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.DBRecipeGroupParameters.#ctor">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Construtor
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.DBRecipeGroupParameters.#ctor(System.String,System.Collections.ArrayList)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Construtor
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeTemplateParameter.SeqNo">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ SeqNo
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeTemplateParameter.Name">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Name
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeTemplateParameter.Description">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Description
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeTemplateParameter.Min">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Min
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeTemplateParameter.Max">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ DefaultValue
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeTemplateParameter.DefaultValue">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ DefaultValue
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeTemplateParameter.Unit">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Unit
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeTemplateParameter.UnitShow">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ UnitShow: show unit of value.
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeTemplateParameter.ShowUI">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ ShowUI
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeTemplateParameter.DisplayItems">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ DisplayItems
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeTemplateParameter.ViewOnly">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ ViewOnly
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeTemplateParameter.ReadWrite">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ ReadWrite
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeTemplateParameter.SaveNotShow">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Save_Not_Show
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.DBRecipeTemplateParameter.#ctor">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Construtor
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.DBRecipeTemplateParameter.#ctor(System.Int32,System.String,System.String,System.Double,System.Double,System.String,System.String,System.String,System.Boolean,System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Construtor
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeTemplateGroupParameters.Id">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Id
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeTemplateGroupParameters.IsGroup">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ IsGroup
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeTemplateGroupParameters.GroupCode">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ GroupCode
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeTemplateGroupParameters.GroupName">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ GroupName
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeTemplateGroupParameters.ListOfParameters">
+ <author>
+    	<name> Cao Anh Kiet </name>
+    	<date> 2008-08-23</date>
+ </author>
+ <summary>
+ List of DBRecipeTemplateParameter
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeTemplateGroupParameters.SaveNotShow">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Save_Not_Show
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.DBRecipeTemplateGroupParameters.#ctor">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Construtor
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.DBRecipeTemplateGroupParameters.#ctor(System.Int32,System.Boolean,System.String,System.String,System.Collections.ArrayList,System.Boolean)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Construtor
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.DBRecipeTemplateGroupParameters.GetParameterOfRecipeTemplate(System.String)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Get parameter of recipe template
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeParameter.Name">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Name
+ </summary>
+</member>
+<member name="P:HRecipeLibrary.DBRecipeParameter.Value">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Value
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.DBRecipeParameter.#ctor">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Construtor
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.DBRecipeParameter.#ctor(System.String,System.String)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Construtor
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.GeneralRecipe.ChangeDescription(System.String,System.String,System.String@,System.Boolean@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Change description of recipe base on configuration data
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.GeneralRecipe.CheckingGroupShowInUI(System.String,System.Boolean@,System.String,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ check to visible/invisible group parameter in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.GeneralRecipe.CheckingParameter(System.String,System.String,System.Boolean@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ check to visible/invisible parameter in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.GeneralRecipe.CheckingListOfDisplayItem(System.String,System.String,System.String@,System.String@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-26 </date>
+ </author>
+ <summary>
+ check list of display item
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.HRPVDRecipe.CheckingGroupShowInUI(System.String,System.Boolean@,System.String,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ check to visible/invisible group parameter in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.HRPVDRecipe.CheckingParameter(System.String,System.String,System.Boolean@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ check to visible/invisible parameter in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.IBDRecipe.ChangeDescription(System.String,System.String,System.String@,System.Boolean@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Change description of recipe base on configuration data of IBD
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.IBDRecipe.CheckingGroupShowInUI(System.String,System.Boolean@,System.String,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ check to visible/invisible group parameter in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.IBDRecipe.CheckingParameter(System.String,System.String,System.Boolean@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ check to visible/invisible parameter in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.IBDRecipe.CheckingListOfDisplayItem(System.String,System.String,System.String@,System.String@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-26 </date>
+ </author>
+ <summary>
+ check to list of display item in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.IBERecipe.ChangeDescription(System.String,System.String,System.String@,System.Boolean@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Change description of recipe base on configuration data of IBE
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.IBERecipe.CheckingParameter(System.String,System.String,System.Boolean@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ check to visible/invisible parameter in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.IBERecipe.CheckingGroupShowInUI(System.String,System.Boolean@,System.String,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Dua Tran </name>
+    	<date> 2019-04-10 </date>
+ </author>
+ <summary>
+ CheckingGroupShowInUI
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD2R4Recipe.CheckingParameter(System.String,System.String,System.Boolean@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ check to visible/invisible parameter in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD2TRecipe.CheckingGroupShowInUI(System.String,System.Boolean@,System.String,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ check to visible/invisible group parameter in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD2TRecipe.CheckingParameter(System.String,System.String,System.Boolean@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ check to visible/invisible parameter in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD2TRecipe.CheckingListOfDisplayItem(System.String,System.String,System.String@,System.String@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tinh Le </name>
+    	<date> 2023-11-12 </date>
+ </author>
+ <summary>
+ check to list of display item in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD5TRecipe.CheckingGroupShowInUI(System.String,System.Boolean@,System.String,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Kiet Tran </name>
+    	<date> 2025-12-11 </date>
+ </author>
+ <summary>
+ check to visible/invisible group parameter in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD4Recipe.ChangeDescription(System.String,System.String,System.String@,System.Boolean@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Change description of recipe base on configuration data of IBE
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD4Recipe.CheckingGroupShowInUI(System.String,System.Boolean@,System.String,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ check to visible/invisible group parameter in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD4Recipe.CheckingParameter(System.String,System.String,System.Boolean@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ check to visible/invisible parameter in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD4Recipe.CheckingListOfDisplayItem(System.String,System.String,System.String@,System.String@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tinh Le </name>
+    	<date> 2023-11-12 </date>
+ </author>
+ <summary>
+ check to list of display item in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD6PRecipe.CheckingParameter(System.String,System.String,System.Boolean@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ check to visible/invisible parameter in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD6SRecipe.ChangeDescription(System.String,System.String,System.String@,System.Boolean@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Dy Do </name>
+    	<date> 2021-01-13 </date>
+ </author>
+ <summary>
+ Change description of recipe base on configuration data of PVD6S
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD6SRecipe.CheckingParameter(System.String,System.String,System.Boolean@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ check to visible/invisible parameter in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVD6SRecipe.CheckingListOfDisplayItem(System.String,System.String,System.String@,System.String@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Dung Pham </name>
+    	<date> 2020-06-23 </date>
+ </author>
+ <summary>
+ check to list of display item in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVDARecipe.CheckingParameter(System.String,System.String,System.Boolean@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Nguyen Dinh Minh Thi </name>
+    	<date> 2016-10-31 </date>
+ </author>
+ <summary>
+ check to visible/invisible parameter in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVDRecipe.ChangeDescription(System.String,System.String,System.String@,System.Boolean@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Change description of recipe base on configuration data of PVD
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVDRecipe.CheckingParameter(System.String,System.String,System.Boolean@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ check to visible/invisible parameter in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.BaseRecipe.GetRecipeTemplate(System.String)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Get Xml Document of recipe template
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.BaseRecipe.GetRecipe(System.String)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Get Xml Document of recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.BaseRecipe.CreateListOfRecipeTemplateGroupParameters(System.Xml.XmlDocument,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Create a list of recipe template group parameters
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.BaseRecipe.CreateListOfRecipeTemplateGroupParameters(System.Xml.XmlNodeList,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Create a list of recipe template group parameters
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.BaseRecipe.CreateListOfDisplayItem(System.Xml.XmlNodeList,System.String,System.String,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Create a list of display item
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.BaseRecipe.CreateListOfRecipeSteps(System.Xml.XmlDocument)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Create a list of recipe steps
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.BaseRecipe.GetDescription(System.Xml.XmlDocument)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Get description of recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.BaseRecipe.CreateDBRecipe(System.String,System.String,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-08 </date>
+ </author>
+ <summary>
+ Create a DB recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVDSRecipe.ChangeDescription(System.String,System.String,System.String@,System.Boolean@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ Change description of recipe base on configuration data of IBE
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVDSRecipe.CheckingParameter(System.String,System.String,System.Boolean@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ check to visible/invisible parameter in recipe
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.PVDSRecipe.CheckingGroupShowInUI(System.String,System.Boolean@,System.String,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Dua Tran </name>
+    	<date> 2019-04-10 </date>
+ </author>
+ <summary>
+ CheckingGroupShowInUI
+ </summary>
+</member>
+<member name="M:HRecipeLibrary.RIERecipe.CheckingParameter(System.String,System.String,System.Boolean@,HRecipeLibrary.BaseConfigurationData)">
+ <author>
+    	<name> Tin Pham </name>
+    	<date> 2016-01-12 </date>
+ </author>
+ <summary>
+ check to visible/invisible parameter in recipe
+ </summary>
+</member>
+</members>
+</doc>

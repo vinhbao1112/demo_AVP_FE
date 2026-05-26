@@ -1,0 +1,455 @@
+#WARNING:  This file will be overwritten if SaveProject() is called or the project
+#is saved using the Control Panel.  Any user comments will be lost.
+
+#project file: gettingstarted.epj
+[CONFIG]
+version=4
+datesaved=20020122173423
+#logging settings: 0=off, 00010000=Errors, 00020000=Messages, 00040000=Protocol, 00080000=Callbacks, 00000100=Other logs
+logging=0
+#same as in CIMConnect - File Logging Config window
+loggingpath=C:\CIMConnectProjects\Equipment1\Projects
+loggingdefaultfilename=logfile
+loggingmaxfiles=4
+loggingmaxfilesize=1000000
+loggingtimeperiod=0
+#SECS-II Message output limits (see ICxValue::CopyToNString for more info)
+loggingmsglimit=-1
+loggingmsgelemlimit=-1
+#enable logging to file: 0=off 1=on
+filelogging=0
+
+
+[CONNECTION1]
+name=GEM Host 5000
+encoder=SECSIICodec.CxSECSIIEncoder
+decoder=SECSIICodec.CxSECSIIDecoder
+commif=CxSMS.CxSMSObject
+#If useregforcommifcfg is NOT zero then the commifcfg string will be read from the registry and not the epj file.
+useregforcommifcfg=0
+#If forceupdatereg is NOT zero then the registry entry for this connection is updated with the commifcfg string.
+forceupdatereg=0
+commifcfg=1,HSMS,0.0.0.0,5000,PASSIVE,45000,5000,5000,10000,5000,EQUIPMENT,60000,AUTOS9F1,AUTOS9F9
+taskdll=cxemtask.dll
+
+[CONNECTION2]
+name=GEM Host 5001
+encoder=SECSIICodec.CxSECSIIEncoder
+decoder=SECSIICodec.CxSECSIIDecoder
+commif=CxSMS.CxSMSObject
+#If useregforcommifcfg is NOT zero then the commifcfg string will be read from the registry and not the epj file.
+useregforcommifcfg=0
+#If forceupdatereg is NOT zero then the registry entry for this connection is updated with the commifcfg string.
+forceupdatereg=0
+commifcfg=2,HSMS,0.0.0.0,5001,PASSIVE,45000,5000,5000,10000,5000,EQUIPMENT,60000,AUTOS9F1,AUTOS9F9
+taskdll=cxemtask.dll
+
+[CONNECTION3]
+name=GEM Host 5002
+encoder=SECSIICodec.CxSECSIIEncoder
+decoder=SECSIICodec.CxSECSIIDecoder
+commif=CxSMS.CxSMSObject
+#If useregforcommifcfg is NOT zero then the commifcfg string will be read from the registry and not the epj file.
+useregforcommifcfg=0
+#If forceupdatereg is NOT zero then the registry entry for this connection is updated with the commifcfg string.
+forceupdatereg=0
+commifcfg=3,HSMS,0.0.0.0,5002,PASSIVE,45000,5000,5000,10000,5000,EQUIPMENT,60000,AUTOS9F1,AUTOS9F9
+taskdll=cxemtask.dll
+
+#note that all fields must be filled except wellknownname
+#empty fields (i.e. ,,) are allowed in some places
+
+[COMMON EVENTS]
+#id=name, description, wellknownname
+3=MaterialReceived,Material arrived from a port on the equipment.,MaterialReceived
+4=MaterialRemoved,Material was sent from a port on the equipment.,MaterialRemoved
+6=OperatorCommandIssued,Machine operator issued a control command.,OperatorCommandIssued
+7=PPChange,A process program (recipe) has been created changed or deleted.,PPChange
+8=PPSelected,A new process program (recipe) has been accepted. Either the host or machine operator has selected the recipe.,PPSelected
+9=ProcessingCompleted,Normal exit of EXECUTING state as part of the Processing State Machine.,ProcessingCompleted
+10=ProcessingStarted,Normal exit of EXECUTING state as part of the Processing State Machine.,ProcessingStarted
+11=ProcessingStateChange,The state of the Processing State Machine has changed.,ProcessingStateChange
+12=ProcessingStopped,A previously requested STOP command has been performed.,ProcessingStopped
+16=ECChange,An equipment constant value was changed locally by the operator.,ECChange
+18=HostCommandAccepted,A host remote command was accepted.,HostCommandAccepted
+19=HostECChange,A host changed an equipment constant(EC) value.,HostECChange
+20=HostPPChange,A host changed a Process Program.,HostPPChange
+21=PPVerificationFailed,Recipe Verification Failed,PPVerificationFailed
+#Add your equipment definitions here
+
+[CONNECTION1 EVENTS]
+#id=name, description, wellknownname
+0=ControlStateLocal,Control State Machine switched to local (operator) control.,ControlStateLocal
+1=ControlStateRemote,Control State Machine switched to remote (host) control.,ControlStateRemote
+2=EquipmentOffline,Control State Machine switched to the offline state by the machine operator.,EquipmentOffline
+5=MessageRecognition,Machine operator recognized the terminal service message from the host.,MessageRecognition
+13=SpoolTransmitFailure,Spool Transmit failure has occurred.,SpoolTransmitFailure
+14=SpoolingActivated,Spooling State Machine has entered the ACTIVE state.,SpoolingActivated
+15=SpoolingDeactivated,Spooling State Machine has entered the DE-ACTIVE state.,SpoolingDeactivated
+#Do not add definitions here without reading the documentation
+
+[CONNECTION2 EVENTS]
+#id=name, description, wellknownname
+0=ControlStateLocal,Control State Machine switched to local (operator) control.,ControlStateLocal
+1=ControlStateRemote,Control State Machine switched to remote (host) control.,ControlStateRemote
+2=EquipmentOffline,Control State Machine switched to the offline state by the machine operator.,EquipmentOffline
+5=MessageRecognition,Machine operator recognized the terminal service message from the host.,MessageRecognition
+13=SpoolTransmitFailure,Spool Transmit failure has occurred.,SpoolTransmitFailure
+14=SpoolingActivated,Spooling State Machine has entered the ACTIVE state.,SpoolingActivated
+15=SpoolingDeactivated,Spooling State Machine has entered the DE-ACTIVE state.,SpoolingDeactivated
+#Do not add definitions here without reading the documentation
+
+[CONNECTION3 EVENTS]
+#id=name, description, wellknownname
+0=ControlStateLocal,Control State Machine switched to local (operator) control.,ControlStateLocal
+1=ControlStateRemote,Control State Machine switched to remote (host) control.,ControlStateRemote
+2=EquipmentOffline,Control State Machine switched to the offline state by the machine operator.,EquipmentOffline
+5=MessageRecognition,Machine operator recognized the terminal service message from the host.,MessageRecognition
+13=SpoolTransmitFailure,Spool Transmit failure has occurred.,SpoolTransmitFailure
+14=SpoolingActivated,Spooling State Machine has entered the ACTIVE state.,SpoolingActivated
+15=SpoolingDeactivated,Spooling State Machine has entered the DE-ACTIVE state.,SpoolingDeactivated
+#Do not add definitions here without reading the documentation
+
+[ALARMS]
+#id=name, description, text, setEventID, clearEventID, alarm code (ALCD), wellknownname
+#Add your equipment definitions here
+
+#varTypes DV,SV,EC
+#valTypes I1, I2, I4, I8, U1, U2, U4, U8, F4, F8, A, Bo, Bi, L, J, W
+
+[COMMON VARIABLES]
+#id=name, description, units, varType, valType, eventID, private, persistant, min, max, default, wellknownname
+0=AlarmID,ALID of the most recent alarm to change state. This may be linked to any alarm's SET of CLEAR collection event.,,DV,U4,,0,0,U4 0,U4 4294967295,U4,AlarmID
+3=PPChangeName,Name of the process program (recipe) changed by the machine operator. This may be linked to collection event PPChange. See also DV PPChangeStatus.,,DV,A,,0,0,A,A,A,PPChangeName
+4=PPChangeStatus,Type of change made to a process program (recipe) by the machine operator. Possible values include 1 (created) 2 (edited) and 3 (deleted). This may be linked to collection event PPChange. See also DV PPChangeName.,,DV,U1,,0,0,U1 0,U1 255,U1,PPChangeStatus
+6=OperatorCommand,Command issued by the machine operator.,,DV,A,,0,0,,,A,OperatorCommand
+7=ECID,ECID changed by the machine operator.,,DV,U4,,0,0,U4 0,U4 4294967295,U4 0,ECID
+2008=MDLN,Machine hardware ID up to 6 characters. The value is constant.,,SV,A,,0,0,A,A,A MODEL,MDLN
+2009=PPExecName,Currently selected process program (recipe) file. This process program can not be deleted or overwritten by the host since it is considered to be in use.,,SV,A,,0,0,A,A,A,PPExecName
+2010=PPError,A test data value with information about verification errors of a process program that failed verification.,,DV,U1,,0,0,U1 0,U1 255,U1,PPError
+2015=SOFTREV,Machine software ID up to 6 characters. The value is constant.,,SV,A,,0,0,A,A,A 00.01,SOFTREV
+2027=ALARMSSET,List of all SET ALID.,,SV,L,,0,0,L,L,L,AlarmsSet
+2030=PREVIOUSPROCESSSTATE,Previous state of the Processing State Machine.,,SV,U1,,0,0,U1 0,U1 255,U1,PreviousProcessState
+2031=PROCESSSTATE,State of the Processing State Machine.,,SV,U1,,0,0,U1 0,U1 255,U1,ProcessState
+2032=ProcessState,State of the Processing State Machine.,,SV,A,,0,0,A,A,A,ProcessStateString
+2039=NVSPath,Non-volatile storage directory.,,SV,A,,0,0,A,A,A C:\CIMConnectProjects\Equipment1\Nvs,NVSPath
+2040=RecipeHandling,Recipe handling type,,SV,U4,,0,0,U4 0,U4 4294967295,U4 1,RecipeHandling
+2041=RecipeType,Recipe file type,,SV,U4,,0,0,U4 0,U4 4294967295,U4 1,RecipeType
+2042=RecipePath,Recipe storage directory,,SV,A,,0,0,A,A,A C:\CIMConnectProjects\Equipment1\Recipes,RecipePath
+2048=RecipeExtension,Recipe file extension,,SV,A,,0,0,A,A,A xml,RecipeExtension
+2050=ASer,The alarm change count,,SV,U4,,,,,,U4 0,ASer
+2051=Time,Computer date and time YYYYMMDDhhmmsscc,,SV,A,,,,,,,Time
+2052=ECChangeName,The EC that changed,,DV,A,,,,,,,ECChangeName
+2053=ECChangeValue,The value of EC that changed,,DV,Any,,,,,,,ECChangeValue
+2054=AlarmState,The last changed alarm's state,,SV,U1,,,,,,,AlarmState
+2055=CEDescription, description of the last collection event triggered,,DV,A,,,,,,,CEDescription
+5415=DuoCoreAlarmTuning,0=single processor. 1(2 3 etc)=forced sync delay looping,,DV,U4,,1,0,,,U4 3,DuoCoreAlarmTuning
+#Add your equipment definitions here
+
+[CONNECTION1 VARIABLES]
+#id=name, description, units, varType, valType, eventID, private, persistant, min, max, default, wellknownname
+1=EventLimit,Limit ID of limit that has been exceeded. This may be linked to any variable's Limit Monitoring collection event.,,DV,L,,0,0,L,L,L,EventLimit
+2=LimitVariable,VID of variable associated with the last limit. This may be linked to any variable's Limit Monitoring collection event.,,DV,U4,,0,0,U4 0,U4 4294967295,U4 0,LimitVariable
+5=TransitionType,Direction of a Limit Monitoring zone transition. This may be linked to any variable's Limit Monitoring collection event. Possible values include 1 (lower to upper) and 0 (upper to lower zone).,,DV,Bi,,0,0,Bi 0,Bi 255,Bi 0,TransitionType
+8=HostECHostID,ID of the host that changed the EC value. This may be linked to CE HostECChange. See also DV HostECID.,,DV,U4,,0,0,U4 0,U4 4294967295,U4,HostECHostID
+9=HostECID,ECID changed by another host. This may be linked to CE HostECChange. See also DV HostECHostID.,,DV,U4,,0,0,U4 0,U4 4294967295,U4,HostECID
+10=HostCmdName,Name of the remote command sent by another host.,,DV,A,,0,0,A,A,A,HostCmdID
+11=HostCmdHostID,ID of the host that sent a remote command.,,DV,U4,,0,0,U4 0,U4 4294967295,U4,HostCmdHostID
+12=HostPPChangeName,Name of the process program (recipe) changed by another host. This may be linked to collection event HostPPChange. See also DV HostPPChangeStatus and HostPPChangeHostID.,,DV,A,,0,0,A,A,A,HostPPChangeName
+13=HostPPChangeStatus,Type of change made to a process program (recipe) by another host. Possible values include 1 (created) 2 (edited) and 3 (deleted). This may be linked to collection event HostPPChange. See also DV HostPPChangeName and HostPPChangeHostID.,,DV,U1,,0,0,U1 0,U1 255,U1 0,HostPPChangeStatus
+14=HostPPChangeHostID,ID of the host that changed a process program (recipe).,,DV,U4,,0,0,U4 0,U4 4294967295,U4,HostPPChangeHostID
+15=LastPPRequested,Name of the process program (recipe) requested by the equipment,,DV,A,,0,0,A,A,A,LastPPRequested
+2004=Clock,Machine's internal clock in the format YYYYMMDDhhmmsscc where Y = year M = month D = day h = hour m = minute s = second c = centisecond.,,SV,A,,0,0,,,,Clock
+2016=SpoolCountActual,Number of messages actually stored in the spool area. Multi-block inquire/grant messages are not included in this count.,,SV,U4,,0,1,U4 0,U4 4294967295,U4 0,SpoolCountActual
+2017=SpoolCountTotal,Total number of messages put into spool area from the time spooling was activated. Multi-block inquire/grant messages are not included in this count.,,SV,U4,,0,1,U4 0,U4 4294967295,U4 0,SpoolCountTotal
+2018=SpoolFullTime,Time when the spool area becomes full in the format YYYYMMDDhhmmsscc where Y = year M = month D = day h = hour m = minute s = second c = centisecond.,,SV,A,,0,1,A,A,A,SpoolFullTime
+2019=SpoolStartTime,Time when spool was last activated in the format YYYYMMDDhhmmsscc where Y = year M = month D = day h = hour m = minute s = second c = centisecond.,,SV,A,,0,1,A,A,A,SpoolStartTime
+2026=ALARMSENABLED,List of all enabled ALID.,,SV,L,,0,1,L,L,L,AlarmsEnabled
+2028=CONTROLSTATE,State of the Control State Machine.  Possible values include 1=EquipOffline 2=AttemptOnline 3=HostOffline 4=OnlineLocal and 5=OnlineRemote.,,SV,U1,,0,0,U1 0,U1 5,U1 3,ControlState
+2029=EVENTSENABLED,List of all enabled CEID.,,SV,L,,0,1,L,L,L,EventsEnabled
+2033=ControlStateSwitch,The GEM local/remote control switch where 0 = local and 1 = remote,,SV,U4,,0,0,U4 0,U4 4294967295,U4 1,CtrlRemoteSwitch
+2034=CtrlOnlineSwitch,The GEM online/offline control switch where 0 = offline and 1= online,,SV,U4,,0,0,U4 0,U4 4294967295,U4 1,CtrlOnlineSwitch
+2035=CommEnableSwitch,The GEM communications enable/disable operator switch where 0 = disabled and 256 = enabled,,SV,U4,,0,0,U4 0,U4 4294967295,U4 256,CommEnableSwitch
+2036=CommState,The current state of the GEM communications state machine where 0 = disabled 260 = communicating 273 = WaitCRA | WaitCRFromHost and 274 = WaitDelay | WaitCRFromHost,,SV,U4,,0,0,U4 0,U4 4294967295,U4 260,CommState
+2037=SpoolState,The current state of the GEM spooling state machine where 0 = inactive 273 = NoSpoolOutput | SpoolNotFull 274 = TransmitSpool | SpoolNotFull 276 = PurgeSpool | SpoolNotFull 289 = NoSpoolOutput | SpoolFull 290 = TransmitSpool | SpoolFull 292 = PurgeSpool | SpoolFull,,SV,U4,,0,1,U4 0,U4 4294967295,U4 0,SpoolState
+2043=GEMEnable,Enable GEM features,,SV,Bo,,0,0,Bo 0,Bo 1,Bo 1,GEMEnable
+2044=RemoteCmdEnable,enable remote command handling,,SV,Bo,,0,0,Bo 0,Bo 1,Bo 1,RemoteCmdEnable
+2045=HostPPEnable,enable process program manipulation,,SV,Bo,,0,0,Bo 0,Bo 1,Bo 1,HostPPEnable
+2046=ECSetEnable,enable EC setting,,SV,Bo,,0,0,Bo 0,Bo 1,Bo 1,ECSetEnable
+2047=HostTermMsgEnable,enable terminal services setting,,SV,Bo,,0,0,Bo 0,Bo 1,Bo 1,HostTermMsgEnable
+2057=ResyncNVS, 1 = resynchronize EVENTSENABLED and ALARMSENABLED 0 = do not resynchronize,,SV,U1,,1,0,,,U1 0,ResyncNVS
+4000=EstablishCommunicationsTimeout,Communication attempt timeout. When the Communication State Machine is enabled but not communicating the machine will attempt to establish communication with a host every timeout period.,s,EC,U2,,0,1,U2 1,U2 120,U2 10,EstablishCommunicationsTimeout
+4004=MaxSpoolMessages,Maximum number of messages that can be put into the spool area until it is considered full as part of the Spooling State Machine. Multi-block inquire/grant messages are not include in this count.,,EC,U4,,0,1,U4 2,U4 100000,U4 100,MaxSpoolMessages
+4005=MaxSpoolTransmit,Maximum number of messages that the machine will transmit from the spool area in response to an S6F23 (transmit spooled messages) request as part of the Spooling State Machine. If 0 there is no limit. Multi-block inquire/grant messages are not include in this count.,,EC,U4,,0,1,U4 0,U4 4294967295,U4 10,MaxSpoolTransmit
+4009=OverwriteSpool,Determine whether to overwrite data in the spool area or to discard further messages when the spool area is full as part of the Spooling State Machine. Possible values include 1 (overwrite) and 0 (discard).,,EC,Bo,,0,1,Bo 0,Bo 1,Bo 0,OverwriteSpool
+4010=SpoolEnabled,Enable or disable the Spooling State Machine. Possible values include 1 (enabled) and 0 (disabled).,,EC,Bo,,0,1,Bo 0,Bo 1,Bo 0,SpoolEnable
+4011=WBitS10,Request host reply for stream 10 messages (Terminal Services). Possible values include 1 (reply) 0 (no reply).,,EC,Bo,,0,1,Bo 0,Bo 1,Bo 1,S10ReplyExpected
+4012=WBitS5,Request host reply for stream 5 messages (Alarms). Possible values include 1 (reply) 0 (no reply).,,EC,Bo,,0,1,Bo 0,Bo 1,Bo 1,S5ReplyExpected
+4013=WBitS6,Request host reply for stream 6 messages (Events). If the machine is producing frequent collection events it may be a good idea to disable request reply. Possible values include 1 (reply) 0 (no reply).,,EC,Bo,,0,1,Bo 0,Bo 1,Bo 1,S6ReplyExpected
+4020=TimeFormat,Y2K time format selection. Possible values include 1 (compliant 16 byte) and 0 (not compliant 12 byte).,,EC,U4,,0,1,U4 0,U4 1,U4 1,TimeFormat
+4021=DefCtrlOfflineState,State of the Control State Machine when going offline. Possible values include 1 = Equipment Offline 3 = Host Offline,,EC,U1,,0,1,U1 0,U1 5,U1 1,DefCtrlOfflineState
+4022=EventReportMsg,Message sent on event trigger,,EC,U4,,0,1,U4 0,U4 4294967295,U4 67083,EventReportMsg
+300000=DefaultCommStateInternal,The default state of the GEM communications state machine where 0 = disabled and 256 = enabled.,,EC,U4,,1,0,,,U4 256,DefaultCommState
+4023=DefaultCommState,The default state of the GEM Host communications state machine where 0 = disabled and 256 = enabled.,,EC,U4,,0,1,,,U4 256,
+4024=DefaultCtrlState,The default state of the GEM control state machine 1=EquipOffline 2=AttemptOnline 3=HostOffline 4=OnlineLocal and 5=OnlineRemote,,EC,U1,,0,1,U1 0,U1 5,U1 4,DefaultCtrlState
+4025=HeartBeat,Message level circuit assurance (0 turns it off),secs,EC,U2,,0,1,,,U2 0,HeartBeat
+4026=ClockOffset,Time offset between host's and local time,sec,SV,I4,,,,,,I4 0,ClockOffset
+4027=LastCEID,The last triggered CE,,DV,U4,,,,,,,LastCEID
+4028=LimitFreq,The frequency at which limits with GetValue callbacks are polled (0 turns it off),secs,EC,U2,,0,1,,,U2 0,LimitFreq
+4029=DataID,E5 DATAID,,DV,U4,,,,,,U4 0,DataID
+4030=PreviousControlState, the prior control state,,SV,U1,,,,,,,PreviousControlState
+4031=S6MultiBlockInquire, 1=send MBI 0=don't send MBI,,EC,Bo,,0,1,,,Bo 0,S6MultiBlockInquire
+4032=SpoolingWaitDelayActivation,0=do not acivate; 1=activate; 2=activate on and after second transaction,,EC,U1,,0,1,U1 0,U1 2,U1 0,SpoolingWaitDelayActivation
+#4033=SendS9WhenSpool,1=send the S9Fx messages to the Host when Spooling is Active;0=discard or spool,,EC,U1,,0,1,U1 0,U1 1,U1 0,SendS9WhenSpool
+#4034=MessagesAllowedForSpooling,SECS-II messages allowed to be Spooled,,SV,,,1,0,,,L {L {U1 5} {L}} {L {U1 6} {L}},MessagesAllowedForSpooling
+#4035=RejectMaxSpoolMessagesWhenSpoolActive,1=Reject setting of MaxSpoolMessages EC value while Spooling is Active,,SV,U1,,1,0,U1 0,U1 1,U1 1,RejectMaxSpoolMessagesWhenSpoolActive
+
+#   data item format specifiers for SECS-II messages. These are private variables
+#   uncomment these only if you need something other than U4 format.  Format conversion degrades performance.
+#4040=ALIDFormat,the data type for alarm ids in messages,,SV,U4,,1,0,U4 1,U4 11,U4 7,ALIDFormat
+#4041=CEIDFormat,the data type for CE ids in messages,,SV,U4,,1,0,U4 1,U4 11,U4 7,CEIDFormat
+#4042=DATAIDFormat,the data type for DATAID in messages,,SV,U4,,1,0,U4 1,U4 11,U4 7,DATAIDFormat
+#4043=RPTIDFormat,the data type for report ids in messages,,SV,U4,,1,0,U4 1,U4 11,U4 7,RPTIDFormat
+#4044=TRIDFormat,the data type for trace ids in messages,,SV,U4,,1,0,U4 1,U4 11,U4 7,TRIDFormat
+#4045=VIDFormat,the data type for variable (EC SV DV) ids in messages,,SV,U4,,1,0,U4 1,U4 11,U4 7,VIDFormat
+#   data item format specifiers for incoming SECS-II messages. These are private variables
+#   are used to validate data items in incoming messages from GEM host.  If a variable is
+#   missing (commented out), set to an empty array value or has invalid format
+#   the value of coresponding XXXFormat variable is used (see above).
+4050=ALIDInputFormat,allowed data type for alarm ids (ALID) in messages from host,,SV,U4,,1,0,,,U4 7 8 6 5,ALIDInputFormat
+4051=CEIDInputFormat,allowed data type for collection event ids (CEID) in messages from host,,SV,U4,,1,0,,,U4 7 8 6 5,CEIDInputFormat
+4052=DATAIDInputFormat,allowed data type for data ids (DATAID) in messages from host,,SV,U4,,1,0,,,U4 7 8 6 5,DATAIDInputFormat
+4053=RPTIDInputFormat,allowed data type for report ids (RPTID) in messages from host,,SV,U4,,1,0,,,U4 7 8 6 5,RPTIDInputFormat
+4054=TRIDInputFormat,allowed data type for trace ids (TRID) in messages from host,,SV,U4,,1,0,,,U4 7 8 6 5,TRIDInputFormat
+4055=VIDInputFormat,allowed data type for variable (EC SV DV) ids in messages from host,,SV,U4,,1,0,,,U4 7 8 6 5,VIDInputFormat
+
+
+301000=MaxSimultaneousTraces,The maximum number of traces that can be requested simultaneously from the host,,EC,U4,,0,1,,,U4 10,MaxSimultaneousTraces
+301001=MaxTraceFrequency,The maximum rate at which a host can request a trace report to be delivered,ms,EC,U4,,0,1,,,U4 100,MaxTraceFrequency
+301002=MaxTraceVIDs,The maximum number of VIDs that can be requested for any single trace report,,EC,U4,,0,1,,,U4 500,MaxTraceVIDs
+301003=S1F3WaitForGetValue,This value represents a threshold for how long to wait on any data registered for a GetValue callback.  If the number is 0 it will wait indefinitely.,ms,EC,U4,,0,1,,,U4 40,S1F3WaitForGetValue
+301004=TraceDataWaitForGetValue,This value represents a threshold for how long to wait on any data registered for a GetValue callback.  If the number is 0 it will wait indefinitely.  If the number is greater than the currently requested trace interval it will be adjusted internally to equal the trace interval,ms,EC,U4,,0,1,,,U4 100,TraceDataWaitForGetValue
+301005=VariableReportingStyle,0 = Strict compliance with SEMI standards; 1 = Allow any variable type (SV; DV; or EC) to be reported both for S1F3 and Trace reports,,EC,U4,,0,1,,,U4 1,VariableReportingStyle
+301006=TraceTimestampTolerance,The allowable variation for any given trace report's timestamp from the expected timestamp,ms,EC,U4,,0,1,,,U4 20,TraceTimestampTolerance
+301007=ReportGenerationDelay,This value represents the expected amount of time it takes CIMConnect to build a 500 VID Report.  This number will be subtracted from the allowed wait time for either an S1F3 request or a Trace Report.,ms,EC,U4,,0,1,,,U4 20,ReportGenerationDelay
+301008=TraceReportMultiBlock,This variable represents whether or not CIMConnect can automatically send a multi-block message for Trace Reports that are larger than 244 bytes (0 = do not send multi-bock trace reports. 1[default] = send multi-block trace reports),,EC,U4,,0,1,,,U4 1,TraceReportMultiBlock
+301009=ReportOfflineControlState,When transitioning to Offline control state report CONTROLSTATE as Offline (1=enable 0=default),,EC,Bo,,1,0,Bo 0,Bo 1,Bo 1,ReportOfflineControlState
+#Do not add definitions here without reading the documentation
+
+[CONNECTION2 VARIABLES]
+#id=name, description, units, varType, valType, eventID, private, persistant, min, max, default, wellknownname
+1=EventLimit,Limit ID of limit that has been exceeded. This may be linked to any variable's Limit Monitoring collection event.,,DV,L,,0,0,L,L,L,EventLimit
+2=LimitVariable,VID of variable associated with the last limit. This may be linked to any variable's Limit Monitoring collection event.,,DV,U4,,0,0,U4 0,U4 4294967295,U4 0,LimitVariable
+5=TransitionType,Direction of a Limit Monitoring zone transition. This may be linked to any variable's Limit Monitoring collection event. Possible values include 1 (lower to upper) and 0 (upper to lower zone).,,DV,Bi,,0,0,Bi 0,Bi 255,Bi 0,TransitionType
+8=HostECHostID,ID of the host that changed the EC value. This may be linked to CE HostECChange. See also DV HostECID.,,DV,U4,,0,0,U4 0,U4 4294967295,U4,HostECHostID
+9=HostECID,ECID changed by another host. This may be linked to CE HostECChange. See also DV HostECHostID.,,DV,U4,,0,0,U4 0,U4 4294967295,U4,HostECID
+10=HostCmdName,Name of the remote command sent by another host.,,DV,A,,0,0,A,A,A,HostCmdID
+11=HostCmdHostID,ID of the host that sent a remote command.,,DV,U4,,0,0,U4 0,U4 4294967295,U4,HostCmdHostID
+12=HostPPChangeName,Name of the process program (recipe) changed by another host. This may be linked to collection event HostPPChange. See also DV HostPPChangeStatus and HostPPChangeHostID.,,DV,A,,0,0,A,A,A,HostPPChangeName
+13=HostPPChangeStatus,Type of change made to a process program (recipe) by another host. Possible values include 1 (created) 2 (edited) and 3 (deleted). This may be linked to collection event HostPPChange. See also DV HostPPChangeName and HostPPChangeHostID.,,DV,U1,,0,0,U1 0,U1 255,U1 0,HostPPChangeStatus
+14=HostPPChangeHostID,ID of the host that changed a process program (recipe).,,DV,U4,,0,0,U4 0,U4 4294967295,U4,HostPPChangeHostID
+15=LastPPRequested,Name of the process program (recipe) requested by the equipment,,DV,A,,0,0,A,A,A,LastPPRequested
+2004=Clock,Machine's internal clock in the format YYYYMMDDhhmmsscc where Y = year M = month D = day h = hour m = minute s = second c = centisecond.,,SV,A,,0,0,,,,Clock
+2016=SpoolCountActual,Number of messages actually stored in the spool area. Multi-block inquire/grant messages are not included in this count.,,SV,U4,,0,1,U4 0,U4 4294967295,U4 0,SpoolCountActual
+2017=SpoolCountTotal,Total number of messages put into spool area from the time spooling was activated. Multi-block inquire/grant messages are not included in this count.,,SV,U4,,0,1,U4 0,U4 4294967295,U4 0,SpoolCountTotal
+2018=SpoolFullTime,Time when the spool area becomes full in the format YYYYMMDDhhmmsscc where Y = year M = month D = day h = hour m = minute s = second c = centisecond.,,SV,A,,0,1,A,A,A,SpoolFullTime
+2019=SpoolStartTime,Time when spool was last activated in the format YYYYMMDDhhmmsscc where Y = year M = month D = day h = hour m = minute s = second c = centisecond.,,SV,A,,0,1,A,A,A,SpoolStartTime
+2026=ALARMSENABLED,List of all enabled ALID.,,SV,L,,0,1,L,L,L,AlarmsEnabled
+2028=CONTROLSTATE,State of the Control State Machine.  Possible values include 1=EquipOffline 2=AttemptOnline 3=HostOffline 4=OnlineLocal and 5=OnlineRemote.,,SV,U1,,0,0,U1 0,U1 5,U1 4,ControlState
+2029=EVENTSENABLED,List of all enabled CEID.,,SV,L,,0,1,L,L,L,EventsEnabled
+2033=ControlStateSwitch,The GEM local/remote control switch where 0 = local and 1 = remote,,SV,U4,,0,0,U4 0,U4 4294967295,U4 0,CtrlRemoteSwitch
+2034=CtrlOnlineSwitch,The GEM online/offline control switch where 0 = offline and 1= online,,SV,U4,,0,0,U4 0,U4 4294967295,U4 1,CtrlOnlineSwitch
+2035=CommEnableSwitch,The GEM communications enable/disable operator switch where 0 = disabled and 256 = enabled,,SV,U4,,0,0,U4 0,U4 4294967295,U4 256,CommEnableSwitch
+2036=CommState,The current state of the GEM communications state machine where 0 = disabled 260 = communicating 273 = WaitCRA | WaitCRFromHost and 273 = WaitDelay | WaitCRFromHost,,SV,U4,,0,0,U4 0,U4 4294967295,U4 260,CommState
+2037=SpoolState,The current state of the GEM spooling state machine where 0 = inactive 273 = NoSpoolOutput | SpoolNotFull 274 = TransmitSpool | SpoolNotFull 276 = PurgeSpool | SpoolNotFull 289 = NoSpoolOutput | SpoolFull 290 = TransmitSpool | SpoolFull 292 = PurgeSpool | SpoolFull,,SV,U4,,0,1,U4 0,U4 4294967295,U4 0,SpoolState
+2043=GEMEnable,Enable GEM features,,SV,Bo,,0,0,Bo 0,Bo 1,Bo 1,GEMEnable
+2044=RemoteCmdEnable,enable remote command handling,,SV,Bo,,0,0,Bo 0,Bo 1,Bo 1,RemoteCmdEnable
+2045=HostPPEnable,enable process program manipulation,,SV,Bo,,0,0,Bo 0,Bo 1,Bo 1,HostPPEnable
+2046=ECSetEnable,enable EC setting,,SV,Bo,,0,0,Bo 0,Bo 1,Bo 1,ECSetEnable
+2047=HostTermMsgEnable,enable terminal services setting,,SV,Bo,,0,0,Bo 0,Bo 1,Bo 1,HostTermMsgEnable
+2057=ResyncNVS, 1 = resynchronize EVENTSENABLED and ALARMSENABLED 0 = do not resynchronize,,SV,U1,,1,0,,,U1 0,ResyncNVS
+4000=EstablishCommunicationsTimeout,Communication attempt timeout. When the Communication State Machine is enabled but not communicating the machine will attempt to establish communication with a host every timeout period.,,EC,U2,,0,1,U2 0,U2 65535,U2 10,EstablishCommunicationsTimeout
+4004=MaxSpoolMessages,Maximum number of messages that can be put into the spool area until it is considered full as part of the Spooling State Machine. Multi-block inquire/grant messages are not include in this count.,,EC,U4,,0,1,U4 0,U4 4294967295,U4 100,MaxSpoolMessages
+4005=MaxSpoolTransmit,Maximum number of messages that the machine will transmit from the spool area in response to an S6F23 (transmit spooled messages) request as part of the Spooling State Machine. If 0 there is no limit. Multi-block inquire/grant messages are not include in this count.,,EC,U4,,0,1,U4 0,U4 4294967295,U4 10,MaxSpoolTransmit
+4009=OverwriteSpool,Determine whether to overwrite data in the spool area or to discard further messages when the spool area is full as part of the Spooling State Machine. Possible values include 1 (overwrite) and 0 (discard).,,EC,Bo,,0,1,Bo 0,Bo 1,Bo 0,OverwriteSpool
+4010=SpoolEnabled,Enable or disable the Spooling State Machine. Possible values include 1 (enabled) and 0 (disabled).,,EC,Bo,,0,1,Bo 0,Bo 1,Bo 0,SpoolEnable
+4011=WBitS10,Request host reply for stream 10 messages (Terminal Services). Possible values include 1 (reply) 0 (no reply).,,EC,Bo,,0,1,Bo 0,Bo 1,Bo 1,S10ReplyExpected
+4012=WBitS5,Request host reply for stream 5 messages (Alarms). Possible values include 1 (reply) 0 (no reply).,,EC,Bo,,0,1,Bo 0,Bo 1,Bo 1,S5ReplyExpected
+4013=WBitS6,Request host reply for stream 6 messages (Events). If the machine is producing frequent collection events it may be a good idea to disable request reply. Possible values include 1 (reply) 0 (no reply).,,EC,Bo,,0,1,Bo 0,Bo 1,Bo 1,S6ReplyExpected
+4020=TimeFormat,Y2K time format selection. Possible values include 1 (compliant 16 byte) and 0 (not compliant 12 byte).,,EC,U4,,0,1,U4 0,U4 4294967295,U4 1,TimeFormat
+4021=DefCtrlOfflineState,State of the Control State Machine when going offline. Possible values include 1 = Equipment Offline 3 = Host Offline,,EC,U1,,0,1,U1 0,U1 5,U1 3,DefCtrlOfflineState
+4022=EventReportMsg,Message sent on event trigger,,EC,U4,,0,1,U4 0,U4 4294967295,U4 67083,EventReportMsg
+300000=DefaultCommStateInternal,The default state of the GEM communications state machine where 0 = disabled and 256 = enabled.,,EC,U4,,1,0,,,U4 0,DefaultCommState
+4023=DefaultCommState,The default state of the GEM Host communications state machine where 0 = disabled and 256 = enabled.,,EC,U4,,0,1,,,U4 256,
+4024=DefaultCtrlState,The default state of the GEM control state machine 1=EquipOffline 2=AttemptOnline 3=HostOffline 4=OnlineLocal and 5=OnlineRemote,,EC,U1,,0,1,U1 0,U1 5,U1 0,DefaultCtrlState
+4025=HeartBeat,Message level circuit assurance (0 turns it off),secs,EC,U2,,0,1,,,U2 0,HeartBeat
+4026=ClockOffset,Time offset between host's and local time,sec,SV,I4,,,,,,I4 0,ClockOffset
+4027=LastCEID,The last triggered CE,,DV,U4,,,,,,,LastCEID
+4028=LimitFreq,The frequency at which limits with GetValue callbacks are polled (0 turns it off),secs,EC,U2,,0,1,,,U2 0,LimitFreq
+4029=DataID,E5 DATAID,,DV,U4,,,,,,U4 0,DataID
+4030=PreviousControlState, the prior control state,,SV,U1,,,,,,,PreviousControlState
+4031=S6MultiBlockInquire, 1=send MBI 0=don't send MBI,,EC,Bo,,0,1,,,Bo 0,S6MultiBlockInquire
+4032=SpoolingWaitDelayActivation,0=do not acivate; 1=activate; 2=activate on and after second transaction,,EC,U1,,0,1,U1 0,U1 2,U1 0,SpoolingWaitDelayActivation
+#4033=SendS9WhenSpool,1=send the S9Fx messages to the Host when Spooling is Active;0=discard or spool,,EC,U1,,0,1,U1 0,U1 1,U1 0,SendS9WhenSpool
+#4034=MessagesAllowedForSpooling,SECS-II messages allowed to be Spooled,,SV,,,1,0,,,L {L {U1 5} {L}} {L {U1 6} {L}},MessagesAllowedForSpooling
+#4035=RejectMaxSpoolMessagesWhenSpoolActive,1=Reject setting of MaxSpoolMessages EC value while Spooling is Active,,SV,U1,,1,0,U1 0,U1 1,U1 1,RejectMaxSpoolMessagesWhenSpoolActive
+
+#   data item format specifiers for SECS-II messages. These are private variables
+#   uncomment these only if you need something other than U4 format.  Format conversion degrades performance.
+#4040=ALIDFormat,the data type for alarm ids in messages,,SV,U4,,1,0,U4 1,U4 11,U4 7,ALIDFormat
+#4041=CEIDFormat,the data type for CE ids in messages,,SV,U4,,1,0,U4 1,U4 11,U4 7,CEIDFormat
+#4042=DATAIDFormat,the data type for DATAID in messages,,SV,U4,,1,0,U4 1,U4 11,U4 7,DATAIDFormat
+#4043=RPTIDFormat,the data type for report ids in messages,,SV,U4,,1,0,U4 1,U4 11,U4 7,RPTIDFormat
+#4044=TRIDFormat,the data type for trace ids in messages,,SV,U4,,1,0,U4 1,U4 11,U4 7,TRIDFormat
+#4045=VIDFormat,the data type for variable (EC SV DV) ids in messages,,SV,U4,,1,0,U4 1,U4 11,U4 7,VIDFormat
+#   data item format specifiers for incoming SECS-II messages. These are private variables
+#   are used to validate data items in incoming messages from GEM host.  If a variable is
+#   missing (commented out), set to an empty L list value or has invalid format
+#   the value of coresponding XXXFormat variable is used (see above).
+4050=ALIDInputFormat,allowed data type for alarm ids (ALID) in messages from host,,SV,U4,,1,0,,,U4 7 8 6 5,ALIDInputFormat
+4051=CEIDInputFormat,allowed data type for collection event ids (CEID) in messages from host,,SV,U4,,1,0,,,U4 7 8 6 5,CEIDInputFormat
+4052=DATAIDInputFormat,allowed data type for data ids (DATAID) in messages from host,,SV,U4,,1,0,,,U4 7 8 6 5,DATAIDInputFormat
+4053=RPTIDInputFormat,allowed data type for report ids (RPTID) in messages from host,,SV,U4,,1,0,,,U4 7 8 6 5,RPTIDInputFormat
+4054=TRIDInputFormat,allowed data type for trace ids (TRID) in messages from host,,SV,U4,,1,0,,,U4 7 8 6 5,TRIDInputFormat
+4055=VIDInputFormat,allowed data type for variable (EC SV DV) ids in messages from host,,SV,U4,,1,0,,,U4 7 8 6 5,VIDInputFormat
+
+301000=MaxSimultaneousTraces,The maximum number of traces that can be requested simultaneously from the host,,EC,U4,,0,1,,,U4 10,MaxSimultaneousTraces
+301001=MaxTraceFrequency,The maximum rate at which a host can request a trace report to be delivered,ms,EC,U4,,0,1,,,U4 100,MaxTraceFrequency
+301002=MaxTraceVIDs,The maximum number of VIDs that can be requested for any single trace report,,EC,U4,,0,1,,,U4 500,MaxTraceVIDs
+301003=S1F3WaitForGetValue,This value represents a threshold for how long to wait on any data registered for a GetValue callback.  If the number is 0 it will wait indefinitely.,ms,EC,U4,,0,1,,,U4 40,S1F3WaitForGetValue
+301004=TraceDataWaitForGetValue,This value represents a threshold for how long to wait on any data registered for a GetValue callback.  If the number is 0 it will wait indefinitely.  If the number is greater than the currently requested trace interval it will be adjusted internally to equal the trace interval,ms,EC,U4,,0,1,,,U4 100,TraceDataWaitForGetValue
+301005=VariableReportingStyle,0 = Strict compliance with SEMI standards; 1 = Allow any variable type (SV; DV; or EC) to be reported both for S1F3 and Trace reports,,EC,U4,,0,1,,,U4 1,VariableReportingStyle
+301006=TraceTimestampTolerance,The allowable variation for any given trace report's timestamp from the expected timestamp,ms,EC,U4,,0,1,,,U4 20,TraceTimestampTolerance
+301007=ReportGenerationDelay,This value represents the expected amount of time it takes CIMConnect to build a 500 VID Report.  This number will be subtracted from the allowed wait time for either an S1F3 request or a Trace Report.,ms,EC,U4,,0,1,,,U4 20,ReportGenerationDelay
+301008=TraceReportMultiBlock,This variable represents whether or not CIMConnect can automatically send a multi-block message for Trace Reports that are larger than 244 bytes (0 = do not send multi-bock trace reports. 1[default] = send multi-block trace reports),,EC,U4,,0,1,,,U4 1,TraceReportMultiBlock
+301009=ReportOfflineControlState,When transitioning to Offline control state report CONTROLSTATE as Offline (1=enable 0=default),,EC,Bo,,1,0,Bo 0,Bo 1,Bo 1,ReportOfflineControlState
+#Do not add definitions here without reading the documentation
+
+[CONNECTION3 VARIABLES]
+#id=name, description, units, varType, valType, eventID, private, persistant, min, max, default, wellknownname
+1=EventLimit,Limit ID of limit that has been exceeded. This may be linked to any variable's Limit Monitoring collection event.,,DV,L,,0,0,L,L,L,EventLimit
+2=LimitVariable,VID of variable associated with the last limit. This may be linked to any variable's Limit Monitoring collection event.,,DV,U4,,0,0,U4 0,U4 4294967295,U4 0,LimitVariable
+5=TransitionType,Direction of a Limit Monitoring zone transition. This may be linked to any variable's Limit Monitoring collection event. Possible values include 1 (lower to upper) and 0 (upper to lower zone).,,DV,Bi,,0,0,Bi 0,Bi 255,Bi 0,TransitionType
+8=HostECHostID,ID of the host that changed the EC value. This may be linked to CE HostECChange. See also DV HostECID.,,DV,U4,,0,0,U4 0,U4 4294967295,U4,HostECHostID
+9=HostECID,ECID changed by another host. This may be linked to CE HostECChange. See also DV HostECHostID.,,DV,U4,,0,0,U4 0,U4 4294967295,U4,HostECID
+10=HostCmdName,Name of the remote command sent by another host.,,DV,A,,0,0,A,A,A,HostCmdID
+11=HostCmdHostID,ID of the host that sent a remote command.,,DV,U4,,0,0,U4 0,U4 4294967295,U4,HostCmdHostID
+12=HostPPChangeName,Name of the process program (recipe) changed by another host. This may be linked to collection event HostPPChange. See also DV HostPPChangeStatus and HostPPChangeHostID.,,DV,A,,0,0,A,A,A,HostPPChangeName
+13=HostPPChangeStatus,Type of change made to a process program (recipe) by another host. Possible values include 1 (created) 2 (edited) and 3 (deleted). This may be linked to collection event HostPPChange. See also DV HostPPChangeName and HostPPChangeHostID.,,DV,U1,,0,0,U1 0,U1 255,U1 0,HostPPChangeStatus
+14=HostPPChangeHostID,ID of the host that changed a process program (recipe).,,DV,U4,,0,0,U4 0,U4 4294967295,U4,HostPPChangeHostID
+15=LastPPRequested,Name of the process program (recipe) requested by the equipment,,DV,A,,0,0,A,A,A,LastPPRequested
+2004=Clock,Machine's internal clock in the format YYYYMMDDhhmmsscc where Y = year M = month D = day h = hour m = minute s = second c = centisecond.,,SV,A,,0,0,,,,Clock
+2016=SpoolCountActual,Number of messages actually stored in the spool area. Multi-block inquire/grant messages are not included in this count.,,SV,U4,,0,1,U4 0,U4 4294967295,U4 0,SpoolCountActual
+2017=SpoolCountTotal,Total number of messages put into spool area from the time spooling was activated. Multi-block inquire/grant messages are not included in this count.,,SV,U4,,0,1,U4 0,U4 4294967295,U4 0,SpoolCountTotal
+2018=SpoolFullTime,Time when the spool area becomes full in the format YYYYMMDDhhmmsscc where Y = year M = month D = day h = hour m = minute s = second c = centisecond.,,SV,A,,0,1,A,A,A,SpoolFullTime
+2019=SpoolStartTime,Time when spool was last activated in the format YYYYMMDDhhmmsscc where Y = year M = month D = day h = hour m = minute s = second c = centisecond.,,SV,A,,0,1,A,A,A,SpoolStartTime
+2026=ALARMSENABLED,List of all enabled ALID.,,SV,L,,0,1,L,L,L,AlarmsEnabled
+2028=CONTROLSTATE,State of the Control State Machine.  Possible values include 1=EquipOffline 2=AttemptOnline 3=HostOffline 4=OnlineLocal and 5=OnlineRemote.,,SV,U1,,0,0,U1 0,U1 5,U1 4,ControlState
+2029=EVENTSENABLED,List of all enabled CEID.,,SV,L,,0,1,L,L,L,EventsEnabled
+2033=ControlStateSwitch,The GEM local/remote control switch where 0 = local and 1 = remote,,SV,U4,,0,0,U4 0,U4 4294967295,U4 0,CtrlRemoteSwitch
+2034=CtrlOnlineSwitch,The GEM online/offline control switch where 0 = offline and 1= online,,SV,U4,,0,0,U4 0,U4 4294967295,U4 1,CtrlOnlineSwitch
+2035=CommEnableSwitch,The GEM communications enable/disable operator switch where 0 = disabled and 256 = enabled,,SV,U4,,0,0,U4 0,U4 4294967295,U4 256,CommEnableSwitch
+2036=CommState,The current state of the GEM communications state machine where 0 = disabled 260 = communicating 273 = WaitCRA | WaitCRFromHost and 273 = WaitDelay | WaitCRFromHost,,SV,U4,,0,0,U4 0,U4 4294967295,U4 260,CommState
+2037=SpoolState,The current state of the GEM spooling state machine where 0 = inactive 273 = NoSpoolOutput | SpoolNotFull 274 = TransmitSpool | SpoolNotFull 276 = PurgeSpool | SpoolNotFull 289 = NoSpoolOutput | SpoolFull 290 = TransmitSpool | SpoolFull 292 = PurgeSpool | SpoolFull,,SV,U4,,0,1,U4 0,U4 4294967295,U4 0,SpoolState
+2043=GEMEnable,Enable GEM features,,SV,Bo,,0,0,Bo 0,Bo 1,Bo 1,GEMEnable
+2044=RemoteCmdEnable,enable remote command handling,,SV,Bo,,0,0,Bo 0,Bo 1,Bo 1,RemoteCmdEnable
+2045=HostPPEnable,enable process program manipulation,,SV,Bo,,0,0,Bo 0,Bo 1,Bo 1,HostPPEnable
+2046=ECSetEnable,enable EC setting,,SV,Bo,,0,0,Bo 0,Bo 1,Bo 1,ECSetEnable
+2047=HostTermMsgEnable,enable terminal services setting,,SV,Bo,,0,0,Bo 0,Bo 1,Bo 1,HostTermMsgEnable
+2057=ResyncNVS, 1 = resynchronize EVENTSENABLED and ALARMSENABLED 0 = do not resynchronize,,SV,U1,,1,0,,,U1 0,ResyncNVS
+4000=EstablishCommunicationsTimeout,Communication attempt timeout. When the Communication State Machine is enabled but not communicating the machine will attempt to establish communication with a host every timeout period.,,EC,U2,,0,1,U2 0,U2 65535,U2 10,EstablishCommunicationsTimeout
+4004=MaxSpoolMessages,Maximum number of messages that can be put into the spool area until it is considered full as part of the Spooling State Machine. Multi-block inquire/grant messages are not include in this count.,,EC,U4,,0,1,U4 0,U4 4294967295,U4 100,MaxSpoolMessages
+4005=MaxSpoolTransmit,Maximum number of messages that the machine will transmit from the spool area in response to an S6F23 (transmit spooled messages) request as part of the Spooling State Machine. If 0 there is no limit. Multi-block inquire/grant messages are not include in this count.,,EC,U4,,0,1,U4 0,U4 4294967295,U4 10,MaxSpoolTransmit
+4009=OverwriteSpool,Determine whether to overwrite data in the spool area or to discard further messages when the spool area is full as part of the Spooling State Machine. Possible values include 1 (overwrite) and 0 (discard).,,EC,Bo,,0,1,Bo 0,Bo 1,Bo 0,OverwriteSpool
+4010=SpoolEnabled,Enable or disable the Spooling State Machine. Possible values include 1 (enabled) and 0 (disabled).,,EC,Bo,,0,1,Bo 0,Bo 1,Bo 0,SpoolEnable
+4011=WBitS10,Request host reply for stream 10 messages (Terminal Services). Possible values include 1 (reply) 0 (no reply).,,EC,Bo,,0,1,Bo 0,Bo 1,Bo 1,S10ReplyExpected
+4012=WBitS5,Request host reply for stream 5 messages (Alarms). Possible values include 1 (reply) 0 (no reply).,,EC,Bo,,0,1,Bo 0,Bo 1,Bo 1,S5ReplyExpected
+4013=WBitS6,Request host reply for stream 6 messages (Events). If the machine is producing frequent collection events it may be a good idea to disable request reply. Possible values include 1 (reply) 0 (no reply).,,EC,Bo,,0,1,Bo 0,Bo 1,Bo 1,S6ReplyExpected
+4020=TimeFormat,Y2K time format selection. Possible values include 1 (compliant 16 byte) and 0 (not compliant 12 byte).,,EC,U4,,0,1,U4 0,U4 4294967295,U4 1,TimeFormat
+4021=DefCtrlOfflineState,State of the Control State Machine when going offline. Possible values include 1 = Equipment Offline 3 = Host Offline,,EC,U1,,0,1,U1 0,U1 5,U1 3,DefCtrlOfflineState
+4022=EventReportMsg,Message sent on event trigger,,EC,U4,,0,1,U4 0,U4 4294967295,U4 67083,EventReportMsg
+4023=DefaultCommState,The default state of the GEM communications state machine where 0 = disabled and 256 = enabled.,,EC,U4,,0,1,U4 0,U4 4294967295,U4 0,DefaultCommState
+4024=DefaultCtrlState,The default state of the GEM control state machine 1=EquipOffline 2=AttemptOnline 3=HostOffline 4=OnlineLocal and 5=OnlineRemote,,EC,U1,,0,1,U1 0,U1 5,U1 5,DefaultCtrlState
+4025=HeartBeat,Message level circuit assurance (0 turns it off),secs,EC,U2,,0,1,,,U2 0,HeartBeat
+4026=ClockOffset,Time offset between host's and local time,sec,SV,I4,,,,,,I4 0,ClockOffset
+4027=LastCEID,The last triggered CE,,DV,U4,,,,,,,LastCEID
+4028=LimitFreq,The frequency at which limits with GetValue callbacks are polled (0 turns it off),secs,EC,U2,,0,1,,,U2 0,LimitFreq
+4029=DataID,E5 DATAID,,DV,U4,,,,,,U4 0,DataID
+4030=PreviousControlState, the prior control state,,SV,U1,,,,,,,PreviousControlState
+4031=S6MultiBlockInquire, 1=send MBI 0=don't send MBI,,EC,Bo,,0,1,,,Bo 0,S6MultiBlockInquire
+4032=SpoolingWaitDelayActivation,0=do not acivate; 1=activate; 2=activate on and after second transaction,,EC,U1,,0,1,U1 0,U1 2,U1 0,SpoolingWaitDelayActivation
+#4033=SendS9WhenSpool,1=send the S9Fx messages to the Host when Spooling is Active;0=discard or spool,,EC,U1,,0,1,U1 0,U1 1,U1 0,SendS9WhenSpool
+#4034=MessagesAllowedForSpooling,SECS-II messages allowed to be Spooled,,SV,,,1,0,,,L {L {U1 5} {L}} {L {U1 6} {L}},MessagesAllowedForSpooling
+#4035=RejectMaxSpoolMessagesWhenSpoolActive,1=Reject setting of MaxSpoolMessages EC value while Spooling is Active,,SV,U1,,1,0,U1 0,U1 1,U1 1,RejectMaxSpoolMessagesWhenSpoolActive
+
+#    data item format specifiers for SECS-II messages. These are private variables
+#    uncomment these only if you need something other than U4 format.  Format conversion degrades performance.
+#4040=ALIDFormat,the data type for alarm ids in messages,,SV,U4,,1,0,U4 1,U4 11,U4 7,ALIDFormat
+#4041=CEIDFormat,the data type for CE ids in messages,,SV,U4,,1,0,U4 1,U4 11,U4 7,CEIDFormat
+#4042=DATAIDFormat,the data type for DATAID in messages,,SV,U4,,1,0,U4 1,U4 11,U4 7,DATAIDFormat
+#4043=RPTIDFormat,the data type for report ids in messages,,SV,U4,,1,0,U4 1,U4 11,U4 7,RPTIDFormat
+#4044=TRIDFormat,the data type for trace ids in messages,,SV,U4,,1,0,U4 1,U4 11,U4 7,TRIDFormat
+#4045=VIDFormat,the data type for variable (EC SV DV) ids in messages,,SV,U4,,1,0,U4 1,U4 11,U4 7,VIDFormat
+#   data item format specifiers for incoming SECS-II messages. These are private variables
+#   are used to validate data items in incoming messages from GEM host.  If a variable is
+#   missing (commented out), set to an empty L list value or has invalid format
+#   the value of coresponding XXXFormat variable is used (see above).
+4050=ALIDInputFormat,allowed data type for alarm ids (ALID) in messages from host,,SV,U4,,1,0,,,U4 7 8 6 5,ALIDInputFormat
+4051=CEIDInputFormat,allowed data type for collection event ids (CEID) in messages from host,,SV,U4,,1,0,,,U4 7 8 6 5,CEIDInputFormat
+4052=DATAIDInputFormat,allowed data type for data ids (DATAID) in messages from host,,SV,U4,,1,0,,,U4 7 8 6 5,DATAIDInputFormat
+4053=RPTIDInputFormat,allowed data type for report ids (RPTID) in messages from host,,SV,U4,,1,0,,,U4 7 8 6 5,RPTIDInputFormat
+4054=TRIDInputFormat,allowed data type for trace ids (TRID) in messages from host,,SV,U4,,1,0,,,U4 7 8 6 5,TRIDInputFormat
+4055=VIDInputFormat,allowed data type for variable (EC SV DV) ids in messages from host,,SV,U4,,1,0,,,U4 7 8 6 5,VIDInputFormat
+
+301000=MaxSimultaneousTraces,The maximum number of traces that can be requested simultaneously from the host,,EC,U4,,0,1,,,U4 10,MaxSimultaneousTraces
+301001=MaxTraceFrequency,The maximum rate at which a host can request a trace report to be delivered,ms,EC,U4,,0,1,,,U4 100,MaxTraceFrequency
+301002=MaxTraceVIDs,The maximum number of VIDs that can be requested for any single trace report,,EC,U4,,0,1,,,U4 500,MaxTraceVIDs
+301003=S1F3WaitForGetValue,This value represents a threshold for how long to wait on any data registered for a GetValue callback.  If the number is 0 it will wait indefinitely.,ms,EC,U4,,0,1,,,U4 40,S1F3WaitForGetValue
+301004=TraceDataWaitForGetValue,This value represents a threshold for how long to wait on any data registered for a GetValue callback.  If the number is 0 it will wait indefinitely.  If the number is greater than the currently requested trace interval it will be adjusted internally to equal the trace interval,ms,EC,U4,,0,1,,,U4 100,TraceDataWaitForGetValue
+301005=VariableReportingStyle,0 = Strict compliance with SEMI standards; 1 = Allow any variable type (SV; DV; or EC) to be reported both for S1F3 and Trace reports,,EC,U4,,0,1,,,U4 1,VariableReportingStyle
+301006=TraceTimestampTolerance,The allowable variation for any given trace report's timestamp from the expected timestamp,ms,EC,U4,,0,1,,,U4 20,TraceTimestampTolerance
+301007=ReportGenerationDelay,This value represents the expected amount of time it takes CIMConnect to build a 500 VID Report.  This number will be subtracted from the allowed wait time for either an S1F3 request or a Trace Report.,ms,EC,U4,,0,1,,,U4 20,ReportGenerationDelay
+301008=TraceReportMultiBlock,This variable represents whether or not CIMConnect can automatically send a multi-block message for Trace Reports that are larger than 244 bytes (0 = do not send multi-bock trace reports. 1[default] = send multi-block trace reports),,EC,U4,,0,1,,,U4 1,TraceReportMultiBlock
+301009=ReportOfflineControlState,When transitioning to Offline control state report CONTROLSTATE as Offline (1=enable 0=default),,EC,Bo,,1,0,Bo 0,Bo 1,Bo 1,ReportOfflineControlState
+#Do not add definitions here without reading the documentation
+
+
+# It is good style to put all of your user-defined items at the end of the file. This make it easier
+# to upgrade and merge product changes into your EPJ file. 
+
+[COMMON EVENTS]
+#id=name, description, wellknownname
+#Add your equipment definitions here
+101=CE1,A sample user defined collection event,
+102=CE2,A sample user defined collection event,
+
+200=ProcessStateToSETUP,A sample user defined collection event for the Processing State Machine,
+201=ProcessStateToEXECUTING,A sample user defined collection event for the Processing State Machine,
+202=ProcessStateToIDLE,A sample user defined collection event for the Processing State Machine,
+
+1001=AVPSystemAlarmSET,AVP SECS GEM Common Alarm SET collection event.,
+2001=AVPSystemAlarmCLEAR,AVP SECS GEM Common Alarm CLEAR collection event.,
+
+[ALARMS]
+#id=name, description, text, setEventID, clearEventID, alarm code (ALCD), wellknownname
+#Add your equipment definitions here
+1=AVPSystemAlarm, AVP SECS GEM Common Alarm, AVP SECS GEM Common Alarm,1001,2001,0, 
+
+[COMMON VARIABLES]
+#varTypes DV,SV,EC
+#valTypes I1, I2, I4, I8, U1, U2, U4, U8, F4, F8, A, Bo, Bi, L, J, W
+#id=name, description, units, varType, valType, eventID, private, persistant, min, max, default, wellknownname
+#Add your equipment definitions here
+101=DV1,Example user defined data variable.,,DV,U4,,0,0,,,U4,
+102=DV2,Example user defined data variable.,,DV,U4,,0,0,,,U4,
+103=DV3,Example user defined data variable.,,DV,F8,,0,0,,,F8,
+
+201=SV1,Example user defined status variable.,,SV,F8,,0,0,,,F8,
+202=SV2,Example user defined status variable.,,SV,A,,0,0,,,A,
+203=SV3,Example user defined status variable.,,SV,Bo,,0,0,,,Bo,
+204=SV4,Example user defined status variable.,,SV,U4,,0,0,,,U4,
+205=SV5,Example user defined status variable.,,SV,U4,,0,0,,,U4,
+206=SV6,Example user defined status variable.,,SV,U4,,0,0,,,U4,
+
+
+

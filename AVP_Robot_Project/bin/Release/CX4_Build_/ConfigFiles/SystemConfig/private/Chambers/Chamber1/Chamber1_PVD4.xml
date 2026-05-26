@@ -1,0 +1,578 @@
+<RecipeDef>
+  <ParameterList Id="1" isGroup="1" Group="Version_Control" GroupName="Version_Control" ShowInUI="False">
+    <Parameter>
+      <SeqNo>1</SeqNo>
+      <Name>(c)2012 AVP Technology, LLC</Name>
+      <Description>(c)2012 AVP Technology, LLC</Description>
+      <Default>
+      </Default>
+      <Unit>String</Unit>
+      <ShowInUI>False</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>2</SeqNo>
+      <Name>PVD4 Process File Version 2.8</Name>
+      <Description>PVD4 Process File Version 2.8</Description>
+      <Default>
+      </Default>
+      <Unit>String</Unit>
+      <ShowInUI>False</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>3</SeqNo>
+      <Name>StepName</Name>
+      <Description>
+      </Description>
+      <Default>
+      </Default>
+      <Unit>String</Unit>
+      <ShowInUI>False</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>4</SeqNo>
+      <Name>StepDescription</Name>
+      <Description>
+      </Description>
+      <Default>
+      </Default>
+      <Unit>String</Unit>
+      <ShowInUI>False</ShowInUI>
+    </Parameter>
+  </ParameterList>
+  <ParameterList Id="2" isGroup="1" Group="StepDescription" GroupName="Description" ShowInUI="True">
+    <Parameter>
+      <SeqNo>1</SeqNo>
+      <Name>StepDescription</Name>
+      <Description>Description</Description>
+      <Default>
+      </Default>
+      <Unit>String</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+  </ParameterList>
+  <ParameterList Id="3" isGroup="1" Group="LoopInfomation" GroupName="Loop Information" ShowInUI="True">
+    <Parameter>
+      <SeqNo>1</SeqNo>
+      <Name>LoopMode</Name>
+      <Description>Loop Mode</Description>
+      <Default>NONE</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="0" SeqNoDisable="2" SeqNoCalculate="2=0">NONE</Item>
+        <Item Value="1" SeqNoDisable="2" SeqNoCalculate="2=0">START</Item>
+        <Item Value="2">END</Item>
+        <Item Value="3">SELF LOOP</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>2</SeqNo>
+      <Name>LoopCount</Name>
+      <Description>Loop Count</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+  </ParameterList>
+  <ParameterList Id="4" isGroup="1" Group="Gasses" GroupName="Gasses Control" ShowInUI="True">
+    <Parameter>
+      <SeqNo>1</SeqNo>
+      <Name>Gas1</Name>
+      <Description>Gas 1 ({0})(sccm)</Description>
+      <Min>0</Min>
+      <Max>290</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>2</SeqNo>
+      <Name>Gas2</Name>
+      <Description>Gas 2 ({0})(sccm)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>3</SeqNo>
+      <Name>Gas3</Name>
+      <Description>Gas 3 ({0})(sccm)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>4</SeqNo>
+      <Name>Gas4</Name>
+      <Description>Gas 4 ({0})(sccm)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>5</SeqNo>
+      <Name>Gas5</Name>
+      <Description>Gas 5 ({0})(sccm)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>6</SeqNo>
+      <Name>UseGasDistribution</Name>
+      <Description>Use Gas Distribution</Description>
+      <Default>Yes</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>7</SeqNo>
+      <Name>UseSecondaryGasOnly</Name>
+      <Description>Secondary Gas Only</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>8</SeqNo>
+      <Name>UseMainDist</Name>
+      <Description>Use Main Distribution Valve</Description>
+      <Default>Yes</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>9</SeqNo>
+      <Name>UseSeconDist</Name>
+      <Description>Use Secondary Distribution Valve</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+  </ParameterList>
+  <ParameterList Id="5" isGroup="1" Group="ProcessControl" GroupName="Process Control" ShowInUI="True">
+    <Parameter>
+      <SeqNo>1</SeqNo>
+      <Name>ControlMode</Name>
+      <Description>Control Mode (Time / Revolution / Static)</Description>
+      <Default>Time</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="Time" SeqNoDisable="FilMetricControl:1,FilMetricControl:2,FilMetricControl:3,2,4">Time</Item>
+        <Item Value="Revolution" SeqNoDisable="FilMetricControl:1,FilMetricControl:2,FilMetricControl:3,3,4">Revolution</Item>
+        <Item Value="Static" SeqNoDisable="FilMetricControl:1,FilMetricControl:2,FilMetricControl:3,2,32">Static</Item>
+        <Item Value="Thickness">Thickness</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>2</SeqNo>
+      <Name>Revolution</Name>
+      <Description>Revolution (No. Rev)</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>10</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>3</SeqNo>
+      <Name>ProcessTimeSeconds</Name>
+      <Description>Process Time (secs)</Description>
+      <Min>0</Min>
+      <Max>9999</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>4</SeqNo>
+      <Name>StaticPostion</Name>
+      <Description>Static Wafer Position (1-{0})</Description>
+      <Min>0</Min>
+      <Max>8</Max>
+      <Default>1</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>5</SeqNo>
+      <Name>ProcessStartPressure</Name>
+      <Description>Process Start Pressure (torr)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>5.00E-06</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>6</SeqNo>
+      <Name>ProcessVATMode</Name>
+      <Description>Process VAT Mode</Description>
+      <Default>Pressure</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="Pressure" SeqNoDisable="7">Pressure</Item>
+        <Item Value="Percent" SeqNoDisable="8">Percent</Item>
+        <Item Value="Open" SeqNoDisable="7,8">Open</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>7</SeqNo>
+      <Name>ProcessVATPosition</Name>
+      <Description>Process VAT Pos (%)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>8</SeqNo>
+      <Name>ProcessPressure</Name>
+      <Description>Process Pressure (mtorr)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>9</SeqNo>
+      <Name>PowerDown</Name>
+      <Description>Power Down</Description>
+      <Default>Yes</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No (Shutter Close)</Item>
+        <Item Value="falseShutterOpen">No (Shutter Open)</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>10</SeqNo>
+      <Name>LogIntervalSecond</Name>
+      <Description>Data Log Interval (secs)</Description>
+      <Min>0</Min>
+      <Max>1000</Max>
+      <Default>2</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+  </ParameterList>
+  <ParameterList Id="6" isGroup="1" Group="RFTargetPower" GroupName="RF Target Power" ShowInUI="True">
+    <Parameter>
+      <SeqNo>1</SeqNo>
+      <Name>TargetSelection</Name>
+      <Description>Target Selection (1-4)</Description>
+      <Default>T4</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="T1">T1</Item>
+        <Item Value="T2">T2</Item>
+        <Item Value="T3">T3</Item>
+        <Item Value="T4">T4</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>2</SeqNo>
+      <Name>TargetPower</Name>
+      <Description>Target Power (Watts)</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>3</SeqNo>
+      <Name>TargetRampTime</Name>
+      <Description>Target Ramp Time (Secs)</Description>
+      <Min>0</Min>
+      <Max>60</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>4</SeqNo>
+      <Name>TargetVoltageMin</Name>
+      <Description>Target Voltage Min (Volts)</Description>
+      <Min>0</Min>
+      <Max>500</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>5</SeqNo>
+      <Name>TargetVoltageMax</Name>
+      <Description>Target Voltage Max (Volts)</Description>
+      <Min>0</Min>
+      <Max>500</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>6</SeqNo>
+      <Name>TargetC1</Name>
+      <Description>Target C1 (%)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>50</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>7</SeqNo>
+      <Name>TargetC2</Name>
+      <Description>Target C2 (%)</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>50</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>8</SeqNo>
+      <Name>TargetMatchingMode</Name>
+      <Description>Target Match Mode</Description>
+      <Default>Auto</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Auto</Item>
+        <Item Value="false">Manual</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>9</SeqNo>
+      <Name>TargetShutterOpen</Name>
+      <Description>Target Shutter Open</Description>
+      <Default>Yes</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+  </ParameterList>
+  <ParameterList Id="7" isGroup="1" Group="DCTargetPower" GroupName="DC Target Power" ShowInUI="True">
+    <Parameter>
+      <SeqNo>1</SeqNo>
+      <Name>TargetSelection</Name>
+      <Description>Target Selection (1-4)</Description>
+      <Default>T4</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="T1">T1</Item>
+        <Item Value="T2">T2</Item>
+        <Item Value="T3">T3</Item>
+        <Item Value="T4">T4</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>2</SeqNo>
+      <Name>TargetPower</Name>
+      <Description>Target Power (Watts)</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>3</SeqNo>
+      <Name>TargetRampTime</Name>
+      <Description>Target Ramp Time (Secs)</Description>
+      <Min>0</Min>
+      <Max>60</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>4</SeqNo>
+      <Name>TargetPulseFrequency</Name>
+      <Description>Target Pulse Frequency (kHz)</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>5</SeqNo>
+      <Name>TargetPulseWidth</Name>
+      <Description>Target Pulse Width (ns)</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>6</SeqNo>
+      <Name>TargetShutterOpen</Name>
+      <Description>Target Shutter Open</Description>
+      <Default>Yes</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+  </ParameterList>
+  <ParameterList Id="8" isGroup="1" Group="SubstratePower" GroupName="Substrate Power" ShowInUI="True">
+    <Parameter>
+      <SeqNo>1</SeqNo>
+      <Name>ControlMode</Name>
+      <Description>Control Mode</Description>
+      <Default>Power</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="Power">Power</Item>
+        <Item Value="Voltage">Voltage</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>2</SeqNo>
+      <Name>BiasPower</Name>
+      <Description>Bias Power (Watts)</Description>
+      <Min>0</Min>
+      <Max>2000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>3</SeqNo>
+      <Name>BiasVoltage</Name>
+      <Description>Bias Voltage (Volts)</Description>
+      <Min>0</Min>
+      <Max>500</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>4</SeqNo>
+      <Name>BiasVoltageMin</Name>
+      <Description>Bias Voltage Min (Volts)</Description>
+      <Min>0</Min>
+      <Max>500</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>5</SeqNo>
+      <Name>BiasVoltageMax</Name>
+      <Description>Bias Voltage Max (Volts)</Description>
+      <Min>0</Min>
+      <Max>500</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>6</SeqNo>
+      <Name>SubGrounded</Name>
+      <Description>Sub. Grounded</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="true" SeqNoDisable="2,3" SeqNoCalculate="2=0;3=0">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+  </ParameterList>
+  <ParameterList Id="9" isGroup="1" Group="MotionControl" GroupName="Motion Control" ShowInUI="True">
+    <Parameter>
+      <SeqNo>1</SeqNo>
+      <Name>TableRotationSpeed</Name>
+      <Description>Table Rotation Speed (Rpm)</Description>
+      <Min>0</Min>
+      <Max>15</Max>
+      <Default>5</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>2</SeqNo>
+      <Name>TableHeight</Name>
+      <Description>Table Height (mm)</Description>
+      <Min>0</Min>
+      <Max>110</Max>
+      <Default>30</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+  </ParameterList>
+  <ParameterList Id="10" isGroup="1" Group="FilMetricControl" GroupName="Thickness Monitor" ShowInUI="True">
+    <Parameter>
+      <SeqNo>1</SeqNo>
+      <Name>RecipeName</Name>
+      <Description>Recipe Name</Description>
+      <Default>
+      </Default>
+      <Unit>String</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>2</SeqNo>
+      <Name>WaferThickness</Name>
+      <Description>Wafer Thickness (Å)</Description>
+      <Min>0</Min>
+      <Max>5000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>3</SeqNo>
+      <Name>DelayTimes</Name>
+      <Description>Delay Times (Secs)</Description>
+      <Min>0</Min>
+      <Max>1000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+  </ParameterList>
+</RecipeDef>

@@ -1,0 +1,9 @@
+<Recipe>
+  <AnyChamber>
+  </AnyChamber>
+  <Chamber1>Corona_2Steps_Test.xml</Chamber1>
+  <Chamber2>Corona_1Steps.xml</Chamber2>
+  <Chamber3>PVD5T_T3_AE_Open.xml</Chamber3>
+  <Aligner>
+  </Aligner>
+</Recipe>

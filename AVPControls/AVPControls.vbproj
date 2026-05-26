@@ -1,0 +1,1201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4B58E795-3575-44AB-B5A4-5387BFF7ADE3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AVPControls</RootNamespace>
+    <AssemblyName>AVPControls</AssemblyName>
+    <MyType>Windows</MyType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>AVPControls.xml</DocumentationFile>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <CodeAnalysisRules>-Microsoft.Design#CA1012;-Microsoft.Design#CA2210;-Microsoft.Design#CA1040;-Microsoft.Design#CA1005;-Microsoft.Design#CA1020;-Microsoft.Design#CA1021;-Microsoft.Design#CA1010;-Microsoft.Design#CA1011;-Microsoft.Design#CA1009;-Microsoft.Design#CA1050;-Microsoft.Design#CA1026;-Microsoft.Design#CA1019;-Microsoft.Design#CA1031;-Microsoft.Design#CA1047;-Microsoft.Design#CA1000;-Microsoft.Design#CA1048;-Microsoft.Design#CA1051;-Microsoft.Design#CA1002;-Microsoft.Design#CA1061;-Microsoft.Design#CA1006;-Microsoft.Design#CA1046;-Microsoft.Design#CA1045;-Microsoft.Design#CA1038;-Microsoft.Design#CA1008;-Microsoft.Design#CA1028;-Microsoft.Design#CA1004;-Microsoft.Design#CA1035;-Microsoft.Design#CA1063;-Microsoft.Design#CA1032;-Microsoft.Design#CA1023;-Microsoft.Design#CA1033;-Microsoft.Design#CA1039;-Microsoft.Design#CA1016;-Microsoft.Design#CA1014;-Microsoft.Design#CA1017;-Microsoft.Design#CA1018;-Microsoft.Design#CA1027;-Microsoft.Design#CA1059;-Microsoft.Design#CA1060;-Microsoft.Design#CA1034;-Microsoft.Design#CA1013;-Microsoft.Design#CA1036;-Microsoft.Design#CA1044;-Microsoft.Design#CA1041;-Microsoft.Design#CA1025;-Microsoft.Design#CA1052;-Microsoft.Design#CA1053;-Microsoft.Design#CA1057;-Microsoft.Design#CA1058;-Microsoft.Design#CA1001;-Microsoft.Design#CA1049;-Microsoft.Design#CA1054;-Microsoft.Design#CA1056;-Microsoft.Design#CA1055;-Microsoft.Design#CA1030;-Microsoft.Design#CA1003;-Microsoft.Design#CA1007;-Microsoft.Design#CA1043;-Microsoft.Design#CA1024;-Microsoft.Design#CA1062;-Microsoft.Globalization#CA1301;-Microsoft.Globalization#CA1302;-Microsoft.Globalization#CA1303;-Microsoft.Globalization#CA1306;-Microsoft.Globalization#CA1304;-Microsoft.Globalization#CA1305;-Microsoft.Globalization#CA1300;-Microsoft.Interoperability#CA1403;-Microsoft.Interoperability#CA1406;-Microsoft.Interoperability#CA1413;-Microsoft.Interoperability#CA1402;-Microsoft.Interoperability#CA1407;-Microsoft.Interoperability#CA1404;-Microsoft.Interoperability#CA1410;-Microsoft.Interoperability#CA1411;-Microsoft.Interoperability#CA1405;-Microsoft.Interoperability#CA1409;-Microsoft.Interoperability#CA1415;-Microsoft.Interoperability#CA1408;-Microsoft.Interoperability#CA1414;-Microsoft.Interoperability#CA1412;-Microsoft.Interoperability#CA1400;-Microsoft.Interoperability#CA1401;-Microsoft.Maintainability#CA1502;-Microsoft.Maintainability#CA1501;-Microsoft.Maintainability#CA1500;-Microsoft.Mobility#CA1600;-Microsoft.Mobility#CA1601;-Microsoft.Naming#CA1718;-Microsoft.Naming#CA1720;-Microsoft.Naming#CA1700;-Microsoft.Naming#CA1712;-Microsoft.Naming#CA1713;-Microsoft.Naming#CA1709;-Microsoft.Naming#CA1708;-Microsoft.Naming#CA1715;-Microsoft.Naming#CA1710;-Microsoft.Naming#CA1707;-Microsoft.Naming#CA1722;-Microsoft.Naming#CA1711;-Microsoft.Naming#CA1716;-Microsoft.Naming#CA1705;-Microsoft.Naming#CA1725;-Microsoft.Naming#CA1719;-Microsoft.Naming#CA1721;-Microsoft.Naming#CA1706;-Microsoft.Naming#CA1724;-Microsoft.Naming#CA1726;-Microsoft.Portability#CA1901;-Microsoft.Portability#CA1900;-Microsoft.Security#CA2116;-Microsoft.Security#CA2117;-Microsoft.Security#CA2105;-Microsoft.Security#CA2115;-Microsoft.Security#CA2104;-Microsoft.Security#CA2122;-Microsoft.Security#CA2114;-Microsoft.Security#CA2123;-Microsoft.Security#CA2111;-Microsoft.Security#CA2108;-Microsoft.Security#CA2107;-Microsoft.Security#CA2103;-Microsoft.Security#CA2100;-Microsoft.Security#CA2118;-Microsoft.Security#CA2109;-Microsoft.Security#CA2119;-Microsoft.Security#CA2106;-Microsoft.Security#CA2112;-Microsoft.Security#CA2110;-Microsoft.Security#CA2120;-Microsoft.Security#CA2101;-Microsoft.Security#CA2121;-Microsoft.Security#CA2126;-Microsoft.Security#CA2124;-Microsoft.Usage#CA2209;-Microsoft.Usage#CA2236;-Microsoft.Usage#CA2227;-Microsoft.Usage#CA2213;-Microsoft.Usage#CA2216;-Microsoft.Usage#CA2215;-Microsoft.Usage#CA2214;-Microsoft.Usage#CA2222;-Microsoft.Usage#CA2202;-Microsoft.Usage#CA1806;-Microsoft.Usage#CA2217;-Microsoft.Usage#CA2212;-Microsoft.Usage#CA2219;-Microsoft.Usage#CA2201;-Microsoft.Usage#CA2228;-Microsoft.Usage#CA2221;-Microsoft.Usage#CA2220;-Microsoft.Usage#CA2240;-Microsoft.Usage#CA2229;-Microsoft.Usage#CA2238;-Microsoft.Usage#CA2207;-Microsoft.Usage#CA2208;-Microsoft.Usage#CA2235;-Microsoft.Usage#CA2237;-Microsoft.Usage#CA2232;-Microsoft.Usage#CA2223;-Microsoft.Usage#CA2211;-Microsoft.Usage#CA2233;-Microsoft.Usage#CA2225;-Microsoft.Usage#CA2226;-Microsoft.Usage#CA2231;-Microsoft.Usage#CA2224;-Microsoft.Usage#CA2218;-Microsoft.Usage#CA2234;-Microsoft.Usage#CA2241;-Microsoft.Usage#CA2239;-Microsoft.Usage#CA2200;-Microsoft.Usage#CA1801;-Microsoft.Usage#CA2205;-Microsoft.Usage#CA2230</CodeAnalysisRules>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>AVPControls.xml</DocumentationFile>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CTC Release|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
+    <DocumentationFile>AVPControls.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CTC Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>_MYFORMS=True</DefineConstants>
+    <DocumentationFile>AVPControls.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRules>-Microsoft.Design#CA1012;-Microsoft.Design#CA2210;-Microsoft.Design#CA1040;-Microsoft.Design#CA1005;-Microsoft.Design#CA1020;-Microsoft.Design#CA1021;-Microsoft.Design#CA1010;-Microsoft.Design#CA1011;-Microsoft.Design#CA1009;-Microsoft.Design#CA1050;-Microsoft.Design#CA1026;-Microsoft.Design#CA1019;-Microsoft.Design#CA1031;-Microsoft.Design#CA1047;-Microsoft.Design#CA1000;-Microsoft.Design#CA1048;-Microsoft.Design#CA1051;-Microsoft.Design#CA1002;-Microsoft.Design#CA1061;-Microsoft.Design#CA1006;-Microsoft.Design#CA1046;-Microsoft.Design#CA1045;-Microsoft.Design#CA1038;-Microsoft.Design#CA1008;-Microsoft.Design#CA1028;-Microsoft.Design#CA1004;-Microsoft.Design#CA1035;-Microsoft.Design#CA1063;-Microsoft.Design#CA1032;-Microsoft.Design#CA1023;-Microsoft.Design#CA1033;-Microsoft.Design#CA1039;-Microsoft.Design#CA1016;-Microsoft.Design#CA1014;-Microsoft.Design#CA1017;-Microsoft.Design#CA1018;-Microsoft.Design#CA1027;-Microsoft.Design#CA1059;-Microsoft.Design#CA1060;-Microsoft.Design#CA1034;-Microsoft.Design#CA1013;-Microsoft.Design#CA1036;-Microsoft.Design#CA1044;-Microsoft.Design#CA1041;-Microsoft.Design#CA1025;-Microsoft.Design#CA1052;-Microsoft.Design#CA1053;-Microsoft.Design#CA1057;-Microsoft.Design#CA1058;-Microsoft.Design#CA1001;-Microsoft.Design#CA1049;-Microsoft.Design#CA1054;-Microsoft.Design#CA1056;-Microsoft.Design#CA1055;-Microsoft.Design#CA1030;-Microsoft.Design#CA1003;-Microsoft.Design#CA1007;-Microsoft.Design#CA1043;-Microsoft.Design#CA1024;-Microsoft.Design#CA1062;-Microsoft.Globalization#CA1301;-Microsoft.Globalization#CA1302;-Microsoft.Globalization#CA1303;-Microsoft.Globalization#CA1306;-Microsoft.Globalization#CA1304;-Microsoft.Globalization#CA1305;-Microsoft.Globalization#CA1300;-Microsoft.Interoperability#CA1403;-Microsoft.Interoperability#CA1406;-Microsoft.Interoperability#CA1413;-Microsoft.Interoperability#CA1402;-Microsoft.Interoperability#CA1407;-Microsoft.Interoperability#CA1404;-Microsoft.Interoperability#CA1410;-Microsoft.Interoperability#CA1411;-Microsoft.Interoperability#CA1405;-Microsoft.Interoperability#CA1409;-Microsoft.Interoperability#CA1415;-Microsoft.Interoperability#CA1408;-Microsoft.Interoperability#CA1414;-Microsoft.Interoperability#CA1412;-Microsoft.Interoperability#CA1400;-Microsoft.Interoperability#CA1401;-Microsoft.Maintainability#CA1502;-Microsoft.Maintainability#CA1501;-Microsoft.Maintainability#CA1500;-Microsoft.Mobility#CA1600;-Microsoft.Mobility#CA1601;-Microsoft.Naming#CA1718;-Microsoft.Naming#CA1720;-Microsoft.Naming#CA1700;-Microsoft.Naming#CA1712;-Microsoft.Naming#CA1713;-Microsoft.Naming#CA1709;-Microsoft.Naming#CA1708;-Microsoft.Naming#CA1715;-Microsoft.Naming#CA1710;-Microsoft.Naming#CA1707;-Microsoft.Naming#CA1722;-Microsoft.Naming#CA1711;-Microsoft.Naming#CA1716;-Microsoft.Naming#CA1705;-Microsoft.Naming#CA1725;-Microsoft.Naming#CA1719;-Microsoft.Naming#CA1721;-Microsoft.Naming#CA1706;-Microsoft.Naming#CA1724;-Microsoft.Naming#CA1726;-Microsoft.Portability#CA1901;-Microsoft.Portability#CA1900;-Microsoft.Security#CA2116;-Microsoft.Security#CA2117;-Microsoft.Security#CA2105;-Microsoft.Security#CA2115;-Microsoft.Security#CA2104;-Microsoft.Security#CA2122;-Microsoft.Security#CA2114;-Microsoft.Security#CA2123;-Microsoft.Security#CA2111;-Microsoft.Security#CA2108;-Microsoft.Security#CA2107;-Microsoft.Security#CA2103;-Microsoft.Security#CA2100;-Microsoft.Security#CA2118;-Microsoft.Security#CA2109;-Microsoft.Security#CA2119;-Microsoft.Security#CA2106;-Microsoft.Security#CA2112;-Microsoft.Security#CA2110;-Microsoft.Security#CA2120;-Microsoft.Security#CA2101;-Microsoft.Security#CA2121;-Microsoft.Security#CA2126;-Microsoft.Security#CA2124;-Microsoft.Usage#CA2209;-Microsoft.Usage#CA2236;-Microsoft.Usage#CA2227;-Microsoft.Usage#CA2213;-Microsoft.Usage#CA2216;-Microsoft.Usage#CA2215;-Microsoft.Usage#CA2214;-Microsoft.Usage#CA2222;-Microsoft.Usage#CA2202;-Microsoft.Usage#CA1806;-Microsoft.Usage#CA2217;-Microsoft.Usage#CA2212;-Microsoft.Usage#CA2219;-Microsoft.Usage#CA2201;-Microsoft.Usage#CA2228;-Microsoft.Usage#CA2221;-Microsoft.Usage#CA2220;-Microsoft.Usage#CA2240;-Microsoft.Usage#CA2229;-Microsoft.Usage#CA2238;-Microsoft.Usage#CA2207;-Microsoft.Usage#CA2208;-Microsoft.Usage#CA2235;-Microsoft.Usage#CA2237;-Microsoft.Usage#CA2232;-Microsoft.Usage#CA2223;-Microsoft.Usage#CA2211;-Microsoft.Usage#CA2233;-Microsoft.Usage#CA2225;-Microsoft.Usage#CA2226;-Microsoft.Usage#CA2231;-Microsoft.Usage#CA2224;-Microsoft.Usage#CA2218;-Microsoft.Usage#CA2234;-Microsoft.Usage#CA2241;-Microsoft.Usage#CA2239;-Microsoft.Usage#CA2200;-Microsoft.Usage#CA1801;-Microsoft.Usage#CA2205;-Microsoft.Usage#CA2230</CodeAnalysisRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ThirdParty\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnimationControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AVPAlignerControl.Designer.vb">
+      <DependentUpon>AVPAlignerControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AVPAlignerControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AVPButton.Designer.vb">
+      <DependentUpon>AVPButton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AVPButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AVPFixtureControl.Designer.vb">
+      <DependentUpon>AVPFixtureControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AVPFixtureControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AVPGaslineControl.Designer.vb">
+      <DependentUpon>AVPGaslineControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AVPGaslineControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AVPShutterControl.Designer.vb">
+      <DependentUpon>AVPShutterControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AVPShutterControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseControl\AVPAnimationControlBase.Designer.vb">
+      <DependentUpon>AVPAnimationControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControl\AVPAnimationControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseControl\AVPControlBase.Designer.vb">
+      <DependentUpon>AVPControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControl\AVPControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseControl\AVPDeviceControlBase.Designer.vb">
+      <DependentUpon>AVPDeviceControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControl\AVPDeviceControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseControl\AVPPanel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseControl\AVPStatusButton.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseControl\AVPStatusControlBase.Designer.vb">
+      <DependentUpon>AVPStatusControlBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControl\AVPStatusControlBase.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AVPWaferControl.Designer.vb">
+      <DependentUpon>AVPWaferControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AVPWaferControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseControl\StatusPanel.Designer.vb">
+      <DependentUpon>StatusPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControl\StatusPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CassetteControl.Designer.vb">
+      <DependentUpon>CassetteControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CassetteControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChamberControls\AVPChamberControl.Designer.vb">
+      <DependentUpon>AVPChamberControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChamberControls\AVPChamberControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChamberControls\DepChamberControl.Designer.vb">
+      <DependentUpon>DepChamberControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChamberControls\DepChamberControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CheckChangedEventArgs.vb" />
+    <Compile Include="CheckChangingEventArgs.vb" />
+    <Compile Include="DataGridViewCheckBoxHeaderCell.vb" />
+    <Compile Include="Form\AVPCompanyPopupForm.Designer.vb">
+      <DependentUpon>AVPCompanyPopupForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\AVPCompanyPopupForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AVPPopupForm.Designer.vb">
+      <DependentUpon>AVPPopupForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\AVPPopupForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FlashingLabel.Designer.vb">
+      <DependentUpon>FlashingLabel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FlashingLabel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form\AVPForm.Designer.vb">
+      <DependentUpon>AVPForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\AVPForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AVPMsgBox.Designer.vb">
+      <DependentUpon>AVPMsgBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\AVPMsgBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FullVersionPopupForm.Designer.vb">
+      <DependentUpon>FullVersionPopupForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FullVersionPopupForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AVPIOTab.Designer.vb">
+      <DependentUpon>AVPIOTab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\AVPIOTab.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\SelectRecipeStepDialog.Designer.vb">
+      <DependentUpon>SelectRecipeStepDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\SelectRecipeStepDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\QuickViewRecipe.Designer.vb">
+      <DependentUpon>QuickViewRecipe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\QuickViewRecipe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\SelectDialog.Designer.vb">
+      <DependentUpon>SelectDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\SelectDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\SelectSlotWaferDialog.Designer.vb">
+      <DependentUpon>SelectSlotWaferDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\SelectSlotWaferDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General\AVPDashboard.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="General\BigCheckBox.Designer.vb">
+      <DependentUpon>BigCheckBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General\BigCheckBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="General\ImageStatusControl.Designer.vb">
+      <DependentUpon>ImageStatusControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General\ImageStatusControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HeaderControl\CommunicationControl.Designer.vb">
+      <DependentUpon>CommunicationControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HeaderControl\CommunicationControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HeaderControl\HeaderControl.Designer.vb">
+      <DependentUpon>HeaderControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HeaderControl\HeaderControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HeaderControl\LEDControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HivacValveControl.Designer.vb">
+      <DependentUpon>HivacValveControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HivacValveControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD2T\PVD2TChamberControl.Designer.vb">
+      <DependentUpon>PVD2TChamberControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD2T\PVD2TChamberControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD2T\PVD2TCryoControl.Designer.vb">
+      <DependentUpon>PVD2TCryoControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD2T\PVD2TCryoControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IBD\IBDChamberControl.Designer.vb">
+      <DependentUpon>IBDChamberControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IBD\IBDChamberControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IBD\IBDCryoControl.Designer.vb">
+      <DependentUpon>IBDCryoControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IBD\IBDCryoControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IBD\IBDVeeCoTargetControl.Designer.vb">
+      <DependentUpon>IBDVeeCoTargetControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IBD\IBDVeeCoTargetControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Inline\InlineChamber.Designer.vb">
+      <DependentUpon>InlineChamber.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inline\InlineChamber.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Inline\InlinePallet.Designer.vb">
+      <DependentUpon>InlinePallet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inline\InlinePallet.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Keypad_Numpad\AVPKeyboard.Designer.vb">
+      <DependentUpon>AVPKeyboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Keypad_Numpad\AVPKeyboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lib\HeaderOnceAppender.vb" />
+    <Compile Include="Lib\HeaderPatternLayout.vb" />
+    <Compile Include="LoadLockControl.Designer.vb">
+      <DependentUpon>LoadLockControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoadLockControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MaskControl.Designer.vb">
+      <DependentUpon>MaskControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MaskControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MechanicalPumpControl.Designer.vb">
+      <DependentUpon>MechanicalPumpControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MechanicalPumpControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Messagebox\AVPReturnUseAlignerBox.Designer.vb">
+      <DependentUpon>AVPReturnUseAlignerBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Messagebox\AVPReturnUseAlignerBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MFCValveControl.Designer.vb">
+      <DependentUpon>MFCValveControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MFCValveControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PodSystem\PodChamberControl.Designer.vb">
+      <DependentUpon>PodChamberControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PodSystem\PodChamberControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PumpChamberControl.Designer.vb">
+      <DependentUpon>PumpChamberControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PumpChamberControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD2R4\PVD2R4ChamberControl.Designer.vb">
+      <DependentUpon>PVD2R4ChamberControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD2R4\PVD2R4ChamberControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD2R4\PVD2R4DoorShieldControl.Designer.vb">
+      <DependentUpon>PVD2R4DoorShieldControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD2R4\PVD2R4DoorShieldControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVDAStandalone\PVDADoorControl.Designer.vb">
+      <DependentUpon>PVDADoorControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVDAStandalone\PVDADoorControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVDAStandalone\PVDAStandaloneChamberControl.Designer.vb">
+      <DependentUpon>PVDAStandaloneChamberControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVDAStandalone\PVDAStandaloneChamberControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PVD\PVDChamberControl.Designer.vb">
+      <DependentUpon>PVDChamberControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PVD\PVDChamberControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RelayControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RobotBodyControl.Designer.vb">
+      <DependentUpon>RobotBodyControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RobotBodyControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SelectSlotPanelControl.Designer.vb">
+      <DependentUpon>SelectSlotPanelControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SelectSlotPanelControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Setting\StoredConfigData.vb" />
+    <Compile Include="Setting\StoredConfigPanel.Designer.vb">
+      <DependentUpon>StoredConfigPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\StoredConfigPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Setting\ViewSavedDataPopup.Designer.vb">
+      <DependentUpon>ViewSavedDataPopup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\ViewSavedDataPopup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Keypad_Numpad\KeyPad.Designer.vb">
+      <DependentUpon>KeyPad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Keypad_Numpad\KeyPad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Keypad_Numpad\NumPad.Designer.vb">
+      <DependentUpon>NumPad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Keypad_Numpad\NumPad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lib\AVPDataLib.vb" />
+    <Compile Include="Lib\AVPGraphicsLib.vb" />
+    <Compile Include="Lib\AVPUtils.vb" />
+    <Compile Include="Lib\DelegateMarshaller.vb" />
+    <Compile Include="Lib\Logger.vb" />
+    <Compile Include="Lib\StatusObject.vb" />
+    <Compile Include="LoaderControl.Designer.vb">
+      <DependentUpon>LoaderControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoaderControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainScreen\AppInfoPanel.Designer.vb">
+      <DependentUpon>AppInfoPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainScreen\AppInfoPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainScreen\AppLoginPanel.Designer.vb">
+      <DependentUpon>AppLoginPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainScreen\AppLoginPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainScreen\AppLogoPanel.Designer.vb">
+      <DependentUpon>AppLogoPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainScreen\AppLogoPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainScreen\AppPanel.Designer.vb">
+      <DependentUpon>AppPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainScreen\AppPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainScreen\AppDatetimePanel.Designer.vb">
+      <DependentUpon>AppDatetimePanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainScreen\AppDatetimePanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainScreen\AppHostCommunicationPanel.Designer.vb">
+      <DependentUpon>AppHostCommunicationPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainScreen\AppHostCommunicationPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainScreen\StackLightControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Messagebox\AVPAbortBox.Designer.vb">
+      <DependentUpon>AVPAbortBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Messagebox\AVPAbortBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messagebox\AVPLogoutBox.Designer.vb">
+      <DependentUpon>AVPLogoutBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Messagebox\AVPLogoutBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messagebox\AVPMessageBox.Designer.vb">
+      <DependentUpon>AVPMessageBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Messagebox\AVPMessageBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messagebox\AVPUseAlignerDialogBox.Designer.vb">
+      <DependentUpon>AVPUseAlignerDialogBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Messagebox\AVPUseAlignerDialogBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messagebox\AVPWarningBox.designer.vb">
+      <DependentUpon>AVPWarningBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Messagebox\AVPWarningBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RobotArmControl.Designer.vb">
+      <DependentUpon>RobotArmControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RobotArmControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SensorControl.Designer.vb">
+      <DependentUpon>SensorControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SensorControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Setting\LLConfigPanel.Designer.vb">
+      <DependentUpon>LLConfigPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\LLConfigPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Setting\RobotConfigPanel.Designer.vb">
+      <DependentUpon>RobotConfigPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\RobotConfigPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SlitValveControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SlotMapControl.designer.vb">
+      <DependentUpon>SlotMapControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SlotMapControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SlotMapWaferControl.Designer.vb">
+      <DependentUpon>SlotMapWaferControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SlotMapWaferControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.vb">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TurboControl.Designer.vb">
+      <DependentUpon>TurboControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TurboControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Utils.vb" />
+    <Compile Include="VMergedCell.vb" />
+    <Compile Include="WaferCheckBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WaferFlowNodeControl.Designer.vb">
+      <DependentUpon>WaferFlowNodeControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WaferFlowNodeControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WaferLabelBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseControl\StatusPanel.resx">
+      <DependentUpon>StatusPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\AVPCompanyPopupForm.resx">
+      <DependentUpon>AVPCompanyPopupForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\AVPPopupForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AVPPopupForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\AVPForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AVPForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\AVPMsgBox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AVPMsgBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FullVersionPopupForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FullVersionPopupForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\AVPIOTab.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AVPIOTab.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\SelectRecipeStepDialog.resx">
+      <DependentUpon>SelectRecipeStepDialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\QuickViewRecipe.resx">
+      <DependentUpon>QuickViewRecipe.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\SelectDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\SelectSlotWaferDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectSlotWaferDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeaderControl\CommunicationControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CommunicationControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeaderControl\HeaderControl.resx">
+      <DependentUpon>HeaderControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IBD\IBDVeeCoTargetControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IBDVeeCoTargetControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keypad_Numpad\AVPKeyboard.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AVPKeyboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainScreen\AppLogoPanel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AppLogoPanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaskControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MaskControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messagebox\AVPReturnUseAlignerBox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AVPReturnUseAlignerBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD2R4\PVD2R4ChamberControl.resx">
+      <DependentUpon>PVD2R4ChamberControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVDAStandalone\PVDAStandaloneChamberControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PVDAStandaloneChamberControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVD\PVDChamberControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PVDChamberControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RobotBodyControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RobotBodyControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectSlotPanelControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectSlotPanelControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\ViewSavedDataPopup.resx">
+      <DependentUpon>ViewSavedDataPopup.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keypad_Numpad\KeyPad.resx">
+      <DependentUpon>KeyPad.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keypad_Numpad\NumPad.resx">
+      <DependentUpon>NumPad.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainScreen\AppInfoPanel.resx">
+      <DependentUpon>AppInfoPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainScreen\AppLoginPanel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AppLoginPanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainScreen\AppPanel.resx">
+      <DependentUpon>AppPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainScreen\AppDatetimePanel.resx">
+      <DependentUpon>AppDatetimePanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainScreen\AppHostCommunicationPanel.resx">
+      <DependentUpon>AppHostCommunicationPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messagebox\AVPAbortBox.resx">
+      <DependentUpon>AVPAbortBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messagebox\AVPLogoutBox.resx">
+      <DependentUpon>AVPLogoutBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messagebox\AVPMessageBox.resx">
+      <DependentUpon>AVPMessageBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messagebox\AVPUseAlignerDialogBox.resx">
+      <DependentUpon>AVPUseAlignerDialogBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messagebox\AVPWarningBox.resx">
+      <DependentUpon>AVPWarningBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\LLConfigPanel.resx">
+      <DependentUpon>LLConfigPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\RobotConfigPanel.resx">
+      <DependentUpon>RobotConfigPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SlotMapControl.resx">
+      <DependentUpon>SlotMapControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaferFlowNodeControl.resx">
+      <DependentUpon>WaferFlowNodeControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SensorControl\Sensor_Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SensorControl\Sensor_Off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SensorControl\Sensor_On.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SensorControl\Sensor_Unknown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RobotArmControl\RobotArm_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RobotArmControl\RobotArm_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RobotArmControl\RobotArm_20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RobotArmControl\RobotArm_21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RobotArmControl\RobotArm_Hand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WaferControl\QuestionMark_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WaferControl\Wafer_Complete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WaferControl\Wafer_Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WaferControl\Wafer_Partial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WaferControl\Wafer_Unprocess.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WaferControl\Wafer_None.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BgMsgBoxHeader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BgPanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YellowDot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sensor_Black_SLBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sensor_Green_SLBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Header.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnButtonWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnButtonWhiteDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlashScreencopy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SlitValveControl\SlitValve_Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SlitValveControl\SlitValve_Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SlitValveControl\SlitValve_Unknown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FixtureControl\FixtureControl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FixtureControl\FixtureControl_Shutter_Closed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FixtureControl\FixtureControl_Shutter_Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FixtureControl\FixtureControl_Shutter_Open1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FixtureControl\Fixture_Wafer_Yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FixtureControl\Fixture_Wafer_Blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FixtureControl\Fixture_Wafer_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FixtureControl\Fixture_Wafer_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MainScreen\AVPLogoNew.gif" />
+    <None Include="Resources\MainScreen\BgAlarmOff.png" />
+    <None Include="Resources\MainScreen\BgAlarmOn.png" />
+    <None Include="Resources\Icons\IconAVP_32.png" />
+    <None Include="Resources\Icons\IconAVP_48.png" />
+    <None Include="Resources\Icons\IconAVP_128.png" />
+    <None Include="Resources\Icons\IconAVP_64.png" />
+    <None Include="Resources\BgCommunication.png" />
+    <None Include="Resources\BgCommunicationLarger.png" />
+    <None Include="Resources\CompanyInfo.png" />
+    <None Include="Resources\IBD\IBD_FrontPanel.png" />
+    <None Include="Resources\IBD\IBD_6Targets.png" />
+    <None Include="Resources\IBD\IBD_Chamber_Empty.png" />
+    <None Include="Resources\IBD\IBD_Chamber_SlitValve_Closed.png" />
+    <None Include="Resources\IBD\IBD_Chamber_SlitValve_Open.png" />
+    <None Include="Resources\IBD\IBD_Chamber_SlitValve_Unknown.png" />
+    <None Include="Resources\IBD\IBD_DepoSource_Normal.png" />
+    <None Include="Resources\IBD\IBD_DepoSource_Plasma.png" />
+    <None Include="Resources\IBD\IBD_DepoSource_Ramp.png" />
+    <None Include="Resources\IBD\IBD_EtchSource_Normal.png" />
+    <None Include="Resources\IBD\IBD_EtchSource_Plasma.png" />
+    <None Include="Resources\IBD\IBD_EtchSource_Ramp.png" />
+    <None Include="Resources\IBD\IBD_DepoSource_PlasmaFlow.png" />
+    <None Include="Resources\IBD\IBD_EtchSource_PlasmaFlow.png" />
+    <None Include="Resources\IBD\IBD_Chamber_TopCryo.png" />
+    <None Include="Resources\IBD_VeeCo\IBDVeeCo_6Targets.png" />
+    <None Include="Resources\CTC_Splash_Screen.png" />
+    <Content Include="Resources\IBD_VeeCo\IBDVeeCo_Chamber_Empty.png" />
+    <Content Include="Resources\IBD_VeeCo\IBDVeeCo_DepoSource_Normal.png" />
+    <Content Include="Resources\IBD_VeeCo\IBDVeeCo_DepoSource_Plasma.png" />
+    <Content Include="Resources\IBD_VeeCo\IBDVeeCo_DepoSource_Ramp.png" />
+    <Content Include="Resources\Icons\apply.png" />
+    <None Include="Resources\Icons\AVPIcon.ico" />
+    <Content Include="Resources\Icons\button_ok.png" />
+    <Content Include="Resources\Icons\cancel.png" />
+    <None Include="Resources\Icons\db_status.png" />
+    <None Include="Resources\Icons\db.png" />
+    <None Include="Resources\Icons\db_add.png" />
+    <None Include="Resources\Icons\db_comit.png" />
+    <None Include="Resources\Icons\db_remove.png" />
+    <Content Include="Resources\Icons\db_update.png" />
+    <Content Include="Resources\Icons\Error.png" />
+    <Content Include="Resources\Icons\filesave.png" />
+    <Content Include="Resources\Icons\IconAVP.ico" />
+    <Content Include="Resources\Icons\Information.png" />
+    <Content Include="Resources\Icons\Logo.png" />
+    <Content Include="Resources\Icons\LogOff.png" />
+    <Content Include="Resources\Icons\Question.png" />
+    <Content Include="Resources\Icons\Security.png" />
+    <Content Include="Resources\Icons\SecurityError.png" />
+    <Content Include="Resources\Icons\SecurityQuestion.png" />
+    <Content Include="Resources\Icons\SecuritySuccess.png" />
+    <Content Include="Resources\Icons\SecurityWarning.png" />
+    <Content Include="Resources\Icons\Shutdown.png" />
+    <Content Include="Resources\Icons\Warning-Sign.jpg" />
+    <Content Include="Resources\Icons\Warning.png" />
+    <None Include="Resources\LEDControl\LEDGreen.png" />
+    <None Include="Resources\LEDControl\LEDGrey.png" />
+    <None Include="Resources\LEDControl\LEDRed.png" />
+    <None Include="Resources\LEDControl\LEDYellow.png" />
+    <None Include="Resources\Inline\Inline_Chamber_Empty.png" />
+    <None Include="Resources\Inline\Inline_MotorOnRightArrow.png" />
+    <None Include="Resources\Inline\Inline_Target.png" />
+    <None Include="Resources\Inline\Inline_Target_Plasma.png" />
+    <None Include="Resources\Inline\Inline_Chamber_ClosedDoor.png" />
+    <None Include="Resources\Inline\InlineSlitValve_Closed.png" />
+    <None Include="Resources\Inline\InlineSlitValve_None.png" />
+    <None Include="Resources\Inline\InlineSlitValve_Opened.png" />
+    <None Include="Resources\Inline\InlineSlitValve_Unknown.png" />
+    <None Include="Resources\Inline\InlineRightSlitValve_Unknown.png" />
+    <None Include="Resources\Inline\InlineLeftSlitValve_Closed.png" />
+    <None Include="Resources\Inline\InlineLeftSlitValve_None.png" />
+    <None Include="Resources\Inline\InlineLeftSlitValve_Opened.png" />
+    <None Include="Resources\Inline\InlineLeftSlitValve_Unknown.png" />
+    <None Include="Resources\Inline\InlineRightSlitValve_Closed.png" />
+    <None Include="Resources\Inline\InlineRightSlitValve_None.png" />
+    <None Include="Resources\Inline\InlineRightSlitValve_Opened.png" />
+    <None Include="Resources\Inline\InlineTurbo.png" />
+    <None Include="Resources\Inline\InlinePallet_Unprocessed.png" />
+    <None Include="Resources\Inline\InlinePallet_Completed.png" />
+    <None Include="Resources\Inline\InlinePallet_Error.png" />
+    <None Include="Resources\Inline\InlinePallet_Partial.png" />
+    <None Include="Resources\Inline\InlinePallet_QuestionMark_White.png" />
+    <None Include="Resources\Inline\InlinePallet_QuestionMark_Red.png" />
+    <Content Include="Resources\LoaderControl\Loader.png" />
+    <Content Include="Resources\LoaderControl\Loader_ArmHolder.png" />
+    <Content Include="Resources\LoaderControl\Loader_ArmPart.png" />
+    <Content Include="Resources\LoaderControl\Loader_Door.png" />
+    <Content Include="Resources\LoaderControl\Loader_Hand.png" />
+    <Content Include="Resources\LoaderControl\Loader_Hand_Pick.png" />
+    <None Include="Resources\LoadLockControl\Cassette.png" />
+    <None Include="Resources\LoadLockControl\Cassette_HasWafer.png" />
+    <None Include="Resources\LoadLockControl\LLDoor_Close.png" />
+    <None Include="Resources\LoadLockControl\LLDoor_Error.png" />
+    <None Include="Resources\LoadLockControl\LLDoor_Open.png" />
+    <None Include="Resources\LoadLockControl\LLDoor_Unknown.png" />
+    <None Include="Resources\LoadLockControl\LoadLock.png" />
+    <None Include="Resources\LoadLockControl\LoadLock_CX4.png" />
+    <None Include="Resources\LoadLockControl\LoadLock_CX4_Cassette.png" />
+    <None Include="Resources\LoadLockControl\LoadLock_CX4_Cassette_Wafer.png" />
+    <None Include="Resources\LoadLockControl\LoadLock_CX4_Door_Close.png" />
+    <None Include="Resources\LoadLockControl\LoadLock_CX4_Door_Error.png" />
+    <None Include="Resources\LoadLockControl\LoadLock_CX4_Door_Open.png" />
+    <None Include="Resources\LoadLockControl\LoadLock_CX4_Door_Unknown.png" />
+    <None Include="Resources\LoadLockControl\Question_Mark.png" />
+    <Content Include="Resources\MainScreen\BgAlarmPanel.png" />
+    <None Include="Resources\WaferControl\Wafer_BlackGraph.png" />
+    <None Include="Resources\Pumps\LoaderTurbo.png" />
+    <None Include="Resources\MultiLoaderControl\MultiLoader_Hand_Pick.png" />
+    <None Include="Resources\MultiLoaderControl\MultiLoader_Hand.png" />
+    <None Include="Resources\MultiLoaderControl\MultiLoader_Door.png" />
+    <None Include="Resources\MultiLoaderControl\MultiLoader_Body.png" />
+    <None Include="Resources\MultiLoaderControl\MultiLoader_ArmPart.png" />
+    <None Include="Resources\MultiLoaderControl\MultiLoader_ArmHolder.png" />
+    <None Include="Resources\MultiLoaderControl\ML_Cassette_WaferUnprocessed.png" />
+    <None Include="Resources\MultiLoaderControl\ML_Cassette_WaferPartial.png" />
+    <None Include="Resources\MultiLoaderControl\ML_Cassette_WaferError.png" />
+    <None Include="Resources\MultiLoaderControl\ML_Cassette_WaferCompleted.png" />
+    <None Include="Resources\MultiLoaderControl\ML_Cassette.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_LidUnknown_Wafer_Pattern.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_LidUnknown_Chuck.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_LidUnknown_ChuckUp.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_LidUnknown_ChuckDown.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_LidUnknown.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVD24XX_Ground_Unknown.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVD24XX_Ground.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVD24XX_Unground.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_WaferUnprocess-4Wafer.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVD24XX_Chuck.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVD24XX_ChuckPlasma.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVD24XX_ChuckRamping.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_WaferCompleted-4Wafer.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_WaferError-4Wafer.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_WaferPartial-4Wafer.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVD24XX_Moving_Shutter_Open.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVD24XX_Moving_Shutter_Close.png" />
+    <None Include="Resources\Pumps\Cryo_CXX.png" />
+    <None Include="Resources\Pumps\Turbo_CXX.png" />
+    <None Include="Resources\MainScreen\CTCLogo.png" />
+    <None Include="Resources\MainScreen\CTCLogoWithoutBg.png" />
+    <None Include="Resources\PVD2T\PVD2T_Chamber.png" />
+    <None Include="Resources\PVD2T\PVD2T_Chamber_SlitValve_Closed.png" />
+    <None Include="Resources\PVD2T\PVD2T_Chamber_SlitValve_Open.png" />
+    <None Include="Resources\PVD2T\PVD2T_Chamber_SlitValve_Unknown.png" />
+    <None Include="Resources\PVD2T\PVD2T_FrontPanel.png" />
+    <None Include="Resources\PVD2T\PVD2T_Source.png" />
+    <None Include="Resources\PVD2T\PVD2T_Source_Plasma.png" />
+    <None Include="Resources\PVD2T\PVD2T_Source_Ramp.png" />
+    <None Include="Resources\PVD2T\PVD2T_Target.png" />
+    <None Include="Resources\PVD2T\PVD2T_Target_Plasma.png" />
+    <None Include="Resources\PVD2T\PVD2T_Chamber_TopCryo.png" />
+    <Content Include="Resources\SensorControl\Sensor_Error_Border.png" />
+    <Content Include="Resources\SensorControl\Sensor_Off_Border.png" />
+    <Content Include="Resources\SensorControl\Sensor_On_Border.png" />
+    <Content Include="Resources\SensorControl\Sensor_Unknown_Border.png" />
+    <None Include="Resources\zoom_out.png" />
+    <None Include="Resources\zoom_in.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_LidOpen_ChuckDown.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_Wafer_Pattern.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_WaferNone.png" />
+    <None Include="Resources\RIE\RIE_Wafer_Unprocessed.png" />
+    <None Include="Resources\RIE\RIE_Wafer_Partial.png" />
+    <None Include="Resources\RIE\RIE_Wafer_Error.png" />
+    <None Include="Resources\RIE\RIE_Wafer_Completed.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_Turbo_With_WaterPump.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_Turbo.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_WaferUnprocess.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_WaferPartial.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_WaferError.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_WaferCompleted.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_ShutterUnknown.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_ShutterOpen.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_ShutterNone.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_ShutterClosed.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_LidOpen.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_LidClosed_Ramping.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_LidClosed_Plasma.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_LidClosed.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_Chamber_TargetRamping.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_Chamber_TargetPlasma.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_SA_Chamber.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_Hivac_Unknown.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_Hivac_Open.png" />
+    <None Include="Resources\PVDAStandaloneControl\PVDA_Hivac_Closed.png" />
+    <None Include="Resources\ShutterControl\IBDVeeCo_PadShutter_Opened.png" />
+    <None Include="Resources\ShutterControl\IBDVeeCo_PadShutter_Close.png" />
+    <None Include="Resources\ShutterControl\IBDVeeCo_PadShutter_Unknow.png" />
+    <None Include="Resources\ShutterControl\IBDVeeCo_DepoShutter_Opened.png" />
+    <None Include="Resources\ShutterControl\IBD_PadShutter_Opened.png" />
+    <None Include="Resources\ShutterControl\IBDVeeCo_FixtureShutter_Opened.png" />
+    <None Include="Resources\ShutterControl\IBDVeeCo_FixtureShutter_Close.png" />
+    <None Include="Resources\ShutterControl\IBDVeeCo_DepoShutter_Unknow.png" />
+    <None Include="Resources\ShutterControl\IBDVeeCo_DepoShutter_Close.png" />
+    <None Include="Resources\ShutterControl\IBDVeeCo_FixtureShutter_Unknow.png" />
+    <None Include="Resources\Pumps\TMCryo_CX4.png" />
+    <None Include="Resources\ShutterControl\IBD_PadShutter_Unknow.png" />
+    <None Include="Resources\ShutterControl\IBD_PadShutter_Close.png" />
+    <None Include="Resources\PodSystem\POD_HivacValve_Unknown.png" />
+    <None Include="Resources\PodSystem\POD_HivacValve_Open.png" />
+    <None Include="Resources\PodSystem\POD_HivacValve_Closed.png" />
+    <None Include="Resources\MFCValveControl\Valve_Unknown.png" />
+    <None Include="Resources\PodSystem\PodChamber_Small.png" />
+    <None Include="Resources\PodSystem\PodChamber_Large.png" />
+    <None Include="Resources\Pumps\PodTurbo.png" />
+    <None Include="Resources\MFCValveControl\ValveClosed_Pop.png" />
+    <None Include="Resources\MFCValveControl\ValveOpened_Pop.png" />
+    <None Include="Resources\MainScreen\BgAppPanelExtraLarge.png" />
+    <None Include="Resources\MainScreen\BgAppPanelLittleLarge.png" />
+    <None Include="Resources\Pumps\MechanicalPump_Off.png" />
+    <None Include="Resources\Pumps\MechanicalPump_On.png" />
+    <None Include="Resources\MFCValveControl\Valve_Opened.png" />
+    <None Include="Resources\MFCValveControl\Valve_Closed.png" />
+    <None Include="Resources\PVD\PVDAChamber_SlitValve_Unknown.png" />
+    <None Include="Resources\PVD\PVDAChamber_SlitValve_On.png" />
+    <None Include="Resources\PVD\PVDAChamber_SlitValve_Off.png" />
+    <None Include="Resources\PVD\PVDChamber_SlitValve_Unknown.png" />
+    <None Include="Resources\PVD\PVDChamber_SlitValve_On.png" />
+    <None Include="Resources\PVD\PVDChamber_SlitValve_Off.png" />
+    <None Include="Resources\PVD\PVDChamber_Shutter.png" />
+    <None Include="Resources\PVD\PVD_Wafer_Unprocess.png" />
+    <None Include="Resources\PVD\PVD_Wafer_Partial.png" />
+    <None Include="Resources\PVD\PVD_Wafer_Error.png" />
+    <None Include="Resources\PVD\PVD_Wafer_Complete.png" />
+    <None Include="Resources\PVD\PVDChamber_Chuck_Plasma.png" />
+    <None Include="Resources\PVD\PVDChamber_Chuck.png" />
+    <None Include="Resources\PVD\PVDChamber.png" />
+    <None Include="Resources\PVD\PVDA_Wafer_Unprocess.png" />
+    <None Include="Resources\PVD\PVDA_Wafer_Partial.png" />
+    <None Include="Resources\PVD\PVDA_Wafer_Error.png" />
+    <None Include="Resources\PVD\PVDA_Wafer_Complete.png" />
+    <None Include="Resources\PVD\PVDAChamber_Chuck_Plasma.png" />
+    <None Include="Resources\PVD\PVDAChamber_Chuck.png" />
+    <None Include="Resources\PVD\PVDAChamber.png" />
+    <None Include="Resources\Pumps\TMTurbo.png" />
+    <None Include="Resources\Pumps\TMCryo.png" />
+    <None Include="Resources\PVD2R4\PVD2R4_Wafer_Unprocess.png" />
+    <None Include="Resources\PVD2R4\PVD2R4_Wafer_Partial.png" />
+    <None Include="Resources\PVD2R4\PVD2R4_Wafer_Error.png" />
+    <None Include="Resources\PVD2R4\PVD2R4_Wafer_Complete.png" />
+    <None Include="Resources\PVD2R4\PVD2R4_Target_Plasma.png" />
+    <None Include="Resources\PVD2R4\PVD2R4_Target.png" />
+    <None Include="Resources\PVD2R4\PVD2R4_SlitValve_Unknown.png" />
+    <None Include="Resources\PVD2R4\PVD2R4_SlitValve_Open.png" />
+    <None Include="Resources\PVD2R4\PVD2R4_SlitValve_Close.png" />
+    <None Include="Resources\PVD2R4\PVD2R4_Shutter_Unknown.png" />
+    <None Include="Resources\PVD2R4\PVD2R4_Shutter_Open.png" />
+    <None Include="Resources\PVD2R4\PVD2R4_Shutter_Close.png" />
+    <None Include="Resources\PVD2R4\PVD2R4_DoorShield_Unknown.png" />
+    <None Include="Resources\PVD2R4\PVD2R4_DoorShield_Open.png" />
+    <None Include="Resources\PVD2R4\PVD2R4_DoorShield_Close.png" />
+    <None Include="Resources\PVD2R4\PVD2R4_Chuck_Plasma.png" />
+    <None Include="Resources\PVD2R4\PVD2R4_Chuck.png" />
+    <None Include="Resources\PVD2R4\PVD2R4_Chamber.png" />
+    <None Include="Resources\RobotBodyControl\CX8.png" />
+    <None Include="Resources\RobotBodyControl\CX7.png" />
+    <None Include="Resources\RobotBodyControl\CX6.png" />
+    <None Include="Resources\RobotBodyControl\CX5_RobotBody_WithoutAligner.png" />
+    <None Include="Resources\RobotBodyControl\CX5_RobotBody_LeftAligner.png" />
+    <None Include="Resources\RobotBodyControl\CX4_WithoutAligner.png" />
+    <None Include="Resources\RobotBodyControl\CX4.png" />
+    <None Include="Resources\RelayControl\BgRelayOn.png" />
+    <None Include="Resources\RelayControl\BgRelayOff.png" />
+    <None Include="Resources\WaferControl\QuestionMark_Red.png" />
+    <None Include="Resources\ShutterControl\IBEShutter_Open_Unknown.png" />
+    <None Include="Resources\ShutterControl\IBEShutter_Open.png" />
+    <None Include="Resources\ShutterControl\IBEShutter_Close_Unknown.png" />
+    <None Include="Resources\ShutterControl\IBEShutter_Close.png" />
+    <None Include="Resources\MainScreen\StackLight_Yellow_On.png" />
+    <None Include="Resources\MainScreen\StackLight_Yellow_Off.png" />
+    <None Include="Resources\MainScreen\StackLight_Red_On.png" />
+    <None Include="Resources\MainScreen\StackLight_Red_Off.png" />
+    <None Include="Resources\MainScreen\StackLight_Green_On.png" />
+    <None Include="Resources\MainScreen\StackLight_Green_Off.png" />
+    <None Include="Resources\MainScreen\StackLight_Blue_On.png" />
+    <None Include="Resources\MainScreen\StackLight_Blue_Off.png" />
+    <None Include="Resources\MainScreen\StackLight_Background.png" />
+    <None Include="Resources\MainScreen\BgAppPanel.png" />
+    <None Include="Resources\MainScreen\BgAppPanelLarge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HRecipeLibrary\HRecipeLibrary\HRecipeLibrary.vbproj">
+      <Project>{E5AC5EDF-EE61-4497-A620-DF78BD0783BB}</Project>
+      <Name>HRecipeLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

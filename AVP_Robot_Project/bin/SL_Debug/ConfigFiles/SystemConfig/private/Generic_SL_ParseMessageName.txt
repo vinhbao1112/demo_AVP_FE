@@ -1,0 +1,35 @@
+<MessageNames>
+  <!--Kep Server-->
+  <Property Name="Loader.ArmUpDownStatus" Code="ChangeArmUpDownStatusInSLProcessScreenTo" />
+  <Property Name="Loader.ArmExtendRetractStatus" Code="LoaderSetArmExtendRetractStatusInProcessScreenTo" />
+  <Property Name="Loader.IsolationValveStatus" Code="LoaderSetIsolationValveStatusInProcessScreenTo" />
+  <Property Name="Loader.DoorSensorStatus" Code="LoaderSetDoorStatusInProcessScreenTo" />
+  <Property Name="Loader.HighVacuumSwitch" Code="LoaderSetVacuumStatusInProcessScreenTo" />
+  <Property Name="Loader.MidVacuumSwitch" Code="LoaderSetVacuumStatusInProcessScreenTo" />
+  <Property Name="Loader.MechanicalPump" Code="LoaderSetMechanicalPumpStatusInProcessScreenTo" />
+  <Property Name="Loader.VentValveStatus" Code="LoaderSetVentValveStatusInProcessScreenTo" />
+  <Property Name="Loader.RoughValveStatus" Code="LoaderSetRoughValveStatusInProcessScreenTo" />
+  <Property Name="Loader.AutoPumpDownStatus" Code="SetLoaderAutoPumpDownStatusTo"/>
+  <Property Name="Loader.AutoVentStatus" Code="SetLoaderAutoVentStatusTo"/>
+  <Property Name="Loader.AutoLoadStatus" Code="SetLoaderAutoLoadStatusTo,ChangeAutoLoadStatusInSLProcessScreenTo"/>
+  <Property Name="Loader.AutoUnloadStatus" Code="SetLoaderAutoUnloadStatusTo,ChangeAutoUnloadStatusInSLProcessScreenTo"/>
+  <Property Name="Loader.LoadStatus" Code="SetLoaderLoadStatusTo"/>
+  <Property Name="Loader.ArmPressureStatus" Code="SetLoaderArmPressureStatusTo"/>
+  <Property Name="Loader.StatusMessage" Code="ShowStatusMessage,ShowStatusMessageInSLProcessScreen" />  
+  <Property Name="Loader.DataOutputStatus" Code="SetDataOutputStatusTo"/>  
+  <Property Name="Loader.WaferInsideLoader" Code="SetAnimateRobotInSLProcessScreen"/>
+  
+   <Property Name="Loader.RunStatus" Code="SetRunStatusInProcessScreen"/>
+   <Property Name="Loader.StopStatus" Code="SetStopStatusInProcessScreen"/>
+   <Property Name="Loader.AbortStatus" Code="SetAbortStatusInProcessScreen"/>
+   <Property Name="Loader.PauseStatus" Code="SetPauseStatusInProcessScreen"/>
+   
+   <Property Name="Loader.WaferCount" Code="TotalWaferCountOfLoader"/>
+   <Property Name="Loader.WarningSourceUsage" Code="ThrowWarningSourceUsage"/>
+  <!--End Kep Server-->
+  <!--Alarm status from chamber 5-->
+  <Property Name="Alarm.AlarmStatus" Code="StartAlarm"/>
+  <Property Name="Alarm.RedStatus" Code="FlashRedLight"/>
+  <Property Name="Alarm.GreenStatus" Code="FlashGreenLight"/>
+  <Property Name="Alarm.OrangeStatus" Code="FlashOrangeLight"/>
+  <!--Single loader -->

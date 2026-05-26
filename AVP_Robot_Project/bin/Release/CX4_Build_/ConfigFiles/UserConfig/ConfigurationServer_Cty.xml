@@ -1,0 +1,21 @@
+<Servers>
+  <KepServer Name="KEPware.KEPServerEx.V5" />
+  <DeviceNetAdapter Name="RSTI" IsInstall="True" />
+  <TerminalServer>
+    <Server Name="LLAElevator" IsManualDoor="True" IsInstall="True" Type="LoadLock" EthernetIP="127.0.0.1" Port="4001" Version="VC4" />
+    <Server Name="Robot" IsInstall="True" IsSensorInstall="True" Type="Robot" EthernetIP="127.0.0.1" Port="4003" />
+    <Server Name="LLAPumpPackage" IsInstall="True" Type="Cryo" EthernetIP="127.0.0.1" Port="4005" />
+    <Server Name="TMPumpPackage" IsInstall="True" Type="Turbo" EthernetIP="127.0.0.1" Port="4006" />
+    <Server Name="Aligner" IsInstall="True" Type="Aligner" EthernetIP="127.0.0.1" Port="4007" />
+    <Server Name="TMWaterPump" IsInstall="False" Type="TMWaterPump" EthernetIP="127.0.0.1" Port="4008" />
+    <Server Name="RoughPumpMachine1" IsInstall="False" Type="MPSerial" EthernetIP="127.0.0.1" Port="4010" />
+    <Server Name="RoughPumpMachine2" IsInstall="False" Type="MPSerial" EthernetIP="127.0.0.1" Port="4010" />
+    <Server Name="LLAHeater" IsInstall="False" Type="Heater" EthernetIP="127.0.0.1" Port="4012" />
+    <Server Name="DeviceNetApp" IsInstall="False" Type="DeviceNetApp" EthernetIP="127.0.0.1" Port="10001" />
+  </TerminalServer>
+  <ChamberInstall>
+    <Chamber1 Name="Chamber1" IsInstall="False" Type="PVD4" EthernetIP="192.168.1.19" Port="8010" ConfigFolder="\\192.168.1.19\BackEnd\PVD4\PVD4_CCR_Source_latest\Config" RecipeFolder="\\192.168.1.19\BackEnd\PVD4\PVD4_CCR_Source_latest\Recipe" />
+    <Chamber2 Name="Chamber2" IsInstall="True" Type="PVD4" EthernetIP="192.168.1.19" Port="8009" ConfigFolder="\\192.168.1.19\BackEnd\PVD4\PVD4_Deployment_Latest\Config" RecipeFolder="\\192.168.1.19\BackEnd\PVD4\PVD4_Deployment_Latest\Recipe" />
+    <Chamber3 Name="Chamber3" IsInstall="True" Type="PVD5T" EthernetIP="192.168.1.19" Port="8024" ConfigFolder="\\192.168.1.19\BackEnd\PVD5T\PVD5T_Deployment_Latest\Config" RecipeFolder="\\192.168.1.19\BackEnd\PVD5T\PVD5T_Deployment_Latest\Recipe" />
+  </ChamberInstall>
+</Servers>

@@ -1,0 +1,695 @@
+<RecipeDef>
+  <ParameterList Id="1" isGroup="1" Group="Version_Control" GroupName="Version_Control" ShowInUI="False">
+    <Parameter>
+      <SeqNo>1</SeqNo>
+      <Name>(c)2010 AVP Technology, LLC</Name>
+      <Description>(c)2010 AVP Technology, LLC</Description>
+      <Default></Default>
+      <Unit>String</Unit>
+      <ShowInUI>False</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>2</SeqNo>
+      <Name>IBE Process File Version 4.03</Name>
+      <Description>IBE Process File Version 4.03</Description>
+      <Default></Default>
+      <Unit>String</Unit>
+      <ShowInUI>False</ShowInUI>
+    </Parameter>
+  </ParameterList>
+  <ParameterList Id="2" isGroup="1" Group="EtchBeamParameters" GroupName="EtchBeamParameters" ShowInUI="True">
+     <Parameter>
+      <SeqNo>1</SeqNo>
+      <Name>Beam_On</Name>
+      <Description>Beam_On</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+       <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+     <Parameter>
+      <SeqNo>2</SeqNo>
+      <Name>Neutralizer_On</Name>
+      <Description>Neutralizer_On</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>3</SeqNo>
+      <Name>Beam_Voltage</Name>
+      <Description>Beam_Voltage (V)</Description>
+      <Min>0</Min>
+      <Max>1000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>4</SeqNo>
+      <Name>Beam_Current</Name>
+      <Description>Beam_Current (mA)</Description>
+      <Min>0</Min>
+      <Max>1000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+     <Parameter>
+      <SeqNo>5</SeqNo>
+      <Name>Incident_RF_Power</Name>
+        <Description>Incident_RF_Power (W)</Description>
+        <Min>0</Min>
+        <Max>1000</Max>
+        <Default>0</Default>
+        <Unit>Number</Unit>
+        <ShowInUI>True</ShowInUI>
+      </Parameter>
+    <Parameter>
+      <SeqNo>6</SeqNo>
+      <Name>Suppresser_Voltage</Name>
+        <Description>Suppressor_Voltage (V)</Description>
+        <Min>0</Min>
+        <Max>1000</Max>
+        <Default>0</Default>
+        <Unit>Number</Unit>
+        <ShowInUI>True</ShowInUI>
+      </Parameter>
+    <Parameter>
+      <SeqNo>7</SeqNo>
+      <Name>PBN_FLOWRATE</Name>
+      <Description>PBN_FLOWRATE ({0})(sccm)</Description>
+      <Min>0</Min>
+      <Max>100000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>8</SeqNo>
+      <Name>K_Factor</Name>
+      <Description>K_Factor</Description>
+      <Min>0</Min>
+      <Max>100000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>9</SeqNo>
+      <Name>Source_Electromagnet_Current</Name>
+      <Description>Source_Electromagnet_Current (A)</Description>
+      <Min>0</Min>
+      <Max>500</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>10</SeqNo>
+      <Name>Continuous_Beam</Name>
+      <Description>Continuous_Beam</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+     <Parameter>
+      <SeqNo>11</SeqNo>
+      <Name>CAIBE_Step</Name>
+      <Description>CAIBE_Step</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>False</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+     <Parameter>
+      <SeqNo>12</SeqNo>
+      <Name>UseStepRF</Name>
+      <Description>Use_Step_RF</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>	
+  </ParameterList>
+  <ParameterList Id="3" isGroup="1" Group="EtchGasParameters" GroupName="EtchGasParameters" ShowInUI="True">
+    <Parameter>
+      <SeqNo>1</SeqNo>
+      <Name>Gas1</Name>
+      <Description>Gas_1 ({0})(sccm)</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>2</SeqNo>
+      <Name>Gas2</Name>
+      <Description>Gas_2 ({0})(sccm)</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>3</SeqNo>
+      <Name>Gas3</Name>
+      <Description>Gas_3 ({0})(sccm)</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>4</SeqNo>
+      <Name>Gas4</Name>
+      <Description>Gas_4 ({0})(sccm)</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>5</SeqNo>
+      <Name>Gas5</Name>
+      <Description>Gas_5 ({0})(sccm)</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+  </ParameterList>
+  <ParameterList Id="4" isGroup="1" Group="Control" GroupName="Control" ShowInUI="True">
+    <Parameter>
+      <SeqNo>1</SeqNo>
+      <Name>Process_Ends_By</Name>
+      <Description>Process_Ends_By</Description>
+      <Default>Time</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="Time" SeqNoDisable="2,7">Time</Item>
+		<Item Value="Time-%PSR" SeqNoDisable="2,6">Time - %PSR</Item>
+        <Item Value="Endpoint" SeqNoDisable="7">Endpoint</Item>
+		<Item Value="EPMonitor" SeqNoDisable="7">EP Monitor</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>2</SeqNo>
+      <Name>Endpoint_Script_Name</Name>
+      <Description>Endpoint_Script_Name</Description>
+      <Default></Default>
+      <Unit>String</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+     <Parameter>
+      <SeqNo>3</SeqNo>
+      <Name>UseElectroStaticShutter</Name>
+      <Description>UseElectroStaticShutter</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>4</SeqNo>
+      <Name>UseEtchRateCorrection</Name>
+      <Description>UseEtchRateCorrection</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+     <Parameter>
+      <SeqNo>5</SeqNo>
+      <Name>Etch_Rate_Correction_Power_Group</Name>
+      <Description>Etch_Rate_Correction_Power_Group</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>6</SeqNo>
+      <Name>Etch_Time_Hour</Name>
+      <Description>Etch_Time_Hour (hours)</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>False</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>7</SeqNo>
+      <Name>Etch_Time_Min</Name>
+      <Description>Etch_Time_Min (minutes)</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>False</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>8</SeqNo>
+      <Name>Etch_Time_Sec</Name>
+      <Description>Etch_Time_Sec (seconds)</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>9</SeqNo>
+      <Name>Etch_Time_MilliSec</Name>
+      <Description>Etch_Time_MilliSec (miliseconds)</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>False</ShowInUI>
+    </Parameter>
+	 <Parameter>
+      <SeqNo>10</SeqNo>
+      <Name>Etch_Percentage_PSR</Name>
+      <Description>Etch_Percentage_PSR</Description>
+      <Min>0</Min>
+      <Max>100</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>11</SeqNo>
+      <Name>Step_Type</Name>
+      <Description>Step_Type</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>False</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>12</SeqNo>
+      <Name>Source_Gas_Warning</Name>
+      <Description>Source_Gas_Warning</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>False</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>13</SeqNo>
+      <Name>Source_Gas_Fault</Name>
+      <Description>Source_Gas_Fault</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>False</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>14</SeqNo>
+      <Name>Process_Pressure_High</Name>
+      <Description>Process_Pressure_High</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0.1</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>15</SeqNo>
+      <Name>Process_Pressure_Low</Name>
+      <Description>Process_Pressure_Low</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>0.000001</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>16</SeqNo>
+      <Name>IG_On</Name>
+      <Description>IG_On</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>17</SeqNo>
+      <Name>RIBE</Name>
+      <Description>RIBE</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>18</SeqNo>
+      <Name>Fixture_Angle</Name>
+      <Description>Fixture_Angle (degree)</Description>
+      <Min>0</Min>
+      <Max>360</Max>
+      <Default>90</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>19</SeqNo>
+      <Name>FlowCool_Flowrate</Name>
+      <Description>FlowCool_Flowrate ({0})(sccm)</Description>
+      <Min>0</Min>
+      <Max>100000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>    
+    <Parameter>
+      <SeqNo>20</SeqNo>
+      <Name>Open_Etch_Shutter_At_Start</Name>
+      <Description>Open_Etch_Shutter_At_Start</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>21</SeqNo>
+      <Name>Open_Etch_Shutter_At_Beam</Name>
+      <Description>Open_Etch_Shutter_At_Beam</Description>
+      <Default>Yes</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>22</SeqNo>
+      <Name>Close_Etch_Shutter_At_End</Name>
+      <Description>Close_Etch_Shutter_At_End</Description>
+      <Default>Yes</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>23</SeqNo>
+      <Name>Open_Target_Shutter_At_Start</Name>
+      <Description>Open_Target_Shutter_At_Start</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>False</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>24</SeqNo>
+      <Name>Open_Target_Shutter_At_Beam</Name>
+      <Description>Open_Target_Shutter_At_Beam</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>False</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>25</SeqNo>
+      <Name>Close_Target_Shutter_At_End</Name>
+      <Description>Close_Target_Shutter_At_End</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>False</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>26</SeqNo>
+      <Name>Open_Fixture_Shutter_At_Start</Name>
+      <Description>Open_Fixture_Shutter_At_Start</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>False</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>27</SeqNo>
+      <Name>Open_Fixture_Shutter_At_Beam</Name>
+      <Description>Open_Fixture_Shutter_At_Beam</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>False</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>28</SeqNo>
+      <Name>Close_Fixture_Shutter_At_End</Name>
+      <Description>Close_Fixture_Shutter_At_End</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>False</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>29</SeqNo>
+      <Name>OpenTargetShield</Name>
+      <Description>Open_Target_Shield</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>False</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>30</SeqNo>
+      <Name>OpenCryoGate</Name>
+      <Description>Open_Cryo_Gate</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+  </ParameterList>
+  <ParameterList Id="5" isGroup="1" Group="TiltSweep" GroupName="TiltSweep" ShowInUI="True">
+   <Parameter>
+      <SeqNo>1</SeqNo>
+      <Name>Fixture_Tilt</Name>
+      <Description>Fixture_Tilt</Description>
+      <Default>Static</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="Static" SeqNoDisable="2,3,4">Static</Item>
+        <Item Value="Sweep" SeqNoDisable="Control:18" SeqNoCalculate="Control:18=String.Empty">Sweep</Item>
+      </DisplayItems>
+    </Parameter>
+	<Parameter>
+      <SeqNo>2</SeqNo>
+      <Name>Tilt_Sweep_Start_Angle</Name>
+      <Description>Tilt_Sweep_Start_Angle (degree)</Description>
+      <Min>0</Min>
+      <Max>360</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+	<Parameter>
+      <SeqNo>3</SeqNo>
+      <Name>Tilt_Sweep_End_Angle</Name>
+      <Description>Tilt_Sweep_End_Angle (degree)</Description>
+      <Min>0</Min>
+      <Max>360</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+	<Parameter>
+      <SeqNo>4</SeqNo>
+      <Name>Tilt_Sweep_Dwell_Time</Name>
+      <Description>Tilt_Sweep_Dwell_Time (seconds)</Description>
+      <Min>0</Min>
+      <Max>100000</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+  </ParameterList>
+  <ParameterList Id="6" isGroup="1" Group="FixtureServo" GroupName="FixtureServo" ShowInUI="True">
+    <Parameter>
+      <SeqNo>1</SeqNo>
+      <Name>Fixture_Rotate</Name>
+      <Description>Fixture_Rotate</Description>
+      <Default>Continuous</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="Continuous" SeqNoDisable="2,3,4,6">Continuous</Item>
+        <Item Value="Sweep" SeqNoDisable="4,5">Sweep</Item>
+        <Item Value="Static" SeqNoDisable="2,3,5,6">Static</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>2</SeqNo>
+      <Name>Fixture_Rotate_Sweep</Name>
+      <Description>Fixture_Rotate_Sweep</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>False</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>3</SeqNo>
+      <Name>Fixture_Rotate_Static</Name>
+      <Description>Fixture_Rotate_Static</Description>
+      <Default>No</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>False</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>4</SeqNo>
+      <Name>Sweep_Start_Angle</Name>
+      <Description>Sweep_Start_Angle (degree)</Description>
+      <Min>0</Min>
+      <Max>360</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>5</SeqNo>
+      <Name>Sweep_End_Angle</Name>
+      <Description>Sweep_End_Angle (degree)</Description>
+      <Min>0</Min>
+      <Max>360</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>6</SeqNo>
+      <Name>Static_Angle</Name>
+      <Description>Static_Angle (degree)</Description>
+      <Min>0</Min>
+      <Max>360</Max>
+      <Default>0</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+    <Parameter>
+      <SeqNo>7</SeqNo>
+      <Name>Fixture_Rotation_Speed</Name>
+      <Description>Fixture_Rotation_Speed</Description>
+      <Min>0</Min>
+      <Max>100000</Max>
+      <Default>10</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+	<Parameter>
+      <SeqNo>8</SeqNo>
+      <Name>Sweep_Dwell_Time</Name>
+      <Description>Sweep_Dwell_Time (seconds)</Description>
+      <Min>0</Min>
+      <Max>100000</Max>
+      <Default>4</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+  </ParameterList>
+  <ParameterList Id="7" isGroup="1" Group="DataTracing" GroupName="DataTracing" ShowInUI="True">
+    <Parameter>
+      <SeqNo>1</SeqNo>
+      <Name>TracingEnabled</Name>
+      <Description>Enable Tracing</Description>
+      <Default>Yes</Default>
+      <Unit>Boolean</Unit>
+      <ShowInUI>True</ShowInUI>
+      <DisplayItems>
+        <Item Value="true">Yes</Item>
+        <Item Value="false">No</Item>
+      </DisplayItems>
+    </Parameter>
+    <Parameter>
+      <SeqNo>2</SeqNo>
+      <Name>Interval</Name>
+      <Description>Interval (s)</Description>
+      <Min>0</Min>
+      <Max>10000</Max>
+      <Default>2</Default>
+      <Unit>Number</Unit>
+      <ShowInUI>True</ShowInUI>
+    </Parameter>
+  </ParameterList>
+</RecipeDef>

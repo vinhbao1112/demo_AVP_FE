@@ -1,0 +1,937 @@
+Imports System.ComponentModel
+Imports AVPControls
+Imports AVPControls.AVPDataLib
+
+Public Class PVD2R4ChamberControl
+
+#Region "Fields"
+    Private Const TARGET_WIDTH As Integer = 335
+    Private Const TARGET_HEIGHT As Integer = 25
+    Private Const MIN_CHUCK_HEIGHT As Single = 0.0F
+    Private Const MAX_CHUCK_HEIGHT As Single = 35.0F
+    Private Const CHUCK_Y_AXIS As Integer = 121
+    Private Const CHUCK_X_AXIS As Integer = 115
+    Private Const DOOR_SHIELD As String = "DoorShield"
+    Private Const SHUTTER_UP_POSITION As Integer = 42
+    Private Const SHUTTER_DOWN_POSITION As Integer = 62
+    Private Const SHUTTER_UNKNOWN_POSITION As Integer = 52
+
+    Private m_chuckHeight As Single
+    Private m_chuckPosition As Single
+    Private m_targetTexts(3) As String
+    Private m_waferLocation As Point
+    Private m_shutterPosition(3) As AVPDirections
+
+    ''' <summary>
+    ''' Occurs when DoorShield is clicked.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Event DoorShieldClick As EventHandler
+
+    ''' <summary>
+    ''' Occurs when WaferControl is clicked.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Event WaferControlClick As EventHandler
+
+#End Region
+
+#Region "Properties"
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-12-18</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicates status of door shield.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(DisplayStatus), "Off")> _
+    Public Property DoorShieldStatus() As DisplayStatus
+        Get
+            Return DoorShield.Status
+        End Get
+        Set(ByVal value As DisplayStatus)
+            DoorShield.Status = value
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-12-18</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicates chuck position of chamber.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Single), "0")> _
+    Public Property ChuckPosition() As Single
+        Get
+            Return m_chuckPosition
+        End Get
+        Set(ByVal value As Single)
+            If m_chuckPosition = value Then
+                Return
+            End If
+
+            m_chuckPosition = value
+
+            Dim height As Single = m_chuckHeight
+            If m_chuckPosition < MIN_CHUCK_HEIGHT Then
+                height = MIN_CHUCK_HEIGHT
+            ElseIf m_chuckPosition > MAX_CHUCK_HEIGHT Then
+                height = MAX_CHUCK_HEIGHT
+            Else
+                height = m_chuckPosition
+            End If
+
+            If m_chuckHeight <> height Then
+                m_chuckHeight = height
+                SetWaferLocation()
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-12-18</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether the target 1 is installed.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Boolean), "True")> _
+    Public Property T1Installed() As Boolean
+        Get
+            Return TargetInstalled(0)
+        End Get
+        Set(ByVal value As Boolean)
+            Me.TargetInstalled(0) = value
+            If Not value Then
+                Me.ShutterInstalled(0) = value
+            Else
+                Me.ShutterInstalled(0) = DEFAULT_SHUTTER_INSTALLED
+            End If
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-12-18</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether the target 2 is installed.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Boolean), "True")> _
+    Public Property T2Installed() As Boolean
+        Get
+            Return TargetInstalled(1)
+        End Get
+        Set(ByVal value As Boolean)
+            Me.TargetInstalled(1) = value
+            If Not value Then
+                Me.ShutterInstalled(1) = value
+            Else
+                Me.ShutterInstalled(1) = DEFAULT_SHUTTER_INSTALLED
+            End If
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-12-18</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether the target 3 is installed.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Boolean), "True")> _
+    Public Property T3Installed() As Boolean
+        Get
+            Return TargetInstalled(2)
+        End Get
+        Set(ByVal value As Boolean)
+            Me.TargetInstalled(2) = value
+            If Not value Then
+                Me.ShutterInstalled(2) = value
+            Else
+                Me.ShutterInstalled(2) = DEFAULT_SHUTTER_INSTALLED
+            End If
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-12-18</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether the target 4 is installed.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Boolean), "True")> _
+    Public Property T4Installed() As Boolean
+        Get
+            Return TargetInstalled(3)
+        End Get
+        Set(ByVal value As Boolean)
+            Me.TargetInstalled(3) = value
+            If Not value Then
+                Me.ShutterInstalled(3) = value
+            Else
+                Me.ShutterInstalled(3) = DEFAULT_SHUTTER_INSTALLED
+            End If
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-12-18</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicates the text is shown on target 1.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(String), "")> _
+    Public Property T1Text() As String
+        Get
+            Return m_targetTexts(0)
+        End Get
+        Set(ByVal value As String)
+            If m_targetTexts(0) = value Then
+                Return
+            End If
+
+            m_targetTexts(0) = value
+            UpdateView()
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-12-18</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicates the text is shown on target 2.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(String), "")> _
+    Public Property T2Text() As String
+        Get
+            Return m_targetTexts(1)
+        End Get
+        Set(ByVal value As String)
+            If m_targetTexts(1) = value Then
+                Return
+            End If
+
+            m_targetTexts(1) = value
+            UpdateView()
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-12-18</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicates the text is shown on target 3.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(String), "")> _
+    Public Property T3Text() As String
+        Get
+            Return m_targetTexts(2)
+        End Get
+        Set(ByVal value As String)
+            If m_targetTexts(2) = value Then
+                Return
+            End If
+
+            m_targetTexts(2) = value
+            UpdateView()
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-12-18</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicates the text is shown on target 4.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(String), "")> _
+    Public Property T4Text() As String
+        Get
+            Return m_targetTexts(3)
+        End Get
+        Set(ByVal value As String)
+            If m_targetTexts(3) = value Then
+                Return
+            End If
+
+            m_targetTexts(3) = value
+            UpdateView()
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-12-18</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicates shutter 1 status.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(DisplayStatus), "Off")> _
+    Public Property Shutter1Status() As DisplayStatus
+        Get
+            Return ShutterStatus(0)
+        End Get
+        Set(ByVal value As DisplayStatus)
+            ShutterStatus(0) = value
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-12-18</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicates shutter 2 status.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(DisplayStatus), "Off")> _
+    Public Property Shutter2Status() As DisplayStatus
+        Get
+            Return ShutterStatus(1)
+        End Get
+        Set(ByVal value As DisplayStatus)
+            ShutterStatus(1) = value
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-12-18</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicates shutter 3 status.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(DisplayStatus), "Off")> _
+    Public Property Shutter3Status() As DisplayStatus
+        Get
+            Return ShutterStatus(2)
+        End Get
+        Set(ByVal value As DisplayStatus)
+            ShutterStatus(2) = value
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-12-18</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicates shutter 4 status.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(DisplayStatus), "Off")> _
+    Public Property Shutter4Status() As DisplayStatus
+        Get
+            Return ShutterStatus(3)
+        End Get
+        Set(ByVal value As DisplayStatus)
+            ShutterStatus(3) = value
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-12-10</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether the target 1 is installed.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Boolean), "True")> _
+    Public Property Shutter1Installed() As Boolean
+        Get
+            Return ShutterInstalled(0)
+        End Get
+        Set(ByVal value As Boolean)
+            Me.ShutterInstalled(0) = value
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-12-10</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether the target 2 is installed.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Boolean), "True")> _
+    Public Property Shutter2Installed() As Boolean
+        Get
+            Return ShutterInstalled(1)
+        End Get
+        Set(ByVal value As Boolean)
+            Me.ShutterInstalled(1) = value
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-12-10</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether the target 3 is installed.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Boolean), "True")> _
+    Public Property Shutter3Installed() As Boolean
+        Get
+            Return ShutterInstalled(2)
+        End Get
+        Set(ByVal value As Boolean)
+            Me.ShutterInstalled(2) = value
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-12-10</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether the target 4 is installed.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(Boolean), "True")> _
+    Public Property Shutter4Installed() As Boolean
+        Get
+            Return ShutterInstalled(3)
+        End Get
+        Set(ByVal value As Boolean)
+            Me.ShutterInstalled(3) = value
+        End Set
+    End Property
+
+    <Browsable(False), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)> _
+    Public Overrides Property ShutterStatus() As AVPDataLib.DisplayStatus
+        Get
+            Return MyBase.ShutterStatus
+        End Get
+        Set(ByVal value As AVPDataLib.DisplayStatus)
+            MyBase.ShutterStatus = value
+        End Set
+    End Property
+
+    <Browsable(False), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)> _
+    Public Overrides Property ShutterInstalled() As Boolean
+        Get
+            Return MyBase.ShutterInstalled
+        End Get
+        Set(ByVal value As Boolean)
+            MyBase.ShutterInstalled = value
+        End Set
+    End Property
+
+    <Browsable(False), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)> _
+    Public Overrides Property CurrentTargetPosition() As Integer
+        Get
+            Return MyBase.CurrentTargetPosition
+        End Get
+        Set(ByVal value As Integer)
+            MyBase.CurrentTargetPosition = value
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2016-01-05</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicates shutter is Up/Down.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(AVPDirections), "Up")> _
+    Public Property Shutter1Position() As AVPDirections
+        Get
+            Return m_shutterPosition(0)
+        End Get
+        Set(ByVal value As AVPDirections)
+            If m_shutterPosition(0) = value Then
+                Return
+            End If
+
+            m_shutterPosition(0) = value
+            OnShutterPositionChanged(EventArgs.Empty)
+
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2016-01-05</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicates shutter is Up/Down.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(AVPDirections), "Up")> _
+    Public Property Shutter2Position() As AVPDirections
+        Get
+            Return m_shutterPosition(1)
+        End Get
+        Set(ByVal value As AVPDirections)
+            If m_shutterPosition(1) = value Then
+                Return
+            End If
+
+            m_shutterPosition(1) = value
+            OnShutterPositionChanged(EventArgs.Empty)
+
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2016-01-05</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicates shutter is Up/Down.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(AVPDirections), "Up")> _
+    Public Property Shutter3Position() As AVPDirections
+        Get
+            Return m_shutterPosition(2)
+        End Get
+        Set(ByVal value As AVPDirections)
+            If m_shutterPosition(2) = value Then
+                Return
+            End If
+
+            m_shutterPosition(2) = value
+            OnShutterPositionChanged(EventArgs.Empty)
+
+        End Set
+    End Property
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2016-01-05</date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets or sets a value indicates shutter is Up/Down.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(AVPDirections), "Up")> _
+    Public Property Shutter4Position() As AVPDirections
+        Get
+            Return m_shutterPosition(3)
+        End Get
+        Set(ByVal value As AVPDirections)
+            If m_shutterPosition(3) = value Then
+                Return
+            End If
+
+            m_shutterPosition(3) = value
+            OnShutterPositionChanged(EventArgs.Empty)
+
+        End Set
+    End Property
+
+#End Region
+
+#Region "Methods"
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-12-18</date>
+    ''' </author>
+    ''' <summary>
+    ''' Generates PVD2R4 chamber image.
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Protected Overrides Function GenerateControlImage() As System.Drawing.Bitmap
+        Try
+            Dim imgChamber As Bitmap = My.Resources.Resources.PVD2R4_Chamber
+            Using g As Graphics = Graphics.FromImage(imgChamber)
+                ' Draw slit valve.
+                Dim imgSlitValve As Bitmap
+                Select Case m_slitValveStatus
+                    Case DisplayStatus.Off
+                        imgSlitValve = My.Resources.Resources.PVD2R4_SlitValve_Close
+                    Case DisplayStatus.On
+                        imgSlitValve = My.Resources.Resources.PVD2R4_SlitValve_Open
+                    Case Else
+                        imgSlitValve = My.Resources.Resources.PVD2R4_SlitValve_Unknown
+                End Select
+                g.DrawImageUnscaled(imgSlitValve, 0, 114)
+                imgSlitValve.Dispose()
+
+                ' Draw targets.
+                Dim imgTarget As Bitmap = GenerateTargetImage()
+                g.DrawImageUnscaled(imgTarget, 42, 15)
+                imgTarget.Dispose()
+
+                ' Draw chuck.
+                If m_chuckInstalled Then
+                    Dim imgChuck As Bitmap
+                    If m_biasPlasmaOn Then
+                        imgChuck = My.Resources.Resources.PVD2R4_Chuck_Plasma
+                    Else
+                        imgChuck = My.Resources.Resources.PVD2R4_Chuck
+                    End If
+
+                    Dim yChuck As Integer = CInt(CHUCK_Y_AXIS - m_chuckHeight)
+                    g.DrawImageUnscaled(imgChuck, CHUCK_X_AXIS, yChuck)
+                    imgChuck.Dispose()
+
+                End If
+
+                g.Dispose()
+            End Using
+
+            Return imgChamber
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return Nothing
+    End Function
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-12-18</date>
+    ''' </author>
+    ''' <summary>
+    ''' Generates Target image of PVD2R4 chamber.
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Private Function GenerateTargetImage() As Bitmap
+        Try
+            ' Get images from resources.
+            Dim imgTarget As Bitmap = My.Resources.Resources.PVD2R4_Target
+            Dim imgTargetPlasma As Bitmap = My.Resources.Resources.PVD2R4_Target_Plasma
+            Dim imgShutterUnk As Bitmap = My.Resources.Resources.PVD2R4_Shutter_Unknown
+            Dim imgShutterOpen As Bitmap = My.Resources.Resources.PVD2R4_Shutter_Open
+            Dim imgShutterClose As Bitmap = My.Resources.Resources.PVD2R4_Shutter_Close
+
+            ' Store size of image for fast access.
+            Dim imgTargetWidth As Integer = imgTarget.Width
+            Dim imgTargetHeight As Integer = imgTarget.Height
+
+            ' Create image for drawing targets and shutters.
+            Dim imgTargetShutter As New Bitmap(TARGET_WIDTH, TARGET_HEIGHT)
+            imgTargetShutter.SetResolution(imgTarget.HorizontalResolution, imgTarget.VerticalResolution)
+
+            ' Drawing.
+            Using g As Graphics = Graphics.FromImage(imgTargetShutter)
+                Dim textFont As New Font("Times New Roman", 10, FontStyle.Bold, GraphicsUnit.Point)
+                Dim textColor As Color
+                For index As Integer = 0 To m_targetInstalled.Length - 1
+                    If m_targetInstalled(index) Then
+                        Dim x As Integer = index * (imgTargetWidth + 1)
+
+                        ' Draw target.
+                        If m_targetPlasmaOn(index) Then
+                            g.DrawImageUnscaled(imgTargetPlasma, x, 0)
+                            textColor = Color.White
+                        Else
+                            g.DrawImageUnscaled(imgTarget, x, 0)
+                            textColor = Color.Black
+                        End If
+
+                        ' Draw target text.
+                        Dim targetText As String = "T" & (index + 1).ToString()
+                        If Not String.IsNullOrEmpty(m_targetTexts(index)) Then
+                            targetText &= "-" & m_targetTexts(index)
+                        End If
+
+                        Dim sizeText As SizeF = g.MeasureString(targetText, textFont)
+                        Dim brushText As New SolidBrush(textColor)
+                        g.DrawString(targetText, textFont, brushText, x + (imgTargetWidth - sizeText.Width) / 2.0F, (imgTargetHeight - sizeText.Height) / 2.0F - 2)
+                        brushText.Dispose()
+
+                    End If
+                Next
+
+                textFont.Dispose()
+                g.Dispose()
+            End Using
+            imgTarget.Dispose()
+            imgTargetPlasma.Dispose()
+            imgShutterUnk.Dispose()
+            imgShutterOpen.Dispose()
+            imgShutterClose.Dispose()
+
+            Return imgTargetShutter
+        Catch ex As Exception
+            Logger.Error(ex.ToString)
+        End Try
+        Return Nothing
+    End Function
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2016-01-05</date>
+    ''' </author>
+    ''' <summary>
+    ''' Provides wafer location.
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Function GetWaferLocation() As Point
+        Return m_waferLocation
+    End Function
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2016-01-05</date>
+    ''' </author>
+    ''' <summary>
+    ''' Set wafer location.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub SetWaferLocation()
+        Dim x As Integer = 146
+        Dim y As Integer = CInt(CHUCK_Y_AXIS - m_chuckHeight + 2)
+        m_waferLocation = New Point(x, y)
+        Me.WaferControl.Location = m_waferLocation
+    End Sub
+
+#End Region
+
+#Region "Events"
+
+    Public Sub New()
+
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        Me.RequireInitializeForUpdateView = False
+        Me.UpdateViewOnWaferChanged = False
+        Me.ChamberType = AVPChamberTypes.PVD2R4
+        Me.UseCachingRegion = True
+        Me.NumberOfTargets = 4
+        Me.NumberOfShutters = 4
+        For index As Integer = 0 To m_targetTexts.Length - 1
+            m_targetTexts(index) = String.Empty
+        Next
+        Me.DoorShield.Location = New Point(41, 104)
+        Me.DoorShield.ResumeUpdateView()
+        Me.SetWaferLocation()
+        For index As Integer = 0 To 3
+            m_shutterPosition(index) = AVPDirections.Up
+        Next
+
+        Me.UpdateView()
+
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-12-18</date>
+    ''' </author>
+    ''' <summary>
+    ''' Raise click event of DoorShield.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub DoorShield_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles DoorShield.Click
+        RaiseEvent DoorShieldClick(sender, e)
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2016-01-05</date>
+    ''' </author>
+    ''' <summary>
+    ''' Raise WaferControlClick event.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub WaferControl_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles WaferControl.Click
+        RaiseEvent WaferControlClick(sender, e)
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2016-01-05</date>
+    ''' </author>
+    ''' <summary>
+    ''' Update chamber type of WaferControl.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub PVD2R4ChamberControl_ChamberTypeChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.ChamberTypeChanged
+        Me.WaferControl.ChamberType = Me.ChamberType
+    End Sub
+
+    Private Sub PVD2R4ChamberControl_ChuckInstalledChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.ChuckInstalledChanged
+        Me.WaferControl.Visible = Me.ChuckInstalled
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2016-01-05</date>
+    ''' </author>
+    ''' <summary>
+    ''' Update Shutter visibility.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub PVD2R4ChamberControl_ShutterInstalledChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.ShutterInstalledChanged
+        Me.Shutter1.Visible = Me.Shutter1Installed
+        Me.Shutter2.Visible = Me.Shutter2Installed
+        Me.Shutter3.Visible = Me.Shutter3Installed
+        Me.Shutter4.Visible = Me.Shutter4Installed
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2016-01-05</date>
+    ''' </author>
+    ''' <summary>
+    ''' Update Shutter status.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub PVD2R4ChamberControl_ShutterStatusChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.ShutterStatusChanged
+        Me.Shutter1.Status = Me.Shutter1Status
+        Me.Shutter2.Status = Me.Shutter2Status
+        Me.Shutter3.Status = Me.Shutter3Status
+        Me.Shutter4.Status = Me.Shutter4Status
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2016-01-05</date>
+    ''' </author>
+    ''' <summary>
+    ''' Update wafer ID to control.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub PVD2R4ChamberControl_WaferIDChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.WaferIDChanged
+        Me.WaferControl.WaferID = Me.WaferID
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2016-01-05</date>
+    ''' </author>
+    ''' <summary>
+    ''' Show/Hide wafer control base on status.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub PVD2R4ChamberControl_WaferStatusChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.WaferStatusChanged
+        Me.WaferControl.WaferStatus = Me.WaferStatus
+        If Me.WaferStatus = WaferStatuses.NONE Then
+            Me.WaferControl.Visible = False
+        Else
+            Me.WaferControl.Visible = True
+        End If
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2016-01-05</date>
+    ''' </author>
+    ''' <summary>
+    ''' Update shutter position.
+    ''' </summary>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Protected Overridable Sub OnShutterPositionChanged(ByVal e As EventArgs)
+        Me.Shutter1.Top = CInt(IIf(m_shutterPosition(0) = AVPDirections.Down, SHUTTER_DOWN_POSITION, IIf(m_shutterPosition(0) = AVPDirections.Up, SHUTTER_UP_POSITION, SHUTTER_UNKNOWN_POSITION)))
+        Me.Shutter2.Top = CInt(IIf(m_shutterPosition(1) = AVPDirections.Down, SHUTTER_DOWN_POSITION, IIf(m_shutterPosition(1) = AVPDirections.Up, SHUTTER_UP_POSITION, SHUTTER_UNKNOWN_POSITION)))
+        Me.Shutter3.Top = CInt(IIf(m_shutterPosition(2) = AVPDirections.Down, SHUTTER_DOWN_POSITION, IIf(m_shutterPosition(2) = AVPDirections.Up, SHUTTER_UP_POSITION, SHUTTER_UNKNOWN_POSITION)))
+        Me.Shutter4.Top = CInt(IIf(m_shutterPosition(3) = AVPDirections.Down, SHUTTER_DOWN_POSITION, IIf(m_shutterPosition(3) = AVPDirections.Up, SHUTTER_UP_POSITION, SHUTTER_UNKNOWN_POSITION)))
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2016-01-22</date>
+    ''' </author>
+    ''' <summary>
+    ''' Show or hide wafer control.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub WaferControl_WaferStatusChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles WaferControl.WaferStatusChanged
+        Try
+            If WaferControl.WaferStatus = WaferStatuses.NONE Then
+                WaferControl.Visible = False
+            Else
+                WaferControl.Visible = True
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+#End Region
+
+
+End Class

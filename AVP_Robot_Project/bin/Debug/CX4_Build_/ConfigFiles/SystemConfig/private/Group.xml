@@ -1,0 +1,6 @@
+<Groups>
+  <Group id="1">Administrator</Group>
+  <Group id="2">Operator</Group>
+    <Group id="3">Engineer</Group>
+      <Group id="4">Maint</Group>
+</Groups>

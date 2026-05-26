@@ -1,0 +1,18 @@
+<WaferFlows>
+  <WaferFlow>
+    <Name>WFFlow</Name>
+    <Description>
+    </Description>
+    <StepList>
+      <Step>
+        <Number>0</Number>
+        <StationList>
+          <StationId>Aligner</StationId>
+        </StationList>
+        <RecipeName>A0002</RecipeName>
+      </Step>
+    </StepList>
+    <LoopList>
+    </LoopList>
+  </WaferFlow>
+</WaferFlows>

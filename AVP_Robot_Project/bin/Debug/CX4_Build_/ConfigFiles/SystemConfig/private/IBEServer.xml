@@ -1,0 +1,314 @@
+<IBEServer>
+	<!--Others-->
+	<Command CommandName="COPYRECIPE_TO_PMFOLDER" CommandCode="1,01,01,51,01,01" PropertyName="StartCopyRecipeToPMFolder" Decoder=""/>
+	<Command CommandName="MAINTENAINCE_MODE" CommandCode="1,01,01,50,01,01" PropertyName="MaintenanceMode" Decoder=""/>
+  <Command CommandName="ROUGH_PUMP_POWER" CommandCode="1,02,01,01,01,01" PropertyName="RoughPumpStatus" Decoder="WorkingStatuses"/> 
+  <Command CommandName="TURBO_PUMP_GATE_VALVE" CommandCode="1,02,01,02,01,03" PropertyName="HiVacValveStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="TURBO_PUMP_POWER" CommandCode="1,02,01,02,01,01" PropertyName="TurboPowerStatus" Decoder="WorkingStatuses"/>  
+  <Command CommandName="CRYO_POWER" CommandCode="1,02,01,04,01,01" PropertyName="CryoPumpStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="ROUGH_VALVE" CommandCode="1,02,01,05,01,01" PropertyName="RoughValveStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="VENT_VALVE" CommandCode="1,02,01,06,01,01" PropertyName="VentValveStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="FORELINE_VALVE" CommandCode="1,02,01,07,01,01" PropertyName="ForelineValveStatus" Decoder="WorkingStatuses"/>  
+  <Command CommandName="AUTO_PUMP_DOWN" CommandCode="1,02,01,13,01,01" PropertyName="PumpDownStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="AUTO_VENT" CommandCode="1,02,01,14,01,01" PropertyName="VentStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="ISOLATION_VALVE" CommandCode="1,02,01,15,01,01" PropertyName="" Decoder=""/>
+  <Command CommandName="PUMP_PURGE" CommandCode="1,05,01,10,01,01" PropertyName="PumpPurgeStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="MachinePumpPurge_Current_Cycle" CommandCode="1,05,01,10,01,02" PropertyName="MachinePumpPurge_Current_Cycle" Decoder="String"/>
+  <Command CommandName="ION_GAUGE_DEGAS" CommandCode="1,02,01,08,01,03" PropertyName="IGDegasStatus" Decoder="WorkingStatuses"/>
+
+<Command CommandName="SPLITVALVE_STATUS" CommandCode="1,12,25,01,01,0x" PropertyName="SlitValveStatus" Decoder="WorkingStatuses"/>
+  
+<Command CommandName="RATE_OF_RISE_STATUS" CommandCode="1,02,01,20,01,01" PropertyName="RateOfRise_Status" Decoder="WorkingStatuses"/>
+<Command CommandName="RATE_OF_RISE_SAMPLE" CommandCode="1,02,04,20,01,01" PropertyName="RateOfRise_Sample" Decoder=""/>
+<Command CommandName="RATE_OF_RISE_FILENAME" CommandCode="1,02,03,20,01,01" PropertyName="RateOfRise_FileName" Decoder=""/>
+<Command CommandName="RATE_OF_RISE_INTERVAL_RECORDING" CommandCode="1,02,02,20,01,01" PropertyName="RateOfRise_Interval" Decoder=""/>
+
+<Command CommandName="PUMPDOWN_CURVE_STATUS" CommandCode="1,02,01,21,01,01" PropertyName="PumpDown_Curve_Status" Decoder="WorkingStatuses"/>
+<Command CommandName="PUMPDOWN_CURVE_SAMPLE" CommandCode="1,02,04,21,01,01" PropertyName="PumpDown_Curve_Sample" Decoder=""/>
+<Command CommandName="PUMPDOWN_CURVE_FILENAME" CommandCode="1,02,03,21,01,01" PropertyName="PumpDown_Curve_FileName" Decoder=""/>
+<Command CommandName="PUMPDOWN_CURVE_INTERVAL_RECORDING" CommandCode="1,02,02,21,01,01" PropertyName="PumpDown_Curve_Interval" Decoder=""/>
+ <!--Cryo-->
+  <Command CommandName="CRYO_PUMP_TEMPERTURE_T1" CommandCode="1,02,01,04,01,10" PropertyName="Cryo_Pump_Temperture_T1" Decoder="Double"/>
+  <Command CommandName="CRYO_PUMP_TEMPERTURE_T2" CommandCode="1,02,01,04,01,02" PropertyName="Cryo_Pump_Temperture_T2" Decoder="Double"/>
+  <Command CommandName="CRYO_PUMP_GATE_VALVE" CommandCode="1,02,01,04,01,03" PropertyName="ValveCryoPumpGateStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="CRYO_REGEN_VALVE" CommandCode="1,02,01,04,01,04" PropertyName="CryoPumpRegenStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="CRYO_PURGE_VALVE" CommandCode="1,02,01,04,01,05" PropertyName="CryoPumpPurgeStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="CRYO_AUTO_REGEN" CommandCode="1,02,01,04,01,06" PropertyName="CryoAutoRegenStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="CRYO_AUTO_REGEN_STATUS_TEXT" CommandCode="1,02,01,04,01,08" PropertyName="CryoAutoRegenStatusText" Decoder="String"/>
+  <Command CommandName="CRYO_AUTO_POWER_DOWN" CommandCode="1,02,01,04,01,07" PropertyName="CryoAutoPowerDownStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="CRYO_P_COMMANDS" CommandCode="1,02,01,04,01,09" PropertyName="Cryo_P_Command" Decoder="String"/>
+  
+  <!--Status Panel-->
+  <Command CommandName="INITIALIZE_MOTION" CommandCode="1,03,01,14,01,01" PropertyName="Initialize_Motion_readback" Decoder="WorkingStatuses"/>
+  <Command CommandName="INITIALIZING_MOTION" CommandCode="1,03,01,13,01,01" PropertyName="Initializing_Motion_readback" Decoder="WorkingStatuses"/>
+  <Command CommandName="GAS_OK" CommandCode="1,05,01,24,01,01" PropertyName="Process_Gas_Readback" Decoder="WorkingStatuses"/>
+  <Command CommandName="BEAM_OK" CommandCode="1,05,01,25,01,01" PropertyName="Ion_Beam_Readback" Decoder="WorkingStatuses"/>
+  <Command CommandName="PBN_OK" CommandCode= "1,05,01,26,01,01" PropertyName="PBN_OK_Readback" Decoder="WorkingStatuses"/>  
+  <!--Fixture Panel-->
+  <!-- Flowcool He Gas, Valve-->
+	<Command CommandName="FLOWCOOL_MFC_SHUTOFF_VALVE" CommandCode="1,03,01,10,01,01" PropertyName="FlowCoolHeValveStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="FLOWCOOL_MFC_SUPPLY_VALVE" CommandCode="1,03,01,10,01,02" PropertyName="ValveSupplyFlowCoolHeStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="FLOWCOOL_MFC_TARGET_FLOWRATE" CommandCode="1,03,01,10,01,03" PropertyName="GasController_FlowCoolHe_Program" Decoder="Double"/>
+  <Command CommandName="FLOWCOOL_MFC_ACTUAL_FLOWRATE" CommandCode="1,03,01,10,01,04" PropertyName="GasController_FlowCoolHe_Readback" Decoder="Double"/>
+  <Command CommandName="FIXTURE_ROTATION_MODE" CommandCode="1,03,01,08,01,05" PropertyName="Fixture_Rotation_Mode_Readback" Decoder="String"/>
+  <Command CommandName="FIXTURE_TILT_ANGLE" CommandCode="1,03,01,09,01,01" PropertyName="Fixture_TiltAngle_Program" Decoder="Double"/>
+  
+  <Command CommandName="FIXTURE_STATIC_ROTATION_ANGLE_READBACK" CommandCode="1,03,01,08,01,09" PropertyName="StaticFixture_Rotation_Readback" Decoder="Double"/>
+  <Command CommandName="FIXTURE_STATIC_ROTATION_ANGLE" CommandCode="1,03,01,08,01,01" PropertyName="StaticFixture_Rotation_Program" Decoder="Double"/>
+  <Command CommandName="FIXTURE_ROTATION_START_ANGLE_READBACK" CommandCode="1,03,01,08,02,06" PropertyName="SweepFixture_Rotation_Start_Readback" Decoder="Double"/>
+  <Command CommandName="FIXTURE_ROTATION_START_ANGLE" CommandCode="1,03,01,08,01,06" PropertyName="SweepFixture_Rotation_Start_Program" Decoder="Double"/>
+  <Command CommandName="FIXTURE_ROTATION_END_ANGLE" CommandCode="1,03,01,08,01,07" PropertyName="SweepFixture_Rotation_End_Program" Decoder="Double"/>
+  
+  <Command CommandName="FIXTURE_CONTINUOUS_ROTATION_RPM" CommandCode="1,03,01,08,01,08" PropertyName="ContinuousFixture_Rotation_Program" Decoder="Double"/>
+  <Command CommandName="FIXTURE_CONTINUOUS_ROTATION_RPM_READBACK" CommandCode="1,03,01,08,01,10" PropertyName="ContinuousFixture_Rotation_Readback" Decoder="Double"/>
+  <Command CommandName="FIXTURE_TILT_HOME" CommandCode="1,03,01,09,01,02" PropertyName="FixtureTiltHomeStatus" Decoder="WorkingStatuses"/>   
+  <Command CommandName="FIXTURE_ROTATION_MOVING" CommandCode="1,03,01,08,01,03" PropertyName="FixtureRotationMovingStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="FIXTURE_ROTATION_HOME" CommandCode="1,03,01,08,01,02" PropertyName="FixtureRotationHomeStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="FIXTURE_TILT_MOVING" CommandCode="1,03,01,09,01,03" PropertyName="FixtureTiltMovingStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="FIXTURE_TILT_ERROR" CommandCode="1,03,01,09,01,04" PropertyName="FixtureErrorStatus" Decoder="WorkingStatuses"/>
+   
+  <Command CommandName="WAFER_IN_FIXTURE" CommandCode="1,03,01,12,01,01" PropertyName="Wafer_InFixture_Readback" Decoder="WorkingStatuses"/>
+         
+  <Command CommandName="FIXTURE_HOME_ROTATION_AXIS" CommandCode="1,03,01,08,02,05" PropertyName="Fixture_Home_Rotation_Program" Decoder="WorkingStatuses"/>
+  <Command CommandName="FIXTURE_UNPROTECTED" CommandCode="1,01,01,05,01,01" PropertyName="Fixture_Unprotected_Readback" Decoder="WorkingStatuses"/>
+  <Command CommandName="FIXTURE_WATER_VALVE" CommandCode="1,03,01,02,01,01" PropertyName="FixtureWaterValveStatus" Decoder="WorkingStatuses"/>
+  
+  <Command CommandName="SHUTTER_POSITION" CommandCode="1,05,01,01,01,01" PropertyName="ShutterPositionStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="FIXTURE_FLOWCOOL_PUMP_POWER" CommandCode="1,03,01,01,01,01" PropertyName="FixtureFlowCoolPumpStatus" Decoder="WorkingStatuses"/>
+  <!--End Fixture Control-->
+  <!--Pop Up Panel-->
+  <Command CommandName="PROCESS_CONTROL_GET_RUN_DATA_FILE_NAME" CommandCode="1,05,01,22,01,18" PropertyName="ProcessControl_GetRunDataFileName" Decoder="WorkingStatuses"/>
+  <Command CommandName="CURRENT_AVP_TIME" CommandCode="1,05,01,22,01,19" PropertyName="Current_AVP_Time" Decoder="String"/>
+  <!--Power Panel-->
+  <Command CommandName="SOURCE_AC_POWER" CommandCode="1,05,01,02,01,01" PropertyName="ACPower_readback" Decoder="WorkingStatuses"/>
+  <Command CommandName="SOURCE_RF_POWER" CommandCode="1,05,01,03,01,01" PropertyName="RFPower_readback" Decoder="WorkingStatuses"/>
+  <Command CommandName="SOURCE_GRID_POWER" CommandCode="1,05,01,04,01,01" PropertyName="GridPower_readback" Decoder="WorkingStatuses"/>
+  <Command CommandName="SOURCE_PBN_POWER" CommandCode="1,05,01,05,01,01" PropertyName="PBNPower_readback" Decoder="WorkingStatuses"/>
+  
+   <!-- BeamPowerSupply-->
+  <Command CommandName="AUTO_BEAM" CommandCode="1,05,01,16,01,01" PropertyName="BeamPowerSupply_AutoBeam" Decoder="WorkingStatuses"/>
+  <Command CommandName="BEAM_VOLTAGE_PROGRAM" CommandCode="1,05,01,12,01,01" PropertyName="BeamPowerSupply_Voltage_Program" Decoder="Double"/>
+  <Command CommandName="BEAM_VOLTAGE_READBACK" CommandCode="1,05,01,12,01,02" PropertyName="BeamPowerSupply_Voltage_Readback" Decoder="Double"/>
+  <Command CommandName="BEAM_CURRENT_PROGRAM" CommandCode="1,05,01,13,01,01" PropertyName="BeamPowerSupply_Current_Program" Decoder="Double"/>
+  <Command CommandName="BEAM_CURRENT_READBACK" CommandCode="1,05,01,13,01,02" PropertyName="BeamPowerSupply_Current_Readback" Decoder="Double"/>
+   <!-- SuppressorPowerSupply-->
+  <Command CommandName="SUPP_VOLTAGE_PROGRAM" CommandCode="1,05,01,14,01,01" PropertyName="SuppressorPowerSupply_Voltage_Program" Decoder="Double"/>
+  <Command CommandName="SUPP_VOLTAGE_READBACK" CommandCode="1,05,01,14,01,02" PropertyName="SuppressorPowerSupply_Voltage_Readback" Decoder="Double"/>
+  <Command CommandName="SUPP_CURRENT_READBACK" CommandCode="1,05,01,15,01,02" PropertyName="SuppressorPowerSupply_Current_Readback" Decoder="Double"/>
+  <Command CommandName="SUPP_CURRENT_PROGRAM" CommandCode="1,05,01,15,01,01" PropertyName="SuppressorPowerSupply_Current_Program" Decoder="Double"/>
+   <!-- Body- Discharge PowerSupply-->
+  <Command CommandName="PBN_BODY_CURRENT_READBACK" CommandCode="1,05,01,17,01,02" PropertyName="BodyPowerSupply_Current_Readback" Decoder="Double"/>
+  <Command CommandName="PBN_BODY_CURRENT_ERROR_TOL" CommandCode="1,05,01,17,01,07" PropertyName="" Decoder=""/>
+  <Command CommandName="PBN_BODY_CURRENT_WARNING_TOL" CommandCode="1,05,01,17,01,08" PropertyName="" Decoder=""/>
+  <Command CommandName="PBN_BODY_CURRENT_ERROR_TIME" CommandCode="1,05,01,17,01,09" PropertyName="" Decoder=""/>
+  <Command CommandName="PBN_BODY_CURRENT_WARNING_TIME" CommandCode="1,05,01,17,01,10" PropertyName="" Decoder=""/>
+  <Command CommandName="K_FACTOR_PROGRAM" CommandCode="1,05,01,19,01,01" PropertyName="BodyPowerSupply_KFactor_Program" Decoder="Double"/>
+  <Command CommandName="K_FACTOR_READBACK" CommandCode="1,05,01,19,01,02" PropertyName="BodyPowerSupply_KFactor_Readback" Decoder="Double"/>
+  <Command CommandName="PBN_FILAMENT_CURRENT_READBACK" CommandCode="1,05,01,18,01,02" PropertyName="DischargePowerSupply_Current_Readback" Decoder="Double"/>
+   	<!--new in sl-->
+  <Command CommandName="SOURCE_MANUAL_AUTO_POWER" CommandCode="1,05,01,06,01,01" PropertyName="SourceManual_Auto_readback" Decoder="WorkingStatuses"/>
+  <!-- RFPowerSupply-->
+  <Command CommandName="INCIDENT_RF_PROGRAM" CommandCode="1,05,01,20,01,01" PropertyName="RFPowerSupply_ForwardPower_Program" Decoder="Double"/>
+  <Command CommandName="FORWARD_RF_READBACK" CommandCode="1,05,01,20,01,02" PropertyName="RFPowerSupply_ForwardPower_Readback" Decoder="Double"/>
+  <Command CommandName="REFLECTED_RF_PROGRAM" CommandCode="1,05,01,21,01,01" PropertyName="RFPowerSupply_ReflectedPower_Program" Decoder="Double"/>
+  <Command CommandName="REFLECTED_RF_READBACK" CommandCode="1,05,01,21,01,02" PropertyName="RFPowerSupply_ReflectedPower" Decoder="Double"/>
+  <!-- Process Status-->
+  <Command CommandName="PROCESS_CONTROL_NAME" CommandCode="1,05,01,22,01,02" PropertyName="Recipe" Decoder="String"/>
+  <Command CommandName="PROCESS_ELAPSED_TIME" CommandCode="1,05,01,22,01,05" PropertyName="ElapsedTime" Decoder="String"/>
+  <Command CommandName="PROCESS_CURRENT_STEP" CommandCode="1,05,01,22,01,03" PropertyName="ProcessMonitor_ProcessStep" Decoder="String"/>
+  <Command CommandName="PROCESS_TOTAL_STEPS" CommandCode="1,05,01,22,01,04" PropertyName="ProcessMonitor_TotalStep" Decoder="String"/>
+  <Command CommandName="PROCESS_REMAINING_TIME" CommandCode="1,05,01,22,01,06" PropertyName="RemainingTime" Decoder="String"/>
+  <Command CommandName="PROCESS_WAFER_ID" CommandCode="1,05,01,22,01,10" PropertyName="WaferID" Decoder="String"/>
+  <Command CommandName="SOURCE_USAGE_RESET" CommandCode="1,05,01,33,01,03" PropertyName="ResetSourceUsage" Decoder="String"/>
+  <Command CommandName="SOURCE_USAGE_TIMESET" CommandCode="1,05,01,33,01,01" PropertyName="SourceUsageTimeCurrent" Decoder="Double"/>
+  <Command CommandName="QUART_KWH" CommandCode="1,05,01,33,01,05" PropertyName="Shields_Quart_KWH" Decoder="Double"/>
+  <!--SOURCE USAGE Warning Limit-->
+  <Command CommandName="SOURCE_USAGE_WARNING" CommandCode="1,05,01,33,01,07" PropertyName="" Decoder=""/>
+  <!--SOURCE USAGE Alarm Limit-->
+   <Command CommandName="SOURCE_USAGE_LIMIT" CommandCode="1,05,01,33,01,06" PropertyName="" Decoder=""/>
+   <!--MAX_SOURCE_USAGE Alarm Limit-->
+   <Command CommandName="MAX_SOURCE_USAGE" CommandCode="1,05,01,33,01,08" PropertyName="" Decoder=""/>
+
+     <!--Pressure-->
+  <Command CommandName="ION_GAUGE_PRESSURE" CommandCode="1,02,01,08,01,01" PropertyName="IG" Decoder="Double"/> 
+ 
+   <!--Process Recipe -->  
+  <Command CommandName="PROCESS_CONTROL_DEVICE_ERROR" CommandCode="1,05,01,22,01,01,-1" PropertyName="ProcessMonitor_DeviceError_Readback" Decoder=""/>
+  <Command CommandName="PROCESS_CONTROL_DEVICE_STOP" CommandCode="1,05,01,22,01,01,00" PropertyName="ProcessMonitor_DeviceStop_Readback" Decoder=""/>
+  <Command CommandName="PROCESS_CONTROL_DEVICE_START" CommandCode="1,05,01,22,01,01,01" PropertyName="ProcessMonitor_DeviceStart_Readback" Decoder=""/>
+  <Command CommandName="PROCESS_CONTROL_DEVICE_PAUSE" CommandCode="1,05,01,22,01,01,02" PropertyName="ProcessMonitor_DevicePause_Readback" Decoder=""/>
+  <Command CommandName="PROCESS_CONTROL_DEVICE_CONTINUE" CommandCode="1,05,01,22,01,01,03" PropertyName="ProcessMonitor_DeviceContinue_Readback" Decoder=""/>
+  <Command CommandName="PROCESS_CONTROL_DEVICE_RESET_ERROR" CommandCode="1,05,01,22,01,01,04" PropertyName="" Decoder=""/>
+  <Command CommandName="PROCESS_CONTROL_DEVICE_END_STEP" CommandCode="1,05,01,22,01,01,05" PropertyName="" Decoder=""/>
+  <Command CommandName="PROCESS_CONTROL_SEND_RUN_DATA_FILE_NAME" CommandCode="1,05,01,22,01,17" PropertyName="" Decoder=""/>
+  <!--Chamber Interlock-->
+   <Command CommandName="VACUUM_PRESSURE_INTK" CommandCode="1,02,01,11,01,01" PropertyName="ChamberInterlocks_ChamberPress_Status" Decoder="WorkingStatuses"/>
+  <Command CommandName="SOURCE_WATER_INTERLOCK" CommandCode="1,05,01,23,01,01" PropertyName="ChamberInterlocks_SourceWater_Status" Decoder="WorkingStatuses"/>
+  <Command CommandName="FIXTURE_WATER_INTERLOCK" CommandCode="1,03,01,02,01,02" PropertyName="ChamberInterlocks_FixtureWater_Status" Decoder="WorkingStatuses"/>
+  <Command CommandName="FIXTURE_WATER_BUG_INTERLOCK" CommandCode="1,03,01,24,01,02" PropertyName="ChamberInterlocks_FixtureWaterBug_Status" Decoder="WorkingStatuses"/>
+  <Command CommandName="PANEL_INTERLOCK" CommandCode="1,01,01,09,01,01" PropertyName="ChamberInterlocks_PanelInterlock_Status" Decoder="WorkingStatuses"/>
+  <Command CommandName="FORELINE_PRESSURE_INTK" CommandCode="1,02,01,12,01,01" PropertyName="ChamberInterlocks_Foreline_Status" Decoder="WorkingStatuses"/> 
+  <Command CommandName="TURBO_WATER_INTERLOCK" CommandCode="1,02,01,02,01,04" PropertyName="ChamberInterlocks_TurboWater_Status" Decoder="WorkingStatuses"/> 
+  <Command CommandName="AIR_PRESSURE_INTK" CommandCode="1,02,01,10,01,01" PropertyName="ChamberInterlocks_AirPressure_Status" Decoder="WorkingStatuses"/>
+
+  <!--Convectron Gauge -->
+  <Command CommandName="PIRANI_CHAMBER_ROUGH_PRESSURE" CommandCode="1,02,01,09,01,01" PropertyName="CG" Decoder="Double"/>
+  <Command CommandName="MPCG_RELAY_INDICATOR" CommandCode="1,02,01,09,03,02" PropertyName="MPCG_RelayIndicatorStatus" Decoder="WorkingStatuses"/>
+  <!--Foreline CG -->
+  <Command CommandName="PIRANI_FORELINE_PRESSURE" CommandCode="1,02,01,07,02,01" PropertyName="CGCFLCG_Information" Decoder="Double"/>
+  <!--Rough Pump CG -->
+  <Command CommandName="PIRANI_ROUGH_PUMP_PRESSURE" CommandCode="1,02,01,09,03,01" PropertyName="CGCRLCG_Information" Decoder="Double"/>
+  <Command CommandName="FLOWCOOL_PRESSURE" CommandCode="1,03,01,11,03,01" PropertyName="CGCMG_Information" Decoder="Double"/>
+  
+  <!--Wafer Processing Status -->
+  <Command CommandName="WAFER_PROCESSING_STATUS_READBACK" CommandCode="1,03,01,21,01,01" PropertyName="WaferStatus" Decoder="Integer"/>
+  <Command CommandName="EVENT_STATUS_READBACK" CommandCode="1,01,01,07,01,01" PropertyName="EventMessage" Decoder=""/>
+  <Command CommandName="ALARM_STATUS_READBACK" CommandCode="1,01,01,08,01,01" PropertyName="StatusMessage" Decoder=""/>
+  
+  <!-- Gas Valve -->
+  <!--PBN Gas-->  
+  <Command CommandName="PBN_GAS_SHUTOFF_VALVE" CommandCode="1,05,01,09,01,01" PropertyName="PBNValveStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="PBN_GAS_SUPPLY_VALVE" CommandCode="1,05,01,09,01,02" PropertyName="ValveSupplyPBNStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="PBN_GAS_FLOWRATE_READBACK" CommandCode="1,05,01,09,01,04" PropertyName="GasController_PBN_Readback" Decoder="Double"/>
+  <Command CommandName="PBN_GAS_FLOWRATE_PROGRAM" CommandCode="1,05,01,09,01,03" PropertyName="GasController_PBN_Program" Decoder="Double"/>
+  <Command CommandName="AUTOBEAM_PBN_GAS_FLOWRATE_PROGRAM" CommandCode="1,05,01,08,06,20" PropertyName="GasController_AutoBeam_PBN_Program" Decoder="Double"/>
+  
+  <Command CommandName="GAS1_SHUTOFF_VALVE" CommandCode="1,05,01,08,01,01" PropertyName="Gas1ShutOffValveStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="GAS2_SHUTOFF_VALVE" CommandCode="1,05,01,08,02,01" PropertyName="Gas2ShutOffValveStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="GAS3_SHUTOFF_VALVE" CommandCode="1,05,01,08,03,01" PropertyName="Gas3ShutOffValveStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="GAS4_SHUTOFF_VALVE" CommandCode="1,05,01,08,04,01" PropertyName="Gas4ShutOffValveStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="GAS5_SHUTOFF_VALVE" CommandCode="1,05,01,08,05,01" PropertyName="Gas5ShutOffValveStatus" Decoder="WorkingStatuses"/>
+  
+  <Command CommandName="GAS1_SUPPLY_VALVE" CommandCode="1,05,01,08,01,02" PropertyName="Gas1SupplyValveStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="GAS2_SUPPLY_VALVE" CommandCode="1,05,01,08,02,02" PropertyName="Gas2SupplyValveStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="GAS3_SUPPLY_VALVE" CommandCode="1,05,01,08,03,02" PropertyName="Gas3SupplyValveStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="GAS4_SUPPLY_VALVE" CommandCode="1,05,01,08,04,02" PropertyName="Gas4SupplyValveStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="GAS5_SUPPLY_VALVE" CommandCode="1,05,01,08,05,02" PropertyName="Gas5SupplyValveStatus" Decoder="WorkingStatuses"/>
+
+  <Command CommandName="GAS1_FLOWRATE_PROGRAM" CommandCode="1,05,01,08,01,03" PropertyName="GasController_Gas1_Program" Decoder="Double"/>
+  <Command CommandName="GAS2_FLOWRATE_PROGRAM" CommandCode="1,05,01,08,02,03" PropertyName="GasController_Gas2_Program" Decoder="Double"/>
+  <Command CommandName="AUTOBEAM_GAS1_FLOWRATE_PROGRAM" CommandCode="1,05,01,08,01,20" PropertyName="GasController_AutoBeam_Gas1_Program" Decoder="Double"/>
+  <Command CommandName="AUTOBEAM_GAS2_FLOWRATE_PROGRAM" CommandCode="1,05,01,08,02,20" PropertyName="GasController_AutoBeam_Gas2_Program" Decoder="Double"/>
+  <Command CommandName="AUTOBEAM_GAS3_FLOWRATE_PROGRAM" CommandCode="1,05,01,08,03,20" PropertyName="GasController_AutoBeam_Gas3_Program" Decoder="Double"/>
+  <Command CommandName="AUTOBEAM_GAS4_FLOWRATE_PROGRAM" CommandCode="1,05,01,08,04,20" PropertyName="GasController_AutoBeam_Gas4_Program" Decoder="Double"/>
+  <Command CommandName="GAS3_FLOWRATE_PROGRAM" CommandCode="1,05,01,08,03,03" PropertyName="GasController_Gas3_Program" Decoder="Double"/>
+  <Command CommandName="GAS4_FLOWRATE_PROGRAM" CommandCode="1,05,01,08,04,03" PropertyName="GasController_Gas4_Program" Decoder="Double"/>
+  <Command CommandName="GAS5_FLOWRATE_PROGRAM" CommandCode="1,05,01,08,05,03" PropertyName="GasController_Gas5_Program" Decoder="Double"/>
+
+  <Command CommandName="GAS1_FLOWRATE_READBACK" CommandCode="1,05,01,08,01,04" PropertyName="GasController_Gas1_Readback" Decoder="Double"/>
+  <Command CommandName="GAS2_FLOWRATE_READBACK" CommandCode="1,05,01,08,02,04" PropertyName="GasController_Gas2_Readback" Decoder="Double"/>
+  <Command CommandName="GAS3_FLOWRATE_READBACK" CommandCode="1,05,01,08,03,04" PropertyName="GasController_Gas3_Readback" Decoder="Double"/>
+  <Command CommandName="GAS4_FLOWRATE_READBACK" CommandCode="1,05,01,08,04,04" PropertyName="GasController_Gas4_Readback" Decoder="Double"/>
+  <Command CommandName="GAS5_FLOWRATE_READBACK" CommandCode="1,05,01,08,05,04" PropertyName="GasController_Gas5_Readback" Decoder="Double"/>
+  
+  <!--Shield Usage--> 
+  <Command CommandName="COVER_FIXTURE_SHIELD_USAGE" CommandCode="1,05,01,33,01,11" PropertyName="CoverFixtureShieldUsageReadback" Decoder="Double"/> 
+  <Command CommandName="TOP_FIXTURE_SHIELD_USAGE" CommandCode="1,05,01,33,01,12" PropertyName="TopFixtureShieldUsageReadback" Decoder="Double"/> 
+  <Command CommandName="WAFER_CLAMP_USAGE" CommandCode="1,05,01,33,01,13" PropertyName="WaferClampUsageReadback" Decoder="Double"/> 
+  <Command CommandName="SHUTTER_USAGE" CommandCode="1,05,01,33,01,14" PropertyName="ShutterUsageReadback" Decoder="Double"/> 
+  <Command CommandName="FIXTURE_ROTATION_MOTOR_USAGE" CommandCode="1,05,01,33,01,15" PropertyName="FixtureRotationMotorUsageReadback" Decoder="Double"/> 
+		
+<!--End Process Module-->
+<!--Will be remove later-->
+	<!--Command CommandName="WATER_PUMP_REGEN" CommandCode="1,0x,0x,0x,0x,67" PropertyName="WaterPumpRegen" Decoder="WorkingStatuses"/>
+	<Command CommandName="WATER_PUMP" CommandCode="1,0x,0x,0x,0x,66" PropertyName="WaterPump" Decoder="WorkingStatuses"/-->
+	<!--Command CommandName="CRYO_PUMP_TEMPERTURE" CommandCode="1,02,01,04,01,02" PropertyName="Cryo_Pump_Temperture" Decoder="Double"/-->
+  <!--Command CommandName="FIXTURE_TILT_ANGLE_READBACK" CommandCode="1,03,01,09,01,05" PropertyName="Fixture_TiltAngle_Readback" Decoder="Double"/-->
+  <!--Command CommandName="FIXTURE_COOLING_WATER" CommandCode="1,0x,0x,0x,01,65" PropertyName="Fixture_Cooling_Water_Readback" Decoder="Double"/-->
+  <!--Command CommandName="FIXTURE_START_ROTATION_AXIS" CommandCode="1,03,01,08,01,05" PropertyName="Fixture_Start_Rotation_Readback" Decoder="WorkingStatuses"/-->
+  <Command CommandName="MOTION_TO_SERVICE_POSITION" CommandCode="1,03,01,23,01,01" PropertyName="" Decoder=""/>
+  <Command CommandName="MAGNETIC_CHUCK_POWER" CommandCode="1,03,01,15,01,01" PropertyName="" Decoder=""/>
+  <Command CommandName="MAGNETIC_CHUCK_PHASE" CommandCode="1,03,01,15,01,02" PropertyName="" Decoder=""/>
+  <Command CommandName="MAGNETIC_CHUCK_AMPLITUDE" CommandCode="1,03,01,15,01,03" PropertyName="" Decoder=""/>
+  <Command CommandName="MAGNETIC_CHUCK_FREQUENCY" CommandCode="1,03,01,15,01,04" PropertyName="" Decoder=""/>
+  <Command CommandName="MAGNETIC_CHUCK_WAVE_TYPE" CommandCode="1,03,01,15,01,05" PropertyName="" Decoder=""/>
+  <Command CommandName="HOT_CHUCK_POWER" CommandCode="1,03,01,17,01,01" PropertyName="" Decoder=""/>
+  <Command CommandName="HOT_CHUCK_GET_TEMPERATURE" CommandCode="1,03,01,17,01,02" PropertyName="" Decoder=""/>
+  <Command CommandName="HOT_CHUCK_SET_TEMPERATURE" CommandCode="1,03,01,17,01,04" PropertyName="" Decoder=""/>
+  <Command CommandName="STATIC_COOLING_EXHAUST_VALVE" CommandCode="1,03,01,25,01,01" PropertyName="" Decoder=""/>
+  <Command CommandName="STATIC_COOLING_SUPPLY_VALVE" CommandCode="1,03,01,25,01,02" PropertyName="" Decoder=""/>
+  <Command CommandName="STATIC_COOLING_TARGET_FLOW" CommandCode="1,03,01,25,01,03" PropertyName="" Decoder=""/>
+  <Command CommandName="STATIC_COOLING_ACTUAL_FLOW" CommandCode="1,03,01,25,01,04" PropertyName="" Decoder=""/>
+  <Command CommandName="STATIC_COOLING_TARGET_PRESSURE" CommandCode="1,03,01,25,01,05" PropertyName="" Decoder=""/>
+  <Command CommandName="STATIC_COOLING_ACTUAL_PRESSURE" CommandCode="1,03,01,25,01,06" PropertyName="" Decoder=""/>
+  <Command CommandName="STATIC_COOLING_GAS_OK" CommandCode="1,03,01,25,01,08" PropertyName="" Decoder=""/>
+  <Command CommandName="STATIC_COOLING_START" CommandCode="1,03,01,25,01,09" PropertyName="" Decoder=""/>
+  <Command CommandName="STATIC_COOLING_STOP" CommandCode="1,03,01,25,01,10" PropertyName="" Decoder=""/>
+  <Command CommandName="TEC_POWER" CommandCode="1,03,01,26,01,07" PropertyName="" Decoder=""/>
+    <!--Remove-->
+  <Command CommandName="GAS_TARGET_FLOWRATE_A_PROGRAM" CommandCode="x,05,01,08,01,03" PropertyName="GasController_Argon_Program" Decoder="Double"/>
+  <Command CommandName="GAS_ACTUAL_FLOWRATE_A_READBACK" CommandCode="x,05,01,08,01,04" PropertyName="GasController_Argon_Readback" Decoder="Double"/>
+  <Command CommandName="GAS_ACTUAL_FLOWRATE_O_READBACK" CommandCode="x,05,01,08,02,04" PropertyName="" Decoder=""/>
+  <Command CommandName="GAS_TYPE" CommandCode="x,05,01,08,01,05" PropertyName="" Decoder=""/>
+  <Command CommandName="GAS_MFC_MAX_RANGE" CommandCode="x,05,01,08,01,06" PropertyName="" Decoder=""/>
+  
+  <Command CommandName="GAS_FLOWRATE_ERROR_TOL" CommandCode="1,05,01,08,01,07" PropertyName="" Decoder=""/>
+  <Command CommandName="GAS_FLOWRATE_WARNING_TOL" CommandCode="1,05,01,08,01,08" PropertyName="" Decoder=""/>
+  <Command CommandName="GAS_FLOWRATE_ERROR_TIME" CommandCode="1,05,01,08,01,09" PropertyName="" Decoder=""/>
+  <Command CommandName="GAS_FLOWRATE_WARNING_TIME" CommandCode="1,05,01,08,01,10" PropertyName="" Decoder=""/>
+  
+  <Command CommandName="GAS1_TYPE" CommandCode="1,05,01,08,01,05" PropertyName="Gas1Type" Decoder=""/>
+  <Command CommandName="GAS2_TYPE" CommandCode="1,05,01,08,02,05" PropertyName="Gas2Type" Decoder=""/>
+  <Command CommandName="GAS3_TYPE" CommandCode="1,05,01,08,03,05" PropertyName="Gas3Type" Decoder=""/>
+  <Command CommandName="GAS4_TYPE" CommandCode="1,05,01,08,04,05" PropertyName="Gas4Type" Decoder=""/>
+  <Command CommandName="GAS5_TYPE" CommandCode="1,05,01,08,05,05" PropertyName="Gas5Type" Decoder=""/>
+  
+  <Command CommandName="GAS1_MAX_RANGE" CommandCode="1,05,01,08,01,06" PropertyName="Gas1MaxRange" Decoder="Double"/>
+  <Command CommandName="GAS2_MAX_RANGE" CommandCode="1,05,01,08,02,06" PropertyName="Gas2MaxRange" Decoder="Double"/>
+  <Command CommandName="GAS3_MAX_RANGE" CommandCode="1,05,01,08,03,06" PropertyName="Gas3MaxRange" Decoder="Double"/>
+  <Command CommandName="GAS4_MAX_RANGE" CommandCode="1,05,01,08,04,06" PropertyName="Gas4MaxRange" Decoder="Double"/>
+  <Command CommandName="GAS5_MAX_RANGE" CommandCode="1,05,01,08,05,06" PropertyName="Gas5MaxRange" Decoder="Double"/>
+  
+   <!--old command fixture -->
+  
+  <Command CommandName="FIXTURE_LOCK" CommandCode="1,03,01,03,01,01" PropertyName="" Decoder=""/>
+  <Command CommandName="FIXTURE_CLAMP" CommandCode="1,03,01,07,01,01" PropertyName="FixtureClampStatus" Decoder="WorkingStatuses"/>
+  <Command CommandName="FIXTURE_ROTATION_ERROR" CommandCode="1,03,01,08,01,04,-1" PropertyName="FixtureErrorStatus" Decoder="DEVICE_STATUS"/>
+  <Command CommandName="FIXTURE_HOME_ALL_AXIS" CommandCode="1,03,01,13,01,01,01" PropertyName="" Decoder=""/>
+  <Command CommandName="FIXTURE_STOP_ALL_AXIS" CommandCode="1,03,01,13,01,01,00" PropertyName="" Decoder=""/>
+  <Command CommandName="FIXTURE_ROTATION_DWELL_TIME" CommandCode="03,01,08,01,13" PropertyName="" Decoder=""/>
+  <Command CommandName="PROCESS_MODIFY_STEPTIME" CommandCode="1,05,01,22,01,14" PropertyName="" Decoder=""/>
+  <Command CommandName="PROCESS_STEPTIME_TIMEOUT" CommandCode="1,05,01,22,01,15" PropertyName="" Decoder=""/>
+  <Command CommandName="PROCESS_GEM_WAITFOR_STEPTIME" CommandCode="1,05,01,22,01,16" PropertyName="" Decoder=""/>
+  <Command CommandName="ELECTROSTATIC_SHUTTER_BYPASS" CommandCode= "1,05,01,28,01,01" PropertyName="" Decoder=""/>
+  <Command CommandName="ELECTROSTATIC_SHUTTER_TIMER" CommandCode="1,05,01,28,01,02" PropertyName="" Decoder=""/>
+  <Command CommandName="WAFER_ABORT_STATUS" CommandCode="1,05,01,30,01,01" PropertyName="" Decoder=""/>
+  <Command CommandName="MAX_SUPP_CURRENT" CommandCode="1,05,01,31,01,01" PropertyName="" Decoder=""/>
+  <Command CommandName="MAX_REF_RF" CommandCode="1,05,01,31,01,02" PropertyName="" Decoder=""/>
+  <Command CommandName="MIN_PBN_CURRENT" CommandCode= "1,05,01,31,01,03" PropertyName="" Decoder=""/>
+  <Command CommandName="MAX_PBN_CURRENT" CommandCode="1,05,01,31,01,04" PropertyName="" Decoder=""/>
+   <Command CommandName="PROCESS_ABORT_MESSAGE" CommandCode="1,05,01,22,01,07" PropertyName="" Decoder=""/>
+  <Command CommandName="PROCESS_LOT_ID" CommandCode="1,05,01,22,01,08" PropertyName="" Decoder=""/>
+  <Command CommandName="PROCESS_CASSETTE_ID" CommandCode="1,05,01,22,01,09" PropertyName="" Decoder=""/>
+  <Command CommandName="SOURCE_GRID_ID" CommandCode="1,05,01,33,01,04" PropertyName="" Decoder=""/>
+  <Command CommandName="SOURCE_MAGNET_MODE" CommandCode="1,05,01,34,01,05" PropertyName="" Decoder=""/>
+  <Command CommandName="SOURCE_MAGNET_SPEED" CommandCode="1,05,01,34,01,08" PropertyName="" Decoder=""/>
+    <Command CommandName="SUPP_VOLTAGE_ERROR_TOL" CommandCode="1,05,01,14,01,07" PropertyName="" Decoder=""/>
+  <Command CommandName="SUPP_VOLTAGE_WARNING_TOL" CommandCode="1,05,01,14,01,08" PropertyName="" Decoder=""/>
+  <Command CommandName="SUPP_VOLTAGE_ERROR_TIME" CommandCode="1,05,01,14,01,09" PropertyName="" Decoder=""/>
+  <Command CommandName="SUPP_VOLTAGE_WARNING_TIME" CommandCode="1,05,01,14,01,10" PropertyName="" Decoder=""/>
+   <Command CommandName="BEAM_CURRENT_ERROR_TOL" CommandCode="1,05,01,13,01,07" PropertyName="" Decoder=""/>
+  <Command CommandName="BEAM_CURRENT_WARNING_TOL" CommandCode="1,05,01,13,01,08" PropertyName="" Decoder=""/>
+  <Command CommandName="BEAM_CURRENT_ERROR_TIME" CommandCode="1,05,01,13,01,09" PropertyName="" Decoder=""/>
+  <Command CommandName="BEAM_CURRENT_WARNING_TIME" CommandCode="1,05,01,13,01,10" PropertyName="" Decoder=""/>
+   <Command CommandName="BEAM_VOLTAGE_ERROR_TOL" CommandCode="1,05,01,12,01,07" PropertyName="" Decoder=""/>
+  <Command CommandName="BEAM_VOLTAGE_WARNING_TOL" CommandCode="1,05,01,12,01,08" PropertyName="" Decoder=""/>
+  <Command CommandName="BEAM_VOLTAGE_ERROR_TIME" CommandCode="1,05,01,12,01,09" PropertyName="" Decoder=""/>
+  <Command CommandName="BEAM_VOLTAGE_WARNING_TIME" CommandCode="1,05,01,12,01,10" PropertyName="" Decoder=""/>
+  <Command CommandName="ION_GAUGE_EMISSION" CommandCode= "1,02,01,08,01,02" PropertyName="" Decoder=""/>
+  <Command CommandName="SLAVE_TURBO" CommandCode="1,02,01,03,01,01" PropertyName="" Decoder=""/>
+  <Command CommandName="CHAMBER_HEATER" CommandCode="1,02,01,16,01,01" PropertyName="" Decoder=""/>
+  <Command CommandName="PROCESS_START_PRESSURE" CommandCode="1,02,01,19,01,01" PropertyName="" Decoder=""/>
+  <Command CommandName="PUMPED_DOWN_PRESSURE" CommandCode="1,02,01,19,01,02" PropertyName="" Decoder=""/>
+  <Command CommandName="ATMOSPHERE_PRESSURE" CommandCode="1,02,01,19,01,03" PropertyName="" Decoder=""/>
+  <Command CommandName="ROUGH_TIMEOUT" CommandCode="1,02,01,19,01,04" PropertyName="" Decoder=""/>
+  <Command CommandName="VENT_TIMEOUT" CommandCode="1,02,01,19,01,05" PropertyName="" Decoder=""/>
+  <Command CommandName="TURBO_VENT_DELAY" CommandCode="1,02,01,19,01,06" PropertyName="" Decoder=""/>
+  <Command CommandName="PBN_GAS_FLOWRATE_ERROR_TOL" CommandCode="1,05,01,09,01,07" PropertyName="" Decoder=""/>
+  <Command CommandName="PBN_GAS_FLOWRATE_WARNING_TOL" CommandCode="1,05,01,09,01,08" PropertyName="" Decoder=""/>
+  <Command CommandName="PBN_GAS_FLOWRATE_ERROR_TIME" CommandCode="1,05,01,09,01,09" PropertyName="" Decoder=""/>
+  <Command CommandName="PBN_GAS_FLOWRATE_WARNING_TIME" CommandCode="1,05,01,09,01,10" PropertyName="" Decoder=""/>
+    <Command CommandName="DIVERTER_VALVE" CommandCode="1,05,01,11,01,01" PropertyName="" Decoder=""/>
+  <Command CommandName="ELECTRONIC_SHUTTER" CommandCode="1,05,01,07,01,01" PropertyName="" Decoder=""/>
+  <Command CommandName="KEEP_ALIVE" CommandCode="1,00,00,00,00,00,00" PropertyName="" Decoder=""/>
+  </IBEServer>

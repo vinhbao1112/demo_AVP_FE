@@ -1,0 +1,24 @@
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\bin\Debug\HRecipeLibrary.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\bin\Debug\HRecipeLibrary.pdb
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\bin\Debug\HRecipeLibrary.xml
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\bin\Debug\log4net.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Debug\HRecipeLibrary.vbproj.AssemblyReference.cache
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Debug\HRecipeLibrary.Resources.resources
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Debug\HRecipeLibrary.vbproj.GenerateResource.cache
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Debug\HRecipeLibrary.vbproj.CoreCompileInputs.cache
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Debug\HRecipeLibrary.vbproj.CopyComplete
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Debug\HRecipeLibrary.dll
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Debug\HRecipeLibrary.xml
+D:\Working\AVP\avp_code\AVP_Phase VI\Source Code\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Debug\HRecipeLibrary.pdb
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\bin\Debug\HRecipeLibrary.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\bin\Debug\HRecipeLibrary.pdb
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\bin\Debug\HRecipeLibrary.xml
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\bin\Debug\log4net.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Debug\HRecipeLibrary.vbproj.AssemblyReference.cache
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Debug\HRecipeLibrary.Resources.resources
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Debug\HRecipeLibrary.vbproj.GenerateResource.cache
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Debug\HRecipeLibrary.vbproj.CoreCompileInputs.cache
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Debug\HRecipeLibrary.vbproj.CopyComplete
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Debug\HRecipeLibrary.dll
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Debug\HRecipeLibrary.xml
+C:\Users\ROG\Desktop\AVP\AVP_CXX_Corona_Support_PVD5T\HRecipeLibrary\HRecipeLibrary\obj\Debug\HRecipeLibrary.pdb

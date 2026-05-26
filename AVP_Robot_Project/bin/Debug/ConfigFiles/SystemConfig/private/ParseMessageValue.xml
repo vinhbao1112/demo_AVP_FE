@@ -1,0 +1,27 @@
+<MessageNames>	
+	<Property Name="ChangeMechineOnlineInCassettesScreenTo ONLINE" Code="ChangeMechineOnlineInCassettesScreenTo Off" />
+	<Property Name="ChangeMechineOnlineInCassettesScreenTo OFFLINE" Code="ChangeMechineOnlineInCassettesScreenTo On" />
+		
+	<Property Name="ChangeLeftOnlineInCassettesScreenTo ONLINE" Code="ChangeLeftOnlineInCassettesScreenTo Off" />
+	<Property Name="ChangeLeftOnlineInCassettesScreenTo OFFLINE" Code="ChangeLeftOnlineInCassettesScreenTo On" />
+	
+	<Property Name="ChangeRightOnlineInCassettesScreenTo ONLINE" Code="ChangeRightOnlineInCassettesScreenTo Off" />
+	<Property Name="ChangeRightOnlineInCassettesScreenTo OFFLINE" Code="ChangeRightOnlineInCassettesScreenTo On" />
+	
+	<Property Name="SetRobotLEDInCassettesScreenTo False" Code="SetRobotLEDInCassettesScreenTo Off" />
+	<Property Name="SetRobotLEDInCassettesScreenTo True" Code="SetRobotLEDInCassettesScreenTo On" />
+	
+	<Property Name="SetComunicationLEDOfLoadLockAInCassettesScreenTo False" Code="SetComunicationLEDOfLoadLockAInCassettesScreenTo Off" />
+	<Property Name="SetComunicationLEDOfLoadLockAInCassettesScreenTo True" Code="SetComunicationLEDOfLoadLockAInCassettesScreenTo On" />
+	
+	<Property Name="SetToolLEDInCassettesScreenTo False" Code="SetToolLEDInCassettesScreenTo Off" />
+	<Property Name="SetToolLEDInCassettesScreenTo True" Code="SetToolLEDInCassettesScreenTo On" />
+	
+	<Property Name="SetComunicationCryoOfLLAInCassettesPanelTo False" Code="SetComunicationCryoOfLLAInCassettesPanelTo Off" />
+	<Property Name="SetComunicationCryoOfLLAInCassettesPanelTo True" Code="SetComunicationCryoOfLLAInCassettesPanelTo On" />
+	
+	<Property Name="SetComunicationCryoOfTMInCassettesPanelTo False" Code="SetComunicationCryoOfTMInCassettesPanelTo Off" />
+	<Property Name="SetComunicationCryoOfTMInCassettesPanelTo True" Code="SetComunicationCryoOfTMInCassettesPanelTo On" />
+	
+	<Property Name="StartAlarm On" Code="StartAlarm KepServer Alarm" />
+</MessageNames>

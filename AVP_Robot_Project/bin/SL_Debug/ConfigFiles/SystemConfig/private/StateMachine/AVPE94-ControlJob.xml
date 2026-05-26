@@ -1,0 +1,43 @@
+<StateMachine initstate="NoState">
+    <State name="NO STATE" id="NoState"/>
+    <State name="QUEUED" id="Queued"/>
+    <State name="SELECTED" id="Selected"/>
+    <State name="WAITING FOR START" id="WaitingForStart"/>
+    <State name="EXECUTING" id="Executing"/>
+    <State name="PAUSED" id="Paused"/>
+    <State name="COMPLETED" id="Completed"/>
+    <State name="WAIT FOR CMD ANSWER" id="WaitForCmdAnswer"/>
+    <State name="WAIT COMPLETE RPT" id="WaitCompleteRpt"/>
+	
+    <Transition txNo="1" src="NoState" dst="Queued" triggerid="CJ_CREATED"/>
+    <Transition txNo="2" src="Queued" dst="NoState" triggerid="CJ_CANCELED"/>
+    <Transition txNo="3" src="Queued" dst="Selected" triggerid="CJ_SELECTED"/>
+    <Transition txNo="4" src="Selected" dst="Queued" triggerid="CJ_DESELECT"/>
+    <Transition txNo="5" src="Selected" dst="Executing" triggerid="CJ_EXECUTING#5"/>
+    <Transition txNo="6" src="Selected" dst="WaitingForStart" triggerid="CJ_WAITNGFORSTART"/>
+    <Transition txNo="600" src="Selected" dst="WaitCompleteRpt" triggerid=""/>
+    <Transition txNo="601" src="WaitCompleteRpt" dst="Selected" triggerid=""/>
+    <Transition txNo="7" src="WaitingForStart" dst="Executing" triggerid="CJ_EXECUTING#7"/>
+    <Transition txNo="700" src="WaitingForStart" dst="WaitCompleteRpt" triggerid=""/>
+    <Transition txNo="701" src="WaitCompleteRpt" dst="WaitingForStart" triggerid=""/>
+    <Transition txNo="8" src="Executing" dst="Paused" triggerid="CJ_PAUSED"/>
+    <Transition txNo="9" src="Paused" dst="Executing" triggerid="CJ_RESUMED"/>
+    <Transition txNo="10" src="Executing" dst="Completed" triggerid="CJ_COMPLETED"/>
+    <Transition txNo="11" src="Selected" dst="Completed" triggerid="CJ_STOPPED"/>
+    <Transition txNo="111" src="Selected" dst="WaitForCmdAnswer" triggerid=""/>
+    <Transition txNo="112" src="WaitForCmdAnswer" dst="Selected" triggerid=""/>
+    <Transition txNo="14" src="WaitingForStart" dst="Completed" triggerid="CJ_STOPPED"/>
+    <Transition txNo="141" src="WaitingForStart" dst="WaitForCmdAnswer" triggerid=""/>
+    <Transition txNo="142" src="WaitForCmdAnswer" dst="WaitingForStart" triggerid=""/>
+    <Transition txNo="15" src="Executing" dst="Completed" triggerid="CJ_STOPPED"/>
+    <Transition txNo="151" src="Executing" dst="WaitForCmdAnswer" triggerid=""/>
+    <Transition txNo="152" src="WaitForCmdAnswer" dst="Executing" triggerid=""/>
+    <Transition txNo="16" src="Paused" dst="Completed" triggerid="CJ_STOPPED"/>
+    <Transition txNo="161" src="Paused" dst="WaitForCmdAnswer" triggerid=""/>
+    <Transition txNo="162" src="WaitForCmdAnswer" dst="Paused" triggerid=""/>
+    <Transition txNo="12" src="Selected" dst="Completed" triggerid="CJ_ABORTED"/>
+    <Transition txNo="17" src="WaitingForStart" dst="Completed" triggerid="CJ_ABORTED"/>
+    <Transition txNo="18" src="Executing" dst="Completed" triggerid="CJ_ABORTED"/>
+    <Transition txNo="19" src="Paused" dst="Completed" triggerid="CJ_ABORTED"/>
+    <Transition txNo="13" src="Completed" dst="NoState" triggerid="CJ_DELETED"/>	
+</StateMachine>

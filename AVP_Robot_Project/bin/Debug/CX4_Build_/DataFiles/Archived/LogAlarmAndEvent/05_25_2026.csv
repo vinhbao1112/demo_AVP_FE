@@ -1,0 +1,396 @@
+Alarm,Default,05/25/2026 14:05:49 PM,Aligner,Encounter Error In Initialization
+User,Default,05/25/2026 14:06:10 PM,GUI,[Main Screen] Sequence file error
+User,Default,05/25/2026 14:06:14 PM,GUI,[Main Screen] Turn Off TM IG.
+User,Default,05/25/2026 14:06:58 PM,GUI,[Main Screen] Connect all PM
+User,Default,05/25/2026 14:07:00 PM,GUI,[Main Screen] Connect all PM
+User,Default,05/25/2026 14:07:01 PM,DeviceNet,[Main Screen] Alarm Light On
+Alarm,Default,05/25/2026 14:07:01 PM,PM3,Please Run [Home All] To Make Motion Controller Working Properly.  #109 
+User,ADMIN,05/25/2026 14:07:13 PM,GUI,[Main Screen] Login Successed with Username admin
+User,ADMIN,05/25/2026 14:07:16 PM,GUI,Check out AVP Privilege
+User,ADMIN,05/25/2026 14:07:25 PM,DeviceNet,[Main Screen] Alarm Light Off
+User,ADMIN,05/25/2026 14:07:25 PM,GUI,[Maintenance] Clear All Alarm Message
+User,ADMIN,05/25/2026 14:07:35 PM,GUI,[PM3] Open/Close HivacValve
+User,ADMIN,05/25/2026 14:07:45 PM,GUI,[PM3] Auto Pump Down button Clicked
+Message,ADMIN,05/25/2026 14:07:45 PM,PM3,[PUMPDOWN] Executing step: CloseAllGasValves
+User,ADMIN,05/25/2026 14:07:51 PM,DeviceNet,[Main Screen] Alarm Light On
+Alarm,ADMIN,05/25/2026 14:07:51 PM,PM3,PM Isolation Valve Is Not Closed.  #12 
+Message,ADMIN,05/25/2026 14:07:54 PM,PM3,[PUMPDOWN] Executing step: OpenCloseVentValve(False)
+Message,ADMIN,05/25/2026 14:07:54 PM,PM3,[PUMPDOWN] Executing step: OpenCloseRoughValve(False)
+Message,ADMIN,05/25/2026 14:07:54 PM,PM3,[PUMPDOWN] Executing step: TurnMechanicalPumpOnOff(True)
+Message,ADMIN,05/25/2026 14:07:54 PM,PM3,[PUMPDOWN] Executing step: IsChamberIsolationValveClosed
+Message,ADMIN,05/25/2026 14:07:54 PM,PM3,Pump down sequence failed
+User,ADMIN,05/25/2026 14:08:00 PM,DeviceNet,[Main Screen] Alarm Light Off
+User,ADMIN,05/25/2026 14:08:00 PM,GUI,[Maintenance] Clear All Alarm Message
+User,ADMIN,05/25/2026 14:08:05 PM,GUI,[TM Screen] - Close Slit valve of PM3
+User,ADMIN,05/25/2026 14:08:09 PM,GUI,[TM Screen] - Close Slit valve of LLA
+User,ADMIN,05/25/2026 14:08:18 PM,GUI,[TM Screen] - Start TM Pump down
+Message,ADMIN,05/25/2026 14:08:18 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Pumpdown...
+Message,ADMIN,05/25/2026 14:08:18 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Waiting for Rough Valve PM3 Close. Timeout 60s.
+Message,ADMIN,05/25/2026 14:08:18 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Wait for vent valve close with timeout 10s
+Message,ADMIN,05/25/2026 14:08:18 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Vent valve closed
+Message,ADMIN,05/25/2026 14:08:18 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Wait for rough valve close with timeout 10s
+Message,ADMIN,05/25/2026 14:08:18 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Rough valve is closed.
+Message,ADMIN,05/25/2026 14:08:18 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: All slit valves are closed
+Message,ADMIN,05/25/2026 14:08:18 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Waiting for Hivac valve open with timeout 30s
+User,ADMIN,05/25/2026 14:08:22 PM,GUI,[TM Screen] - Start LLA Pump down
+Message,ADMIN,05/25/2026 14:08:22 PM,GUI,[AUTO_PUMP_DOWN] - LoadLockA: Pumpdown...
+Message,ADMIN,05/25/2026 14:08:22 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Waiting for 15s
+Message,ADMIN,05/25/2026 14:08:22 PM,GUI,[AUTO_PUMP_DOWN] - LoadLockA: Waiting for Rough Valve PM3 Close. Timeout 60s.
+Message,ADMIN,05/25/2026 14:08:22 PM,GUI,[AUTO_PUMP_DOWN] - LoadLockA: Close Rough and Vent valves.
+Message,ADMIN,05/25/2026 14:08:22 PM,GUI,[AUTO_PUMP_DOWN] - LoadLockA: Rough and Vent valves are closed.
+Message,ADMIN,05/25/2026 14:08:22 PM,GUI,[AUTO_PUMP_DOWN] - LoadLockA: Close Fast Rough Valve.
+Message,ADMIN,05/25/2026 14:08:22 PM,GUI,[AUTO_PUMP_DOWN] - LoadLockA: Wait for Fast Rough Valve close with timeout 5s
+Message,ADMIN,05/25/2026 14:08:25 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Waiting for IG Off with timeout 30s
+Message,ADMIN,05/25/2026 14:08:25 PM,GUI,[AUTO_PUMP_DOWN] - LoadLockA: Waiting for LL Isolation is opened with timeout 10s
+Message,ADMIN,05/25/2026 14:08:25 PM,GUI,[AUTO_PUMP_DOWN] - LoadLockA Pumpdown aborted by user.
+Message,ADMIN,05/25/2026 14:08:25 PM,GUI,[AUTO_PUMP_DOWN] - LoadLockA: Waiting for 15s
+Message,ADMIN,05/25/2026 14:08:37 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Waiting for IG On with timeout 30s
+Message,ADMIN,05/25/2026 14:08:40 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Waiting for IG On with timeout 30s
+User,ADMIN,05/25/2026 14:08:43 PM,GUI,[TM Screen] - Check MesaValve before moving.
+Message,ADMIN,05/25/2026 14:08:45 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Pumpdown completed
+Message,ADMIN,05/25/2026 14:08:45 PM,GUI,[AUTO_PUMP_DOWN] - LoadLockA: Pumpdown completed.
+User,ADMIN,05/25/2026 14:08:46 PM,GUI,[Main Screen] Enter Process screen
+User,ADMIN,05/25/2026 14:09:01 PM,GUI,[PM3] Auto Pump Down button Clicked
+Message,ADMIN,05/25/2026 14:09:02 PM,PM3,[PUMPDOWN] Executing step: CloseAllGasValves
+Message,ADMIN,05/25/2026 14:09:07 PM,PM3,[PUMPDOWN] Executing step: OpenCloseVentValve(False)
+Message,ADMIN,05/25/2026 14:09:07 PM,PM3,[PUMPDOWN] Executing step: OpenCloseRoughValve(False)
+Message,ADMIN,05/25/2026 14:09:07 PM,PM3,[PUMPDOWN] Executing step: TurnMechanicalPumpOnOff(True)
+Message,ADMIN,05/25/2026 14:09:07 PM,PM3,[PUMPDOWN] Executing step: IsChamberIsolationValveClosed
+Message,ADMIN,05/25/2026 14:09:07 PM,PM3,[PUMPDOWN] Executing step: IsCryoColdEnough
+Message,ADMIN,05/25/2026 14:09:07 PM,PM3,[PUMPDOWN] Executing step: OpenCloseBaratronValve(True)
+Message,ADMIN,05/25/2026 14:09:08 PM,PM3,[PUMPDOWN] Executing step: OpenCloseTurboVATValve(True)
+Message,ADMIN,05/25/2026 14:09:08 PM,PM3,[PUMPDOWN] Executing step: OpenCloseTurboVATValve(True) - Wait for VAT valve Open. Timeout = 26s
+Message,ADMIN,05/25/2026 14:09:08 PM,PM3,[PUMPDOWN] Executing step: Wait(10)
+Message,ADMIN,05/25/2026 14:09:18 PM,PM3,[PUMPDOWN] Executing step: TurnIGOnSkipError
+Message,ADMIN,05/25/2026 14:09:26 PM,PM3,[PUMPDOWN] Executing step: TurnOnWaterPump
+Message,ADMIN,05/25/2026 14:09:26 PM,PM3,Pump down sequence completed
+User,ADMIN,05/25/2026 14:09:38 PM,GUI,[PM3] HOME ALL button Clicked
+User,ADMIN,05/25/2026 14:09:41 PM,GUI,[Maintenance] Clear All Alarm Message
+Message,ADMIN,05/25/2026 14:09:43 PM,PM3,DoMotionInitialize - Lift Down.
+Message,ADMIN,05/25/2026 14:09:43 PM,PM3,DoMotionInitialize - Wait for Substrate Lift Down. Timeout 150s
+Message,ADMIN,05/25/2026 14:09:45 PM,PM3,DoMotionInitialize - Table Rotate And Updown Home.
+User,ADMIN,05/25/2026 14:09:55 PM,GUI,[Recipe Editor] Select Recipe of PM3
+User,ADMIN,05/25/2026 14:10:10 PM,GUI,[Main Screen] Enter Process screen
+User,ADMIN,05/25/2026 14:10:12 PM,GUI,[Main Screen] Enter Log viewer screen
+User,ADMIN,05/25/2026 14:10:17 PM,GUI,[Main Screen] Enter Process screen
+User,ADMIN,05/25/2026 14:10:39 PM,GUI,[Main Screen] Enter Process screen
+User,ADMIN,05/25/2026 14:10:43 PM,GUI,[Maintenance] Clear All Alarm Message
+User,ADMIN,05/25/2026 14:10:46 PM,DeviceNet,[Main Screen] Alarm Light On
+Alarm,ADMIN,05/25/2026 14:10:46 PM,PM3,Table Rotate Is Not Moving.  #150 
+User,ADMIN,05/25/2026 14:10:48 PM,GUI,[Main Screen] Enter Process screen
+User,ADMIN,05/25/2026 14:10:53 PM,DeviceNet,[Main Screen] Alarm Light Off
+User,ADMIN,05/25/2026 14:10:53 PM,GUI,[Maintenance] Clear All Alarm Message
+Message,ADMIN,05/25/2026 14:13:07 PM,PM3,DoMotionInitialize - Lift Down.
+Message,ADMIN,05/25/2026 14:13:07 PM,PM3,DoMotionInitialize - Wait for Substrate Lift Down. Timeout 150s
+Message,ADMIN,05/25/2026 14:13:09 PM,PM3,DoMotionInitialize - Table Rotate And Updown Home.
+Message,ADMIN,05/25/2026 14:13:24 PM,PM3,DoMotionInitialize - Wait for Substrate Table Home. Timeout 181s
+Message,ADMIN,05/25/2026 14:13:28 PM,PM3,DoMotionInitialize - Completed.
+User,ADMIN,05/25/2026 14:13:40 PM,GUI,[Maintenance] Clear All Alarm Message
+User,ADMIN,05/25/2026 14:13:42 PM,GUI,[Main Screen] Enter Process screen
+User,ADMIN,05/25/2026 14:13:47 PM,LLA,[Main Screen] Loading Loadlock.
+User,ADMIN,05/25/2026 14:13:47 PM,GUI,[LogLoad]- Load check Door 2On
+User,ADMIN,05/25/2026 14:13:47 PM,GUI,[LogLoad]- MapWaferSuccess False
+User,ADMIN,05/25/2026 14:13:47 PM,GUI,[LogLoad]- Map LLAElevator.00,A,MP
+User,ADMIN,05/25/2026 14:13:47 PM,GUI,[LogLoad]- DoMap True
+User,ADMIN,05/25/2026 14:13:49 PM,DeviceNet,[Main Screen] Alarm Light On
+Alarm,ADMIN,05/25/2026 14:13:49 PM,GUI,LLA: There is duplicated wafer id - A01
+User,ADMIN,05/25/2026 14:13:49 PM,GUI,[LogLoad]- DoMapWhenPumpdownReady True
+User,ADMIN,05/25/2026 14:13:49 PM,LLA,[Main Screen]  Load completed.
+User,ADMIN,05/25/2026 14:13:54 PM,DeviceNet,[Main Screen] Alarm Light Off
+User,ADMIN,05/25/2026 14:13:54 PM,GUI,[Maintenance] Clear All Alarm Message
+User,ADMIN,05/25/2026 14:14:00 PM,GUI,[Main Screen] Click menu Return wafer on PM3.
+Message,ADMIN,05/25/2026 14:14:00 PM,GUI,Return Wafer Starting...
+User,ADMIN,05/25/2026 14:14:01 PM,GUI,Start Transfer Wafer A06 From: PM3 To: LoadLockA,Slot06
+User,ADMIN,05/25/2026 14:14:33 PM,DeviceNet,[Main Screen] Alarm Light On
+Alarm,ADMIN,05/25/2026 14:14:33 PM,GUI,Error: Failed To Rotate Substrate To Station: 6
+Alarm,Default,05/25/2026 14:20:09 PM,Aligner,Encounter Error In Initialization
+Alarm,Default,05/25/2026 14:22:12 PM,Robot,Encounter Error In Initialization
+User,Default,05/25/2026 14:22:27 PM,GUI,[Main Screen] Sequence file error
+User,Default,05/25/2026 14:22:42 PM,GUI,[Main Screen] Turn Off TM IG.
+User,ADMIN,05/25/2026 14:24:39 PM,GUI,[Main Screen] Login Successed with Username admin
+User,ADMIN,05/25/2026 14:24:44 PM,GUI,Check out AVP Privilege
+User,ADMIN,05/25/2026 14:24:49 PM,GUI,[TM Screen] - Delete Wafer A08 inside PM3
+User,ADMIN,05/25/2026 14:24:51 PM,GUI,[TM Screen] - Delete Wafer A01 inside PM3
+User,ADMIN,05/25/2026 14:24:53 PM,GUI,[TM Screen] - Delete Wafer A02 inside PM3
+User,ADMIN,05/25/2026 14:24:55 PM,GUI,[TM Screen] - Delete Wafer A03 inside PM3
+User,ADMIN,05/25/2026 14:24:57 PM,GUI,[TM Screen] - Delete Wafer A04 inside PM3
+User,ADMIN,05/25/2026 14:24:59 PM,GUI,[TM Screen] - Delete Wafer A05 inside PM3
+User,ADMIN,05/25/2026 14:25:00 PM,GUI,[TM Screen] - Delete Wafer A06 inside PM3
+User,ADMIN,05/25/2026 14:25:03 PM,GUI,[TM Screen] - Delete Wafer A07 inside PM3
+User,ADMIN,05/25/2026 14:25:06 PM,GUI,[TM Screen] - Close Slit valve of PM3
+User,ADMIN,05/25/2026 14:25:10 PM,GUI,[TM Screen] - Close Slit valve of LLA
+User,ADMIN,05/25/2026 14:25:12 PM,GUI,[Maintenance] Clear All Alarm Message
+User,ADMIN,05/25/2026 14:25:23 PM,GUI,[TM Screen] - Start TM Pump down
+Message,ADMIN,05/25/2026 14:25:23 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Pumpdown...
+Message,ADMIN,05/25/2026 14:25:23 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Waiting for Rough Valve PM3 Close. Timeout 60s.
+Message,ADMIN,05/25/2026 14:25:23 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Wait for vent valve close with timeout 10s
+Message,ADMIN,05/25/2026 14:25:23 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Vent valve closed
+Message,ADMIN,05/25/2026 14:25:23 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Wait for rough valve close with timeout 10s
+Message,ADMIN,05/25/2026 14:25:23 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Rough valve is closed.
+Message,ADMIN,05/25/2026 14:25:23 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: All slit valves are closed
+Message,ADMIN,05/25/2026 14:25:23 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Waiting for Hivac valve open with timeout 30s
+User,ADMIN,05/25/2026 14:25:25 PM,GUI,[TM Screen] - Start LLA Pump down
+Message,ADMIN,05/25/2026 14:25:25 PM,GUI,[AUTO_PUMP_DOWN] - LoadLockA: Pumpdown...
+Message,ADMIN,05/25/2026 14:25:26 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Waiting for 15s
+Message,ADMIN,05/25/2026 14:25:26 PM,GUI,[AUTO_PUMP_DOWN] - LoadLockA: Waiting for Rough Valve PM3 Close. Timeout 60s.
+Message,ADMIN,05/25/2026 14:25:26 PM,GUI,[AUTO_PUMP_DOWN] - LoadLockA: Close Rough and Vent valves.
+Message,ADMIN,05/25/2026 14:25:26 PM,GUI,[AUTO_PUMP_DOWN] - LoadLockA: Rough and Vent valves are closed.
+Message,ADMIN,05/25/2026 14:25:26 PM,GUI,[AUTO_PUMP_DOWN] - LoadLockA: Close Fast Rough Valve.
+Message,ADMIN,05/25/2026 14:25:26 PM,GUI,[AUTO_PUMP_DOWN] - LoadLockA: Wait for Fast Rough Valve close with timeout 5s
+Message,ADMIN,05/25/2026 14:25:29 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Waiting for IG Off with timeout 30s
+Message,ADMIN,05/25/2026 14:25:29 PM,GUI,[AUTO_PUMP_DOWN] - LoadLockA: Waiting for LL Isolation is opened with timeout 10s
+Message,ADMIN,05/25/2026 14:25:30 PM,GUI,[AUTO_PUMP_DOWN] - LoadLockA Pumpdown aborted by user.
+Message,ADMIN,05/25/2026 14:25:30 PM,GUI,[AUTO_PUMP_DOWN] - LoadLockA: Waiting for 15s
+User,ADMIN,05/25/2026 14:25:37 PM,GUI,[PM3] HOME ALL button Clicked
+Message,ADMIN,05/25/2026 14:25:41 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Waiting for IG On with timeout 30s
+Message,ADMIN,05/25/2026 14:25:45 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Waiting for IG On with timeout 30s
+Message,ADMIN,05/25/2026 14:25:46 PM,PM3,DoMotionInitialize - Lift Down.
+Message,ADMIN,05/25/2026 14:25:46 PM,PM3,DoMotionInitialize - Wait for Substrate Lift Down. Timeout 150s
+Message,ADMIN,05/25/2026 14:25:48 PM,PM3,DoMotionInitialize - Table Rotate And Updown Home.
+Message,ADMIN,05/25/2026 14:25:49 PM,GUI,[AUTO_PUMP_DOWN] - LoadLockA: Pumpdown completed.
+Message,ADMIN,05/25/2026 14:25:49 PM,GUI,[AUTO_PUMP_DOWN] - Transfer Module: Pumpdown completed
+User,ADMIN,05/25/2026 14:26:00 PM,GUI,[Maintenance] Clear All Alarm Message
+Message,ADMIN,05/25/2026 14:26:04 PM,PM3,DoMotionInitialize - Wait for Substrate Table Home. Timeout 181s
+Message,ADMIN,05/25/2026 14:26:08 PM,PM3,DoMotionInitialize - Completed.
+User,ADMIN,05/25/2026 14:30:30 PM,GUI,[Main Screen] Enter Process screen
+User,ADMIN,05/25/2026 14:30:34 PM,LLA,[Main Screen] Loading Loadlock.
+User,ADMIN,05/25/2026 14:30:35 PM,GUI,[LogLoad]- Load check Door 2On
+User,ADMIN,05/25/2026 14:30:35 PM,GUI,[LogLoad]- MapWaferSuccess False
+User,ADMIN,05/25/2026 14:30:35 PM,GUI,[LogLoad]- Map LLAElevator.00,A,MP
+User,ADMIN,05/25/2026 14:30:35 PM,GUI,[LogLoad]- DoMap True
+User,ADMIN,05/25/2026 14:30:35 PM,GUI,[LogLoad]- MapWaferSuccess True
+User,ADMIN,05/25/2026 14:30:35 PM,GUI,[LogLoad]- DoMapWhenPumpdownReady True
+User,ADMIN,05/25/2026 14:30:35 PM,LLA,[Main Screen]  Load completed.
+User,ADMIN,05/25/2026 14:30:47 PM,GUI,[Main Screen] User starting production sequence: 
+User,ADMIN,05/25/2026 14:30:53 PM,GUI,[Main Screen] TM is not Online, Scheduler can not run
+User,ADMIN,05/25/2026 14:30:53 PM,GUI,[Main Screen] Start scheduler
+User,ADMIN,05/25/2026 14:30:56 PM,GUI,[TM Screen] - Bring TM online
+User,ADMIN,05/25/2026 14:30:56 PM,GUI,[TM Screen] - Bring LLA online
+User,ADMIN,05/25/2026 14:30:56 PM,GUI,[Main Screen] Click on button Make All Online.
+User,ADMIN,05/25/2026 14:31:11 PM,GUI,[PM3] Online button Clicked
+User,ADMIN,05/25/2026 14:31:11 PM,DeviceNet,[Main Screen] Alarm Light On
+Alarm,ADMIN,05/25/2026 14:31:11 PM,PM3,All Interlocks Are Not Made. Go Online failed 
+User,ADMIN,05/25/2026 14:31:17 PM,GUI,[PM3] PSRelay On/Off button Clicked
+User,ADMIN,05/25/2026 14:31:20 PM,GUI,[PM3] Online button Clicked
+User,ADMIN,05/25/2026 14:31:25 PM,DeviceNet,[Main Screen] Alarm Light Off
+User,ADMIN,05/25/2026 14:31:25 PM,GUI,[Maintenance] Clear All Alarm Message
+User,ADMIN,05/25/2026 14:31:31 PM,GUI,[Main Screen] Enter Process screen
+User,ADMIN,05/25/2026 14:31:36 PM,GUI,[Main Screen] User starting production sequence: 
+User,ADMIN,05/25/2026 14:31:46 PM,GUI,[Main Screen] Start recipe process error with SequenceID.
+User,ADMIN,05/25/2026 14:31:46 PM,GUI,[Main Screen] Start scheduler
+User,ADMIN,05/25/2026 14:31:56 PM,GUI,[Main Screen] Enter Process screen
+User,ADMIN,05/25/2026 14:34:38 PM,GUI,[Main Screen] Enter Process screen
+User,ADMIN,05/25/2026 14:36:21 PM,GUI,[Recipe Editor] Select Recipe of PM3
+User,ADMIN,05/25/2026 14:36:27 PM,GUI,[Recipe Editor] Open Recipe with PM3 FileName=PVD5T_RF.xml
+User,ADMIN,05/25/2026 14:36:31 PM,GUI,[Recipe Editor] Save existed at PM3 with FileName=PVD5T_RF.xml
+User,ADMIN,05/25/2026 14:36:33 PM,GUI,[Main Screen] Update recipe.
+User,ADMIN,05/25/2026 14:37:18 PM,GUI,[Main Screen] Save WaferFlow  PVD5T successfully
+User,ADMIN,05/25/2026 14:37:21 PM,GUI,[Main Screen] Save WaferFlow  PVD5T successfully
+User,ADMIN,05/25/2026 14:37:22 PM,GUI,[Main Screen] Save WaferFlow  PVD5T successfully
+User,ADMIN,05/25/2026 14:37:55 PM,GUI,[Sequence Editor] Sequence was saved successfully. FileName=PVD5T
+User,ADMIN,05/25/2026 14:37:58 PM,GUI,[Main Screen] Enter Process screen
+User,ADMIN,05/25/2026 14:38:07 PM,GUI,[Main Screen] User starting production sequence: PVD5T
+User,ADMIN,05/25/2026 14:38:11 PM,GUI,Start sequence PVD5T on LoadLockA
+User,ADMIN,05/25/2026 14:38:11 PM,GUI,Start time  = 5/25/2026 2:38:11 PM
+User,ADMIN,05/25/2026 14:38:11 PM,GUI,[Main Screen] Start scheduler
+Message,ADMIN,05/25/2026 14:38:13 PM,GUI,Open LoadLockA isovalve
+Message,ADMIN,05/25/2026 14:38:15 PM,GUI,Picking Wafer A01 from LoadLockA,Slot1
+Message,ADMIN,05/25/2026 14:38:19 PM,GUI,Pick Completed
+Message,ADMIN,05/25/2026 14:38:19 PM,GUI,Go to Next Slot 2
+Message,ADMIN,05/25/2026 14:38:19 PM,GUI,Placing Wafer A01 to Aligner
+Message,ADMIN,05/25/2026 14:38:23 PM,GUI,Place Completed
+User,ADMIN,05/25/2026 14:38:23 PM,Aligner,Wafer In
+User,ADMIN,05/25/2026 14:38:23 PM,Aligner,Wafer Aligning
+User,ADMIN,05/25/2026 14:38:24 PM,Aligner,Wafer Aligned
+Message,ADMIN,05/25/2026 14:38:24 PM,GUI,Picking Wafer A01 from Aligner
+User,ADMIN,05/25/2026 14:38:24 PM,Aligner,AngularLocation of command RSLT: 10
+User,ADMIN,05/25/2026 14:38:24 PM,Aligner,AngularLocation of command RSLT: 1
+User,ADMIN,05/25/2026 14:38:24 PM,Aligner,EccentricityAngle of command RSLT: 1500
+User,ADMIN,05/25/2026 14:38:24 PM,Aligner,EccentricityAngle of command RSLT: 150
+User,ADMIN,05/25/2026 14:38:24 PM,Aligner,MaxEccentricity of command RSLT: 300
+User,ADMIN,05/25/2026 14:38:24 PM,Aligner,MaxEccentricity of command RSLT: 30
+User,ADMIN,05/25/2026 14:38:24 PM,Aligner,AvgCCD of command RSLT: 4723
+User,ADMIN,05/25/2026 14:38:24 PM,Aligner,TypeCode of command RSLT: -1
+User,ADMIN,05/25/2026 14:38:24 PM,Aligner,Wafer_R of command RSLT: 669984.019679467
+User,ADMIN,05/25/2026 14:38:24 PM,Aligner,Wafer_T of command RSLT: 19164.4175917605
+Message,ADMIN,05/25/2026 14:41:15 PM,GUI,Pick Completed
+Message,ADMIN,05/25/2026 14:41:27 PM,GUI,Open PM3 isovalve
+Message,ADMIN,05/25/2026 14:41:29 PM,GUI,Placing Wafer A01 to PM3
+Message,ADMIN,05/25/2026 14:41:37 PM,GUI,Place Completed
+Message,ADMIN,05/25/2026 14:41:38 PM,GUI,Close PM3 isovalve
+User,ADMIN,05/25/2026 14:41:41 PM,Robot,PM3 start process with recipe = PVD5T_RF.xml
+User,ADMIN,05/25/2026 14:41:41 PM,Robot,Start Time = 5/25/2026 2:41:41 PM
+Message,ADMIN,05/25/2026 14:41:42 PM,GUI,Open LoadLockA isovalve
+Message,ADMIN,05/25/2026 14:41:44 PM,GUI,Picking Wafer A02 from LoadLockA,Slot2
+Message,ADMIN,05/25/2026 14:41:48 PM,GUI,Pick Completed
+Message,ADMIN,05/25/2026 14:41:49 PM,GUI,Go to Next Slot 3
+Message,ADMIN,05/25/2026 14:41:49 PM,GUI,Placing Wafer A02 to Aligner
+Message,ADMIN,05/25/2026 14:41:53 PM,GUI,Place Completed
+User,ADMIN,05/25/2026 14:41:53 PM,Aligner,Wafer In
+User,ADMIN,05/25/2026 14:41:53 PM,Aligner,Wafer Aligning
+User,ADMIN,05/25/2026 14:41:53 PM,Aligner,Wafer Aligned
+Message,ADMIN,05/25/2026 14:41:53 PM,GUI,Picking Wafer A02 from Aligner
+User,ADMIN,05/25/2026 14:41:53 PM,Aligner,AngularLocation of command RSLT: 1
+Message,ADMIN,05/25/2026 14:42:47 PM,GUI,Pick Completed
+Message,ADMIN,05/25/2026 14:42:59 PM,GUI,Open PM3 isovalve
+Message,ADMIN,05/25/2026 14:43:01 PM,GUI,Placing Wafer A02 to PM3
+Message,ADMIN,05/25/2026 14:43:09 PM,GUI,Place Completed
+Message,ADMIN,05/25/2026 14:43:10 PM,GUI,Close PM3 isovalve
+User,ADMIN,05/25/2026 14:43:13 PM,Robot,PM3 start process with recipe = PVD5T_RF.xml
+User,ADMIN,05/25/2026 14:43:13 PM,Robot,Start Time = 5/25/2026 2:43:13 PM
+Message,ADMIN,05/25/2026 14:43:15 PM,GUI,Open LoadLockA isovalve
+Message,ADMIN,05/25/2026 14:43:18 PM,GUI,Picking Wafer A03 from LoadLockA,Slot3
+Message,ADMIN,05/25/2026 14:43:22 PM,GUI,Pick Completed
+Message,ADMIN,05/25/2026 14:43:22 PM,GUI,Go to Next Slot 4
+Message,ADMIN,05/25/2026 14:43:22 PM,GUI,Placing Wafer A03 to Aligner
+Message,ADMIN,05/25/2026 14:43:26 PM,GUI,Place Completed
+User,ADMIN,05/25/2026 14:43:26 PM,Aligner,Wafer In
+User,ADMIN,05/25/2026 14:43:26 PM,Aligner,Wafer Aligning
+User,ADMIN,05/25/2026 14:43:27 PM,Aligner,Wafer Aligned
+Message,ADMIN,05/25/2026 14:43:27 PM,GUI,Picking Wafer A03 from Aligner
+User,ADMIN,05/25/2026 14:43:27 PM,Aligner,AngularLocation of command RSLT: 1
+Message,ADMIN,05/25/2026 14:46:09 PM,GUI,Pick Completed
+Message,ADMIN,05/25/2026 14:46:20 PM,GUI,Open PM3 isovalve
+Message,ADMIN,05/25/2026 14:46:22 PM,GUI,Placing Wafer A03 to PM3
+Message,ADMIN,05/25/2026 14:46:31 PM,GUI,Place Completed
+User,ADMIN,05/25/2026 14:47:01 PM,DeviceNet,[Main Screen] Alarm Light On
+Alarm,ADMIN,05/25/2026 14:47:01 PM,GUI,Error: Failed to move  Wafer Lift to Down Position:
+User,ADMIN,05/25/2026 14:48:33 PM,GUI,[Main Screen] Enter Process screen
+User,ADMIN,05/25/2026 14:51:27 PM,GUI,[Main Screen] Enter Process screen
+User,ADMIN,05/25/2026 14:52:49 PM,GUI,[Main Screen] Enter Process screen
+User,ADMIN,05/25/2026 14:53:00 PM,DeviceNet,[Main Screen] Alarm Light Off
+User,ADMIN,05/25/2026 14:53:00 PM,GUI,[Maintenance] Clear All Alarm Message
+User,ADMIN,05/25/2026 14:53:14 PM,GUI,[Main Screen] Enter Process screen
+User,ADMIN,05/25/2026 14:53:25 PM,GUI,[Main Screen] Click menu Resume wafer on PM3.
+Message,ADMIN,05/25/2026 14:53:26 PM,GUI,Close PM3 isovalve
+Message,ADMIN,05/25/2026 14:53:27 PM,GUI,Open LoadLockA isovalve
+User,ADMIN,05/25/2026 14:53:29 PM,Robot,PM3 start process with recipe = PVD5T_RF.xml
+User,ADMIN,05/25/2026 14:53:29 PM,Robot,Start Time = 5/25/2026 2:53:29 PM
+Message,ADMIN,05/25/2026 14:53:29 PM,GUI,Picking Wafer A04 from LoadLockA,Slot4
+Message,ADMIN,05/25/2026 14:53:33 PM,GUI,Pick Completed
+Message,ADMIN,05/25/2026 14:53:34 PM,GUI,Go to Next Slot 5
+Message,ADMIN,05/25/2026 14:53:34 PM,GUI,Placing Wafer A04 to Aligner
+Message,ADMIN,05/25/2026 14:53:38 PM,GUI,Place Completed
+User,ADMIN,05/25/2026 14:53:38 PM,Aligner,Wafer In
+User,ADMIN,05/25/2026 14:53:38 PM,Aligner,Wafer Aligning
+User,ADMIN,05/25/2026 14:53:38 PM,Aligner,Wafer Aligned
+Message,ADMIN,05/25/2026 14:53:38 PM,GUI,Picking Wafer A04 from Aligner
+User,ADMIN,05/25/2026 14:53:38 PM,Aligner,AngularLocation of command RSLT: 1
+Message,ADMIN,05/25/2026 14:53:43 PM,GUI,Pick Completed
+Message,ADMIN,05/25/2026 14:53:54 PM,GUI,Open PM3 isovalve
+Message,ADMIN,05/25/2026 14:53:56 PM,GUI,Placing Wafer A04 to PM3
+Message,ADMIN,05/25/2026 14:54:04 PM,GUI,Place Completed
+Message,ADMIN,05/25/2026 14:54:05 PM,GUI,Close PM3 isovalve
+User,ADMIN,05/25/2026 14:54:08 PM,Robot,PM3 start process with recipe = PVD5T_RF.xml
+User,ADMIN,05/25/2026 14:54:08 PM,Robot,Start Time = 5/25/2026 2:54:08 PM
+Message,ADMIN,05/25/2026 14:54:10 PM,GUI,Open LoadLockA isovalve
+Message,ADMIN,05/25/2026 14:54:12 PM,GUI,Picking Wafer A05 from LoadLockA,Slot5
+Message,ADMIN,05/25/2026 14:54:16 PM,GUI,Pick Completed
+Message,ADMIN,05/25/2026 14:54:17 PM,GUI,Go to Next Slot 6
+Message,ADMIN,05/25/2026 14:54:17 PM,GUI,Placing Wafer A05 to Aligner
+Message,ADMIN,05/25/2026 14:54:21 PM,GUI,Place Completed
+User,ADMIN,05/25/2026 14:54:21 PM,Aligner,Wafer In
+User,ADMIN,05/25/2026 14:54:21 PM,Aligner,Wafer Aligning
+User,ADMIN,05/25/2026 14:54:21 PM,Aligner,Wafer Aligned
+Message,ADMIN,05/25/2026 14:54:21 PM,GUI,Picking Wafer A05 from Aligner
+User,ADMIN,05/25/2026 14:54:22 PM,Aligner,AngularLocation of command RSLT: 1
+Message,ADMIN,05/25/2026 14:54:26 PM,GUI,Pick Completed
+Message,ADMIN,05/25/2026 14:54:37 PM,GUI,Open PM3 isovalve
+Message,ADMIN,05/25/2026 14:54:39 PM,GUI,Placing Wafer A05 to PM3
+Message,ADMIN,05/25/2026 14:54:47 PM,GUI,Place Completed
+Message,ADMIN,05/25/2026 14:54:49 PM,GUI,Close PM3 isovalve
+User,ADMIN,05/25/2026 14:54:52 PM,Robot,PM3 start process with recipe = PVD5T_RF.xml
+User,ADMIN,05/25/2026 14:54:52 PM,Robot,Start Time = 5/25/2026 2:54:52 PM
+Message,ADMIN,05/25/2026 14:54:53 PM,GUI,Open LoadLockA isovalve
+Message,ADMIN,05/25/2026 14:54:55 PM,GUI,Picking Wafer A06 from LoadLockA,Slot6
+Message,ADMIN,05/25/2026 14:55:00 PM,GUI,Pick Completed
+Message,ADMIN,05/25/2026 14:55:00 PM,GUI,Go to Next Slot 7
+Message,ADMIN,05/25/2026 14:55:00 PM,GUI,Placing Wafer A06 to Aligner
+Message,ADMIN,05/25/2026 14:55:04 PM,GUI,Place Completed
+User,ADMIN,05/25/2026 14:55:04 PM,Aligner,Wafer In
+User,ADMIN,05/25/2026 14:55:04 PM,Aligner,Wafer Aligning
+User,ADMIN,05/25/2026 14:55:05 PM,Aligner,Wafer Aligned
+Message,ADMIN,05/25/2026 14:55:05 PM,GUI,Picking Wafer A06 from Aligner
+User,ADMIN,05/25/2026 14:55:05 PM,Aligner,AngularLocation of command RSLT: 1
+Message,ADMIN,05/25/2026 14:55:09 PM,GUI,Pick Completed
+Message,ADMIN,05/25/2026 14:55:20 PM,GUI,Open PM3 isovalve
+Message,ADMIN,05/25/2026 14:55:22 PM,GUI,Placing Wafer A06 to PM3
+Message,ADMIN,05/25/2026 14:55:30 PM,GUI,Place Completed
+Message,ADMIN,05/25/2026 14:55:32 PM,GUI,Close PM3 isovalve
+User,ADMIN,05/25/2026 14:55:34 PM,Robot,PM3 start process with recipe = PVD5T_RF.xml
+User,ADMIN,05/25/2026 14:55:34 PM,Robot,Start Time = 5/25/2026 2:55:34 PM
+Message,ADMIN,05/25/2026 14:55:35 PM,GUI,Open LoadLockA isovalve
+Message,ADMIN,05/25/2026 14:55:37 PM,GUI,Picking Wafer A07 from LoadLockA,Slot7
+Message,ADMIN,05/25/2026 14:55:42 PM,GUI,Pick Completed
+Message,ADMIN,05/25/2026 14:55:42 PM,GUI,Go to Next Slot 8
+Message,ADMIN,05/25/2026 14:55:42 PM,GUI,Placing Wafer A07 to Aligner
+Message,ADMIN,05/25/2026 14:55:46 PM,GUI,Place Completed
+User,ADMIN,05/25/2026 14:55:46 PM,Aligner,Wafer In
+User,ADMIN,05/25/2026 14:55:46 PM,Aligner,Wafer Aligning
+User,ADMIN,05/25/2026 14:55:47 PM,Aligner,Wafer Aligned
+Message,ADMIN,05/25/2026 14:55:47 PM,GUI,Picking Wafer A07 from Aligner
+User,ADMIN,05/25/2026 14:55:47 PM,Aligner,AngularLocation of command RSLT: 1
+Message,ADMIN,05/25/2026 14:55:52 PM,GUI,Pick Completed
+Message,ADMIN,05/25/2026 14:56:02 PM,GUI,Open PM3 isovalve
+Message,ADMIN,05/25/2026 14:56:04 PM,GUI,Placing Wafer A07 to PM3
+Message,ADMIN,05/25/2026 14:56:13 PM,GUI,Place Completed
+Message,ADMIN,05/25/2026 14:56:14 PM,GUI,Close PM3 isovalve
+User,ADMIN,05/25/2026 14:56:17 PM,Robot,PM3 start process with recipe = PVD5T_RF.xml
+User,ADMIN,05/25/2026 14:56:17 PM,Robot,Start Time = 5/25/2026 2:56:17 PM
+Message,ADMIN,05/25/2026 14:56:18 PM,GUI,Open LoadLockA isovalve
+Message,ADMIN,05/25/2026 14:56:20 PM,GUI,Picking Wafer A08 from LoadLockA,Slot8
+Message,ADMIN,05/25/2026 14:56:24 PM,GUI,Pick Completed
+Message,ADMIN,05/25/2026 14:56:25 PM,GUI,Go to Next Slot 9
+Message,ADMIN,05/25/2026 14:56:25 PM,GUI,Placing Wafer A08 to Aligner
+Message,ADMIN,05/25/2026 14:56:29 PM,GUI,Place Completed
+User,ADMIN,05/25/2026 14:56:29 PM,Aligner,Wafer In
+User,ADMIN,05/25/2026 14:56:29 PM,Aligner,Wafer Aligning
+User,ADMIN,05/25/2026 14:56:30 PM,Aligner,Wafer Aligned
+Message,ADMIN,05/25/2026 14:56:30 PM,GUI,Picking Wafer A08 from Aligner
+User,ADMIN,05/25/2026 14:56:30 PM,Aligner,AngularLocation of command RSLT: 1
+Message,ADMIN,05/25/2026 14:56:35 PM,GUI,Pick Completed
+Message,ADMIN,05/25/2026 14:56:45 PM,GUI,Open PM3 isovalve
+Message,ADMIN,05/25/2026 14:56:47 PM,GUI,Placing Wafer A08 to PM3
+Message,ADMIN,05/25/2026 14:56:56 PM,GUI,Place Completed
+Message,ADMIN,05/25/2026 14:56:57 PM,GUI,Close PM3 isovalve
+User,ADMIN,05/25/2026 14:57:00 PM,Robot,PM3 start process with recipe = PVD5T_RF.xml
+User,ADMIN,05/25/2026 14:57:00 PM,Robot,Start Time = 5/25/2026 2:57:00 PM
+Message,ADMIN,05/25/2026 14:57:14 PM,PM3,[PROCESSRECIPE] Executing step: CheckAllInterlocksOK
+Message,ADMIN,05/25/2026 14:57:14 PM,PM3,[PROCESSRECIPE] Executing step: IsChamberIsolationValveClosed
+Message,ADMIN,05/25/2026 14:57:14 PM,PM3,[PROCESSRECIPE] Executing step: IsAllSerialCommsOnline
+Message,ADMIN,05/25/2026 14:57:14 PM,PM3,[PROCESSRECIPE] Executing step: IsAllOtherCommsOnline
+Message,ADMIN,05/25/2026 14:57:14 PM,PM3,[PROCESSRECIPE] Executing step: CheckPumpPackage
+Message,ADMIN,05/25/2026 14:57:14 PM,PM3,[PROCESSRECIPE] Executing step: OpenCloseBaratronValve(True)
+Message,ADMIN,05/25/2026 14:57:14 PM,PM3,[PROCESSRECIPE] Executing step: StartMonitorSystem
+Message,ADMIN,05/25/2026 14:57:15 PM,PM3,[PROCESSRECIPE] Executing step: WaitForReachBasePressure
+Message,ADMIN,05/25/2026 14:57:15 PM,PM3,[PROCESSRECIPE] Executing step: TurnIGOnOff(False)
+Message,ADMIN,05/25/2026 14:57:15 PM,PM3,[PROCESSRECIPE] Executing step: TurnIGOnOff(False) - Wait for IG Off. Timeout = 30s
+Message,ADMIN,05/25/2026 14:57:15 PM,PM3,[PROCESSRECIPE] Executing step: DoPowerSetup
+Message,ADMIN,05/25/2026 14:57:15 PM,PM3,[PROCESSRECIPE] Executing step: DoEarlyTimer
+Message,ADMIN,05/25/2026 14:57:15 PM,PM3,[PROCESSRECIPE] Executing step: DoPowerSetup - Wait for switching chuck to Grounded. Time out 10s
+Message,ADMIN,05/25/2026 14:57:16 PM,PM3,[PROCESSRECIPE] Executing step: DoMotion
+User,ADMIN,05/25/2026 14:57:18 PM,GUI,[Main Screen] Enter Process screen
+Message,ADMIN,05/25/2026 14:57:21 PM,PM3,[PROCESSRECIPE] Executing step: DoMotion - Wait for Table At Correct Position. Timeout 150s
+Message,ADMIN,05/25/2026 14:57:30 PM,PM3,[PROCESSRECIPE] Executing step: DoMotion - Wait for Table Rotate. Timeout 181s
+Message,ADMIN,05/25/2026 14:57:30 PM,PM3,[PROCESSRECIPE] Executing step: DoGases
+Message,ADMIN,05/25/2026 14:57:30 PM,PM3,[PROCESSRECIPE] Executing step: DoGases - Wait for all gas flow reach. Timeout 30s
+Message,ADMIN,05/25/2026 14:57:53 PM,PM3,[PROCESSRECIPE] Executing step: DoVAT - Wait for VAT Open. Timeout 26s
+Message,ADMIN,05/25/2026 14:57:53 PM,PM3,[PROCESSRECIPE] Executing step: DoTurnOnPower
+Message,ADMIN,05/25/2026 14:57:53 PM,PM3,[PROCESSRECIPE] Executing step: DoVAT
+Message,ADMIN,05/25/2026 14:57:53 PM,PM3,[PROCESSRECIPE] Executing step: DoTurnOnPower - Wait for RF PS Power reach SP. Timeout 15s
+Message,ADMIN,05/25/2026 14:57:53 PM,PM3,[PROCESSRECIPE] Executing step: DoTurnOnPower - Wait for Plasma On. Timeout 10s
+Message,ADMIN,05/25/2026 14:57:53 PM,PM3,[PROCESSRECIPE] Executing step: DoPressureRampIfNeed
+Message,ADMIN,05/25/2026 14:57:53 PM,PM3,[PROCESSRECIPE] Executing step: DoShutter
+Message,ADMIN,05/25/2026 14:57:53 PM,PM3,[PROCESSRECIPE] Executing step: DoShutter - Wait for Home Sensor Flag On. Timeout 60s
+Alarm,Default,05/25/2026 15:01:24 PM,Aligner,Encounter Error In Initialization
+Alarm,Default,05/25/2026 15:06:48 PM,Robot,Encounter Error In Initialization
+User,Default,05/25/2026 15:07:06 PM,GUI,[Main Screen] Sequence file error
+User,Default,05/25/2026 15:08:54 PM,GUI,[Main Screen] Turn Off TM IG.
+Alarm,Default,05/25/2026 15:10:07 PM,Aligner,Encounter Error In Initialization
+User,Default,05/25/2026 15:10:30 PM,GUI,[Main Screen] Sequence file error
+User,Default,05/25/2026 15:14:38 PM,GUI,[Main Screen] Turn Off TM IG.
+User,ADMIN,05/25/2026 15:15:07 PM,GUI,[Main Screen] Login Successed with Username admin
+User,ADMIN,05/25/2026 15:15:12 PM,GUI,Check out AVP Privilege
+User,ADMIN,05/25/2026 15:15:16 PM,GUI,[Main Screen] Enter Process screen
+Alarm,Default,05/25/2026 15:37:21 PM,Aligner,Encounter Error In Initialization
+User,Default,05/25/2026 15:37:43 PM,GUI,[Main Screen] Sequence file error

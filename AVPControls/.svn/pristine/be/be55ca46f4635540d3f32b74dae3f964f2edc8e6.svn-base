@@ -1,0 +1,1839 @@
+Imports AVPControls.AVPDataLib
+Imports AVPControls.AVPGraphicsLib
+Imports System.ComponentModel
+
+Public Class RobotArmControl
+    Private Const MAX_HEIGHT As Integer = 210
+    Private Const ML_MAX_HEIGHT As Integer = 234
+    Private Const X_AXIS As Integer = 7
+    Private Const Y_AXIS As Integer = 3
+    Private Const HAND_HEIGHT As Integer = 46
+    Private Const ARM_WIDTH1 As Integer = 58
+    Private Const ARM_HEIGHT1 As Integer = 34
+    Private Const MAX_ARM_ANGLE As Integer = 105
+    Private Const MIN_ARM_ANGLE As Integer = -10
+    Private Const EXTEND_COUNT As Integer = 5
+    Private Const ROBOT_IMAGE_SIZE As Integer = 396
+    Private Const SL_CENTER_TO_HAND As Integer = 65
+    Private Const ML_CENTER_TO_HAND As Integer = 33
+
+    Private m_scaleFactor As Single
+    Private m_dX As Single
+    Private m_dY As Single
+    Private m_defaultArmAngle_1 As Single
+    Private m_defaultArmAngle_2 As Single
+    Private m_lengthArm1 As Single
+    Private m_lengthArm2 As Single
+    Private m_controlSize As Integer
+    Private m_handToWafer As Single
+    Private m_handToCenterWafer As Single
+
+    Private m_imgArm10 As Bitmap
+    Private m_imgArm11 As Bitmap
+    Private m_imgArm20 As Bitmap
+    Private m_imgArm21 As Bitmap
+    Private m_imgArmHand As Bitmap
+    Private m_imgWafer As Bitmap
+
+    Private m_waferID As String = String.Empty
+    Private m_waferStatus As WaferStatuses
+    Private m_armStatus As ArmStatuses
+    Private m_armStation As RobotArmStations
+    Private m_inScreen As AVPScreens = AVPScreens.ProcessScreen
+    Private m_stationTypes As Dictionary(Of RobotArmStations, AVPChamberTypes) = New Dictionary(Of RobotArmStations, AVPChamberTypes)
+    Private m_alignerAtStation As RobotArmStations = RobotArmStations.LLA
+    Private m_undefinedStationType As AVPChamberTypes = AVPChamberTypes.IBE
+    Private m_showQuestionMarkOnWafer As Boolean
+    Private m_aligner2AtStation As RobotArmStations = RobotArmStations.LLB
+    Private m_loaderArmStation As LoaderArmStations
+
+    ' Extend/Retract variables
+    Private m_isAtThemosSensor As Boolean
+    Private m_thermosSensorAtStation As RobotArmStations = RobotArmStations.LLB
+    Private m_thermosSensorLocation As Integer
+    Private m_armExtendAngle As Single
+    Private m_newArmExtendAngle As Single
+    Private m_currentStationMaxHeight As Single
+    Private m_height As Single
+    Private m_ExReTimer As System.Timers.Timer
+    Private m_isExtending As Boolean
+    'Private m_readStatusExLocker As New Object
+    'Private m_changeDataLocker As New Object
+    Private m_extractDistance As Single
+
+    ' Rotate variables
+    Private m_rotatingAngle As Single
+    Private m_newRotatingAngle As Single
+    Private m_rotateTimer As System.Timers.Timer
+    Private m_isRotating As Boolean
+    'Private m_readStatusRotatingLocker As New Object
+    Private m_rotateDistance As Single = 45
+
+    ' Drawing variables
+    Private m_armHeight As Single
+    Private m_waferLocation As PointF
+    Private m_arm1RotateAngle As Single
+    Private m_arm2RotateAngle As Single
+    Private m_newArmHeight As Single
+
+    Private Delegate Sub UpdateHeightDelegate()
+    Private Delegate Sub UpdateAngleDelegate()
+
+    ''' <summary>
+    ''' Occurs when arm is doing extend or retract.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Event ArmExtending As EventHandler(Of ArmExtendEventArgs)
+    ''' <summary>
+    ''' Occurs when arm is finished extend or retract.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Event ArmExtended As EventHandler(Of ArmExtendEventArgs)
+
+    Private m_loaderStationWaferPresent As Dictionary(Of LoaderArmStations, Boolean)
+
+#Region "Properties"
+    Protected Overrides ReadOnly Property DefaultSize() As System.Drawing.Size
+        Get
+            Dim sz As Integer = Convert.ToInt32(ROBOT_IMAGE_SIZE * 0.93)
+            Return New Size(sz, sz)
+        End Get
+    End Property
+
+    Protected Overrides ReadOnly Property DefaultCursor() As System.Windows.Forms.Cursor
+        Get
+            Return System.Windows.Forms.Cursors.Hand
+        End Get
+    End Property
+
+    <DefaultValue(GetType(String), "")> _
+    Public Property WaferID() As String
+        Get
+            Return m_waferID
+        End Get
+        Set(ByVal value As String)
+            If m_waferID <> value Then
+                m_waferID = value
+                UpdateWaferImage()
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    <DefaultValue(GetType(WaferStatuses), "NONE")> _
+    Public Property WaferStatus() As WaferStatuses
+        Get
+            Return m_waferStatus
+        End Get
+        Set(ByVal value As WaferStatuses)
+            If m_waferStatus <> value Then
+                m_waferStatus = value
+                UpdateWaferImage()
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    <DefaultValue(GetType(Boolean), "False")> _
+    Public Property ShowQuestionMarkOnWafer() As Boolean
+        Get
+            Return m_showQuestionMarkOnWafer
+        End Get
+        Set(ByVal value As Boolean)
+            If m_showQuestionMarkOnWafer <> value Then
+                m_showQuestionMarkOnWafer = value
+                UpdateWaferImage()
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    '''<author>
+    ''' <name> Dung Pham </name>
+    ''' <date> 2018-08-29 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets/Sets Arm Status
+    ''' </summary>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(ArmStatuses), "Retract")> _
+    Public Property ArmStatus() As ArmStatuses
+        Get
+            Return m_armStatus
+        End Get
+        Set(ByVal value As ArmStatuses)
+            If Not m_isAtThemosSensor Then
+                SetArmStatus(value)
+            End If
+        End Set
+    End Property
+
+    '''<author>
+    ''' <name> Dung Pham </name>
+    ''' <date> 2018-08-29 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets/Sets Arm Station
+    ''' </summary>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(RobotArmStations), "Original")> _
+    Public Property ArmStation() As RobotArmStations
+        Get
+            Return m_armStation
+        End Get
+        Set(ByVal value As RobotArmStations)
+            If Not m_isAtThemosSensor Then
+                SetArmStation(value)
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2017-02-27</date>
+    ''' <summary>
+    ''' Gets or sets a value indicating whether the station of loader robot arm.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(LoaderArmStations), "Home")> _
+    Public Property LoaderArmStation() As LoaderArmStations
+        Get
+            Return m_loaderArmStation
+        End Get
+        Set(ByVal value As LoaderArmStations)
+            If m_loaderArmStation <> value Then
+                m_loaderArmStation = value
+
+                If Me.AVPStyle = AVPStyles.ML Then
+                    m_newArmHeight = GetMaxExtendHeight()
+                    If m_newArmHeight >= m_armHeight Then
+                        m_extractDistance = CSng(ML_MAX_HEIGHT / EXTEND_COUNT)
+                    Else
+                        m_extractDistance = -1 * CSng(ML_MAX_HEIGHT / EXTEND_COUNT)
+                    End If
+
+                    ' Start timer
+                    StartExReTimer()
+                End If
+            End If
+        End Set
+    End Property
+
+    <DefaultValue(GetType(AVPScreens), "ProcessScreen")> _
+    Public Overrides Property InScreen() As AVPScreens
+        Get
+            Return m_inScreen
+        End Get
+        Set(ByVal value As AVPScreens)
+            If m_inScreen <> value Then
+                m_inScreen = value
+            End If
+        End Set
+    End Property
+
+    ' Hai Tran: Use for design time
+    <DefaultValue(GetType(Single), "0"), Category("Design Time Only"), Description("Get or set the value indicate angle of arm for extending. Use for set max extend angle, retract angle.")> _
+    Public Property ArmExtendAngle() As Single
+        Get
+            Return m_armExtendAngle
+        End Get
+        Set(ByVal value As Single)
+            If m_armExtendAngle <> value Then
+                m_armExtendAngle = value
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    ' Hai Tran: Use for design time
+    <DefaultValue(GetType(Single), "0"), Category("Design Time Only"), Description("Get or set current rotating angle of robot. Use for set rotate angle of robot on each chamber.")> _
+    Public Property RotatingAngle() As Single
+        Get
+            Return m_rotatingAngle
+        End Get
+        Set(ByVal value As Single)
+            If m_rotatingAngle <> value Then
+                m_rotatingAngle = value
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    ' Hai Tran: Use for design time
+    <DefaultValue(GetType(Single), "1"), Category("Design Time Only"), Description("Get or set current scale factor. Use for set size of robot for each CXX.")> _
+    Public Property ScaleFactor() As Single
+        Get
+            Return m_scaleFactor
+        End Get
+        Set(ByVal value As Single)
+            If m_scaleFactor <> value Then
+                If Not Me.HasSuspendUpdate Then
+                    UpdateScaleValue(value)
+                End If
+                UpdateView()
+            End If
+        End Set
+    End Property
+
+    <DefaultValue(GetType(AVPChamberTypes), "IBE"), Category("Design Time Only"), Description("Use for set all station type while design.")> _
+    Public Property UndefinedStationType() As AVPChamberTypes
+        Get
+            Return m_undefinedStationType
+        End Get
+        Set(ByVal value As AVPChamberTypes)
+            If m_undefinedStationType <> value Then
+                m_undefinedStationType = value
+            End If
+        End Set
+    End Property
+
+    <DefaultValue(GetType(RobotArmStations), "LLA"), Category("AVP Properties")> _
+    Public Property AlignerAtStation() As RobotArmStations
+        Get
+            Return m_alignerAtStation
+        End Get
+        Set(ByVal value As RobotArmStations)
+            If m_alignerAtStation <> value Then
+                m_alignerAtStation = value
+            End If
+        End Set
+    End Property
+
+    <DefaultValue(GetType(RobotArmStations), "LLB"), Category("AVP Properties")> _
+    Public Property Aligner2AtStation() As RobotArmStations
+        Get
+            Return m_aligner2AtStation
+        End Get
+        Set(ByVal value As RobotArmStations)
+            If m_aligner2AtStation <> value Then
+                m_aligner2AtStation = value
+            End If
+        End Set
+    End Property
+
+    <Browsable(False), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)> _
+    Public ReadOnly Property WaferCenterLocation() As Point
+        Get
+            Dim p As PointF = GetPointToCenter(m_height)
+            Return New Point(Convert.ToInt32(p.X), Convert.ToInt32(p.Y))
+        End Get
+    End Property
+
+    <DefaultValue(GetType(Single), "0"), Category("Design Time Only")> _
+    Public Property ArmHeight() As Single
+        Get
+            Return m_armHeight
+        End Get
+        Set(ByVal value As Single)
+            If m_armHeight <> value Then
+                m_armHeight = value
+                Me.UpdateView()
+            End If
+        End Set
+    End Property
+
+
+    Private _waferDiameter As Integer
+    ''' <author>Hai Tran</author>
+    ''' <date>2016-04-06</date>
+    ''' <summary>
+    ''' Gets or sets wafer diameter on robot hand.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Property WaferDiameter() As Integer
+        Get
+            If _waferDiameter > 0 Then
+                Return _waferDiameter
+            End If
+            Return WAFER_DIAMETER(AVPStyle)
+        End Get
+        Set(ByVal value As Integer)
+            If _waferDiameter <> value Then
+                _waferDiameter = value
+
+                If _waferDiameter > 0 Then
+                    UpdateView()
+                End If
+            End If
+        End Set
+    End Property
+
+    '''<author>
+    ''' <name> Dung Pham </name>
+    ''' <date> 2018-08-23 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets/Sets Is At Themos Sensor
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <DefaultValue(False)> _
+    Public Property IsAtThemosSensor() As Boolean
+        Get
+            Return m_isAtThemosSensor
+        End Get
+        Set(ByVal value As Boolean)
+            If m_isAtThemosSensor <> value Then
+                m_isAtThemosSensor = value
+
+                If value AndAlso m_thermosSensorLocation <> 0 Then
+                    SetArmStation(ThermosSensorAtStation)
+                    SetArmStatus(ArmStatuses.Extend)
+                End If
+            End If
+        End Set
+    End Property
+
+    '''<author>
+    ''' <name> Dung Pham </name>
+    ''' <date> 2018-08-29 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets/Sets Thermos Sensor At Station
+    ''' </summary>
+    ''' <remarks></remarks>
+    <DefaultValue(GetType(RobotArmStations), "LLB"), Category("AVP Properties")> _
+    Public Property ThermosSensorAtStation() As RobotArmStations
+        Get
+            Return m_thermosSensorAtStation
+        End Get
+        Set(ByVal value As RobotArmStations)
+            If m_thermosSensorAtStation <> value Then
+                m_thermosSensorAtStation = value
+            End If
+        End Set
+    End Property
+
+    '''<author>
+    ''' <name> Dung Pham </name>
+    ''' <date> 2018-08-30 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Gets/Sets Thermos Sensor Location
+    ''' </summary>
+    ''' <remarks></remarks>
+    <DefaultValue(0)> _
+    Public Property ThermosSensorLocation() As Integer
+        Get
+            Return m_thermosSensorLocation
+        End Get
+        Set(ByVal value As Integer)
+            If m_thermosSensorLocation <> value Then
+                m_thermosSensorLocation = value
+            End If
+        End Set
+    End Property
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-02-27</date>
+    ''' <summary>
+    ''' Gets or sets wafer present at the specified station.
+    ''' </summary>
+    ''' <param name="station"></param>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Property LoaderStationWaferPresent(ByVal station As LoaderArmStations) As Boolean
+        Get
+            If m_loaderStationWaferPresent Is Nothing OrElse Not m_loaderStationWaferPresent.ContainsKey(station) Then
+                Return False
+            End If
+            Return m_loaderStationWaferPresent(station)
+        End Get
+        Set(ByVal value As Boolean)
+            If m_loaderStationWaferPresent Is Nothing Then
+                m_loaderStationWaferPresent = New Dictionary(Of LoaderArmStations, Boolean)
+            End If
+            If Not m_loaderStationWaferPresent.ContainsKey(station) OrElse m_loaderStationWaferPresent(station) <> value Then
+                m_loaderStationWaferPresent(station) = value
+
+                If LoaderArmStation = station Then
+                    UpdateView()
+                End If
+            End If
+        End Set
+    End Property
+
+#End Region
+
+#Region "Private Properties"
+    Private Property IsExtending() As Boolean
+        Get
+            'SyncLock m_readStatusExLocker
+            Return m_isExtending
+            'End SyncLock
+        End Get
+        Set(ByVal value As Boolean)
+            'SyncLock m_readStatusExLocker
+            m_isExtending = value
+            'End SyncLock
+        End Set
+    End Property
+
+    Private Property IsRotating() As Boolean
+        Get
+            'SyncLock m_readStatusRotatingLocker
+            Return m_isRotating
+            'End SyncLock
+        End Get
+        Set(ByVal value As Boolean)
+            'SyncLock m_readStatusRotatingLocker
+            m_isRotating = value
+            'End SyncLock
+        End Set
+    End Property
+#End Region
+
+#Region "Private Methods"
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Draw robot image
+    ''' </summary>
+    Protected Overrides Function GenerateControlImage() As Bitmap
+        Dim img As Bitmap = Nothing
+        Try
+            ' Drawing arm base on style.
+            If Me.AVPStyle = AVPStyles.SL Then
+                img = GenerateSLArmImage()
+            ElseIf Me.AVPStyle = AVPStyles.ML Then
+                img = GenerateMLArmImage()
+            Else
+                ' Update variable for drawing.
+                Me.UpdateArmDrawingData()
+
+                img = GenerateCXArmImage()
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return img
+    End Function
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-10-05 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Generate Single Loader robot arm image.
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Private Function GenerateSLArmImage() As Bitmap
+        Dim img As Bitmap = Nothing
+        Try
+            Dim imgArm As Bitmap = My.Resources.Resources.Loader_ArmHolder
+            Dim imgHand As Bitmap = My.Resources.Resources.Loader_Hand
+            Dim imgHandPick As Bitmap = My.Resources.Resources.Loader_Hand_Pick
+            Dim imgArmPart As Bitmap = My.Resources.Resources.Loader_ArmPart
+            Dim centerPoint As Point = New Point(42, 367)
+
+            Dim width As Integer = imgArm.Width
+            Dim armHeight As Integer = imgArm.Height
+            Dim armHandHeight As Integer = imgHand.Height
+            Dim armPartHeight As Integer = imgArmPart.Height
+
+            img = New Bitmap(width, armHeight)
+            img.SetResolution(imgArm.HorizontalResolution, imgArm.VerticalResolution)
+
+            Using g As Graphics = Graphics.FromImage(img)
+
+                Dim handLocation As Point = New Point(0, Convert.ToInt32(Math.Round(centerPoint.Y - SL_CENTER_TO_HAND - armHandHeight - m_armHeight)))
+                Dim waferLocation As Point = New Point(Convert.ToInt32((width - WaferDiameter) / 2.0F), handLocation.Y - 21)
+
+                ' Draw arm holder
+                g.DrawImageUnscaled(imgArm, 0, 0)
+
+                ' Draw arm part
+                Dim maxHeight As Integer = GetMaxExtendHeight()
+                Dim holderHeight As Integer = SL_CENTER_TO_HAND
+                Dim maxHolderHeight As Integer = centerPoint.Y - handLocation.Y - armHandHeight
+                While holderHeight < maxHolderHeight
+                    holderHeight += armPartHeight
+                    Dim y As Integer = centerPoint.Y - holderHeight
+                    Dim dy As Single = handLocation.Y + armHandHeight / 2.0F
+                    If y < dy Then
+                        y = Convert.ToInt32(dy)
+                    End If
+                    g.DrawImageUnscaled(imgArmPart, 0, y)
+                End While
+
+                ' Draw arm hand
+                If m_waferStatus = WaferStatuses.NONE AndAlso m_armHeight >= maxHeight - 30 Then
+                    g.DrawImageUnscaled(imgHandPick, handLocation.X, handLocation.Y)
+                Else
+                    g.DrawImageUnscaled(imgHand, handLocation.X, handLocation.Y)
+                End If
+
+                ' Draw wafer
+                If m_waferStatus <> WaferStatuses.NONE Then
+                    If m_imgWafer IsNot Nothing Then
+                        g.DrawImageUnscaled(m_imgWafer, waferLocation.X, waferLocation.Y)
+                    End If
+                End If
+
+                handLocation = Nothing
+                waferLocation = Nothing
+            End Using
+
+            imgArm.Dispose()
+            imgArmPart.Dispose()
+            imgHand.Dispose()
+            imgHandPick.Dispose()
+
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return img
+    End Function
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2018-02-27</date>
+    ''' <summary>
+    ''' Generate Multi Loader robot arm image.
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Private Function GenerateMLArmImage() As Bitmap
+        Dim img As Bitmap = Nothing
+        Try
+            Dim imgArm As Bitmap = My.Resources.Resources.MultiLoader_ArmHolder
+            Dim imgHand As Bitmap = My.Resources.Resources.MultiLoader_Hand
+            Dim imgHandPick As Bitmap = My.Resources.Resources.MultiLoader_Hand_Pick
+            Dim imgArmPart As Bitmap = My.Resources.Resources.MultiLoader_ArmPart
+            Dim centerPoint As Point = New Point(57, 348)
+
+            Dim width As Integer = imgArm.Width
+            Dim armHeight As Integer = imgArm.Height
+            Dim armHandHeight As Integer = imgHand.Height
+            Dim armPartHeight As Integer = imgArmPart.Height
+
+            img = New Bitmap(width, armHeight)
+            img.SetResolution(imgArm.HorizontalResolution, imgArm.VerticalResolution)
+
+            Using g As Graphics = Graphics.FromImage(img)
+                ' Draw arm holder
+                g.DrawImageUnscaled(imgArm, 0, 0)
+
+                ' Draw arm part
+                Dim handLocation As Point = New Point(0, Convert.ToInt32(Math.Round(centerPoint.Y - ML_CENTER_TO_HAND - armHandHeight - m_armHeight)))
+                Dim maxHeight As Integer = GetMaxExtendHeight()
+                Dim holderHeight As Integer = ML_CENTER_TO_HAND
+                Dim maxHolderHeight As Integer = centerPoint.Y - handLocation.Y - armHandHeight
+                While holderHeight < maxHolderHeight
+                    holderHeight += armPartHeight
+                    Dim y As Integer = centerPoint.Y - holderHeight
+                    Dim dy As Single = handLocation.Y + armHandHeight / 2.0F
+                    If y < dy Then
+                        y = Convert.ToInt32(dy)
+                    End If
+                    g.DrawImageUnscaled(imgArmPart, 0, y)
+                End While
+
+                ' Draw arm hand
+                If m_waferStatus = WaferStatuses.NONE AndAlso LoaderArmStation <> LoaderArmStations.Home AndAlso LoaderStationWaferPresent(LoaderArmStation) AndAlso Math.Abs(m_armHeight - maxHeight) <= 20 Then
+                    g.DrawImageUnscaled(imgHandPick, handLocation.X, handLocation.Y)
+                Else
+                    g.DrawImageUnscaled(imgHand, handLocation.X, handLocation.Y)
+                End If
+
+                ' Draw wafer
+                If m_waferStatus <> WaferStatuses.NONE Then
+                    If m_imgWafer IsNot Nothing Then
+                        Dim waferLocation As Point = New Point(Convert.ToInt32((width - m_imgWafer.Width) / 2.0F), handLocation.Y - 21)
+
+                        g.DrawImage(m_imgWafer, waferLocation.X, waferLocation.Y, WaferDiameter, WaferDiameter)
+                    End If
+                End If
+
+                handLocation = Nothing
+            End Using
+
+            imgArm.Dispose()
+            imgArmPart.Dispose()
+            imgHand.Dispose()
+            imgHandPick.Dispose()
+
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return img
+    End Function
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-10-05 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Generate CXX robot arm image.
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Private Function GenerateCXArmImage() As Bitmap
+        Dim img As Bitmap = Nothing
+        Try
+            ' Use for set name of Robot image to cache
+            Dim currentArmImageName As String = String.Format("{0}_{1}", m_arm1RotateAngle, m_arm2RotateAngle)
+
+            ' Get Robot image from cache or create name.
+            If Me.IsImageCached(currentArmImageName) Then
+                img = GetCachingImage(currentArmImageName)
+            Else
+                img = New Bitmap(m_controlSize, m_controlSize)
+                img.SetResolution(m_imgArm10.HorizontalResolution, m_imgArm10.VerticalResolution)
+
+                Dim g As Graphics = Graphics.FromImage(img)
+
+                ' Draw arm 1
+                Dim imgRotateArm1 As Bitmap = RotateImage(m_imgArm10, m_arm1RotateAngle)
+                g.DrawImageUnscaled(imgRotateArm1, 0, 0)
+
+                ' Draw arm 2
+                Dim imgRotateArm2 As Bitmap = RotateImage(m_imgArm20, -1 * m_arm1RotateAngle)
+                g.DrawImageUnscaled(imgRotateArm2, 0, 0)
+
+                ' Draw arm 1-2
+                Dim imgRotateArm12 As Bitmap = RotateImage(m_imgArm11, m_arm2RotateAngle)
+                g.DrawImageUnscaled(imgRotateArm12, Convert.ToInt32(m_dX), Convert.ToInt32(m_armHeight + m_dY))
+
+                ' Draw arm 2-2
+                Dim imgRotateArm22 As Bitmap = RotateImage(m_imgArm21, -1 * (m_arm2RotateAngle))
+                g.DrawImageUnscaled(imgRotateArm22, Convert.ToInt32(-1 * m_dX), Convert.ToInt32(m_armHeight + m_dY))
+
+                ' Draw hand
+                g.DrawImageUnscaled(m_imgArmHand, 0, Convert.ToInt32(m_armHeight))
+
+                ' Release resources
+                imgRotateArm1.Dispose()
+                imgRotateArm2.Dispose()
+                imgRotateArm12.Dispose()
+                imgRotateArm22.Dispose()
+                g.Dispose()
+
+                ' Add Robot image to cache
+                Me.AddCachingImage(currentArmImageName, img, False)
+            End If
+
+            ' Rotate robot
+            img = RotateImage(img, m_rotatingAngle)
+
+            ' Use for set name of region to cache
+            Dim regionNameBuilder As New System.Text.StringBuilder()
+            regionNameBuilder.AppendFormat("{0}_{1}_{2}_{3}", m_arm1RotateAngle, m_arm2RotateAngle, m_rotatingAngle, IIf(m_waferStatus = WaferStatuses.NONE, "OFF", "ON"))
+
+            ' Draw wafer
+            If m_waferStatus <> WaferStatuses.NONE AndAlso m_imgWafer IsNot Nothing Then
+                Dim g As Graphics = Graphics.FromImage(img)
+                g.DrawImageUnscaled(m_imgWafer, CInt(m_waferLocation.X), CInt(m_waferLocation.Y))
+                g.Dispose()
+            Else
+                ' Draw pick hand when robot fully extend to PICK
+                If m_currentStationMaxHeight - m_armHeight <= m_handToWafer Then
+                    Dim path As New Drawing2D.GraphicsPath
+                    Dim dLocation As Integer = 0
+                    If m_rotatingAngle >= 180 Then
+                        dLocation = 1
+                    End If
+                    path.AddEllipse(m_waferLocation.X + dLocation, m_waferLocation.Y + dLocation, WaferDiameter - 1, WaferDiameter - 1)
+
+                    Dim tmpImg As Bitmap = img
+
+                    img = CutoutImage(img, path)
+
+                    tmpImg.Dispose()
+                    path.Dispose()
+
+                    ' Append to region name
+                    regionNameBuilder.Append("_PICK")
+                End If
+            End If
+
+            ' Set current region name for caching region.
+            Me.CurrentRegionName = regionNameBuilder.ToString()
+
+            ' Release resources
+            regionNameBuilder = Nothing
+            m_waferLocation = Nothing
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return img
+    End Function
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-10-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Update wafer image when wafer info changed.
+    ''' </summary>
+    Private Sub UpdateWaferImage()
+        Try
+            Dim imgWaferTemp As Bitmap = m_imgWafer
+            m_imgWafer = AVPWaferControl.GenerateWaferImage(m_waferStatus, m_waferID, WaferDiameter, m_showQuestionMarkOnWafer)
+            ' Release pre-image.
+            If imgWaferTemp IsNot Nothing Then
+                imgWaferTemp.Dispose()
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-10-02 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Update variables for draw arm
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub UpdateArmDrawingData()
+        Try
+            If Me.AVPStyle <> AVPStyles.SL AndAlso Me.AVPStyle <> AVPStyles.ML Then
+                ' Calculate height of arm.
+                Dim armAngle1 As Single = m_armExtendAngle - m_defaultArmAngle_1
+                Dim armAngle1Rad As Double = DegToRad(armAngle1)
+                Dim h1 As Single = Convert.ToSingle(Math.Abs(Math.Sin(armAngle1Rad) * m_lengthArm1))
+                Dim w1 As Single = Convert.ToSingle(Math.Abs(Math.Cos(armAngle1Rad) * m_lengthArm1))
+
+                Dim w2 As Single = w1 - m_dX
+                Dim armAngle2 As Single = Convert.ToSingle(Math.Acos(w2 / m_lengthArm2))
+                Dim h2 As Single = Convert.ToSingle(Math.Abs(Math.Sin(armAngle2) * m_lengthArm2))
+
+                If armAngle1 < 0 Then
+                    m_armHeight = h2 - h1 - m_dY
+                Else
+                    m_armHeight = h2 + h1 - m_dY
+                End If
+
+                ' Height of robot.
+                m_height = m_armHeight + m_handToCenterWafer
+
+                ' Calculate wafer location.
+                m_waferLocation = GetWaferLocation(m_height)
+
+                ' Calculate arms rotate angle.
+                m_arm1RotateAngle = m_armExtendAngle
+                m_arm2RotateAngle = Convert.ToSingle(Math.Round(m_defaultArmAngle_2 - RadToDeg(armAngle2), 1))
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Calculate height from center point to point Arm 2 connected with Hand base on Arm 1 angle
+    ''' </summary>
+    Private Function CalculateHeight(ByVal arm1Angle As Single) As Single
+        Dim h As Single
+        Try
+            Dim armAngle1 As Single = arm1Angle - m_defaultArmAngle_1
+            Dim armAngle1Rad As Double = DegToRad(armAngle1)
+
+            Dim h1 As Single = Convert.ToSingle(Math.Abs(Math.Sin(armAngle1Rad) * m_lengthArm1))
+            Dim w1 As Single = Convert.ToSingle(Math.Abs(Math.Cos(armAngle1Rad) * m_lengthArm1))
+
+            Dim w2 As Single = w1 - m_dX
+            Dim armAngle2 As Single = Convert.ToSingle(Math.Acos(w2 / m_lengthArm2))
+            Dim h2 As Single = Convert.ToSingle(Math.Abs(Math.Sin(armAngle2) * m_lengthArm2))
+
+            If armAngle1 < 0 Then
+                h = h2 - h1 - m_dY
+            Else
+                h = h2 + h1 - m_dY
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return h
+    End Function
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Get location at point to center point
+    ''' </summary>
+    Private Function GetPointToCenter(ByVal distanceToCenter As Single) As PointF
+        Dim radius As Single = m_controlSize / 2.0F
+        Try
+            Dim angle As Single = m_rotatingAngle + 90
+            Dim angleInRad As Double = DegToRad(angle)
+
+            Dim x As Single = Convert.ToSingle(radius + distanceToCenter * Math.Cos(angleInRad))
+            Dim y As Single = Convert.ToSingle(radius + distanceToCenter * Math.Sin(angleInRad))
+
+            Return New PointF(x, y)
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return New PointF(radius, radius)
+    End Function
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-08 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Get location for drawimg wafer
+    ''' </summary>
+    Private Function GetWaferLocation(ByVal distanceToCenter As Single) As PointF
+        Dim p As PointF = GetPointToCenter(distanceToCenter)
+        Dim waferRadius As Single = WaferDiameter / 2.0F
+        Dim x As Single = Convert.ToSingle(Math.Round(p.X - waferRadius))
+        Dim y As Single = Convert.ToSingle(Math.Round(p.Y - waferRadius))
+        p = Nothing
+        Return New PointF(x, y)
+    End Function
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Get station config type
+    ''' </summary>
+    Public Overloads Function GetStationType() As AVPChamberTypes
+        Dim type As AVPChamberTypes = m_undefinedStationType
+        If m_stationTypes.ContainsKey(m_armStation) Then
+            type = m_stationTypes(m_armStation)
+        End If
+        Return type
+    End Function
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-08 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Get station config type
+    ''' </summary>
+    Public Overloads Function GetStationType(ByVal station As RobotArmStations) As AVPChamberTypes
+        Dim type As AVPChamberTypes = AVPChamberTypes.Undefined
+        If m_stationTypes.ContainsKey(station) Then
+            type = m_stationTypes(station)
+        End If
+        Return type
+    End Function
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-08 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Set station config type
+    ''' </summary>
+    Public Overloads Sub SetStationType(ByVal station As RobotArmStations, ByVal stationType As AVPChamberTypes)
+        Try
+            If m_stationTypes.ContainsKey(station) Then
+                m_stationTypes.Remove(station)
+            End If
+            m_stationTypes.Add(station, stationType)
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-08 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Set station config type
+    ''' </summary>
+    Public Overloads Sub SetStationType(ByVal chamberNumber As Integer, ByVal stationType As AVPChamberTypes)
+        Try
+            Dim pmX As String = "PM" & chamberNumber.ToString()
+            If [Enum].IsDefined(GetType(RobotArmStations), pmX) Then
+                Dim station As RobotArmStations = CType([Enum].Parse(GetType(RobotArmStations), pmX), RobotArmStations)
+                Me.SetStationType(station, stationType)
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Update scale value
+    ''' </summary>
+    Private Sub UpdateScaleValue(Optional ByVal scale As Single = 0)
+        Try
+            If scale = 0 Then
+                Select Case m_avpStyle
+                    Case AVPStyles.CX4
+                        m_scaleFactor = 1
+                    Case AVPStyles.CX5
+                        m_scaleFactor = 1
+                    Case AVPStyles.CX7, AVPStyles.CX8, AVPStyles.CX6
+                        m_scaleFactor = 0.93
+                    Case Else
+                        m_scaleFactor = 1
+                End Select
+            Else
+                m_scaleFactor = Math.Abs(scale)
+            End If
+
+            Dim armHeight1 As Single = ARM_HEIGHT1 * m_scaleFactor
+            Dim armWidth1 As Single = ARM_WIDTH1 * m_scaleFactor
+            m_dX = X_AXIS * m_scaleFactor
+            m_dY = Y_AXIS * m_scaleFactor
+            m_controlSize = Convert.ToInt32(ROBOT_IMAGE_SIZE * m_scaleFactor)
+
+            m_defaultArmAngle_1 = Convert.ToSingle(Math.Round(RadToDeg(Math.Atan(armHeight1 / armWidth1))))
+            m_defaultArmAngle_2 = Convert.ToSingle(Math.Round(RadToDeg(Math.Atan((armHeight1 + m_dY) / (armWidth1 - m_dX)))))
+
+            m_lengthArm1 = Convert.ToSingle(Math.Round(Math.Sqrt(armWidth1 * armWidth1 + armHeight1 * armHeight1)))
+            m_lengthArm2 = Convert.ToSingle(Math.Round(Math.Sqrt((armWidth1 - m_dX) * (armWidth1 - m_dX) + (armHeight1 + m_dY) * (armHeight1 + m_dY))))
+
+            m_handToWafer = 20 * m_scaleFactor
+            m_handToCenterWafer = HAND_HEIGHT * m_scaleFactor + m_dY
+
+            ' Scale image.
+            m_imgArm10 = New Bitmap(My.Resources.Resources.RobotArm_10, m_controlSize, m_controlSize)
+            m_imgArm11 = New Bitmap(My.Resources.Resources.RobotArm_11, m_controlSize, m_controlSize)
+            m_imgArm20 = New Bitmap(My.Resources.Resources.RobotArm_20, m_controlSize, m_controlSize)
+            m_imgArm21 = New Bitmap(My.Resources.Resources.RobotArm_21, m_controlSize, m_controlSize)
+            m_imgArmHand = New Bitmap(My.Resources.Resources.RobotArm_Hand, m_controlSize, m_controlSize)
+            UpdateWaferImage()
+
+            ' Clear cache.
+            Me.ClearCachingRegion()
+            Me.ClearCachingImage()
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-11-27</date>
+    ''' </author>
+    ''' <summary>
+    ''' Clean up memory.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Protected Overrides Sub MemoryCleanup()
+        Try
+            MyBase.MemoryCleanup()
+
+            Me.ReleaseBitmap(m_imgArm10)
+            Me.ReleaseBitmap(m_imgArm11)
+            Me.ReleaseBitmap(m_imgArm20)
+            Me.ReleaseBitmap(m_imgArm21)
+            Me.ReleaseBitmap(m_imgArmHand)
+            Me.ReleaseBitmap(m_imgWafer)
+
+        Catch ex As Exception
+            ' Ignore any errors
+        End Try
+    End Sub
+
+    '''<author>
+    ''' <name> Dung Pham </name>
+    ''' <date> 2018-08-29 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Set Arm Status
+    ''' </summary>
+    ''' <param name="armStatus"></param>
+    ''' <remarks></remarks>
+    Private Sub SetArmStatus(ByVal armStatus As ArmStatuses)
+        If m_armStatus <> armStatus Then
+            m_armStatus = armStatus
+
+            If Me.AVPStyle <> AVPStyles.ML Then
+                ' Set variables for extend or retract
+                If Me.AVPStyle = AVPStyles.SL Then
+                    m_newArmHeight = GetExtendHeight()
+                    If m_newArmHeight >= m_armHeight Then
+                        m_extractDistance = Convert.ToSingle(Me.GetMaxExtendHeight() / EXTEND_COUNT)
+                    Else
+                        m_extractDistance = Convert.ToSingle(-1 * Me.GetMaxExtendHeight() / EXTEND_COUNT)
+                    End If
+                Else
+                    m_newArmExtendAngle = GetArmExtendAngle()
+                    If m_armStatus = ArmStatuses.Retract Then
+                        m_extractDistance = (m_newArmExtendAngle - GetMaxArmExtendAngle()) / EXTEND_COUNT
+                    Else
+                        m_extractDistance = (m_newArmExtendAngle - GetArmRetractAngle()) / EXTEND_COUNT
+                    End If
+                End If
+
+                ' Start timer
+                StartExReTimer()
+            Else
+                If armStatus = ArmStatuses.Extend Then
+                    LoaderArmStation = LoaderArmStations.PM
+                Else
+                    LoaderArmStation = LoaderArmStations.Home
+                End If
+            End If
+        End If
+    End Sub
+
+    '''<author>
+    ''' <name> Dung Pham </name>
+    ''' <date> 2018-08-29 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Set Arm Station
+    ''' </summary>
+    ''' <param name="armStation"></param>
+    ''' <remarks></remarks>
+    Private Sub SetArmStation(ByVal armStation As RobotArmStations)
+        If m_armStation <> armStation Then
+            m_armStation = armStation
+
+            If Me.AVPStyle <> AVPStyles.SL AndAlso Me.AVPStyle <> AVPStyles.ML Then
+                ' Set variables for rotating (angle and rotate direction)
+                m_currentStationMaxHeight = CalculateHeight(GetMaxArmExtendAngle())
+                m_newRotatingAngle = GetRotateAngle()
+                If CalculateDistanceAngle(m_rotatingAngle, m_newRotatingAngle) <= CalculateDistanceAngle(m_newRotatingAngle, m_rotatingAngle) Then
+                    m_rotateDistance = Math.Abs(m_rotateDistance)
+                Else
+                    m_rotateDistance = -1 * Math.Abs(m_rotateDistance)
+                End If
+
+                ' Start rotate
+                StartRotatingTimer()
+            End If
+        End If
+    End Sub
+
+#End Region
+
+#Region "Extending Methods"
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Update extending position for animation
+    ''' </summary>
+    Private Sub UpdateExtendingPosition()
+        Try
+            If Me.AVPStyle = AVPStyles.SL OrElse Me.AVPStyle = AVPStyles.ML Then
+                If Math.Abs(m_armHeight - m_newArmHeight) <= 0.01 Then
+                    StopExReTimer()
+                    Return
+                End If
+
+                If Math.Abs(m_newArmHeight - m_armHeight) < Math.Abs(m_extractDistance) Then
+                    m_armHeight = m_newArmHeight
+                Else
+                    m_armHeight += m_extractDistance
+                End If
+            Else
+                Dim dAngle As Single = GetMinimumDistanceAngle(m_armExtendAngle, m_newArmExtendAngle)
+                If dAngle < 0.01 Then
+                    StopExReTimer()
+                    Return
+                End If
+
+                If dAngle <= Math.Abs(m_extractDistance) Then
+                    m_armExtendAngle = m_newArmExtendAngle
+                Else
+                    m_armExtendAngle += m_extractDistance
+                    If m_armExtendAngle < MIN_ARM_ANGLE Then
+                        m_armExtendAngle = MIN_ARM_ANGLE
+                    ElseIf m_armExtendAngle > MAX_ARM_ANGLE Then
+                        m_armExtendAngle = MAX_ARM_ANGLE
+                    End If
+                End If
+            End If
+
+            ' Update view.
+            UpdateView()
+
+            ' Raise event
+            OnArmExtending(New ArmExtendEventArgs(m_armStation, m_armStatus))
+
+            m_ExReTimer.Enabled = True
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Stop extract/retract
+    ''' </summary>
+    Private Sub StopExReTimer()
+        m_ExReTimer.Enabled = False
+        IsExtending = False
+        m_armExtendAngle = m_newArmExtendAngle
+        If Me.AVPStyle = AVPStyles.SL OrElse Me.AVPStyle = AVPStyles.ML Then
+            m_armHeight = m_newArmHeight
+            UpdateView()
+        End If
+
+        ' Raise event when arm extend or retract finished.
+        OnArmExtended(New ArmExtendEventArgs(m_armStation, m_armStatus))
+
+        ' Start rotate if arm had rotating request
+        If m_newRotatingAngle <> m_rotatingAngle AndAlso Me.AVPStyle <> AVPStyles.SL AndAlso Me.AVPStyle <> AVPStyles.ML Then
+            StartRotatingTimer()
+        End If
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Stop extract/retract
+    ''' </summary>
+    Private Sub StartExReTimer()
+        If Not IsRotating AndAlso Not IsExtending Then
+            IsExtending = True
+            m_ExReTimer.Enabled = True
+        End If
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-10-05 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Get the value indicate height to extract
+    ''' </summary>
+    Private Function GetExtendHeight() As Integer
+        Dim height As Integer
+
+        If m_armStatus = ArmStatuses.Retract Then
+            height = 0
+        Else
+            height = GetMaxExtendHeight()
+        End If
+
+        Return height
+    End Function
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-10-06 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Get the value indicate height to extend
+    ''' </summary>
+    Private Function GetMaxExtendHeight() As Integer
+        Dim height As Integer = MAX_HEIGHT
+
+        If AVPStyle = AVPStyles.SL Then
+            If Me.UndefinedStationType = AVPChamberTypes.IBE Then
+                height = 175
+            End If
+        ElseIf AVPStyle = AVPStyles.ML Then
+            If LoaderArmStation = LoaderArmStations.Home Then
+                height = 0
+            ElseIf LoaderArmStation = LoaderArmStations.Retract Then
+                height = 10
+            ElseIf LoaderArmStation = LoaderArmStations.ToCheck Then
+                height = 40
+            ElseIf LoaderArmStation = LoaderArmStations.Cassette Then
+                height = 69
+            ElseIf LoaderArmStation = LoaderArmStations.PM Then
+                If Me.UndefinedStationType = AVPChamberTypes.IBE Then
+                    height = ML_MAX_HEIGHT
+                ElseIf Me.UndefinedStationType = AVPChamberTypes.IBD Then
+                    height = 223
+                ElseIf Me.UndefinedStationType = AVPChamberTypes.PVD4 Then
+                    height = 203
+                End If
+            End If
+        End If
+
+        Return height
+    End Function
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Get the value indicate height to retract/extend
+    ''' </summary>
+    Private Function GetArmExtendAngle() As Single
+        Dim result As Single
+        Try
+            If m_armStatus = ArmStatuses.Retract Then
+                result = GetArmRetractAngle()
+            Else
+                result = GetMaxArmExtendAngle()
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return result
+    End Function
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Get the value indicate height to retract
+    ''' </summary>
+    Private Function GetArmRetractAngle() As Single
+        Dim result As Single = MIN_ARM_ANGLE
+        If m_avpStyle = AVPStyles.CX5 OrElse m_avpStyle = AVPStyles.CX6 OrElse m_avpStyle = AVPStyles.CX7 Then
+            result = MIN_ARM_ANGLE
+        ElseIf m_avpStyle = AVPStyles.CX8 Then
+            result = 0
+        ElseIf m_avpStyle = AVPStyles.CX4 Then
+            result = 10
+        End If
+        Return result
+    End Function
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <Modifiers>
+    ''' <Modifier>
+    '''   	<Name>Dung Pham</Name>
+    '''   	<Date>2008-08-23</Date>
+    '''		<Description>Add Robot Location To Themos Sensor</Description>
+    ''' </Modifier>
+    ''' </Modifiers>
+    ''' <summary>
+    ''' Get the value indicate height to extend
+    ''' </summary>
+    Private Function GetMaxArmExtendAngle() As Single
+        Dim result As Single = MAX_ARM_ANGLE
+
+        Try
+            If m_isAtThemosSensor Then
+                Select Case m_thermosSensorAtStation
+                    Case RobotArmStations.LLA, RobotArmStations.LLB
+                        result = 57
+                    Case RobotArmStations.PM1, RobotArmStations.PM2, RobotArmStations.PM3, _
+                        RobotArmStations.PM5, RobotArmStations.PM5, RobotArmStations.PM6
+                        result = 29
+                End Select
+                Exit Try
+            End If
+
+            Dim stationType As AVPChamberTypes = GetStationType()
+            If m_avpStyle = AVPStyles.CX4 Then
+                Select Case stationType
+                    Case AVPChamberTypes.LoadLock
+                        result = 83
+                    Case AVPChamberTypes.PVD4
+                        result = 78
+                    Case AVPChamberTypes.VIBD, AVPChamberTypes.IBD
+                        result = 98
+                    Case AVPChamberTypes.Aligner
+                        result = 50
+                    Case AVPChamberTypes.IBE
+                        result = 93
+                End Select
+            ElseIf m_avpStyle = AVPStyles.CX5 Then
+                Select Case stationType
+                    Case AVPChamberTypes.LoadLock
+                        result = MAX_ARM_ANGLE
+                    Case AVPChamberTypes.Aligner
+                        result = 52
+                    Case AVPChamberTypes.MechanicalAligner
+                        result = 75
+                    Case AVPChamberTypes.IBE
+                        result = 95
+                    Case AVPChamberTypes.PVD
+                        result = 91
+                    Case AVPChamberTypes.PVD2R4
+                        result = 105
+                    Case AVPChamberTypes.PVD4
+                        result = 80
+                    Case AVPChamberTypes.IBD
+                        result = 110
+                End Select
+                If WaferDiameter = WAFER_DIAMETER(AVPStyles.CX4) Then
+                    Select Case stationType
+                        Case AVPChamberTypes.IBE
+                            result = 94
+                        Case AVPChamberTypes.PVD
+                            result = 89
+                        Case AVPChamberTypes.PVD_A
+                            result = 91
+                        Case AVPChamberTypes.PVD2R4
+                            result = 108
+                        Case AVPChamberTypes.PVD4
+                            result = 80
+                        Case AVPChamberTypes.IBD
+                            result = 110
+                    End Select
+                End If
+            ElseIf m_avpStyle = AVPStyles.CX8 Then
+                Select Case stationType
+                    Case AVPChamberTypes.LoadLock
+                        result = 100
+                    Case AVPChamberTypes.Aligner
+                        result = 58
+                    Case AVPChamberTypes.IBE
+                        result = 100
+                    Case AVPChamberTypes.PVD, AVPChamberTypes.PVD_A
+                        result = 95
+                    Case AVPChamberTypes.IBD
+                        result = 110
+                    Case AVPChamberTypes.HRPVD
+                        result = 91
+                    Case AVPChamberTypes.PVD6P, AVPChamberTypes.PVD6S
+                        result = 101
+                    Case AVPChamberTypes.RIE
+                        result = 96
+                    Case AVPChamberTypes.PVD2R4
+                        result = 109
+                End Select
+            ElseIf m_avpStyle = AVPStyles.CX7 Then
+                Select Case stationType
+                    Case AVPChamberTypes.LoadLock
+                        result = 100
+                    Case AVPChamberTypes.Aligner
+                        result = 58
+                    Case AVPChamberTypes.IBE
+                        result = 100
+                    Case AVPChamberTypes.PVD, AVPChamberTypes.PVD_A
+                        result = 95
+                    Case AVPChamberTypes.HRPVD
+                        result = 92
+                    Case AVPChamberTypes.RIE
+                        result = 96
+                    Case AVPChamberTypes.PVD6S, AVPChamberTypes.PVD6P
+                        result = 101
+                    Case AVPChamberTypes.PVD2R4
+                        result = 109
+                    Case AVPChamberTypes.IBD
+                        result = 110
+                End Select
+            ElseIf m_avpStyle = AVPStyles.CX6 Then
+                Select Case stationType
+                    Case AVPChamberTypes.LoadLock
+                        result = 100
+                    Case AVPChamberTypes.Aligner
+                        result = 58
+                    Case AVPChamberTypes.IBE
+                        result = 90
+                    Case AVPChamberTypes.PVD, AVPChamberTypes.PVD_A
+                        result = 87
+                    Case AVPChamberTypes.IBD
+                        result = 98
+                    Case AVPChamberTypes.HRPVD
+                        result = 85
+                    Case AVPChamberTypes.PVD6P, AVPChamberTypes.PVD6S
+                        result = 93
+                    Case AVPChamberTypes.RIE
+                        result = 90
+                    Case AVPChamberTypes.PVD2R4
+                        result = 97
+                End Select
+            End If
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+        Return result
+    End Function
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Timer to update extending position
+    ''' </summary>
+    Private Sub ExReTimer_Tick(ByVal source As Object, ByVal e As Timers.ElapsedEventArgs)
+        IsExtending = True
+        m_ExReTimer.Enabled = False
+        If Me.InvokeRequired Then
+            Dim deleUpdate As UpdateHeightDelegate = New UpdateHeightDelegate(AddressOf UpdateExtendingPosition)
+            Me.BeginInvoke(deleUpdate)
+        Else
+            UpdateExtendingPosition()
+        End If
+    End Sub
+#End Region
+
+#Region "Rotating Methods"
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Update extending position for animation
+    ''' </summary>
+    Private Sub UpdateRotatingAngle()
+        Try
+            Dim dAngle As Single = GetMinimumDistanceAngle(m_rotatingAngle, m_newRotatingAngle)
+            If dAngle < 0.01 Then
+                StopRotatingTimer()
+                Return
+            End If
+
+            If dAngle < Math.Abs(m_rotateDistance) Then
+                m_rotatingAngle = m_newRotatingAngle
+            Else
+                m_rotatingAngle += m_rotateDistance
+            End If
+
+            UpdateView()
+
+            m_rotateTimer.Enabled = True
+        Catch ex As Exception
+            Logger.Error(ex.ToString())
+        End Try
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Stop extract/retract
+    ''' </summary>
+    Private Sub StopRotatingTimer()
+        m_rotateTimer.Enabled = False
+        IsRotating = False
+        m_rotatingAngle = m_newRotatingAngle
+        If m_newArmExtendAngle <> m_armExtendAngle Then
+            StartExReTimer()
+        End If
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Stop extract/retract
+    ''' </summary>
+    Private Sub StartRotatingTimer()
+        If Not IsRotating AndAlso Not IsExtending Then
+            If m_armStatus = ArmStatuses.Extend Then
+                ArmStatus = ArmStatuses.Retract
+            Else
+                IsRotating = True
+                m_rotateTimer.Enabled = True
+            End If
+        End If
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Get the value indicate height to extract
+    ''' </summary>
+    Private Function GetRotateAngle() As Single
+        Dim result As Single
+        Dim station As RobotArmStations = m_armStation
+
+        If station = RobotArmStations.Original Then
+            Return 0
+        ElseIf station = RobotArmStations.Aligner Then
+            station = m_alignerAtStation
+        ElseIf station = RobotArmStations.Aligner2 Then
+            station = m_aligner2AtStation
+        End If
+
+        If m_avpStyle = AVPStyles.CX5 Then
+            Select Case station
+                Case RobotArmStations.LLA
+                    result = 30
+                Case RobotArmStations.LLB
+                    result = 329
+                Case RobotArmStations.PM1
+                    result = 90
+                Case RobotArmStations.PM2
+                    result = 180
+                Case RobotArmStations.PM3
+                    result = 270
+            End Select
+        ElseIf m_avpStyle = AVPStyles.CX8 Then
+            Select Case station
+                Case RobotArmStations.LLA
+                    result = 28.9
+                Case RobotArmStations.LLB
+                    result = 330.5
+                Case RobotArmStations.PM1
+                    result = 74
+                Case RobotArmStations.PM2
+                    result = 116.5
+                Case RobotArmStations.PM3
+                    result = 159
+                Case RobotArmStations.PM4
+                    result = 201.3
+                Case RobotArmStations.PM5
+                    result = 244
+                Case RobotArmStations.PM6
+                    result = 286
+            End Select
+        ElseIf m_avpStyle = AVPStyles.CX7 Then
+            Select Case station
+                Case RobotArmStations.LLA
+                    result = 28.5
+                Case RobotArmStations.LLB
+                    result = 331.3
+                Case RobotArmStations.PM1
+                    result = 90
+                Case RobotArmStations.PM2
+                    result = 135
+                Case RobotArmStations.PM3
+                    result = 180
+                Case RobotArmStations.PM4
+                    result = 225
+                Case RobotArmStations.PM5
+                    result = 270
+            End Select
+        ElseIf m_avpStyle = AVPStyles.CX6 Then
+            Select Case station
+                Case RobotArmStations.LLA
+                    result = 28.9
+                Case RobotArmStations.LLB
+                    result = 330.5
+                Case RobotArmStations.PM1
+                    result = 89.5
+                Case RobotArmStations.PM2
+                    result = 150
+                Case RobotArmStations.PM3
+                    result = 210
+                Case RobotArmStations.PM4
+                    result = 270
+            End Select
+        ElseIf m_avpStyle = AVPStyles.CX4 Then
+            Select Case station
+                Case RobotArmStations.LLA, RobotArmStations.Aligner
+                    result = 0
+                Case RobotArmStations.PM1
+                    result = 90
+                Case RobotArmStations.PM2
+                    result = 180
+                Case RobotArmStations.PM3
+                    result = 270
+            End Select
+        End If
+
+        Return result
+    End Function
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Timer to update extending position
+    ''' </summary>
+    Private Sub RotatingTimer_Tick(ByVal source As Object, ByVal e As Timers.ElapsedEventArgs)
+        IsRotating = True
+        m_rotateTimer.Enabled = False
+        If Me.InvokeRequired Then
+            Dim deleUpdate As UpdateAngleDelegate = New UpdateAngleDelegate(AddressOf UpdateRotatingAngle)
+            Me.BeginInvoke(deleUpdate)
+        Else
+            UpdateRotatingAngle()
+        End If
+    End Sub
+#End Region
+
+#Region "Public Methods"
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-07 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Set wafer info
+    ''' </summary>
+    Public Overloads Sub SetWaferInfo(ByVal waferInfo As WaferInfo)
+        Dim hasChanged As Boolean = False
+        If Not AVPControls.AVPDataLib.WaferInfo.IsEmpty(waferInfo) Then
+            If m_waferID <> waferInfo.WaferID Then
+                m_waferID = waferInfo.WaferID
+                hasChanged = True
+            End If
+
+            If m_waferStatus <> waferInfo.WaferStatus Then
+                m_waferStatus = waferInfo.WaferStatus
+                hasChanged = True
+            End If
+        Else
+            If Not String.IsNullOrEmpty(m_waferID) Then
+                m_waferID = ""
+                hasChanged = True
+            End If
+
+            If m_waferStatus <> WaferStatuses.NONE Then
+                m_waferStatus = WaferStatuses.NONE
+                hasChanged = True
+            End If
+        End If
+
+        If hasChanged Then
+            UpdateWaferImage()
+            UpdateView()
+        End If
+    End Sub
+
+    ''' <author>
+    '''     <name> Hai Tran </name>
+    '''     <date> 2015-09-10 </date>
+    ''' </author>
+    ''' <summary>
+    ''' Set wafer info
+    ''' </summary>
+    Public Overloads Sub SetWaferInfo(ByVal waferID As String, ByVal waferStatus As WaferStatuses)
+        Dim hasChanged As Boolean = False
+
+        If m_waferID <> waferID Then
+            m_waferID = waferID
+            hasChanged = True
+        End If
+
+        If m_waferStatus <> waferStatus Then
+            m_waferStatus = waferStatus
+            hasChanged = True
+        End If
+
+        If hasChanged Then
+            UpdateWaferImage()
+            UpdateView()
+        End If
+    End Sub
+
+#End Region
+
+#Region "Events"
+    Public Sub New()
+
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+        ' Init extend/retract timer
+        m_ExReTimer = New System.Timers.Timer(200)
+        m_ExReTimer.Enabled = False
+        AddHandler m_ExReTimer.Elapsed, AddressOf ExReTimer_Tick
+
+        ' Init rotating timer
+        m_rotateTimer = New System.Timers.Timer(200)
+        m_rotateTimer.Enabled = False
+        AddHandler m_rotateTimer.Elapsed, AddressOf RotatingTimer_Tick
+
+        ' Region caching
+        Me.UseCachingRegion = True
+    End Sub
+
+    Protected Overrides Sub OnAVPStyleChanged(ByVal e As System.EventArgs)
+        If Not Me.HasSuspendUpdate Then
+            UpdateScaleValue()
+            If Me.ArmStatus = ArmStatuses.Retract Then
+                m_armExtendAngle = GetArmRetractAngle()
+                m_newArmExtendAngle = m_armExtendAngle
+            End If
+        End If
+        MyBase.OnAVPStyleChanged(e)
+    End Sub
+
+    Protected Overridable Sub OnArmExtending(ByVal e As ArmExtendEventArgs)
+        RaiseEvent ArmExtending(Me, e)
+    End Sub
+
+    Protected Overridable Sub OnArmExtended(ByVal e As ArmExtendEventArgs)
+        RaiseEvent ArmExtended(Me, e)
+    End Sub
+
+    ''' <author>
+    '''     <name>Hai Tran</name>
+    '''     <date>2015-10-02</date>
+    ''' </author>
+    ''' <summary>
+    ''' Initialize variables
+    ''' </summary>
+    ''' <remarks></remarks>
+    Protected Overrides Sub OnEndInit()
+        MyBase.OnEndInit()
+
+        Me.UpdateScaleValue()
+        Dim maxExtendAngle As Single = GetMaxArmExtendAngle()
+        Dim retractAngle As Single = GetArmRetractAngle()
+        m_armExtendAngle = retractAngle
+        m_newArmExtendAngle = m_armExtendAngle
+        m_height = CalculateHeight(m_newArmExtendAngle) + m_handToCenterWafer
+        m_extractDistance = (maxExtendAngle - retractAngle) / EXTEND_COUNT
+        m_currentStationMaxHeight = CalculateHeight(maxExtendAngle)
+        m_newRotatingAngle = GetRotateAngle()
+        m_rotatingAngle = m_newRotatingAngle
+    End Sub
+
+    Protected Overrides Sub OnPaintBackground(ByVal e As System.Windows.Forms.PaintEventArgs)
+        If Me.IsTransparent Then
+            Return
+        End If
+
+        e.Graphics.FillRegion(New SolidBrush(Me.BackColor), e.Graphics.Clip)
+    End Sub
+
+    ''' <author>Hai Tran</author>
+    ''' <date>2016-05-16</date>
+    ''' <summary>
+    ''' Update view on load.
+    ''' </summary>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Protected Overrides Sub OnLoad(ByVal e As System.EventArgs)
+        MyBase.OnLoad(e)
+        UpdateView()
+    End Sub
+
+#End Region
+
+End Class
+
+Public Class ArmExtendEventArgs
+    Inherits EventArgs
+
+    Protected m_station As RobotArmStations
+    Protected m_status As ArmStatuses
+
+    Public Sub New(ByVal station As RobotArmStations, ByVal armStatus As ArmStatuses)
+        m_station = station
+        m_status = armStatus
+    End Sub
+
+    Public Property Station() As RobotArmStations
+        Get
+            Return m_station
+        End Get
+        Set(ByVal value As RobotArmStations)
+            m_station = value
+        End Set
+    End Property
+
+    Public Property ArmStatus() As ArmStatuses
+        Get
+            Return m_status
+        End Get
+        Set(ByVal value As ArmStatuses)
+            m_status = value
+        End Set
+    End Property
+End Class

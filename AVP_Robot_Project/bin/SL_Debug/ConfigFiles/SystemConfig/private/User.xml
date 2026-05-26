@@ -1,0 +1,1092 @@
+<Users>
+  <User>
+    <Username>OPERATOR</Username>
+    <Password>123</Password>
+    <Group>2</Group>
+    <Disable>0</Disable>
+    <AccessList>
+      <Access Permit="0" Code="001" Screen="Maintaince screens" />
+      <Access Permit="0" Code="002" Screen="Recipe Editors" />
+      <Access Permit="0" Code="003" Screen="Return And Resume Wafer" />
+      <Access Permit="0" Code="004" Screen="System Setup" />
+      <Access Permit="0" Code="005" Screen="User Account Setup" />
+      <Access Permit="0" Code="006" Screen="Reset Wafers Count" />
+      <Access Permit="0" Code="008" Screen="Exit AVP Software" />
+      <Access Permit="0" Code="009" Screen="Clear Alarm" />
+    </AccessList>
+    <RecipePrivilege>
+      <Recipe Type="IBE" Name="Chamber1">
+        <ParameterList Group="BeamParameters">
+          <Parameter>
+            <Name>Beam_Voltage</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Beam_Current</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Suppresser_Voltage</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Incident_RF_Power</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>PBN_FLOWRATE</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>K</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Neutralizer_On</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>FlowCool_Flowrate</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Continuous_Beam</Name>
+            <RW>True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="GasParameters">
+          <Parameter>
+            <Name>Value_1</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_2</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_3</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_4</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_5</Name>
+            <RW>True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="Control">
+          <Parameter>
+            <Name>Process_Ends_By</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Etch_Time_Hour</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Etch_Time_Min</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Etch_Time_Sec</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Step_Type</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Step_Type</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Source_Gas_Warning</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Source_Gas_Fault</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Process_Pressure_Low</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Process_Pressure_High</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Fixture_Angle</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Use_CAIBE</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>OpenCryoGate</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Open_Shutter_At_Beam</Name>
+            <RW>True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="FixtureServo">
+          <Parameter>
+            <Name>Fixture_Rotate_Continious</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Fixture_Rotate_Sweep</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Fixture_Rotate_Static</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Sweep_Start_Angle</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Sweep_End_Angle</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Static_Angle</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Fixture_Rotation_Speed</Name>
+            <RW>True</RW>
+          </Parameter>
+        </ParameterList>
+      </Recipe>
+    </RecipePrivilege>
+  </User>
+  <User>
+    <Username>ADMIN</Username>
+    <Password>123</Password>
+    <Group>1</Group>
+    <Disable>0</Disable>
+    <AccessList>
+      <Access Permit="1" Code="001" Screen="Maintaince screens" />
+      <Access Permit="1" Code="002" Screen="Recipe Editors" />
+      <Access Permit="1" Code="003" Screen="Return And Resume Wafer" />
+      <Access Permit="1" Code="004" Screen="System Setup" />
+      <Access Permit="1" Code="005" Screen="User Account Setup" />
+      <Access Permit="1" Code="006" Screen="Reset Wafers Count" />
+      <Access Permit="1" Code="008" Screen="Exit AVP Software" />
+      <Access Permit="1" Code="009" Screen="Clear Alarm" />
+    </AccessList>
+    <RecipePrivilege>
+      <Recipe Type="IBE" Name="Chamber1">
+        <ParameterList Group="EtchBeamParameters">
+          <Parameter>
+            <Name>Beam_On</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Neutralizer_On</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Beam_Voltage</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Beam_Current</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Incident_RF_Power</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Suppresser_Voltage</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>PBN_FLOWRATE</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>K</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Continuous_Beam</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>CAIBE_Step</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>UseStepRF</Name>
+            <RW>True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="DepositionBeamParameters">
+          <Parameter>
+            <Name>Beam_On</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Neutralizer_On</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Beam_Voltage</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Beam_Current</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Incident_RF_Power</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Suppresser_Voltage</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>PBN_FLOWRATE</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>K</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Continuous_Beam</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>UseStepRF</Name>
+            <RW>True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="EtchGasParameters">
+          <Parameter>
+            <Name>Value_1</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_2</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_3</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_4</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_5</Name>
+            <RW>True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="DepositionGasParameters">
+          <Parameter>
+            <Name>Value_1</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_2</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_3</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_4</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_5</Name>
+            <RW>True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="MagneticChuck">
+          <Parameter>
+            <Name>Power_On</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Phase_90</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Square_Wave</Name>
+            <RW>True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="FaultTolerance">
+          <Parameter>
+            <Name>Active</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>AbortOnError</Name>
+            <RW>True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="HotChuck">
+          <Parameter>
+            <Name>Active</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>WaitForTemperature</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Temperature</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>TimeInSeconds</Name>
+            <RW>True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="Control">
+          <Parameter>
+            <Name>Process_Ends_By</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Endpoint_Script_Name</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>UseElectroStaticShutter</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>UseEtchRateCorrection</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Etch_Rate_Correction_Power_Group</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Etch_Time_Hour</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Etch_Time_Min</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Etch_Time_Sec</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Etch_Time_MilliSec</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Ion_Charge</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Process_Pressure_High</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Process_Pressure_Low</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Fixture_Angle</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Target_Side</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Target_Angle</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>FlowCool_Flowrate</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Open_Etch_Shutter_At_Start</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Open_Etch_Shutter_At_Beam</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Close_Etch_Shutter_At_End</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Open_Depo_Shutter_At_Start</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Open_Depo_Shutter_At_Beam</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Close_Depo_Shutter_At_End</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Open_Target_Shutter_At_Start</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Open_Target_Shutter_At_Beam</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Close_Target_Shutter_At_End</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Open_Fixture_Shutter_At_Start</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Open_Fixture_Shutter_At_Beam</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Close_Fixture_Shutter_At_End</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>OpenTargetShield</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>OpenCryoGate</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>UseRGA</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>WaitForGEMStepTime</Name>
+            <RW>True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="FixtureServo">
+          <Parameter>
+            <Name>Fixture_Rotate_Continious</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Fixture_Rotate_Sweep</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Fixture_Rotate_Static</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Sweep_Start_Angle</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Sweep_End_Angle</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Static_Angle</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Fixture_Rotation_Speed</Name>
+            <RW>True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="DataTracing">
+          <Parameter>
+            <Name>TracingEnabled</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Interval</Name>
+            <RW>True</RW>
+          </Parameter>
+        </ParameterList>
+      </Recipe>
+    </RecipePrivilege>
+  </User>
+  <User>
+    <Username>DEFAULT_DO_NOT_READ_IN_GUI</Username>
+    <Password>123</Password>
+    <Group>2</Group>
+    <Disable>0</Disable>
+    <AccessList>
+      <Access Permit="1" Code="001" DefaultFor="Maint" Screen="Maintaince screens" />
+      <Access Permit="1" Code="002" DefaultFor="Engineer,Maint" Screen="Recipe Editors" />
+      <Access Permit="1" Code="003" DefaultFor="Engineer,Maint" Screen="Return And Resume Wafer" />
+      <Access Permit="1" Code="004" DefaultFor="Maint" Screen="System Setup" />
+      <Access Permit="1" Code="005" DefaultFor="" Screen="User Account Setup" />
+      <Access Permit="1" Code="006" DefaultFor="Maint" Screen="Reset Wafers Count" />
+      <Access Permit="1" Code="008" DefaultFor="Maint" Screen="Exit AVP Software" />
+      <Access Permit="1" Code="009" DefaultFor="Engineer,Maint" Screen="Clear Alarm" />
+    </AccessList>
+    <RecipePrivilege>
+      <Recipe Type="IBE" Name="Chamber1">
+        <ParameterList Group="EtchBeamParameters">
+          <Parameter>
+            <Name>Beam_On</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Neutralizer_On</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Beam_Voltage</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Beam_Current</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Incident_RF_Power</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Suppresser_Voltage</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>PBN_FLOWRATE</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>K</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Continuous_Beam</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>CAIBE_Step</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>UseStepRF</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="DepositionBeamParameters">
+          <Parameter>
+            <Name>Beam_On</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Neutralizer_On</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Beam_Voltage</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Beam_Current</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Incident_RF_Power</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Suppresser_Voltage</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>PBN_FLOWRATE</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>K</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Continuous_Beam</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>UseStepRF</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="EtchGasParameters">
+          <Parameter>
+            <Name>Value_1</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_2</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_3</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_4</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_5</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="DepositionGasParameters">
+          <Parameter>
+            <Name>Value_1</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_2</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_3</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_4</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_5</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="MagneticChuck">
+          <Parameter>
+            <Name>Power_On</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Phase_90</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Square_Wave</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="FaultTolerance">
+          <Parameter>
+            <Name>Active</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>AbortOnError</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="HotChuck">
+          <Parameter>
+            <Name>Active</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>WaitForTemperature</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Temperature</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>TimeInSeconds</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="Control">
+          <Parameter>
+            <Name>Process_Ends_By</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Endpoint_Script_Name</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>UseElectroStaticShutter</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>UseEtchRateCorrection</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Etch_Rate_Correction_Power_Group</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Etch_Time_Hour</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Etch_Time_Min</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Etch_Time_Sec</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Etch_Time_MilliSec</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Ion_Charge</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Process_Pressure_High</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Process_Pressure_Low</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Fixture_Angle</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Target_Side</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Target_Angle</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>FlowCool_Flowrate</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Open_Etch_Shutter_At_Start</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Open_Etch_Shutter_At_Beam</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Close_Etch_Shutter_At_End</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Open_Depo_Shutter_At_Start</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Open_Depo_Shutter_At_Beam</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Close_Depo_Shutter_At_End</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Open_Target_Shutter_At_Start</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Open_Target_Shutter_At_Beam</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Close_Target_Shutter_At_End</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Open_Fixture_Shutter_At_Start</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Open_Fixture_Shutter_At_Beam</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Close_Fixture_Shutter_At_End</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>OpenTargetShield</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>OpenCryoGate</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>UseRGA</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>WaitForGEMStepTime</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="FixtureServo">
+          <Parameter>
+            <Name>Fixture_Rotate_Continious</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Fixture_Rotate_Sweep</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Fixture_Rotate_Static</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Sweep_Start_Angle</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Sweep_End_Angle</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Static_Angle</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Fixture_Rotation_Speed</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="DataTracing">
+          <Parameter>
+            <Name>TracingEnabled</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Interval</Name>
+            <RW DefaultFor="Engineer">True</RW>
+          </Parameter>
+        </ParameterList>
+      </Recipe>
+    </RecipePrivilege>
+  </User>
+  <User>
+    <Username>ROOT</Username>
+    <Password>root@AVP</Password>
+    <Group>1</Group>
+    <Disable>0</Disable>
+    <AccessList>
+      <Access Permit="1" Code="001" Screen="Maintaince screens" />
+      <Access Permit="1" Code="002" Screen="Recipe Editors" />
+      <Access Permit="1" Code="003" Screen="Return And Resume Wafer" />
+      <Access Permit="1" Code="004" Screen="System Setup" />
+      <Access Permit="1" Code="005" Screen="User Account Setup" />
+      <Access Permit="1" Code="006" Screen="Reset Wafers Count" />
+      <Access Permit="1" Code="008" Screen="Exit AVP Software" />
+      <Access Permit="1" Code="009" Screen="Clear Alarm" />
+    </AccessList>
+    <RecipePrivilege>
+      <Recipe Type="IBE" Name="Chamber1">
+        <ParameterList Group="EtchBeamParameters">
+          <Parameter>
+            <Name>Beam_On</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Neutralizer_On</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Beam_Voltage</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Beam_Current</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Incident_RF_Power</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Suppresser_Voltage</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>PBN_FLOWRATE</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>K</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Continuous_Beam</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>UseStepRF</Name>
+            <RW>True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="EtchGasParameters">
+          <Parameter>
+            <Name>Value_1</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_2</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_3</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_4</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Value_5</Name>
+            <RW>True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="Control">
+          <Parameter>
+            <Name>Process_Ends_By</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Endpoint_Script_Name</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>UseElectroStaticShutter</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>UseEtchRateCorrection</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Etch_Rate_Correction_Power_Group</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Etch_Time_Hour</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Etch_Time_Min</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Etch_Time_Sec</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Etch_Time_MilliSec</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Process_Pressure_High</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Process_Pressure_Low</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Fixture_Angle</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>FlowCool_Flowrate</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Open_Etch_Shutter_At_Start</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Open_Etch_Shutter_At_Beam</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Close_Etch_Shutter_At_End</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>OpenCryoGate</Name>
+            <RW>True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="FixtureServo">
+          <Parameter>
+            <Name>Fixture_Rotate_Continious</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Fixture_Rotate_Sweep</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Fixture_Rotate_Static</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Sweep_Start_Angle</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Sweep_End_Angle</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Static_Angle</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Fixture_Rotation_Speed</Name>
+            <RW>True</RW>
+          </Parameter>
+        </ParameterList>
+        <ParameterList Group="DataTracing">
+          <Parameter>
+            <Name>TracingEnabled</Name>
+            <RW>True</RW>
+          </Parameter>
+          <Parameter>
+            <Name>Interval</Name>
+            <RW>True</RW>
+          </Parameter>
+        </ParameterList>
+      </Recipe>
+    </RecipePrivilege>
+  </User>
+</Users>
