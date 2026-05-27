@@ -1,0 +1,24 @@
+# Visual Studio
+.vs/
+*.suo
+
+# Build folders
+bin/
+obj/
+Debug/
+Release/
+
+# Build output
+*.dll
+*.exe
+*.pdb
+*.cache
+
+# Logs
+*.log
+*.txt
+
+# Database/runtime files
+*.mdb
+*.ldb
+*.csv
